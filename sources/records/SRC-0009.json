@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "SRC-0009",
+  "title": "馬防柵",
+  "alternate_titles": [],
+  "source_type": "municipal_webpage",
+  "sites": [
+    "設楽原",
+    "長篠・設楽原の戦い関連地域"
+  ],
+  "periods": [
+    "1575年に関する現代の解説",
+    "現代復元施設"
+  ],
+  "bibliography": {
+    "contributors": [],
+    "publisher": "新城市",
+    "publication_year": null,
+    "publication_date": null,
+    "volume": null,
+    "edition": null,
+    "extent": null,
+    "identifiers": [],
+    "evidence_urls": [
+      "https://www.city.shinshiro.lg.jp/kanko/meisyo/babousaku.html"
+    ]
+  },
+  "access": {
+    "official_url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/babousaku.html",
+    "pdf_url": null,
+    "catalog_urls": [],
+    "holdings": [],
+    "other_methods": [],
+    "last_checked": "2026-11-07",
+    "checks": [
+      {
+        "url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/babousaku.html",
+        "outcome": "read",
+        "method": "web reader",
+        "note": "本文で地元の人々による現代の再現と説明していることを確認。更新日2026-03-31。"
+      }
+    ],
+    "acquired_sha256": null,
+    "pdf_pages": null
+  },
+  "verification": {
+    "bibliography": "verified",
+    "acquisition": "webpage_read",
+    "text": "partial_checked",
+    "figures": "not_checked"
+  },
+  "research": {
+    "summary": "現代に再現された馬防柵の自治体観光解説。1575年当時の一次資料でも、山中城の発掘記録でもない。",
+    "facilities": [
+      "馬防柵（現代復元）"
+    ],
+    "locations": [
+      {
+        "id": "L01",
+        "kind": "summary",
+        "locator": "本文末尾（現在、設楽原に…の段落）",
+        "text": "現在の柵は地元の人々による再現と明記されている。",
+        "evidence_url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/babousaku.html",
+        "text_checked": true,
+        "figure_checked": false
+      }
+    ],
+    "unknowns": [
+      "本文の歴史説明を裏付ける1575年当時の一次資料は未照合。",
+      "復元柵の設計根拠・寸法・掲載写真は未確認。",
+      "初出年は未確認。更新日を刊行年にしない。"
+    ],
+    "related_source_ids": [],
+    "notes": []
+  }
+}

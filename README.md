@@ -56,3 +56,14 @@ GitHub運用はIssue → branch → Draft PR → 独立レビュー → merge。
 ## 関連
 
 初回実装計画: Issue #1。
+
+## 城郭研究史料台帳（研究第1期）
+
+[史料一覧](sources/index.md) と [登録手順・状態の定義](sources/README.md) を参照。初期9候補を10レコードに整理し、版・分冊、入手・本文・図版の確認を分離する。第1層だけの実装で、遺構・仮説・3D部品の自動生成は行わない。既存木柵の歴史的妥当性を確定するものでもない。
+
+- `node scripts/source-register.mjs` : 台帳と生成一覧の整合性検査
+- `node scripts/source-register.mjs --write` : JSONからMarkdown一覧を更新
+- `node scripts/source-register.mjs --site=山中城` : 城郭別JSONの抽出
+- `node --test` : 既存試作と台帳の正対照・負対照
+
+調査結果・原本未入手・版差は [第1期記録](docs/source-register-stage1.md) に記載。PDFや図版は再配布しない。

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "SRC-0007",
+  "title": "三島市埋蔵文化財発掘調査報告 21",
+  "alternate_titles": [
+    "山中城跡・本調査・確認調査 : 山中城跡と平成25年度実施の本調査・確認調査"
+  ],
+  "source_type": "excavation_report",
+  "sites": [
+    "山中城",
+    "三島市内遺跡"
+  ],
+  "periods": [
+    "山中城・平成25年度調査対象の各時代（詳細未照合）"
+  ],
+  "bibliography": {
+    "contributors": [
+      {
+        "name": "三島市教育委員会",
+        "role": "editor"
+      }
+    ],
+    "publisher": "三島市教育委員会",
+    "publication_year": 2017,
+    "publication_date": "2017-03-31",
+    "volume": "21",
+    "edition": null,
+    "extent": "iv, 48p、図版9p（CiNii）。NDLでは4, 48p。折り込図1枚。",
+    "identifiers": [
+      {
+        "scheme": "NCID",
+        "value": "BB23415119"
+      },
+      {
+        "scheme": "NDL",
+        "value": "028119947"
+      },
+      {
+        "scheme": "JPNO",
+        "value": "22880651"
+      },
+      {
+        "scheme": "DOI",
+        "value": "10.24484/sitereports.21958"
+      }
+    ],
+    "evidence_urls": [
+      "https://ndlsearch.ndl.go.jp/books/R100000002-I028119947",
+      "https://ci.nii.ac.jp/ncid/BB23415119.amp"
+    ]
+  },
+  "access": {
+    "official_url": "https://sitereports.nabunken.go.jp/21958",
+    "pdf_url": "https://sitereports.nabunken.go.jp/files/attach/30/30297/21958_1_%E4%B8%89%E5%B3%B6%E5%B8%82%E5%9F%8B%E8%94%B5%E6%96%87%E5%8C%96%E8%B2%A1%E7%99%BA%E6%8E%98%E8%AA%BF%E6%9F%BB%E5%A0%B1%E5%91%8A21.pdf",
+    "catalog_urls": [
+      "https://ndlsearch.ndl.go.jp/books/R100000002-I028119947",
+      "https://ci.nii.ac.jp/ncid/BB23415119.amp"
+    ],
+    "holdings": [
+      "国立国会図書館 GB121-L7833"
+    ],
+    "other_methods": [
+      "公開PDFの再取得または所蔵館資料の確認が必要。429は取得制限であり史料不存在ではない。"
+    ],
+    "last_checked": "2026-11-07",
+    "checks": [
+      {
+        "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028119947",
+        "outcome": "catalog_read",
+        "method": "web reader（書誌担当）",
+        "note": "書誌本文で書名・巻・発行情報・数量・識別子を確認。"
+      },
+      {
+        "url": "https://ci.nii.ac.jp/ncid/BB23415119.amp",
+        "outcome": "catalog_read",
+        "method": "web reader（書誌担当）",
+        "note": "書誌本文で書名・巻・発行情報・数量・識別子を確認。"
+      },
+      {
+        "url": "https://sitereports.nabunken.go.jp/21958",
+        "outcome": "failed",
+        "method": "web reader / curl（書誌担当）",
+        "note": "HTTP429。検索抜粋は本文確認に含めない。"
+      },
+      {
+        "url": "https://sitereports.nabunken.go.jp/files/attach/30/30297/21958_1_%E4%B8%89%E5%B3%B6%E5%B8%82%E5%9F%8B%E8%94%B5%E6%96%87%E5%8C%96%E8%B2%A1%E7%99%BA%E6%8E%98%E8%AA%BF%E6%9F%BB%E5%A0%B1%E5%91%8A21.pdf",
+        "outcome": "failed",
+        "method": "web reader / curl（書誌担当）",
+        "note": "HTTP429。検索抜粋は本文確認に含めない。"
+      }
+    ],
+    "acquired_sha256": null,
+    "pdf_pages": null
+  },
+  "verification": {
+    "bibliography": "verified",
+    "acquisition": "catalog_only",
+    "text": "not_checked",
+    "figures": "not_checked"
+  },
+  "research": {
+    "summary": "山中城を含む三島市の調査報告。所在と書誌は確認したが、本文取得に失敗したため個別遺構・図面の内容は未登録。",
+    "facilities": [],
+    "locations": [],
+    "unknowns": [
+      "山中城の対象遺構・図版・該当ページは本文未入手のため未照合。"
+    ],
+    "related_source_ids": [
+      "SRC-0001"
+    ],
+    "notes": []
+  }
+}

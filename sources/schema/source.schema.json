@@ -1,0 +1,454 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tetsujisugimori-coder/castle-3d-parts/sources/schema/source.schema.json",
+  "title": "Castle research source register, layer 1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "alternate_titles",
+    "source_type",
+    "sites",
+    "periods",
+    "bibliography",
+    "access",
+    "verification",
+    "research"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^SRC-[0-9]{4}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "alternate_titles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "source_type": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "preservation_plan",
+        "excavation_report",
+        "municipal_webpage",
+        "guidebook",
+        "paper",
+        "historical_text",
+        "map"
+      ]
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "periods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "bibliography": {
+      "type": "object",
+      "required": [
+        "contributors",
+        "publisher",
+        "publication_year",
+        "publication_date",
+        "volume",
+        "edition",
+        "extent",
+        "identifiers",
+        "evidence_urls"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contributors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "role"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "enum": [
+                  "author",
+                  "editor",
+                  "editor_author"
+                ]
+              }
+            }
+          }
+        },
+        "publisher": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "publication_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 2100
+        },
+        "publication_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])(?:-(0[1-9]|[12][0-9]|3[01]))?$"
+        },
+        "volume": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "edition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "extent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "identifiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "scheme",
+              "value"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "scheme": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "uniqueItems": true
+        },
+        "evidence_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "access": {
+      "type": "object",
+      "required": [
+        "official_url",
+        "pdf_url",
+        "catalog_urls",
+        "holdings",
+        "other_methods",
+        "last_checked",
+        "checks",
+        "acquired_sha256",
+        "pdf_pages"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "official_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "pdf_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "catalog_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "uniqueItems": true
+        },
+        "holdings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "other_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "last_checked": {
+          "type": "string",
+          "format": "date"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "url",
+              "outcome",
+              "method",
+              "note"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://"
+              },
+              "outcome": {
+                "type": "string",
+                "minLength": 1,
+                "enum": [
+                  "read",
+                  "downloaded",
+                  "failed",
+                  "catalog_read"
+                ]
+              },
+              "method": {
+                "type": "string",
+                "minLength": 1
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "acquired_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "pdf_pages": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "bibliography",
+        "acquisition",
+        "text",
+        "figures"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "bibliography": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "verified",
+            "partial",
+            "unverified"
+          ]
+        },
+        "acquisition": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "full_file_acquired",
+            "webpage_read",
+            "catalog_only",
+            "unavailable"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "not_checked",
+            "partial_checked"
+          ]
+        },
+        "figures": {
+          "type": "string",
+          "minLength": 1,
+          "enum": [
+            "not_checked",
+            "partial_checked",
+            "not_applicable"
+          ]
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "required": [
+        "summary",
+        "facilities",
+        "locations",
+        "unknowns",
+        "related_source_ids",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "facilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "kind",
+              "locator",
+              "text",
+              "evidence_url",
+              "text_checked",
+              "figure_checked"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^L[0-9]{2}$"
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1,
+                "enum": [
+                  "quote",
+                  "summary",
+                  "interpretation"
+                ]
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://"
+              },
+              "text_checked": {
+                "type": "boolean"
+              },
+              "figure_checked": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "related_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^SRC-[0-9]{4}$"
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

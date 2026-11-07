@@ -1,0 +1,172 @@
+{
+  "status": "PASS",
+  "positive": {
+    "old": {
+      "accepted": true,
+      "reason": null
+    },
+    "new": {
+      "accepted": true,
+      "reason": null
+    }
+  },
+  "counterexamples": 13,
+  "results": [
+    {
+      "name": "all-web-requests-failed",
+      "expected_reason": "WEB_ACCESS_EVIDENCE",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "WEB_ACCESS_EVIDENCE SRC-0002"
+      }
+    },
+    {
+      "name": "all-bibliography-requests-failed",
+      "expected_reason": "BIBLIOGRAPHY_EVIDENCE",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "BIBLIOGRAPHY_EVIDENCE SRC-0003"
+      }
+    },
+    {
+      "name": "partial-text-promoted-to-complete",
+      "expected_reason": "ENUM",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "ENUM $.verification.text"
+      }
+    },
+    {
+      "name": "one-figure-promoted-to-complete",
+      "expected_reason": "ENUM",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "ENUM $.verification.figures"
+      }
+    },
+    {
+      "name": "download-receipt-for-different-file",
+      "expected_reason": "ACQUISITION_EVIDENCE",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "ACQUISITION_EVIDENCE SRC-0001"
+      }
+    },
+    {
+      "name": "unread-passage-url",
+      "expected_reason": "PASSAGE_ACCESS_EVIDENCE",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "PASSAGE_ACCESS_EVIDENCE SRC-0001"
+      }
+    },
+    {
+      "name": "duplicate-doi-different-volume",
+      "expected_reason": "DUPLICATE_IDENTIFIER",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "DUPLICATE_IDENTIFIER SRC-0011"
+      }
+    },
+    {
+      "name": "empty-array-unsupported-schema-keyword",
+      "expected_reason": "SCHEMA_UNSUPPORTED",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "SCHEMA_UNSUPPORTED unsupportedKeyword"
+      }
+    },
+    {
+      "name": "null-value-unsupported-schema-format",
+      "expected_reason": "SCHEMA_FORMAT",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "SCHEMA_FORMAT"
+      }
+    },
+    {
+      "name": "unsupported-schema-dialect",
+      "expected_reason": "SCHEMA_DIALECT",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "SCHEMA_DIALECT"
+      }
+    },
+    {
+      "name": "schema-valued-additional-properties",
+      "expected_reason": "SCHEMA_VALUE",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "SCHEMA_VALUE additionalProperties"
+      }
+    },
+    {
+      "name": "null-schema-type",
+      "expected_reason": "SCHEMA_TYPE",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "SCHEMA_TYPE"
+      }
+    },
+    {
+      "name": "empty-schema-dialect",
+      "expected_reason": "SCHEMA_DIALECT",
+      "red": {
+        "accepted": true,
+        "reason": null
+      },
+      "green": {
+        "accepted": false,
+        "reason": "SCHEMA_DIALECT"
+      }
+    }
+  ]
+}
