@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "SRC-0005",
+  "title": "史跡山中城跡 : 国指定史跡山中城跡の環境整備事業に伴う発掘調査報告書",
+  "alternate_titles": [
+    "史跡山中城跡2"
+  ],
+  "source_type": "excavation_report",
+  "sites": [
+    "山中城"
+  ],
+  "periods": [
+    "戦国時代末期"
+  ],
+  "bibliography": {
+    "contributors": [
+      {
+        "name": "山中城跡発掘調査団",
+        "role": "editor"
+      }
+    ],
+    "publisher": "三島市教育委員会",
+    "publication_year": 1994,
+    "publication_date": "1994-03",
+    "volume": "2",
+    "edition": null,
+    "extent": "県立図書館提供書誌: 232, 33, 25p、図版55枚。三島市刊行物一覧: 全376ページ。数え方の異同は未解決。",
+    "identifiers": [],
+    "evidence_urls": [
+      "https://ndlsearch.ndl.go.jp/books/R100000001-I22111009810085779",
+      "https://www.city.himeji.lg.jp/module/zosyo.php?area=&book=&page=242&publisher=&type=&writer=&year="
+    ]
+  },
+  "access": {
+    "official_url": "https://www.city.mishima.shizuoka.jp/page/1303.html",
+    "pdf_url": null,
+    "catalog_urls": [
+      "https://ndlsearch.ndl.go.jp/books/R100000001-I22111009810085779",
+      "https://www.city.himeji.lg.jp/module/zosyo.php?area=&book=&page=242&publisher=&type=&writer=&year="
+    ],
+    "holdings": [
+      "静岡県立中央図書館（NDL連携書誌）"
+    ],
+    "other_methods": [
+      "図書館所蔵または三島市の刊行物案内から原本を探す。今回、原本の貸出・購入は行っていない。"
+    ],
+    "last_checked": "2026-11-07",
+    "checks": [
+      {
+        "url": "https://ndlsearch.ndl.go.jp/books/R100000001-I22111009810085779",
+        "outcome": "catalog_read",
+        "method": "web reader（書誌担当）",
+        "note": "公式図書館・NII書誌本文を確認。本文・図版は未入手。"
+      },
+      {
+        "url": "https://www.city.himeji.lg.jp/module/zosyo.php?area=&book=&page=242&publisher=&type=&writer=&year=",
+        "outcome": "catalog_read",
+        "method": "web reader（書誌担当）",
+        "note": "公式図書館・NII書誌本文を確認。本文・図版は未入手。"
+      },
+      {
+        "url": "https://www.city.mishima.shizuoka.jp/page/1303.html",
+        "outcome": "read",
+        "method": "web reader（書誌担当）",
+        "note": "三島市掲載タイトル・調査範囲説明・全376ページ表記を確認。"
+      }
+    ],
+    "acquired_sha256": null,
+    "pdf_pages": null
+  },
+  "verification": {
+    "bibliography": "verified",
+    "acquisition": "catalog_only",
+    "text": "not_checked",
+    "figures": "not_checked"
+  },
+  "research": {
+    "summary": "山中城の発掘調査報告。巻・分冊の独立性を保ち、本文未入手のため遺構の詳細な内容は登録していない。",
+    "facilities": [],
+    "locations": [],
+    "unknowns": [
+      "原本、本文、図版は未入手・未照合。",
+      "出土木材・柱穴の個体番号と掲載位置は未特定。",
+      "市の全376ページと図書館の数量表記の違いは、原本確認まで統一しない。"
+    ],
+    "related_source_ids": [
+      "SRC-0001",
+      "SRC-0002",
+      "SRC-0003",
+      "SRC-0004"
+    ],
+    "notes": [
+      "数量やタイトルの確認は図書館目録によるもので、原本の表紙・奥付を実読したものではない。"
+    ]
+  }
+}

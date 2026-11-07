@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "id": "SRC-0001",
+  "title": "史跡山中城跡保存活用計画 : 静岡県三島市",
+  "alternate_titles": [
+    "静岡県三島市史跡山中城跡保存活用計画"
+  ],
+  "source_type": "preservation_plan",
+  "sites": [
+    "山中城"
+  ],
+  "periods": [
+    "戦国時代末期",
+    "現代の保存整備"
+  ],
+  "bibliography": {
+    "contributors": [
+      {
+        "name": "三島市教育委員会",
+        "role": "editor_author"
+      }
+    ],
+    "publisher": "三島市教育委員会",
+    "publication_year": 2023,
+    "publication_date": "2023-03-10",
+    "volume": null,
+    "edition": null,
+    "extent": "161p（CiNii書誌）。PDFファイルは表紙等を含む170ページ。",
+    "identifiers": [
+      {
+        "scheme": "NCID",
+        "value": "BD02874939"
+      }
+    ],
+    "evidence_urls": [
+      "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+      "https://ci.nii.ac.jp/ncid/BD02874939"
+    ]
+  },
+  "access": {
+    "official_url": "https://www.city.mishima.shizuoka.jp/page/2926.html",
+    "pdf_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+    "catalog_urls": [
+      "https://ci.nii.ac.jp/ncid/BD02874939"
+    ],
+    "holdings": [
+      "国立歴史民俗博物館 図書室（CiNii掲載）",
+      "東京国立博物館（CiNii掲載）",
+      "奈良文化財研究所（CiNii掲載）"
+    ],
+    "other_methods": [],
+    "last_checked": "2026-11-07",
+    "checks": [
+      {
+        "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+        "outcome": "failed",
+        "method": "web reader",
+        "note": "13,209,527 bytesでreaderのサイズ上限。資料不存在ではない。"
+      },
+      {
+        "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+        "outcome": "downloaded",
+        "method": "curl; pdfinfo; pdftotext; pdftoppm",
+        "note": "170ページを取得。表紙・奥付の抽出、印刷p66・103・110を読取り、p103・110はレンダリングも目視。全本文・全図版照合ではない。"
+      },
+      {
+        "url": "https://ci.nii.ac.jp/ncid/BD02874939",
+        "outcome": "catalog_read",
+        "method": "web reader",
+        "note": "編著、発行、2023.3、161p、NCIDと所蔵を確認。"
+      }
+    ],
+    "acquired_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+    "pdf_pages": 170
+  },
+  "verification": {
+    "bibliography": "verified",
+    "acquisition": "full_file_acquired",
+    "text": "partial_checked",
+    "figures": "not_checked"
+  },
+  "research": {
+    "summary": "市の保存活用方針と調査・整備の集成。遺構の説明と現代の復元的整備を区別して参照する。",
+    "facilities": [
+      "土塁",
+      "柱穴",
+      "柵",
+      "塀",
+      "西木戸",
+      "障子堀"
+    ],
+    "locations": [
+      {
+        "id": "L01",
+        "kind": "summary",
+        "locator": "印刷p110 / PDF118頁 第5章2(1)①",
+        "text": "土塁上の柵・塀柱穴をツツジで表示した過去の整備と、その後の撤去を説明する。",
+        "evidence_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+        "text_checked": true,
+        "figure_checked": false
+      },
+      {
+        "id": "L02",
+        "kind": "summary",
+        "locator": "印刷p103 / PDF111頁 西木戸欄",
+        "text": "城門と柵の存在を推定する記述。現代トイレ入口の木柵基礎の腐食とは別の事項である。",
+        "evidence_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+        "text_checked": true,
+        "figure_checked": false
+      },
+      {
+        "id": "L03",
+        "kind": "summary",
+        "locator": "印刷p66 / PDF74頁 表3-7 西ノ丸・西木戸",
+        "text": "出土建築材・枝類に疑問符付きの用途候補がある。出土物の用途推定と原設置位置を分けて扱う。",
+        "evidence_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+        "text_checked": true,
+        "figure_checked": false
+      }
+    ],
+    "unknowns": [
+      "計画掲載の全図版と原発掘報告の照合は未実施。",
+      "西木戸の城門・柵は計画内でも推定。部品の形状・寸法の確証ではない。"
+    ],
+    "related_source_ids": [
+      "SRC-0002",
+      "SRC-0003",
+      "SRC-0004",
+      "SRC-0005"
+    ],
+    "notes": []
+  }
+}

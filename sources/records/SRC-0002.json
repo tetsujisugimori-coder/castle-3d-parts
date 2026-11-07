@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "SRC-0002",
+  "title": "山中城跡環境整備事業",
+  "alternate_titles": [],
+  "source_type": "municipal_webpage",
+  "sites": [
+    "山中城"
+  ],
+  "periods": [
+    "戦国時代末期",
+    "現代の発掘・整備"
+  ],
+  "bibliography": {
+    "contributors": [],
+    "publisher": "三島市",
+    "publication_year": null,
+    "publication_date": null,
+    "volume": null,
+    "edition": null,
+    "extent": null,
+    "identifiers": [],
+    "evidence_urls": [
+      "https://www.city.mishima.shizuoka.jp/page/1301.html"
+    ]
+  },
+  "access": {
+    "official_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+    "pdf_url": null,
+    "catalog_urls": [],
+    "holdings": [],
+    "other_methods": [
+      "初出年は未確認。Webページ更新日2026-02-05を刊行年に代入しない。"
+    ],
+    "last_checked": "2026-11-07",
+    "checks": [
+      {
+        "url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+        "outcome": "read",
+        "method": "web reader",
+        "note": "ページ本文の第3節「土塁」「堀」「出土遺物」を実読。更新日2026-02-05。画像そのものは未照合。"
+      }
+    ],
+    "acquired_sha256": null,
+    "pdf_pages": null
+  },
+  "verification": {
+    "bibliography": "verified",
+    "acquisition": "webpage_read",
+    "text": "partial_checked",
+    "figures": "not_checked"
+  },
+  "research": {
+    "summary": "自治体の発掘・整備解説。土塁上の柱穴と板塀の推定、堀からの建築材・柵材の出土を調べる手がかり。",
+    "facilities": [
+      "土塁",
+      "柱穴",
+      "板塀",
+      "堀",
+      "建築部材",
+      "柵材"
+    ],
+    "locations": [
+      {
+        "id": "L01",
+        "kind": "summary",
+        "locator": "3.発掘調査の成果 > 土塁",
+        "text": "西櫓・本丸の土塁上にある柱穴の配列をもとに、板塀を推定している。",
+        "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+        "text_checked": true,
+        "figure_checked": false
+      },
+      {
+        "id": "L02",
+        "kind": "summary",
+        "locator": "3.発掘調査の成果 > 出土遺物 最終段落",
+        "text": "西ノ丸西堀・北条丸西堀の水を含む区画で建築部材を出土したと説明。小径木の柵部材、削り掛け、小枝にも言及する。",
+        "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+        "text_checked": true,
+        "figure_checked": false
+      }
+    ],
+    "unknowns": [
+      "出土木材に対応する原発掘報告の図・個体番号は未特定。",
+      "堀の出土場所から元の柵の設置場所・高さ・間隔は確定できない。",
+      "Web掲載画像と初出年は未確認。"
+    ],
+    "related_source_ids": [
+      "SRC-0001",
+      "SRC-0003",
+      "SRC-0004",
+      "SRC-0005"
+    ],
+    "notes": [
+      "臨戦時の慌ただしさは市の解釈であり、出土物そのものの観察と同一視しない。"
+    ]
+  }
+}

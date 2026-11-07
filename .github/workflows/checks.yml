@@ -11,6 +11,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - run: node scripts/source-register.mjs
       - run: node --test
       - run: node scripts/build-site.mjs
       - run: test -s dist/index.html && test -s dist/data/wooden-palisade-v0.json

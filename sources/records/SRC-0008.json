@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "id": "SRC-0008",
+  "title": "田中城跡XI : 10年間の調査報告",
+  "alternate_titles": [
+    "田中城跡11～10年間の調査報告～"
+  ],
+  "source_type": "excavation_report",
+  "sites": [
+    "田中城（熊本県和水町）"
+  ],
+  "periods": [
+    "戦国時代末期"
+  ],
+  "bibliography": {
+    "contributors": [
+      {
+        "name": "黒田裕司",
+        "role": "editor_author"
+      }
+    ],
+    "publisher": "三加和町教育委員会",
+    "publication_year": 1997,
+    "publication_date": "1997-03-31",
+    "volume": "三加和町文化財調査報告 第11集",
+    "edition": null,
+    "extent": "本文末尾は印刷p324。公開PDF352ページ（前付・折込等を含む）。",
+    "identifiers": [],
+    "evidence_urls": [
+      "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+      "https://www.town.nagomi.lg.jp/soshiki/shakai/kyoikusportsbunka/3_4595/"
+    ]
+  },
+  "access": {
+    "official_url": "https://www.town.nagomi.lg.jp/soshiki/shakai/kyoikusportsbunka/3_4595/",
+    "pdf_url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+    "catalog_urls": [],
+    "holdings": [],
+    "other_methods": [],
+    "last_checked": "2026-11-07",
+    "checks": [
+      {
+        "url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+        "outcome": "failed",
+        "method": "web reader",
+        "note": "25,344,834 bytesでreaderのサイズ上限。"
+      },
+      {
+        "url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+        "outcome": "downloaded",
+        "method": "curl; pdfinfo; pdftotext; pdftoppm",
+        "note": "全352ページを取得。本文p125と第65図p122をレンダリング目視。抄録p323と奥付p324も抽出確認。"
+      },
+      {
+        "url": "https://www.town.nagomi.lg.jp/soshiki/shakai/kyoikusportsbunka/3_4595/",
+        "outcome": "read",
+        "method": "web reader",
+        "note": "自治体の公開一覧で第11集PDFリンクと題名を確認。"
+      }
+    ],
+    "acquired_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+    "pdf_pages": 352
+  },
+  "verification": {
+    "bibliography": "verified",
+    "acquisition": "full_file_acquired",
+    "text": "partial_checked",
+    "figures": "partial_checked"
+  },
+  "research": {
+    "summary": "熊本の田中城の調査報告。山中城とは別遺跡・別史料の比較資料として扱う。",
+    "facilities": [
+      "柵列",
+      "柱穴",
+      "堀"
+    ],
+    "locations": [
+      {
+        "id": "L01",
+        "kind": "summary",
+        "locator": "印刷p125 / PDF149頁 1.検出遺構(1)柵列",
+        "text": "19個の柱穴。記載間隔50〜70cm、平均58.6cm。孔の最大30×23cm、最小11×10cm。残存深さ4.9〜27.7cm、平均12.0cm。周囲の土塁有無は未確認とする。",
+        "evidence_url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+        "text_checked": true,
+        "figure_checked": false
+      },
+      {
+        "id": "L02",
+        "kind": "summary",
+        "locator": "第65図 印刷p122 / PDF146頁",
+        "text": "堀跡・柵列実測図のP1〜P19と2mスケールを目視確認。図の縮尺から独自の実測値は算出していない。",
+        "evidence_url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+        "text_checked": true,
+        "figure_checked": true
+      }
+    ],
+    "unknowns": [
+      "全本文・全図版の照合は未実施。",
+      "他城の柱穴間隔を山中城の寸法根拠へ転用できない。",
+      "遺構の残存深さと当時の柱の根入れ深さ・地上高は一致しない。"
+    ],
+    "related_source_ids": [],
+    "notes": [
+      "ユーザー候補名に巻番号がなかったが、公開PDF抄録・奥付のXIと自治体一覧の11を照合した。本文の数値は報告記載値であり現地再測量ではない。"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "id": "SRC-0010",
+  "title": "史跡 山中城跡 発掘調査と環境整備事業の概要",
+  "alternate_titles": [],
+  "source_type": "guidebook",
+  "sites": [
+    "山中城"
+  ],
+  "periods": [
+    "戦国時代末期",
+    "現代の発掘・整備"
+  ],
+  "bibliography": {
+    "contributors": [
+      {
+        "name": "三島市教育委員会",
+        "role": "editor"
+      }
+    ],
+    "publisher": "三島市教育委員会",
+    "publication_year": 2004,
+    "publication_date": "2004-03-30",
+    "volume": null,
+    "edition": "第2版（一部改訂）",
+    "extent": null,
+    "identifiers": [],
+    "evidence_urls": [
+      "https://www.city.mishima.shizuoka.jp/uploaded/attachment/1067.pdf",
+      "https://www.city.mishima.shizuoka.jp/page/1303.html"
+    ]
+  },
+  "access": {
+    "official_url": "https://www.city.mishima.shizuoka.jp/page/1303.html",
+    "pdf_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/1067.pdf",
+    "catalog_urls": [],
+    "holdings": [],
+    "other_methods": [],
+    "last_checked": "2026-11-07",
+    "checks": [
+      {
+        "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/1067.pdf",
+        "outcome": "read",
+        "method": "書誌担当のPDF画像閲覧",
+        "note": "PDF15頁の奥付で2001-03-30初版、2004-03-30第2版（一部改訂）と©2004を確認。"
+      },
+      {
+        "url": "https://www.city.mishima.shizuoka.jp/page/1303.html",
+        "outcome": "read",
+        "method": "web reader（書誌担当）",
+        "note": "公式刊行物一覧からPDFへ到達。"
+      },
+      {
+        "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/1067.pdf",
+        "outcome": "downloaded",
+        "method": "curl; PDF画像閲覧（書誌担当）",
+        "note": "全16ページのファイルを取得。表紙と奥付のみ確認、考古学的本文・図版は未照合。"
+      }
+    ],
+    "acquired_sha256": "f80dcf9c4a7bf5cdf89900a96dfc89374cef05a9a9ebb5e09fda3387c4eb8ae5",
+    "pdf_pages": 16
+  },
+  "verification": {
+    "bibliography": "verified",
+    "acquisition": "full_file_acquired",
+    "text": "not_checked",
+    "figures": "not_checked"
+  },
+  "research": {
+    "summary": "山中城の発掘調査・環境整備の概要パンフレット。版を分けて記録する。",
+    "facilities": [],
+    "locations": [],
+    "unknowns": [
+      "考古学的本文・図版は未照合。",
+      "初版と第2版の具体的な改訂箇所、書誌上のページ数は未確認。"
+    ],
+    "related_source_ids": [
+      "SRC-0006"
+    ],
+    "notes": [
+      "表紙の2001と奥付の2004年第2版を区別。初版の存在と発行日は第2版奥付による間接確認である。"
+    ]
+  }
+}
