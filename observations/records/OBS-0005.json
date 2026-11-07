@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "id": "OBS-0005",
+  "name": "西ノ丸出土遺物一覧の建築材・枝類混合集合",
+  "site": "山中城",
+  "classification": "artifact",
+  "kind": "mixed_wood",
+  "scope": "collection",
+  "role": "primary",
+  "original_ids": [],
+  "position": {
+    "reported_location": {
+      "text": "表3-7の西ノ丸欄。個別の出土堀・座標へ拡張しない。",
+      "reference_ids": [
+        "R01"
+      ]
+    },
+    "findspot": null,
+    "original_installation": null
+  },
+  "condition": null,
+  "facts": [
+    {
+      "id": "F01",
+      "kind": "summary",
+      "text": "表3-7の西ノ丸欄は出土遺物として建築材と枝類を掲載する。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "source_interpretations": [
+    {
+      "id": "I01",
+      "attributed_to": "三島市教育委員会",
+      "text": "原表記は「建築材（柱材ヵ）、枝類（柵材ヵ）」。用途の留保「ヵ」を保持する。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "measurements": [],
+  "references": [
+    {
+      "id": "R01",
+      "source_id": "SRC-0001",
+      "location_id": "L03",
+      "source_locator": "印刷p66 / PDF74頁 表3-7 西ノ丸・西木戸",
+      "source_location_sha256": "e9ba3d61893d3d02ffb88a2a36adbf45a66b1ad462a6c3651de0d7d3f548938a",
+      "printed_pages": [
+        "66"
+      ],
+      "pdf_pages": [
+        74
+      ],
+      "figures": [],
+      "tables": [
+        "3-7"
+      ],
+      "evidence_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+      "source_file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+      "text_status": "checked",
+      "figure_status": "not_checked",
+      "method": "pdf_text_and_page_image",
+      "checked_at": "2026-11-07",
+      "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+    }
+  ],
+  "verification": {
+    "status": "partial_checked",
+    "meaning": "reported_observation_not_historical_proof"
+  },
+  "relations": [
+    {
+      "type": "overlap_candidate",
+      "target_id": "OBS-0003",
+      "reason": "枝類と小径木の対応候補。"
+    },
+    {
+      "type": "overlap_candidate",
+      "target_id": "OBS-0004",
+      "reason": "建築材集合の対応候補。"
+    }
+  ],
+  "unknowns": [
+    "混合集合であり、建築材・枝類の各数量・個体番号は未確認。",
+    "「柱材ヵ」「柵材ヵ」は用途候補であって確定用途ではない。",
+    "元設置場所、寸法、Web側集合との対応は未確認。"
+  ],
+  "notes": [
+    "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+  ]
+}

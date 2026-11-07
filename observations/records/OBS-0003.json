@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "OBS-0003",
+  "name": "出土遺物解説に言及された小径木集合",
+  "site": "山中城",
+  "classification": "artifact",
+  "kind": "small_roundwood",
+  "scope": "collection",
+  "role": "primary",
+  "original_ids": [],
+  "position": {
+    "reported_location": null,
+    "findspot": null,
+    "original_installation": null
+  },
+  "condition": null,
+  "facts": [
+    {
+      "id": "F01",
+      "kind": "summary",
+      "text": "出土遺物の説明に小径木が記載される。個別番号・数量はこの解説から特定していない。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "source_interpretations": [
+    {
+      "id": "I01",
+      "attributed_to": "三島市",
+      "text": "小径木を利用した柵部材として説明される。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "measurements": [],
+  "references": [
+    {
+      "id": "R01",
+      "source_id": "SRC-0002",
+      "location_id": "L02",
+      "source_locator": "3.発掘調査の成果 > 出土遺物 最終段落",
+      "source_location_sha256": "0a5333fe05d7e47a1dd300c9f8d9e9795b4560a3d5160649cb2d6b69261416e4",
+      "printed_pages": [],
+      "pdf_pages": [],
+      "figures": [],
+      "tables": [],
+      "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+      "source_file_sha256": null,
+      "text_status": "checked",
+      "figure_status": "not_checked",
+      "method": "webpage_text",
+      "checked_at": "2026-11-07",
+      "checked_scope": "公式Web本文の指定節を再取得・再読。掲載写真と個体番号は未確認。"
+    }
+  ],
+  "verification": {
+    "status": "partial_checked",
+    "meaning": "reported_observation_not_historical_proof"
+  },
+  "relations": [
+    {
+      "type": "overlap_candidate",
+      "target_id": "OBS-0005",
+      "reason": "小径木と枝類の同一・包含候補。原報告照合待ち。"
+    }
+  ],
+  "unknowns": [
+    "直前に述べる両西堀との関係は文脈上の候補。小径木個体ごとの出土位置は未確定。",
+    "元の柵設置地点・樹種・加工・長さ・径・数量は未確認。",
+    "OBS-0005の枝類との対応は不明。"
+  ],
+  "notes": [
+    "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+  ]
+}

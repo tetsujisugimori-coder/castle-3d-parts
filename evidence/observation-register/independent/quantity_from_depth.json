@@ -1,0 +1,796 @@
+[
+  {
+    "name": "OBS-0001.json",
+    "record": {
+      "schema_version": 1,
+      "id": "OBS-0001",
+      "name": "過去の整備記録に言及された土塁上柱穴集合",
+      "site": "山中城",
+      "classification": "feature",
+      "kind": "postholes",
+      "scope": "collection",
+      "role": "primary",
+      "original_ids": [],
+      "position": {
+        "reported_location": {
+          "text": "山中城の土塁上。個別位置・遺構番号はこの箇所では不明。",
+          "reference_ids": [
+            "R01"
+          ]
+        },
+        "findspot": null,
+        "original_installation": null
+      },
+      "condition": null,
+      "facts": [
+        {
+          "id": "F01",
+          "kind": "summary",
+          "text": "土塁上で検出された柱穴位置を当初の整備でツツジにより表示し、その表示植栽を後に撤去したと記載される。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "source_interpretations": [
+        {
+          "id": "I01",
+          "attributed_to": "三島市教育委員会",
+          "text": "柱穴は「柵や塀」の柱穴として説明される。用途呼称と個々の構造復元を区別する。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "measurements": [],
+      "references": [
+        {
+          "id": "R01",
+          "source_id": "SRC-0001",
+          "location_id": "L01",
+          "source_locator": "印刷p110 / PDF118頁 第5章2(1)①",
+          "source_location_sha256": "ba276a0d2e995b550d48c1a4dd27c6eba313c5151a6ba132c4f26e31aa51c74d",
+          "printed_pages": [
+            "110"
+          ],
+          "pdf_pages": [
+            118
+          ],
+          "figures": [],
+          "tables": [],
+          "evidence_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+          "source_file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+          "text_status": "checked",
+          "figure_status": "not_checked",
+          "method": "pdf_text_and_page_image",
+          "checked_at": "2026-11-07",
+          "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+        }
+      ],
+      "verification": {
+        "status": "partial_checked",
+        "meaning": "reported_observation_not_historical_proof"
+      },
+      "relations": [
+        {
+          "type": "overlap_candidate",
+          "target_id": "OBS-0002",
+          "reason": "同城の土塁上柱穴への言及。原報告・位置対応未確認。"
+        }
+      ],
+      "unknowns": [
+        "柱穴の数量・寸法・個体番号・図面座標は未確認。",
+        "撤去の記述はツツジ表示であり、遺構の撤去を示すものではない。",
+        "OBS-0002との同一性・包含範囲は未確定。"
+      ],
+      "notes": [
+        "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+      ]
+    }
+  },
+  {
+    "name": "OBS-0002.json",
+    "record": {
+      "schema_version": 1,
+      "id": "OBS-0002",
+      "name": "西櫓・本丸の土塁上柱穴配列",
+      "site": "山中城",
+      "classification": "feature",
+      "kind": "postholes",
+      "scope": "collection",
+      "role": "primary",
+      "original_ids": [],
+      "position": {
+        "reported_location": {
+          "text": "西櫓・本丸の土塁上。二地点をまとめて述べる資料上の集合。",
+          "reference_ids": [
+            "R01"
+          ]
+        },
+        "findspot": null,
+        "original_installation": null
+      },
+      "condition": null,
+      "facts": [
+        {
+          "id": "F01",
+          "kind": "summary",
+          "text": "西櫓と本丸の土塁上で一定の間隔を置く柱穴が検出されたと記載される。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "source_interpretations": [
+        {
+          "id": "I01",
+          "attributed_to": "三島市",
+          "text": "柱穴の配列から土塁上の板塀の存在を推定している。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "measurements": [],
+      "references": [
+        {
+          "id": "R01",
+          "source_id": "SRC-0002",
+          "location_id": "L01",
+          "source_locator": "3.発掘調査の成果 > 土塁",
+          "source_location_sha256": "e0b86ead896adc6d69c897a3fb552513f627228d943b52d1230409808877f5bd",
+          "printed_pages": [],
+          "pdf_pages": [],
+          "figures": [],
+          "tables": [],
+          "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+          "source_file_sha256": null,
+          "text_status": "checked",
+          "figure_status": "not_checked",
+          "method": "webpage_text",
+          "checked_at": "2026-11-07",
+          "checked_scope": "公式Web本文の指定節を再取得・再読。掲載写真と個体番号は未確認。"
+        }
+      ],
+      "verification": {
+        "status": "partial_checked",
+        "meaning": "reported_observation_not_historical_proof"
+      },
+      "relations": [
+        {
+          "type": "overlap_candidate",
+          "target_id": "OBS-0001",
+          "reason": "整備記録側の集合と重複・包含する可能性。"
+        }
+      ],
+      "unknowns": [
+        "柱穴間隔の数値、個体番号、数量、各地点の内訳は未確認。",
+        "原発掘報告・遺構図への対応は未確認。",
+        "板塀の高さ・材質・構造は確定しない。"
+      ],
+      "notes": [
+        "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+      ]
+    }
+  },
+  {
+    "name": "OBS-0003.json",
+    "record": {
+      "schema_version": 1,
+      "id": "OBS-0003",
+      "name": "出土遺物解説に言及された小径木集合",
+      "site": "山中城",
+      "classification": "artifact",
+      "kind": "small_roundwood",
+      "scope": "collection",
+      "role": "primary",
+      "original_ids": [],
+      "position": {
+        "reported_location": null,
+        "findspot": null,
+        "original_installation": null
+      },
+      "condition": null,
+      "facts": [
+        {
+          "id": "F01",
+          "kind": "summary",
+          "text": "出土遺物の説明に小径木が記載される。個別番号・数量はこの解説から特定していない。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "source_interpretations": [
+        {
+          "id": "I01",
+          "attributed_to": "三島市",
+          "text": "小径木を利用した柵部材として説明される。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "measurements": [],
+      "references": [
+        {
+          "id": "R01",
+          "source_id": "SRC-0002",
+          "location_id": "L02",
+          "source_locator": "3.発掘調査の成果 > 出土遺物 最終段落",
+          "source_location_sha256": "0a5333fe05d7e47a1dd300c9f8d9e9795b4560a3d5160649cb2d6b69261416e4",
+          "printed_pages": [],
+          "pdf_pages": [],
+          "figures": [],
+          "tables": [],
+          "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+          "source_file_sha256": null,
+          "text_status": "checked",
+          "figure_status": "not_checked",
+          "method": "webpage_text",
+          "checked_at": "2026-11-07",
+          "checked_scope": "公式Web本文の指定節を再取得・再読。掲載写真と個体番号は未確認。"
+        }
+      ],
+      "verification": {
+        "status": "partial_checked",
+        "meaning": "reported_observation_not_historical_proof"
+      },
+      "relations": [
+        {
+          "type": "overlap_candidate",
+          "target_id": "OBS-0005",
+          "reason": "小径木と枝類の同一・包含候補。原報告照合待ち。"
+        }
+      ],
+      "unknowns": [
+        "直前に述べる両西堀との関係は文脈上の候補。小径木個体ごとの出土位置は未確定。",
+        "元の柵設置地点・樹種・加工・長さ・径・数量は未確認。",
+        "OBS-0005の枝類との対応は不明。"
+      ],
+      "notes": [
+        "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+      ]
+    }
+  },
+  {
+    "name": "OBS-0004.json",
+    "record": {
+      "schema_version": 1,
+      "id": "OBS-0004",
+      "name": "西ノ丸西堀・北条丸西堀の出土建築部材集合",
+      "site": "山中城",
+      "classification": "artifact",
+      "kind": "architectural_wood",
+      "scope": "collection",
+      "role": "primary",
+      "original_ids": [],
+      "position": {
+        "reported_location": null,
+        "findspot": {
+          "text": "西ノ丸西堀・北条丸西堀の水を含む区画。個体別の割当ては不明。",
+          "reference_ids": [
+            "R01"
+          ]
+        },
+        "original_installation": null
+      },
+      "condition": {
+        "text": "水を含む区画での出土との記載。個体の保存処理・残存率は未確認。",
+        "reference_ids": [
+          "R01"
+        ]
+      },
+      "facts": [
+        {
+          "id": "F01",
+          "kind": "summary",
+          "text": "西ノ丸西堀・北条丸西堀の水を含んだ区画から、柱などの建築部材が出土したと記載される。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "source_interpretations": [
+        {
+          "id": "I01",
+          "attributed_to": "三島市",
+          "text": "出土木材を柱等の建築部材と解釈している。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "measurements": [],
+      "references": [
+        {
+          "id": "R01",
+          "source_id": "SRC-0002",
+          "location_id": "L02",
+          "source_locator": "3.発掘調査の成果 > 出土遺物 最終段落",
+          "source_location_sha256": "0a5333fe05d7e47a1dd300c9f8d9e9795b4560a3d5160649cb2d6b69261416e4",
+          "printed_pages": [],
+          "pdf_pages": [],
+          "figures": [],
+          "tables": [],
+          "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+          "source_file_sha256": null,
+          "text_status": "checked",
+          "figure_status": "not_checked",
+          "method": "webpage_text",
+          "checked_at": "2026-11-07",
+          "checked_scope": "公式Web本文の指定節を再取得・再読。掲載写真と個体番号は未確認。"
+        }
+      ],
+      "verification": {
+        "status": "partial_checked",
+        "meaning": "reported_observation_not_historical_proof"
+      },
+      "relations": [
+        {
+          "type": "overlap_candidate",
+          "target_id": "OBS-0005",
+          "reason": "西ノ丸建築材を含む可能性。個体同定はしていない。"
+        }
+      ],
+      "unknowns": [
+        "個体番号・数量・寸法・樹種・加工痕・元設置場所は未確認。",
+        "OBS-0005の西ノ丸出土建築材と重複・包含する可能性を未解決のまま保持。"
+      ],
+      "notes": [
+        "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+      ]
+    }
+  },
+  {
+    "name": "OBS-0005.json",
+    "record": {
+      "schema_version": 1,
+      "id": "OBS-0005",
+      "name": "西ノ丸出土遺物一覧の建築材・枝類混合集合",
+      "site": "山中城",
+      "classification": "artifact",
+      "kind": "mixed_wood",
+      "scope": "collection",
+      "role": "primary",
+      "original_ids": [],
+      "position": {
+        "reported_location": {
+          "text": "表3-7の西ノ丸欄。個別の出土堀・座標へ拡張しない。",
+          "reference_ids": [
+            "R01"
+          ]
+        },
+        "findspot": null,
+        "original_installation": null
+      },
+      "condition": null,
+      "facts": [
+        {
+          "id": "F01",
+          "kind": "summary",
+          "text": "表3-7の西ノ丸欄は出土遺物として建築材と枝類を掲載する。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "source_interpretations": [
+        {
+          "id": "I01",
+          "attributed_to": "三島市教育委員会",
+          "text": "原表記は「建築材（柱材ヵ）、枝類（柵材ヵ）」。用途の留保「ヵ」を保持する。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "measurements": [],
+      "references": [
+        {
+          "id": "R01",
+          "source_id": "SRC-0001",
+          "location_id": "L03",
+          "source_locator": "印刷p66 / PDF74頁 表3-7 西ノ丸・西木戸",
+          "source_location_sha256": "e9ba3d61893d3d02ffb88a2a36adbf45a66b1ad462a6c3651de0d7d3f548938a",
+          "printed_pages": [
+            "66"
+          ],
+          "pdf_pages": [
+            74
+          ],
+          "figures": [],
+          "tables": [
+            "3-7"
+          ],
+          "evidence_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+          "source_file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+          "text_status": "checked",
+          "figure_status": "not_checked",
+          "method": "pdf_text_and_page_image",
+          "checked_at": "2026-11-07",
+          "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+        }
+      ],
+      "verification": {
+        "status": "partial_checked",
+        "meaning": "reported_observation_not_historical_proof"
+      },
+      "relations": [
+        {
+          "type": "overlap_candidate",
+          "target_id": "OBS-0003",
+          "reason": "枝類と小径木の対応候補。"
+        },
+        {
+          "type": "overlap_candidate",
+          "target_id": "OBS-0004",
+          "reason": "建築材集合の対応候補。"
+        }
+      ],
+      "unknowns": [
+        "混合集合であり、建築材・枝類の各数量・個体番号は未確認。",
+        "「柱材ヵ」「柵材ヵ」は用途候補であって確定用途ではない。",
+        "元設置場所、寸法、Web側集合との対応は未確認。"
+      ],
+      "notes": [
+        "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+      ]
+    }
+  },
+  {
+    "name": "OBS-0006.json",
+    "record": {
+      "schema_version": 1,
+      "id": "OBS-0006",
+      "name": "第65図の一列19柱穴集合",
+      "site": "田中城（熊本県和水町）",
+      "classification": "feature",
+      "kind": "postholes",
+      "scope": "collection",
+      "role": "comparison",
+      "original_ids": [
+        {
+          "value": "P1",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P2",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P3",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P4",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P5",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P6",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P7",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P8",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P9",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P10",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P11",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P12",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P13",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P14",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P15",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P16",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P17",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P18",
+          "reference_ids": [
+            "R02"
+          ]
+        },
+        {
+          "value": "P19",
+          "reference_ids": [
+            "R02"
+          ]
+        }
+      ],
+      "position": {
+        "reported_location": {
+          "text": "当該調査区中央付近。第65図の堀跡・柵列配置を参照。確定した郭番号・GIS座標には変換していない。",
+          "reference_ids": [
+            "R01",
+            "R02"
+          ]
+        },
+        "findspot": null,
+        "original_installation": null
+      },
+      "condition": {
+        "text": "深さは検出遺構の残存深さの報告値。",
+        "reference_ids": [
+          "R01"
+        ]
+      },
+      "facts": [
+        {
+          "id": "F01",
+          "kind": "summary",
+          "text": "調査区中央付近で一列に並ぶ19個の柱穴を検出したと報告される。",
+          "reference_ids": [
+            "R01"
+          ]
+        },
+        {
+          "id": "F02",
+          "kind": "summary",
+          "text": "第65図はP1〜P19を表示する。2m尺度を確認したが図から独自採寸していない。",
+          "reference_ids": [
+            "R02"
+          ]
+        }
+      ],
+      "source_interpretations": [
+        {
+          "id": "I01",
+          "attributed_to": "三加和町教育委員会",
+          "text": "報告書の見出しと本文は当該列を「柵列」とする。",
+          "reference_ids": [
+            "R01"
+          ]
+        }
+      ],
+      "measurements": [
+        {
+          "id": "M01",
+          "name": "柱穴数",
+          "target": "当該柵列の検出柱穴",
+          "basis": "reported",
+          "statistic": "single",
+          "value": 12,
+          "lower": null,
+          "upper": null,
+          "unit": "count",
+          "original_text": "12",
+          "original_unit": "count",
+          "original_value": 12,
+          "original_lower": null,
+          "original_upper": null,
+          "reported_scope": "p125の当該1列の総数",
+          "reference_ids": [
+            "R01"
+          ],
+          "method": null,
+          "interpretation_id": null
+        },
+        {
+          "id": "M02",
+          "name": "柱穴間隔",
+          "target": "報告の柱穴間隔。芯々/縁間の定義未確認",
+          "basis": "reported",
+          "statistic": "range",
+          "value": null,
+          "lower": 50,
+          "upper": 70,
+          "unit": "cm",
+          "original_text": "50〜70cm",
+          "original_unit": "cm",
+          "original_value": null,
+          "original_lower": 50,
+          "original_upper": 70,
+          "reported_scope": "p125の列に関する範囲。個体対別値ではない",
+          "reference_ids": [
+            "R01"
+          ],
+          "method": null,
+          "interpretation_id": null
+        },
+        {
+          "id": "M03",
+          "name": "平均柱穴間隔",
+          "target": "報告の柱穴間隔",
+          "basis": "reported",
+          "statistic": "mean",
+          "value": 58.6,
+          "lower": null,
+          "upper": null,
+          "unit": "cm",
+          "original_text": "平均58.6cm",
+          "original_unit": "cm",
+          "original_value": 58.6,
+          "original_lower": null,
+          "original_upper": null,
+          "reported_scope": "p125の報告平均。独自再計算ではない",
+          "reference_ids": [
+            "R01"
+          ],
+          "method": null,
+          "interpretation_id": null
+        },
+        {
+          "id": "M04",
+          "name": "残存深さ",
+          "target": "検出柱穴の残存深さ",
+          "basis": "reported",
+          "statistic": "range",
+          "value": null,
+          "lower": 4.9,
+          "upper": 27.7,
+          "unit": "cm",
+          "original_text": "4.9cm〜27.7cm",
+          "original_unit": "cm",
+          "original_value": null,
+          "original_lower": 4.9,
+          "original_upper": 27.7,
+          "reported_scope": "p125の最小P16と最大P3。元の根入れ深さではない",
+          "reference_ids": [
+            "R01"
+          ],
+          "method": null,
+          "interpretation_id": null
+        },
+        {
+          "id": "M05",
+          "name": "平均残存深さ",
+          "target": "検出柱穴の残存深さ",
+          "basis": "reported",
+          "statistic": "mean",
+          "value": 12,
+          "lower": null,
+          "upper": null,
+          "unit": "cm",
+          "original_text": "平均12.0cm",
+          "original_unit": "cm",
+          "original_value": 12,
+          "original_lower": null,
+          "original_upper": null,
+          "reported_scope": "p125の報告平均",
+          "reference_ids": [
+            "R01"
+          ],
+          "method": null,
+          "interpretation_id": null
+        }
+      ],
+      "references": [
+        {
+          "id": "R01",
+          "source_id": "SRC-0008",
+          "location_id": "L01",
+          "source_locator": "印刷p125 / PDF149頁 1.検出遺構(1)柵列",
+          "source_location_sha256": "3dff9e33225796a3e00e2dfa0dfa1681010a7f652a71f4aff010d80c20d06ec1",
+          "printed_pages": [
+            "125"
+          ],
+          "pdf_pages": [
+            149
+          ],
+          "figures": [],
+          "tables": [],
+          "evidence_url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+          "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+          "text_status": "checked",
+          "figure_status": "not_checked",
+          "method": "pdf_text_and_page_image",
+          "checked_at": "2026-11-07",
+          "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+        },
+        {
+          "id": "R02",
+          "source_id": "SRC-0008",
+          "location_id": "L02",
+          "source_locator": "第65図 印刷p122 / PDF146頁",
+          "source_location_sha256": "9963c4bef951f0829d29e4b6307bf59bfb09fe5310e6f0b081fd82d9582cb878",
+          "printed_pages": [
+            "122"
+          ],
+          "pdf_pages": [
+            146
+          ],
+          "figures": [
+            "65"
+          ],
+          "tables": [],
+          "evidence_url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+          "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+          "text_status": "checked",
+          "figure_status": "checked",
+          "method": "pdf_text_and_page_image",
+          "checked_at": "2026-11-07",
+          "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+        }
+      ],
+      "verification": {
+        "status": "partial_checked",
+        "meaning": "reported_observation_not_historical_proof"
+      },
+      "relations": [
+        {
+          "type": "comparison",
+          "target_id": "OBS-0002",
+          "reason": "別城郭の柱穴列比較。山中城の数量・寸法根拠ではない。"
+        }
+      ],
+      "unknowns": [
+        "個体ごとの全測定値・残存状態は未登録。19件の個別レコードを生成していない。",
+        "報告の「間隔」が芯々か縁間かは該当本文で定義を確認できない。",
+        "当初の柱根入れ深さ・地上高・木材寸法は確定できない。",
+        "全本文・全図版・現地再測量は未実施。",
+        "周囲の土塁有無は報告でも未確認。山中城へ数値転用しない。"
+      ],
+      "notes": [
+        "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+      ]
+    }
+  }
+]

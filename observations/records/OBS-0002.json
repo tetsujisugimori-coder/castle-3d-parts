@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "id": "OBS-0002",
+  "name": "西櫓・本丸の土塁上柱穴配列",
+  "site": "山中城",
+  "classification": "feature",
+  "kind": "postholes",
+  "scope": "collection",
+  "role": "primary",
+  "original_ids": [],
+  "position": {
+    "reported_location": {
+      "text": "西櫓・本丸の土塁上。二地点をまとめて述べる資料上の集合。",
+      "reference_ids": [
+        "R01"
+      ]
+    },
+    "findspot": null,
+    "original_installation": null
+  },
+  "condition": null,
+  "facts": [
+    {
+      "id": "F01",
+      "kind": "summary",
+      "text": "西櫓と本丸の土塁上で一定の間隔を置く柱穴が検出されたと記載される。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "source_interpretations": [
+    {
+      "id": "I01",
+      "attributed_to": "三島市",
+      "text": "柱穴の配列から土塁上の板塀の存在を推定している。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "measurements": [],
+  "references": [
+    {
+      "id": "R01",
+      "source_id": "SRC-0002",
+      "location_id": "L01",
+      "source_locator": "3.発掘調査の成果 > 土塁",
+      "source_location_sha256": "e0b86ead896adc6d69c897a3fb552513f627228d943b52d1230409808877f5bd",
+      "printed_pages": [],
+      "pdf_pages": [],
+      "figures": [],
+      "tables": [],
+      "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+      "source_file_sha256": null,
+      "text_status": "checked",
+      "figure_status": "not_checked",
+      "method": "webpage_text",
+      "checked_at": "2026-11-07",
+      "checked_scope": "公式Web本文の指定節を再取得・再読。掲載写真と個体番号は未確認。"
+    }
+  ],
+  "verification": {
+    "status": "partial_checked",
+    "meaning": "reported_observation_not_historical_proof"
+  },
+  "relations": [
+    {
+      "type": "overlap_candidate",
+      "target_id": "OBS-0001",
+      "reason": "整備記録側の集合と重複・包含する可能性。"
+    }
+  ],
+  "unknowns": [
+    "柱穴間隔の数値、個体番号、数量、各地点の内訳は未確認。",
+    "原発掘報告・遺構図への対応は未確認。",
+    "板塀の高さ・材質・構造は確定しない。"
+  ],
+  "notes": [
+    "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+  ]
+}

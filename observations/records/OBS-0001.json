@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "OBS-0001",
+  "name": "過去の整備記録に言及された土塁上柱穴集合",
+  "site": "山中城",
+  "classification": "feature",
+  "kind": "postholes",
+  "scope": "collection",
+  "role": "primary",
+  "original_ids": [],
+  "position": {
+    "reported_location": {
+      "text": "山中城の土塁上。個別位置・遺構番号はこの箇所では不明。",
+      "reference_ids": [
+        "R01"
+      ]
+    },
+    "findspot": null,
+    "original_installation": null
+  },
+  "condition": null,
+  "facts": [
+    {
+      "id": "F01",
+      "kind": "summary",
+      "text": "土塁上で検出された柱穴位置を当初の整備でツツジにより表示し、その表示植栽を後に撤去したと記載される。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "source_interpretations": [
+    {
+      "id": "I01",
+      "attributed_to": "三島市教育委員会",
+      "text": "柱穴は「柵や塀」の柱穴として説明される。用途呼称と個々の構造復元を区別する。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "measurements": [],
+  "references": [
+    {
+      "id": "R01",
+      "source_id": "SRC-0001",
+      "location_id": "L01",
+      "source_locator": "印刷p110 / PDF118頁 第5章2(1)①",
+      "source_location_sha256": "ba276a0d2e995b550d48c1a4dd27c6eba313c5151a6ba132c4f26e31aa51c74d",
+      "printed_pages": [
+        "110"
+      ],
+      "pdf_pages": [
+        118
+      ],
+      "figures": [],
+      "tables": [],
+      "evidence_url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+      "source_file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+      "text_status": "checked",
+      "figure_status": "not_checked",
+      "method": "pdf_text_and_page_image",
+      "checked_at": "2026-11-07",
+      "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+    }
+  ],
+  "verification": {
+    "status": "partial_checked",
+    "meaning": "reported_observation_not_historical_proof"
+  },
+  "relations": [
+    {
+      "type": "overlap_candidate",
+      "target_id": "OBS-0002",
+      "reason": "同城の土塁上柱穴への言及。原報告・位置対応未確認。"
+    }
+  ],
+  "unknowns": [
+    "柱穴の数量・寸法・個体番号・図面座標は未確認。",
+    "撤去の記述はツツジ表示であり、遺構の撤去を示すものではない。",
+    "OBS-0002との同一性・包含範囲は未確定。"
+  ],
+  "notes": [
+    "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+  ]
+}

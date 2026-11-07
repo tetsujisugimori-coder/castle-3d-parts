@@ -1,0 +1,122 @@
+{
+  "executed_at": "2026-11-07T19:02:00.181Z",
+  "classification": "independent new execution",
+  "positiveOld": true,
+  "positiveCurrent": true,
+  "cases": [
+    {
+      "name": "unit_masquerade",
+      "exactOld": {
+        "accepted": true,
+        "error": null
+      },
+      "exactNew": {
+        "accepted": false,
+        "error": "MISSING:assertion_id $.measurements[0]"
+      },
+      "upgradedNew": {
+        "accepted": false,
+        "error": "ASSERTION_VALUE_UNIT OBS-0006"
+      }
+    },
+    {
+      "name": "quantity_from_depth",
+      "exactOld": {
+        "accepted": true,
+        "error": null
+      },
+      "exactNew": {
+        "accepted": false,
+        "error": "MISSING:assertion_id $.measurements[0]"
+      },
+      "upgradedNew": {
+        "accepted": false,
+        "error": "ASSERTION_MEANING OBS-0006"
+      }
+    },
+    {
+      "name": "reported_spacing_to_depth",
+      "exactOld": {
+        "accepted": true,
+        "error": null
+      },
+      "exactNew": {
+        "accepted": false,
+        "error": "MISSING:assertion_id $.measurements[0]"
+      },
+      "upgradedNew": {
+        "accepted": false,
+        "error": "ASSERTION_MEANING OBS-0006"
+      }
+    },
+    {
+      "name": "fake_id_number",
+      "exactOld": {
+        "accepted": true,
+        "error": null
+      },
+      "exactNew": {
+        "accepted": false,
+        "error": "UNSUPPORTED_ORIGINAL_ID OBS-0006"
+      },
+      "upgradedNew": {
+        "accepted": false,
+        "error": "UNSUPPORTED_ORIGINAL_ID OBS-0006"
+      }
+    },
+    {
+      "name": "fake_id_noun",
+      "exactOld": {
+        "accepted": true,
+        "error": null
+      },
+      "exactNew": {
+        "accepted": false,
+        "error": "UNSUPPORTED_ORIGINAL_ID OBS-0006"
+      },
+      "upgradedNew": {
+        "accepted": false,
+        "error": "UNSUPPORTED_ORIGINAL_ID OBS-0006"
+      }
+    }
+  ],
+  "additional": [
+    {
+      "name": "cm-to-m preserves source values",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "cm-to-mm preserves source values",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "basis cannot bypass contract",
+      "accepted": false,
+      "error": "UNSUPPORTED_MEASUREMENT_BASIS OBS-0006"
+    },
+    {
+      "name": "wrong assertion ID",
+      "accepted": false,
+      "error": "ASSERTION_MEANING OBS-0006"
+    },
+    {
+      "name": "original ID needs checked figure",
+      "accepted": false,
+      "error": "UNSUPPORTED_ORIGINAL_ID OBS-0006"
+    },
+    {
+      "name": "borrowed value cannot gain source identity",
+      "accepted": false,
+      "error": "UNSUPPORTED_ORIGINAL_ID OBS-0001"
+    },
+    {
+      "name": "unknowns false filter can have a match",
+      "accepted": true,
+      "error": null
+    }
+  ],
+  "independentContractExpectations": "PASS",
+  "sourceSha256": "b3fbdf618232244a105f49b47d5dcc693e06d2817d2ca159c8b5370684edb6c9"
+}

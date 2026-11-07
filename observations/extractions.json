@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "review_note": "田中城PDF p125（PDF149）本文、p122（PDF146）第65図を実読・画像照合した第2層抽出契約。機械推論ではない。変更には出典再確認・独立レビューが必要。",
+  "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+  "checked_at": "2026-11-07",
+  "measurements": [
+    {
+      "id": "SRC-0008/L01/M01",
+      "source_id": "SRC-0008",
+      "location_id": "L01",
+      "source_location_sha256": "3dff9e33225796a3e00e2dfa0dfa1681010a7f652a71f4aff010d80c20d06ec1",
+      "name": "柱穴数",
+      "target": "当該柵列の検出柱穴",
+      "statistic": "single",
+      "unit": "count",
+      "value": 19,
+      "lower": null,
+      "upper": null,
+      "original_text": "19個の柱穴",
+      "reported_scope": "p125の当該1列の総数"
+    },
+    {
+      "id": "SRC-0008/L01/M02",
+      "source_id": "SRC-0008",
+      "location_id": "L01",
+      "source_location_sha256": "3dff9e33225796a3e00e2dfa0dfa1681010a7f652a71f4aff010d80c20d06ec1",
+      "name": "柱穴間隔",
+      "target": "報告の柱穴間隔。芯々/縁間の定義未確認",
+      "statistic": "range",
+      "unit": "cm",
+      "value": null,
+      "lower": 50,
+      "upper": 70,
+      "original_text": "50〜70cm",
+      "reported_scope": "p125の列に関する範囲。個体対別値ではない"
+    },
+    {
+      "id": "SRC-0008/L01/M03",
+      "source_id": "SRC-0008",
+      "location_id": "L01",
+      "source_location_sha256": "3dff9e33225796a3e00e2dfa0dfa1681010a7f652a71f4aff010d80c20d06ec1",
+      "name": "平均柱穴間隔",
+      "target": "報告の柱穴間隔",
+      "statistic": "mean",
+      "unit": "cm",
+      "value": 58.6,
+      "lower": null,
+      "upper": null,
+      "original_text": "平均58.6cm",
+      "reported_scope": "p125の報告平均。独自再計算ではない"
+    },
+    {
+      "id": "SRC-0008/L01/M04",
+      "source_id": "SRC-0008",
+      "location_id": "L01",
+      "source_location_sha256": "3dff9e33225796a3e00e2dfa0dfa1681010a7f652a71f4aff010d80c20d06ec1",
+      "name": "残存深さ",
+      "target": "検出柱穴の残存深さ",
+      "statistic": "range",
+      "unit": "cm",
+      "value": null,
+      "lower": 4.9,
+      "upper": 27.7,
+      "original_text": "4.9cm〜27.7cm",
+      "reported_scope": "p125の最小P16と最大P3。元の根入れ深さではない"
+    },
+    {
+      "id": "SRC-0008/L01/M05",
+      "source_id": "SRC-0008",
+      "location_id": "L01",
+      "source_location_sha256": "3dff9e33225796a3e00e2dfa0dfa1681010a7f652a71f4aff010d80c20d06ec1",
+      "name": "平均残存深さ",
+      "target": "検出柱穴の残存深さ",
+      "statistic": "mean",
+      "unit": "cm",
+      "value": 12.0,
+      "lower": null,
+      "upper": null,
+      "original_text": "平均12.0cm",
+      "reported_scope": "p125の報告平均"
+    }
+  ],
+  "identifiers": [
+    {
+      "source_id": "SRC-0008",
+      "location_id": "L02",
+      "source_location_sha256": "9963c4bef951f0829d29e4b6307bf59bfb09fe5310e6f0b081fd82d9582cb878",
+      "values": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "P18",
+        "P19"
+      ]
+    }
+  ]
+}

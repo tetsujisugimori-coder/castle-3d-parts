@@ -67,3 +67,7 @@ GitHub運用はIssue → branch → Draft PR → 独立レビュー → merge。
 - `node --test` : 既存試作と台帳の正対照・負対照
 
 調査結果・原本未入手・版差は [第1期記録](docs/source-register-stage1.md) に記載。PDFや図版は再配布しない。
+
+## 城郭研究 遺構・遺物観察台帳（第2層）
+
+[観察一覧](observations/index.md) / [登録・CLI抽出](observations/README.md) / [設計と確認範囲](docs/observation-register-stage2.md)。初期6集合記録。第1層10資料を参照し、報告事項と報告者解釈、出土場所と元設置候補を分離する。研究確認はPARTIALで、木柵v0やCAD寸法の史実性を承認しない。`node scripts/observation-register.mjs` で検証する。第1層資料の「第2層未実装」は当時の記録として保持する。
