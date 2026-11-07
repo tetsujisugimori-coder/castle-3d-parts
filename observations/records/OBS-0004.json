@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "OBS-0004",
+  "name": "西ノ丸西堀・北条丸西堀の出土建築部材集合",
+  "site": "山中城",
+  "classification": "artifact",
+  "kind": "architectural_wood",
+  "scope": "collection",
+  "role": "primary",
+  "original_ids": [],
+  "position": {
+    "reported_location": null,
+    "findspot": {
+      "text": "西ノ丸西堀・北条丸西堀の水を含む区画。個体別の割当ては不明。",
+      "reference_ids": [
+        "R01"
+      ]
+    },
+    "original_installation": null
+  },
+  "condition": {
+    "text": "水を含む区画での出土との記載。個体の保存処理・残存率は未確認。",
+    "reference_ids": [
+      "R01"
+    ]
+  },
+  "facts": [
+    {
+      "id": "F01",
+      "kind": "summary",
+      "text": "西ノ丸西堀・北条丸西堀の水を含んだ区画から、柱などの建築部材が出土したと記載される。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "source_interpretations": [
+    {
+      "id": "I01",
+      "attributed_to": "三島市",
+      "text": "出土木材を柱等の建築部材と解釈している。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "measurements": [],
+  "references": [
+    {
+      "id": "R01",
+      "source_id": "SRC-0002",
+      "location_id": "L02",
+      "source_locator": "3.発掘調査の成果 > 出土遺物 最終段落",
+      "source_location_sha256": "0a5333fe05d7e47a1dd300c9f8d9e9795b4560a3d5160649cb2d6b69261416e4",
+      "printed_pages": [],
+      "pdf_pages": [],
+      "figures": [],
+      "tables": [],
+      "evidence_url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+      "source_file_sha256": null,
+      "text_status": "checked",
+      "figure_status": "not_checked",
+      "method": "webpage_text",
+      "checked_at": "2026-11-07",
+      "checked_scope": "公式Web本文の指定節を再取得・再読。掲載写真と個体番号は未確認。"
+    }
+  ],
+  "verification": {
+    "status": "partial_checked",
+    "meaning": "reported_observation_not_historical_proof"
+  },
+  "relations": [
+    {
+      "type": "overlap_candidate",
+      "target_id": "OBS-0005",
+      "reason": "西ノ丸建築材を含む可能性。個体同定はしていない。"
+    }
+  ],
+  "unknowns": [
+    "個体番号・数量・寸法・樹種・加工痕・元設置場所は未確認。",
+    "OBS-0005の西ノ丸出土建築材と重複・包含する可能性を未解決のまま保持。"
+  ],
+  "notes": [
+    "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+  ]
+}

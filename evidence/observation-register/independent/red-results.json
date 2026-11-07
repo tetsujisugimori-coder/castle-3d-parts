@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-07T18:59:16.115Z",
+  "classification": "independent new execution against uncommitted implementation",
+  "head": "742567b505240934d851c1e2c33a47cc08051470",
+  "oldScriptSha256": "3ca0f3efbd781380395d90e9262c74d8d22ab6355047831e3bcee9016286be5f",
+  "cases": [
+    {
+      "name": "unit_masquerade",
+      "oldAccepted": true,
+      "error": null
+    },
+    {
+      "name": "quantity_from_depth",
+      "oldAccepted": true,
+      "error": null
+    },
+    {
+      "name": "reported_spacing_to_depth",
+      "oldAccepted": true,
+      "error": null
+    },
+    {
+      "name": "fake_id_number",
+      "oldAccepted": true,
+      "error": null
+    },
+    {
+      "name": "fake_id_noun",
+      "oldAccepted": true,
+      "error": null
+    }
+  ]
+}

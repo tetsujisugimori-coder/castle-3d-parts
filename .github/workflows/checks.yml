@@ -11,7 +11,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: node scripts/source-register.mjs
-      - run: node --test
-      - run: node scripts/build-site.mjs
+      - run: node scripts/observation-evidence.mjs evidence-run
       - run: test -s dist/index.html && test -s dist/data/wooden-palisade-v0.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: observation-register-${{ github.event.pull_request.head.sha || github.sha }}
+          path: evidence-run/
+          if-no-files-found: error

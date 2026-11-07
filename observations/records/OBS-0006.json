@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "id": "OBS-0006",
+  "name": "第65図の一列19柱穴集合",
+  "site": "田中城（熊本県和水町）",
+  "classification": "feature",
+  "kind": "postholes",
+  "scope": "collection",
+  "role": "comparison",
+  "original_ids": [
+    {
+      "value": "P1",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P2",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P3",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P4",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P5",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P6",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P7",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P8",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P9",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P10",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P11",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P12",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P13",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P14",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P15",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P16",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P17",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P18",
+      "reference_ids": [
+        "R02"
+      ]
+    },
+    {
+      "value": "P19",
+      "reference_ids": [
+        "R02"
+      ]
+    }
+  ],
+  "position": {
+    "reported_location": {
+      "text": "当該調査区中央付近。第65図の堀跡・柵列配置を参照。確定した郭番号・GIS座標には変換していない。",
+      "reference_ids": [
+        "R01",
+        "R02"
+      ]
+    },
+    "findspot": null,
+    "original_installation": null
+  },
+  "condition": {
+    "text": "深さは検出遺構の残存深さの報告値。",
+    "reference_ids": [
+      "R01"
+    ]
+  },
+  "facts": [
+    {
+      "id": "F01",
+      "kind": "summary",
+      "text": "調査区中央付近で一列に並ぶ19個の柱穴を検出したと報告される。",
+      "reference_ids": [
+        "R01"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "summary",
+      "text": "第65図はP1〜P19を表示する。2m尺度を確認したが図から独自採寸していない。",
+      "reference_ids": [
+        "R02"
+      ]
+    }
+  ],
+  "source_interpretations": [
+    {
+      "id": "I01",
+      "attributed_to": "三加和町教育委員会",
+      "text": "報告書の見出しと本文は当該列を「柵列」とする。",
+      "reference_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "id": "M01",
+      "name": "柱穴数",
+      "target": "当該柵列の検出柱穴",
+      "basis": "reported",
+      "statistic": "single",
+      "value": 19,
+      "lower": null,
+      "upper": null,
+      "unit": "count",
+      "original_text": "19個の柱穴",
+      "original_unit": "count",
+      "original_value": 19,
+      "original_lower": null,
+      "original_upper": null,
+      "reported_scope": "p125の当該1列の総数",
+      "reference_ids": [
+        "R01"
+      ],
+      "method": null,
+      "interpretation_id": null,
+      "assertion_id": "SRC-0008/L01/M01"
+    },
+    {
+      "id": "M02",
+      "name": "柱穴間隔",
+      "target": "報告の柱穴間隔。芯々/縁間の定義未確認",
+      "basis": "reported",
+      "statistic": "range",
+      "value": null,
+      "lower": 50,
+      "upper": 70,
+      "unit": "cm",
+      "original_text": "50〜70cm",
+      "original_unit": "cm",
+      "original_value": null,
+      "original_lower": 50,
+      "original_upper": 70,
+      "reported_scope": "p125の列に関する範囲。個体対別値ではない",
+      "reference_ids": [
+        "R01"
+      ],
+      "method": null,
+      "interpretation_id": null,
+      "assertion_id": "SRC-0008/L01/M02"
+    },
+    {
+      "id": "M03",
+      "name": "平均柱穴間隔",
+      "target": "報告の柱穴間隔",
+      "basis": "reported",
+      "statistic": "mean",
+      "value": 58.6,
+      "lower": null,
+      "upper": null,
+      "unit": "cm",
+      "original_text": "平均58.6cm",
+      "original_unit": "cm",
+      "original_value": 58.6,
+      "original_lower": null,
+      "original_upper": null,
+      "reported_scope": "p125の報告平均。独自再計算ではない",
+      "reference_ids": [
+        "R01"
+      ],
+      "method": null,
+      "interpretation_id": null,
+      "assertion_id": "SRC-0008/L01/M03"
+    },
+    {
+      "id": "M04",
+      "name": "残存深さ",
+      "target": "検出柱穴の残存深さ",
+      "basis": "reported",
+      "statistic": "range",
+      "value": null,
+      "lower": 4.9,
+      "upper": 27.7,
+      "unit": "cm",
+      "original_text": "4.9cm〜27.7cm",
+      "original_unit": "cm",
+      "original_value": null,
+      "original_lower": 4.9,
+      "original_upper": 27.7,
+      "reported_scope": "p125の最小P16と最大P3。元の根入れ深さではない",
+      "reference_ids": [
+        "R01"
+      ],
+      "method": null,
+      "interpretation_id": null,
+      "assertion_id": "SRC-0008/L01/M04"
+    },
+    {
+      "id": "M05",
+      "name": "平均残存深さ",
+      "target": "検出柱穴の残存深さ",
+      "basis": "reported",
+      "statistic": "mean",
+      "value": 12.0,
+      "lower": null,
+      "upper": null,
+      "unit": "cm",
+      "original_text": "平均12.0cm",
+      "original_unit": "cm",
+      "original_value": 12.0,
+      "original_lower": null,
+      "original_upper": null,
+      "reported_scope": "p125の報告平均",
+      "reference_ids": [
+        "R01"
+      ],
+      "method": null,
+      "interpretation_id": null,
+      "assertion_id": "SRC-0008/L01/M05"
+    }
+  ],
+  "references": [
+    {
+      "id": "R01",
+      "source_id": "SRC-0008",
+      "location_id": "L01",
+      "source_locator": "印刷p125 / PDF149頁 1.検出遺構(1)柵列",
+      "source_location_sha256": "3dff9e33225796a3e00e2dfa0dfa1681010a7f652a71f4aff010d80c20d06ec1",
+      "printed_pages": [
+        "125"
+      ],
+      "pdf_pages": [
+        149
+      ],
+      "figures": [],
+      "tables": [],
+      "evidence_url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+      "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+      "text_status": "checked",
+      "figure_status": "not_checked",
+      "method": "pdf_text_and_page_image",
+      "checked_at": "2026-11-07",
+      "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+    },
+    {
+      "id": "R02",
+      "source_id": "SRC-0008",
+      "location_id": "L02",
+      "source_locator": "第65図 印刷p122 / PDF146頁",
+      "source_location_sha256": "9963c4bef951f0829d29e4b6307bf59bfb09fe5310e6f0b081fd82d9582cb878",
+      "printed_pages": [
+        "122"
+      ],
+      "pdf_pages": [
+        146
+      ],
+      "figures": [
+        "65"
+      ],
+      "tables": [],
+      "evidence_url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+      "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+      "text_status": "checked",
+      "figure_status": "checked",
+      "method": "pdf_text_and_page_image",
+      "checked_at": "2026-11-07",
+      "checked_scope": "本文の指定箇所を再読。PDFは既取得ファイルのSHAを照合し対象頁を画像で確認。全編・現地・原発掘資料の照合ではない。"
+    }
+  ],
+  "verification": {
+    "status": "partial_checked",
+    "meaning": "reported_observation_not_historical_proof"
+  },
+  "relations": [
+    {
+      "type": "comparison",
+      "target_id": "OBS-0002",
+      "reason": "別城郭の柱穴列比較。山中城の数量・寸法根拠ではない。"
+    }
+  ],
+  "unknowns": [
+    "個体ごとの全測定値・残存状態は未登録。19件の個別レコードを生成していない。",
+    "報告の「間隔」が芯々か縁間かは該当本文で定義を確認できない。",
+    "当初の柱根入れ深さ・地上高・木材寸法は確定できない。",
+    "全本文・全図版・現地再測量は未実施。",
+    "周囲の土塁有無は報告でも未確認。山中城へ数値転用しない。"
+  ],
+  "notes": [
+    "資料記載の追跡単位。集合間の重複・包含は未確定であり、レコード件数を個体数として加算しない。"
+  ]
+}

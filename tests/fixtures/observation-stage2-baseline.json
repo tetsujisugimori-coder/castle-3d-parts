@@ -1,0 +1,28 @@
+{
+  "base_head": "742567b505240934d851c1e2c33a47cc08051470",
+  "files": {
+    "cad/build_palisade.FCMacro": "112f53dbbb9ac61d8120100de5b29d5b70e501b5c37925ee1d8edd90509c8e3b",
+    "catalog/wooden-palisade-v0.json": "65f0b948edd837445708940d1ca9d9731a847f8b2441fc8386b24d01d2e6c118",
+    "scripts/build-site.mjs": "150749805ceb42e523f34b5b64f79a599354563a80a72a0e64a3045aa1dd4c15",
+    "scripts/source-register.mjs": "38f4cfab74afb4c507d3f192472ac639974015394ebe3942a643b566839e31ae",
+    "site/app.js": "0533c2199dde08fa044927270d9ca504bc58493a7fcf81b0c5e2666da01fbc2b",
+    "site/fence.mjs": "62a8cffedb812ab7601826a37a8091e1cc31fa4d2475e01303c541319a531e17",
+    "site/index.html": "599fbeab3701506172afd1434885022877ac47dc8b08187a2dc30f51a147503e",
+    "site/styles.css": "b49f665dd72096a261f8aed917ef14387336470114d7a649ca4e0c0ef8aebd2f",
+    "sources/README.md": "d64fd57459a2364ee5224e2de10d9191d308cadd12bb6f42312a6206e722a401",
+    "sources/index.md": "16dc700f317f75a34556921b37f46ea585bfbb9c1486356953e8f3ec61c0f334",
+    "sources/records/SRC-0001.json": "0c6d3c8399f3fc8a5be26ec79d8d965ec65d54c697ef41e3bad0e0430fda7d87",
+    "sources/records/SRC-0002.json": "0eb867c72851a90aea328c387af3ded82d8bbb32a99c332560606f4cf7a35eca",
+    "sources/records/SRC-0003.json": "3167fc971e294b4fc3d510ba3a7f88427c1ab0b3337ac11bfff18ebb23eb627a",
+    "sources/records/SRC-0004.json": "fc56d1e43612a8ff0d062a61aaba1509238020c6b80cc65ce4069780c2b8d802",
+    "sources/records/SRC-0005.json": "78acf50b3114461f6df71a67d407f97b3ce9576e396bc73aa7300737f9dc0fc0",
+    "sources/records/SRC-0006.json": "129a60f49decd93ed3c9649a3b7b7377a4aee8cf4fde6c85d1dc9e4b28678beb",
+    "sources/records/SRC-0007.json": "1c675a68f347cb2cd86333ef10c4c2291754edbf315665bbeda8680dd0220f48",
+    "sources/records/SRC-0008.json": "bed107c7f002a8106189f9bd748eaaf5150a6f72d46fd822c886bb8f146ba6bc",
+    "sources/records/SRC-0009.json": "91198a17c6e8cc0742988b114c81b837b2ff82482c38341cd00a00920300dc17",
+    "sources/records/SRC-0010.json": "016a9b6a92c6736d99b02bc192ac3b5b7ccb1c50cbfe5c1576338c44dd97962a",
+    "sources/schema/source.schema.json": "6ffed61e6a763a642918bb0ef2b31ed3968192a3c3764ae6baa4c0750de7eae6",
+    "tests/fence.test.mjs": "7761ad6e5944767f26b96ae357625a1c43c8f3876dcdfdd38daaf7617c4c34cc",
+    "tests/source-register.test.mjs": "8e0d34df9e206671430dc29b10f4e35085224d1453af7e2ca9438ab4289a5a5c"
+  }
+}
