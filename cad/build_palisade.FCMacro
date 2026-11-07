@@ -1,0 +1,39 @@
+# FreeCAD GUI macro. Stage 0: written but not executed.
+# Produces .FCStd and .step from the catalog parameters.
+import json
+from pathlib import Path
+import FreeCAD as App
+import Part
+
+root = Path(__file__).resolve().parent.parent
+data = json.loads((root / "catalog" / "wooden-palisade-v0.json").read_text(encoding="utf-8"))
+p = data["dimensions_m"]
+count = int(p["count"])
+height = float(p["height"])
+spacing = float(p["spacing"])
+width = float(p["post_width"])
+rails = int(p["rails"])
+if count < 2 or height <= 0 or spacing <= width or width <= 0 or rails < 0:
+    raise ValueError("invalid dimensions")
+full_width = (count - 1) * spacing + width
+tip_height = height * 0.14
+shaft_height = height - tip_height
+pieces = []
+for i in range(count):
+    x = (i - (count - 1) / 2) * spacing
+    pieces.append(Part.makeBox(width, shaft_height, width, App.Vector(x-width/2, 0, -width/2)))
+    pieces.append(Part.makeCone(width * 0.72, 0, tip_height, App.Vector(x, shaft_height, 0), App.Vector(0, 1, 0)))
+for i in range(rails):
+    y = height * (0.32 + (i + 1) * 0.42 / (rails + 1))
+    pieces.append(Part.makeBox(full_width, width * 0.56, width * 0.66,
+                               App.Vector(-full_width/2, y-width*0.28, -width*1.18)))
+doc = App.newDocument("WoodenPalisade")
+obj = doc.addObject("PartDesign::Feature", "Palisade")
+obj.Label = "木柵 v0 | 仮寸法"
+obj.Shape = Part.makeCompound(pieces)
+doc.recompute()
+outdir = root / "generated"
+outdir.mkdir(exist_ok=True)
+doc.saveAs(str(outdir / "wooden-palisade-v0.FCStd"))
+Part.export([obj], str(outdir / "wooden-palisade-v0.step"))
+print("Saved FreeCAD and STEP to:", outdir)

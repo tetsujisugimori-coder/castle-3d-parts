@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#161d1b">
+<meta name="description" content="戦国末期の木柵を想定した3D部品の試作。柱の高さ、間隔、本数を変更できます。">
+<title>木柵 No.001 | 城郭3D部品ライブラリ</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="importmap">
+{"imports":{
+"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+"three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="https://github.com/tetsujisugimori-coder/castle-3d-parts">城郭 / CASTLE 3D PARTS</a>
+  <span class="edition">PART 001 ・ PROTOTYPE 0.1</span>
+</header>
+<main>
+  <section class="intro" aria-labelledby="page-title">
+    <p class="eyebrow">戦国末期の防御施設 ・ 初期試作</p>
+    <h1 id="page-title">木柵 <small>WOODEN PALISADE</small></h1>
+    <p class="lead">一つの部品を、さまざまな寸法で。柱の数・高さ・間隔を変えて、城郭の構造を立体的に確かめるための試作です。</p>
+    <p class="warning"><span aria-hidden="true">◇</span> この模型の寸法と形状は仮設定です。山中城の史実として確認された復元ではありません。</p>
+  </section>
+  <div class="workbench">
+    <section class="viewer-panel" aria-labelledby="viewer-title">
+      <div class="panel-top"><h2 id="viewer-title">立体プレビュー</h2><span class="muted">DRAG 回転 / PINCH 拡大</span></div>
+      <div id="viewport" role="img" aria-label="木柵の3D模型。ドラッグで回転、ホイールまたはピンチで拡大縮小できます。">
+        <div id="loading">3D表示を準備中...</div>
+      </div>
+      <div class="viewer-footer">
+        <div><span class="meta-label">全幅</span><strong id="width-value">-- m</strong></div>
+        <div><span class="meta-label">柱高</span><strong id="height-value">-- m</strong></div>
+        <div><span class="meta-label">柱</span><strong id="count-value">-- 本</strong></div>
+      </div>
+    </section>
+    <section class="controls-panel" aria-labelledby="controls-title">
+      <div class="panel-top"><h2 id="controls-title">寸法を調整</h2><span class="muted">単位 m</span></div>
+      <p class="controls-intro">値を動かすと模型を再生成します。初期値は歴史的な測定値ではありません。</p>
+      <div class="control">
+        <div class="control-label"><label for="count">柱の本数</label><output id="count-out" for="count">5 本</output></div>
+        <input id="count" type="range" min="2" max="15" step="1" value="5">
+        <div class="bounds"><span>2本</span><span>15本</span></div>
+      </div>
+      <div class="control">
+        <div class="control-label"><label for="height">柱の高さ</label><output id="height-out" for="height">2.0 m</output></div>
+        <input id="height" type="range" min="0.6" max="4" step="0.1" value="2">
+        <div class="bounds"><span>0.6m</span><span>4.0m</span></div>
+      </div>
+      <div class="control">
+        <div class="control-label"><label for="spacing">柱の中心間隔</label><output id="spacing-out" for="spacing">1.2 m</output></div>
+        <input id="spacing" type="range" min="0.4" max="2.5" step="0.1" value="1.2">
+        <div class="bounds"><span>0.4m</span><span>2.5m</span></div>
+      </div>
+      <div class="control">
+        <div class="control-label"><label for="rails">横木の段数</label><output id="rails-out" for="rails">2 段</output></div>
+        <input id="rails" type="range" min="0" max="4" step="1" value="2">
+        <div class="bounds"><span>0段</span><span>4段</span></div>
+      </div>
+      <p class="fixed-note">柱の太さは試作中 0.15m に固定。全幅は両端を含む実寸です。</p>
+      <button id="reset" type="button">初期寸法に戻す</button>
+      <p id="status" class="screen-reader" role="status" aria-live="polite"></p>
+    </section>
+  </div>
+  <section class="research" aria-labelledby="research-title">
+    <div>
+      <p class="eyebrow">RESEARCH STATUS</p>
+      <h2 id="research-title">史料と模型を混同しない</h2>
+      <p>この部品は操作と寸法の実証が目的です。今後、同時代の城郭資料に照らし、形状・寸法・設置地点の根拠を別々に積み上げます。</p>
+    </div>
+    <dl class="evidence">
+      <div><dt>山中城における存在</dt><dd>未確認</dd></div>
+      <div><dt>形状・寸法</dt><dd>試作上の仮設定</dd></div>
+      <div><dt>同時代の他城類例</dt><dd>未調査</dd></div>
+      <div><dt>造形上の補完</dt><dd>尖頭・横木・材色・地面</dd></div>
+    </dl>
+  </section>
+</main>
+<footer>CASTLE 3D PARTS / 部品ごとの根拠とバージョンを管理する<br>
+<a href="https://github.com/tetsujisugimori-coder/castle-3d-parts">GitHub repository</a></footer>
+<noscript>この3DビューにはJavaScriptが必要です。</noscript>
+</body>
+</html>

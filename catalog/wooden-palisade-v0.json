@@ -1,0 +1,35 @@
+{
+  "id": "wooden-palisade-late-sengoku-v0",
+  "version": "0.1.0",
+  "display_name": "木柵（戦国末期・試作）",
+  "period": {"label": "戦国末期", "reference_year": 1590},
+  "dimensions_m": {
+    "count": 5,
+    "height": 2.0,
+    "spacing": 1.2,
+    "post_width": 0.15,
+    "rails": 2
+  },
+  "evidence": {
+    "existence_at_yamanaka": {
+      "status": "unverified",
+      "sources": [],
+      "note": "山中城の該当地点にこの形式の木柵があったか未確認"
+    },
+    "shape_and_dimensions": {
+      "status": "hypothetical",
+      "sources": [],
+      "note": "高さ、柱間隔、柱数、横木数はいずれも表示・生成の試験値"
+    },
+    "analogues_at_other_castles": {
+      "status": "not_researched",
+      "sources": [],
+      "note": "年代の近い他城の類例照合は未実施"
+    },
+    "presentation": {
+      "status": "illustrative",
+      "note": "尖頭柱、二段横木、材色と地面は視認性のための表現"
+    }
+  },
+  "usage": "デモ用。歴史的妥当性を示すものではない。"
+}
