@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "anchors": [
+    {
+      "id": "E01",
+      "source_id": "SRC-0001",
+      "site": "山中城",
+      "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+      "printed_page": "110",
+      "pdf_page": 118,
+      "locator": "印刷p110 / PDF118頁",
+      "source_file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+      "text_checked": true,
+      "figure_checked": false,
+      "original_report_checked": false,
+      "quote": "土塁上で検出された柵や塀の柱穴位置",
+      "summary": "旧ツツジ表示撤去の記載を再確認。遺構撤去とは解釈しない。",
+      "measurements": []
+    },
+    {
+      "id": "E02",
+      "source_id": "SRC-0001",
+      "site": "山中城",
+      "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+      "printed_page": "68",
+      "pdf_page": 76,
+      "locator": "印刷p68 / PDF76頁",
+      "source_file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+      "text_checked": true,
+      "figure_checked": false,
+      "original_report_checked": false,
+      "quote": "径約30cmの柱穴",
+      "summary": "西櫓・本丸の土塁上に一定間隔の柱穴。板塀あるいは柵という用途は報告者推定。",
+      "measurements": [
+        {
+          "id": "M01",
+          "measurement_target": "posthole_diameter",
+          "value": 30,
+          "unit": "cm",
+          "qualifier": "approximately",
+          "original_label": null,
+          "method": null
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "source_id": "SRC-0002",
+      "site": "山中城",
+      "url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+      "printed_page": null,
+      "pdf_page": null,
+      "locator": "3.発掘調査の成果",
+      "source_file_sha256": null,
+      "text_checked": true,
+      "figure_checked": false,
+      "original_report_checked": false,
+      "quote": "小径木を使用した柵の部材",
+      "summary": "市解説の小径木と建築部材。原報告での個体・寸法・樹種・加工痕の同定は未達。",
+      "measurements": []
+    },
+    {
+      "id": "E04",
+      "source_id": "SRC-0001",
+      "site": "山中城",
+      "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+      "printed_page": "66",
+      "pdf_page": 74,
+      "locator": "印刷p66 / PDF74頁",
+      "source_file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+      "text_checked": true,
+      "figure_checked": false,
+      "original_report_checked": false,
+      "quote": "建築材（柱材ヵ）、枝類（柵材ヵ）",
+      "summary": "表3-7西ノ丸欄を画像確認。「ヵ」を保持。寸法と個体番号の記載なし。",
+      "measurements": []
+    },
+    {
+      "id": "E05",
+      "source_id": "SRC-0008",
+      "site": "田中城（熊本県和水町）",
+      "url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+      "printed_page": "125",
+      "pdf_page": 149,
+      "locator": "印刷p125 / PDF149頁",
+      "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+      "text_checked": true,
+      "figure_checked": false,
+      "original_report_checked": true,
+      "quote": "柱穴の最大はP7（30×23cm）、最小はP19（11×10cm）で平均21.2×18.6cm",
+      "summary": "本文の報告値。穴の平面二方向寸法。測定軸名・方法は未定義、柱材断面へ転換しない。",
+      "measurements": [
+        {
+          "id": "M01",
+          "measurement_target": "posthole_plan_dimension_1",
+          "value": 30,
+          "unit": "cm",
+          "qualifier": "reported",
+          "original_label": "P7",
+          "method": null
+        },
+        {
+          "id": "M02",
+          "measurement_target": "posthole_plan_dimension_2",
+          "value": 23,
+          "unit": "cm",
+          "qualifier": "reported",
+          "original_label": "P7",
+          "method": null
+        },
+        {
+          "id": "M03",
+          "measurement_target": "posthole_plan_dimension_1",
+          "value": 11,
+          "unit": "cm",
+          "qualifier": "reported",
+          "original_label": "P19",
+          "method": null
+        },
+        {
+          "id": "M04",
+          "measurement_target": "posthole_plan_dimension_2",
+          "value": 10,
+          "unit": "cm",
+          "qualifier": "reported",
+          "original_label": "P19",
+          "method": null
+        },
+        {
+          "id": "M05",
+          "measurement_target": "posthole_plan_dimension_1",
+          "value": 21.2,
+          "unit": "cm",
+          "qualifier": "reported_mean",
+          "original_label": null,
+          "method": null
+        },
+        {
+          "id": "M06",
+          "measurement_target": "posthole_plan_dimension_2",
+          "value": 18.6,
+          "unit": "cm",
+          "qualifier": "reported_mean",
+          "original_label": null,
+          "method": null
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "source_id": "SRC-0008",
+      "site": "田中城（熊本県和水町）",
+      "url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+      "printed_page": "122",
+      "pdf_page": 146,
+      "locator": "印刷p122 / PDF146頁",
+      "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+      "text_checked": true,
+      "figure_checked": true,
+      "original_report_checked": true,
+      "quote": "第65図 堀跡・柵列実測図",
+      "summary": "平成2年度調査の西側高台。図のP1〜P19と2m尺度を目視再確認。図からの独自採寸はしない。",
+      "measurements": []
+    },
+    {
+      "id": "E07",
+      "source_id": "SRC-0008",
+      "site": "田中城（熊本県和水町）",
+      "url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+      "printed_page": "127",
+      "pdf_page": 151,
+      "locator": "印刷p127 / PDF151頁",
+      "source_file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+      "text_checked": true,
+      "figure_checked": false,
+      "original_report_checked": true,
+      "quote": "19個のうち12個が10cm未満",
+      "summary": "浅い残存状態の説明。主郭での平成元年度復元整備の約50cm設定は、平成2年度出土列の実測と別。原形の柱高・根入れは不明。",
+      "measurements": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "method": "pdftoppm -scale-to 1600 or 1800 -png -singlefile; visual inspection",
+  "date": "2026-11-08",
+  "files": {
+    "plan-p110.png": "df9c8f85f9528116bb386330a5b0008698c4940f292abb1b48b2d0305aaca65b",
+    "plan-p66.png": "a24e443d5ef62db991f3b48af8792e439b5d600c3ced0842563a67a1d3e75a44",
+    "tanaka-p127.png": "c73de751131e15094dc3dc84521d23eeb5235c306fb691022d8ae866cba636a0",
+    "tanaka-p122.png": "949d8cec1d152119cd447fdb4973291d78aaae0645f2923c665e7ed8df6d7d1c",
+    "tanaka-p125.png": "5bc4e7b618eb7ea18f507f2b9fc70a6fa59c06fa5186791289f6fe73c8fcd8f9",
+    "plan-p68.png": "31f006797765d3a5ccc31d3f7f70a61c81fd3e9927b2b64865674249f9d058af"
+  },
+  "redistribution": "未確認のため画像非同梱。公式PDF URLと頁番号から再表示する。"
+}

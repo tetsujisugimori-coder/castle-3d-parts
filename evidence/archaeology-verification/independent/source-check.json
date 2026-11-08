@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-11-08T09:45:47.205742+00:00",
+  "reviewer": "coordinate_cad_archaeology (not implementation author)",
+  "method": "Independent download from official URLs; SHA256; independent pdftoppm render and visual review",
+  "files": {
+    "mishima.pdf": {
+      "bytes": 13209527,
+      "sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8"
+    },
+    "tanaka.pdf": {
+      "bytes": 25344834,
+      "sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2"
+    }
+  },
+  "checks": [
+    {
+      "source": "SRC-0001",
+      "printed_page": 68,
+      "pdf_page": 76,
+      "finding": "土塁節に西櫓、本丸土塁上で一定間隔、径約30cmの柱穴を記載。板塀あるいは柵は推定。柱幅ではない。",
+      "status": "PASS"
+    },
+    {
+      "source": "SRC-0008",
+      "printed_page": 125,
+      "pdf_page": 149,
+      "finding": "P7=30×23cm, P19=11×10cm, 平均21.2×18.6cm。深さP3=27.7cm/P16=4.9cm/平均12.0cm。間隔50–70cm平均58.6cm。測定方式の芯/縁は本文では明記なし。",
+      "status": "PASS"
+    },
+    {
+      "source": "SRC-0008",
+      "printed_page": 122,
+      "pdf_page": 146,
+      "finding": "図65にP1–P19配置図。集合を機械的個体登録せず図面参照として保持。",
+      "status": "PASS"
+    },
+    {
+      "source": "SRC-0008",
+      "printed_pages": [
+        127,
+        128
+      ],
+      "pdf_pages": [
+        151,
+        152
+      ],
+      "finding": "平成元年復元の約50cm間隔と発掘間隔は別。p128は堀・柵列セット使用不明と記載。",
+      "status": "PASS"
+    }
+  ],
+  "limits": [
+    "原PDF全編の考古学的再検証ではない",
+    "山中城の原発掘報告確認ではなく保存活用計画の記載確認",
+    "測定値からCADパラメータ転用不可"
+  ]
+}
