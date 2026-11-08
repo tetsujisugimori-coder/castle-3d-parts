@@ -1,0 +1,202 @@
+{
+  "rows": [
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "no-preference",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "reduce",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "no-preference",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "reduce",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "no-preference",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "reduce",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "no-preference",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "reduce",
+      "status": "PASS",
+      "candidates": 5,
+      "research_records": 27,
+      "candidate_states": [
+        "proposed",
+        "approved",
+        "rejected",
+        "deferred",
+        "applied"
+      ],
+      "glb_status": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+      "overflow": false,
+      "errors": [],
+      "mutation_requests": []
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-data",
+      "status": "PASS",
+      "message": "研究データを読み込めません。再読み込みするか生成データを確認してください。詳細: HTTP 404"
+    },
+    {
+      "engine": "chromium",
+      "fault": "invalid-json",
+      "status": "PASS",
+      "message": "研究データを読み込めません。再読み込みするか生成データを確認してください。詳細: Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+    },
+    {
+      "engine": "chromium",
+      "fault": "invalid-contract",
+      "status": "PASS",
+      "message": "研究データを読み込めません。再読み込みするか生成データを確認してください。詳細: 研究データの形式が不正です"
+    },
+    {
+      "engine": "chromium",
+      "fault": "hostile-text",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-glb",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "status": "BLOCKED",
+      "error": "browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     libgtk-4.so.1                                    ║\n║     libgraphene-1.0.so.0                             ║\n║     libwoff2dec.so.1.0.2                             ║\n║     libharfbuzz-icu.so.0                             ║\n║     libhyphen.so.0                                   ║\n║     libmanette-0.2.so.0                              ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+    }
+  ],
+  "inputs": {
+    "research-cad/index.html": "a4ab5aeb62628277189397b1ea21ee956fb6397c22ed37289a3d126e4c335695",
+    "research-cad/style.css": "859a6fa5882ae259fa40ac7663f3bdde7c9935078c2bde0324f1d619f1c75e69",
+    "research-cad/app.mjs": "6f18b06252a3bc71d5721561c9e3dd00bf95a8e1c6e1cf2029d7ae8680dfda6d",
+    "research-cad/view-model.mjs": "eebbf50907a9987a03225afdac87aebf873d68328aa1496f55d2cd55414f0898",
+    "research-cad/data.json": "282e2a8b77be010c2092d5d189fab280f7c77ce0936446fb09db0d426562d8e5",
+    "cad/palisade.glb": "6a09e4230c6c992ffa9e1627c2287508472d13d5654f913d1f46c20e1f1634ba"
+  },
+  "expected_matrix_rows": 16,
+  "matrix_pass": 8,
+  "failed": true,
+  "scope": "Research UI + unchanged embedded CAD GLB viewer; not native iPhone Safari or CAD GUI execution",
+  "dependency_mode": "local unmodified Three.js route mapping; CDN delivery not covered"
+}

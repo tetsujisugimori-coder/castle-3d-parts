@@ -1,0 +1,56 @@
+name: Stage 2-A research CAD linkage
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          mkdir -p stage2a-ci/source
+          node --test > stage2a-ci/unit.log 2>&1
+          python3 -B tests/cad-regeneration.test.py > stage2a-ci/runner.log 2>&1
+          node scripts/research-cad-evidence.mjs stage2a-ci
+          node scripts/build-site.mjs
+          node scripts/build-research-cad.mjs
+          git archive HEAD | tar -x -C stage2a-ci/source
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2a-contract-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2a-ci/
+          include-hidden-files: true
+          if-no-files-found: error
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: mkdir -p stage2a-browser-ci && uname -a > stage2a-browser-ci/environment.log
+      - run: npm install --prefix /tmp/cad-pw playwright@1.56.1 three@0.180.0 2>&1 | tee stage2a-browser-ci/npm.log
+      - run: /tmp/cad-pw/node_modules/.bin/playwright install --with-deps chromium webkit 2>&1 | tee stage2a-browser-ci/install.log
+      - run: node scripts/build-site.mjs && node scripts/build-research-cad.mjs
+      - run: node scripts/research-cad-browser.mjs
+        env:
+          PW_MODULE: /tmp/cad-pw/node_modules/playwright/index.mjs
+          THREE_DIR: /tmp/cad-pw/node_modules/three
+          RESEARCH_CAD_EVIDENCE_DIR: stage2a-browser-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2a-browser-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2a-browser-ci/
+          include-hidden-files: true
+          if-no-files-found: error

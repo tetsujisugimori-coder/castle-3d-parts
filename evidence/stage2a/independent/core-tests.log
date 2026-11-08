@@ -1,0 +1,48 @@
+✔ 220 original files and original CAD hashes preserved (9.573398ms)
+✔ 27 registered records retain null revision where not defined (0.403345ms)
+✔ actual 5 posts 2 rails initial width 4.95m and D only (0.40231ms)
+✔ GLB reverse trace reaches CAD, held DEC, HYP, VER and SRC (23.426402ms)
+✔ research ID forward trace finds CAD part (22.572278ms)
+✔ unknown ID rejected (26.897996ms)
+✔ invalid dependency rejected (0.234191ms)
+✔ cyclic dependency rejected (0.232549ms)
+✔ SRC content/state/version changes detected without CAD writes (7.169319ms)
+✔ OBS content/state/version changes detected without CAD writes (6.213968ms)
+✔ VER content/state/version changes detected without CAD writes (5.666398ms)
+✔ HYP content/state/version changes detected without CAD writes (5.929634ms)
+✔ DEC content/state/version changes detected without CAD writes (4.489137ms)
+✔ new source and withdrawal detected; unknown numerical proposal not invented (806.680984ms)
+✔ unapproved candidate refused by apply, originals unchanged (772.722616ms)
+✔ working DEC approval separate from historical held decisions (2729.55557ms)
+✔ rejected cannot apply and preserves original hashes (1959.486301ms)
+✔ deferred cannot apply and preserves original hashes (1811.413861ms)
+✔ deferred proposal can be explicitly reapproved (3806.269072ms)
+✔ candidate part_id tamper refused (949.487564ms)
+✔ candidate basis tamper refused (821.413028ms)
+✔ candidate scope tamper refused (776.291718ms)
+✔ candidate formal_cad_adoption tamper refused (992.595353ms)
+✔ candidate status tamper refused (863.493328ms)
+✔ changed numerical proposal invalidates prior approval even with digest recalculated (3556.897514ms)
+✔ proposal evidence hash/data modification rejected even with snapshot digest rewritten (1382.699947ms)
+✔ unit mismatch rejected before candidate creation (793.430017ms)
+✔ unknown and duplicate parameters rejected (1116.789517ms)
+✔ invalid numerical proposal post_height=NaN (620.627483ms)
+✔ invalid numerical proposal post_height=true (689.803769ms)
+✔ invalid numerical proposal post_count=3.5 (2019.770658ms)
+✔ invalid numerical proposal post_height=-1 (1993.599744ms)
+✔ invalid numerical proposal post_center_spacing=0.1 (1257.672049ms)
+✔ invalid numerical proposal post_width=1.3 (1272.346967ms)
+✔ invalid numerical proposal rail_levels=7 (1396.384893ms)
+✔ missing approval actor or timestamp rejected (3617.771826ms)
+✔ applied state requires prior approval and result manifest hash (5802.735637ms)
+✔ approval fields bound to candidate/research/CAD (6317.801418ms)
+✔ stale working research, newly added source and changed CAD fail closed (3655.766566ms)
+✔ immutable output creation rejects overwriting prior candidate (370.229841ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 52582.218286

@@ -1,0 +1,86 @@
+{
+  "source_sha256": "259b2926f4031096e008a8c30548ee3b39d8ed37dd8e79e9fc53063cd27cf4e6",
+  "original_files_preserved": 220,
+  "results": [
+    {
+      "name": "applied without real manifest",
+      "status": "RED",
+      "actual": "ACCEPTED"
+    },
+    {
+      "name": "unapproved apply",
+      "status": "PASS",
+      "actual": "NOT_APPROVED"
+    },
+    {
+      "name": "deferred apply",
+      "status": "PASS",
+      "actual": "NOT_APPROVED"
+    },
+    {
+      "name": "rejected apply",
+      "status": "PASS",
+      "actual": "NOT_APPROVED"
+    },
+    {
+      "name": "cycle",
+      "status": "PASS",
+      "actual": "CYCLIC_REFERENCE"
+    },
+    {
+      "name": "missing reference",
+      "status": "PASS",
+      "actual": "INVALID_REFERENCE a missing"
+    },
+    {
+      "name": "rehashed part_id",
+      "status": "PASS",
+      "actual": "CANDIDATE_TAMPER"
+    },
+    {
+      "name": "rehashed basis",
+      "status": "PASS",
+      "actual": "CANDIDATE_TAMPER"
+    },
+    {
+      "name": "rehashed decision_ids",
+      "status": "PASS",
+      "actual": "CANDIDATE_TAMPER"
+    },
+    {
+      "name": "rehashed approved numerical edit",
+      "status": "PASS",
+      "actual": "EVENT_TAMPER"
+    },
+    {
+      "name": "rehashed forged evidence",
+      "status": "PASS",
+      "actual": "SNAPSHOT_TAMPER"
+    },
+    {
+      "name": "unit mismatch",
+      "status": "PASS",
+      "actual": "UNIT_MISMATCH"
+    },
+    {
+      "name": "added source stale",
+      "status": "PASS",
+      "actual": "STALE_SOURCE_SET"
+    },
+    {
+      "name": "changed research stale",
+      "status": "PASS",
+      "actual": "STALE_EVIDENCE research/hypotheses/HYP-0001.json"
+    },
+    {
+      "name": "deleted research stale",
+      "status": "PASS",
+      "actual": "ENOENT: no such file or directory, open '/tmp/independent-stage2a-lprzUj/research/hypotheses/HYP-0001.json'"
+    },
+    {
+      "name": "binary original forged",
+      "status": "PASS",
+      "actual": "SOURCE_CAD_CHANGED site/cad/palisade.glb"
+    }
+  ]
+}

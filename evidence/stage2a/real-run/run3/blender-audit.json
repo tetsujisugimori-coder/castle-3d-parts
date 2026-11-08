@@ -1,0 +1,64 @@
+{
+  "version": "4.3.2",
+  "mode": "background; GUI NOT_TESTED",
+  "created": {
+    "dimensions_m_z_up": [
+      4.949999809265137,
+      0.24899999797344208,
+      2.200000047683716
+    ],
+    "names": [
+      "Post_001",
+      "Post_002",
+      "Post_003",
+      "Post_004",
+      "Post_005",
+      "Rail_001",
+      "Rail_002"
+    ],
+    "objects": 7,
+    "posts": 5,
+    "rails": 2,
+    "triangles": 84
+  },
+  "blend_reopened": {
+    "dimensions_m_z_up": [
+      4.949999809265137,
+      0.24899999797344208,
+      2.200000047683716
+    ],
+    "names": [
+      "Post_001",
+      "Post_002",
+      "Post_003",
+      "Post_004",
+      "Post_005",
+      "Rail_001",
+      "Rail_002"
+    ],
+    "objects": 7,
+    "posts": 5,
+    "rails": 2,
+    "triangles": 84
+  },
+  "glb_reopened": {
+    "dimensions_m_z_up": [
+      4.949999809265137,
+      0.24899999797344208,
+      2.200000047683716
+    ],
+    "names": [
+      "Post_001",
+      "Post_002",
+      "Post_003",
+      "Post_004",
+      "Post_005",
+      "Rail_001",
+      "Rail_002"
+    ],
+    "objects": 7,
+    "posts": 5,
+    "rails": 2,
+    "triangles": 84
+  }
+}

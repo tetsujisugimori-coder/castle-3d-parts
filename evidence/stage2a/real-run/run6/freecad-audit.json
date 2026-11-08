@@ -1,0 +1,48 @@
+{
+  "software": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "mode": "headless module; GUI NOT_TESTED",
+  "techdraw": "OMITTED: baseline drawing is not valid for changed dimensions",
+  "generated": {
+    "dimensions_m": [
+      4.95,
+      0.249,
+      2.2
+    ],
+    "posts": 5,
+    "rails": 2,
+    "solid_count": 7,
+    "volume_mm3": 329828399.99999994,
+    "max_pair_intersection_mm3": 0.0,
+    "valid": true
+  },
+  "fcstd_reopened": {
+    "dimensions_m": [
+      4.95,
+      0.249,
+      2.2
+    ],
+    "posts": 5,
+    "rails": 2,
+    "solid_count": 7,
+    "volume_mm3": 329828399.99999994,
+    "max_pair_intersection_mm3": 0.0,
+    "valid": true
+  },
+  "step_reopened": {
+    "valid": true,
+    "solids": 7,
+    "dimensions_m": [
+      4.95,
+      0.249,
+      2.2
+    ],
+    "volume_mm3": 329828399.9999999
+  }
+}

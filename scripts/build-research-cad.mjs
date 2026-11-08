@@ -1,0 +1,10 @@
+import {snapshot,part,ROOT,BASE} from './research-cad.mjs';
+import {readFileSync,writeFileSync,mkdirSync,existsSync,cpSync} from 'node:fs';import {resolve} from 'node:path';
+const read=p=>JSON.parse(readFileSync(resolve(ROOT,p)));
+const demo='evidence/stage2a/demo/';
+const data={schema_version:1,part:part(),snapshot:snapshot(ROOT,BASE),candidates:['proposed','approved','rejected','deferred','applied'].map(n=>{const c=read(demo+n+'.json');return {...c,before_snapshot:{commit:c.before_snapshot.commit,sha256:c.before_snapshot.sha256},after_snapshot:{commit:c.after_snapshot.commit,sha256:c.after_snapshot.sha256}};}),manifest:{status:'NOT_TESTED',scope:'working_copy_only',note:'生成実行結果がない場合は未実施。元のPR #15成果物は別の検証記録。'}};
+const m='evidence/stage2a/real-run/run5/manifest.json';if(existsSync(resolve(ROOT,m)))data.manifest=read(m);
+const comparison='evidence/stage2a/real-run/comparison-reviewed.json';if(existsSync(resolve(ROOT,comparison)))data.reproducibility=read(comparison);
+mkdirSync(resolve(ROOT,'site/research-cad'),{recursive:true});writeFileSync(resolve(ROOT,'site/research-cad/data.json'),JSON.stringify(data,null,2)+'\n');
+if(existsSync(resolve(ROOT,'dist')))cpSync(resolve(ROOT,'site/research-cad'),resolve(ROOT,'dist/research-cad'),{recursive:true});
+console.log('Built research/CAD read-only data. Original display and assets unchanged.');

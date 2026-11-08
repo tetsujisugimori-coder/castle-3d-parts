@@ -1,0 +1,8 @@
+{
+  "status": "applied",
+  "manifest": {
+    "path": "evidence/stage2a/independent/real-run-verified/manifest.json",
+    "sha256": "b279b10d649db42e6a8ca82ff06bcf26976bf98bfbeedc6831839b465311cdad"
+  },
+  "source_sha256": "8e731948efc3d74fea1e51c335d72ad455467182eb08d806430c1ad31608c64d"
+}

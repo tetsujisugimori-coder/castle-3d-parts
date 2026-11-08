@@ -1,0 +1,12 @@
+Command: PW_MODULE=/workspace/shared/yamanaka-stage-i/node_modules/playwright/index.mjs THREE_DIR=/workspace/shared/yamanaka-stage-i/node_modules/three RESEARCH_CAD_EVIDENCE_DIR=evidence/stage2a/browser-local node scripts/research-cad-browser.mjs
+Node: v24.22.1
+Playwright: 1.56.1
+Three.js: 0.180.0 (unmodified local route mapping, CDN not tested)
+Exit code: 1 (WebKit dependency BLOCKED)
+Chromium matrix: 8/8 PASS
+Chromium fault cases: 5/5 PASS
+WebKit: BLOCKED, 0 conditions executed
+Full planned matrix: 8/16 PASS, incomplete
+Verified 27 research record IDs and exact candidate metadata for proposed/approved/rejected/deferred, including approval and event history.
+Input SHA256 values in results.json. Export hash equals tested data after run.
+Screenshots retained locally; not committed. No native Safari or CAD GUI execution asserted.

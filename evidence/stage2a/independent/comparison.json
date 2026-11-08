@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "same_application_sha256": "4d15a0ed2ceab51aeb8e87a0ac71f2c94c45305a418c90799374bc7a8944075b",
+  "originals_unchanged": true,
+  "geometry_and_structure_exact_json_equal": {
+    "freecad-audit.json": true,
+    "blender-audit.json": true,
+    "mesh-transfer.json": true
+  },
+  "binary_hash_comparison": {
+    "input.FCStd": {
+      "first": "480f2bbfae4bdd4bc2e435aa82c2b896b72c2852469417af3c800e6214b83984",
+      "second": "480f2bbfae4bdd4bc2e435aa82c2b896b72c2852469417af3c800e6214b83984",
+      "identical": true
+    },
+    "palisade.FCStd": {
+      "first": "e5a5346ecb1f20ac2c01bbb9376c71df9a8c3f60aa4cd38ce0681c300a2275c2",
+      "second": "e74047ec32d5e5aa0d16f9bf4b8c2820f9d802a4c302a8fa7e7dd17e5e7a5f9a",
+      "identical": false
+    },
+    "palisade.step": {
+      "first": "79b2cdb137249d46ba7fd70c2a54a63e1cb924a0eb3fbdf6a9d03ee14ab5b224",
+      "second": "f13df0f9c25d8d6d1d39b3596454141676780bd07ddeea5fe7df2f22b6750c1b",
+      "identical": false
+    },
+    "palisade.blend": {
+      "first": "f675fdb4b09c4007533adc3e7a9c6b5f0d7581c9f5dc4d4bd9e9d7265b9d8e6f",
+      "second": "619dc0ddb8a3b58b39c174c70eb2664b85f8d1108bfec894658e1ef02c79b526",
+      "identical": false
+    },
+    "palisade.glb": {
+      "first": "dbcee2d446610348049087ef511e487696853690e430f569b9b9b4d671ccfc72",
+      "second": "dbcee2d446610348049087ef511e487696853690e430f569b9b9b4d671ccfc72",
+      "identical": true
+    },
+    "mesh-transfer.json": {
+      "first": "73618848c87db3d12dff8e1545f98dde61337b1c513b2d3e6af2637d0b88118b",
+      "second": "73618848c87db3d12dff8e1545f98dde61337b1c513b2d3e6af2637d0b88118b",
+      "identical": true
+    }
+  },
+  "binary_difference_analysis": {
+    "FCStd": {
+      "changed_zip_entries": [
+        "Document.xml"
+      ],
+      "Document_xml_equal_except_LastModifiedDate": true,
+      "zip_entry_timestamps_differ": true
+    },
+    "STEP": {
+      "equal_after_timestamp_normalization": true
+    },
+    "blend": "Native blend bytes may differ between process saves (internal serialization and file metadata). Exact differing fields were not isolated. Saved/reopened object names, counts, triangles and bounds are equal; STEP-derived source mesh is byte-identical. Do not claim native byte determinism.",
+    "GLB": "See actual hash equality; binary equality is a separate result from geometry equality."
+  },
+  "limits": [
+    "Headless/background execution, GUI NOT_TESTED",
+    "TechDraw omitted from changed working copies",
+    "Native blend byte differences not fully attributed",
+    "D provisional geometry, no historical dimension adoption"
+  ]
+}
