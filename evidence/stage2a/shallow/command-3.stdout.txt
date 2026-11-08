@@ -1,0 +1,1700 @@
+TAP version 13
+# Subtest: 125 prior files unchanged
+ok 1 - 125 prior files unchanged
+  ---
+  duration_ms: 9.193931
+  type: 'test'
+  ...
+# Subtest: reference snapshot exact
+ok 2 - reference snapshot exact
+  ---
+  duration_ms: 2.02739
+  type: 'test'
+  ...
+# Subtest: genuine GLB dimensions and components
+ok 3 - genuine GLB dimensions and components
+  ---
+  duration_ms: 1.963962
+  type: 'test'
+  ...
+# Subtest: reject adoption
+ok 4 - reject adoption
+  ---
+  duration_ms: 0.799039
+  type: 'test'
+  ...
+# Subtest: reject commit
+ok 5 - reject commit
+  ---
+  duration_ms: 0.382112
+  type: 'test'
+  ...
+# Subtest: reject source hash
+ok 6 - reject source hash
+  ---
+  duration_ms: 0.452624
+  type: 'test'
+  ...
+# Subtest: reject history promoted
+ok 7 - reject history promoted
+  ---
+  duration_ms: 0.761861
+  type: 'test'
+  ...
+# Subtest: reject width replaced by hole diameter
+ok 8 - reject width replaced by hole diameter
+  ---
+  duration_ms: 1.563825
+  type: 'test'
+  ...
+# Subtest: reject write
+ok 9 - reject write
+  ---
+  duration_ms: 1.007088
+  type: 'test'
+  ...
+# Subtest: GLB damaged header rejected
+ok 10 - GLB damaged header rejected
+  ---
+  duration_ms: 0.673024
+  type: 'test'
+  ...
+# Subtest: FreeCAD saved and STEP reopened evidence
+ok 11 - FreeCAD saved and STEP reopened evidence
+  ---
+  duration_ms: 0.385268
+  type: 'test'
+  ...
+# Subtest: Blender and GLB actual reopen evidence
+ok 12 - Blender and GLB actual reopen evidence
+  ---
+  duration_ms: 0.269633
+  type: 'test'
+  ...
+# Subtest: source hash omission rejected
+ok 13 - source hash omission rejected
+  ---
+  duration_ms: 0.358147
+  type: 'test'
+  ...
+# Subtest: drawing actual projected edges fit horizontal paper space
+ok 14 - drawing actual projected edges fit horizontal paper space
+  ---
+  duration_ms: 0.78799
+  type: 'test'
+  ...
+# Subtest: original clipped projection is rejected
+ok 15 - original clipped projection is rejected
+  ---
+  duration_ms: 0.500303
+  type: 'test'
+  ...
+# Subtest: held competing hypotheses and seven independent parameter slots
+ok 16 - held competing hypotheses and seven independent parameter slots
+  ---
+  duration_ms: 19.701773
+  type: 'test'
+  ...
+# Subtest: all previous 94 files preserved
+ok 17 - all previous 94 files preserved
+  ---
+  duration_ms: 381.112527
+  type: 'test'
+  ...
+# Subtest: search filters
+ok 18 - search filters
+  ---
+  duration_ms: 32.839781
+  type: 'test'
+  ...
+# Subtest: generated listing stable
+ok 19 - generated listing stable
+  ---
+  duration_ms: 18.204271
+  type: 'test'
+  ...
+# Subtest: nonexistent hypothesis
+ok 20 - nonexistent hypothesis
+  ---
+  duration_ms: 9.90641
+  type: 'test'
+  ...
+# Subtest: hypothesis revision
+ok 21 - hypothesis revision
+  ---
+  duration_ms: 10.14229
+  type: 'test'
+  ...
+# Subtest: hypothesis hash
+ok 22 - hypothesis hash
+  ---
+  duration_ms: 9.01856
+  type: 'test'
+  ...
+# Subtest: evidence substitution
+ok 23 - evidence substitution
+  ---
+  duration_ms: 6.06648
+  type: 'test'
+  ...
+# Subtest: foreign site
+ok 24 - foreign site
+  ---
+  duration_ms: 6.29127
+  type: 'test'
+  ...
+# Subtest: depth confused as height
+ok 25 - depth confused as height
+  ---
+  duration_ms: 9.515706
+  type: 'test'
+  ...
+# Subtest: wrong unit
+ok 26 - wrong unit
+  ---
+  duration_ms: 11.194391
+  type: 'test'
+  ...
+# Subtest: prototype promoted
+ok 27 - prototype promoted
+  ---
+  duration_ms: 6.989251
+  type: 'test'
+  ...
+# Subtest: claim certainty
+ok 28 - claim certainty
+  ---
+  duration_ms: 5.607487
+  type: 'test'
+  ...
+# Subtest: source replacement
+ok 29 - source replacement
+  ---
+  duration_ms: 5.224601
+  type: 'test'
+  ...
+# Subtest: circular support
+ok 30 - circular support
+  ---
+  duration_ms: 7.797628
+  type: 'test'
+  ...
+# Subtest: unapproved CAD
+ok 31 - unapproved CAD
+  ---
+  duration_ms: 1.221257
+  type: 'test'
+  ...
+# Subtest: write flag
+ok 32 - write flag
+  ---
+  duration_ms: 1.558546
+  type: 'test'
+  ...
+# Subtest: unknown adoption
+ok 33 - unknown adoption
+  ---
+  duration_ms: 11.255365
+  type: 'test'
+  ...
+# Subtest: unfounded rejection
+ok 34 - unfounded rejection
+  ---
+  duration_ms: 6.554661
+  type: 'test'
+  ...
+# Subtest: history deleted
+ok 35 - history deleted
+  ---
+  duration_ms: 1.041052
+  type: 'test'
+  ...
+# Subtest: parameter missing
+ok 36 - parameter missing
+  ---
+  duration_ms: 9.19616
+  type: 'test'
+  ...
+# Subtest: prototype changed
+ok 37 - prototype changed
+  ---
+  duration_ms: 6.053797
+  type: 'test'
+  ...
+# Subtest: unknowns removed
+ok 38 - unknowns removed
+  ---
+  duration_ms: 11.233144
+  type: 'test'
+  ...
+# Subtest: new held revision preserves old decision
+ok 39 - new held revision preserves old decision
+  ---
+  duration_ms: 19.169734
+  type: 'test'
+  ...
+# Subtest: CAD reader rejects unvalidated input
+ok 40 - CAD reader rejects unvalidated input
+  ---
+  duration_ms: 1.574616
+  type: 'test'
+  ...
+# Subtest: historical unknown numeric promotion
+ok 41 - historical unknown numeric promotion
+  ---
+  duration_ms: 4.698827
+  type: 'test'
+  ...
+# Subtest: hypothesis unknown numeric promotion
+ok 42 - hypothesis unknown numeric promotion
+  ---
+  duration_ms: 4.040674
+  type: 'test'
+  ...
+# Subtest: old reason cannot be silently rewritten
+ok 43 - old reason cannot be silently rewritten
+  ---
+  duration_ms: 6.496002
+  type: 'test'
+  ...
+# Subtest: caller cannot override history baseline
+ok 44 - caller cannot override history baseline
+  ---
+  duration_ms: 0.310639
+  type: 'test'
+  ...
+# Subtest: initial wood fence has 5 posts, 2 rails and a total width of 4.95m
+ok 45 - initial wood fence has 5 posts, 2 rails and a total width of 4.95m
+  ---
+  duration_ms: 1.819703
+  type: 'test'
+  ...
+# Subtest: new count and spacing update the width symmetrically
+ok 46 - new count and spacing update the width symmetrically
+  ---
+  duration_ms: 0.387532
+  type: 'test'
+  ...
+# Subtest: zero rails is allowed
+ok 47 - zero rails is allowed
+  ---
+  duration_ms: 2.459325
+  type: 'test'
+  ...
+# Subtest: invalid dimensions are rejected
+ok 48 - invalid dimensions are rejected
+  ---
+  duration_ms: 0.830488
+  type: 'test'
+  ...
+# Subtest: unverified historical claims stay marked as unverified
+ok 49 - unverified historical claims stay marked as unverified
+  ---
+  duration_ms: 0.332731
+  type: 'test'
+  ...
+# Subtest: all baseline tracked assets remain byte exact, including SRC10 OBS6 and v0
+ok 50 - all baseline tracked assets remain byte exact, including SRC10 OBS6 and v0
+  ---
+  duration_ms: 8.117956
+  type: 'test'
+  ...
+# Subtest: initial comparison and competing hypotheses, no historical certainty
+ok 51 - initial comparison and competing hypotheses, no historical certainty
+  ---
+  duration_ms: 57.568999
+  type: 'test'
+  ...
+# Subtest: invalid HYP ID
+ok 52 - invalid HYP ID
+  ---
+  duration_ms: 51.568981
+  type: 'test'
+  ...
+# Subtest: duplicate hypothesis
+ok 53 - duplicate hypothesis
+  ---
+  duration_ms: 33.73839
+  type: 'test'
+  ...
+# Subtest: nonexistent SRC
+ok 54 - nonexistent SRC
+  ---
+  duration_ms: 14.064743
+  type: 'test'
+  ...
+# Subtest: nonexistent location
+ok 55 - nonexistent location
+  ---
+  duration_ms: 17.2597
+  type: 'test'
+  ...
+# Subtest: nonexistent OBS
+ok 56 - nonexistent OBS
+  ---
+  duration_ms: 22.475064
+  type: 'test'
+  ...
+# Subtest: nonexistent comparison
+ok 57 - nonexistent comparison
+  ---
+  duration_ms: 25.209282
+  type: 'test'
+  ...
+# Subtest: confirmed status unsupported
+ok 58 - confirmed status unsupported
+  ---
+  duration_ms: 14.016293
+  type: 'test'
+  ...
+# Subtest: unsupported partly supported
+ok 59 - unsupported partly supported
+  ---
+  duration_ms: 21.59855
+  type: 'test'
+  ...
+# Subtest: interpretation not fact
+ok 60 - interpretation not fact
+  ---
+  duration_ms: 17.079334
+  type: 'test'
+  ...
+# Subtest: reference does not cover claim
+ok 61 - reference does not cover claim
+  ---
+  duration_ms: 22.529074
+  type: 'test'
+  ...
+# Subtest: comparison member wrong site
+ok 62 - comparison member wrong site
+  ---
+  duration_ms: 27.87461
+  type: 'test'
+  ...
+# Subtest: comparison wrong region
+ok 63 - comparison wrong region
+  ---
+  duration_ms: 13.645702
+  type: 'test'
+  ...
+# Subtest: unknown dates not filled
+ok 64 - unknown dates not filled
+  ---
+  duration_ms: 11.508246
+  type: 'test'
+  ...
+# Subtest: foreign observation as target
+ok 65 - foreign observation as target
+  ---
+  duration_ms: 11.522544
+  type: 'test'
+  ...
+# Subtest: foreign measurement transferred to target
+ok 66 - foreign measurement transferred to target
+  ---
+  duration_ms: 10.732721
+  type: 'test'
+  ...
+# Subtest: missing measurement
+ok 67 - missing measurement
+  ---
+  duration_ms: 8.531917
+  type: 'test'
+  ...
+# Subtest: changed measurement value
+ok 68 - changed measurement value
+  ---
+  duration_ms: 6.549705
+  type: 'test'
+  ...
+# Subtest: changed measurement lower
+ok 69 - changed measurement lower
+  ---
+  duration_ms: 10.258833
+  type: 'test'
+  ...
+# Subtest: changed measurement upper
+ok 70 - changed measurement upper
+  ---
+  duration_ms: 12.00727
+  type: 'test'
+  ...
+# Subtest: changed measurement unit
+ok 71 - changed measurement unit
+  ---
+  duration_ms: 9.773232
+  type: 'test'
+  ...
+# Subtest: changed measurement statistic
+ok 72 - changed measurement statistic
+  ---
+  duration_ms: 11.995055
+  type: 'test'
+  ...
+# Subtest: changed measurement target
+ok 73 - changed measurement target
+  ---
+  duration_ms: 14.3595
+  type: 'test'
+  ...
+# Subtest: changed measurement reported_scope
+ok 74 - changed measurement reported_scope
+  ---
+  duration_ms: 9.421596
+  type: 'test'
+  ...
+# Subtest: remaining depth to embedment
+ok 75 - remaining depth to embedment
+  ---
+  duration_ms: 8.981626
+  type: 'test'
+  ...
+# Subtest: undefined spacing to centres
+ok 76 - undefined spacing to centres
+  ---
+  duration_ms: 6.123741
+  type: 'test'
+  ...
+# Subtest: undefined spacing to edges
+ok 77 - undefined spacing to edges
+  ---
+  duration_ms: 10.68384
+  type: 'test'
+  ...
+# Subtest: quantity from spacing
+ok 78 - quantity from spacing
+  ---
+  duration_ms: 10.558266
+  type: 'test'
+  ...
+# Subtest: duplicate members
+ok 79 - duplicate members
+  ---
+  duration_ms: 10.701402
+  type: 'test'
+  ...
+# Subtest: duplicate measurements
+ok 80 - duplicate measurements
+  ---
+  duration_ms: 12.103637
+  type: 'test'
+  ...
+# Subtest: hypothesis cannot prove hypothesis
+ok 81 - hypothesis cannot prove hypothesis
+  ---
+  duration_ms: 11.890358
+  type: 'test'
+  ...
+# Subtest: comparison cannot derive from hypothesis
+ok 82 - comparison cannot derive from hypothesis
+  ---
+  duration_ms: 11.069338
+  type: 'test'
+  ...
+# Subtest: unstructured evidence prohibited
+ok 83 - unstructured evidence prohibited
+  ---
+  duration_ms: 14.813138
+  type: 'test'
+  ...
+# Subtest: probability masquerading as certainty
+ok 84 - probability masquerading as certainty
+  ---
+  duration_ms: 17.317389
+  type: 'test'
+  ...
+# Subtest: unilateral competition
+ok 85 - unilateral competition
+  ---
+  duration_ms: 12.481351
+  type: 'test'
+  ...
+# Subtest: self competition
+ok 86 - self competition
+  ---
+  duration_ms: 11.748665
+  type: 'test'
+  ...
+# Subtest: missing competitor
+ok 87 - missing competitor
+  ---
+  duration_ms: 12.298239
+  type: 'test'
+  ...
+# Subtest: no uncertainty
+ok 88 - no uncertainty
+  ---
+  duration_ms: 8.597459
+  type: 'test'
+  ...
+# Subtest: no adverse information
+ok 89 - no adverse information
+  ---
+  duration_ms: 6.534783
+  type: 'test'
+  ...
+# Subtest: CAD promoted to approved
+ok 90 - CAD promoted to approved
+  ---
+  duration_ms: 11.231651
+  type: 'test'
+  ...
+# Subtest: negative parameter
+ok 91 - negative parameter
+  ---
+  duration_ms: 14.823899
+  type: 'test'
+  ...
+# Subtest: fractional count
+ok 92 - fractional count
+  ---
+  duration_ms: 11.760768
+  type: 'test'
+  ...
+# Subtest: wrong parameter unit
+ok 93 - wrong parameter unit
+  ---
+  duration_ms: 10.569139
+  type: 'test'
+  ...
+# Subtest: unsupported measured parameter
+ok 94 - unsupported measured parameter
+  ---
+  duration_ms: 10.482524
+  type: 'test'
+  ...
+# Subtest: other site reported as target measured
+ok 95 - other site reported as target measured
+  ---
+  duration_ms: 8.115568
+  type: 'test'
+  ...
+# Subtest: remaining depth never determines height
+ok 96 - remaining depth never determines height
+  ---
+  duration_ms: 11.165097
+  type: 'test'
+  ...
+# Subtest: unknown evidence pair
+ok 97 - unknown evidence pair
+  ---
+  duration_ms: 17.740516
+  type: 'test'
+  ...
+# Subtest: missing history
+ok 98 - missing history
+  ---
+  duration_ms: 24.806902
+  type: 'test'
+  ...
+# Subtest: edited without revision
+ok 99 - edited without revision
+  ---
+  duration_ms: 29.60114
+  type: 'test'
+  ...
+# Subtest: history hash modified
+ok 100 - history hash modified
+  ---
+  duration_ms: 12.045849
+  type: 'test'
+  ...
+# Subtest: history entry removed
+ok 101 - history entry removed
+  ---
+  duration_ms: 17.151108
+  type: 'test'
+  ...
+# Subtest: duplicate history
+ok 102 - duplicate history
+  ---
+  duration_ms: 20.024324
+  type: 'test'
+  ...
+# Subtest: revision gap
+ok 103 - revision gap
+  ---
+  duration_ms: 11.173873
+  type: 'test'
+  ...
+# Subtest: unknown historical record
+ok 104 - unknown historical record
+  ---
+  duration_ms: 14.916777
+  type: 'test'
+  ...
+# Subtest: explicit revision and provisional display parameter allowed, never observation
+ok 105 - explicit revision and provisional display parameter allowed, never observation
+  ---
+  duration_ms: 18.813637
+  type: 'test'
+  ...
+# Subtest: explicit supported status requires source-based evidence, retains C
+ok 106 - explicit supported status requires source-based evidence, retains C
+  ---
+  duration_ms: 32.141666
+  type: 'test'
+  ...
+# Subtest: generated index byte exact and deterministic
+ok 107 - generated index byte exact and deterministic
+  ---
+  duration_ms: 25.47155
+  type: 'test'
+  ...
+# Subtest: search filters
+ok 108 - search filters
+  ---
+  duration_ms: 18.596703
+  type: 'test'
+  ...
+# Subtest: CLI malformed argument exits 1
+ok 109 - CLI malformed argument exits 1
+  ---
+  duration_ms: 53.23114
+  type: 'test'
+  ...
+# Subtest: CLI search executes
+ok 110 - CLI search executes
+  ---
+  duration_ms: 115.835096
+  type: 'test'
+  ...
+# Subtest: independent fixed counterexample: state_reversal_without_evidence
+ok 111 - independent fixed counterexample: state_reversal_without_evidence
+  ---
+  duration_ms: 6.22726
+  type: 'test'
+  ...
+# Subtest: independent fixed counterexample: cad_restorer_basis_with_foreign_evidence
+ok 112 - independent fixed counterexample: cad_restorer_basis_with_foreign_evidence
+  ---
+  duration_ms: 5.722971
+  type: 'test'
+  ...
+# Subtest: independent fixed counterexample: rejected_evidence_is_unrelated_to_counterevidence
+ok 113 - independent fixed counterexample: rejected_evidence_is_unrelated_to_counterevidence
+  ---
+  duration_ms: 6.729026
+  type: 'test'
+  ...
+# Subtest: independent fixed counterexample: stale_snapshot_references
+ok 114 - independent fixed counterexample: stale_snapshot_references
+  ---
+  duration_ms: 10.249731
+  type: 'test'
+  ...
+# Subtest: independent fixed counterexample: missing_target_support
+ok 115 - independent fixed counterexample: missing_target_support
+  ---
+  duration_ms: 10.560219
+  type: 'test'
+  ...
+# Subtest: independent valid competition removal preserves old snapshots
+ok 116 - independent valid competition removal preserves old snapshots
+  ---
+  duration_ms: 11.35319
+  type: 'test'
+  ...
+# Subtest: comparison Markdown is a contiguous six-row table
+ok 117 - comparison Markdown is a contiguous six-row table
+  ---
+  duration_ms: 14.479316
+  type: 'test'
+  ...
+# Subtest: six reported collections, five Yamanaka and one independent Tanaka
+ok 118 - six reported collections, five Yamanaka and one independent Tanaka
+  ---
+  duration_ms: 2.486696
+  type: 'test'
+  ...
+# Subtest: unknown dimensions and source installation not invented
+ok 119 - unknown dimensions and source installation not invented
+  ---
+  duration_ms: 0.324445
+  type: 'test'
+  ...
+# Subtest: reported numbers keep original units and ranges, not CAD dimensions
+ok 120 - reported numbers keep original units and ranges, not CAD dimensions
+  ---
+  duration_ms: 1.265339
+  type: 'test'
+  ...
+# Subtest: index deterministic and byte-identical
+ok 121 - index deterministic and byte-identical
+  ---
+  duration_ms: 17.629977
+  type: 'test'
+  ...
+# Subtest: all six CLI filters combine without mutating data
+ok 122 - all six CLI filters combine without mutating data
+  ---
+  duration_ms: 0.896191
+  type: 'test'
+  ...
+# Subtest: CLI rejects misspelled options rather than silently broadening
+ok 123 - CLI rejects misspelled options rather than silently broadening
+  ---
+  duration_ms: 3.70069
+  type: 'test'
+  ...
+# Subtest: CLI failure has nonzero exit
+ok 124 - CLI failure has nonzero exit
+  ---
+  duration_ms: 91.379824
+  type: 'test'
+  ...
+# Subtest: malformed JSON fails
+ok 125 - malformed JSON fails
+  ---
+  duration_ms: 1.467426
+  type: 'test'
+  ...
+# Subtest: empty observations fail
+ok 126 - empty observations fail
+  ---
+  duration_ms: 10.812794
+  type: 'test'
+  ...
+# Subtest: required field absent
+ok 127 - required field absent
+  ---
+  duration_ms: 18.796385
+  type: 'test'
+  ...
+# Subtest: unknown top field / CAD setting rejected
+ok 128 - unknown top field / CAD setting rejected
+  ---
+  duration_ms: 12.057541
+  type: 'test'
+  ...
+# Subtest: unknown nested field
+ok 129 - unknown nested field
+  ---
+  duration_ms: 5.815162
+  type: 'test'
+  ...
+# Subtest: invalid enum
+ok 130 - invalid enum
+  ---
+  duration_ms: 5.539087
+  type: 'test'
+  ...
+# Subtest: duplicate stable ID
+ok 131 - duplicate stable ID
+  ---
+  duration_ms: 13.421941
+  type: 'test'
+  ...
+# Subtest: wrong filename
+ok 132 - wrong filename
+  ---
+  duration_ms: 11.658737
+  type: 'test'
+  ...
+# Subtest: missing source
+ok 133 - missing source
+  ---
+  duration_ms: 11.646093
+  type: 'test'
+  ...
+# Subtest: missing location
+ok 134 - missing location
+  ---
+  duration_ms: 10.240142
+  type: 'test'
+  ...
+# Subtest: wrong castle cannot borrow Tanaka numbers
+ok 135 - wrong castle cannot borrow Tanaka numbers
+  ---
+  duration_ms: 11.324144
+  type: 'test'
+  ...
+# Subtest: locator snapshot changed
+ok 136 - locator snapshot changed
+  ---
+  duration_ms: 4.953045
+  type: 'test'
+  ...
+# Subtest: location hash mismatch
+ok 137 - location hash mismatch
+  ---
+  duration_ms: 3.027996
+  type: 'test'
+  ...
+# Subtest: file hash mismatch
+ok 138 - file hash mismatch
+  ---
+  duration_ms: 3.665464
+  type: 'test'
+  ...
+# Subtest: URL mismatched
+ok 139 - URL mismatched
+  ---
+  duration_ms: 2.731573
+  type: 'test'
+  ...
+# Subtest: PDF beyond file
+ok 140 - PDF beyond file
+  ---
+  duration_ms: 2.723397
+  type: 'test'
+  ...
+# Subtest: PDF page switched to printed page
+ok 141 - PDF page switched to printed page
+  ---
+  duration_ms: 3.485078
+  type: 'test'
+  ...
+# Subtest: printed page wrong
+ok 142 - printed page wrong
+  ---
+  duration_ms: 4.880019
+  type: 'test'
+  ...
+# Subtest: figure number wrong
+ok 143 - figure number wrong
+  ---
+  duration_ms: 8.754062
+  type: 'test'
+  ...
+# Subtest: table number wrong
+ok 144 - table number wrong
+  ---
+  duration_ms: 6.300517
+  type: 'test'
+  ...
+# Subtest: unconfirmed figures cannot be promoted
+ok 145 - unconfirmed figures cannot be promoted
+  ---
+  duration_ms: 5.253515
+  type: 'test'
+  ...
+# Subtest: register read cannot be called original text inspection
+ok 146 - register read cannot be called original text inspection
+  ---
+  duration_ms: 3.7004
+  type: 'test'
+  ...
+# Subtest: figure verification cannot use text-only method
+ok 147 - figure verification cannot use text-only method
+  ---
+  duration_ms: 7.936256
+  type: 'test'
+  ...
+# Subtest: invalid date
+ok 148 - invalid date
+  ---
+  duration_ms: 5.325734
+  type: 'test'
+  ...
+# Subtest: local reference missing
+ok 149 - local reference missing
+  ---
+  duration_ms: 8.038798
+  type: 'test'
+  ...
+# Subtest: duplicate local reference IDs
+ok 150 - duplicate local reference IDs
+  ---
+  duration_ms: 6.041575
+  type: 'test'
+  ...
+# Subtest: unchecked reference cannot support verified fact
+ok 151 - unchecked reference cannot support verified fact
+  ---
+  duration_ms: 7.48768
+  type: 'test'
+  ...
+# Subtest: aggregate verified with no verified text
+ok 152 - aggregate verified with no verified text
+  ---
+  duration_ms: 5.158097
+  type: 'test'
+  ...
+# Subtest: aggregate unverified contradicts checked sources
+ok 153 - aggregate unverified contradicts checked sources
+  ---
+  duration_ms: 4.625333
+  type: 'test'
+  ...
+# Subtest: unidentified collection cannot silently become individual
+ok 154 - unidentified collection cannot silently become individual
+  ---
+  duration_ms: 4.23215
+  type: 'test'
+  ...
+# Subtest: 19 identifiers are not one individual
+ok 155 - 19 identifiers are not one individual
+  ---
+  duration_ms: 7.391531
+  type: 'test'
+  ...
+# Subtest: invented original identifier
+ok 156 - invented original identifier
+  ---
+  duration_ms: 7.330868
+  type: 'test'
+  ...
+# Subtest: original installation needs explicit source interpretation
+ok 157 - original installation needs explicit source interpretation
+  ---
+  duration_ms: 4.056744
+  type: 'test'
+  ...
+# Subtest: negative measurement
+ok 158 - negative measurement
+  ---
+  duration_ms: 4.53771
+  type: 'test'
+  ...
+# Subtest: zero dimension
+ok 159 - zero dimension
+  ---
+  duration_ms: 9.938362
+  type: 'test'
+  ...
+# Subtest: fractional quantity
+ok 160 - fractional quantity
+  ---
+  duration_ms: 6.846525
+  type: 'test'
+  ...
+# Subtest: NaN
+ok 161 - NaN
+  ---
+  duration_ms: 6.878173
+  type: 'test'
+  ...
+# Subtest: Infinity
+ok 162 - Infinity
+  ---
+  duration_ms: 9.604137
+  type: 'test'
+  ...
+# Subtest: string numeric
+ok 163 - string numeric
+  ---
+  duration_ms: 6.314042
+  type: 'test'
+  ...
+# Subtest: unknown unit
+ok 164 - unknown unit
+  ---
+  duration_ms: 6.568466
+  type: 'test'
+  ...
+# Subtest: swapped bounds
+ok 165 - swapped bounds
+  ---
+  duration_ms: 6.50078
+  type: 'test'
+  ...
+# Subtest: unit change without conversion
+ok 166 - unit change without conversion
+  ---
+  duration_ms: 6.967181
+  type: 'test'
+  ...
+# Subtest: length converted to count
+ok 167 - length converted to count
+  ---
+  duration_ms: 9.382563
+  type: 'test'
+  ...
+# Subtest: wrong original numeric value even if arithmetic consistent
+ok 168 - wrong original numeric value even if arithmetic consistent
+  ---
+  duration_ms: 8.370987
+  type: 'test'
+  ...
+# Subtest: range loses original upper
+ok 169 - range loses original upper
+  ---
+  duration_ms: 6.831928
+  type: 'test'
+  ...
+# Subtest: CAD assumed basis
+ok 170 - CAD assumed basis
+  ---
+  duration_ms: 8.846755
+  type: 'test'
+  ...
+# Subtest: measured value requires a method
+ok 171 - measured value requires a method
+  ---
+  duration_ms: 5.896384
+  type: 'test'
+  ...
+# Subtest: source estimate requires attributed interpretation
+ok 172 - source estimate requires attributed interpretation
+  ---
+  duration_ms: 6.404821
+  type: 'test'
+  ...
+# Subtest: dangling relation
+ok 173 - dangling relation
+  ---
+  duration_ms: 5.94284
+  type: 'test'
+  ...
+# Subtest: self relation
+ok 174 - self relation
+  ---
+  duration_ms: 4.331476
+  type: 'test'
+  ...
+# Subtest: cross-castle identity
+ok 175 - cross-castle identity
+  ---
+  duration_ms: 3.492392
+  type: 'test'
+  ...
+# Subtest: collection cannot be individual member
+ok 176 - collection cannot be individual member
+  ---
+  duration_ms: 4.513686
+  type: 'test'
+  ...
+# Subtest: duplicate same target with different ID
+ok 177 - duplicate same target with different ID
+  ---
+  duration_ms: 3.482954
+  type: 'test'
+  ...
+# Subtest: renamed same-passage duplicate needs explicit relation
+ok 178 - renamed same-passage duplicate needs explicit relation
+  ---
+  duration_ms: 3.8783
+  type: 'test'
+  ...
+# Subtest: valid unit conversion retains original
+ok 179 - valid unit conversion retains original
+  ---
+  duration_ms: 4.919823
+  type: 'test'
+  ...
+# Subtest: genuine identified member can reference collection without fabricated dimensions
+ok 180 - genuine identified member can reference collection without fabricated dimensions
+  ---
+  duration_ms: 4.035323
+  type: 'test'
+  ...
+# Subtest: unsupported schema keyword fails even in unused branch
+ok 181 - unsupported schema keyword fails even in unused branch
+  ---
+  duration_ms: 0.458344
+  type: 'test'
+  ...
+# Subtest: unsupported schema type fails
+ok 182 - unsupported schema type fails
+  ---
+  duration_ms: 0.285322
+  type: 'test'
+  ...
+# Subtest: Markdown escapes source-controlled separators and tags
+ok 183 - Markdown escapes source-controlled separators and tags
+  ---
+  duration_ms: 0.346215
+  type: 'test'
+  ...
+# Subtest: first-layer ten records and schema/validator/index plus prototype bytes preserved
+ok 184 - first-layer ten records and schema/validator/index plus prototype bytes preserved
+  ---
+  duration_ms: 1.086465
+  type: 'test'
+  ...
+# Subtest: confirmed record can have no outstanding unknowns without changing historical-proof meaning
+ok 185 - confirmed record can have no outstanding unknowns without changing historical-proof meaning
+  ---
+  duration_ms: 4.568097
+  type: 'test'
+  ...
+# Subtest: same source numbers cannot swap dimensional meaning
+ok 186 - same source numbers cannot swap dimensional meaning
+  ---
+  duration_ms: 8.299844
+  type: 'test'
+  ...
+# Subtest: quantity cannot borrow average depth value
+ok 187 - quantity cannot borrow average depth value
+  ---
+  duration_ms: 7.083496
+  type: 'test'
+  ...
+# Subtest: spacing cannot borrow depth bounds
+ok 188 - spacing cannot borrow depth bounds
+  ---
+  duration_ms: 7.867638
+  type: 'test'
+  ...
+# Subtest: ordinary quantity token not a source object identifier
+ok 189 - ordinary quantity token not a source object identifier
+  ---
+  duration_ms: 7.066335
+  type: 'test'
+  ...
+# Subtest: ordinary noun not a source object identifier
+ok 190 - ordinary noun not a source object identifier
+  ---
+  duration_ms: 6.502173
+  type: 'test'
+  ...
+# Subtest: measurement contract id missing
+ok 191 - measurement contract id missing
+  ---
+  duration_ms: 6.031746
+  type: 'test'
+  ...
+# Subtest: changing basis cannot bypass reviewed measurement contract
+ok 192 - changing basis cannot bypass reviewed measurement contract
+  ---
+  duration_ms: 6.469923
+  type: 'test'
+  ...
+# Subtest: independent five RED-to-GREEN cases and seven additional controls remain reproducible
+ok 193 - independent five RED-to-GREEN cases and seven additional controls remain reproducible
+  ---
+  duration_ms: 341.889095
+  type: 'test'
+  ...
+# Subtest: review data contract accepts complete read-only export
+ok 194 - review data contract accepts complete read-only export
+  ---
+  duration_ms: 1.542095
+  type: 'test'
+  ...
+# Subtest: missing part rejected
+ok 195 - missing part rejected
+  ---
+  duration_ms: 1.904822
+  type: 'test'
+  ...
+# Subtest: missing snapshot rejected
+ok 196 - missing snapshot rejected
+  ---
+  duration_ms: 0.179014
+  type: 'test'
+  ...
+# Subtest: missing candidates rejected
+ok 197 - missing candidates rejected
+  ---
+  duration_ms: 0.172201
+  type: 'test'
+  ...
+# Subtest: missing manifest rejected
+ok 198 - missing manifest rejected
+  ---
+  duration_ms: 0.280443
+  type: 'test'
+  ...
+# Subtest: unknown values are not reported as verified
+ok 199 - unknown values are not reported as verified
+  ---
+  duration_ms: 0.256067
+  type: 'test'
+  ...
+# Subtest: hostile values stay plain strings
+ok 200 - hostile values stay plain strings
+  ---
+  duration_ms: 0.206154
+  type: 'test'
+  ...
+# Subtest: candidate identifiers and status are visible
+ok 201 - candidate identifiers and status are visible
+  ---
+  duration_ms: 0.236952
+  type: 'test'
+  ...
+# Subtest: browser renders data only with textContent and has no mutation requests
+ok 202 - browser renders data only with textContent and has no mutation requests
+  ---
+  duration_ms: 1.106793
+  type: 'test'
+  ...
+# Subtest: existing real GLB viewer is reused and candidate inspection clearly separated
+ok 203 - existing real GLB viewer is reused and candidate inspection clearly separated
+  ---
+  duration_ms: 0.709684
+  type: 'test'
+  ...
+# fatal: Needed a single revision
+# node:internal/errors:983
+#   const err = new Error(message);
+#               ^
+# Error: Command failed: git -C /home/runner/work/castle-3d-parts/castle-3d-parts rev-parse --verify fb7b4375aaa29ecdfa9bbd1a8b2174cb6549aa74^{commit}
+# fatal: Needed a single revision
+#     at genericNodeError (node:internal/errors:983:15)
+#     at wrappedFn (node:internal/errors:537:14)
+#     at checkExecSyncError (node:child_process:916:11)
+#     at execFileSync (node:child_process:952:15)
+#     at git (file:///home/runner/work/castle-3d-parts/castle-3d-parts/scripts/research-cad.mjs:18:24)
+#     at snapshot (file:///home/runner/work/castle-3d-parts/castle-3d-parts/scripts/research-cad.mjs:33:74)
+#     at file:///home/runner/work/castle-3d-parts/castle-3d-parts/tests/research-cad.test.mjs:4:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+#     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+#     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+#   status: 128,
+#   signal: null,
+#   output: [
+#     null,
+#     Buffer(0) [Uint8Array] [],
+#     Buffer(32) [Uint8Array] [
+#       102,  97, 116,  97, 108,  58,  32,
+#        78, 101, 101, 100, 101, 100,  32,
+#        97,  32, 115, 105, 110, 103, 108,
+#       101,  32, 114, 101, 118, 105, 115,
+#       105, 111, 110,  10
+#     ]
+#   ],
+#   pid: 2687,
+#   stdout: Buffer(0) [Uint8Array] [],
+#   stderr: Buffer(32) [Uint8Array] [
+#     102,  97, 116,  97, 108,  58,  32,
+#      78, 101, 101, 100, 101, 100,  32,
+#      97,  32, 115, 105, 110, 103, 108,
+#     101,  32, 114, 101, 118, 105, 115,
+#     105, 111, 110,  10
+#   ]
+# }
+# Node.js v22.23.4
+# Subtest: tests/research-cad.test.mjs
+not ok 8 - tests/research-cad.test.mjs
+  ---
+  duration_ms: 62.40483
+  type: 'test'
+  location: '/home/runner/work/castle-3d-parts/castle-3d-parts/tests/research-cad.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: ten distinct records for nine candidates, with independent editions
+ok 205 - ten distinct records for nine candidates, with independent editions
+  ---
+  duration_ms: 12.312316
+  type: 'test'
+  ...
+# Subtest: same set-level catalogue ID is valid for two separate volumes
+ok 206 - same set-level catalogue ID is valid for two separate volumes
+  ---
+  duration_ms: 6.212443
+  type: 'test'
+  ...
+# Subtest: generated index matches records byte for byte
+ok 207 - generated index matches records byte for byte
+  ---
+  duration_ms: 13.189912
+  type: 'test'
+  ...
+# Subtest: repeated generation is stable and does not mutate source records
+ok 208 - repeated generation is stable and does not mutate source records
+  ---
+  duration_ms: 24.261083
+  type: 'test'
+  ...
+# Subtest: empty register is rejected
+ok 209 - empty register is rejected
+  ---
+  duration_ms: 1.218111
+  type: 'test'
+  ...
+# Subtest: missing required field
+ok 210 - missing required field
+  ---
+  duration_ms: 0.857769
+  type: 'test'
+  ...
+# Subtest: unknown record property
+ok 211 - unknown record property
+  ---
+  duration_ms: 1.04605
+  type: 'test'
+  ...
+# Subtest: unknown nested property
+ok 212 - unknown nested property
+  ---
+  duration_ms: 0.817284
+  type: 'test'
+  ...
+# Subtest: invalid status
+ok 213 - invalid status
+  ---
+  duration_ms: 1.17976
+  type: 'test'
+  ...
+# Subtest: null and string are distinct types
+ok 214 - null and string are distinct types
+  ---
+  duration_ms: 1.198515
+  type: 'test'
+  ...
+# Subtest: duplicate source ID
+ok 215 - duplicate source ID
+  ---
+  duration_ms: 5.061306
+  type: 'test'
+  ...
+# Subtest: filename and ID mismatch
+ok 216 - filename and ID mismatch
+  ---
+  duration_ms: 0.865874
+  type: 'test'
+  ...
+# Subtest: dangling related source
+ok 217 - dangling related source
+  ---
+  duration_ms: 4.118528
+  type: 'test'
+  ...
+# Subtest: self reference
+ok 218 - self reference
+  ---
+  duration_ms: 4.253881
+  type: 'test'
+  ...
+# Subtest: duplicate bibliography with new ID
+ok 219 - duplicate bibliography with new ID
+  ---
+  duration_ms: 4.142563
+  type: 'test'
+  ...
+# Subtest: renamed duplicate identifier
+ok 220 - renamed duplicate identifier
+  ---
+  duration_ms: 5.523245
+  type: 'test'
+  ...
+# Subtest: duplicate passage ID
+ok 221 - duplicate passage ID
+  ---
+  duration_ms: 0.918953
+  type: 'test'
+  ...
+# Subtest: unsafe URL protocol
+ok 222 - unsafe URL protocol
+  ---
+  duration_ms: 0.689706
+  type: 'test'
+  ...
+# Subtest: invalid URL
+ok 223 - invalid URL
+  ---
+  duration_ms: 0.714112
+  type: 'test'
+  ...
+# Subtest: URL credentials prohibited
+ok 224 - URL credentials prohibited
+  ---
+  duration_ms: 0.706277
+  type: 'test'
+  ...
+# Subtest: impossible access date
+ok 225 - impossible access date
+  ---
+  duration_ms: 0.700205
+  type: 'test'
+  ...
+# Subtest: invalid hash
+ok 226 - invalid hash
+  ---
+  duration_ms: 0.769846
+  type: 'test'
+  ...
+# Subtest: acquisition without hash
+ok 227 - acquisition without hash
+  ---
+  duration_ms: 0.880051
+  type: 'test'
+  ...
+# Subtest: acquisition without download record
+ok 228 - acquisition without download record
+  ---
+  duration_ms: 1.210768
+  type: 'test'
+  ...
+# Subtest: catalogue-only cannot count as text checked
+ok 229 - catalogue-only cannot count as text checked
+  ---
+  duration_ms: 1.41023
+  type: 'test'
+  ...
+# Subtest: catalogue cannot have acquired hash
+ok 230 - catalogue cannot have acquired hash
+  ---
+  duration_ms: 1.5553
+  type: 'test'
+  ...
+# Subtest: text checked without passage evidence
+ok 231 - text checked without passage evidence
+  ---
+  duration_ms: 3.862632
+  type: 'test'
+  ...
+# Subtest: figures checked without figure locator
+ok 232 - figures checked without figure locator
+  ---
+  duration_ms: 0.934082
+  type: 'test'
+  ...
+# Subtest: unchecked text conflicts with verified passage
+ok 233 - unchecked text conflicts with verified passage
+  ---
+  duration_ms: 1.201089
+  type: 'test'
+  ...
+# Subtest: unchecked figures conflicts with verified figure
+ok 234 - unchecked figures conflicts with verified figure
+  ---
+  duration_ms: 3.004913
+  type: 'test'
+  ...
+# Subtest: unchecked quotation rejected
+ok 235 - unchecked quotation rejected
+  ---
+  duration_ms: 1.457167
+  type: 'test'
+  ...
+# Subtest: malformed JSON fails before validation
+ok 236 - malformed JSON fails before validation
+  ---
+  duration_ms: 1.709417
+  type: 'test'
+  ...
+# Subtest: schema keyword expansion cannot be silently ignored
+ok 237 - schema keyword expansion cannot be silently ignored
+  ---
+  duration_ms: 0.216734
+  type: 'test'
+  ...
+# Subtest: Markdown escapes separator and newline
+ok 238 - Markdown escapes separator and newline
+  ---
+  duration_ms: 4.863397
+  type: 'test'
+  ...
+# Subtest: legacy 3D source bytes preserved at fixed main
+ok 239 - legacy 3D source bytes preserved at fixed main
+  ---
+  duration_ms: 3.751044
+  type: 'test'
+  ...
+# Subtest: independent thirteen counterexamples RED to GREEN, positive stays accepted
+ok 240 - independent thirteen counterexamples RED to GREEN, positive stays accepted
+  ---
+  duration_ms: 77.909197
+  type: 'test'
+  ...
+# Subtest: impossible publication date
+ok 241 - impossible publication date
+  ---
+  duration_ms: 1.008932
+  type: 'test'
+  ...
+# Subtest: publication year contradiction
+ok 242 - publication year contradiction
+  ---
+  duration_ms: 1.294764
+  type: 'test'
+  ...
+# Subtest: invalid DOI format
+ok 243 - invalid DOI format
+  ---
+  duration_ms: 3.505786
+  type: 'test'
+  ...
+# Subtest: schema-valued additionalProperties fails closed
+ok 244 - schema-valued additionalProperties fails closed
+  ---
+  duration_ms: 0.385048
+  type: 'test'
+  ...
+# Subtest: duplicate objects are compared independent of key order
+ok 245 - duplicate objects are compared independent of key order
+  ---
+  duration_ms: 0.615979
+  type: 'test'
+  ...
+# Subtest: falsey unsupported schema type and dialect values fail closed
+ok 246 - falsey unsupported schema type and dialect values fail closed
+  ---
+  duration_ms: 2.98239
+  type: 'test'
+  ...
+# Subtest: six collection reviews, seven new measurements, original 125 files unchanged
+ok 247 - six collection reviews, seven new measurements, original 125 files unchanged
+  ---
+  duration_ms: 14.478174
+  type: 'test'
+  ...
+# Subtest: generated listing identical
+ok 248 - generated listing identical
+  ---
+  duration_ms: 5.181801
+  type: 'test'
+  ...
+# Subtest: explicit approximation and null timber facts
+ok 249 - explicit approximation and null timber facts
+  ---
+  duration_ms: 0.376591
+  type: 'test'
+  ...
+# Subtest: nonexistent OBS
+ok 250 - nonexistent OBS
+  ---
+  duration_ms: 1.950677
+  type: 'test'
+  ...
+# Subtest: source OBS hash swapped
+ok 251 - source OBS hash swapped
+  ---
+  duration_ms: 1.048565
+  type: 'test'
+  ...
+# Subtest: evidence reference missing
+ok 252 - evidence reference missing
+  ---
+  duration_ms: 1.07249
+  type: 'test'
+  ...
+# Subtest: other castle data transfer
+ok 253 - other castle data transfer
+  ---
+  duration_ms: 1.505668
+  type: 'test'
+  ...
+# Subtest: same castle unrelated source substitution
+ok 254 - same castle unrelated source substitution
+  ---
+  duration_ms: 1.258726
+  type: 'test'
+  ...
+# Subtest: posthole diameter changed to timber width
+ok 255 - posthole diameter changed to timber width
+  ---
+  duration_ms: 1.809002
+  type: 'test'
+  ...
+# Subtest: remaining depth promoted to height
+ok 256 - remaining depth promoted to height
+  ---
+  duration_ms: 3.008338
+  type: 'test'
+  ...
+# Subtest: cm relabelled m
+ok 257 - cm relabelled m
+  ---
+  duration_ms: 1.351339
+  type: 'test'
+  ...
+# Subtest: approximate made exact
+ok 258 - approximate made exact
+  ---
+  duration_ms: 1.507761
+  type: 'test'
+  ...
+# Subtest: prototype value injected
+ok 259 - prototype value injected
+  ---
+  duration_ms: 1.506699
+  type: 'test'
+  ...
+# Subtest: measurement missing
+ok 260 - measurement missing
+  ---
+  duration_ms: 1.295436
+  type: 'test'
+  ...
+# Subtest: measurement duplicated
+ok 261 - measurement duplicated
+  ---
+  duration_ms: 2.360872
+  type: 'test'
+  ...
+# Subtest: invented individual
+ok 262 - invented individual
+  ---
+  duration_ms: 1.738572
+  type: 'test'
+  ...
+# Subtest: collection split
+ok 263 - collection split
+  ---
+  duration_ms: 1.26595
+  type: 'test'
+  ...
+# Subtest: unknown species promoted
+ok 264 - unknown species promoted
+  ---
+  duration_ms: 1.337775
+  type: 'test'
+  ...
+# Subtest: unknown removed
+ok 265 - unknown removed
+  ---
+  duration_ms: 1.266792
+  type: 'test'
+  ...
+# Subtest: CAD write enabled
+ok 266 - CAD write enabled
+  ---
+  duration_ms: 1.736026
+  type: 'test'
+  ...
+# Subtest: CAD formal adoption
+ok 267 - CAD formal adoption
+  ---
+  duration_ms: 1.244901
+  type: 'test'
+  ...
+# Subtest: historical certainty promoted
+ok 268 - historical certainty promoted
+  ---
+  duration_ms: 1.505938
+  type: 'test'
+  ...
+# Subtest: row removed
+ok 269 - row removed
+  ---
+  duration_ms: 3.554768
+  type: 'test'
+  ...
+# Subtest: revision prior missing
+ok 270 - revision prior missing
+  ---
+  duration_ms: 4.695475
+  type: 'test'
+  ...
+# Subtest: new held review revision keeps old row
+ok 271 - new held review revision keeps old row
+  ---
+  duration_ms: 3.920349
+  type: 'test'
+  ...
+# Subtest: VER swapped to duplicate another OBS
+ok 272 - VER swapped to duplicate another OBS
+  ---
+  duration_ms: 1.881428
+  type: 'test'
+  ...
+# Subtest: initial summary silently edited
+ok 273 - initial summary silently edited
+  ---
+  duration_ms: 1.911543
+  type: 'test'
+  ...
+# Subtest: initial reason silently edited
+ok 274 - initial reason silently edited
+  ---
+  duration_ms: 1.889693
+  type: 'test'
+  ...
+1..274
+# tests 274
+# suites 0
+# pass 273
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1499.614398

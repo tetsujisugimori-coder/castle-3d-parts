@@ -1,0 +1,17 @@
+[
+  {
+    "kind": "input_copy",
+    "status": "RED",
+    "actual": "ACCEPTED"
+  },
+  {
+    "kind": "application_hash",
+    "status": "RED",
+    "actual": "ACCEPTED"
+  },
+  {
+    "kind": "audit_claim",
+    "status": "RED",
+    "actual": "ACCEPTED"
+  }
+]

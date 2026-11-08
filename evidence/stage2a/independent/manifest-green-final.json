@@ -1,0 +1,17 @@
+[
+  {
+    "kind": "input_copy",
+    "status": "PASS",
+    "actual": "OUTPUT_HASH input.FCStd"
+  },
+  {
+    "kind": "application_hash",
+    "status": "PASS",
+    "actual": "APPLICATION_FILE_HASH"
+  },
+  {
+    "kind": "audit_claim",
+    "status": "PASS",
+    "actual": "AUDIT_MISMATCH"
+  }
+]

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>研究とCAD候補の確認 | Stage 2-A</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<header><p>CASTLE 3D PARTS / Stage 2-A</p><h1>研究とCAD候補の確認</h1><p class="warning">表示中のCADは試作Dです。研究根拠と造形の仮定を分離し、未確認寸法を史実として扱いません。</p></header>
+<main>
+<p id="status" role="status" aria-live="polite">研究データを読み込み中…</p>
+<p>この画面は閲覧専用です。候補の選択は承認・適用ではありません。正式承認と適用は別のCLI手順で行い、研究上の確証とソフトウェアの検証結果は別々に判断します。</p>
+<nav aria-label="確認する項目"><a href="#part-panel">部品とパラメータ</a><a href="#research-panel">研究資料</a><a href="#candidates-panel">候補と差分</a><a href="#execution-panel">実行状態</a><a href="#model-panel">3D</a></nav>
+<div id="data-panels" hidden>
+<section id="part-panel"><h2>部品とパラメータ</h2><div id="part"></div></section>
+<section id="research-panel"><h2>研究資料と関係</h2><p>資料・観察・仮説・設計判断の参照スナップショット。参照があること自体は正式採用を意味しません。</p><div id="research"></div></section>
+<section id="candidates-panel"><h2>変更候補と差分</h2><label for="candidate">確認する候補</label><select id="candidate"></select><div id="candidate-detail" aria-live="polite"></div></section>
+<section id="execution-panel"><h2>生成・実行状態</h2><p>PASS、NOT_TESTED、BLOCKED等の結果は工程ごとに確認してください。モデル表示の成功だけではFreeCADやBlenderの再実行を証明しません。</p><div id="execution"></div></section>
+</div>
+<section id="model-panel"><h2>既存のCAD由来GLB（試作D）</h2><p>候補を選んでもこの3D表示は変わりません。既存版の実GLBを表示しています。</p><a href="../cad/" target="_blank" rel="noopener">既存の3Dビューアを別タブで開く</a><iframe title="既存の木柵CAD試作Dビューア" src="../cad/" loading="lazy"></iframe><p>読み込みに失敗した場合は、ビューア内の状態表示をご確認ください。外部CDNへの接続とWebGLが必要です。</p></section>
+</main>
+<footer>Stage 2-A · 読み取り専用 · 単位は元データに記録</footer>
+<script type="module" src="./app.mjs"></script><noscript>JavaScriptが無効なため研究データは読み込めません。3Dビューアへのリンクは利用できます。</noscript>
+</body></html>

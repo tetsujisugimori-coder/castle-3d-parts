@@ -1,0 +1,32 @@
+Info: Saved "palisade.blend"
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+22:29:48 | INFO: Starting glTF 2.0 export
+22:29:48 | INFO: Extracting primitive: Post_001
+22:29:48 | INFO: Primitives created: 1
+22:29:48 | INFO: Extracting primitive: Post_002
+22:29:48 | INFO: Primitives created: 1
+22:29:48 | INFO: Extracting primitive: Post_003
+22:29:48 | INFO: Primitives created: 1
+22:29:48 | INFO: Extracting primitive: Post_004
+22:29:48 | INFO: Primitives created: 1
+22:29:48 | INFO: Extracting primitive: Post_005
+22:29:48 | INFO: Primitives created: 1
+22:29:48 | INFO: Extracting primitive: Rail_001
+22:29:48 | INFO: Primitives created: 1
+22:29:48 | INFO: Extracting primitive: Rail_002
+22:29:48 | INFO: Primitives created: 1
+22:29:48 | INFO: Finished glTF 2.0 export in 0.007669210433959961 s
+
+22:29:48 | INFO: Data are loaded, start creating Blender stuff
+22:29:48 | INFO: Blender create Mesh node Post_001
+22:29:48 | INFO: Blender create Mesh node Post_002
+22:29:48 | INFO: Blender create Mesh node Post_003
+22:29:48 | INFO: Blender create Mesh node Post_004
+22:29:48 | INFO: Blender create Mesh node Post_005
+22:29:48 | INFO: Blender create Mesh node Rail_001
+22:29:48 | INFO: Blender create Mesh node Rail_002
+22:29:48 | INFO: glTF import finished in 0.01s
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-stage2a/evidence/stage2a/independent/real-run-shallow-fix/palisade.blend"
+
+Blender quit

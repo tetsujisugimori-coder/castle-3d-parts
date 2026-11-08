@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {validateData, display, candidateLabel} from '../site/research-cad/view-model.mjs';
+const source = file => readFileSync(new URL('../site/research-cad/' + file, import.meta.url), 'utf8');
+test('review data contract accepts complete read-only export', () => assert.ok(validateData({part:{},snapshot:{},candidates:[],manifest:{}})));
+for (const key of ['part','snapshot','candidates','manifest']) test(`missing ${key} rejected`, () => {const data={part:{},snapshot:{},candidates:[],manifest:{}};delete data[key];assert.throws(()=>validateData(data));});
+test('unknown values are not reported as verified',()=>assert.equal(display(null),'未設定 / 未確認'));
+test('hostile values stay plain strings',()=>assert.equal(display('<img src=x onerror=alert(1)>'),'<img src=x onerror=alert(1)>'));
+test('candidate identifiers and status are visible',()=>assert.equal(candidateLabel({id:'C-1',status:'BLOCKED'},0),'C-1 · BLOCKED'));
+test('browser renders data only with textContent and has no mutation requests',()=>{const js=source('app.mjs');assert.ok(js.includes('.textContent'));assert.doesNotMatch(js,/innerHTML|outerHTML|insertAdjacentHTML|\b(?:POST|PUT|PATCH|DELETE)\b|localStorage/);assert.equal((js.match(/fetch\(/g)||[]).length,1);});
+test('existing real GLB viewer is reused and candidate inspection clearly separated',()=>{const html=source('index.html');assert.match(html,/src="\.\.\/cad\/"/);assert.match(html,/閲覧専用/);assert.match(html,/CLI/);assert.match(html,/候補を選んでもこの3D表示は変わりません/);assert.match(html,/<iframe title=/);assert.doesNotMatch(html,/<button/);});

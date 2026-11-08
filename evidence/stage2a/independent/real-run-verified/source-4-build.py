@@ -1,0 +1,134 @@
+"""Run with /usr/bin/python3 (FreeCAD 1.0 module). CAD units mm; public API m."""
+import sys, json, math, hashlib, tempfile, zipfile
+from pathlib import Path
+sys.path.append('/usr/lib/freecad/lib')
+import FreeCAD as App
+import Part
+ROOT=Path(__file__).resolve().parents[2]
+OUT=ROOT/'cad/prototype-v1/generated'
+
+def validate(p):
+    for k in ('height','spacing','width'):
+        if isinstance(p[k],bool) or not isinstance(p[k],(int,float)) or not math.isfinite(p[k]): raise ValueError('NONFINITE_'+k)
+    for k in ('count','rails'):
+        if type(p[k]) is not int: raise ValueError('INTEGER_'+k)
+    if not .1<=p['height']<=10: raise ValueError('HEIGHT')
+    if not .01<=p['width']<=1: raise ValueError('WIDTH')
+    if not p['width']<p['spacing']<=10: raise ValueError('SPACING')
+    if not 2<=p['count']<=30: raise ValueError('COUNT')
+    if not 0<=p['rails']<=6: raise ValueError('RAILS')
+    if p['rails'] and p['height']/(p['rails']+1)<=p['width']*.56: raise ValueError('RAIL_OVERLAP')
+
+def build(p,name='Palisade',doc=None):
+    validate(p)
+    d=doc or App.newDocument(name)
+    if doc:
+        for o in list(d.Objects):
+            if o.Name.startswith(('Post_', 'Rail_')):d.removeObject(o.Name)
+    c=d.getObject('Parameters') or d.addObject('App::FeaturePython','Parameters')
+    for prop,key in [('Height','height'),('Spacing','spacing'),('Width','width')]:
+        if prop not in c.PropertiesList:c.addProperty('App::PropertyLength',prop,'Prototype D')
+        setattr(c,prop,p[key]*1000)
+    for prop,key in [('Count','count'),('Rails','rails')]:
+        if prop not in c.PropertiesList:c.addProperty('App::PropertyInteger',prop,'Prototype D')
+        setattr(c,prop,p[key])
+    if 'Basis' not in c.PropertiesList:c.addProperty('App::PropertyString','Basis','Research')
+    c.Basis='D prototype; reference_only; not archaeological dimensions'
+    objects=[]
+    for i in range(p['count']):
+        b=d.addObject('Part::Box',f'Post_{i+1:03d}');b.Label=f'Post {i+1} (D square flat top)'
+        for prop,expr in {'Length':'Parameters.Width','Width':'Parameters.Width','Height':'Parameters.Height','Placement.Base.x':f'({i} - (Parameters.Count - 1) / 2) * Parameters.Spacing - Parameters.Width / 2','Placement.Base.y':'-Parameters.Width / 2'}.items():b.setExpression(prop,expr)
+        objects.append(b)
+    # Rails touch rear post faces; no invented joinery or penetrating volumes.
+    for i in range(p['rails']):
+        b=d.addObject('Part::Box',f'Rail_{i+1:03d}');b.Label=f'Rail {i+1} (D butt contact)'
+        for prop,expr in {'Length':'(Parameters.Count - 1) * Parameters.Spacing + Parameters.Width','Width':'Parameters.Width * 0.66','Height':'Parameters.Width * 0.56','Placement.Base.x':'-((Parameters.Count - 1) * Parameters.Spacing + Parameters.Width) / 2','Placement.Base.y':'-Parameters.Width / 2 - Parameters.Width * 0.66','Placement.Base.z':f'Parameters.Height * {i+1} / (Parameters.Rails + 1) - Parameters.Width * 0.28'}.items():b.setExpression(prop,expr)
+        objects.append(b)
+    d.recompute();return d,objects
+
+def repair_embedded_template(d):
+    # Embedded-module FreeCAD may not initialize TransientDir on openDocument.
+    # Restore the included template from FCStd, not a machine-specific source path.
+    if d.getObject('Template'):
+        if not d.TransientDir:d.TransientDir=tempfile.mkdtemp(prefix='palisade-reopen-')+'/'
+        target=Path(d.TransientDir)/'portable-template.svg'
+        with zipfile.ZipFile(d.FileName) as z:
+            names=[n for n in z.namelist() if n.endswith('.svg')]
+            if len(names)!=1:raise ValueError('EXPECTED_ONE_EMBEDDED_TEMPLATE')
+            target.write_bytes(z.read(names[0]))
+        d.removeObject('Template')
+        template=d.addObject('TechDraw::DrawSVGTemplate','Template');template.Template=str(target)
+        d.Drawing.Template=template
+        d.recompute()
+
+def regenerate(d):
+    c=d.Parameters
+    p={'height':c.Height.Value/1000,'spacing':c.Spacing.Value/1000,'width':c.Width.Value/1000,'count':c.Count,'rails':c.Rails}
+    validate(p)  # Reject before deleting existing geometry.
+    repair_embedded_template(d)
+    result=build(p,doc=d)
+    if d.getObject('FrontView'):d.FrontView.Source=result[1];d.recompute()
+    return result
+
+def audit(d,objects,p):
+    shapes=[o.Shape for o in objects]; compound=Part.Compound(shapes);bb=compound.BoundBox
+    assert all(not s.isNull() and s.isValid() and len(s.Solids)==1 for s in shapes)
+    expected=((p['count']-1)*p['spacing']+p['width'],p['width']*1.66 if p['rails'] else p['width'],p['height'])
+    dims=[bb.XLength/1000,bb.YLength/1000,bb.ZLength/1000]
+    assert all(abs(a-b)<1e-8 for a,b in zip(dims,expected)),(dims,expected)
+    max_overlap=max((shapes[i].common(shapes[j]).Volume for i in range(len(shapes)) for j in range(i)),default=0)
+    assert max_overlap<1e-5,max_overlap
+    return {'dimensions_m':dims,'posts':sum(o.Name.startswith('Post_') for o in objects),'rails':sum(o.Name.startswith('Rail_') for o in objects),'solid_count':len(compound.Solids),'volume_mm3':compound.Volume,'max_pair_intersection_mm3':max_overlap,'valid':True}
+
+def main():
+    OUT.mkdir(parents=True,exist_ok=True)
+    p={'height':2.,'spacing':1.2,'width':.15,'count':5,'rails':2}
+    d,objects=build(p);r={'software':App.Version(),'mode':'headless Python module, not GUI','baseline':audit(d,objects,p)}
+    # Editable dimensions recompute in same document, including after reopening.
+    d.saveAs(str(OUT/'palisade.FCStd'));App.closeDocument(d.Name)
+    d=App.openDocument(str(OUT/'palisade.FCStd'));objects=[o for o in d.Objects if o.Name.startswith(('Post_','Rail_'))]
+    r['fcstd_reopened']=audit(d,objects,p)
+    d.Parameters.Height=2500;d.Parameters.Spacing=1400;d.recompute()
+    r['same_document_edit']=audit(d,objects,{**p,'height':2.5,'spacing':1.4})
+    d.Parameters.Height=2000;d.Parameters.Spacing=1200;d.Parameters.Count=3;d.Parameters.Rails=1
+    d,objects=regenerate(d);r['same_document_count_edit']=audit(d,objects,{**p,'count':3,'rails':1})
+    d.Parameters.Count=5;d.Parameters.Rails=2;d,objects=regenerate(d);d.save()
+    Part.export(objects,str(OUT/'palisade.step'))
+    step=Part.Shape();step.read(str(OUT/'palisade.step'))
+    assert step.isValid() and len(step.Solids)==7
+    assert abs(step.BoundBox.XLength-4950)<1e-7 and abs(step.Volume-r['baseline']['volume_mm3'])<.01
+    r['step_reopened']={'valid':step.isValid(),'solids':len(step.Solids),'width_m':step.BoundBox.XLength/1000,'height_m':step.BoundBox.ZLength/1000,'volume_mm3':step.Volume}
+    # Independent component tessellation in metres, Z up. Blender consumes this intermediate, not STEP.
+    meshes=[]
+    for o in objects:
+        vertices,faces=o.Shape.tessellate(.1)
+        meshes.append({'name':o.Name,'vertices_m':[[v.x/1000,v.y/1000,v.z/1000] for v in vertices],'faces':[list(f) for f in faces]})
+    (OUT/'mesh-transfer.json').write_text(json.dumps({'unit':'m','up':'Z','objects':meshes},indent=2)+'\n')
+    # Actual FreeCAD TechDraw page/view with portable relative SVG template.
+    try:
+        import TechDraw, tempfile
+        d.TransientDir=tempfile.mkdtemp(prefix="palisade-techdraw-")+"/"
+        page=d.addObject('TechDraw::DrawPage','Drawing')
+        template=d.addObject('TechDraw::DrawSVGTemplate','Template');template.Template=str(ROOT/'cad/prototype-v1/template.svg');page.Template=template
+        view=d.addObject('TechDraw::DrawViewPart','FrontView');view.Source=objects;view.Direction=App.Vector(0,-1,0);view.XDirection=App.Vector(1,0,0);view.Scale=.045;view.X=148.5;view.Y=105;page.addView(view);d.recompute()
+        # This view is saved in FCStd; standalone SVG uses FreeCAD's actual shape projection.
+        projection=TechDraw.projectToSVG(Part.Compound([o.Shape for o in objects]),App.Vector(0,-1,0))
+        projection=projection.replace('stroke-width="1.0"','stroke-width="4.0"')
+        svg='<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210"><rect width="297" height="210" fill="white"/><g transform="matrix(0 .045 -.045 0 148.5 155)">'+projection+'</g><g font-family="sans-serif" font-size="5"><text x="15" y="20">Palisade prototype v1 / D / reference_only</text><text x="15" y="30">Units: mm. Width 4950; height 2000; centers 1200; posts 5; rails 2.</text><text x="15" y="190">Not excavated dimensions. FreeCAD projected geometry; square posts / flat tops provisional.</text></g></svg>'
+        (OUT/'palisade-drawing.svg').write_text(svg)
+        d.save();r['techdraw']={'page':page.Name,'view':view.Name,'projection':'TechDraw.projectToSVG','status':'PASS headless creation, GUI NOT_TESTED'}
+    except Exception as e:r['techdraw']={'status':'FAIL','error':repr(e)}
+    App.closeDocument(d.Name);d=App.openDocument(str(OUT/'palisade.FCStd'));r['final_reopen']=audit(d,[o for o in d.Objects if o.Name.startswith(('Post_','Rail_'))],p)
+    d.Parameters.Count=4;d.Parameters.Height=2300;d,objects=regenerate(d)
+    d.saveAs(str(OUT/'reopen-edit-test.FCStd'));App.closeDocument(d.Name)
+    d=App.openDocument(str(OUT/'reopen-edit-test.FCStd'));r['final_reopen_edit_save_reopen']=audit(d,[o for o in d.Objects if o.Name.startswith(('Post_','Rail_'))],{**p,'count':4,'height':2.3});App.closeDocument(d.Name)
+    (OUT/'reopen-edit-test.FCStd').unlink()
+    r['variants']=[]
+    for i,v in enumerate([{**p,'count':3,'rails':1},{**p,'count':8,'height':3,'spacing':1.6,'width':.2,'rails':3},{**p,'rails':0}]):
+        vd,vo=build(v,'Variant');r['variants'].append(audit(vd,vo,v));App.closeDocument(vd.Name)
+    r['negative_controls']=[]
+    for key,value in [('height',0),('spacing',.1),('count',1),('rails',-1),('width',float('nan')),('count',5.5),('rails',True)]:
+        try:validate({**p,key:value});raise AssertionError('invalid input accepted')
+        except ValueError as e:r['negative_controls'].append({'field':key,'error':str(e),'rejected':True})
+    (ROOT/'evidence/cad-prototype/freecad.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
+if __name__=='__main__':main()
