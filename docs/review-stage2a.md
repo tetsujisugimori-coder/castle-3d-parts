@@ -41,3 +41,17 @@
 独立担当の最終実生成 `independent/real-run-verified/` はPASS。正当な実manifestからcompleteがappliedとなる正常系も確認（`complete-positive.json`）。同じ最終実生成を破壊した3反例はすべて拒否（`manifest-green-final.json`）。構造比較もPASS（`comparison-final.json`）。
 
 確認した修正対象の未解決P1/P2はなし。コードが今後変わった場合は、この記録を新しいHEADの検証済み証拠に流用せず、対象差分と実行元hashを再確認する。原本・未確認史料・GUI等の制限は上記のとおり。
+
+## 浅いCI checkout対応の追加独立レビュー
+
+PR初回CIの既存Validate prototype失敗後、engineのみのshallow fallbackを追加検査した。対象engine SHA-256: `317c2327a6e609536e29fdc70ff9bac0b6cb7d36b97b6b7baf809f65123924c4`。
+
+独立したdepth1コピーで12件PASS（`independent/shallow-counterexamples.mjs` / `shallow-results.json`）。実際にshallow=trueかつBASE object欠落を確認したうえで、固定BASE bundleがfull-history Git snapshotと一致、固定partが一致、HEADのDEC過去pin参照が成功することを確認。任意欠落ref、bundle改変、baseline改変、現行CAD/catalog改変は拒否。正常承認applicationは通り、新SRC追加はSTALE_SOURCE_SET。shallow markerを外した履歴不完全コピーでは、BASE欠落をbundleで救済せず拒否する。
+
+コード読解でもfallbackはactual shallowと対象commit欠落の両方を要する。DECは既存固定bundle内の同一pin objectとHYP hashに限定し、別pinを推定しない。既存commitがある場合のhash不一致はfallbackの対象外。bundle/baselineをコード内SHAで固定するため、それらの内容改変と自己申告hash再計算だけでは受理されない。
+
+保存された旧applied履歴は実行元の保存snapshot/hashで検証し、現在のコードとの差だけで過去の事実を無効化しない。一方、新規completeには現在コードbytesの一致が必要。この区別を確認した。
+
+最終HEADのCI artifact監査は引き続き別途実施し、このローカル試験でCI成功を先取りしない。
+
+更新engineで独立担当が実FreeCAD/Blenderを再実行しPASS（`independent/real-run-shallow-fix/`）。その実manifestを使った新規completeもapplied成功（`complete-shallow-fix.json`）。fallback追加による未解決P1/P2は見つからなかった。

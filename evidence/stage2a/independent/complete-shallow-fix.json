@@ -1,0 +1,8 @@
+{
+  "status": "applied",
+  "manifest": {
+    "path": "evidence/stage2a/independent/real-run-shallow-fix/manifest.json",
+    "sha256": "0ea26c1e4e550ee860defe393f553e34b9d7033a5a13f4a5827d032a02c0fe0f"
+  },
+  "source_sha256": "317c2327a6e609536e29fdc70ff9bac0b6cb7d36b97b6b7baf809f65123924c4"
+}

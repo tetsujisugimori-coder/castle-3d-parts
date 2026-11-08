@@ -59,3 +59,7 @@ Node 22+、git履歴、FreeCAD module・Blenderを使用する。元ファイル
 ## 次Stage 2-B
 
 複数部品と改訂済み作業コピーを基点にした連続改訂、パラメータ別の精密影響分析、正式CAD採用の別承認契約、Git上の承認者権限/署名、変更後GLBの比較プレビュー、TechDraw再作図、GUI/実機Safari、原報告の追加照合を進める。
+
+## 初回CIの浅い履歴への対応
+
+初回HEAD 774b7c2の既存Validate prototype（run42484973741）はfetch-depth=1で固定BASEのGit objectがなく失敗した。他の5workflowは成功。旧workflowは改変せず、**実際のshallow repoで対象commitが欠落する場合のみ**、SHA256をコードに固定した既存snapshot/baselineから元の版を検証する。任意のmissing ref、nonshallowの欠落、bundle/baseline/現行原本の改変をfallbackで救済しない。初回原ZIP SHA256は`1e044c2c301956a7d91ab608716a1cb9d7f7d36590499c416efc5d60e8349740`。`evidence/stage2a/shallow/`に原ZIP・失敗ログ・修正前コード・同条件の全313件GREENを保持。修正後full履歴でも313件PASS、独立担当が12条件でfallback境界を確認した。

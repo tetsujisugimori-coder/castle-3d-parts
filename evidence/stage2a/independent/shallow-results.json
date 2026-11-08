@@ -1,0 +1,65 @@
+{
+  "engine_sha256": "317c2327a6e609536e29fdc70ff9bac0b6cb7d36b97b6b7baf809f65123924c4",
+  "results": [
+    {
+      "name": "actually shallow with BASE absent",
+      "status": "PASS",
+      "result": "ACCEPTED"
+    },
+    {
+      "name": "BASE bundle equals full Git snapshot",
+      "status": "PASS",
+      "result": "ACCEPTED"
+    },
+    {
+      "name": "fixed original artifacts equal full Git",
+      "status": "PASS",
+      "result": "ACCEPTED"
+    },
+    {
+      "name": "HEAD DEC historical pins resolve correctly",
+      "status": "PASS",
+      "result": "ACCEPTED"
+    },
+    {
+      "name": "arbitrary absent ref denied",
+      "status": "PASS",
+      "result": "Command failed: git -C /tmp/independent-shallow-APwJjY rev-parse --verify 0000000000000000000000000000000000000000^{commit}\nfatal: Needed a single revision\n"
+    },
+    {
+      "name": "bundle tamper",
+      "status": "PASS",
+      "result": "BUNDLED_SNAPSHOT_TAMPER"
+    },
+    {
+      "name": "baseline tamper",
+      "status": "PASS",
+      "result": "BASELINE_TAMPER"
+    },
+    {
+      "name": "current CAD tamper",
+      "status": "PASS",
+      "result": "BASE_FILE_CHANGED"
+    },
+    {
+      "name": "current catalog tamper",
+      "status": "PASS",
+      "result": "BASE_FILE_CHANGED"
+    },
+    {
+      "name": "approved application valid in shallow",
+      "status": "PASS",
+      "result": "ACCEPTED"
+    },
+    {
+      "name": "added source still invalidates approval",
+      "status": "PASS",
+      "result": "STALE_SOURCE_SET"
+    },
+    {
+      "name": "nonshallow absent BASE never uses bundle",
+      "status": "PASS",
+      "result": "Command failed: git -C /tmp/independent-shallow-APwJjY rev-parse --verify fb7b4375aaa29ecdfa9bbd1a8b2174cb6549aa74^{commit}\nfatal: Needed a single revision\n"
+    }
+  ]
+}
