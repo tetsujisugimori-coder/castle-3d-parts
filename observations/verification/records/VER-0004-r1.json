@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "VER-0004",
+  "revision": 1,
+  "previous": null,
+  "checked_at": "2026-11-08",
+  "observation_id": "OBS-0004",
+  "observation_sha256": "b4aadeba0a4b8a3619200776fcaf20d78f9de94c7e77f7e963c728a6d15801ed",
+  "baseline_commit": "68c039d8c1c40b81cac0f7e16fa800678ccc6de8",
+  "site": "山中城",
+  "scope": "collection",
+  "anchor_ids": [
+    "E03"
+  ],
+  "result": "partial_checked",
+  "summary": "Web解説を再読。出土建築部材と当初設置場所を分離し、個体同定は保留。",
+  "coverage": {
+    "location": "reported",
+    "individual_id": "unconfirmed",
+    "quantity": "unconfirmed",
+    "diameter": "unconfirmed",
+    "remaining_depth": "unconfirmed",
+    "center_spacing": "unconfirmed",
+    "timber_dimensions": "unconfirmed",
+    "species": "unconfirmed",
+    "processing": "unconfirmed",
+    "function": "reporter_interpretation",
+    "dating": "unconfirmed"
+  },
+  "measurements": [],
+  "new_individual_ids": [],
+  "cad": {
+    "eligibility": "reference_only",
+    "write_allowed": false,
+    "impact": "根拠確認候補のみ。穴径・穴平面寸法を柱幅に代入しない。試作D値の変更なし。"
+  },
+  "unknowns": [
+    "個体番号・数量・寸法・樹種・加工痕・元設置場所は未確認。",
+    "OBS-0005の西ノ丸出土建築材と重複・包含する可能性を未解決のまま保持。",
+    "今回の追補は資料記載の確認であり、史実の形態確証ではない。"
+  ],
+  "change_reason": "Issue #9の直接資料照合。旧JSONの全byteを保全する追補。"
+}

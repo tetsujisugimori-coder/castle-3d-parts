@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-08",
+  "sources": [
+    {
+      "source_id": "SRC-0001",
+      "record_sha256": "0c6d3c8399f3fc8a5be26ec79d8d965ec65d54c697ef41e3bad0e0430fda7d87",
+      "title": "史跡山中城跡保存活用計画 : 静岡県三島市",
+      "publisher": "三島市教育委員会",
+      "publication_date": "2023-03-10",
+      "edition": null,
+      "url": "https://www.city.mishima.shizuoka.jp/uploaded/attachment/4805.pdf",
+      "checked_at": "2026-11-08",
+      "text_status": "partial_checked",
+      "figures_status": "not_checked",
+      "result": "downloaded",
+      "rights": "公開閲覧と再配布許諾は別。今回原PDF・頁画像をリポジトリへ転載しない。",
+      "note": "原PDF再取得・既存hash一致。指定頁を本文抽出とレンダリングで照合。全編検証ではない。",
+      "file_sha256": "611656844f9c993b2042c98b301f2a63a8e3d14a2be24830c34838b6c995d2d8",
+      "bytes": 13209527
+    },
+    {
+      "source_id": "SRC-0002",
+      "record_sha256": "0eb867c72851a90aea328c387af3ded82d8bbb32a99c332560606f4cf7a35eca",
+      "title": "山中城跡環境整備事業",
+      "publisher": "三島市",
+      "publication_date": null,
+      "edition": null,
+      "url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+      "checked_at": "2026-11-08",
+      "text_status": "partial_checked",
+      "figures_status": "not_checked",
+      "result": "webpage_read",
+      "rights": "公開閲覧と再配布許諾は別。今回原PDF・頁画像をリポジトリへ転載しない。",
+      "note": "市本文「土塁」「出土遺物」を再読。本文記載と報告者解釈を分離。柱穴間隔の数値・木材樹種・個体番号は記載箇所で確認できない。"
+    },
+    {
+      "source_id": "SRC-0003",
+      "record_sha256": "3167fc971e294b4fc3d510ba3a7f88427c1ab0b3337ac11bfff18ebb23eb627a",
+      "title": "史跡山中城跡 : 国指定史跡山中城跡の環境整備事業に伴う発掘調査報告書",
+      "publisher": "三島市教育委員会",
+      "publication_date": "1984-03",
+      "edition": null,
+      "url": "https://ndlsearch.ndl.go.jp/books/R100000001-I22111000502006782",
+      "checked_at": "2026-11-08",
+      "text_status": "not_checked",
+      "figures_status": "not_checked",
+      "result": "catalog_only",
+      "rights": "公開閲覧と再配布許諾は別。今回原PDF・頁画像をリポジトリへ転載しない。",
+      "note": "CiNii BA72358535の編者・刊行期間1984.3–1985.3と分冊・所蔵を再読。各分冊の原本奥付・本文・図版は未入手。"
+    },
+    {
+      "source_id": "SRC-0004",
+      "record_sha256": "fc56d1e43612a8ff0d062a61aaba1509238020c6b80cc65ce4069780c2b8d802",
+      "title": "史跡山中城跡 : 国指定史跡山中城跡の環境整備事業に伴う発掘調査報告書",
+      "publisher": "三島市教育委員会",
+      "publication_date": "1985-03",
+      "edition": null,
+      "url": "https://ndlsearch.ndl.go.jp/books/R100000001-I22111005010063292",
+      "checked_at": "2026-11-08",
+      "text_status": "not_checked",
+      "figures_status": "not_checked",
+      "result": "catalog_only",
+      "rights": "公開閲覧と再配布許諾は別。今回原PDF・頁画像をリポジトリへ転載しない。",
+      "note": "CiNii BA72358535の編者・刊行期間1984.3–1985.3と分冊・所蔵を再読。各分冊の原本奥付・本文・図版は未入手。"
+    },
+    {
+      "source_id": "SRC-0005",
+      "record_sha256": "78acf50b3114461f6df71a67d407f97b3ce9576e396bc73aa7300737f9dc0fc0",
+      "title": "史跡山中城跡 : 国指定史跡山中城跡の環境整備事業に伴う発掘調査報告書",
+      "publisher": "三島市教育委員会",
+      "publication_date": "1994-03",
+      "edition": null,
+      "url": "https://www.city.mishima.shizuoka.jp/page/1303.html",
+      "checked_at": "2026-11-08",
+      "text_status": "not_checked",
+      "figures_status": "not_checked",
+      "result": "catalog_only",
+      "rights": "公開閲覧と再配布許諾は別。今回原PDF・頁画像をリポジトリへ転載しない。",
+      "note": "三島市刊行物案内を再読。史跡山中城跡2は昭和62〜平成4年度の調査報告と説明。全376頁表記。図書館書誌との頁数差は未解決。購入・問い合わせ未実施。"
+    },
+    {
+      "source_id": "SRC-0008",
+      "record_sha256": "bed107c7f002a8106189f9bd748eaaf5150a6f72d46fd822c886bb8f146ba6bc",
+      "title": "田中城跡XI : 10年間の調査報告",
+      "publisher": "三加和町教育委員会",
+      "publication_date": "1997-03-31",
+      "edition": null,
+      "url": "https://www.town.nagomi.lg.jp/nagomitown/switch/3_4595_18830_up_TEATX54M.pdf",
+      "checked_at": "2026-11-08",
+      "text_status": "partial_checked",
+      "figures_status": "partial_checked",
+      "result": "downloaded",
+      "rights": "公開閲覧と再配布許諾は別。今回原PDF・頁画像をリポジトリへ転載しない。",
+      "note": "原PDF再取得・既存hash一致。指定頁を本文抽出とレンダリングで照合。全編検証ではない。",
+      "file_sha256": "abc7dd82b90e21129cb6aa16c3889d529b6cf036d2b129da19e4d421919285d2",
+      "bytes": 25344834
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://sitereports.nabunken.go.jp/en/102515",
+      "method": "web reader; curl",
+      "result": "unavailable",
+      "message": "ページを表示できません。現在アクセスが集中しておりますので、もうしばらくしてからお試しください。",
+      "meaning": "取得不能。資料不存在・PDF不存在とは判定しない。"
+    }
+  ]
+}

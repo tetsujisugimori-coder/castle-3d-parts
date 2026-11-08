@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "VER-0003",
+  "revision": 1,
+  "previous": null,
+  "checked_at": "2026-11-08",
+  "observation_id": "OBS-0003",
+  "observation_sha256": "086f093ee82f5a9eaa686db20aa5bd31e9cf1fd28d98ab020e9c2c0b2bd5cb36",
+  "baseline_commit": "68c039d8c1c40b81cac0f7e16fa800678ccc6de8",
+  "site": "山中城",
+  "scope": "collection",
+  "anchor_ids": [
+    "E03"
+  ],
+  "result": "partial_checked",
+  "summary": "Web解説を再読。小径木の個体番号・樹種・寸法・加工痕は原報告未照合。",
+  "coverage": {
+    "location": "reported",
+    "individual_id": "unconfirmed",
+    "quantity": "unconfirmed",
+    "diameter": "unconfirmed",
+    "remaining_depth": "unconfirmed",
+    "center_spacing": "unconfirmed",
+    "timber_dimensions": "unconfirmed",
+    "species": "unconfirmed",
+    "processing": "unconfirmed",
+    "function": "reporter_interpretation",
+    "dating": "unconfirmed"
+  },
+  "measurements": [],
+  "new_individual_ids": [],
+  "cad": {
+    "eligibility": "reference_only",
+    "write_allowed": false,
+    "impact": "根拠確認候補のみ。穴径・穴平面寸法を柱幅に代入しない。試作D値の変更なし。"
+  },
+  "unknowns": [
+    "直前に述べる両西堀との関係は文脈上の候補。小径木個体ごとの出土位置は未確定。",
+    "元の柵設置地点・樹種・加工・長さ・径・数量は未確認。",
+    "OBS-0005の枝類との対応は不明。",
+    "今回の追補は資料記載の確認であり、史実の形態確証ではない。"
+  ],
+  "change_reason": "Issue #9の直接資料照合。旧JSONの全byteを保全する追補。"
+}

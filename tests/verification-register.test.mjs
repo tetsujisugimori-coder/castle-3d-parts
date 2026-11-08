@@ -1,0 +1,33 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+import {load,validate,preserve,render} from '../scripts/verification-register.mjs';
+const fresh=()=>structuredClone(load());
+function bad(name,fn,code){test(name,()=>{const rows=fresh();fn(rows);assert.throws(()=>validate(rows),e=>e.message===code)})}
+test('six collection reviews, seven new measurements, original 125 files unchanged',()=>{assert.equal(validate().length,6);assert.equal(preserve(),125);assert.equal(load().flatMap(x=>x.data.measurements).length,7)});
+test('generated listing identical',()=>assert.equal(render(),readFileSync(new URL('../observations/verification/index.md',import.meta.url),'utf8')));
+test('explicit approximation and null timber facts',()=>{const d=load()[1].data;assert.equal(d.measurements[0].qualifier,'approximately');assert.equal(d.coverage.timber_dimensions,'unconfirmed');assert.equal(d.cad.write_allowed,false)});
+bad('nonexistent OBS',r=>r[0].data.observation_id='OBS-9999','OBS_REFERENCE');
+bad('source OBS hash swapped',r=>r[0].data.observation_sha256='0'.repeat(64),'OBS_HASH');
+bad('evidence reference missing',r=>r[0].data.anchor_ids=['E99'],'ANCHOR_REFERENCE');
+bad('other castle data transfer',r=>r[1].data.anchor_ids=['E05'],'FOREIGN_EVIDENCE');
+bad('same castle unrelated source substitution',r=>r[0].data.anchor_ids=['E02'],'EVIDENCE_BINDING');
+bad('posthole diameter changed to timber width',r=>r[1].data.measurements[0].measurement_target='post_width','MEASUREMENT_TARGET');
+bad('remaining depth promoted to height',r=>r[5].data.measurements[0].measurement_target='post_height','MEASUREMENT_TARGET');
+bad('cm relabelled m',r=>r[1].data.measurements[0].unit='m','MEASUREMENT_UNIT');
+bad('approximate made exact',r=>r[1].data.measurements[0].qualifier='exact','MEASUREMENT_VALUE');
+bad('prototype value injected',r=>r[1].data.measurements[0].value=15,'MEASUREMENT_VALUE');
+bad('measurement missing',r=>r[1].data.measurements=[],'MEASUREMENT_SET');
+bad('measurement duplicated',r=>r[5].data.measurements[1]=structuredClone(r[5].data.measurements[0]),'MEASUREMENT_DUPLICATE');
+bad('invented individual',r=>r[1].data.new_individual_ids=['P1'],'UNVERIFIED_INDIVIDUAL');
+bad('collection split',r=>r[1].data.scope='individual','UNVERIFIED_INDIVIDUAL');
+bad('unknown species promoted',r=>r[1].data.coverage.species='confirmed','COVERAGE_PROMOTION');
+bad('unknown removed',r=>r[1].data.unknowns.shift(),'UNKNOWN_LOSS');
+bad('CAD write enabled',r=>r[1].data.cad.write_allowed=true,'CAD_WRITE');
+bad('CAD formal adoption',r=>r[1].data.cad.eligibility='approved','CAD_WRITE');
+bad('historical certainty promoted',r=>r[1].data.result='confirmed','CERTAINTY_PROMOTION');
+bad('row removed',r=>r.shift(),'COVERAGE_MISSING');
+bad('revision prior missing',r=>{const x=structuredClone(r[0]);x.path='VER-0001-r3.json';x.data.revision=3;x.data.previous='VER-0001-r2.json';r.push(x)},'HISTORY_LOST');
+test('new held review revision keeps old row',()=>{const r=fresh(),x=structuredClone(r[0]);x.path='VER-0001-r2.json';x.data.revision=2;x.data.previous='VER-0001-r1.json';x.data.change_reason='資料追加取得待ちを再確認';r.push(x);assert.equal(validate(r).length,7)});
+
+bad('VER swapped to duplicate another OBS',r=>{r[1].data=structuredClone(r[0].data);r[1].data.id='VER-0002'},'VER_OBS_BINDING');
+bad('initial summary silently edited',r=>r[1].data.summary='変更','INITIAL_HISTORY_MUTATED');
+bad('initial reason silently edited',r=>r[1].data.change_reason='変更','INITIAL_HISTORY_MUTATED');

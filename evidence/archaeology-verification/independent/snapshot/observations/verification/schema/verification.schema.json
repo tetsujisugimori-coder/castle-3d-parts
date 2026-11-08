@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "revision",
+    "previous",
+    "checked_at",
+    "observation_id",
+    "observation_sha256",
+    "baseline_commit",
+    "site",
+    "scope",
+    "anchor_ids",
+    "result",
+    "summary",
+    "coverage",
+    "measurements",
+    "new_individual_ids",
+    "cad",
+    "unknowns",
+    "change_reason"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^VER-[0-9]{4}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "previous": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "observation_id": {
+      "type": "string",
+      "pattern": "^OBS-[0-9]{4}$"
+    },
+    "observation_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "baseline_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "site": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "anchor_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "result": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "location",
+        "individual_id",
+        "quantity",
+        "diameter",
+        "remaining_depth",
+        "center_spacing",
+        "timber_dimensions",
+        "species",
+        "processing",
+        "function",
+        "dating"
+      ],
+      "properties": {
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "individual_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quantity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "diameter": {
+          "type": "string",
+          "minLength": 1
+        },
+        "remaining_depth": {
+          "type": "string",
+          "minLength": 1
+        },
+        "center_spacing": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timber_dimensions": {
+          "type": "string",
+          "minLength": 1
+        },
+        "species": {
+          "type": "string",
+          "minLength": 1
+        },
+        "processing": {
+          "type": "string",
+          "minLength": 1
+        },
+        "function": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dating": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "anchor_id",
+          "id",
+          "measurement_target",
+          "value",
+          "unit",
+          "qualifier",
+          "original_label",
+          "method"
+        ],
+        "properties": {
+          "anchor_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "measurement_target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": "number",
+            "minimum": 0
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "qualifier": {
+            "type": "string",
+            "minLength": 1
+          },
+          "original_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "method": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "new_individual_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "cad": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligibility",
+        "write_allowed",
+        "impact"
+      ],
+      "properties": {
+        "eligibility": {
+          "type": "string",
+          "minLength": 1
+        },
+        "write_allowed": {
+          "type": "boolean"
+        },
+        "impact": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "change_reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "VER-0005",
+  "revision": 1,
+  "previous": null,
+  "checked_at": "2026-11-08",
+  "observation_id": "OBS-0005",
+  "observation_sha256": "11f76a79b7f8e53456e026cfe591ff84563d7b2f4b0dc0e02aacc67e230f531c",
+  "baseline_commit": "68c039d8c1c40b81cac0f7e16fa800678ccc6de8",
+  "site": "山中城",
+  "scope": "collection",
+  "anchor_ids": [
+    "E04"
+  ],
+  "result": "partial_checked",
+  "summary": "表3-7を画像再読。用途留保「ヵ」を維持。",
+  "coverage": {
+    "location": "reported",
+    "individual_id": "unconfirmed",
+    "quantity": "unconfirmed",
+    "diameter": "unconfirmed",
+    "remaining_depth": "unconfirmed",
+    "center_spacing": "unconfirmed",
+    "timber_dimensions": "unconfirmed",
+    "species": "unconfirmed",
+    "processing": "unconfirmed",
+    "function": "reporter_interpretation",
+    "dating": "unconfirmed"
+  },
+  "measurements": [],
+  "new_individual_ids": [],
+  "cad": {
+    "eligibility": "reference_only",
+    "write_allowed": false,
+    "impact": "根拠確認候補のみ。穴径・穴平面寸法を柱幅に代入しない。試作D値の変更なし。"
+  },
+  "unknowns": [
+    "混合集合であり、建築材・枝類の各数量・個体番号は未確認。",
+    "「柱材ヵ」「柵材ヵ」は用途候補であって確定用途ではない。",
+    "元設置場所、寸法、Web側集合との対応は未確認。",
+    "今回の追補は資料記載の確認であり、史実の形態確証ではない。"
+  ],
+  "change_reason": "Issue #9の直接資料照合。旧JSONの全byteを保全する追補。"
+}

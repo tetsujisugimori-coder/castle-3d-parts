@@ -1,0 +1,14 @@
+[
+  {
+    "name": "duplicate_OBS_missing_OBS2",
+    "accepted": true
+  },
+  {
+    "name": "overwrite_original_summary",
+    "accepted": true
+  },
+  {
+    "name": "same_revision_different_reason",
+    "accepted": true
+  }
+]

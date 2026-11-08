@@ -1,0 +1,17 @@
+[
+  {
+    "name": "duplicate_OBS_missing_OBS2",
+    "accepted": false,
+    "error": "VER_OBS_BINDING"
+  },
+  {
+    "name": "overwrite_original_summary",
+    "accepted": false,
+    "error": "INITIAL_HISTORY_MUTATED"
+  },
+  {
+    "name": "same_revision_different_reason",
+    "accepted": false,
+    "error": "INITIAL_HISTORY_MUTATED"
+  }
+]

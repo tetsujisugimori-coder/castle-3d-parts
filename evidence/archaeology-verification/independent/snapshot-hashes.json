@@ -1,0 +1,13 @@
+{
+  "snapshot/observations/verification/source-checks.json": "0d933451789ee73e3c72f8f523adb524c358503fcd58dc215505b116d7e931eb",
+  "snapshot/observations/verification/render-checks.json": "06244b9d3383bf9da38544af0ee333186613ef2e3aa25731d6c813779c238d99",
+  "snapshot/observations/verification/baseline.json": "7a1f663f49605bd875bd8c5a005260c1e6197c55cbcbfea4700404415b7977cc",
+  "snapshot/observations/verification/extractions.json": "6b01fdf4a7b4f19548394dab2a1dcbf46e467dad3d883f81c8b1f7f8788df969",
+  "snapshot/observations/verification/schema/verification.schema.json": "b9c7417c0abf7cda1da0b3dd7b12d8e44fb5693d8f6740b9395295cb387844b1",
+  "snapshot/observations/verification/records/VER-0001-r1.json": "7ce2cbc904e9c4fe27f26b87b41cf2f04f2b088d609308a4fc47ad6eb0153b49",
+  "snapshot/observations/verification/records/VER-0003-r1.json": "f4a4b66b2db1141ceae341224d4888a418d658ad15041d258aad43c388965efa",
+  "snapshot/observations/verification/records/VER-0004-r1.json": "95e2fec7d7d4f5a4c852d6cbd6d99dfd8b3752473ccfe84f440aad33e98cbb8b",
+  "snapshot/observations/verification/records/VER-0006-r1.json": "0f5252bd1729d498a94f5abab75a6d483804207c31a9d06635630e8c8b388cc2",
+  "snapshot/observations/verification/records/VER-0005-r1.json": "7d1b9ed69b3f10abe51036f0ddd051e826e4ac08da8e7ba2b688bbb221160cc1",
+  "snapshot/observations/verification/records/VER-0002-r1.json": "c99d01faac715e31f9ba754bc69497554f4e1979427b3703731a3cef3aa1034f"
+}
