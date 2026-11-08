@@ -1,0 +1,77 @@
+[
+  {
+    "revision": "B0",
+    "assembly.glb": {
+      "same": true,
+      "sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc"
+    },
+    "drawing.svg": {
+      "same": true,
+      "sha256": "b303e1b80286bec89c10a2e7269312a7cb33e8315c3c05a41e542e7c252ea7b2"
+    },
+    "drawing-measurements.json": {
+      "same": true,
+      "sha256": "401b860b227f72b17ed199b049d5f6ae624a5ff0a37324df0acab6523c972c57"
+    },
+    "mesh-transfer.json": {
+      "same": true,
+      "sha256": "1519fdc5162cc4d382059dcb812d30f5e2a058234cfe56efa82fb03c7af24d6d"
+    },
+    "cad-audit.json": {
+      "same_json": true
+    },
+    "blender-audit.json": {
+      "same_json": true
+    }
+  },
+  {
+    "revision": "B1",
+    "assembly.glb": {
+      "same": true,
+      "sha256": "79a078103bc9c64a68c718fa49b8b31adafbd25f34d09e164e0fb3962d824cc7"
+    },
+    "drawing.svg": {
+      "same": true,
+      "sha256": "17fb1589607701c22bd3949d88cdd8f4443a196360d0e73643f09ab44986dfbc"
+    },
+    "drawing-measurements.json": {
+      "same": true,
+      "sha256": "cd1e8b532b92dd7d8b066469755e2c80c659f3a068dced0a64a06a6dfea6ecdd"
+    },
+    "mesh-transfer.json": {
+      "same": true,
+      "sha256": "876d7256d7d7466e961c77b2914dbb7e9d51537b480815572bf34ef53aa4f8f7"
+    },
+    "cad-audit.json": {
+      "same_json": true
+    },
+    "blender-audit.json": {
+      "same_json": true
+    }
+  },
+  {
+    "revision": "B2",
+    "assembly.glb": {
+      "same": true,
+      "sha256": "9cb407e1c591594e8d46ca24ccb7c51eddeefd1ace7c3f917acc0a96a1c6ab93"
+    },
+    "drawing.svg": {
+      "same": true,
+      "sha256": "18212dfe3cb8c3389fc377a0c6ef1a19586ef7235a40215962a24cedc4b93aec"
+    },
+    "drawing-measurements.json": {
+      "same": true,
+      "sha256": "7e7164e4a5ca82d762799f8764f354a01110c783787662f75bf8b478e1c14c8b"
+    },
+    "mesh-transfer.json": {
+      "same": true,
+      "sha256": "e98d77f1464fd50f084559dff9b5105fa7432e2c0c53227c9724adbf536f8b18"
+    },
+    "cad-audit.json": {
+      "same_json": true
+    },
+    "blender-audit.json": {
+      "same_json": true
+    }
+  }
+]

@@ -1,0 +1,54 @@
+04:20:01 | INFO: Data are loaded, start creating Blender stuff
+04:20:01 | INFO: Blender create Mesh node U01_Post_001
+04:20:01 | INFO: Blender create Mesh node U01_Post_002
+04:20:01 | INFO: Blender create Mesh node U01_Post_003
+04:20:01 | INFO: Blender create Mesh node U01_Post_004
+04:20:01 | INFO: Blender create Mesh node U01_Post_005
+04:20:01 | INFO: Blender create Mesh node U01_Rail_001
+04:20:01 | INFO: Blender create Mesh node U01_Rail_002
+04:20:01 | INFO: Blender create Mesh node U02_Post_001
+04:20:01 | INFO: Blender create Mesh node U02_Post_002
+04:20:01 | INFO: Blender create Mesh node U02_Post_003
+04:20:01 | INFO: Blender create Mesh node U02_Post_004
+04:20:01 | INFO: Blender create Mesh node U02_Post_005
+04:20:01 | INFO: Blender create Mesh node U02_Rail_001
+04:20:01 | INFO: Blender create Mesh node U02_Rail_002
+04:20:01 | INFO: glTF import finished in 0.01s
+04:20:01 | INFO: Data are loaded, start creating Blender stuff
+04:20:01 | INFO: Blender create Mesh node U01_Post_001
+04:20:01 | INFO: Blender create Mesh node U01_Post_002
+04:20:01 | INFO: Blender create Mesh node U01_Post_003
+04:20:01 | INFO: Blender create Mesh node U01_Post_004
+04:20:01 | INFO: Blender create Mesh node U01_Post_005
+04:20:01 | INFO: Blender create Mesh node U01_Rail_001
+04:20:01 | INFO: Blender create Mesh node U01_Rail_002
+04:20:01 | INFO: Blender create Mesh node U02_Post_001
+04:20:01 | INFO: Blender create Mesh node U02_Post_002
+04:20:01 | INFO: Blender create Mesh node U02_Post_003
+04:20:01 | INFO: Blender create Mesh node U02_Post_004
+04:20:01 | INFO: Blender create Mesh node U02_Post_005
+04:20:01 | INFO: Blender create Mesh node U02_Rail_001
+04:20:01 | INFO: Blender create Mesh node U02_Rail_002
+04:20:01 | INFO: glTF import finished in 0.01s
+04:20:01 | INFO: Data are loaded, start creating Blender stuff
+04:20:01 | INFO: Blender create Mesh node U01_Post_001
+04:20:01 | INFO: Blender create Mesh node U01_Post_002
+04:20:01 | INFO: Blender create Mesh node U01_Post_003
+04:20:01 | INFO: Blender create Mesh node U01_Post_004
+04:20:01 | INFO: Blender create Mesh node U01_Post_005
+04:20:01 | INFO: Blender create Mesh node U01_Rail_001
+04:20:01 | INFO: Blender create Mesh node U01_Rail_002
+04:20:01 | INFO: Blender create Mesh node U02_Post_001
+04:20:01 | INFO: Blender create Mesh node U02_Post_002
+04:20:01 | INFO: Blender create Mesh node U02_Post_003
+04:20:01 | INFO: Blender create Mesh node U02_Post_004
+04:20:01 | INFO: Blender create Mesh node U02_Post_005
+04:20:01 | INFO: Blender create Mesh node U02_Rail_001
+04:20:01 | INFO: Blender create Mesh node U02_Rail_002
+04:20:01 | INFO: glTF import finished in 0.01s
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/generated/B0/assembly.blend"
+Read blend: "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/generated/B1/assembly.blend"
+Read blend: "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/generated/B2/assembly.blend"
+
+Blender quit

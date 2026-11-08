@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2" markerHeight="2" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#145a80"/></marker></defs><rect width="420" height="297" fill="white"/><g font-family="sans-serif" font-size="4"><text x="10" y="12">PAL-ASSEMBLY / B2 / D prototype / reference_only / mm / scale 1:50</text><text x="25" y="38">FRONT</text><g id="projection-FRONT" transform="matrix(0 0.02 -0.02 0 74.5 115.0)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="12.5"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 0 -2475 L -758 -2475 " />
+<path id= "2" d=" M -842 -2475 L -1558 -2475 " />
+<path id= "3" d=" M -1642 -2475 L -2400 -2475 " />
+<path id= "4" d=" M 0 -2325 L -758 -2325 " />
+<path id= "5" d=" M -842 -2325 L -1558 -2325 " />
+<path id= "6" d=" M -1642 -2325 L -2400 -2325 " />
+<path id= "7" d=" M 0 -2475 L 0 -2325 " />
+<path id= "8" d=" M -2400 -2475 L -2400 -2325 " />
+<path id= "9" d=" M 0 -1275 L -758 -1275 " />
+<path id= "10" d=" M -842 -1275 L -1558 -1275 " />
+<path id= "11" d=" M -1642 -1275 L -2400 -1275 " />
+<path id= "12" d=" M 0 -1125 L -758 -1125 " />
+<path id= "13" d=" M -842 -1125 L -1558 -1125 " />
+<path id= "14" d=" M -1642 -1125 L -2400 -1125 " />
+<path id= "15" d=" M 0 -1275 L 0 -1125 " />
+<path id= "16" d=" M -2400 -1275 L -2400 -1125 " />
+<path id= "17" d=" M 0 -75 L -758 -75 " />
+<path id= "18" d=" M -842 -75 L -1558 -75 " />
+<path id= "19" d=" M -1642 -75 L -2400 -75 " />
+<path id= "20" d=" M 0 75 L -758 75 " />
+<path id= "21" d=" M -842 75 L -1558 75 " />
+<path id= "22" d=" M -1642 75 L -2400 75 " />
+<path id= "23" d=" M 0 -75 L 0 75 " />
+<path id= "24" d=" M -2400 -75 L -2400 75 " />
+<path id= "25" d=" M 0 1125 L -758 1125 " />
+<path id= "26" d=" M -842 1125 L -1558 1125 " />
+<path id= "27" d=" M -1642 1125 L -2400 1125 " />
+<path id= "28" d=" M 0 1275 L -758 1275 " />
+<path id= "29" d=" M -842 1275 L -1558 1275 " />
+<path id= "30" d=" M -1642 1275 L -2400 1275 " />
+<path id= "31" d=" M 0 1125 L 0 1275 " />
+<path id= "32" d=" M -2400 1125 L -2400 1275 " />
+<path id= "33" d=" M 0 2325 L -758 2325 " />
+<path id= "34" d=" M -842 2325 L -1558 2325 " />
+<path id= "35" d=" M -1642 2325 L -2400 2325 " />
+<path id= "36" d=" M 0 2475 L -758 2475 " />
+<path id= "37" d=" M -842 2475 L -1558 2475 " />
+<path id= "38" d=" M -1642 2475 L -2400 2475 " />
+<path id= "39" d=" M 0 2325 L 0 2475 " />
+<path id= "40" d=" M -2400 2325 L -2400 2475 " />
+<path id= "41" d=" M -758 -2475 L -842 -2475 " />
+<path id= "42" d=" M -758 2475 L -842 2475 " />
+<path id= "43" d=" M -758 -2475 L -758 2475 " />
+<path id= "44" d=" M -842 -2475 L -842 2475 " />
+<path id= "45" d=" M -1558 -2475 L -1642 -2475 " />
+<path id= "46" d=" M -1558 2475 L -1642 2475 " />
+<path id= "47" d=" M -1558 -2475 L -1558 2475 " />
+<path id= "48" d=" M -1642 -2475 L -1642 2475 " />
+<path id= "49" d=" M 0 3325 L -758 3325 " />
+<path id= "50" d=" M -842 3325 L -1558 3325 " />
+<path id= "51" d=" M -1642 3325 L -2400 3325 " />
+<path id= "52" d=" M 0 3475 L -758 3475 " />
+<path id= "53" d=" M -842 3475 L -1558 3475 " />
+<path id= "54" d=" M -1642 3475 L -2400 3475 " />
+<path id= "55" d=" M 0 3325 L 0 3475 " />
+<path id= "56" d=" M -2400 3325 L -2400 3475 " />
+<path id= "57" d=" M 0 4625 L -758 4625 " />
+<path id= "58" d=" M -842 4625 L -1558 4625 " />
+<path id= "59" d=" M -1642 4625 L -2400 4625 " />
+<path id= "60" d=" M 0 4775 L -758 4775 " />
+<path id= "61" d=" M -842 4775 L -1558 4775 " />
+<path id= "62" d=" M -1642 4775 L -2400 4775 " />
+<path id= "63" d=" M 0 4625 L 0 4775 " />
+<path id= "64" d=" M -2400 4625 L -2400 4775 " />
+<path id= "65" d=" M 0 5925 L -758 5925 " />
+<path id= "66" d=" M -842 5925 L -1558 5925 " />
+<path id= "67" d=" M -1642 5925 L -2400 5925 " />
+<path id= "68" d=" M 0 6075 L -758 6075 " />
+<path id= "69" d=" M -842 6075 L -1558 6075 " />
+<path id= "70" d=" M -1642 6075 L -2400 6075 " />
+<path id= "71" d=" M 0 5925 L 0 6075 " />
+<path id= "72" d=" M -2400 5925 L -2400 6075 " />
+<path id= "73" d=" M 0 7225 L -758 7225 " />
+<path id= "74" d=" M -842 7225 L -1558 7225 " />
+<path id= "75" d=" M -1642 7225 L -2400 7225 " />
+<path id= "76" d=" M 0 7375 L -758 7375 " />
+<path id= "77" d=" M -842 7375 L -1558 7375 " />
+<path id= "78" d=" M -1642 7375 L -2400 7375 " />
+<path id= "79" d=" M 0 7225 L 0 7375 " />
+<path id= "80" d=" M -2400 7225 L -2400 7375 " />
+<path id= "81" d=" M 0 8525 L -758 8525 " />
+<path id= "82" d=" M -842 8525 L -1558 8525 " />
+<path id= "83" d=" M -1642 8525 L -2400 8525 " />
+<path id= "84" d=" M 0 8675 L -758 8675 " />
+<path id= "85" d=" M -842 8675 L -1558 8675 " />
+<path id= "86" d=" M -1642 8675 L -2400 8675 " />
+<path id= "87" d=" M 0 8525 L 0 8675 " />
+<path id= "88" d=" M -2400 8525 L -2400 8675 " />
+<path id= "89" d=" M -758 3325 L -842 3325 " />
+<path id= "90" d=" M -758 8675 L -842 8675 " />
+<path id= "91" d=" M -758 3325 L -758 8675 " />
+<path id= "92" d=" M -842 3325 L -842 8675 " />
+<path id= "93" d=" M -1558 3325 L -1642 3325 " />
+<path id= "94" d=" M -1558 8675 L -1642 8675 " />
+<path id= "95" d=" M -1558 3325 L -1558 8675 " />
+<path id= "96" d=" M -1642 3325 L -1642 8675 " />
+</g>
+</g><text x="25" y="155">TOP</text><g id="projection-TOP" transform="matrix(0.02 0 0 0.02 74.5 175.0)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="12.5"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -2475 -75 L -2475 75 " />
+<path id= "2" d=" M -2325 -75 L -2325 75 " />
+<path id= "3" d=" M -2475 -75 L -2325 -75 " />
+<path id= "4" d=" M -2475 75 L -2325 75 " />
+<path id= "5" d=" M -1275 -75 L -1275 75 " />
+<path id= "6" d=" M -1125 -75 L -1125 75 " />
+<path id= "7" d=" M -1275 -75 L -1125 -75 " />
+<path id= "8" d=" M -1275 75 L -1125 75 " />
+<path id= "9" d=" M -75 -75 L -75 75 " />
+<path id= "10" d=" M 75 -75 L 75 75 " />
+<path id= "11" d=" M -75 -75 L 75 -75 " />
+<path id= "12" d=" M -75 75 L 75 75 " />
+<path id= "13" d=" M 1125 -75 L 1125 75 " />
+<path id= "14" d=" M 1275 -75 L 1275 75 " />
+<path id= "15" d=" M 1125 -75 L 1275 -75 " />
+<path id= "16" d=" M 1125 75 L 1275 75 " />
+<path id= "17" d=" M 2325 -75 L 2325 75 " />
+<path id= "18" d=" M 2475 -75 L 2475 75 " />
+<path id= "19" d=" M 2325 -75 L 2475 -75 " />
+<path id= "20" d=" M 2325 75 L 2475 75 " />
+<path id= "21" d=" M -2475 -174 L -2475 -75 " />
+<path id= "22" d=" M 2475 -174 L 2475 -75 " />
+<path id= "23" d=" M -2475 -174 L 2475 -174 " />
+<path id= "24" d=" M -2325 -75 L -1275 -75 " />
+<path id= "25" d=" M -1125 -75 L -75 -75 " />
+<path id= "26" d=" M 75 -75 L 1125 -75 " />
+<path id= "27" d=" M 1275 -75 L 2325 -75 " />
+<path id= "28" d=" M 3325 -75 L 3325 75 " />
+<path id= "29" d=" M 3475 -75 L 3475 75 " />
+<path id= "30" d=" M 3325 -75 L 3475 -75 " />
+<path id= "31" d=" M 3325 75 L 3475 75 " />
+<path id= "32" d=" M 4625 -75 L 4625 75 " />
+<path id= "33" d=" M 4775 -75 L 4775 75 " />
+<path id= "34" d=" M 4625 -75 L 4775 -75 " />
+<path id= "35" d=" M 4625 75 L 4775 75 " />
+<path id= "36" d=" M 5925 -75 L 5925 75 " />
+<path id= "37" d=" M 6075 -75 L 6075 75 " />
+<path id= "38" d=" M 5925 -75 L 6075 -75 " />
+<path id= "39" d=" M 5925 75 L 6075 75 " />
+<path id= "40" d=" M 7225 -75 L 7225 75 " />
+<path id= "41" d=" M 7375 -75 L 7375 75 " />
+<path id= "42" d=" M 7225 -75 L 7375 -75 " />
+<path id= "43" d=" M 7225 75 L 7375 75 " />
+<path id= "44" d=" M 8525 -75 L 8525 75 " />
+<path id= "45" d=" M 8675 -75 L 8675 75 " />
+<path id= "46" d=" M 8525 -75 L 8675 -75 " />
+<path id= "47" d=" M 8525 75 L 8675 75 " />
+<path id= "48" d=" M 3325 -174 L 3325 -75 " />
+<path id= "49" d=" M 8675 -174 L 8675 -75 " />
+<path id= "50" d=" M 3325 -174 L 8675 -174 " />
+<path id= "51" d=" M 3475 -75 L 4625 -75 " />
+<path id= "52" d=" M 4775 -75 L 5925 -75 " />
+<path id= "53" d=" M 6075 -75 L 7225 -75 " />
+<path id= "54" d=" M 7375 -75 L 8525 -75 " />
+</g>
+</g><text x="330" y="38">SIDE</text><g id="projection-SIDE" transform="matrix(0 -0.02 0.02 0 338.48 115.0)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="12.5"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 0 75 L 2400 75 " />
+<path id= "2" d=" M 2400 75 L 2400 -75 " />
+<path id= "3" d=" M 0 -75 L 2400 -75 " />
+<path id= "4" d=" M 0 75 L 0 -75 " />
+<path id= "5" d=" M 758 174 L 842 174 " />
+<path id= "6" d=" M 842 174 L 842 75 " />
+<path id= "7" d=" M 758 75 L 842 75 " />
+<path id= "8" d=" M 758 174 L 758 75 " />
+<path id= "9" d=" M 1558 174 L 1642 174 " />
+<path id= "10" d=" M 1642 174 L 1642 75 " />
+<path id= "11" d=" M 1558 75 L 1642 75 " />
+<path id= "12" d=" M 1558 174 L 1558 75 " />
+</g>
+</g><g stroke="#145a80" stroke-width=".2" fill="none"><path d="M25.0 115.0 V135 M248.0 115.0 V135"/><path marker-start="url(#arrow)" marker-end="url(#arrow)" d="M25.0 133 H248.0"/></g><text x="136.5" y="131" text-anchor="middle" fill="#145a80">11150.0</text><g stroke="#145a80" stroke-width=".2" fill="none"><path d="M25 67.0 H17 M25 115.0 H17"/><path marker-start="url(#arrow)" marker-end="url(#arrow)" d="M15 67.0 V115.0"/></g><text transform="translate(13 91.0) rotate(-90)" text-anchor="middle" fill="#145a80">2400.0</text><g stroke="#145a80" stroke-width=".2" fill="none"><path d="M26.5 67.0 V53 M50.5 67.0 V53"/><path marker-start="url(#arrow)" marker-end="url(#arrow)" d="M26.5 51 H50.5"/></g><text x="38.5" y="49" text-anchor="middle" fill="#145a80">1200.0</text><text x="26.5" y="43" font-size="3">U01 / B1 post centres</text><g stroke="#145a80" stroke-width=".2" fill="none"><path d="M142.5 67.0 V53 M168.5 67.0 V53"/><path marker-start="url(#arrow)" marker-end="url(#arrow)" d="M142.5 51 H168.5"/></g><text x="155.5" y="49" text-anchor="middle" fill="#145a80">1300.0</text><text x="142.5" y="43" font-size="3">U02 / B2 post centres</text><g stroke="#145a80" stroke-width=".2" fill="none"><path d="M335 99.0 H354 M335 115.0 H354"/><path marker-start="url(#arrow)" marker-end="url(#arrow)" d="M352 99.0 V115.0"/></g><text transform="translate(350 107.0) rotate(-90)" text-anchor="middle" fill="#145a80">800.0</text><g stroke="#145a80" stroke-width=".2" fill="none"><path d="M335 83.0 H368 M335 115.0 H368"/><path marker-start="url(#arrow)" marker-end="url(#arrow)" d="M366 83.0 V115.0"/></g><text transform="translate(364 99.0) rotate(-90)" text-anchor="middle" fill="#145a80">1600.0</text><text x="330" y="128" font-size="3">Rail centre elevations above Z=0</text><g stroke="#145a80" stroke-width=".2" fill="none"><path d="M335.0 115.0 V145 M339.98 115.0 V145"/><path marker-start="url(#arrow)" marker-end="url(#arrow)" d="M335.0 143 H339.98"/></g><text x="337.49" y="141" text-anchor="middle" fill="#145a80">249.0</text><text x="25" y="194">Plan: overall depth 249.0 mm (side dimension above).</text><text x="10" y="225">Blue dimensions use actual CAD bounding edges / post and rail centres.</text><text x="10" y="235">PAL-POST: 10 / PAL-RAIL: 4 / PAL-UNIT: U01 + U02. D trial; unconnected units.</text><text x="10" y="245">Native TechDraw linked dimensions NOT_TESTED; SVG regenerated from CAD geometry.</text><text x="10" y="255">Drawing ID PAL-ASM-B2 / Units mm / Front X-Z, Top X-Y, Side Y-Z</text></g></svg>

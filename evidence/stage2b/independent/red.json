@@ -1,0 +1,21 @@
+{
+  "source_sha256": "28de17c40a6c7cdbb4b17212b387cb43b2b217d87ded16f696278ac9b8b04ad2",
+  "rows": [
+    {
+      "name": "drawing_label_corrupt",
+      "accepted": true
+    },
+    {
+      "name": "drawing_projection_missing",
+      "accepted": true
+    },
+    {
+      "name": "promote_native_linked_dimensions",
+      "accepted": true
+    },
+    {
+      "name": "promote_native_dimension_status",
+      "accepted": true
+    }
+  ]
+}

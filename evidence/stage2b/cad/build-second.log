@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/build.py", line 61, in <module>
+    for rev in spec['revisions']:run(rev,root/rev['id'])
+                                 ~~~^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/build.py", line 57, in run
+    result={'software':A.Version(),'mode':'headless real FreeCAD; GUI NOT_TESTED','created':before,'fcstd_reopened':reopened,'edit_recompute_revert':True,'step_reopened':True,'step_components':len(ss),'techdraw':{'views':[v.Name for v in views],'native_dimensions':[x.Name for x in dims],'svg':'TechDraw.projectToSVG from actual geometry','dimension_bounds_m':before['dimensions_m']}}
+                                                                                                                                                                                                                              ^^^^^^
+ReferenceError: Cannot access attribute 'Name' of deleted object

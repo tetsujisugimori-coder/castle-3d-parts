@@ -1,0 +1,25 @@
+{
+  "scope": "Playwright, not physical iPhone; unmodified Three.js local mapping when configured",
+  "inputs": {
+    "site/stage2b/index.html": "2911e99abdfa43a445ce1f8c0ae875e3e279bac8ddee5501252587a00bbf8c0e",
+    "site/stage2b/app.mjs": "4618e08869df74d1d4b7bb8273e3c1cc0bc6bbf318af7e1ce12fcbd3b43f536b",
+    "site/stage2b/style.css": "275adab7109545dbafaeb115c9ce2deeff5e97295769645d63a123527c4fa3be",
+    "cad/stage2b/generated/B0/assembly.glb": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc",
+    "cad/stage2b/generated/B1/assembly.glb": "79a078103bc9c64a68c718fa49b8b31adafbd25f34d09e164e0fb3962d824cc7",
+    "cad/stage2b/generated/B2/assembly.glb": "9cb407e1c591594e8d46ca24ccb7c51eddeefd1ace7c3f917acc0a96a1c6ab93"
+  },
+  "expected_normal": 16,
+  "expected_faults": 6,
+  "rows": [
+    {
+      "engine": "chromium",
+      "status": "NOT_TESTED",
+      "error": "browserType.launch: Executable doesn't exist at /tmp/stage2b-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "engine": "webkit",
+      "status": "NOT_TESTED",
+      "error": "browserType.launch: Executable doesn't exist at /tmp/stage2b-browsers/webkit-2215/pw_run.sh\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+    }
+  ]
+}

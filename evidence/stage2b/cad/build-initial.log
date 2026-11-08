@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/build.py", line 61, in <module>
+    for rev in spec['revisions']:run(rev,root/rev['id'])
+                                 ~~~^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/build.py", line 28, in run
+    d.recompute(); before=audit(objs);d.TransientDir=tempfile.mkdtemp(prefix='s2b-drawing-')+'/'
+                          ~~~~~^^^^^^
+  File "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/build.py", line 10, in audit
+    assert all(x.isValid() and len(x.Solids)==1 for x in s)
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/build.py", line 10, in <genexpr>
+    assert all(x.isValid() and len(x.Solids)==1 for x in s)
+               ~~~~~~~~~^^
+Part.OCCError: 19Standard_NullObject BRepCheck_Analyzer::Init() - NULL shape

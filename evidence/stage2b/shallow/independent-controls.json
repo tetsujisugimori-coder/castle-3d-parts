@@ -1,0 +1,36 @@
+{
+  "source_sha256": "b2f51ef183a850c8db36624950fa2b0de44cef6ee5fea76638a637d929f1d3d5",
+  "rows": [
+    {
+      "name": "full shallow identical fixed snapshot",
+      "result": "ACCEPT",
+      "pass": true,
+      "value": 27
+    },
+    {
+      "name": "bundle changes rejected",
+      "result": "RESEARCH_PIN",
+      "pass": true
+    },
+    {
+      "name": "current record changes rejected",
+      "result": "STALE_EVIDENCE research/hypotheses/HYP-0001.json",
+      "pass": true
+    },
+    {
+      "name": "new research record rejected",
+      "result": "STALE_SOURCE_SET",
+      "pass": true
+    },
+    {
+      "name": "missing current record rejected",
+      "result": "ENOENT: no such file or directory, open '/tmp/stage2b-review-final/shallow/research/hypotheses/HYP-0001.json'",
+      "pass": true
+    },
+    {
+      "name": "nonshallow absent base not rescued",
+      "result": "Command failed: git -C /tmp/stage2b-review-final/no-base-full rev-parse --verify 34f43b3b1765de7a52994adb7175dc2c146f8db3^{commit}\nfatal: Needed a single revision\n",
+      "pass": true
+    }
+  ]
+}

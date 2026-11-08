@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="white"/><g font-family="sans-serif" font-size="4"><text x="10" y="12">PAL-ASSEMBLY / B2 / D prototype / reference_only / mm / scale 1:50</text><text x="85" y="45">FRONT</text><g transform="translate(115 100) scale(.02 -.02)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 0 -2475 L -758 -2475 " />
+<path id= "2" d=" M -842 -2475 L -1558 -2475 " />
+<path id= "3" d=" M -1642 -2475 L -2400 -2475 " />
+<path id= "4" d=" M 0 -2325 L -758 -2325 " />
+<path id= "5" d=" M -842 -2325 L -1558 -2325 " />
+<path id= "6" d=" M -1642 -2325 L -2400 -2325 " />
+<path id= "7" d=" M 0 -2475 L 0 -2325 " />
+<path id= "8" d=" M -2400 -2475 L -2400 -2325 " />
+<path id= "9" d=" M 0 -1275 L -758 -1275 " />
+<path id= "10" d=" M -842 -1275 L -1558 -1275 " />
+<path id= "11" d=" M -1642 -1275 L -2400 -1275 " />
+<path id= "12" d=" M 0 -1125 L -758 -1125 " />
+<path id= "13" d=" M -842 -1125 L -1558 -1125 " />
+<path id= "14" d=" M -1642 -1125 L -2400 -1125 " />
+<path id= "15" d=" M 0 -1275 L 0 -1125 " />
+<path id= "16" d=" M -2400 -1275 L -2400 -1125 " />
+<path id= "17" d=" M 0 -75 L -758 -75 " />
+<path id= "18" d=" M -842 -75 L -1558 -75 " />
+<path id= "19" d=" M -1642 -75 L -2400 -75 " />
+<path id= "20" d=" M 0 75 L -758 75 " />
+<path id= "21" d=" M -842 75 L -1558 75 " />
+<path id= "22" d=" M -1642 75 L -2400 75 " />
+<path id= "23" d=" M 0 -75 L 0 75 " />
+<path id= "24" d=" M -2400 -75 L -2400 75 " />
+<path id= "25" d=" M 0 1125 L -758 1125 " />
+<path id= "26" d=" M -842 1125 L -1558 1125 " />
+<path id= "27" d=" M -1642 1125 L -2400 1125 " />
+<path id= "28" d=" M 0 1275 L -758 1275 " />
+<path id= "29" d=" M -842 1275 L -1558 1275 " />
+<path id= "30" d=" M -1642 1275 L -2400 1275 " />
+<path id= "31" d=" M 0 1125 L 0 1275 " />
+<path id= "32" d=" M -2400 1125 L -2400 1275 " />
+<path id= "33" d=" M 0 2325 L -758 2325 " />
+<path id= "34" d=" M -842 2325 L -1558 2325 " />
+<path id= "35" d=" M -1642 2325 L -2400 2325 " />
+<path id= "36" d=" M 0 2475 L -758 2475 " />
+<path id= "37" d=" M -842 2475 L -1558 2475 " />
+<path id= "38" d=" M -1642 2475 L -2400 2475 " />
+<path id= "39" d=" M 0 2325 L 0 2475 " />
+<path id= "40" d=" M -2400 2325 L -2400 2475 " />
+<path id= "41" d=" M -758 -2475 L -842 -2475 " />
+<path id= "42" d=" M -758 2475 L -842 2475 " />
+<path id= "43" d=" M -758 -2475 L -758 2475 " />
+<path id= "44" d=" M -842 -2475 L -842 2475 " />
+<path id= "45" d=" M -1558 -2475 L -1642 -2475 " />
+<path id= "46" d=" M -1558 2475 L -1642 2475 " />
+<path id= "47" d=" M -1558 -2475 L -1558 2475 " />
+<path id= "48" d=" M -1642 -2475 L -1642 2475 " />
+<path id= "49" d=" M 0 3325 L -758 3325 " />
+<path id= "50" d=" M -842 3325 L -1558 3325 " />
+<path id= "51" d=" M -1642 3325 L -2400 3325 " />
+<path id= "52" d=" M 0 3475 L -758 3475 " />
+<path id= "53" d=" M -842 3475 L -1558 3475 " />
+<path id= "54" d=" M -1642 3475 L -2400 3475 " />
+<path id= "55" d=" M 0 3325 L 0 3475 " />
+<path id= "56" d=" M -2400 3325 L -2400 3475 " />
+<path id= "57" d=" M 0 4625 L -758 4625 " />
+<path id= "58" d=" M -842 4625 L -1558 4625 " />
+<path id= "59" d=" M -1642 4625 L -2400 4625 " />
+<path id= "60" d=" M 0 4775 L -758 4775 " />
+<path id= "61" d=" M -842 4775 L -1558 4775 " />
+<path id= "62" d=" M -1642 4775 L -2400 4775 " />
+<path id= "63" d=" M 0 4625 L 0 4775 " />
+<path id= "64" d=" M -2400 4625 L -2400 4775 " />
+<path id= "65" d=" M 0 5925 L -758 5925 " />
+<path id= "66" d=" M -842 5925 L -1558 5925 " />
+<path id= "67" d=" M -1642 5925 L -2400 5925 " />
+<path id= "68" d=" M 0 6075 L -758 6075 " />
+<path id= "69" d=" M -842 6075 L -1558 6075 " />
+<path id= "70" d=" M -1642 6075 L -2400 6075 " />
+<path id= "71" d=" M 0 5925 L 0 6075 " />
+<path id= "72" d=" M -2400 5925 L -2400 6075 " />
+<path id= "73" d=" M 0 7225 L -758 7225 " />
+<path id= "74" d=" M -842 7225 L -1558 7225 " />
+<path id= "75" d=" M -1642 7225 L -2400 7225 " />
+<path id= "76" d=" M 0 7375 L -758 7375 " />
+<path id= "77" d=" M -842 7375 L -1558 7375 " />
+<path id= "78" d=" M -1642 7375 L -2400 7375 " />
+<path id= "79" d=" M 0 7225 L 0 7375 " />
+<path id= "80" d=" M -2400 7225 L -2400 7375 " />
+<path id= "81" d=" M 0 8525 L -758 8525 " />
+<path id= "82" d=" M -842 8525 L -1558 8525 " />
+<path id= "83" d=" M -1642 8525 L -2400 8525 " />
+<path id= "84" d=" M 0 8675 L -758 8675 " />
+<path id= "85" d=" M -842 8675 L -1558 8675 " />
+<path id= "86" d=" M -1642 8675 L -2400 8675 " />
+<path id= "87" d=" M 0 8525 L 0 8675 " />
+<path id= "88" d=" M -2400 8525 L -2400 8675 " />
+<path id= "89" d=" M -758 3325 L -842 3325 " />
+<path id= "90" d=" M -758 8675 L -842 8675 " />
+<path id= "91" d=" M -758 3325 L -758 8675 " />
+<path id= "92" d=" M -842 3325 L -842 8675 " />
+<path id= "93" d=" M -1558 3325 L -1642 3325 " />
+<path id= "94" d=" M -1558 8675 L -1642 8675 " />
+<path id= "95" d=" M -1558 3325 L -1558 8675 " />
+<path id= "96" d=" M -1642 3325 L -1642 8675 " />
+</g>
+</g><text x="85" y="160">TOP</text><g transform="translate(115 215) scale(.02 -.02)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -2475 -75 L -2475 75 " />
+<path id= "2" d=" M -2325 -75 L -2325 75 " />
+<path id= "3" d=" M -2475 -75 L -2325 -75 " />
+<path id= "4" d=" M -2475 75 L -2325 75 " />
+<path id= "5" d=" M -1275 -75 L -1275 75 " />
+<path id= "6" d=" M -1125 -75 L -1125 75 " />
+<path id= "7" d=" M -1275 -75 L -1125 -75 " />
+<path id= "8" d=" M -1275 75 L -1125 75 " />
+<path id= "9" d=" M -75 -75 L -75 75 " />
+<path id= "10" d=" M 75 -75 L 75 75 " />
+<path id= "11" d=" M -75 -75 L 75 -75 " />
+<path id= "12" d=" M -75 75 L 75 75 " />
+<path id= "13" d=" M 1125 -75 L 1125 75 " />
+<path id= "14" d=" M 1275 -75 L 1275 75 " />
+<path id= "15" d=" M 1125 -75 L 1275 -75 " />
+<path id= "16" d=" M 1125 75 L 1275 75 " />
+<path id= "17" d=" M 2325 -75 L 2325 75 " />
+<path id= "18" d=" M 2475 -75 L 2475 75 " />
+<path id= "19" d=" M 2325 -75 L 2475 -75 " />
+<path id= "20" d=" M 2325 75 L 2475 75 " />
+<path id= "21" d=" M -2475 -174 L -2475 -75 " />
+<path id= "22" d=" M 2475 -174 L 2475 -75 " />
+<path id= "23" d=" M -2475 -174 L 2475 -174 " />
+<path id= "24" d=" M -2325 -75 L -1275 -75 " />
+<path id= "25" d=" M -1125 -75 L -75 -75 " />
+<path id= "26" d=" M 75 -75 L 1125 -75 " />
+<path id= "27" d=" M 1275 -75 L 2325 -75 " />
+<path id= "28" d=" M 3325 -75 L 3325 75 " />
+<path id= "29" d=" M 3475 -75 L 3475 75 " />
+<path id= "30" d=" M 3325 -75 L 3475 -75 " />
+<path id= "31" d=" M 3325 75 L 3475 75 " />
+<path id= "32" d=" M 4625 -75 L 4625 75 " />
+<path id= "33" d=" M 4775 -75 L 4775 75 " />
+<path id= "34" d=" M 4625 -75 L 4775 -75 " />
+<path id= "35" d=" M 4625 75 L 4775 75 " />
+<path id= "36" d=" M 5925 -75 L 5925 75 " />
+<path id= "37" d=" M 6075 -75 L 6075 75 " />
+<path id= "38" d=" M 5925 -75 L 6075 -75 " />
+<path id= "39" d=" M 5925 75 L 6075 75 " />
+<path id= "40" d=" M 7225 -75 L 7225 75 " />
+<path id= "41" d=" M 7375 -75 L 7375 75 " />
+<path id= "42" d=" M 7225 -75 L 7375 -75 " />
+<path id= "43" d=" M 7225 75 L 7375 75 " />
+<path id= "44" d=" M 8525 -75 L 8525 75 " />
+<path id= "45" d=" M 8675 -75 L 8675 75 " />
+<path id= "46" d=" M 8525 -75 L 8675 -75 " />
+<path id= "47" d=" M 8525 75 L 8675 75 " />
+<path id= "48" d=" M 3325 -174 L 3325 -75 " />
+<path id= "49" d=" M 8675 -174 L 8675 -75 " />
+<path id= "50" d=" M 3325 -174 L 8675 -174 " />
+<path id= "51" d=" M 3475 -75 L 4625 -75 " />
+<path id= "52" d=" M 4775 -75 L 5925 -75 " />
+<path id= "53" d=" M 6075 -75 L 7225 -75 " />
+<path id= "54" d=" M 7375 -75 L 8525 -75 " />
+</g>
+</g><text x="310" y="45">SIDE</text><g transform="translate(340 100) scale(.02 -.02)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 0 75 L 2400 75 " />
+<path id= "2" d=" M 2400 75 L 2400 -75 " />
+<path id= "3" d=" M 0 -75 L 2400 -75 " />
+<path id= "4" d=" M 0 75 L 0 -75 " />
+<path id= "5" d=" M 758 174 L 842 174 " />
+<path id= "6" d=" M 842 174 L 842 75 " />
+<path id= "7" d=" M 758 75 L 842 75 " />
+<path id= "8" d=" M 758 174 L 758 75 " />
+<path id= "9" d=" M 1558 174 L 1642 174 " />
+<path id= "10" d=" M 1642 174 L 1642 75 " />
+<path id= "11" d=" M 1558 75 L 1642 75 " />
+<path id= "12" d=" M 1558 174 L 1558 75 " />
+</g>
+</g><path d="M10 237 v6 M10 240 H140 M140 237 v6" stroke="black" fill="none"/><text x="150" y="241">Overall X: 11150.000 mm</text><path d="M10 249 v6 M10 252 H140 M140 249 v6" stroke="black" fill="none"/><text x="150" y="253">Overall Y: 249.000 mm</text><path d="M10 261 v6 M10 264 H140 M140 261 v6" stroke="black" fill="none"/><text x="150" y="265">Overall Z: 2400.000 mm</text></g></svg>

@@ -1,0 +1,51 @@
+name: Stage 2-B multipart revisions
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          mkdir -p stage2b-ci/source
+          node --test > stage2b-ci/tests.log 2>&1
+          node scripts/stage2b.mjs check > stage2b-ci/contracts.json
+          git archive HEAD | tar -x -C stage2b-ci/source
+          git rev-parse HEAD HEAD^{tree} > stage2b-ci/git.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2b-contracts-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2b-ci/
+          include-hidden-files: true
+          if-no-files-found: error
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix /tmp/cad-pw playwright@1.56.1 three@0.180.0
+      - run: /tmp/cad-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/stage2b-browser.mjs
+        env:
+          PW_MODULE: /tmp/cad-pw/node_modules/playwright/index.mjs
+          THREE_DIR: /tmp/cad-pw/node_modules/three
+          STAGE2B_BROWSER_OUT: stage2b-browser-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2b-browser-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2b-browser-ci/
+          if-no-files-found: error

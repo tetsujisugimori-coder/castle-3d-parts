@@ -1,0 +1,127 @@
+{
+  "revision": "B2",
+  "scale": 0.02,
+  "unit": "mm",
+  "dimensions": [
+    {
+      "id": "overall-width",
+      "axis": "X",
+      "value_mm": 11150.0,
+      "endpoints_page_mm": [
+        [
+          25.0,
+          133
+        ],
+        [
+          248.0,
+          133
+        ]
+      ],
+      "span_page_mm": 223.0,
+      "scale": 0.02
+    },
+    {
+      "id": "overall-height",
+      "axis": "vertical",
+      "value_mm": 2400.0,
+      "endpoints_page_mm": [
+        [
+          15,
+          67.0
+        ],
+        [
+          15,
+          115.0
+        ]
+      ],
+      "span_page_mm": 48.0,
+      "scale": 0.02
+    },
+    {
+      "id": "U01-post-centres",
+      "axis": "X",
+      "value_mm": 1200.0,
+      "endpoints_page_mm": [
+        [
+          26.5,
+          51
+        ],
+        [
+          50.5,
+          51
+        ]
+      ],
+      "span_page_mm": 24.0,
+      "scale": 0.02
+    },
+    {
+      "id": "U02-post-centres",
+      "axis": "X",
+      "value_mm": 1300.0,
+      "endpoints_page_mm": [
+        [
+          142.5,
+          51
+        ],
+        [
+          168.5,
+          51
+        ]
+      ],
+      "span_page_mm": 26.0,
+      "scale": 0.02
+    },
+    {
+      "id": "U01-rail-centre-1",
+      "axis": "vertical",
+      "value_mm": 800.0,
+      "endpoints_page_mm": [
+        [
+          352,
+          99.0
+        ],
+        [
+          352,
+          115.0
+        ]
+      ],
+      "span_page_mm": 16.0,
+      "scale": 0.02
+    },
+    {
+      "id": "U01-rail-centre-2",
+      "axis": "vertical",
+      "value_mm": 1600.0,
+      "endpoints_page_mm": [
+        [
+          366,
+          83.0
+        ],
+        [
+          366,
+          115.0
+        ]
+      ],
+      "span_page_mm": 32.0,
+      "scale": 0.02
+    },
+    {
+      "id": "side-depth",
+      "axis": "X",
+      "value_mm": 249.0,
+      "endpoints_page_mm": [
+        [
+          335.0,
+          143
+        ],
+        [
+          339.98,
+          143
+        ]
+      ],
+      "span_page_mm": 4.980000000000018,
+      "scale": 0.02
+    }
+  ],
+  "projection_basis": "FreeCAD TechDraw.projectToSVG, per-view transforms"
+}

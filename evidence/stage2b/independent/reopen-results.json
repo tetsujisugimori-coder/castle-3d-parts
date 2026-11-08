@@ -1,0 +1,140 @@
+{
+  "mode": "independent FreeCAD module reopen, not GUI",
+  "software": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "preserved_originals": 451,
+  "rows": [
+    {
+      "revision": "B0",
+      "dimensions_m": [
+        10.95,
+        0.249,
+        2.2
+      ],
+      "step_solids": 14,
+      "views": [
+        {
+          "name": "FrontView",
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        },
+        {
+          "name": "TopView",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        },
+        {
+          "name": "SideView",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        }
+      ],
+      "edit_recompute": true
+    },
+    {
+      "revision": "B1",
+      "dimensions_m": [
+        10.95,
+        0.249,
+        2.4
+      ],
+      "step_solids": 14,
+      "views": [
+        {
+          "name": "FrontView",
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        },
+        {
+          "name": "TopView",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        },
+        {
+          "name": "SideView",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        }
+      ],
+      "edit_recompute": true
+    },
+    {
+      "revision": "B2",
+      "dimensions_m": [
+        11.15,
+        0.249,
+        2.4
+      ],
+      "step_solids": 14,
+      "views": [
+        {
+          "name": "FrontView",
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        },
+        {
+          "name": "TopView",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        },
+        {
+          "name": "SideView",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "scale": 0.02,
+          "source_count": 14
+        }
+      ],
+      "edit_recompute": true
+    }
+  ]
+}

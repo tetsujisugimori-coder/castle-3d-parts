@@ -1,0 +1,162 @@
+{
+  "software": "4.3.2",
+  "mode": "independent background actual original read; not GUI",
+  "rows": [
+    {
+      "revision": "B0",
+      "type": "blend",
+      "meshes": 14,
+      "dims_z_up": [
+        10.950000286102295,
+        0.24899999797344208,
+        2.200000047683716
+      ],
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002",
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ]
+    },
+    {
+      "revision": "B0",
+      "type": "glb",
+      "meshes": 14,
+      "dims_z_up": [
+        10.950000286102295,
+        0.24899999797344208,
+        2.200000047683716
+      ],
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002",
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ]
+    },
+    {
+      "revision": "B1",
+      "type": "blend",
+      "meshes": 14,
+      "dims_z_up": [
+        10.950000286102295,
+        0.24899999797344208,
+        2.4000000953674316
+      ],
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002",
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ]
+    },
+    {
+      "revision": "B1",
+      "type": "glb",
+      "meshes": 14,
+      "dims_z_up": [
+        10.950000286102295,
+        0.24899999797344208,
+        2.4000000953674316
+      ],
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002",
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ]
+    },
+    {
+      "revision": "B2",
+      "type": "blend",
+      "meshes": 14,
+      "dims_z_up": [
+        11.150000095367432,
+        0.24899999797344208,
+        2.4000000953674316
+      ],
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002",
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ]
+    },
+    {
+      "revision": "B2",
+      "type": "glb",
+      "meshes": 14,
+      "dims_z_up": [
+        11.150000095367432,
+        0.24899999797344208,
+        2.4000000953674316
+      ],
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002",
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source_sha256": "49ea0e5134f35d9063b9a0b13cdcd438badeb4cad2cb6d94caf842052da055ff",
+  "rows": [
+    {
+      "name": "same_old_label",
+      "input_sha256": "d921b817a70fe5df79d0528485840d316a87e6014a65ee16fff99ee1482d5f4f",
+      "mutated": true,
+      "accepted": false,
+      "error": "DRAWING_GOLDEN"
+    },
+    {
+      "name": "same_old_projection",
+      "input_sha256": "44cca659a29d56f1b491ef791e3cbe83ae7e7b7634f0520c0699c020f4c9b243",
+      "mutated": true,
+      "accepted": false,
+      "error": "DRAWING_GOLDEN"
+    },
+    {
+      "name": "new_label",
+      "input_sha256": "0b0e254fbd37194513e833700e2c59b7db21194b016221883036d66bbe74e2a4",
+      "mutated": true,
+      "accepted": false,
+      "error": "DRAWING_GOLDEN"
+    },
+    {
+      "name": "new_projection",
+      "input_sha256": "d8645d8016c821b2418b4389316223e2e3bef6b8a6979c3df81079a59ed9fb8c",
+      "mutated": true,
+      "accepted": false,
+      "error": "DRAWING_GOLDEN"
+    },
+    {
+      "name": "promote_native_linked_dimensions",
+      "input_sha256": "9f8727e6519fd4688784ffdce958efa9eabb860b1846ee686d19d967fe743495",
+      "accepted": false,
+      "error": "NATIVE_DIMENSION_STATUS"
+    },
+    {
+      "name": "promote_native_dimension_status",
+      "input_sha256": "00ee69790d6fceb8df891b71925726a23b63abaa2dd021af758d045255c5180b",
+      "accepted": false,
+      "error": "NATIVE_DIMENSION_STATUS"
+    }
+  ]
+}

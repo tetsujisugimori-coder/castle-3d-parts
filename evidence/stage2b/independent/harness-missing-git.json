@@ -1,0 +1,23 @@
+{
+  "source_sha256": "28de17c40a6c7cdbb4b17212b387cb43b2b217d87ded16f696278ac9b8b04ad2",
+  "rows": [
+    {
+      "name": "drawing_label_corrupt",
+      "accepted": false,
+      "error": "Command failed: git -C /tmp/stage2b-review-mutations rev-parse --verify 34f43b3b1765de7a52994adb7175dc2c146f8db3^{commit}\nfatal: not a git repository (or any parent up to mount point /)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).\n"
+    },
+    {
+      "name": "drawing_projection_missing",
+      "accepted": false,
+      "error": "Command failed: git -C /tmp/stage2b-review-mutations rev-parse --verify 34f43b3b1765de7a52994adb7175dc2c146f8db3^{commit}\nfatal: not a git repository (or any parent up to mount point /)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).\n"
+    },
+    {
+      "name": "promote_native_linked_dimensions",
+      "accepted": true
+    },
+    {
+      "name": "promote_native_dimension_status",
+      "accepted": true
+    }
+  ]
+}
