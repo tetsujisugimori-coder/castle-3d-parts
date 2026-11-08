@@ -1,0 +1,14 @@
+[
+  {
+    "field": "historical_value",
+    "rejected": true,
+    "error": "TYPE $.parameters[0].historical_value",
+    "intended_semantic_reached": false
+  },
+  {
+    "field": "hypothesis_value",
+    "rejected": true,
+    "error": "TYPE $.parameters[0].hypothesis_value",
+    "intended_semantic_reached": false
+  }
+]

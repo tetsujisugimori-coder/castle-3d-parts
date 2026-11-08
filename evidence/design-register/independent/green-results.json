@@ -1,0 +1,27 @@
+[
+  {
+    "name": "initial_reason_rewritten",
+    "rejected": true,
+    "error": "HISTORY_INPUT_MUTATED"
+  },
+  {
+    "name": "initial_author_rewritten",
+    "rejected": true,
+    "error": "HISTORY_INPUT_MUTATED"
+  },
+  {
+    "name": "initial_time_rewritten",
+    "rejected": true,
+    "error": "HISTORY_INPUT_MUTATED"
+  },
+  {
+    "name": "history_bypass_via_argument",
+    "rejected": true,
+    "error": "BASELINE_OVERRIDE_FORBIDDEN"
+  },
+  {
+    "name": "reader_accepts_rewritten_history",
+    "rejected": true,
+    "error": "HISTORY_INPUT_MUTATED"
+  }
+]

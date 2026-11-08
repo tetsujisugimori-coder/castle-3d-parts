@@ -1,0 +1,26 @@
+[
+  {
+    "name": "initial_reason_rewritten",
+    "rejected": false,
+    "error": null
+  },
+  {
+    "name": "initial_author_rewritten",
+    "rejected": false,
+    "error": null
+  },
+  {
+    "name": "initial_time_rewritten",
+    "rejected": false,
+    "error": null
+  },
+  {
+    "name": "history_bypass_via_argument",
+    "rejected": false,
+    "error": null
+  },
+  {
+    "name": "reader_accepts_rewritten_history",
+    "rejected": false
+  }
+]

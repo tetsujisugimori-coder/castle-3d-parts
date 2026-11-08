@@ -1,0 +1,25 @@
+name: Validate design decision register
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  design:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/design-evidence.mjs design-evidence
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: design-register-${{ github.event.pull_request.head.sha || github.sha }}
+          path: design-evidence/
+          if-no-files-found: error

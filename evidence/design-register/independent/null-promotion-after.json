@@ -1,0 +1,14 @@
+[
+  {
+    "field": "historical_value",
+    "rejected": true,
+    "error": "UNCONFIRMED_VALUE",
+    "intended_semantic_reached": true
+  },
+  {
+    "field": "hypothesis_value",
+    "rejected": true,
+    "error": "UNCONFIRMED_VALUE",
+    "intended_semantic_reached": true
+  }
+]
