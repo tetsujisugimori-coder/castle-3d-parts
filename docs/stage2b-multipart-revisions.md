@@ -46,3 +46,7 @@ TechDrawはネイティブ投影図の存在と外部SVG投影の成功、寸法
 SVGは今回の3版に限り、独立目視した出力hashを期待値として固定する。新規改訂へ一般化した図面検査ではない。寸法計測JSONはCAD/台帳の数値から別計算し、ページ上の線分長÷縮尺が表示寸法に一致することも検査する。将来の版追加は図面の再レビューと期待値更新が必要。ネイティブ寸法参照のNOT_TESTEDを改変してPASSにすることは拒否する。
 
 CLI pushは認証不足で失敗したため、正式GitHub APIのblob/tree/commit/refで提出する。Git push成功とは表現しない。
+
+## Shallow checkout
+
+初回提出後、既存workflowのdepth1相当cloneで基準commit不在による失敗を再現した。既存workflowを変更せず、Stage2Bの研究検査に限定fallbackを追加。基準commitが存在する場合はGitの原bytesから再構築して照合する。基準commit不在かつGit自身がshallow=trueと報告するときだけ、SHA256固定bundleと全研究・補助資料の現行bytes、研究ファイル集合を照合する。非shallowの欠落や任意commit、bundle改変を救済しない。これは履歴取得を実施したとの主張ではない。REDとGREENを保存する。

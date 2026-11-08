@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "method": "independent actual FreeCAD1.0 native reload and solid boolean comparison",
+  "source": "evidence/stage2a/real-run/run5/palisade.FCStd",
+  "source_sha256": "f726493ad3fac9a468e3a2f1960c764bb352056a491acb01a8e44c6404c70294",
+  "target": "cad/stage2b/generated/B0/unit.FCStd",
+  "target_sha256": "967d0cecce1c0170e75f82b0f10f817ca8229f96eea3dcc5b1bf01ab1ca20419",
+  "rows": [
+    {
+      "component": "Post_001",
+      "bounds_mm": [
+        -2475.0,
+        -75.0,
+        0.0,
+        -2325.0,
+        75.0,
+        2200.0
+      ],
+      "volume_mm3": 49500000.0,
+      "volume_delta_mm3": 0.0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "component": "Post_002",
+      "bounds_mm": [
+        -1275.0,
+        -75.0,
+        0.0,
+        -1125.0,
+        75.0,
+        2200.0
+      ],
+      "volume_mm3": 49500000.0,
+      "volume_delta_mm3": 0.0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "component": "Post_003",
+      "bounds_mm": [
+        -75.0,
+        -75.0,
+        0.0,
+        75.0,
+        75.0,
+        2200.0
+      ],
+      "volume_mm3": 49500000.0,
+      "volume_delta_mm3": 0.0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "component": "Post_004",
+      "bounds_mm": [
+        1125.0,
+        -75.0,
+        0.0,
+        1275.0,
+        75.0,
+        2200.0
+      ],
+      "volume_mm3": 49500000.0,
+      "volume_delta_mm3": 0.0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "component": "Post_005",
+      "bounds_mm": [
+        2325.0,
+        -75.0,
+        0.0,
+        2475.0,
+        75.0,
+        2200.0
+      ],
+      "volume_mm3": 49500000.0,
+      "volume_delta_mm3": 0.0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "component": "Rail_001",
+      "bounds_mm": [
+        -2475.0,
+        -174.0,
+        691.3333333333334,
+        2475.0,
+        -75.0,
+        775.3333333333334
+      ],
+      "volume_mm3": 41164200.0,
+      "volume_delta_mm3": 0.0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "component": "Rail_002",
+      "bounds_mm": [
+        -2475.0,
+        -174.0,
+        1424.6666666666667,
+        2475.0,
+        -75.0,
+        1508.6666666666667
+      ],
+      "volume_mm3": 41164200.0,
+      "volume_delta_mm3": 0.0,
+      "symmetric_difference_mm3": 0.0
+    }
+  ]
+}
