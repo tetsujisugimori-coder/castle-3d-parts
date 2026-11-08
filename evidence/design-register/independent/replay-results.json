@@ -1,0 +1,17 @@
+{
+  "red": {
+    "exit": 1,
+    "stdout": "[\n  {\n    \"name\": \"initial_reason_rewritten\",\n    \"rejected\": false,\n    \"error\": null\n  },\n  {\n    \"name\": \"initial_author_rewritten\",\n    \"rejected\": false,\n    \"error\": null\n  },\n  {\n    \"name\": \"initial_time_rewritten\",\n    \"rejected\": false,\n    \"error\": null\n  },\n  {\n    \"name\": \"history_bypass_via_argument\",\n    \"rejected\": false,\n    \"error\": null\n  },\n  {\n    \"name\": \"reader_accepts_rewritten_history\",\n    \"rejected\": false\n  }\n]\n",
+    "stderr": ""
+  },
+  "green": {
+    "exit": 0,
+    "stdout": "[\n  {\n    \"name\": \"initial_reason_rewritten\",\n    \"rejected\": true,\n    \"error\": \"HISTORY_INPUT_MUTATED\"\n  },\n  {\n    \"name\": \"initial_author_rewritten\",\n    \"rejected\": true,\n    \"error\": \"HISTORY_INPUT_MUTATED\"\n  },\n  {\n    \"name\": \"initial_time_rewritten\",\n    \"rejected\": true,\n    \"error\": \"HISTORY_INPUT_MUTATED\"\n  },\n  {\n    \"name\": \"history_bypass_via_argument\",\n    \"rejected\": true,\n    \"error\": \"BASELINE_OVERRIDE_FORBIDDEN\"\n  },\n  {\n    \"name\": \"reader_accepts_rewritten_history\",\n    \"rejected\": true,\n    \"error\": \"HISTORY_INPUT_MUTATED\"\n  }\n]\n",
+    "stderr": ""
+  },
+  "later_revision_deletion": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": "file:///tmp/castle-stage4-review-8daidixt/repo/scripts/design-register.mjs:11\nconst fail=c=>{throw Error(c)};\n                     ^\n\nError: PR_HISTORY_LOST design/decisions/DEC-0001-r2.json\n    at fail (file:///tmp/castle-stage4-review-8daidixt/repo/scripts/design-register.mjs:11:22)\n    at preserve (file:///tmp/castle-stage4-review-8daidixt/repo/scripts/design-register.mjs:55:355)\n    at file:///tmp/castle-stage4-review-8daidixt/repo/[eval1]:1:53\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:223:26\n    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:220:20)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.22.1\n"
+  }
+}

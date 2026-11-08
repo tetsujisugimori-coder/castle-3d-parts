@@ -1,0 +1,161 @@
+{
+  "id": "DEC-0002",
+  "revision": 1,
+  "created_at": "2026-11-08T09:07:24.275340+00:00",
+  "site": "山中城",
+  "facility": "木柵候補",
+  "part_id": "wooden-palisade-late-sengoku-v0",
+  "hypothesis": {
+    "id": "HYP-0002",
+    "revision": 1,
+    "sha256": "b9a36cb9016c91f2733d9d098e2112809d1548a8f135358dd9b451ea0ba7b577",
+    "commit": "454230e4ae36e10ab49c7688358f33b7a53a42e7",
+    "path": "research/hypotheses/HYP-0002.json"
+  },
+  "status": "held",
+  "reason": "未検証の推定C。構造と寸法の確証がなく正式採用を保留。",
+  "author": "八兵衛（研究整理）",
+  "support": [
+    "OBS-0001/source_interpretation/I01",
+    "OBS-0003/source_interpretation/I01",
+    "OBS-0005/source_interpretation/I01"
+  ],
+  "counterevidence": [],
+  "unknowns": [
+    "柱間隔・柱径・柱高・横木有無・本数は未確定。",
+    "原発掘報告、個体番号・接合・加工痕・全図版は未照合。",
+    "現存深さから当初根入れや地上高は導けない。",
+    "小径木・建築材と土塁上柱穴の同一構造への帰属は未確認。",
+    "堀の出土場所と元の設置地点は一致すると限らず、混合集合を一施設へ統合できない。"
+  ],
+  "competitors": [
+    "HYP-0001"
+  ],
+  "previous": null,
+  "change_evidence": [],
+  "cad": {
+    "eligibility": "reference_only",
+    "write_allowed": false
+  },
+  "parameters": [
+    {
+      "name": "post_height",
+      "unit": "m",
+      "measurement_target": "post_height",
+      "application_site": "山中城",
+      "historical_value": null,
+      "hypothesis_value": null,
+      "prototype_value": 2.0,
+      "basis": "D",
+      "confirmation": "prototype_only",
+      "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/height",
+      "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+      "limitations": [
+        "柱穴残存深さから柱高・根入れを導かない。",
+        "正式CADへの適用不可。"
+      ]
+    },
+    {
+      "name": "post_width",
+      "unit": "m",
+      "measurement_target": "post_width",
+      "application_site": "山中城",
+      "historical_value": null,
+      "hypothesis_value": null,
+      "prototype_value": 0.15,
+      "basis": "D",
+      "confirmation": "prototype_only",
+      "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/post_width",
+      "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+      "limitations": [
+        "柱穴残存深さから柱高・根入れを導かない。",
+        "正式CADへの適用不可。"
+      ]
+    },
+    {
+      "name": "post_center_spacing",
+      "unit": "m",
+      "measurement_target": "post_center_spacing",
+      "application_site": "山中城",
+      "historical_value": null,
+      "hypothesis_value": null,
+      "prototype_value": 1.2,
+      "basis": "D",
+      "confirmation": "prototype_only",
+      "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/spacing",
+      "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+      "limitations": [
+        "柱穴残存深さから柱高・根入れを導かない。",
+        "正式CADへの適用不可。"
+      ]
+    },
+    {
+      "name": "post_count",
+      "unit": "count",
+      "measurement_target": "post_count",
+      "application_site": "山中城",
+      "historical_value": null,
+      "hypothesis_value": null,
+      "prototype_value": 5,
+      "basis": "D",
+      "confirmation": "prototype_only",
+      "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/count",
+      "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+      "limitations": [
+        "柱穴残存深さから柱高・根入れを導かない。",
+        "正式CADへの適用不可。"
+      ]
+    },
+    {
+      "name": "rail_levels",
+      "unit": "count",
+      "measurement_target": "rail_levels",
+      "application_site": "山中城",
+      "historical_value": null,
+      "hypothesis_value": null,
+      "prototype_value": 2,
+      "basis": "D",
+      "confirmation": "prototype_only",
+      "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/rails",
+      "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+      "limitations": [
+        "柱穴残存深さから柱高・根入れを導かない。",
+        "正式CADへの適用不可。"
+      ]
+    },
+    {
+      "name": "cross_section",
+      "unit": "description",
+      "measurement_target": "cross_section",
+      "application_site": "山中城",
+      "historical_value": null,
+      "hypothesis_value": null,
+      "prototype_value": null,
+      "basis": "D",
+      "confirmation": "unknown",
+      "evidence_id": "none",
+      "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+      "limitations": [
+        "柱穴残存深さから柱高・根入れを導かない。",
+        "正式CADへの適用不可。"
+      ]
+    },
+    {
+      "name": "arrangement",
+      "unit": "description",
+      "measurement_target": "arrangement",
+      "application_site": "山中城",
+      "historical_value": null,
+      "hypothesis_value": null,
+      "prototype_value": null,
+      "basis": "D",
+      "confirmation": "unknown",
+      "evidence_id": "none",
+      "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+      "limitations": [
+        "柱穴残存深さから柱高・根入れを導かない。",
+        "正式CADへの適用不可。"
+      ]
+    }
+  ]
+}
