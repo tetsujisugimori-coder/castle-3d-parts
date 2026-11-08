@@ -1,0 +1,50 @@
+{
+  "B0": {
+    "byte_equal": {
+      "assembly.FCStd": false,
+      "assembly.step": false,
+      "assembly.blend": false,
+      "assembly.glb": true,
+      "drawing.svg": true,
+      "native-front.svg": false,
+      "native-top.svg": false,
+      "native-side.svg": false,
+      "native-audit.json": true,
+      "mesh-transfer.json": true
+    },
+    "native_measurements_equal": true,
+    "cad_geometry_equal": true
+  },
+  "B1": {
+    "byte_equal": {
+      "assembly.FCStd": false,
+      "assembly.step": false,
+      "assembly.blend": false,
+      "assembly.glb": true,
+      "drawing.svg": true,
+      "native-front.svg": false,
+      "native-top.svg": false,
+      "native-side.svg": false,
+      "native-audit.json": true,
+      "mesh-transfer.json": true
+    },
+    "native_measurements_equal": true,
+    "cad_geometry_equal": true
+  },
+  "B2": {
+    "byte_equal": {
+      "assembly.FCStd": false,
+      "assembly.step": false,
+      "assembly.blend": false,
+      "assembly.glb": true,
+      "drawing.svg": true,
+      "native-front.svg": false,
+      "native-top.svg": false,
+      "native-side.svg": false,
+      "native-audit.json": true,
+      "mesh-transfer.json": true
+    },
+    "native_measurements_equal": true,
+    "cad_geometry_equal": true
+  }
+}

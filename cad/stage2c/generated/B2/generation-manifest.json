@@ -1,0 +1,35 @@
+{
+  "revision": "B2",
+  "source_commit": "d1c367ca4b143cacc45ba8848b026701abf03b9c",
+  "spec_sha256": "614e409aa4b66f341b6841a0c4f8810cd84b03e45d15d025bd3c1e52af4082e1",
+  "source_scripts": {
+    "cad/stage2b/build.py": "27e42ee585f4efe3e5aefeb75487f160ed97fc91b967e34b71fc8e7969c80a64",
+    "cad/stage2b/drawing.py": "e46351d56f3205a2f4575a7ee66c62cb2f570482759b56eae02f2874357e5bb7",
+    "blender/stage2b/build.py": "3293a8e1a8aa29b879b29b87c0926a206fa9c6e642fa05a8310c27a02a1198de",
+    "cad/stage2c/native.py": "f50c537a955c5402f088230887f8d00b05f7081dd2bd2f3fd3b240d250834f00",
+    "cad/stage2c/link.py": "d22c79bad15fe6f9e7257126ab308d596dacf3ec1130565cfba28eacfc5a3549",
+    "cad/stage2c/run.py": "25cb8139c2632be0a7c91ab6e67e338bc099d741c1d2c4eaacded34442b65fda",
+    "cad/stage2c/template.svg": "13d0d4514124f2643d6d67b3fe69c79f7f770d9dffa6fc3b7df2498a42426e78"
+  },
+  "outputs": {
+    "assembly.FCStd": "d0338a6d342c0f39884fad8f225a4f6b914281b3fd02e1284d2f00a6c6dad890",
+    "assembly.blend": "d7c884d1efb80366b675e151c295810b0f9d84f5deb10df4f829539e9c0a5227",
+    "assembly.glb": "9cb407e1c591594e8d46ca24ccb7c51eddeefd1ace7c3f917acc0a96a1c6ab93",
+    "assembly.step": "0035069224f6d391374317e9ba4f79e2c2709aceabad2ce1808bb005698cb8bb",
+    "blender-audit.json": "8e9181e6a6cd69b97a4dfdeb6335c6a57abcb4425cdba0d37405d8ea9916a4ae",
+    "cad-audit.json": "0a63c11468bedf6103934c0f1b998fa8c374d2b3939d61fa0b1efa8c99ad1d9c",
+    "drawing-measurements.json": "480299962328743ad0adbf8bae309896b2d4f5d022e2f1947793e2a597908d0c",
+    "drawing.svg": "64c499102a9a4ec5b15ae3e94071d0e0fbca6cd4c494063eff5e604bb976baac",
+    "link-manifest.json": "93c90202c3e80ce67868cdc70c129c95e5be2c0dfb5dfabd21b2ec13c335152a",
+    "mesh-transfer.json": "e98d77f1464fd50f084559dff9b5105fa7432e2c0c53227c9724adbf536f8b18",
+    "native-audit.json": "c626f4248eac28c84dffb9e1484277c609e129aecb25aea2f2877a2901d496a2",
+    "native-front.svg": "b01953e5e88d7cefc40ee6fa85f2d49e9165f45b23648a52d16667602f82d824",
+    "native-side.svg": "0ab67c311542e11294d1e01ab6c768d52207117dfc65d85959259de2b9b720ec",
+    "native-top.svg": "b396ad1924038db8ed4b90eaa02657caaab1463432b4953897b4cfe48d0bdc01",
+    "page-template.svg": "1d888f270c92f057801fdf3547bc2011cfde502160d98813d9e0f0a7f7a7a6bc",
+    "pre-enhancement-cad-audit.json": "5d06bfe860bae7d08dfd8d2427f7d98ad3f3169996cbaedb9242c8676edb968a",
+    "pre-enhancement-drawing-measurements.json": "7e7164e4a5ca82d762799f8764f354a01110c783787662f75bf8b478e1c14c8b",
+    "unit.FCStd": "9c53db532d9a5a9ce2f1c3268f3ee2419713d30ba723dc696f2b694cf469ccc5",
+    "unit.step": "aa2682368d70927448dc41ff9da93f296e077670faee90bd21917ad161713522"
+  }
+}

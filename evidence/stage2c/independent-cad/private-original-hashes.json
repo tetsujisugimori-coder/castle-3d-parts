@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "disclosure": "Raw execution logs and original harness copies are retained privately; this public index contains hashes only. No original was destroyed.",
+  "files": [
+    {
+      "name": "README.md",
+      "sha256": "29a485638a132e2141f752b44f71d11b7f0f959e7c97066cc678c803df79fbb9",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "glb-audit.py",
+      "sha256": "bea83cedbd6fbc79fb59e2ee0d04b4229ca12d51f0325e16405178f8b60dbff9",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "native-counterexample-after.log",
+      "sha256": "a8ef9d452400a475d07cf326708b3e9113d60f905abcf09883d261aaff161868",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "native-counterexample-before.log",
+      "sha256": "a87084a4ece9dae796aea71723023d6a3658d211a3e7d5c9e905f44db19c037e",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "native-counterexample.py",
+      "sha256": "3690db70e1f572228a520e170c7ec870d42a7fd838e170671a152bba53094395",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "reload-final.log",
+      "sha256": "7f45b403f6ed9349721455e817c3279fa53c736d39b4dfb8a2d8188812399991",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "reload-initial.log",
+      "sha256": "68420af48200f63b15660aaa1aa7789a092b2ee9a55c7084dfa3986bb1e2f42c",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "reload.py",
+      "sha256": "d5ec5e0e1fe5645d275e642030bb8d35a0fd388388c2819c5ea85642289649e6",
+      "storage": "private original archive",
+      "public_body": false
+    },
+    {
+      "name": "sha256.json",
+      "sha256": "1986f3846f471eb6cdc80f287cb98fa6012ddd285c5de720485149807b5b6991",
+      "storage": "private original archive",
+      "public_body": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "revision": "B0",
+    "glb_parts": 14,
+    "accessor_bounds_vs_cad_manifest": "PASS"
+  },
+  {
+    "revision": "B1",
+    "glb_parts": 14,
+    "accessor_bounds_vs_cad_manifest": "PASS"
+  },
+  {
+    "revision": "B2",
+    "glb_parts": 14,
+    "accessor_bounds_vs_cad_manifest": "PASS"
+  }
+]

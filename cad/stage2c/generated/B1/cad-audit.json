@@ -1,0 +1,462 @@
+{
+  "software": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "mode": "headless real FreeCAD; GUI NOT_TESTED",
+  "created": {
+    "dimensions_m": [
+      10.95,
+      0.249,
+      2.4
+    ],
+    "bounds_m": [
+      -2.475,
+      -0.174,
+      0.0,
+      8.475,
+      0.075,
+      2.4
+    ],
+    "solids": 14,
+    "volume_mm3": 704656799.9999999,
+    "components": [
+      {
+        "id": "U01_Post_001",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          -2.475,
+          -0.075,
+          0.0,
+          -2.325,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_002",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          -1.275,
+          -0.075,
+          0.0,
+          -1.125,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_003",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          -0.075,
+          -0.075,
+          0.0,
+          0.075,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_004",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          1.125,
+          -0.075,
+          0.0,
+          1.275,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_005",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          2.325,
+          -0.075,
+          0.0,
+          2.475,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Rail_001",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          -2.475,
+          -0.174,
+          0.758,
+          2.475,
+          -0.075,
+          0.842
+        ]
+      },
+      {
+        "id": "U01_Rail_002",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          -2.475,
+          -0.174,
+          1.558,
+          2.475,
+          -0.075,
+          1.642
+        ]
+      },
+      {
+        "id": "U02_Post_001",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          3.525,
+          -0.075,
+          0.0,
+          3.675,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_002",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          4.725,
+          -0.075,
+          0.0,
+          4.875,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_003",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          5.925,
+          -0.075,
+          0.0,
+          6.075,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_004",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          7.125,
+          -0.075,
+          0.0,
+          7.275,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_005",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          8.325,
+          -0.075,
+          0.0,
+          8.475,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Rail_001",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          3.525,
+          -0.174,
+          0.758,
+          8.475,
+          -0.075,
+          0.842
+        ]
+      },
+      {
+        "id": "U02_Rail_002",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          3.525,
+          -0.174,
+          1.558,
+          8.475,
+          -0.075,
+          1.642
+        ]
+      }
+    ],
+    "intersection_checks": 91,
+    "max_overlap_mm3": 0.0
+  },
+  "fcstd_reopened": {
+    "dimensions_m": [
+      10.95,
+      0.249,
+      2.4
+    ],
+    "bounds_m": [
+      -2.475,
+      -0.174,
+      0.0,
+      8.475,
+      0.075,
+      2.4
+    ],
+    "solids": 14,
+    "volume_mm3": 704656799.9999999,
+    "components": [
+      {
+        "id": "U01_Post_001",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          -2.475,
+          -0.075,
+          0.0,
+          -2.325,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_002",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          -1.275,
+          -0.075,
+          0.0,
+          -1.125,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_003",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          -0.075,
+          -0.075,
+          0.0,
+          0.075,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_004",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          1.125,
+          -0.075,
+          0.0,
+          1.275,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Post_005",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          2.325,
+          -0.075,
+          0.0,
+          2.475,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U01_Rail_001",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          -2.475,
+          -0.174,
+          0.758,
+          2.475,
+          -0.075,
+          0.842
+        ]
+      },
+      {
+        "id": "U01_Rail_002",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          -2.475,
+          -0.174,
+          1.558,
+          2.475,
+          -0.075,
+          1.642
+        ]
+      },
+      {
+        "id": "U02_Post_001",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          3.525,
+          -0.075,
+          0.0,
+          3.675,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_002",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          4.725,
+          -0.075,
+          0.0,
+          4.875,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_003",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          5.925,
+          -0.075,
+          0.0,
+          6.075,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_004",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          7.125,
+          -0.075,
+          0.0,
+          7.275,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Post_005",
+        "part_id": "PAL-POST",
+        "revision": "B1",
+        "bounds_m": [
+          8.325,
+          -0.075,
+          0.0,
+          8.475,
+          0.075,
+          2.4
+        ]
+      },
+      {
+        "id": "U02_Rail_001",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          3.525,
+          -0.174,
+          0.758,
+          8.475,
+          -0.075,
+          0.842
+        ]
+      },
+      {
+        "id": "U02_Rail_002",
+        "part_id": "PAL-RAIL",
+        "revision": "B1",
+        "bounds_m": [
+          3.525,
+          -0.174,
+          1.558,
+          8.475,
+          -0.075,
+          1.642
+        ]
+      }
+    ],
+    "intersection_checks": 91,
+    "max_overlap_mm3": 0.0
+  },
+  "edit_recompute_revert": true,
+  "step_reopened": true,
+  "step_components": 14,
+  "techdraw": {
+    "views": [
+      "FrontView",
+      "TopView",
+      "SideView"
+    ],
+    "pages": [
+      "FrontPage",
+      "TopPage",
+      "SidePage"
+    ],
+    "native_scale": 0.025,
+    "native_linked_dimensions": "PASS",
+    "native_dimensions": [
+      "Dim_U01_post_height",
+      "Dim_U01_post_centres",
+      "Dim_U01_post_width",
+      "Dim_U01_post_depth",
+      "Dim_U01_unit_width",
+      "Dim_U01_Rail_001_length",
+      "Dim_U01_Rail_001_elevation",
+      "Dim_U01_Rail_002_length",
+      "Dim_U01_Rail_002_elevation",
+      "Dim_U02_post_height",
+      "Dim_U02_post_centres",
+      "Dim_U02_post_width",
+      "Dim_U02_post_depth",
+      "Dim_U02_unit_width",
+      "Dim_U02_Rail_001_length",
+      "Dim_U02_Rail_001_elevation",
+      "Dim_U02_Rail_002_length",
+      "Dim_U02_Rail_002_elevation",
+      "Dim_assembly_width"
+    ],
+    "dimension_bounds_m": [
+      10.95,
+      0.249,
+      2.4
+    ],
+    "measure_type": "True",
+    "verification": "native-audit.json"
+  }
+}

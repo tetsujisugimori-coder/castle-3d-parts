@@ -1,0 +1,1 @@
+{"status":"FAIL_PARTIAL_RUN_INTERRUPTED","reason":"Stopped after first normal case revealed SVG pointer interception; no complete-matrix claim. Mobile selector and hidden-SVG hit-box issues corrected before rerun.","case":"Chromium 375px normal; drawing pointer selection after 3D and three projection keyboard selections"}
