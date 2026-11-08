@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "revisions": [
+    {
+      "schema_version": 1,
+      "id": "B0",
+      "parent": null,
+      "parent_sha256": null,
+      "basis": "D",
+      "cad": {
+        "eligibility": "reference_only",
+        "formal_adoption": false
+      },
+      "reason": "Stage2A 2.2m unit inherited; two independent placements for assembly test",
+      "research_snapshot_sha256": "0454925a1805193a13efa123d025244857051a7032d34f31aff4454dde1115af",
+      "decision_ids": [
+        "DEC-0001",
+        "DEC-0002"
+      ],
+      "parts": [
+        {
+          "id": "PAL-POST",
+          "version": "B0",
+          "kind": "post",
+          "basis": "D",
+          "parameters": {
+            "height_m": 2.2,
+            "width_m": 0.15
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-RAIL",
+          "version": "B0",
+          "kind": "rail",
+          "basis": "D",
+          "parameters": {
+            "length_m": 4.95,
+            "width_m": 0.099,
+            "height_m": 0.084
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-UNIT",
+          "version": "B0",
+          "kind": "unit",
+          "basis": "D",
+          "parameters": {
+            "spacing_m": 1.2,
+            "count": 5,
+            "rails": 2
+          },
+          "depends_on": [
+            {
+              "id": "PAL-POST",
+              "version": "B0"
+            },
+            {
+              "id": "PAL-RAIL",
+              "version": "B0"
+            }
+          ]
+        }
+      ],
+      "assembly": {
+        "id": "PALISADE-ASSEMBLY",
+        "version": "B0",
+        "instances": [
+          {
+            "id": "U01",
+            "part": {
+              "id": "PAL-UNIT",
+              "version": "B0"
+            },
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "U02",
+            "part": {
+              "id": "PAL-UNIT",
+              "version": "B0"
+            },
+            "position_m": [
+              6,
+              0,
+              0
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "sha256": "8a40b0f2189e57ecb422d0ad98cae2c641e5fa92e1117bf9c56b7c4b065482bd"
+    },
+    {
+      "schema_version": 1,
+      "id": "B1",
+      "parent": "B0",
+      "parent_sha256": "8a40b0f2189e57ecb422d0ad98cae2c641e5fa92e1117bf9c56b7c4b065482bd",
+      "basis": "D",
+      "cad": {
+        "eligibility": "reference_only",
+        "formal_adoption": false
+      },
+      "reason": "D post height 2.2m to 2.4m",
+      "research_snapshot_sha256": "0454925a1805193a13efa123d025244857051a7032d34f31aff4454dde1115af",
+      "decision_ids": [
+        "DEC-0001",
+        "DEC-0002"
+      ],
+      "parts": [
+        {
+          "id": "PAL-POST",
+          "version": "B0",
+          "kind": "post",
+          "basis": "D",
+          "parameters": {
+            "height_m": 2.2,
+            "width_m": 0.15
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-RAIL",
+          "version": "B0",
+          "kind": "rail",
+          "basis": "D",
+          "parameters": {
+            "length_m": 4.95,
+            "width_m": 0.099,
+            "height_m": 0.084
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-UNIT",
+          "version": "B0",
+          "kind": "unit",
+          "basis": "D",
+          "parameters": {
+            "spacing_m": 1.2,
+            "count": 5,
+            "rails": 2
+          },
+          "depends_on": [
+            {
+              "id": "PAL-POST",
+              "version": "B0"
+            },
+            {
+              "id": "PAL-RAIL",
+              "version": "B0"
+            }
+          ]
+        },
+        {
+          "id": "PAL-POST",
+          "version": "B1",
+          "kind": "post",
+          "basis": "D",
+          "parameters": {
+            "height_m": 2.4,
+            "width_m": 0.15
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-RAIL",
+          "version": "B1",
+          "kind": "rail",
+          "basis": "D",
+          "parameters": {
+            "length_m": 4.95,
+            "width_m": 0.099,
+            "height_m": 0.084
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-UNIT",
+          "version": "B1",
+          "kind": "unit",
+          "basis": "D",
+          "parameters": {
+            "spacing_m": 1.2,
+            "count": 5,
+            "rails": 2
+          },
+          "depends_on": [
+            {
+              "id": "PAL-POST",
+              "version": "B1"
+            },
+            {
+              "id": "PAL-RAIL",
+              "version": "B1"
+            }
+          ]
+        }
+      ],
+      "assembly": {
+        "id": "PALISADE-ASSEMBLY",
+        "version": "B1",
+        "instances": [
+          {
+            "id": "U01",
+            "part": {
+              "id": "PAL-UNIT",
+              "version": "B1"
+            },
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "U02",
+            "part": {
+              "id": "PAL-UNIT",
+              "version": "B1"
+            },
+            "position_m": [
+              6,
+              0,
+              0
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "sha256": "212644eaace9d6d1b6dc5d1f0b4406684d3e937ae86218f317ea8651661def79"
+    },
+    {
+      "schema_version": 1,
+      "id": "B2",
+      "parent": "B1",
+      "parent_sha256": "212644eaace9d6d1b6dc5d1f0b4406684d3e937ae86218f317ea8651661def79",
+      "basis": "D",
+      "cad": {
+        "eligibility": "reference_only",
+        "formal_adoption": false
+      },
+      "reason": "D second unit spacing 1.2m to 1.3m; retain first B1 unit",
+      "research_snapshot_sha256": "0454925a1805193a13efa123d025244857051a7032d34f31aff4454dde1115af",
+      "decision_ids": [
+        "DEC-0001",
+        "DEC-0002"
+      ],
+      "parts": [
+        {
+          "id": "PAL-POST",
+          "version": "B0",
+          "kind": "post",
+          "basis": "D",
+          "parameters": {
+            "height_m": 2.2,
+            "width_m": 0.15
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-RAIL",
+          "version": "B0",
+          "kind": "rail",
+          "basis": "D",
+          "parameters": {
+            "length_m": 4.95,
+            "width_m": 0.099,
+            "height_m": 0.084
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-UNIT",
+          "version": "B0",
+          "kind": "unit",
+          "basis": "D",
+          "parameters": {
+            "spacing_m": 1.2,
+            "count": 5,
+            "rails": 2
+          },
+          "depends_on": [
+            {
+              "id": "PAL-POST",
+              "version": "B0"
+            },
+            {
+              "id": "PAL-RAIL",
+              "version": "B0"
+            }
+          ]
+        },
+        {
+          "id": "PAL-POST",
+          "version": "B1",
+          "kind": "post",
+          "basis": "D",
+          "parameters": {
+            "height_m": 2.4,
+            "width_m": 0.15
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-RAIL",
+          "version": "B1",
+          "kind": "rail",
+          "basis": "D",
+          "parameters": {
+            "length_m": 4.95,
+            "width_m": 0.099,
+            "height_m": 0.084
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-UNIT",
+          "version": "B1",
+          "kind": "unit",
+          "basis": "D",
+          "parameters": {
+            "spacing_m": 1.2,
+            "count": 5,
+            "rails": 2
+          },
+          "depends_on": [
+            {
+              "id": "PAL-POST",
+              "version": "B1"
+            },
+            {
+              "id": "PAL-RAIL",
+              "version": "B1"
+            }
+          ]
+        },
+        {
+          "id": "PAL-POST",
+          "version": "B2",
+          "kind": "post",
+          "basis": "D",
+          "parameters": {
+            "height_m": 2.4,
+            "width_m": 0.15
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-RAIL",
+          "version": "B2",
+          "kind": "rail",
+          "basis": "D",
+          "parameters": {
+            "length_m": 5.35,
+            "width_m": 0.099,
+            "height_m": 0.084
+          },
+          "depends_on": []
+        },
+        {
+          "id": "PAL-UNIT",
+          "version": "B2",
+          "kind": "unit",
+          "basis": "D",
+          "parameters": {
+            "spacing_m": 1.3,
+            "count": 5,
+            "rails": 2
+          },
+          "depends_on": [
+            {
+              "id": "PAL-POST",
+              "version": "B2"
+            },
+            {
+              "id": "PAL-RAIL",
+              "version": "B2"
+            }
+          ]
+        }
+      ],
+      "assembly": {
+        "id": "PALISADE-ASSEMBLY",
+        "version": "B2",
+        "instances": [
+          {
+            "id": "U01",
+            "part": {
+              "id": "PAL-UNIT",
+              "version": "B1"
+            },
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "U02",
+            "part": {
+              "id": "PAL-UNIT",
+              "version": "B2"
+            },
+            "position_m": [
+              6,
+              0,
+              0
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "sha256": "8ca25408fa0a99902802654f3321fb5ce29542e2ca3f50604b9782a86f236001"
+    }
+  ]
+}

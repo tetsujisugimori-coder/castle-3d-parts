@@ -1,0 +1,2 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+ValueError Wrong vertex index

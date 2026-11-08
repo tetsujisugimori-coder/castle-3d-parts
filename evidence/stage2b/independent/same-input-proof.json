@@ -1,0 +1,20 @@
+{
+  "old_source_sha256": "28de17c40a6c7cdbb4b17212b387cb43b2b217d87ded16f696278ac9b8b04ad2",
+  "new_source_sha256": "49ea0e5134f35d9063b9a0b13cdcd438badeb4cad2cb6d94caf842052da055ff",
+  "rows": [
+    {
+      "name": "same_old_label",
+      "input_sha256": "d921b817a70fe5df79d0528485840d316a87e6014a65ee16fff99ee1482d5f4f",
+      "same_input": true,
+      "old": "ACCEPT",
+      "new": "DRAWING_GOLDEN"
+    },
+    {
+      "name": "same_old_projection",
+      "input_sha256": "44cca659a29d56f1b491ef791e3cbe83ae7e7b7634f0520c0699c020f4c9b243",
+      "same_input": true,
+      "old": "ACCEPT",
+      "new": "DRAWING_GOLDEN"
+    }
+  ]
+}

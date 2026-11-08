@@ -1,0 +1,6 @@
+{
+  "source_sha256": "fa14fc76a15c1988311a1d5d8acbf452675b5df9d4b60744fefa4cda45470bd0",
+  "mutation": "All retained/new rail width_m=9 m; revision and parent hashes consistently recalculated",
+  "accepted": false,
+  "error": "RAIL_SECTION"
+}

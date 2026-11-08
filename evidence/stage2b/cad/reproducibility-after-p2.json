@@ -1,0 +1,41 @@
+{
+  "B0": {
+    "cad_geometry_equal": true,
+    "blender_geometry_equal": true,
+    "file_byte_equal": {
+      "assembly.FCStd": false,
+      "assembly.step": false,
+      "assembly.blend": false,
+      "assembly.glb": true,
+      "drawing.svg": true,
+      "drawing-measurements.json": true,
+      "mesh-transfer.json": true
+    }
+  },
+  "B1": {
+    "cad_geometry_equal": true,
+    "blender_geometry_equal": true,
+    "file_byte_equal": {
+      "assembly.FCStd": false,
+      "assembly.step": false,
+      "assembly.blend": false,
+      "assembly.glb": true,
+      "drawing.svg": true,
+      "drawing-measurements.json": true,
+      "mesh-transfer.json": true
+    }
+  },
+  "B2": {
+    "cad_geometry_equal": true,
+    "blender_geometry_equal": true,
+    "file_byte_equal": {
+      "assembly.FCStd": false,
+      "assembly.step": false,
+      "assembly.blend": false,
+      "assembly.glb": true,
+      "drawing.svg": true,
+      "drawing-measurements.json": true,
+      "mesh-transfer.json": true
+    }
+  }
+}

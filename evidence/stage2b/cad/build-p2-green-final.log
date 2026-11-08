@@ -1,0 +1,159 @@
+Info: Saved "assembly.blend"
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+04:20:09 | INFO: Starting glTF 2.0 export
+04:20:09 | INFO: Extracting primitive: U01_Post_001
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U01_Post_002
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U01_Post_003
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U01_Post_004
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U01_Post_005
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U01_Rail_001
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U01_Rail_002
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U02_Post_001
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U02_Post_002
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U02_Post_003
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U02_Post_004
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U02_Post_005
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U02_Rail_001
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Extracting primitive: U02_Rail_002
+04:20:09 | INFO: Primitives created: 1
+04:20:09 | INFO: Finished glTF 2.0 export in 0.020227670669555664 s
+
+04:20:09 | INFO: Data are loaded, start creating Blender stuff
+04:20:09 | INFO: Blender create Mesh node U01_Post_001
+04:20:09 | INFO: Blender create Mesh node U01_Post_002
+04:20:09 | INFO: Blender create Mesh node U01_Post_003
+04:20:09 | INFO: Blender create Mesh node U01_Post_004
+04:20:09 | INFO: Blender create Mesh node U01_Post_005
+04:20:09 | INFO: Blender create Mesh node U01_Rail_001
+04:20:09 | INFO: Blender create Mesh node U01_Rail_002
+04:20:09 | INFO: Blender create Mesh node U02_Post_001
+04:20:09 | INFO: Blender create Mesh node U02_Post_002
+04:20:09 | INFO: Blender create Mesh node U02_Post_003
+04:20:09 | INFO: Blender create Mesh node U02_Post_004
+04:20:09 | INFO: Blender create Mesh node U02_Post_005
+04:20:09 | INFO: Blender create Mesh node U02_Rail_001
+04:20:09 | INFO: Blender create Mesh node U02_Rail_002
+04:20:09 | INFO: glTF import finished in 0.01s
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/generated/B0/assembly.blend"
+
+Blender quit
+Info: Saved "assembly.blend"
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+04:20:11 | INFO: Starting glTF 2.0 export
+04:20:11 | INFO: Extracting primitive: U01_Post_001
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U01_Post_002
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U01_Post_003
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U01_Post_004
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U01_Post_005
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U01_Rail_001
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U01_Rail_002
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U02_Post_001
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U02_Post_002
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U02_Post_003
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U02_Post_004
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U02_Post_005
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U02_Rail_001
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Extracting primitive: U02_Rail_002
+04:20:11 | INFO: Primitives created: 1
+04:20:11 | INFO: Finished glTF 2.0 export in 0.019661426544189453 s
+
+04:20:11 | INFO: Data are loaded, start creating Blender stuff
+04:20:11 | INFO: Blender create Mesh node U01_Post_001
+04:20:11 | INFO: Blender create Mesh node U01_Post_002
+04:20:11 | INFO: Blender create Mesh node U01_Post_003
+04:20:11 | INFO: Blender create Mesh node U01_Post_004
+04:20:11 | INFO: Blender create Mesh node U01_Post_005
+04:20:11 | INFO: Blender create Mesh node U01_Rail_001
+04:20:11 | INFO: Blender create Mesh node U01_Rail_002
+04:20:11 | INFO: Blender create Mesh node U02_Post_001
+04:20:11 | INFO: Blender create Mesh node U02_Post_002
+04:20:11 | INFO: Blender create Mesh node U02_Post_003
+04:20:11 | INFO: Blender create Mesh node U02_Post_004
+04:20:11 | INFO: Blender create Mesh node U02_Post_005
+04:20:11 | INFO: Blender create Mesh node U02_Rail_001
+04:20:11 | INFO: Blender create Mesh node U02_Rail_002
+04:20:11 | INFO: glTF import finished in 0.02s
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/generated/B1/assembly.blend"
+
+Blender quit
+Info: Saved "assembly.blend"
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+04:20:12 | INFO: Starting glTF 2.0 export
+04:20:12 | INFO: Extracting primitive: U01_Post_001
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U01_Post_002
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U01_Post_003
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U01_Post_004
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U01_Post_005
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U01_Rail_001
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U01_Rail_002
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U02_Post_001
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U02_Post_002
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U02_Post_003
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U02_Post_004
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U02_Post_005
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U02_Rail_001
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Extracting primitive: U02_Rail_002
+04:20:12 | INFO: Primitives created: 1
+04:20:12 | INFO: Finished glTF 2.0 export in 0.01715373992919922 s
+
+04:20:12 | INFO: Data are loaded, start creating Blender stuff
+04:20:12 | INFO: Blender create Mesh node U01_Post_001
+04:20:12 | INFO: Blender create Mesh node U01_Post_002
+04:20:12 | INFO: Blender create Mesh node U01_Post_003
+04:20:12 | INFO: Blender create Mesh node U01_Post_004
+04:20:12 | INFO: Blender create Mesh node U01_Post_005
+04:20:12 | INFO: Blender create Mesh node U01_Rail_001
+04:20:12 | INFO: Blender create Mesh node U01_Rail_002
+04:20:12 | INFO: Blender create Mesh node U02_Post_001
+04:20:12 | INFO: Blender create Mesh node U02_Post_002
+04:20:12 | INFO: Blender create Mesh node U02_Post_003
+04:20:12 | INFO: Blender create Mesh node U02_Post_004
+04:20:12 | INFO: Blender create Mesh node U02_Post_005
+04:20:12 | INFO: Blender create Mesh node U02_Rail_001
+04:20:12 | INFO: Blender create Mesh node U02_Rail_002
+04:20:12 | INFO: glTF import finished in 0.01s
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-stage2b/cad/stage2b/generated/B2/assembly.blend"
+
+Blender quit

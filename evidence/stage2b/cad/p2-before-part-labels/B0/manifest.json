@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "revision": "B0",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "spec_sha256": "614e409aa4b66f341b6841a0c4f8810cd84b03e45d15d025bd3c1e52af4082e1",
+  "source_scripts": {
+    "cad/stage2b/build.py": "27e42ee585f4efe3e5aefeb75487f160ed97fc91b967e34b71fc8e7969c80a64",
+    "blender/stage2b/build.py": "3293a8e1a8aa29b879b29b87c0926a206fa9c6e642fa05a8310c27a02a1198de",
+    "cad/stage2b/run.py": "13a626f7e15757da12cb9c6c1380d8c14f1afb19b299864e26beba14f2e23639",
+    "cad/stage2b/drawing.py": "908ea0d42df650efa5e24eece93cfdc32bb7cf89691ca38f3f8dd74842cd271b"
+  },
+  "outputs": {
+    "assembly.FCStd": "3641ccc75ca8eab8c2305ec598bff694b91d50c1a8a830dfb4e3ed80032704d7",
+    "assembly.blend": "9521d170d7738b4b721adfe6d498543a671ca6c8228828f4b211a2c6faf57cc1",
+    "assembly.glb": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc",
+    "assembly.step": "8401f2f6113767d0ec13392279b3da35833595a23ef0bc6ce7ff58ed2256afcd",
+    "blender-audit.json": "7ce97fbb514756e858afe91123bb06cd64d240e4395b2746f5f0045df574af45",
+    "cad-audit.json": "77c920b13bb96d30bf3bb5d39a92dccb71388d5b4f357ec8ad7ec3f6e26ddb6f",
+    "drawing-measurements.json": "401b860b227f72b17ed199b049d5f6ae624a5ff0a37324df0acab6523c972c57",
+    "drawing.svg": "28ad0db84bd798eb95f8318bbcb04f6bccc7bd73d38e8ca953e6edab81c4e423",
+    "mesh-transfer.json": "1519fdc5162cc4d382059dcb812d30f5e2a058234cfe56efa82fb03c7af24d6d",
+    "unit.FCStd": "e7d0630caaf0da5b667f7dab724ec7821a30277a90b2c30e8ed82a6a0a788e59",
+    "unit.step": "ce739ff930f47c70a901d6d3ef2825072e0655da46bd9755545dfd566b158a94"
+  }
+}
