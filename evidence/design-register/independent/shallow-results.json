@@ -1,0 +1,13 @@
+{
+  "git_history_absent": true,
+  "positive": {
+    "exit": 0,
+    "stdout": "PASS\n",
+    "stderr": ""
+  },
+  "snapshot_modified": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": "HYP_SNAPSHOT_PIN\n"
+  }
+}

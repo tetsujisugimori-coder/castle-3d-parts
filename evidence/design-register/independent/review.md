@@ -33,3 +33,9 @@ A/B/C/Dの根拠分類は定義済みだが、現在の値検証は既存v0のD�
 ## 再実行
 
 `python3 evidence/design-register/independent/replay.py` は隔離ローカルcloneを作り、旧版セットと同一反例、現行版、後続履歴削除を実行する。外部GitHubへのpushや原作業資料の改変は行わない。旧版REDは意図的exit1、現行GREENはexit0。再現結果はreplay-results.json。
+
+## 提出後CIの再レビュー
+
+初回提出d56f93dのdesign/hypothesis CI成功に対し、既存prototype CIが浅いcheckoutで固定Git原本を参照できず220中23FAILとなった。原ZIPを独立取得して確認。テストをskipせず、既知commitのHYP原byteと全baseline hashを検証器にpinする限定fallbackへ修正した。Git原本取得可能時の照合は維持する。
+
+独立したGit履歴なしコピーで修正版CLIはPASS。固定HYP snapshotを1文字改変するとHYP_SNAPSHOT_PIN、exit1となった。shallow-results.jsonに保存。後続HYP/commitの無制限fallbackを認めるものではない。新HEADのCI再成功と原artifact照合はこの追記時点では未確認。
