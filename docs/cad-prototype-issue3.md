@@ -45,3 +45,9 @@ Generated geometry, scripts, original wood-grain image and drawings are authored
 
 ## Next
 Use source verification to propose revisions rather than overwrite snapshots. Any real A/B/C parameter adoption requires a separately approved generalized research contract. Add official GUI and iPhone checks, more joinery variants and offline dependency packaging as follow-ups. Neither technical CAD success nor PR merge proves Yamanaka fence morphology.
+
+### Headless reopen/edit/save requirement
+After opening a final FCStd with the embedded Python module, call `regenerate(document)` **before every edited save**, even for height/spacing-only changes. This restores the included TechDraw SVG from the document ZIP because this environment may leave the transient path unset. Direct open→change→save without this repair is not verified safe here. GUI behaviour remains NOT_TESTED; no assertion that GUI opening avoids the issue.
+
+### Browser-run failure accounting
+The first module-mapped local run completed Chromium8+2 but WebKit launch threw a missing-library error. Its initial `failed:false` field was a runner-accounting defect, not a full matrix PASS. The original JSON/log are retained. The runner now records BLOCKED and exit1 on launch errors and requires all16 normal conditions before success. Subsequent local run completed Chromium8+4 and correctly remained failed=true/exit1 for blocked WebKit. Final CI results are evaluated separately.
