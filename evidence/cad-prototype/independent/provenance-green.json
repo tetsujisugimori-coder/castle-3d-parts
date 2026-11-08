@@ -1,0 +1,12 @@
+[
+  {
+    "name": "remove_source_hashes",
+    "accepted": false,
+    "error": "SOURCE_SET"
+  },
+  {
+    "name": "remove_one_source_hash",
+    "accepted": false,
+    "error": "SOURCE_SET"
+  }
+]

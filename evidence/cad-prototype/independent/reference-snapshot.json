@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "commit": "68c039d8c1c40b81cac0f7e16fa800678ccc6de8",
+  "tree": "6662636d218d2e359de694aede3b25a208f9cd99",
+  "eligibility": "reference_only",
+  "formal_cad_adoption": false,
+  "source_hashes": {
+    "design/cad-reference.json": "c4007232ae5305c62a75be563061fd4398b319ac0ee0e8d16724ffcf7bf8329b",
+    "design/decisions/DEC-0001-r1.json": "136b500a89d3829088dc44ed254f4507f4ecadae0d295b4ef024c61e0a7fe6bb",
+    "design/decisions/DEC-0002-r1.json": "df08021ddc590fcfe41c870895f048b5484fd70d60dfd518386f464322c768cf",
+    "catalog/wooden-palisade-v0.json": "65f0b948edd837445708940d1ca9d9731a847f8b2441fc8386b24d01d2e6c118"
+  },
+  "decisions": [
+    {
+      "decision_id": "DEC-0001",
+      "revision": 1,
+      "hypothesis": {
+        "id": "HYP-0001",
+        "revision": 1,
+        "sha256": "6b3793e534167139d45d19884f9263f6aa80a1278ce146886b6af85671d87703",
+        "commit": "454230e4ae36e10ab49c7688358f33b7a53a42e7",
+        "path": "research/hypotheses/HYP-0001.json"
+      },
+      "eligibility": "reference_only",
+      "write_allowed": false,
+      "parameters": [
+        {
+          "name": "post_height",
+          "unit": "m",
+          "measurement_target": "post_height",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 2,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/height",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "post_width",
+          "unit": "m",
+          "measurement_target": "post_width",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 0.15,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/post_width",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "post_center_spacing",
+          "unit": "m",
+          "measurement_target": "post_center_spacing",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 1.2,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/spacing",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "post_count",
+          "unit": "count",
+          "measurement_target": "post_count",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 5,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/count",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "rail_levels",
+          "unit": "count",
+          "measurement_target": "rail_levels",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 2,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/rails",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "cross_section",
+          "unit": "description",
+          "measurement_target": "cross_section",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": null,
+          "basis": "D",
+          "confirmation": "unknown",
+          "evidence_id": "none",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "arrangement",
+          "unit": "description",
+          "measurement_target": "arrangement",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": null,
+          "basis": "D",
+          "confirmation": "unknown",
+          "evidence_id": "none",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        }
+      ]
+    },
+    {
+      "decision_id": "DEC-0002",
+      "revision": 1,
+      "hypothesis": {
+        "id": "HYP-0002",
+        "revision": 1,
+        "sha256": "b9a36cb9016c91f2733d9d098e2112809d1548a8f135358dd9b451ea0ba7b577",
+        "commit": "454230e4ae36e10ab49c7688358f33b7a53a42e7",
+        "path": "research/hypotheses/HYP-0002.json"
+      },
+      "eligibility": "reference_only",
+      "write_allowed": false,
+      "parameters": [
+        {
+          "name": "post_height",
+          "unit": "m",
+          "measurement_target": "post_height",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 2,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/height",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "post_width",
+          "unit": "m",
+          "measurement_target": "post_width",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 0.15,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/post_width",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "post_center_spacing",
+          "unit": "m",
+          "measurement_target": "post_center_spacing",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 1.2,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/spacing",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "post_count",
+          "unit": "count",
+          "measurement_target": "post_count",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 5,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/count",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "rail_levels",
+          "unit": "count",
+          "measurement_target": "rail_levels",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": 2,
+          "basis": "D",
+          "confirmation": "prototype_only",
+          "evidence_id": "catalog/wooden-palisade-v0.json#/dimensions_m/rails",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "cross_section",
+          "unit": "description",
+          "measurement_target": "cross_section",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": null,
+          "basis": "D",
+          "confirmation": "unknown",
+          "evidence_id": "none",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        },
+        {
+          "name": "arrangement",
+          "unit": "description",
+          "measurement_target": "arrangement",
+          "application_site": "山中城",
+          "historical_value": null,
+          "hypothesis_value": null,
+          "prototype_value": null,
+          "basis": "D",
+          "confirmation": "unknown",
+          "evidence_id": "none",
+          "method": "既存v0の試作用設定を参照。発掘測定ではない。",
+          "limitations": [
+            "柱穴残存深さから柱高・根入れを導かない。",
+            "正式CADへの適用不可。"
+          ]
+        }
+      ]
+    }
+  ],
+  "prototype_geometry": {
+    "post_section": {
+      "value": "square",
+      "basis": "D",
+      "reason": "simple editable prototype, source null"
+    },
+    "top": {
+      "value": "flat",
+      "basis": "D"
+    },
+    "layout": {
+      "value": "linear",
+      "basis": "D"
+    },
+    "rail_contact": {
+      "value": "rear face butt contact, no joinery",
+      "basis": "D"
+    }
+  },
+  "research_update_note": "SRC-0001 p68/PDF76: approximately 30cm posthole diameter reported by Track B. Not post width. Not applied to CAD; see Issue #9."
+}

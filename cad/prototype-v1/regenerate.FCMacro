@@ -1,0 +1,11 @@
+# Run after changing Parameters in an open prototype-v1 FCStd.
+# Set this repository location once in the macro editor.
+from pathlib import Path
+import importlib.util
+import FreeCAD as App
+ROOT = Path(__file__).resolve().parent
+spec=importlib.util.spec_from_file_location('palisade_build', ROOT/'build.py')
+builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
+if App.ActiveDocument is None: raise ValueError('Open palisade.FCStd first')
+builder.regenerate(App.ActiveDocument)
+App.ActiveDocument.recompute()

@@ -1,0 +1,51 @@
+name: CAD prototype evidence
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          mkdir -p cad-ci/source
+          node --test > cad-ci/unit.log 2>&1
+          node scripts/cad-prototype.mjs > cad-ci/geometry.json
+          node scripts/build-site.mjs
+          git ls-files -z | xargs -0 sha256sum > cad-ci/manifest.sha256
+          git archive HEAD | tar -x -C cad-ci/source
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cad-contract-${{ github.event.pull_request.head.sha || github.sha }}
+          path: cad-ci/
+          if-no-files-found: error
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: mkdir -p cad-browser-ci && uname -a > cad-browser-ci/environment.log
+      - run: npm install --prefix /tmp/cad-pw playwright@1.56.1 three@0.180.0 2>&1 | tee cad-browser-ci/npm.log
+      - run: /tmp/cad-pw/node_modules/.bin/playwright install --with-deps chromium webkit 2>&1 | tee cad-browser-ci/install.log
+      - run: node scripts/build-site.mjs
+      - run: node scripts/cad-browser.mjs
+        env:
+          PW_MODULE: /tmp/cad-pw/node_modules/playwright/index.mjs
+          THREE_DIR: /tmp/cad-pw/node_modules/three
+          CAD_EVIDENCE_DIR: cad-browser-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cad-browser-${{ github.event.pull_request.head.sha || github.sha }}
+          path: cad-browser-ci/
+          if-no-files-found: error

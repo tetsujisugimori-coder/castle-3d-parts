@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-08T09:53:51.626572+00:00",
+  "files": {
+    "pre-review-build.py.txt": "815e165be0d145aaf59502c148ad81399504be59761c1a118fd0104ccdf9a448",
+    "pre-review-cad-prototype.mjs.txt": "621f882df2ba5bca4a07f7150149e31045658ad11cfafe39ecf31ba6aa153521",
+    "pre-review-app.js.txt": "8c632d1c1129a79889b23220fef7b5c36077c6f1da45865f10d472e93d5b62e8",
+    "reference-snapshot.json": "9b6a9e81b664bc6043b33018218fd0e4e81cdd99ae7f17b60007134690caa6e3",
+    "audit_reopen.py": "8c34655c16af830e63f3521ad187579dc03e4afbfdc95342846bd41f86243557",
+    "cad-red-final.log": "a38abae8a1756651e00d5d50ca31326792fbe83a4c987e1fc6b28ef5fa68cdb4",
+    "cad-green-final.log": "cd9344f1ddf60589498f43684c8524ad7d65b15c4123f6e322aaedf37ccaf4e4",
+    "independent-cad.json": "60ab3c9db238f75d88fae03ce6d00d2fcb1a08deda74284b810f464e09f29fe6",
+    "blender-inspect.py": "68b6bd2da39bf76dfac20d979d0bda5ed1c803d5db7d46be15c1c0b9dca60c54",
+    "blender-inspect.log": "a4a6db3d57c24b628f6ba8fef934baca993c58a80380a1133d5075ce51203aa5",
+    "independent-blender.json": "c3bb0c7c76c00a91cfef6e0a55706229f21064599da31ee178fd5dee5e78bc77",
+    "context-race.mjs": "147fcb5c397d3c99e016574c026dbb8e1ae802a8e1fdb12da18ee97c8069ab93",
+    "context-race-red.json": "6a8dc8859107c082a4ae29c300b3b80ac662a52f088a5350822d681d2db8bd41",
+    "context-race-green.json": "4161fbd994176dfaae4c528fae8a353e250b48ef100c0a1c8a3672f63b2f230d",
+    "provenance-red.json": "b8fc846aee7e9978f54e279f410377ab1ba548d84f4381f5175ea79a5fb4326d",
+    "provenance-green.json": "a4dce2c42819aded9735bae871961c02707ac076280ebafb321a6c3fc8898740"
+  },
+  "scope": "Independent local review before final GitHub HEAD/CI. FreeCAD and Blender headless; Chromium controlled Three0.180.0 mapping; not GUI/iPhone/CDN verification",
+  "findings": [
+    {
+      "id": "P2-source-set",
+      "before": "empty and missing hash sets accepted",
+      "after": "both rejected SOURCE_SET"
+    },
+    {
+      "id": "P2-fcstd-resave",
+      "before": "reopen edit save OSError missing /template.svg",
+      "after": "same independent runner exit0; variants and STEP component dimensions verified"
+    },
+    {
+      "id": "P2-late-glb-contextloss",
+      "before": "late success overwrote WebGL failure, buttons enabled",
+      "after": "failure retained, buttons disabled, loaded absent"
+    }
+  ]
+}

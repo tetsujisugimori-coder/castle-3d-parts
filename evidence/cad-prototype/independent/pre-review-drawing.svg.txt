@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210"><rect width="297" height="210" fill="white"/><g transform="translate(148.5 150) scale(.05 -.05)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="1.0"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 0 -2475 L -624.667 -2475 " />
+<path id= "2" d=" M -708.667 -2475 L -1291.33 -2475 " />
+<path id= "3" d=" M -1375.33 -2475 L -2000 -2475 " />
+<path id= "4" d=" M 0 -2325 L -624.667 -2325 " />
+<path id= "5" d=" M -708.667 -2325 L -1291.33 -2325 " />
+<path id= "6" d=" M -1375.33 -2325 L -2000 -2325 " />
+<path id= "7" d=" M 0 -2475 L 0 -2325 " />
+<path id= "8" d=" M -2000 -2475 L -2000 -2325 " />
+<path id= "9" d=" M 0 -1275 L -624.667 -1275 " />
+<path id= "10" d=" M -708.667 -1275 L -1291.33 -1275 " />
+<path id= "11" d=" M -1375.33 -1275 L -2000 -1275 " />
+<path id= "12" d=" M 0 -1125 L -624.667 -1125 " />
+<path id= "13" d=" M -708.667 -1125 L -1291.33 -1125 " />
+<path id= "14" d=" M -1375.33 -1125 L -2000 -1125 " />
+<path id= "15" d=" M 0 -1275 L 0 -1125 " />
+<path id= "16" d=" M -2000 -1275 L -2000 -1125 " />
+<path id= "17" d=" M 0 -75 L -624.667 -75 " />
+<path id= "18" d=" M -708.667 -75 L -1291.33 -75 " />
+<path id= "19" d=" M -1375.33 -75 L -2000 -75 " />
+<path id= "20" d=" M 0 75 L -624.667 75 " />
+<path id= "21" d=" M -708.667 75 L -1291.33 75 " />
+<path id= "22" d=" M -1375.33 75 L -2000 75 " />
+<path id= "23" d=" M 0 -75 L 0 75 " />
+<path id= "24" d=" M -2000 -75 L -2000 75 " />
+<path id= "25" d=" M 0 1125 L -624.667 1125 " />
+<path id= "26" d=" M -708.667 1125 L -1291.33 1125 " />
+<path id= "27" d=" M -1375.33 1125 L -2000 1125 " />
+<path id= "28" d=" M 0 1275 L -624.667 1275 " />
+<path id= "29" d=" M -708.667 1275 L -1291.33 1275 " />
+<path id= "30" d=" M -1375.33 1275 L -2000 1275 " />
+<path id= "31" d=" M 0 1125 L 0 1275 " />
+<path id= "32" d=" M -2000 1125 L -2000 1275 " />
+<path id= "33" d=" M 0 2325 L -624.667 2325 " />
+<path id= "34" d=" M -708.667 2325 L -1291.33 2325 " />
+<path id= "35" d=" M -1375.33 2325 L -2000 2325 " />
+<path id= "36" d=" M 0 2475 L -624.667 2475 " />
+<path id= "37" d=" M -708.667 2475 L -1291.33 2475 " />
+<path id= "38" d=" M -1375.33 2475 L -2000 2475 " />
+<path id= "39" d=" M 0 2325 L 0 2475 " />
+<path id= "40" d=" M -2000 2325 L -2000 2475 " />
+<path id= "41" d=" M -624.667 -2475 L -708.667 -2475 " />
+<path id= "42" d=" M -624.667 2475 L -708.667 2475 " />
+<path id= "43" d=" M -624.667 -2475 L -624.667 2475 " />
+<path id= "44" d=" M -708.667 -2475 L -708.667 2475 " />
+<path id= "45" d=" M -1291.33 -2475 L -1375.33 -2475 " />
+<path id= "46" d=" M -1291.33 2475 L -1375.33 2475 " />
+<path id= "47" d=" M -1291.33 -2475 L -1291.33 2475 " />
+<path id= "48" d=" M -1375.33 -2475 L -1375.33 2475 " />
+</g>
+</g><g font-family="sans-serif" font-size="5"><text x="15" y="20">Palisade prototype v1 / D / reference_only</text><text x="15" y="30">Units: mm. Width 4950; height 2000; centers 1200; posts 5; rails 2.</text><text x="15" y="190">Not excavated dimensions. FreeCAD projected geometry; square posts / flat tops provisional.</text></g></svg>

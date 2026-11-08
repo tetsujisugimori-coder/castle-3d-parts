@@ -1,0 +1,7 @@
+{
+  "before": "WebGLの接続が失われました。ページを再読み込みしてください。",
+  "after": "3D表示を開始できません。WebGL対応・GLB・CDNの接続を確認してください。詳細: WebGL接続喪失後の遅延ロードを無効化しました",
+  "disabled": true,
+  "loaded": null,
+  "error": "true"
+}

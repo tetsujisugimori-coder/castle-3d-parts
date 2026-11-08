@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/castle-cad-independent/audit_reopen.py", line 16, in <module>
+    d.saveAs('/tmp/castle-cad-independent/variant.FCStd');A.closeDocument(d.Name);d=A.openDocument('/tmp/castle-cad-independent/variant.FCStd');assert d.Parameters.Count==5
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: {'sclassname': 'N4Base15FileSystemErrorE', 'sErrMsg': "PropertyFileIncluded::SaveDocFile(): File '/template.svg' in transient directory doesn't exist.", 'sfile': '', 'iline': 0, 'sfunction': '', 'swhat': "PropertyFileIncluded::SaveDocFile(): File '/template.svg' in transient directory doesn't exist.", 'btranslatable': False, 'breported': False}
