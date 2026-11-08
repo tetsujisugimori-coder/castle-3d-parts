@@ -8,3 +8,6 @@ test('GLB damaged header rejected',()=>{const b=Buffer.from(readFileSync(root+'s
 test('FreeCAD saved and STEP reopened evidence',()=>{const r=JSON.parse(readFileSync(root+'evidence/cad-prototype/freecad.json'));assert.equal(r.step_reopened.solids,7);assert.equal(r.fcstd_reopened.posts,5);assert.equal(r.same_document_count_edit.posts,3);assert.equal(r.negative_controls.length,7);assert.equal(r.final_reopen.valid,true)});
 test('Blender and GLB actual reopen evidence',()=>{const r=JSON.parse(readFileSync(root+'evidence/cad-prototype/blender.json'));assert.equal(r.blend_reopened.posts,5);assert.equal(r.glb_reopened.rails,2)});
 test('source hash omission rejected',()=>{const s=snapshot();delete s.source_hashes['design/cad-reference.json'];assert.throws(()=>validateSnapshot(s),/SOURCE_SET/)});
+import{drawingAudit}from'../scripts/cad-prototype.mjs';
+test('drawing actual projected edges fit horizontal paper space',()=>assert.equal(drawingAudit(readFileSync(root+'cad/prototype-v1/generated/palisade-drawing.svg','utf8')).projected_edge_endpoints,96));
+test('original clipped projection is rejected',()=>assert.throws(()=>drawingAudit(readFileSync(root+'evidence/cad-prototype/independent/pre-review-drawing.svg.txt','utf8')),e=>e.message==='DRAWING_BOUNDS'));

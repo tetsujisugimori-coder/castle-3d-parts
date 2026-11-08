@@ -54,3 +54,9 @@ The first module-mapped local run completed Chromium8+2 but WebKit launch threw 
 
 ### Initial CI environment failure
 Run42469333168 (0b3547b8) contract passed, but browser installation failed before tests: ubuntu-latest resolved to Ubuntu26.04.1, unsupported by pinned Playwright1.56.1. Original job128696191815 log is retained. The new workflow is pinned to supported ubuntu-24.04 and captures installation logs even on failure. No browser assertion or timeout was relaxed.
+
+### Drawing projection correction
+Independent rendering found the initial SVG's projected basis was rotated and clipped outside paper. The original SVG is preserved as `pre-review-drawing.svg.txt`. The projection's x=-Z/y=X basis is now explicitly mapped to horizontal paper coordinates and fitted to x37.125–259.875/y65–155mm. Stroke is0.18mm. Inkscape raster rendering verified all5 posts/2 rails and no note overlap. Two endpoint-bound tests reject the original and accept the corrected96 endpoints. Final local suite235/235; this drawing check does not substitute for FreeCAD GUI operation.
+
+### Independent replay
+`evidence/cad-prototype/independent/replay.py` reproduces preserved RED/GREEN inputs against old and fixed code in a fresh temporary copy. It only substitutes filesystem paths in the original runners identically for both conditions. Set `PW_MODULE` to an installed Playwright index.mjs and `THREE_DIR` to Three.js0.180.0 to include the browser race. Without them that portion is NOT_TESTED, not PASS. Requires compatible FreeCAD1.0 Python modules. Original runner bytes, failure records and snapshots remain unchanged. `replay-self-check.json` is the implementer's execution of this helper, separate from the independent review evidence.

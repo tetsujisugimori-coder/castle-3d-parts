@@ -1,0 +1,26 @@
+[
+  {
+    "label": "cad-red",
+    "exit": 1
+  },
+  {
+    "label": "cad-green",
+    "exit": 0
+  },
+  {
+    "label": "provenance-red",
+    "exit": 0
+  },
+  {
+    "label": "provenance-green",
+    "exit": 0
+  },
+  {
+    "label": "context-red",
+    "exit": 0
+  },
+  {
+    "label": "context-green",
+    "exit": 0
+  }
+]

@@ -110,10 +110,11 @@ def main():
         d.TransientDir=tempfile.mkdtemp(prefix="palisade-techdraw-")+"/"
         page=d.addObject('TechDraw::DrawPage','Drawing')
         template=d.addObject('TechDraw::DrawSVGTemplate','Template');template.Template=str(ROOT/'cad/prototype-v1/template.svg');page.Template=template
-        view=d.addObject('TechDraw::DrawViewPart','FrontView');view.Source=objects;view.Direction=App.Vector(0,-1,0);view.Scale=.035;view.X=105;view.Y=115;page.addView(view);d.recompute()
+        view=d.addObject('TechDraw::DrawViewPart','FrontView');view.Source=objects;view.Direction=App.Vector(0,-1,0);view.XDirection=App.Vector(1,0,0);view.Scale=.045;view.X=148.5;view.Y=105;page.addView(view);d.recompute()
         # This view is saved in FCStd; standalone SVG uses FreeCAD's actual shape projection.
         projection=TechDraw.projectToSVG(Part.Compound([o.Shape for o in objects]),App.Vector(0,-1,0))
-        svg='<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210"><rect width="297" height="210" fill="white"/><g transform="translate(148.5 150) scale(.05 -.05)">'+projection+'</g><g font-family="sans-serif" font-size="5"><text x="15" y="20">Palisade prototype v1 / D / reference_only</text><text x="15" y="30">Units: mm. Width 4950; height 2000; centers 1200; posts 5; rails 2.</text><text x="15" y="190">Not excavated dimensions. FreeCAD projected geometry; square posts / flat tops provisional.</text></g></svg>'
+        projection=projection.replace('stroke-width="1.0"','stroke-width="4.0"')
+        svg='<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210"><rect width="297" height="210" fill="white"/><g transform="matrix(0 .045 -.045 0 148.5 155)">'+projection+'</g><g font-family="sans-serif" font-size="5"><text x="15" y="20">Palisade prototype v1 / D / reference_only</text><text x="15" y="30">Units: mm. Width 4950; height 2000; centers 1200; posts 5; rails 2.</text><text x="15" y="190">Not excavated dimensions. FreeCAD projected geometry; square posts / flat tops provisional.</text></g></svg>'
         (OUT/'palisade-drawing.svg').write_text(svg)
         d.save();r['techdraw']={'page':page.Name,'view':view.Name,'projection':'TechDraw.projectToSVG','status':'PASS headless creation, GUI NOT_TESTED'}
     except Exception as e:r['techdraw']={'status':'FAIL','error':repr(e)}

@@ -1,0 +1,13 @@
+18:49:06 | INFO: Data are loaded, start creating Blender stuff
+18:49:06 | INFO: Blender create Mesh node Post_001
+18:49:06 | INFO: Blender create Mesh node Post_002
+18:49:06 | INFO: Blender create Mesh node Post_003
+18:49:06 | INFO: Blender create Mesh node Post_004
+18:49:06 | INFO: Blender create Mesh node Post_005
+18:49:06 | INFO: Blender create Mesh node Rail_001
+18:49:06 | INFO: Blender create Mesh node Rail_002
+18:49:06 | INFO: glTF import finished in 0.01s
+Blender 4.3.2
+Read blend: "/tmp/castle-cad-independent/repo/blender/prototype-v1/palisade.blend"
+
+Blender quit

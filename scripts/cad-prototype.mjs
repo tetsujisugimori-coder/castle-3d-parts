@@ -23,3 +23,13 @@ export function glbAudit(bytes){
  return{dimensions_m_y_up:dims,objects:seen,bytes:bytes.length,materials:g.materials.length,images:g.images.length,vertices:points.length};
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){validateSnapshot(JSON.parse(readFileSync(root+'cad/prototype-v1/reference-snapshot.json')));console.log(JSON.stringify({preserved:preserve(),glb:glbAudit(readFileSync(root+'site/cad/palisade.glb'))},null,2))}
+export function drawingAudit(svg){
+ const outer=svg.match(/<g transform="([^"]+)"/)[1];let matrix;
+ if(outer.startsWith('matrix('))matrix=outer.slice(7,-1).trim().split(/[ ,]+/).map(Number);
+ else{const m=outer.match(/^translate\(([-.\d]+) ([-.\d]+)\) scale\(([-.\d]+) ([-.\d]+)\)$/);if(!m)throw Error('DRAWING_TRANSFORM');matrix=[+m[3],0,0,+m[4],+m[1],+m[2]]}
+ if(matrix.length!==6||matrix.some(x=>!Number.isFinite(x)))throw Error('DRAWING_TRANSFORM');
+ const points=[...svg.matchAll(/[ML]\s+([-.\d]+)\s+([-.\d]+)/g)].map(m=>{const x=+m[1],y=-m[2];return[matrix[0]*x+matrix[2]*y+matrix[4],matrix[1]*x+matrix[3]*y+matrix[5]]});if(points.length!==96)throw Error('DRAWING_EDGE_SET');
+ const bounds=[Math.min(...points.map(p=>p[0])),Math.min(...points.map(p=>p[1])),Math.max(...points.map(p=>p[0])),Math.max(...points.map(p=>p[1]))];
+ if(bounds[0]<25||bounds[1]<45||bounds[2]>272||bounds[3]>170||bounds[2]-bounds[0]<bounds[3]-bounds[1])throw Error('DRAWING_BOUNDS');
+ return{projected_edge_endpoints:points.length,paper_bounds_mm:bounds};
+}

@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210"><rect width="297" height="210" fill="white"/><g transform="translate(148.5 150) scale(.05 -.05)"><g   fill="none"
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210"><rect width="297" height="210" fill="white"/><g transform="matrix(0 .045 -.045 0 148.5 155)"><g   fill="none"
    stroke="rgb(0, 0, 0)"
    stroke-linecap="butt"
    stroke-linejoin="miter"
-   stroke-width="1.0"
+   stroke-width="4.0"
    transform="scale(1, -1)"
   >
 <path id= "1" d=" M 0 -2475 L -624.667 -2475 " />
