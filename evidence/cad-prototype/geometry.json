@@ -1,0 +1,23 @@
+{
+  "preserved": 125,
+  "glb": {
+    "dimensions_m_y_up": [
+      4.949999809265137,
+      2,
+      0.24899999797344208
+    ],
+    "objects": [
+      "Post_001",
+      "Post_002",
+      "Post_003",
+      "Post_004",
+      "Post_005",
+      "Rail_001",
+      "Rail_002"
+    ],
+    "bytes": 72296,
+    "materials": 1,
+    "images": 1,
+    "vertices": 168
+  }
+}

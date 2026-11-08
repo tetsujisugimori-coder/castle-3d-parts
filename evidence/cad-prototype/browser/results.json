@@ -1,0 +1,132 @@
+{
+  "rows": [
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "no-preference",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "touch_button": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "reduce",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "touch_button": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "no-preference",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "touch_button": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "reduce",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "touch_button": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "no-preference",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "touch_button": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "reduce",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "touch_button": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "no-preference",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "reduce",
+      "status": "PASS",
+      "errors": [],
+      "rotation_changed": true,
+      "zoom_changed": true,
+      "measured": "GLB実測: 幅 4.95 m / 高さ 2.00 m",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "fault": "glb",
+      "status": "PASS",
+      "message": "3D表示を開始できません。WebGL対応・GLB・CDNの接続を確認してください。詳細: Failed to fetch",
+      "disabled": true
+    },
+    {
+      "engine": "chromium",
+      "fault": "webgl",
+      "status": "PASS",
+      "message": "3D表示を開始できません。WebGL対応・GLB・CDNの接続を確認してください。詳細: Error creating WebGL context.",
+      "disabled": true
+    },
+    {
+      "engine": "chromium",
+      "fault": "contextlost-loading",
+      "status": "PASS",
+      "message": "3D表示を開始できません。WebGL対応・GLB・CDNの接続を確認してください。詳細: WebGL接続喪失後の遅延ロードを無効化しました",
+      "disabled": true
+    },
+    {
+      "engine": "chromium",
+      "fault": "contextlost-loaded",
+      "status": "PASS",
+      "message": "WebGLの接続が失われました。ページを再読み込みしてください。",
+      "disabled": true
+    },
+    {
+      "status": "BLOCKED",
+      "error": "browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     libgtk-4.so.1                                    ║\n║     libgraphene-1.0.so.0                             ║\n║     libwoff2dec.so.1.0.2                             ║\n║     libharfbuzz-icu.so.0                             ║\n║     libhyphen.so.0                                   ║\n║     libmanette-0.2.so.0                              ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+    }
+  ],
+  "failed": true,
+  "dependency_mode": "local unmodified Three.js 0.180.0 route mapping; CDN delivery not covered"
+}

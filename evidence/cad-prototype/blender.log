@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-cad-track-a/blender/prototype-v1/build.py", line 38, in <module>
+    bpy.ops.wm.open_mainfile(filepath=str(OUT/'palisade.blend'),compress=True);r['blend_reopened']=audit()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/blender/scripts/modules/bpy/ops.py", line 109, in __call__
+    ret = _op_call(self.idname_py(), kw)
+TypeError: Converting py args to operator properties:: keyword "compress" unrecognized
+Info: Saved "palisade.blend"
+Blender 4.3.2
+
+Blender quit

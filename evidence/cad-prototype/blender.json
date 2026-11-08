@@ -1,0 +1,64 @@
+{
+  "blender_version": "4.3.2",
+  "mode": "background",
+  "created": {
+    "dimensions_m_z_up": [
+      4.949999809265137,
+      0.24899999797344208,
+      2.0
+    ],
+    "objects": 7,
+    "posts": 5,
+    "rails": 2,
+    "triangles": 84,
+    "names": [
+      "Post_001",
+      "Post_002",
+      "Post_003",
+      "Post_004",
+      "Post_005",
+      "Rail_001",
+      "Rail_002"
+    ]
+  },
+  "blend_reopened": {
+    "dimensions_m_z_up": [
+      4.949999809265137,
+      0.24899999797344208,
+      2.0
+    ],
+    "objects": 7,
+    "posts": 5,
+    "rails": 2,
+    "triangles": 84,
+    "names": [
+      "Post_001",
+      "Post_002",
+      "Post_003",
+      "Post_004",
+      "Post_005",
+      "Rail_001",
+      "Rail_002"
+    ]
+  },
+  "glb_reopened": {
+    "dimensions_m_z_up": [
+      4.949999809265137,
+      0.24899999797344208,
+      2.0
+    ],
+    "objects": 7,
+    "posts": 5,
+    "rails": 2,
+    "triangles": 84,
+    "names": [
+      "Post_001",
+      "Post_002",
+      "Post_003",
+      "Post_004",
+      "Post_005",
+      "Rail_001",
+      "Rail_002"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';import{root,validateSnapshot,preserve,glbAudit}from'../scripts/cad-prototype.mjs';
+const snapshot=()=>JSON.parse(readFileSync(root+'cad/prototype-v1/reference-snapshot.json'));
+test('125 prior files unchanged',()=>assert.equal(preserve(),125));
+test('reference snapshot exact',()=>assert.equal(validateSnapshot(snapshot()),true));
+test('genuine GLB dimensions and components',()=>assert.equal(glbAudit(readFileSync(root+'site/cad/palisade.glb')).objects.length,7));
+for(const[k,f,err]of [['adoption',s=>s.formal_cad_adoption=true,'FORMAL_ADOPTION'],['commit',s=>s.commit='0'.repeat(40),'BASE_PIN'],['source hash',s=>s.source_hashes['design/cad-reference.json']='0'.repeat(64),'SOURCE_HASH'],['history promoted',s=>s.decisions[0].parameters[0].historical_value=2,'DECISION_MUTATION'],['width replaced by hole diameter',s=>s.decisions[0].parameters[1].prototype_value=.3,'DECISION_MUTATION'],['write',s=>s.decisions[0].write_allowed=true,'DECISION_MUTATION']])test('reject '+k,()=>{const s=snapshot();f(s);assert.throws(()=>validateSnapshot(s),e=>e.message===err)});
+test('GLB damaged header rejected',()=>{const b=Buffer.from(readFileSync(root+'site/cad/palisade.glb'));b.writeUInt32LE(0,8);assert.throws(()=>glbAudit(b),/GLB_HEADER/)});
+test('FreeCAD saved and STEP reopened evidence',()=>{const r=JSON.parse(readFileSync(root+'evidence/cad-prototype/freecad.json'));assert.equal(r.step_reopened.solids,7);assert.equal(r.fcstd_reopened.posts,5);assert.equal(r.same_document_count_edit.posts,3);assert.equal(r.negative_controls.length,7);assert.equal(r.final_reopen.valid,true)});
+test('Blender and GLB actual reopen evidence',()=>{const r=JSON.parse(readFileSync(root+'evidence/cad-prototype/blender.json'));assert.equal(r.blend_reopened.posts,5);assert.equal(r.glb_reopened.rails,2)});
+test('source hash omission rejected',()=>{const s=snapshot();delete s.source_hashes['design/cad-reference.json'];assert.throws(()=>validateSnapshot(s),/SOURCE_SET/)});

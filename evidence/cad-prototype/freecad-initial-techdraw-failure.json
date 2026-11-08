@@ -1,0 +1,152 @@
+{
+  "software": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "mode": "headless Python module, not GUI",
+  "baseline": {
+    "dimensions_m": [
+      4.95,
+      0.249,
+      2.0
+    ],
+    "posts": 5,
+    "rails": 2,
+    "solid_count": 7,
+    "volume_mm3": 307328400.00000006,
+    "max_pair_intersection_mm3": 0.0,
+    "valid": true
+  },
+  "fcstd_reopened": {
+    "dimensions_m": [
+      4.95,
+      0.249,
+      2.0
+    ],
+    "posts": 5,
+    "rails": 2,
+    "solid_count": 7,
+    "volume_mm3": 307328400.00000006,
+    "max_pair_intersection_mm3": 0.0,
+    "valid": true
+  },
+  "same_document_edit": {
+    "dimensions_m": [
+      5.75,
+      0.249,
+      2.5
+    ],
+    "posts": 5,
+    "rails": 2,
+    "solid_count": 7,
+    "volume_mm3": 376884000.0000001,
+    "max_pair_intersection_mm3": 0.0,
+    "valid": true
+  },
+  "step_reopened": {
+    "valid": true,
+    "solids": 7,
+    "width_m": 4.95,
+    "height_m": 2.0,
+    "volume_mm3": 307328400.00000006
+  },
+  "techdraw": {
+    "status": "FAIL",
+    "error": "OSError({'sclassname': 'N4Base15FileSystemErrorE', 'sErrMsg': 'Cannot copy file from /workspace/scratch/e622c1e9421e/castle-cad-track-a/cad/prototype-v1/template.svg to /template.svg', 'sfile': '', 'iline': 0, 'sfunction': '', 'swhat': 'Cannot copy file from /workspace/scratch/e622c1e9421e/castle-cad-track-a/cad/prototype-v1/template.svg to /template.svg', 'btranslatable': False, 'breported': False})"
+  },
+  "final_reopen": {
+    "dimensions_m": [
+      4.95,
+      0.249,
+      2.0
+    ],
+    "posts": 5,
+    "rails": 2,
+    "solid_count": 7,
+    "volume_mm3": 307328400.00000006,
+    "max_pair_intersection_mm3": 0.0,
+    "valid": true
+  },
+  "variants": [
+    {
+      "dimensions_m": [
+        2.55,
+        0.249,
+        2.0
+      ],
+      "posts": 3,
+      "rails": 1,
+      "solid_count": 4,
+      "volume_mm3": 156205800.0,
+      "max_pair_intersection_mm3": 0.0,
+      "valid": true
+    },
+    {
+      "dimensions_m": [
+        11.4,
+        0.332,
+        3.0
+      ],
+      "posts": 8,
+      "rails": 3,
+      "solid_count": 11,
+      "volume_mm3": 1465612800.0000002,
+      "max_pair_intersection_mm3": 0.0,
+      "valid": true
+    },
+    {
+      "dimensions_m": [
+        4.95,
+        0.15,
+        2.0
+      ],
+      "posts": 5,
+      "rails": 0,
+      "solid_count": 5,
+      "volume_mm3": 225000000.00000006,
+      "max_pair_intersection_mm3": 0.0,
+      "valid": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "field": "height",
+      "error": "HEIGHT",
+      "rejected": true
+    },
+    {
+      "field": "spacing",
+      "error": "SPACING",
+      "rejected": true
+    },
+    {
+      "field": "count",
+      "error": "COUNT",
+      "rejected": true
+    },
+    {
+      "field": "rails",
+      "error": "RAILS",
+      "rejected": true
+    },
+    {
+      "field": "width",
+      "error": "NONFINITE_width",
+      "rejected": true
+    },
+    {
+      "field": "count",
+      "error": "INTEGER_count",
+      "rejected": true
+    },
+    {
+      "field": "rails",
+      "error": "INTEGER_rails",
+      "rejected": true
+    }
+  ]
+}

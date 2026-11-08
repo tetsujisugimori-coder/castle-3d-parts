@@ -1,0 +1,7 @@
+{
+  "before": "WebGLの接続が失われました。ページを再読み込みしてください。",
+  "after": "CAD由来GLBを読み込みました（試作D・5本／横木2段）",
+  "disabled": false,
+  "loaded": "true",
+  "error": "true"
+}
