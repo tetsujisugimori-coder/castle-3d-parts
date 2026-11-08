@@ -1,0 +1,27 @@
+[
+  {
+    "name": "state_reversal_without_evidence",
+    "accepted": true,
+    "error": null
+  },
+  {
+    "name": "missing_target_support",
+    "accepted": true,
+    "error": null
+  },
+  {
+    "name": "cad_restorer_basis_with_foreign_evidence",
+    "accepted": true,
+    "error": null
+  },
+  {
+    "name": "rejected_evidence_is_unrelated_to_counterevidence",
+    "accepted": true,
+    "error": null
+  },
+  {
+    "name": "stale_snapshot_references",
+    "accepted": true,
+    "error": null
+  }
+]

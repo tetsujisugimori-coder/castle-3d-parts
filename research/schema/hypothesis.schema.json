@@ -1,0 +1,428 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^HYP-[0-9]{4}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_site": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_observations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^OBS-[0-9]{4}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_category": {
+      "const": "C"
+    },
+    "status": {
+      "enum": [
+        "unverified",
+        "under_review",
+        "partly_supported",
+        "counterevidence",
+        "rejected"
+      ]
+    },
+    "support": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "observation_id": {
+            "type": "string",
+            "pattern": "^OBS-[0-9]{4}$"
+          },
+          "item_kind": {
+            "enum": [
+              "fact",
+              "source_interpretation"
+            ]
+          },
+          "item_id": {
+            "type": "string",
+            "pattern": "^[FI][0-9]{2}$"
+          },
+          "relevance": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "observation_id",
+          "item_kind",
+          "item_id",
+          "relevance",
+          "limit"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^SRC-[0-9]{4}$"
+          },
+          "location_id": {
+            "type": "string",
+            "pattern": "^L[0-9]{2}$"
+          }
+        },
+        "required": [
+          "source_id",
+          "location_id"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "comparison_id": {
+            "type": "string",
+            "pattern": "^CMP-[0-9]{4}$"
+          },
+          "application": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limits": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "comparison_id",
+          "application",
+          "limits"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "adverse_information": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "counterevidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "observation_id": {
+            "type": "string",
+            "pattern": "^OBS-[0-9]{4}$"
+          },
+          "item_kind": {
+            "enum": [
+              "fact",
+              "source_interpretation"
+            ]
+          },
+          "item_id": {
+            "type": "string",
+            "pattern": "^[FI][0-9]{2}$"
+          },
+          "relevance": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "observation_id",
+          "item_kind",
+          "item_id",
+          "relevance",
+          "limit"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "competing_hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^HYP-[0-9]{4}$"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "scope_limits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "revision_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "enum": [
+              "unverified",
+              "under_review",
+              "partly_supported",
+              "counterevidence",
+              "rejected"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "observation_id": {
+                  "type": "string",
+                  "pattern": "^OBS-[0-9]{4}$"
+                },
+                "item_kind": {
+                  "enum": [
+                    "fact",
+                    "source_interpretation"
+                  ]
+                },
+                "item_id": {
+                  "type": "string",
+                  "pattern": "^[FI][0-9]{2}$"
+                },
+                "relevance": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "limit": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "observation_id",
+                "item_kind",
+                "item_id",
+                "relevance",
+                "limit"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "revision",
+          "date",
+          "status",
+          "reason",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "cad": {
+      "type": "object",
+      "properties": {
+        "eligibility": {
+          "const": "reference_only"
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "enum": [
+                  "post_height",
+                  "post_diameter",
+                  "post_spacing",
+                  "post_count",
+                  "rail_count",
+                  "cross_section",
+                  "arrangement"
+                ]
+              },
+              "value": {
+                "type": [
+                  "number",
+                  "string",
+                  "null"
+                ]
+              },
+              "unit": {
+                "enum": [
+                  "m",
+                  "count",
+                  "description"
+                ]
+              },
+              "basis": {
+                "enum": [
+                  "source_reported",
+                  "reporter_estimate",
+                  "other_site_analogy",
+                  "restorer_hypothesis",
+                  "display_provisional"
+                ]
+              },
+              "evidence_observation": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^OBS-[0-9]{4}$"
+              },
+              "evidence_measurement": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^M[0-9]{2}$"
+              },
+              "application_reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "constraints": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "name",
+              "value",
+              "unit",
+              "basis",
+              "evidence_observation",
+              "evidence_measurement",
+              "application_reason",
+              "constraints"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "eligibility",
+        "constraints",
+        "parameters"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "revision",
+    "name",
+    "target_site",
+    "target_observations",
+    "question",
+    "description",
+    "evidence_category",
+    "status",
+    "support",
+    "source_refs",
+    "comparisons",
+    "adverse_information",
+    "counterevidence",
+    "competing_hypotheses",
+    "unknowns",
+    "scope_limits",
+    "revision_history",
+    "cad"
+  ],
+  "additionalProperties": false
+}

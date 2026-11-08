@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "id": "CMP-0001",
+  "revision": 1,
+  "name": "山中城の柱穴・木材集合と田中城柵列の比較",
+  "question": "用途解釈と観察事実を分離して比較できるか。山中城の寸法確定には使わない。",
+  "members": [
+    {
+      "observation_id": "OBS-0001",
+      "site": "山中城",
+      "region": "静岡県三島市",
+      "chronology": {
+        "value": null,
+        "basis": "研究対象時期1590年前後と各遺構の年代確定は別。登録済SRC/OBSでこの集合の年代根拠を個別照合できないため未確認。",
+        "source_refs": []
+      },
+      "measurement_refs": [],
+      "limits": [
+        "柱穴の数量・寸法・個体番号・図面座標は未確認。",
+        "撤去の記述はツツジ表示であり、遺構の撤去を示すものではない。",
+        "OBS-0002との同一性・包含範囲は未確定。"
+      ]
+    },
+    {
+      "observation_id": "OBS-0002",
+      "site": "山中城",
+      "region": "静岡県三島市",
+      "chronology": {
+        "value": null,
+        "basis": "研究対象時期1590年前後と各遺構の年代確定は別。登録済SRC/OBSでこの集合の年代根拠を個別照合できないため未確認。",
+        "source_refs": []
+      },
+      "measurement_refs": [],
+      "limits": [
+        "柱穴間隔の数値、個体番号、数量、各地点の内訳は未確認。",
+        "原発掘報告・遺構図への対応は未確認。",
+        "板塀の高さ・材質・構造は確定しない。"
+      ]
+    },
+    {
+      "observation_id": "OBS-0003",
+      "site": "山中城",
+      "region": "静岡県三島市",
+      "chronology": {
+        "value": null,
+        "basis": "研究対象時期1590年前後と各遺構の年代確定は別。登録済SRC/OBSでこの集合の年代根拠を個別照合できないため未確認。",
+        "source_refs": []
+      },
+      "measurement_refs": [],
+      "limits": [
+        "直前に述べる両西堀との関係は文脈上の候補。小径木個体ごとの出土位置は未確定。",
+        "元の柵設置地点・樹種・加工・長さ・径・数量は未確認。",
+        "OBS-0005の枝類との対応は不明。"
+      ]
+    },
+    {
+      "observation_id": "OBS-0004",
+      "site": "山中城",
+      "region": "静岡県三島市",
+      "chronology": {
+        "value": null,
+        "basis": "研究対象時期1590年前後と各遺構の年代確定は別。登録済SRC/OBSでこの集合の年代根拠を個別照合できないため未確認。",
+        "source_refs": []
+      },
+      "measurement_refs": [],
+      "limits": [
+        "個体番号・数量・寸法・樹種・加工痕・元設置場所は未確認。",
+        "OBS-0005の西ノ丸出土建築材と重複・包含する可能性を未解決のまま保持。"
+      ]
+    },
+    {
+      "observation_id": "OBS-0005",
+      "site": "山中城",
+      "region": "静岡県三島市",
+      "chronology": {
+        "value": null,
+        "basis": "研究対象時期1590年前後と各遺構の年代確定は別。登録済SRC/OBSでこの集合の年代根拠を個別照合できないため未確認。",
+        "source_refs": []
+      },
+      "measurement_refs": [],
+      "limits": [
+        "混合集合であり、建築材・枝類の各数量・個体番号は未確認。",
+        "「柱材ヵ」「柵材ヵ」は用途候補であって確定用途ではない。",
+        "元設置場所、寸法、Web側集合との対応は未確認。"
+      ]
+    },
+    {
+      "observation_id": "OBS-0006",
+      "site": "田中城（熊本県和水町）",
+      "region": "熊本県和水町",
+      "chronology": {
+        "value": null,
+        "basis": "研究対象時期1590年前後と各遺構の年代確定は別。登録済SRC/OBSでこの集合の年代根拠を個別照合できないため未確認。",
+        "source_refs": []
+      },
+      "measurement_refs": [
+        {
+          "observation_id": "OBS-0006",
+          "measurement_id": "M01",
+          "concept": "posthole_count",
+          "value": 19,
+          "lower": null,
+          "upper": null,
+          "unit": "count",
+          "statistic": "single",
+          "target": "当該柵列の検出柱穴",
+          "reported_scope": "p125の当該1列の総数"
+        },
+        {
+          "observation_id": "OBS-0006",
+          "measurement_id": "M02",
+          "concept": "posthole_spacing_unspecified",
+          "value": null,
+          "lower": 50,
+          "upper": 70,
+          "unit": "cm",
+          "statistic": "range",
+          "target": "報告の柱穴間隔。芯々/縁間の定義未確認",
+          "reported_scope": "p125の列に関する範囲。個体対別値ではない"
+        },
+        {
+          "observation_id": "OBS-0006",
+          "measurement_id": "M03",
+          "concept": "posthole_spacing_unspecified",
+          "value": 58.6,
+          "lower": null,
+          "upper": null,
+          "unit": "cm",
+          "statistic": "mean",
+          "target": "報告の柱穴間隔",
+          "reported_scope": "p125の報告平均。独自再計算ではない"
+        },
+        {
+          "observation_id": "OBS-0006",
+          "measurement_id": "M04",
+          "concept": "remaining_depth",
+          "value": null,
+          "lower": 4.9,
+          "upper": 27.7,
+          "unit": "cm",
+          "statistic": "range",
+          "target": "検出柱穴の残存深さ",
+          "reported_scope": "p125の最小P16と最大P3。元の根入れ深さではない"
+        },
+        {
+          "observation_id": "OBS-0006",
+          "measurement_id": "M05",
+          "concept": "remaining_depth",
+          "value": 12.0,
+          "lower": null,
+          "upper": null,
+          "unit": "cm",
+          "statistic": "mean",
+          "target": "検出柱穴の残存深さ",
+          "reported_scope": "p125の報告平均"
+        }
+      ],
+      "limits": [
+        "個体ごとの全測定値・残存状態は未登録。19件の個別レコードを生成していない。",
+        "報告の「間隔」が芯々か縁間かは該当本文で定義を確認できない。",
+        "当初の柱根入れ深さ・地上高・木材寸法は確定できない。",
+        "全本文・全図版・現地再測量は未実施。",
+        "周囲の土塁有無は報告でも未確認。山中城へ数値転用しない。"
+      ]
+    }
+  ],
+  "comparability": "柱穴列の記載方法と用途解釈を比較する。木材と柱穴は異なる対象であり同じ尺度では比較しない。",
+  "limitations": [
+    "山中城と熊本県和水町の田中城は別地域・別城郭。年代の一致も未確認。",
+    "山中城5集合は相互に重複の可能性があり数量を合算しない。",
+    "田中城の間隔は芯々/縁間未確認。残存深さは当初根入れではない。",
+    "本文・図版の確認状態は参照先OBSを継承し、今回の新規原報告書照合ではない。"
+  ],
+  "revision_history": [
+    {
+      "revision": 1,
+      "date": "2026-11-08",
+      "reason": "既存SRC/OBSの固定版から初期比較を登録。数値を追加採寸しない。"
+    }
+  ]
+}
