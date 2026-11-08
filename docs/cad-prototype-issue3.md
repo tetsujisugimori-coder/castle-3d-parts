@@ -51,3 +51,6 @@ After opening a final FCStd with the embedded Python module, call `regenerate(do
 
 ### Browser-run failure accounting
 The first module-mapped local run completed Chromium8+2 but WebKit launch threw a missing-library error. Its initial `failed:false` field was a runner-accounting defect, not a full matrix PASS. The original JSON/log are retained. The runner now records BLOCKED and exit1 on launch errors and requires all16 normal conditions before success. Subsequent local run completed Chromium8+4 and correctly remained failed=true/exit1 for blocked WebKit. Final CI results are evaluated separately.
+
+### Initial CI environment failure
+Run42469333168 (0b3547b8) contract passed, but browser installation failed before tests: ubuntu-latest resolved to Ubuntu26.04.1, unsupported by pinned Playwright1.56.1. Original job128696191815 log is retained. The new workflow is pinned to supported ubuntu-24.04 and captures installation logs even on failure. No browser assertion or timeout was relaxed.

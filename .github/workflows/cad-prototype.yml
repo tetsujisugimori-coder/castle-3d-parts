@@ -6,7 +6,7 @@ permissions:
   contents: read
 jobs:
   contract:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,14 +28,15 @@ jobs:
           path: cad-ci/
           if-no-files-found: error
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --prefix /tmp/cad-pw playwright@1.56.1 three@0.180.0
-      - run: /tmp/cad-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: mkdir -p cad-browser-ci && uname -a > cad-browser-ci/environment.log
+      - run: npm install --prefix /tmp/cad-pw playwright@1.56.1 three@0.180.0 2>&1 | tee cad-browser-ci/npm.log
+      - run: /tmp/cad-pw/node_modules/.bin/playwright install --with-deps chromium webkit 2>&1 | tee cad-browser-ci/install.log
       - run: node scripts/build-site.mjs
       - run: node scripts/cad-browser.mjs
         env:
