@@ -1,0 +1,98 @@
+import {readFileSync,readdirSync,writeFileSync} from 'node:fs';
+import {join,resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {validateSchema} from './observation-schema.mjs';
+import {loadRecords,validateRegister} from './source-register.mjs';
+import {loadObservations,validateObservations} from './observation-register.mjs';
+export const root=fileURLToPath(new URL('../',import.meta.url));
+const read=p=>JSON.parse(readFileSync(join(root,p),'utf8'));
+export const schemas={comparison:read('research/schema/comparison.schema.json'),hypothesis:read('research/schema/hypothesis.schema.json')};
+export const canonical=x=>Array.isArray(x)?'['+x.map(canonical).join(',')+']':x&&typeof x==='object'?'{'+Object.keys(x).sort().map(k=>JSON.stringify(k)+':'+canonical(x[k])).join(',')+'}':JSON.stringify(x);
+export const hash=x=>createHash('sha256').update(canonical(x)).digest('hex');
+const fail=(c,id='')=>{throw Error(`${c} ${id}`)};
+const equal=(a,b,c)=>{if(canonical(a)!==canonical(b))fail(c)};
+export const load=kind=>readdirSync(join(root,'research',kind)).filter(p=>p.endsWith('.json')).sort().map(p=>{const r=read(`research/${kind}/${p}`);if(p!==`${r.id}.json`)fail('FILENAME',p);return r});
+export const loadHistory=()=>read('research/history/records.json');
+const concepts={'SRC-0008/L01/M01':'posthole_count','SRC-0008/L01/M02':'posthole_spacing_unspecified','SRC-0008/L01/M03':'posthole_spacing_unspecified','SRC-0008/L01/M04':'remaining_depth','SRC-0008/L01/M05':'remaining_depth'};
+const statuses=['unverified','under_review','partly_supported','counterevidence','rejected'];
+export function validateResearch(comparisons=load('comparisons'),hypotheses=load('hypotheses'),observations=validateObservations(loadObservations()),sources=validateRegister(loadRecords()),history=loadHistory()) {
+ const obs=new Map(observations.map(o=>[o.id,o])),src=new Map(sources.map(s=>[s.id,s]));
+ const unique=(records,label)=>{if(!records.length)fail('EMPTY',label);const m=new Map();for(const r of records){if(m.has(r.id))fail('DUPLICATE_ID',r.id);m.set(r.id,r)}return m};
+ const cmp=unique(comparisons,'comparisons'),hyp=unique(hypotheses,'hypotheses');
+ const sourceRef=ref=>{const loc=src.get(ref.source_id)?.research.locations.find(l=>l.id===ref.location_id);if(!loc)fail('SOURCE_LOCATION',`${ref.source_id}/${ref.location_id}`);return loc};
+ const claim=c=>{const o=obs.get(c.observation_id);if(!o)fail('OBS_REFERENCE',c.observation_id);const collection=c.item_kind==='fact'?o.facts:o.source_interpretations;const item=collection.find(i=>i.id===c.item_id);if(!item)fail('CLAIM_KIND_OR_ID',c.item_id);return {o,item}};
+ const revisions=r=>{if(r.revision_history.length!==r.revision)fail('REVISION_SEQUENCE',r.id);let last='';r.revision_history.forEach((v,i)=>{if(v.revision!==i+1||v.date<last)fail('REVISION_SEQUENCE',r.id);last=v.date});if(r.status){if(r.revision_history.at(-1).status!==r.status)fail('STATUS_HISTORY',r.id);for(const v of r.revision_history){v.evidence.forEach(claim);if(!['unverified'].includes(v.status)&&!v.evidence.length)fail('STATUS_EVIDENCE',r.id)}}};
+ for(const r of comparisons){
+  validateSchema(r,schemas.comparison);revisions(r);
+  const memberIds=new Set();for(const m of r.members){
+   if(memberIds.has(m.observation_id))fail('DUPLICATE_MEMBER',r.id);memberIds.add(m.observation_id);
+   const o=obs.get(m.observation_id);if(!o)fail('OBS_REFERENCE',m.observation_id);if(m.site!==o.site)fail('SITE_MISMATCH',m.observation_id);
+   // Regions are pinned to the existing source sites, not guessed from a comparison's target.
+   const expected=o.site==='山中城'?'静岡県三島市':o.site==='田中城（熊本県和水町）'?'熊本県和水町':null;
+   if(expected&&m.region!==expected)fail('REGION_MISMATCH',m.observation_id);
+   m.chronology.source_refs.forEach(sourceRef);
+   // No checked chronology extraction exists in Stage 1. Non-null dating requires a future explicit extraction contract.
+   if(m.chronology.value!==null)fail('UNVERIFIED_CHRONOLOGY',m.observation_id);
+   const mids=new Set();for(const x of m.measurement_refs){
+    if(x.observation_id!==m.observation_id)fail('CROSS_SITE_MEASUREMENT',r.id);
+    const measurement=o.measurements.find(v=>v.id===x.measurement_id);if(!measurement)fail('MEASUREMENT_REFERENCE',r.id);
+    if(mids.has(x.measurement_id))fail('DUPLICATE_MEASUREMENT',r.id);mids.add(x.measurement_id);
+    for(const k of ['value','lower','upper','unit','statistic','target','reported_scope'])equal(x[k],measurement[k],`MEASUREMENT_${k}`);
+    if(x.concept!==concepts[measurement.assertion_id])fail('MEASUREMENT_CONCEPT',r.id);
+   }
+  }
+ }
+ for(const h of hypotheses){
+  validateSchema(h,schemas.hypothesis);revisions(h);
+  for(const oid of h.target_observations){if(!obs.has(oid))fail('OBS_REFERENCE',oid);if(obs.get(oid).site!==h.target_site)fail('TARGET_SITE',h.id)}
+  h.source_refs.forEach(sourceRef);
+  for(const c of [...h.support,...h.counterevidence,...h.revision_history.flatMap(r=>r.evidence)]){
+   const {o,item}=claim(c);
+   if(!item.reference_ids.every(id=>{const ref=o.references.find(v=>v.id===id);return h.source_refs.some(s=>s.source_id===ref.source_id&&s.location_id===ref.location_id)}))fail('CLAIM_SOURCE_COVERAGE',h.id);
+   if(o.site!==h.target_site&&!h.comparisons.some(ref=>cmp.get(ref.comparison_id)?.members.some(m=>m.observation_id===o.id)))fail('ANALOGY_WITHOUT_COMPARISON',h.id);
+  }
+  for(const c of h.comparisons){const x=cmp.get(c.comparison_id);if(!x)fail('COMPARISON_REFERENCE',h.id);if(!x.members.some(m=>h.target_observations.includes(m.observation_id)))fail('COMPARISON_TARGET',h.id)}
+  for(const id of h.competing_hypotheses){if(id===h.id||!hyp.has(id))fail('COMPETITOR_REFERENCE',h.id);const other=hyp.get(id);if(other.target_site!==h.target_site||!other.target_observations.some(o=>h.target_observations.includes(o)))fail('COMPETITOR_TARGET',h.id);if(!other.competing_hypotheses.includes(h.id))fail('COMPETITOR_ASYMMETRY',h.id)}
+  if(['counterevidence','rejected'].includes(h.status)&&!h.counterevidence.length)fail('REJECTION_WITHOUT_COUNTEREVIDENCE',h.id);
+  if(h.status==='partly_supported'&&!h.revision_history.at(-1).evidence.some(c=>h.support.some(s=>canonical(s)===canonical(c))))fail('SUPPORT_STATUS_EVIDENCE',h.id);
+  const params=new Set();for(const p of h.cad.parameters){
+   if(params.has(p.name))fail('DUPLICATE_PARAMETER',h.id);params.add(p.name);
+   const expected=['post_count','rail_count'].includes(p.name)?'count':['cross_section','arrangement'].includes(p.name)?'description':'m';if(p.unit!==expected)fail('PARAMETER_UNIT',h.id);
+   if(p.value!==null){if(expected==='description'?(typeof p.value!=='string'||!p.value.trim()):(typeof p.value!=='number'||!Number.isFinite(p.value)||p.value<=0||(expected==='count'&&!Number.isSafeInteger(p.value))))fail('PARAMETER_VALUE',h.id)}
+   if((p.evidence_observation===null)!==(p.evidence_measurement===null))fail('PARAMETER_EVIDENCE_PAIR',h.id);
+   if(['source_reported','reporter_estimate','other_site_analogy'].includes(p.basis)&&!p.evidence_observation)fail('PARAMETER_EVIDENCE',h.id);
+   if(p.evidence_observation){
+    const o=obs.get(p.evidence_observation),m=o?.measurements.find(m=>m.id===p.evidence_measurement);if(!m)fail('PARAMETER_MEASUREMENT',h.id);
+    if(['source_reported','reporter_estimate'].includes(p.basis)&&o.site!==h.target_site)fail('FOREIGN_VALUE_AS_TARGET',h.id);
+    if(p.basis==='other_site_analogy'&&(o.site===h.target_site||!h.comparisons.some(c=>cmp.get(c.comparison_id)?.members.some(x=>x.observation_id===o.id))))fail('ANALOGY_CONTRACT',h.id);
+    // Current extractions describe holes, undefined hole spacing and remaining depth, not CAD posts.
+    // A future source-to-CAD mapping must be reviewed; there is deliberately no automatic conversion here.
+    if(p.value!==null)fail('NO_VERIFIED_CAD_MAPPING',h.id);
+   }
+  }
+ }
+ // Immutable full snapshots make edits explicit. CI separately compares old snapshots against the fixed base.
+ if(!Array.isArray(history)||history.length===0)fail('HISTORY_MISSING');const seen=new Set();
+ for(const x of history){if(!x||Object.keys(x).sort().join(',')!=='id,record,revision,sha256')fail('HISTORY_SHAPE');const key=`${x.id}/${x.revision}`;if(seen.has(key))fail('HISTORY_DUPLICATE');seen.add(key);if(x.id!==x.record.id||x.revision!==x.record.revision||x.sha256!==hash(x.record))fail('HISTORY_HASH',key);const now=cmp.get(x.id)??hyp.get(x.id);if(!now)fail('HISTORY_DELETED',key);validateSchema(x.record,x.id.startsWith('CMP-')?schemas.comparison:schemas.hypothesis);if(x.revision>now.revision)fail('HISTORY_FUTURE',key)}
+ for(const r of [...comparisons,...hypotheses])for(let i=1;i<=r.revision;i++){const old=history.find(x=>x.id===r.id&&x.revision===i);if(!old)fail('HISTORY_GAP',r.id);equal(r.revision_history.slice(0,i),old.record.revision_history,'HISTORY_REWRITTEN');if(i===r.revision)equal(old.record,r,'REVISION_NOT_SNAPSHOTTED')}
+ return {comparisons,hypotheses,observations,sources};
+}
+export function search(data,{kind='all',site,observation,source,status,unknown}={}){
+ if(!['all','hypothesis','comparison'].includes(kind))fail('FILTER_KIND');if(status&&!statuses.includes(status))fail('FILTER_STATUS');if(unknown!==undefined&&!['yes','no'].includes(unknown))fail('FILTER_UNKNOWN');
+ return [...(kind==='comparison'?[]:data.hypotheses),...(kind==='hypothesis'?[]:data.comparisons)].filter(r=>{
+  const oids=r.target_observations??r.members.map(m=>m.observation_id),refs=r.source_refs??oids.flatMap(id=>data.observations.find(o=>o.id===id).references);
+  return (!site||(r.target_site?[r.target_site]:r.members.map(m=>m.site)).includes(site))&&(!observation||oids.includes(observation))&&(!source||refs.some(x=>x.source_id===source))&&(!status||r.status===status)&&(unknown===undefined||((r.unknowns??r.limitations).length>0)===(unknown==='yes'));
+ });
+}
+const escape=x=>String(x).replaceAll('|','\\|').replaceAll('\n',' ');
+export function render(data){
+ const lines=['# 比較・復元仮説台帳（第3層）','','JSON正本から生成。報告事実A・報告者解釈・復元仮説C・展示仮設定Dは別。ソフトウェア検証は史実認定ではない。',''];
+ for(const c of data.comparisons){lines.push(`## ${c.id} ${c.name}`,`問い: ${c.question}`,`比較範囲: ${c.comparability}`,'','| OBS | 城郭・地域 | 種類・対象 | 年代 | 報告事実 | 報告者解釈（未確証） | 数値 | 確認状態 |','| --- | --- | --- | --- | --- | --- | --- | --- |');for(const m of c.members){const o=data.observations.find(x=>x.id===m.observation_id);lines.push('| '+[o.id,`${m.site} / ${m.region}`,`${o.kind} / ${o.scope}`,m.chronology.value??'未確認',o.facts.map(x=>x.text).join(' / '),o.source_interpretations.map(x=>x.text).join(' / '),m.measurement_refs.map(x=>`${x.concept}: ${x.value??`${x.lower}–${x.upper}`} ${x.unit} (${x.statistic}; ${x.target}; ${x.reported_scope})`).join(' / ')||'null（未確認）',o.references.map(x=>`${x.source_id}/${x.location_id}: 本文=${x.text_status}, 図=${x.figure_status}`).join(' / ')].map(escape).join(' | ')+' |');lines.push(`\n${o.id} 制限: ${m.limits.join(' / ')}\n`)}lines.push(...c.limitations.map(x=>`- 比較限界: ${x}`),'')}
+ for(const h of data.hypotheses){lines.push(`## ${h.id} ${h.name}`,`版: ${h.revision} / 状態: ${h.status} / 推定C / 対象: ${h.target_site}`,`問い: ${h.question}`,h.description,`参照: ${h.source_refs.map(r=>`${r.source_id}/${r.location_id}`).join(', ')}`,`競合: ${h.competing_hypotheses.join(', ')||'なし'}`,...h.support.map(c=>`- 支持候補 (${c.item_kind} ${c.observation_id}/${c.item_id}): ${c.relevance} / 限界: ${c.limit}`),...h.adverse_information.map(x=>`- 不利な情報: ${x}`),...h.counterevidence.map(c=>`- 反証 (${c.observation_id}/${c.item_id}): ${c.relevance}`),...h.unknowns.map(x=>`- 未確認: ${x}`),...h.scope_limits.map(x=>`- 推定範囲: ${x}`),`CAD利用: ${h.cad.eligibility}。${h.cad.constraints.join(' ')}`,...h.cad.parameters.map(p=>`- ${p.name}: ${p.value===null?'null（未設定）':p.value} ${p.unit} / ${p.basis} / ${p.application_reason}`),...h.revision_history.map(r=>`- 改訂${r.revision} ${r.date} ${r.status}: ${r.reason}`),'')}
+ return lines.join('\n')+'\n';
+}
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+ try{const args=process.argv.slice(2),flags={};for(let i=0;i<args.length;i++){const k=args[i];if(k==='--write'){flags.write=true;continue}if(!['--kind','--site','--observation','--source','--status','--unknown'].includes(k)||!args[i+1]||args[i+1].startsWith('--'))fail('CLI_ARGUMENT',k);flags[k.slice(2)]=args[++i]}
+ const data=validateResearch(),text=render(data);if(flags.write)writeFileSync(join(root,'research/index.md'),text);else if(!Object.keys(flags).length&&readFileSync(join(root,'research/index.md'),'utf8')!==text)fail('GENERATED_INDEX_DRIFT');console.log(JSON.stringify({status:'PASS',results:search(data,flags).map(r=>({id:r.id,name:r.name,status:r.status??'comparison'}))},null,2));}catch(e){console.error(e.message);process.exitCode=1}
+}
