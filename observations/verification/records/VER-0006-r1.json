@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "id": "VER-0006",
+  "revision": 1,
+  "previous": null,
+  "checked_at": "2026-11-08",
+  "observation_id": "OBS-0006",
+  "observation_sha256": "50bd5d47d8ed6ce5049c7f2063c87fad7da12fbc2331a52e3ceb11d4c41c9298",
+  "baseline_commit": "68c039d8c1c40b81cac0f7e16fa800678ccc6de8",
+  "site": "田中城（熊本県和水町）",
+  "scope": "collection",
+  "anchor_ids": [
+    "E05",
+    "E06",
+    "E07"
+  ],
+  "result": "partial_checked",
+  "summary": "原報告p125の穴平面寸法を追加確認。図65とp127の保存・復元文脈を再読。",
+  "coverage": {
+    "location": "reported",
+    "individual_id": "labels_in_collection",
+    "quantity": "reported",
+    "diameter": "plan_dimensions_reported",
+    "remaining_depth": "reported",
+    "center_spacing": "unconfirmed",
+    "timber_dimensions": "unconfirmed",
+    "species": "unconfirmed",
+    "processing": "unconfirmed",
+    "function": "reporter_interpretation",
+    "dating": "report_context_not_individual_proof"
+  },
+  "measurements": [
+    {
+      "anchor_id": "E05",
+      "id": "M01",
+      "measurement_target": "posthole_plan_dimension_1",
+      "value": 30,
+      "unit": "cm",
+      "qualifier": "reported",
+      "original_label": "P7",
+      "method": null
+    },
+    {
+      "anchor_id": "E05",
+      "id": "M02",
+      "measurement_target": "posthole_plan_dimension_2",
+      "value": 23,
+      "unit": "cm",
+      "qualifier": "reported",
+      "original_label": "P7",
+      "method": null
+    },
+    {
+      "anchor_id": "E05",
+      "id": "M03",
+      "measurement_target": "posthole_plan_dimension_1",
+      "value": 11,
+      "unit": "cm",
+      "qualifier": "reported",
+      "original_label": "P19",
+      "method": null
+    },
+    {
+      "anchor_id": "E05",
+      "id": "M04",
+      "measurement_target": "posthole_plan_dimension_2",
+      "value": 10,
+      "unit": "cm",
+      "qualifier": "reported",
+      "original_label": "P19",
+      "method": null
+    },
+    {
+      "anchor_id": "E05",
+      "id": "M05",
+      "measurement_target": "posthole_plan_dimension_1",
+      "value": 21.2,
+      "unit": "cm",
+      "qualifier": "reported_mean",
+      "original_label": null,
+      "method": null
+    },
+    {
+      "anchor_id": "E05",
+      "id": "M06",
+      "measurement_target": "posthole_plan_dimension_2",
+      "value": 18.6,
+      "unit": "cm",
+      "qualifier": "reported_mean",
+      "original_label": null,
+      "method": null
+    }
+  ],
+  "new_individual_ids": [],
+  "cad": {
+    "eligibility": "reference_only",
+    "write_allowed": false,
+    "impact": "根拠確認候補のみ。穴径・穴平面寸法を柱幅に代入しない。試作D値の変更なし。"
+  },
+  "unknowns": [
+    "個体ごとの全測定値・残存状態は未登録。19件の個別レコードを生成していない。",
+    "報告の「間隔」が芯々か縁間かは該当本文で定義を確認できない。",
+    "当初の柱根入れ深さ・地上高・木材寸法は確定できない。",
+    "全本文・全図版・現地再測量は未実施。",
+    "周囲の土塁有無は報告でも未確認。山中城へ数値転用しない。",
+    "今回の追補は資料記載の確認であり、史実の形態確証ではない。"
+  ],
+  "change_reason": "Issue #9の直接資料照合。旧JSONの全byteを保全する追補。"
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "VER-0001",
+  "revision": 1,
+  "previous": null,
+  "checked_at": "2026-11-08",
+  "observation_id": "OBS-0001",
+  "observation_sha256": "2fd8937d193b061227009e98aa0c9d07f9e407d37b5f2dbbd5d9dc8d1bb5348d",
+  "baseline_commit": "68c039d8c1c40b81cac0f7e16fa800678ccc6de8",
+  "site": "山中城",
+  "scope": "collection",
+  "anchor_ids": [
+    "E01"
+  ],
+  "result": "partial_checked",
+  "summary": "旧整備時の表示の記載を再確認。新規の発掘数値なし。",
+  "coverage": {
+    "location": "reported",
+    "individual_id": "unconfirmed",
+    "quantity": "unconfirmed",
+    "diameter": "unconfirmed",
+    "remaining_depth": "unconfirmed",
+    "center_spacing": "unconfirmed",
+    "timber_dimensions": "unconfirmed",
+    "species": "unconfirmed",
+    "processing": "unconfirmed",
+    "function": "reporter_interpretation",
+    "dating": "unconfirmed"
+  },
+  "measurements": [],
+  "new_individual_ids": [],
+  "cad": {
+    "eligibility": "reference_only",
+    "write_allowed": false,
+    "impact": "根拠確認候補のみ。穴径・穴平面寸法を柱幅に代入しない。試作D値の変更なし。"
+  },
+  "unknowns": [
+    "柱穴の数量・寸法・個体番号・図面座標は未確認。",
+    "撤去の記述はツツジ表示であり、遺構の撤去を示すものではない。",
+    "OBS-0002との同一性・包含範囲は未確定。",
+    "今回の追補は資料記載の確認であり、史実の形態確証ではない。"
+  ],
+  "change_reason": "Issue #9の直接資料照合。旧JSONの全byteを保全する追補。"
+}

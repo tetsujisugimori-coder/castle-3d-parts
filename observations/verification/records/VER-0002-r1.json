@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "VER-0002",
+  "revision": 1,
+  "previous": null,
+  "checked_at": "2026-11-08",
+  "observation_id": "OBS-0002",
+  "observation_sha256": "0403d7b2d29d93e2bb34711decb1f7054ef9340208a214be8788a9511fb948ed",
+  "baseline_commit": "68c039d8c1c40b81cac0f7e16fa800678ccc6de8",
+  "site": "山中城",
+  "scope": "collection",
+  "anchor_ids": [
+    "E02"
+  ],
+  "result": "partial_checked",
+  "summary": "計画p68で柱穴径約30cmを追加確認。柱材径ではなく集成資料の概数。",
+  "coverage": {
+    "location": "reported",
+    "individual_id": "unconfirmed",
+    "quantity": "unconfirmed",
+    "diameter": "reported_approximate",
+    "remaining_depth": "unconfirmed",
+    "center_spacing": "unconfirmed",
+    "timber_dimensions": "unconfirmed",
+    "species": "unconfirmed",
+    "processing": "unconfirmed",
+    "function": "reporter_interpretation",
+    "dating": "unconfirmed"
+  },
+  "measurements": [
+    {
+      "anchor_id": "E02",
+      "id": "M01",
+      "measurement_target": "posthole_diameter",
+      "value": 30,
+      "unit": "cm",
+      "qualifier": "approximately",
+      "original_label": null,
+      "method": null
+    }
+  ],
+  "new_individual_ids": [],
+  "cad": {
+    "eligibility": "reference_only",
+    "write_allowed": false,
+    "impact": "根拠確認候補のみ。穴径・穴平面寸法を柱幅に代入しない。試作D値の変更なし。"
+  },
+  "unknowns": [
+    "柱穴間隔の数値、個体番号、数量、各地点の内訳は未確認。",
+    "原発掘報告・遺構図への対応は未確認。",
+    "板塀の高さ・材質・構造は確定しない。",
+    "今回の追補は資料記載の確認であり、史実の形態確証ではない。"
+  ],
+  "change_reason": "Issue #9の直接資料照合。旧JSONの全byteを保全する追補。"
+}
