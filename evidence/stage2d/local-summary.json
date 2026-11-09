@@ -1,0 +1,42 @@
+{
+  "status": "intermediate evidence, before final CI and remote review",
+  "node_tests": {
+    "passed": 424,
+    "failed": 0
+  },
+  "portable_native_tests": 5,
+  "local_chromium": {
+    "conditions": 8,
+    "checks": 80,
+    "fault_controls": 7,
+    "result": "PASS"
+  },
+  "local_webkit": "NOT_TESTED: missing system libraries",
+  "physical_iphone": "NOT_TESTED",
+  "source_baseline": "dec85b596f6b82bfd69129e4b1edbc75d182318c",
+  "environment": {
+    "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "browser": "Chromium 141.0.7390.37",
+    "playwright": "1.56.1"
+  },
+  "original_logs": {
+    "castle2d-tests5.log": {
+      "sha256": "ce56f4abf94672e5443132365430d77b65cd0b3ec14943427419959362ae7e2d",
+      "bytes": 22506
+    },
+    "castle2d-cadtests.log": {
+      "sha256": "a5304298a295d96d444bccb18ca9c1c4f1383a17ebdcfb9cd5c550cabcc84868",
+      "bytes": 103
+    },
+    "results.json": {
+      "sha256": "45f264f9a87bac51e4a4118383cfd6691b84d2c2e3a31e11682edce1302ac973",
+      "bytes": 24626
+    }
+  },
+  "notes": [
+    "Original source viewers and CAD/research data preserved; 8 explicit code migrations, not 948 unchanged current files.",
+    "Local performance is same-context laboratory navigation, not physical-device cold launch.",
+    "Original local verbose logs not committed; CI artifacts preserve final raw logs separately."
+  ]
+}

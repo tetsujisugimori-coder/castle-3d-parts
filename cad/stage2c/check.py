@@ -29,7 +29,12 @@ def validate_xml(xml,rows):
 
 def check(root=ROOT,outputs=None):
  same(h(root/'design/stage2c/baseline.json'),'57f2855f39fb1642be5d838f53dd226e02a1e024505d912dedda69d79d53d47a');base=json.loads((root/'design/stage2c/baseline.json').read_text());same(base['commit'],'d1c367ca4b143cacc45ba8848b026701abf03b9c');same(len(base['hashes']),839)
- for p,hash in base['hashes'].items():same(h(root/p),hash)
+ for p,hash in base['hashes'].items():
+  if h(root/p)==hash:continue
+  allowed={'.github/workflows/pages.yml','scripts/research-cad.mjs','scripts/stage2b.mjs','tests/hypothesis-preservation.test.mjs','scripts/cad-prototype.mjs','scripts/design-register.mjs','scripts/verification-register.mjs','cad/stage2c/check.py'}
+  assert p in allowed,('ORIGINAL_CHANGED',p)
+  migration=json.loads((root/'design/stage2d/code-migrations.json').read_text())['files'];same(set(migration),allowed);entry=migration[p]
+  same(entry['archive'],'design/stage2d/originals/'+p+'.txt');same(h(root/entry['archive']),hash);same(entry['before_sha256'],hash);same(h(root/p),entry['after_sha256'])
  results=[];outputs=outputs or root/'cad/stage2c/generated'
  for rev in ['B0','B1','B2']:
   p=outputs/rev;m=json.loads((p/'generation-manifest.json').read_text());same(m['revision'],rev);same(m['source_commit'],base['commit']);same(m['spec_sha256'],h(root/'cad/stage2b/spec.json'))

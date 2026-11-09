@@ -1,0 +1,50 @@
+name: Stage 2-D Pages integration
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          mkdir -p stage2d-ci
+          node --test > stage2d-ci/tests.log 2>&1
+          python3 cad/stage2c/check.py > stage2d-ci/cad-check.json
+          python3 tests/stage2c-cad.test.py > stage2d-ci/cad-tests.log 2>&1
+          node scripts/build-stage2d-site.mjs > stage2d-ci/build.log
+          cp dist/deployment-manifest.json stage2d-ci/
+          git rev-parse HEAD HEAD^{tree} > stage2d-ci/git.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2d-contracts-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2d-ci/
+          if-no-files-found: error
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix /tmp/castle2d-pw playwright@1.56.1 three@0.180.0
+      - run: /tmp/castle2d-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/stage2d-browser.mjs
+        env:
+          STAGE2D_OUT: stage2d-browser-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2d-browser-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2d-browser-ci/
+          if-no-files-found: error

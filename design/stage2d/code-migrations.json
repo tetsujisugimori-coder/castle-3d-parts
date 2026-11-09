@@ -1,0 +1,53 @@
+{
+  "baseline": "dec85b596f6b82bfd69129e4b1edbc75d182318c",
+  "files": {
+    ".github/workflows/pages.yml": {
+      "archive": "design/stage2d/originals/.github/workflows/pages.yml.txt",
+      "before_sha256": "c0ac3a11ab8ecd6add43561a9d94e9b40361ad4c1c5e988d6e1968e8eb6e98a5",
+      "after_sha256": "5e538484be8b7f9d30fd37ef906d51b0b975db3c39832a1f0dd06f19b6d2ad88",
+      "reason": "Official Pages build connection"
+    },
+    "scripts/research-cad.mjs": {
+      "archive": "design/stage2d/originals/scripts/research-cad.mjs.txt",
+      "before_sha256": "317c2327a6e609536e29fdc70ff9bac0b6cb7d36b97b6b7baf809f65123924c4",
+      "after_sha256": "1776a19fda58f5b07f75bf5d034b3d91ab1d6808178f754309a544adc5ab2387",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    },
+    "scripts/stage2b.mjs": {
+      "archive": "design/stage2d/originals/scripts/stage2b.mjs.txt",
+      "before_sha256": "b2f51ef183a850c8db36624950fa2b0de44cef6ee5fea76638a637d929f1d3d5",
+      "after_sha256": "824c8beb1de21bc9126b5e15db20b18d4af694963e5420034de5af9ec3e5dce5",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    },
+    "tests/hypothesis-preservation.test.mjs": {
+      "archive": "design/stage2d/originals/tests/hypothesis-preservation.test.mjs.txt",
+      "before_sha256": "a1a1a3dbafcaef00bb6b5402e3113f892641c6cf2203a299c1de0e6e5a9c34db",
+      "after_sha256": "3fa2b39353948a6f221661237ef1333e219ec04c215a519455c9a4fc480813ee",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    },
+    "scripts/cad-prototype.mjs": {
+      "archive": "design/stage2d/originals/scripts/cad-prototype.mjs.txt",
+      "before_sha256": "0accf3dbf004051c6db342403539dbe8ac1f011396491247a4d16eacfae4bbd5",
+      "after_sha256": "cced33ea8c035aa84b1f808785cb74496a34c9933ba84b88719602853c5929f8",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    },
+    "scripts/design-register.mjs": {
+      "archive": "design/stage2d/originals/scripts/design-register.mjs.txt",
+      "before_sha256": "1a8048fe6e069f200393b546d575b4265449feb870327ce3a97afef2695ce0bb",
+      "after_sha256": "acf913677c2feab656a41663bc6328da3362ae4b3dc7725e0c32e556a74e05a3",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    },
+    "scripts/verification-register.mjs": {
+      "archive": "design/stage2d/originals/scripts/verification-register.mjs.txt",
+      "before_sha256": "86a2d5c3fe0d4155da2672d069b7c675d9df14f2f4c21f910578a7077a97d2d1",
+      "after_sha256": "64fb2f0d477189d45cb163eb6e2412387ab1d5bce50dcd64e2fc714891642264",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    },
+    "cad/stage2c/check.py": {
+      "archive": "design/stage2d/originals/cad/stage2c/check.py.txt",
+      "before_sha256": "6fc5d4265089a81c139b2a0e52dbbb09808e0880a4fc5ffeb9e4a84992a6db05",
+      "after_sha256": "38ed7a9a2f6a69a84cfe53787b94e917fbc9aad2d2570c2941c30941d536dde9",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    }
+  }
+}

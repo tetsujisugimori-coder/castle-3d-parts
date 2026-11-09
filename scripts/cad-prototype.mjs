@@ -1,3 +1,4 @@
+import {originalBytes} from './stage2d/preservation.mjs';
 import {readFileSync}from'node:fs';import{createHash}from'node:crypto';import{fileURLToPath}from'node:url';
 export const root=fileURLToPath(new URL('../',import.meta.url));export const hash=b=>createHash('sha256').update(b).digest('hex');
 export function validateSnapshot(s){
@@ -10,7 +11,7 @@ export function validateSnapshot(s){
  for(const d of s.decisions){if(d.eligibility!=='reference_only'||d.write_allowed!==false)throw Error('CAD_WRITE');for(const p of d.parameters){if(p.historical_value!==null||p.hypothesis_value!==null)throw Error('HISTORY_PROMOTION');if(p.prototype_value!==null&&p.basis!=='D')throw Error('BASIS');}}
  return true;
 }
-export function preserve(){const bytes=readFileSync(root+'cad/prototype-v1/baseline.json');if(hash(bytes)!=='9f238a06004cbfa7d004e21779ada93981122463cff3fd71374347d54c258082')throw Error('BASELINE_PIN');const b=JSON.parse(bytes);for(const[p,h]of Object.entries(b.hashes))if(hash(readFileSync(root+p))!==h)throw Error('BASELINE_CHANGED '+p);return Object.keys(b.hashes).length}
+export function preserve(){const bytes=readFileSync(root+'cad/prototype-v1/baseline.json');if(hash(bytes)!=='9f238a06004cbfa7d004e21779ada93981122463cff3fd71374347d54c258082')throw Error('BASELINE_PIN');const b=JSON.parse(bytes);for(const[p,h]of Object.entries(b.hashes))if(hash(originalBytes(root,p,h))!==h)throw Error('BASELINE_CHANGED '+p);return Object.keys(b.hashes).length}
 export function glbAudit(bytes){
  if(bytes.toString('utf8',0,4)!=='glTF'||bytes.readUInt32LE(4)!==2||bytes.readUInt32LE(8)!==bytes.length)throw Error('GLB_HEADER');
  const n=bytes.readUInt32LE(12),g=JSON.parse(bytes.toString('utf8',20,20+n)),bin=bytes.subarray(28+n);const seen=[],points=[];

@@ -1,3 +1,4 @@
+import {originalBytes} from './stage2d/preservation.mjs';
 /** Stage 2-A: fixed research versions and explicitly approved D working copies.
  * This local/CI tool is not an authentication service. Review and Git permissions
  * establish who approved a decision. A hash is an integrity binding, not a signature.
@@ -20,7 +21,7 @@ const sourcePattern=/^(sources\/records\/SRC-\d+\.json|observations\/records\/OB
 const auxiliary=['observations/verification/source-checks.json','observations/verification/extractions.json','observations/verification/render-checks.json','catalog/wooden-palisade-v0.json'];
 const artifactPaths={fcstd:'cad/prototype-v1/generated/palisade.FCStd',step:'cad/prototype-v1/generated/palisade.step',mesh:'cad/prototype-v1/generated/mesh-transfer.json',blend:'blender/prototype-v1/palisade.blend',glb:'site/cad/palisade.glb'};
 const PARAMETERS={post_height:{cad:'height',unit:'m'},post_center_spacing:{cad:'spacing',unit:'m'},post_width:{cad:'width',unit:'m'},post_count:{cad:'count',unit:'count'},rail_levels:{cad:'rails',unit:'count'}};
-export function preserve(root=ROOT){const b=readFileSync(resolve(root,'cad/revisions/baseline.json'));must(hash(b)==='2451714ed283c2b2df50f861ed2124cfe2a1fe8b428ebde8393fdf21875e5be2','BASELINE_TAMPER');const manifest=JSON.parse(b);for(const [p,h]of Object.entries(manifest.hashes))must(hash(readFileSync(resolve(root,p)))===h,'ORIGINAL_CHANGED '+p);return Object.keys(manifest.hashes).length;}
+export function preserve(root=ROOT){const b=readFileSync(resolve(root,'cad/revisions/baseline.json'));must(hash(b)==='2451714ed283c2b2df50f861ed2124cfe2a1fe8b428ebde8393fdf21875e5be2','BASELINE_TAMPER');const manifest=JSON.parse(b);for(const [p,h]of Object.entries(manifest.hashes))must(hash(originalBytes(root,p,h))===h,'ORIGINAL_CHANGED '+p);return Object.keys(manifest.hashes).length;}
 export function validateGraph(records,edges){const ids=new Set(records.map(r=>r.id));must(ids.size===records.length,'DUPLICATE_ID');for(const e of edges)must(ids.has(e.from)&&ids.has(e.to),'INVALID_REFERENCE '+e.from+' '+e.to);const visited=new Set(),stack=new Set();function walk(id){must(!stack.has(id),'CYCLIC_REFERENCE');if(visited.has(id))return;stack.add(id);for(const e of edges.filter(e=>e.from===id))walk(e.to);stack.delete(id);visited.add(id);}for(const id of ids)walk(id);return true;}
 function makeGraph(records){const by=new Map(records.map(r=>[r.id,r])),edges=[];const add=(from,to,relation)=>{must(by.has(from)&&by.has(to),'INVALID_REFERENCE '+from+' '+to);if(!edges.some(e=>e.from===from&&e.to===to&&e.relation===relation))edges.push({from,to,relation});};
  for(const r of records){const d=r.data;if(r.kind==='OBS')for(const ref of d.references??[])add(ref.source_id,r.id,'reported_source');

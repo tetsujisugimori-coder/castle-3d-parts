@@ -1,0 +1,25 @@
+# Stage 2-D: official Pages integration
+
+## Scope and dependency
+Stage2C PR #21 was merged at `dec85b596f6b82bfd69129e4b1edbc75d182318c`, tree `99f694f513eb46e69ec0010181c0e20fc278ebc7`. This work reuses those exact three revision manifests, 42 part instances and 57 true dimensions. No CAD is regenerated or promoted. All D/reference_only restrictions remain.
+
+## Production build
+The existing `.github/workflows/pages.yml` calls `node scripts/build-stage2d-site.mjs`. This composes the unchanged Stage2C builder and existing viewer, then inserts navigation, project-prefix paths, revision URL/history, explicit retry and zoom-out. It supplies native TechDraw exports separately from the interactive CAD-projection drawing. Stage2B receives its original assets and deployment-relative path correction in the output only. Source viewers remain byte-identical; there is no second renderer or new CAD model.
+
+`node --test`, `python3 cad/stage2c/check.py`, `python3 tests/stage2c-cad.test.py`, then `node scripts/build-stage2d-site.mjs`. Serve `dist` under `/castle-3d-parts/` to reproduce project-site paths. `node scripts/stage2d-browser.mjs` builds and tests that exact route. Environment `PW_MODULE` and `THREE_DIR` locate Playwright1.56.1 and Three.js0.180.0. `STAGE2D_OUT` selects evidence output. CI installs Chromium and WebKit dependencies.
+
+Pages URL: https://tetsujisugimori-coder.github.io/castle-3d-parts/ . Linked entry: `stage2c/` (stable inherited URL). Native guide: `guide.html`. `deployment-manifest.json` records source commit/tree and nine linked artifact hashes; compare it after deployment before acceptance. Local generated pages are not proof of deployment. A workflow_dispatch from the approved feature branch changes the **production** Pages site without merging main; it is not a PR preview. The main branch remains unchanged. A future main-triggered deployment before integration can restore the old main build, so this release must be identified by manifest rather than URL alone.
+
+## Preservation migration
+Old whole-repository baselines also pinned executable code and workflow files. Exactly eight existing code files change: official workflow plus seven preservation consumers. The immutable old manifests are retained, old bytes are archived as `.txt`, and `design/stage2d/code-migrations.json` pins old/new SHA256. No wildcard exclusion: protected data and an unapproved third version of an allowed code path both fail. `record-migrations.py` is a maintenance tool, never invoked by CI. Historical byte verification is not mislabeled as every current file unchanged. New Stage2D baseline covers all948 prior paths; current actual replacements are enumerated. Research/CAD/assets remain byte-identical.
+
+## Browser and performance method
+16 prespecified conditions: Chromium/WebKit ×375/390/765/1280 ×normal/reduced. Each runs top entry, true rendered 3D/touch part selection, drawing selection, all3 revisions/19 dimensions, research links, URL back-forward/reload, reset/zoom, viewport orientation resize and no console/HTTP failures. Ten fault rows per engine independently cover missing/old GLB, oldSVG, missing ID, duplicate dimensions, retry, stale responses, active/external SVG and context loss. Existing Stage2C fault suite remains required.
+
+Each condition measures three consecutive navigation-to-ready samples in the same context, plus per-revision timings. These are laboratory same-context measurements, **not cold real-device timings**. Resource durations, transfer sizes and JS heap when exposed are recorded. Report medians with sample count and environment. No optimization percentage or broad performance gain is claimed. Local Three.js package substitutes only the pinned CDN bytes; public-URL testing must not intercept CDN requests.
+
+## Publication and licenses
+Only linked GLB/SVG/manifests, existing Stage2B viewing assets, referenced research JSON and existing website are included. No new third-party PDF/image or CAD original is copied into Pages. All original FCStd/STEP/blend remain in GitHub. Three.js0.180.0 uses MIT; jsDelivr serves its pinned modules. Existing research references link to third-party original sites without redistributing their material. No credentials are needed in repository code.
+
+## Physical iPhone Safari protocol
+**NOT_TESTED until actual device evidence exists.** Record iPhone model/iOS/Safari, orientation, network, URL and deployment-manifest source SHA; capture screen recording and errors. Test initial model/drawing loads, one-finger rotation, two-finger pinch/pan, post/rail tap, drawing zoom/pan/selection, synchronization, all revisions/differences, portrait-landscape, reload and background return. Repeat each three times, recording failures without exclusion. Scroll outside the panel; within it gestures control 3D/drawing. Use44px controls and part list for thin/overlapping members. Emulated touch, synthetic events and viewport resizing do not establish physical pinch, scrolling arbitration, GPU-memory stability or app-return acceptance.
