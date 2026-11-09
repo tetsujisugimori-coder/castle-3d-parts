@@ -1,0 +1,117 @@
+{
+  "scope": "Original local stdout/stderr retained in private archive; public PR omits raw environment paths and unstructured diagnostic output. Raw originals not changed. Public code, source files, numeric audit JSON, hashes and screenshots remain. Final CI artifacts are audited separately. Private archive also preserves original pre-portability reviewer scripts and initial hash manifest.",
+  "original_logs": [
+    {
+      "path": "evidence/stage2c/all-tests.log",
+      "sha256": "2aa979027f11d1d30afca9328f98ce3d143c59962fc6595961020235dd157a58",
+      "bytes": 21146,
+      "lines": 417,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/cad/generation-final-v3.log",
+      "sha256": "9a50f18ad4d7b3522de6ae753beed7dd23de7921a69f65fd1d622c76c3c27652",
+      "bytes": 50492,
+      "lines": 1115,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/cad/generation-final.log",
+      "sha256": "f12c666b02946b150e6caa4c030fe2ac70c4bc9b2f6ef15ad2bcd37488c5d535",
+      "bytes": 50817,
+      "lines": 1121,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/cad/generation.log",
+      "sha256": "7a92d36e347f6dd40f87b36d9d6f8574a1e00f9c200b680bc68902ba447cf7e6",
+      "bytes": 50705,
+      "lines": 1116,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/cad/portable-tests.log",
+      "sha256": "1e12165aa164473e2ffbd8de8143083d3353e4d39eb4f9a3f814c544bc2f7cb6",
+      "bytes": 103,
+      "lines": 5,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/cad/reproduction.log",
+      "sha256": "0f97d09780510873876526936b0ec399c14b38e61043f1decbbfaebc90358253",
+      "bytes": 50229,
+      "lines": 1111,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/independent-cad/native-counterexample-after.log",
+      "sha256": "a8ef9d452400a475d07cf326708b3e9113d60f905abcf09883d261aaff161868",
+      "bytes": 2001,
+      "lines": 32,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/independent-cad/native-counterexample-before.log",
+      "sha256": "a87084a4ece9dae796aea71723023d6a3658d211a3e7d5c9e905f44db19c037e",
+      "bytes": 2035,
+      "lines": 32,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/independent-cad/reload-final.log",
+      "sha256": "7f45b403f6ed9349721455e817c3279fa53c736d39b4dfb8a2d8188812399991",
+      "bytes": 9612,
+      "lines": 108,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/independent-cad/reload-initial.log",
+      "sha256": "68420af48200f63b15660aaa1aa7789a092b2ee9a55c7084dfa3986bb1e2f42c",
+      "bytes": 10032,
+      "lines": 115,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/web-build.log",
+      "sha256": "73c010f8981cd8f8ce3fe13af63a888d8b6bacd3eee60fce9975c28b692d397f",
+      "bytes": 105,
+      "lines": 2,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/web-contracts.log",
+      "sha256": "ea8d649bb4a5e7330b2c84fe09ec54f039191d18609ef2ae5899fddb95e3be91",
+      "bytes": 2057,
+      "lines": 50,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    },
+    {
+      "path": "evidence/stage2c/web-red-green/ui-initial/browser-partial.log",
+      "sha256": "fe9f001b1b43194e77656ed431093064198fed88ccd412eb8a4d20681f9fe2e8",
+      "bytes": 4402,
+      "lines": 4,
+      "visibility": "PRIVATE_ORIGINAL_NOT_IN_PUBLIC_PR"
+    }
+  ],
+  "archive_sha256": "d6dbe4362b6a786c8847232f8350702c486a20a169c5597e0c83b18a570bda46",
+  "claims": {
+    "node_tests": {
+      "passed": 409,
+      "failed": 0,
+      "skipped": 0
+    },
+    "portable_cad_tests": {
+      "methods": 5,
+      "status": "PASS"
+    },
+    "actual_cad": "Three revisions generated, reopened and independently checked. See native-audit.json and independent-cad/reload-final.json.",
+    "actual_blender": "Three revisions exported and reloaded. See blender-audit.json.",
+    "repeat_generation": "Numeric native measurements and geometry equal; GLB and interactive SVG bytes equal. See cad/reproduction.json.",
+    "known_environment_limitations": [
+      "Programmatic Qt offscreen rendering is not manual GUI acceptance.",
+      "OpenGL context and missing optional FreeCAD modules/font warnings occurred. Numerical dimensions and SVG required separate assertions.",
+      "Optional Draco unavailable; no compressed output claimed.",
+      "Local WebKit missing dependencies; NOT_TESTED."
+    ]
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "revision": "B0",
+  "scale": 0.025,
+  "unit": "mm",
+  "dimension_source": "actual reopened native TechDraw getRawValue True 3D",
+  "dimensions": [
+    {
+      "id": "U01-post-height",
+      "label": "U01 post height",
+      "view": "front",
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005"
+      ],
+      "value_mm": 2200.0,
+      "value_m": 2.2,
+      "kind": "true",
+      "native_object": "Dim_U01_post_height",
+      "witness": "Witness_U01_post_height",
+      "expressions": {
+        "X1": "U01_Post_001.Placement.Base.x",
+        "Y1": "U01_Post_001.Placement.Base.y",
+        "Z1": "U01_Post_001.Placement.Base.z",
+        "X2": "U01_Post_001.Placement.Base.x",
+        "Y2": "U01_Post_001.Placement.Base.y",
+        "Z2": "U01_Post_001.Placement.Base.z + U01_Post_001.Height"
+      },
+      "references3d": [
+        [
+          "Witness_U01_post_height",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 2200.0
+    },
+    {
+      "id": "U01-post-centres",
+      "label": "U01 post centres",
+      "view": "front",
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005"
+      ],
+      "value_mm": 1200.0,
+      "value_m": 1.2,
+      "kind": "true",
+      "native_object": "Dim_U01_post_centres",
+      "witness": "Witness_U01_post_centres",
+      "expressions": {
+        "X1": "U01_Post_001.Placement.Base.x + U01_Post_001.Length / 2",
+        "Y1": "U01_Post_001.Placement.Base.y",
+        "Z1": "U01_Post_001.Placement.Base.z",
+        "X2": "U01_Post_002.Placement.Base.x + U01_Post_002.Length / 2",
+        "Y2": "U01_Post_001.Placement.Base.y",
+        "Z2": "U01_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U01_post_centres",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 1200.0
+    },
+    {
+      "id": "U01-post-width",
+      "label": "U01 post section X",
+      "view": "top",
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005"
+      ],
+      "value_mm": 150.0,
+      "value_m": 0.15,
+      "kind": "true",
+      "native_object": "Dim_U01_post_width",
+      "witness": "Witness_U01_post_width",
+      "expressions": {
+        "X1": "U01_Post_001.Placement.Base.x",
+        "Y1": "U01_Post_001.Placement.Base.y",
+        "Z1": "U01_Post_001.Placement.Base.z",
+        "X2": "U01_Post_001.Placement.Base.x + U01_Post_001.Length",
+        "Y2": "U01_Post_001.Placement.Base.y",
+        "Z2": "U01_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U01_post_width",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 150.0
+    },
+    {
+      "id": "U01-post-depth",
+      "label": "U01 post section Y",
+      "view": "side",
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005"
+      ],
+      "value_mm": 150.0,
+      "value_m": 0.15,
+      "kind": "true",
+      "native_object": "Dim_U01_post_depth",
+      "witness": "Witness_U01_post_depth",
+      "expressions": {
+        "X1": "U01_Post_001.Placement.Base.x",
+        "Y1": "U01_Post_001.Placement.Base.y",
+        "Z1": "U01_Post_001.Placement.Base.z",
+        "X2": "U01_Post_001.Placement.Base.x",
+        "Y2": "U01_Post_001.Placement.Base.y + U01_Post_001.Width",
+        "Z2": "U01_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U01_post_depth",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 150.0
+    },
+    {
+      "id": "U01-unit-width",
+      "label": "U01 unit width",
+      "view": "top",
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002"
+      ],
+      "value_mm": 4950.0,
+      "value_m": 4.95,
+      "kind": "true",
+      "native_object": "Dim_U01_unit_width",
+      "witness": "Witness_U01_unit_width",
+      "expressions": {
+        "X1": "U01_Post_001.Placement.Base.x",
+        "Y1": "U01_Post_001.Placement.Base.y",
+        "Z1": "U01_Post_001.Placement.Base.z",
+        "X2": "U01_Post_005.Placement.Base.x + U01_Post_005.Length",
+        "Y2": "U01_Post_001.Placement.Base.y",
+        "Z2": "U01_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U01_unit_width",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 4950.0
+    },
+    {
+      "id": "U01_Rail_001-length",
+      "label": "U01_Rail_001 length",
+      "view": "front",
+      "part_ids": [
+        "U01_Rail_001"
+      ],
+      "value_mm": 4950.0,
+      "value_m": 4.95,
+      "kind": "true",
+      "native_object": "Dim_U01_Rail_001_length",
+      "witness": "Witness_U01_Rail_001_length",
+      "expressions": {
+        "X1": "U01_Rail_001.Placement.Base.x",
+        "Y1": "U01_Rail_001.Placement.Base.y",
+        "Z1": "U01_Rail_001.Placement.Base.z",
+        "X2": "U01_Rail_001.Placement.Base.x + U01_Rail_001.Length",
+        "Y2": "U01_Rail_001.Placement.Base.y",
+        "Z2": "U01_Rail_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U01_Rail_001_length",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 4950.0
+    },
+    {
+      "id": "U01_Rail_001-elevation",
+      "label": "U01_Rail_001 centre elevation",
+      "view": "side",
+      "part_ids": [
+        "U01_Rail_001"
+      ],
+      "value_mm": 733.3333333333334,
+      "value_m": 0.7333333333333334,
+      "kind": "true",
+      "native_object": "Dim_U01_Rail_001_elevation",
+      "witness": "Witness_U01_Rail_001_elevation",
+      "expressions": {
+        "X1": "U01_Rail_001.Placement.Base.x",
+        "Y1": "U01_Rail_001.Placement.Base.y",
+        "Z1": "U01_Post_001.Placement.Base.z",
+        "X2": "U01_Rail_001.Placement.Base.x",
+        "Y2": "U01_Rail_001.Placement.Base.y",
+        "Z2": "U01_Rail_001.Placement.Base.z + U01_Rail_001.Height / 2"
+      },
+      "references3d": [
+        [
+          "Witness_U01_Rail_001_elevation",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 733.3333333333334
+    },
+    {
+      "id": "U01_Rail_002-length",
+      "label": "U01_Rail_002 length",
+      "view": "front",
+      "part_ids": [
+        "U01_Rail_002"
+      ],
+      "value_mm": 4950.0,
+      "value_m": 4.95,
+      "kind": "true",
+      "native_object": "Dim_U01_Rail_002_length",
+      "witness": "Witness_U01_Rail_002_length",
+      "expressions": {
+        "X1": "U01_Rail_002.Placement.Base.x",
+        "Y1": "U01_Rail_002.Placement.Base.y",
+        "Z1": "U01_Rail_002.Placement.Base.z",
+        "X2": "U01_Rail_002.Placement.Base.x + U01_Rail_002.Length",
+        "Y2": "U01_Rail_002.Placement.Base.y",
+        "Z2": "U01_Rail_002.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U01_Rail_002_length",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 4950.0
+    },
+    {
+      "id": "U01_Rail_002-elevation",
+      "label": "U01_Rail_002 centre elevation",
+      "view": "side",
+      "part_ids": [
+        "U01_Rail_002"
+      ],
+      "value_mm": 1466.6666666666667,
+      "value_m": 1.4666666666666668,
+      "kind": "true",
+      "native_object": "Dim_U01_Rail_002_elevation",
+      "witness": "Witness_U01_Rail_002_elevation",
+      "expressions": {
+        "X1": "U01_Rail_002.Placement.Base.x",
+        "Y1": "U01_Rail_002.Placement.Base.y",
+        "Z1": "U01_Post_001.Placement.Base.z",
+        "X2": "U01_Rail_002.Placement.Base.x",
+        "Y2": "U01_Rail_002.Placement.Base.y",
+        "Z2": "U01_Rail_002.Placement.Base.z + U01_Rail_002.Height / 2"
+      },
+      "references3d": [
+        [
+          "Witness_U01_Rail_002_elevation",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 1466.6666666666667
+    },
+    {
+      "id": "U02-post-height",
+      "label": "U02 post height",
+      "view": "front",
+      "part_ids": [
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005"
+      ],
+      "value_mm": 2200.0,
+      "value_m": 2.2,
+      "kind": "true",
+      "native_object": "Dim_U02_post_height",
+      "witness": "Witness_U02_post_height",
+      "expressions": {
+        "X1": "U02_Post_001.Placement.Base.x",
+        "Y1": "U02_Post_001.Placement.Base.y",
+        "Z1": "U02_Post_001.Placement.Base.z",
+        "X2": "U02_Post_001.Placement.Base.x",
+        "Y2": "U02_Post_001.Placement.Base.y",
+        "Z2": "U02_Post_001.Placement.Base.z + U02_Post_001.Height"
+      },
+      "references3d": [
+        [
+          "Witness_U02_post_height",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 2200.0
+    },
+    {
+      "id": "U02-post-centres",
+      "label": "U02 post centres",
+      "view": "front",
+      "part_ids": [
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005"
+      ],
+      "value_mm": 1200.0,
+      "value_m": 1.2,
+      "kind": "true",
+      "native_object": "Dim_U02_post_centres",
+      "witness": "Witness_U02_post_centres",
+      "expressions": {
+        "X1": "U02_Post_001.Placement.Base.x + U02_Post_001.Length / 2",
+        "Y1": "U02_Post_001.Placement.Base.y",
+        "Z1": "U02_Post_001.Placement.Base.z",
+        "X2": "U02_Post_002.Placement.Base.x + U02_Post_002.Length / 2",
+        "Y2": "U02_Post_001.Placement.Base.y",
+        "Z2": "U02_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U02_post_centres",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 1200.0
+    },
+    {
+      "id": "U02-post-width",
+      "label": "U02 post section X",
+      "view": "top",
+      "part_ids": [
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005"
+      ],
+      "value_mm": 150.0,
+      "value_m": 0.15,
+      "kind": "true",
+      "native_object": "Dim_U02_post_width",
+      "witness": "Witness_U02_post_width",
+      "expressions": {
+        "X1": "U02_Post_001.Placement.Base.x",
+        "Y1": "U02_Post_001.Placement.Base.y",
+        "Z1": "U02_Post_001.Placement.Base.z",
+        "X2": "U02_Post_001.Placement.Base.x + U02_Post_001.Length",
+        "Y2": "U02_Post_001.Placement.Base.y",
+        "Z2": "U02_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U02_post_width",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 150.0
+    },
+    {
+      "id": "U02-post-depth",
+      "label": "U02 post section Y",
+      "view": "side",
+      "part_ids": [
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005"
+      ],
+      "value_mm": 150.0,
+      "value_m": 0.15,
+      "kind": "true",
+      "native_object": "Dim_U02_post_depth",
+      "witness": "Witness_U02_post_depth",
+      "expressions": {
+        "X1": "U02_Post_001.Placement.Base.x",
+        "Y1": "U02_Post_001.Placement.Base.y",
+        "Z1": "U02_Post_001.Placement.Base.z",
+        "X2": "U02_Post_001.Placement.Base.x",
+        "Y2": "U02_Post_001.Placement.Base.y + U02_Post_001.Width",
+        "Z2": "U02_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U02_post_depth",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 150.0
+    },
+    {
+      "id": "U02-unit-width",
+      "label": "U02 unit width",
+      "view": "top",
+      "part_ids": [
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ],
+      "value_mm": 4950.0,
+      "value_m": 4.95,
+      "kind": "true",
+      "native_object": "Dim_U02_unit_width",
+      "witness": "Witness_U02_unit_width",
+      "expressions": {
+        "X1": "U02_Post_001.Placement.Base.x",
+        "Y1": "U02_Post_001.Placement.Base.y",
+        "Z1": "U02_Post_001.Placement.Base.z",
+        "X2": "U02_Post_005.Placement.Base.x + U02_Post_005.Length",
+        "Y2": "U02_Post_001.Placement.Base.y",
+        "Z2": "U02_Post_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U02_unit_width",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 4950.0
+    },
+    {
+      "id": "U02_Rail_001-length",
+      "label": "U02_Rail_001 length",
+      "view": "front",
+      "part_ids": [
+        "U02_Rail_001"
+      ],
+      "value_mm": 4950.0,
+      "value_m": 4.95,
+      "kind": "true",
+      "native_object": "Dim_U02_Rail_001_length",
+      "witness": "Witness_U02_Rail_001_length",
+      "expressions": {
+        "X1": "U02_Rail_001.Placement.Base.x",
+        "Y1": "U02_Rail_001.Placement.Base.y",
+        "Z1": "U02_Rail_001.Placement.Base.z",
+        "X2": "U02_Rail_001.Placement.Base.x + U02_Rail_001.Length",
+        "Y2": "U02_Rail_001.Placement.Base.y",
+        "Z2": "U02_Rail_001.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U02_Rail_001_length",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 4950.0
+    },
+    {
+      "id": "U02_Rail_001-elevation",
+      "label": "U02_Rail_001 centre elevation",
+      "view": "side",
+      "part_ids": [
+        "U02_Rail_001"
+      ],
+      "value_mm": 733.3333333333334,
+      "value_m": 0.7333333333333334,
+      "kind": "true",
+      "native_object": "Dim_U02_Rail_001_elevation",
+      "witness": "Witness_U02_Rail_001_elevation",
+      "expressions": {
+        "X1": "U02_Rail_001.Placement.Base.x",
+        "Y1": "U02_Rail_001.Placement.Base.y",
+        "Z1": "U02_Post_001.Placement.Base.z",
+        "X2": "U02_Rail_001.Placement.Base.x",
+        "Y2": "U02_Rail_001.Placement.Base.y",
+        "Z2": "U02_Rail_001.Placement.Base.z + U02_Rail_001.Height / 2"
+      },
+      "references3d": [
+        [
+          "Witness_U02_Rail_001_elevation",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 733.3333333333334
+    },
+    {
+      "id": "U02_Rail_002-length",
+      "label": "U02_Rail_002 length",
+      "view": "front",
+      "part_ids": [
+        "U02_Rail_002"
+      ],
+      "value_mm": 4950.0,
+      "value_m": 4.95,
+      "kind": "true",
+      "native_object": "Dim_U02_Rail_002_length",
+      "witness": "Witness_U02_Rail_002_length",
+      "expressions": {
+        "X1": "U02_Rail_002.Placement.Base.x",
+        "Y1": "U02_Rail_002.Placement.Base.y",
+        "Z1": "U02_Rail_002.Placement.Base.z",
+        "X2": "U02_Rail_002.Placement.Base.x + U02_Rail_002.Length",
+        "Y2": "U02_Rail_002.Placement.Base.y",
+        "Z2": "U02_Rail_002.Placement.Base.z"
+      },
+      "references3d": [
+        [
+          "Witness_U02_Rail_002_length",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 4950.0
+    },
+    {
+      "id": "U02_Rail_002-elevation",
+      "label": "U02_Rail_002 centre elevation",
+      "view": "side",
+      "part_ids": [
+        "U02_Rail_002"
+      ],
+      "value_mm": 1466.6666666666667,
+      "value_m": 1.4666666666666668,
+      "kind": "true",
+      "native_object": "Dim_U02_Rail_002_elevation",
+      "witness": "Witness_U02_Rail_002_elevation",
+      "expressions": {
+        "X1": "U02_Rail_002.Placement.Base.x",
+        "Y1": "U02_Rail_002.Placement.Base.y",
+        "Z1": "U02_Post_001.Placement.Base.z",
+        "X2": "U02_Rail_002.Placement.Base.x",
+        "Y2": "U02_Rail_002.Placement.Base.y",
+        "Z2": "U02_Rail_002.Placement.Base.z + U02_Rail_002.Height / 2"
+      },
+      "references3d": [
+        [
+          "Witness_U02_Rail_002_elevation",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 1466.6666666666667
+    },
+    {
+      "id": "assembly-width",
+      "label": "Assembly width",
+      "view": "top",
+      "part_ids": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002",
+        "U02_Post_001",
+        "U02_Post_002",
+        "U02_Post_003",
+        "U02_Post_004",
+        "U02_Post_005",
+        "U02_Rail_001",
+        "U02_Rail_002"
+      ],
+      "value_mm": 10950.0,
+      "value_m": 10.95,
+      "kind": "true",
+      "native_object": "Dim_assembly_width",
+      "witness": "Witness_assembly_width",
+      "expressions": {
+        "X1": "U01_Post_001.Placement.Base.x",
+        "Y1": "0 mm",
+        "Z1": "0 mm",
+        "X2": "U02_Post_005.Placement.Base.x + U02_Post_005.Length",
+        "Y2": "0 mm",
+        "Z2": "0 mm"
+      },
+      "references3d": [
+        [
+          "Witness_assembly_width",
+          "Edge1"
+        ]
+      ],
+      "independent_bounds_mm": 10950.0
+    }
+  ]
+}

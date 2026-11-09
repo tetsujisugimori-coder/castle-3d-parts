@@ -1,0 +1,14 @@
+[
+  {
+    "name": "wrong-part-dimension",
+    "accepted": true
+  },
+  {
+    "name": "empty-dimension-part-links",
+    "accepted": true
+  },
+  {
+    "name": "empty-changes-B1",
+    "accepted": true
+  }
+]

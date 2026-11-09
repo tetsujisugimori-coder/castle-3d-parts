@@ -1,0 +1,53 @@
+name: Stage 2-C linked drawings
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          mkdir -p stage2c-ci/source
+          node --test > stage2c-ci/tests.log 2>&1
+          python3 cad/stage2c/check.py > stage2c-ci/cad-check.log 2>&1
+          python3 tests/stage2c-cad.test.py > stage2c-ci/cad-tests.log 2>&1
+          node scripts/build-stage2c-site.mjs > stage2c-ci/build.log 2>&1
+          git archive HEAD | tar -x -C stage2c-ci/source
+          git rev-parse HEAD HEAD^{tree} > stage2c-ci/git.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2c-contracts-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2c-ci/
+          include-hidden-files: true
+          if-no-files-found: error
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix /tmp/cad-pw playwright@1.56.1 three@0.180.0
+      - run: /tmp/cad-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/stage2c-browser.mjs
+        env:
+          PW_MODULE: /tmp/cad-pw/node_modules/playwright/index.mjs
+          THREE_DIR: /tmp/cad-pw/node_modules/three
+          STAGE2C_BROWSER_OUT: stage2c-browser-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2c-browser-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage2c-browser-ci/
+          if-no-files-found: error

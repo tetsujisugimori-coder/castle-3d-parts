@@ -1,0 +1,6621 @@
+[
+  {
+    "name": "wrong-part",
+    "revision": "B0",
+    "result": "ACCEPTED",
+    "input": {
+      "schema_version": 1,
+      "revision": "B0",
+      "basis": "D",
+      "cad_eligibility": "reference_only",
+      "assembly_id": "PAL-ASSEMBLY",
+      "source_commit": "d1c367ca4b143cacc45ba8848b026701abf03b9c",
+      "previous_revision": null,
+      "changes": [],
+      "files": {
+        "glb": {
+          "path": "assembly.glb",
+          "sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc"
+        },
+        "svg": {
+          "path": "drawing.svg",
+          "sha256": "2caa8bbe3bfee527520606922ee510dbcfc6562f50eb6d547ad0b5c3d4e26e16"
+        }
+      },
+      "parts": [
+        {
+          "id": "U01_Post_001",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_001",
+          "step_object": "U01_Post_001",
+          "glb_node": "U01_Post_001",
+          "svg_ids": {
+            "front": "front-U01_Post_001",
+            "top": "top-U01_Post_001",
+            "side": "side-U01_Post_001"
+          },
+          "dimension_ids": [
+            "U02_Rail_002-elevation"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.075,
+            0,
+            -2.325,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_002",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_002",
+          "step_object": "U01_Post_002",
+          "glb_node": "U01_Post_002",
+          "svg_ids": {
+            "front": "front-U01_Post_002",
+            "top": "top-U01_Post_002",
+            "side": "side-U01_Post_002"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -1.275,
+            -0.075,
+            0,
+            -1.125,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_003",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_003",
+          "step_object": "U01_Post_003",
+          "glb_node": "U01_Post_003",
+          "svg_ids": {
+            "front": "front-U01_Post_003",
+            "top": "top-U01_Post_003",
+            "side": "side-U01_Post_003"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -0.075,
+            -0.075,
+            0,
+            0.075,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_004",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_004",
+          "step_object": "U01_Post_004",
+          "glb_node": "U01_Post_004",
+          "svg_ids": {
+            "front": "front-U01_Post_004",
+            "top": "top-U01_Post_004",
+            "side": "side-U01_Post_004"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            1.125,
+            -0.075,
+            0,
+            1.275,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_005",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_005",
+          "step_object": "U01_Post_005",
+          "glb_node": "U01_Post_005",
+          "svg_ids": {
+            "front": "front-U01_Post_005",
+            "top": "top-U01_Post_005",
+            "side": "side-U01_Post_005"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            2.325,
+            -0.075,
+            0,
+            2.475,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Rail_001",
+          "unit_id": "U01",
+          "label": "横木",
+          "freecad_object": "U01_Rail_001",
+          "step_object": "U01_Rail_001",
+          "glb_node": "U01_Rail_001",
+          "svg_ids": {
+            "front": "front-U01_Rail_001",
+            "top": "top-U01_Rail_001",
+            "side": "side-U01_Rail_001"
+          },
+          "dimension_ids": [
+            "U01-unit-width",
+            "U01_Rail_001-length",
+            "U01_Rail_001-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.174,
+            0.6913333333333334,
+            2.475,
+            -0.075,
+            0.7753333333333333
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Rail_002",
+          "unit_id": "U01",
+          "label": "横木",
+          "freecad_object": "U01_Rail_002",
+          "step_object": "U01_Rail_002",
+          "glb_node": "U01_Rail_002",
+          "svg_ids": {
+            "front": "front-U01_Rail_002",
+            "top": "top-U01_Rail_002",
+            "side": "side-U01_Rail_002"
+          },
+          "dimension_ids": [
+            "U01-unit-width",
+            "U01_Rail_002-length",
+            "U01_Rail_002-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.174,
+            1.4246666666666667,
+            2.475,
+            -0.075,
+            1.5086666666666668
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_001",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_001",
+          "step_object": "U02_Post_001",
+          "glb_node": "U02_Post_001",
+          "svg_ids": {
+            "front": "front-U02_Post_001",
+            "top": "top-U02_Post_001",
+            "side": "side-U02_Post_001"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.075,
+            0,
+            3.675,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_002",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_002",
+          "step_object": "U02_Post_002",
+          "glb_node": "U02_Post_002",
+          "svg_ids": {
+            "front": "front-U02_Post_002",
+            "top": "top-U02_Post_002",
+            "side": "side-U02_Post_002"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            4.725,
+            -0.075,
+            0,
+            4.875,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_003",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_003",
+          "step_object": "U02_Post_003",
+          "glb_node": "U02_Post_003",
+          "svg_ids": {
+            "front": "front-U02_Post_003",
+            "top": "top-U02_Post_003",
+            "side": "side-U02_Post_003"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            5.925,
+            -0.075,
+            0,
+            6.075,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_004",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_004",
+          "step_object": "U02_Post_004",
+          "glb_node": "U02_Post_004",
+          "svg_ids": {
+            "front": "front-U02_Post_004",
+            "top": "top-U02_Post_004",
+            "side": "side-U02_Post_004"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            7.125,
+            -0.075,
+            0,
+            7.275,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_005",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_005",
+          "step_object": "U02_Post_005",
+          "glb_node": "U02_Post_005",
+          "svg_ids": {
+            "front": "front-U02_Post_005",
+            "top": "top-U02_Post_005",
+            "side": "side-U02_Post_005"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            8.325,
+            -0.075,
+            0,
+            8.475,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Rail_001",
+          "unit_id": "U02",
+          "label": "横木",
+          "freecad_object": "U02_Rail_001",
+          "step_object": "U02_Rail_001",
+          "glb_node": "U02_Rail_001",
+          "svg_ids": {
+            "front": "front-U02_Rail_001",
+            "top": "top-U02_Rail_001",
+            "side": "side-U02_Rail_001"
+          },
+          "dimension_ids": [
+            "U02-unit-width",
+            "U02_Rail_001-length",
+            "U02_Rail_001-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.174,
+            0.6913333333333334,
+            8.475,
+            -0.075,
+            0.7753333333333333
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Rail_002",
+          "unit_id": "U02",
+          "label": "横木",
+          "freecad_object": "U02_Rail_002",
+          "step_object": "U02_Rail_002",
+          "glb_node": "U02_Rail_002",
+          "svg_ids": {
+            "front": "front-U02_Rail_002",
+            "top": "top-U02_Rail_002",
+            "side": "side-U02_Rail_002"
+          },
+          "dimension_ids": [
+            "U02-unit-width",
+            "U02_Rail_002-length",
+            "U02_Rail_002-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.174,
+            1.4246666666666667,
+            8.475,
+            -0.075,
+            1.5086666666666668
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "U01-post-height",
+          "label": "U01 post height",
+          "value_m": 2.2,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-centres",
+          "label": "U01 post centres",
+          "value_m": 1.2,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-width",
+          "label": "U01 post section X",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-depth",
+          "label": "U01 post section Y",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-unit-width",
+          "label": "U01 unit width",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005",
+            "U01_Rail_001",
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U01_Rail_001-length",
+          "label": "U01_Rail_001 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_001"
+          ]
+        },
+        {
+          "id": "U01_Rail_001-elevation",
+          "label": "U01_Rail_001 centre elevation",
+          "value_m": 0.7333333333333334,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_001"
+          ]
+        },
+        {
+          "id": "U01_Rail_002-length",
+          "label": "U01_Rail_002 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U01_Rail_002-elevation",
+          "label": "U01_Rail_002 centre elevation",
+          "value_m": 1.4666666666666668,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U02-post-height",
+          "label": "U02 post height",
+          "value_m": 2.2,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-centres",
+          "label": "U02 post centres",
+          "value_m": 1.2,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-width",
+          "label": "U02 post section X",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-depth",
+          "label": "U02 post section Y",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-unit-width",
+          "label": "U02 unit width",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005",
+            "U02_Rail_001",
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "U02_Rail_001-length",
+          "label": "U02_Rail_001 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_001"
+          ]
+        },
+        {
+          "id": "U02_Rail_001-elevation",
+          "label": "U02_Rail_001 centre elevation",
+          "value_m": 0.7333333333333334,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_001"
+          ]
+        },
+        {
+          "id": "U02_Rail_002-length",
+          "label": "U02_Rail_002 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "U02_Rail_002-elevation",
+          "label": "U02_Rail_002 centre elevation",
+          "value_m": 1.4666666666666668,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "assembly-width",
+          "label": "Assembly width",
+          "value_m": 10.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005",
+            "U01_Rail_001",
+            "U01_Rail_002",
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005",
+            "U02_Rail_001",
+            "U02_Rail_002"
+          ]
+        }
+      ],
+      "native_svg_exports": {
+        "front": {
+          "path": "native-front.svg",
+          "sha256": "5cd9b1115f372839c44345619d0a00a52bfe05215be3f30bb018e62bdea59783"
+        },
+        "top": {
+          "path": "native-top.svg",
+          "sha256": "cc992f1586faa030caaab166b9ed4e827928eb72c412f2643538207adf86d2de"
+        },
+        "side": {
+          "path": "native-side.svg",
+          "sha256": "e275aa89a8507615704517206786a2f83063a8523a2f29af7cdeb5f79406b304"
+        }
+      },
+      "research_snapshot_sha256": "0454925a1805193a13efa123d025244857051a7032d34f31aff4454dde1115af"
+    }
+  },
+  {
+    "name": "empty-parts",
+    "revision": "B0",
+    "result": "ACCEPTED",
+    "input": {
+      "schema_version": 1,
+      "revision": "B0",
+      "basis": "D",
+      "cad_eligibility": "reference_only",
+      "assembly_id": "PAL-ASSEMBLY",
+      "source_commit": "d1c367ca4b143cacc45ba8848b026701abf03b9c",
+      "previous_revision": null,
+      "changes": [],
+      "files": {
+        "glb": {
+          "path": "assembly.glb",
+          "sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc"
+        },
+        "svg": {
+          "path": "drawing.svg",
+          "sha256": "2caa8bbe3bfee527520606922ee510dbcfc6562f50eb6d547ad0b5c3d4e26e16"
+        }
+      },
+      "parts": [
+        {
+          "id": "U01_Post_001",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_001",
+          "step_object": "U01_Post_001",
+          "glb_node": "U01_Post_001",
+          "svg_ids": {
+            "front": "front-U01_Post_001",
+            "top": "top-U01_Post_001",
+            "side": "side-U01_Post_001"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.075,
+            0,
+            -2.325,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_002",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_002",
+          "step_object": "U01_Post_002",
+          "glb_node": "U01_Post_002",
+          "svg_ids": {
+            "front": "front-U01_Post_002",
+            "top": "top-U01_Post_002",
+            "side": "side-U01_Post_002"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -1.275,
+            -0.075,
+            0,
+            -1.125,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_003",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_003",
+          "step_object": "U01_Post_003",
+          "glb_node": "U01_Post_003",
+          "svg_ids": {
+            "front": "front-U01_Post_003",
+            "top": "top-U01_Post_003",
+            "side": "side-U01_Post_003"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -0.075,
+            -0.075,
+            0,
+            0.075,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_004",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_004",
+          "step_object": "U01_Post_004",
+          "glb_node": "U01_Post_004",
+          "svg_ids": {
+            "front": "front-U01_Post_004",
+            "top": "top-U01_Post_004",
+            "side": "side-U01_Post_004"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            1.125,
+            -0.075,
+            0,
+            1.275,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_005",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_005",
+          "step_object": "U01_Post_005",
+          "glb_node": "U01_Post_005",
+          "svg_ids": {
+            "front": "front-U01_Post_005",
+            "top": "top-U01_Post_005",
+            "side": "side-U01_Post_005"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            2.325,
+            -0.075,
+            0,
+            2.475,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Rail_001",
+          "unit_id": "U01",
+          "label": "横木",
+          "freecad_object": "U01_Rail_001",
+          "step_object": "U01_Rail_001",
+          "glb_node": "U01_Rail_001",
+          "svg_ids": {
+            "front": "front-U01_Rail_001",
+            "top": "top-U01_Rail_001",
+            "side": "side-U01_Rail_001"
+          },
+          "dimension_ids": [
+            "U01-unit-width",
+            "U01_Rail_001-length",
+            "U01_Rail_001-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.174,
+            0.6913333333333334,
+            2.475,
+            -0.075,
+            0.7753333333333333
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Rail_002",
+          "unit_id": "U01",
+          "label": "横木",
+          "freecad_object": "U01_Rail_002",
+          "step_object": "U01_Rail_002",
+          "glb_node": "U01_Rail_002",
+          "svg_ids": {
+            "front": "front-U01_Rail_002",
+            "top": "top-U01_Rail_002",
+            "side": "side-U01_Rail_002"
+          },
+          "dimension_ids": [
+            "U01-unit-width",
+            "U01_Rail_002-length",
+            "U01_Rail_002-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.174,
+            1.4246666666666667,
+            2.475,
+            -0.075,
+            1.5086666666666668
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_001",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_001",
+          "step_object": "U02_Post_001",
+          "glb_node": "U02_Post_001",
+          "svg_ids": {
+            "front": "front-U02_Post_001",
+            "top": "top-U02_Post_001",
+            "side": "side-U02_Post_001"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.075,
+            0,
+            3.675,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_002",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_002",
+          "step_object": "U02_Post_002",
+          "glb_node": "U02_Post_002",
+          "svg_ids": {
+            "front": "front-U02_Post_002",
+            "top": "top-U02_Post_002",
+            "side": "side-U02_Post_002"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            4.725,
+            -0.075,
+            0,
+            4.875,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_003",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_003",
+          "step_object": "U02_Post_003",
+          "glb_node": "U02_Post_003",
+          "svg_ids": {
+            "front": "front-U02_Post_003",
+            "top": "top-U02_Post_003",
+            "side": "side-U02_Post_003"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            5.925,
+            -0.075,
+            0,
+            6.075,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_004",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_004",
+          "step_object": "U02_Post_004",
+          "glb_node": "U02_Post_004",
+          "svg_ids": {
+            "front": "front-U02_Post_004",
+            "top": "top-U02_Post_004",
+            "side": "side-U02_Post_004"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            7.125,
+            -0.075,
+            0,
+            7.275,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_005",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_005",
+          "step_object": "U02_Post_005",
+          "glb_node": "U02_Post_005",
+          "svg_ids": {
+            "front": "front-U02_Post_005",
+            "top": "top-U02_Post_005",
+            "side": "side-U02_Post_005"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            8.325,
+            -0.075,
+            0,
+            8.475,
+            0.075,
+            2.2
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Rail_001",
+          "unit_id": "U02",
+          "label": "横木",
+          "freecad_object": "U02_Rail_001",
+          "step_object": "U02_Rail_001",
+          "glb_node": "U02_Rail_001",
+          "svg_ids": {
+            "front": "front-U02_Rail_001",
+            "top": "top-U02_Rail_001",
+            "side": "side-U02_Rail_001"
+          },
+          "dimension_ids": [
+            "U02-unit-width",
+            "U02_Rail_001-length",
+            "U02_Rail_001-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.174,
+            0.6913333333333334,
+            8.475,
+            -0.075,
+            0.7753333333333333
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Rail_002",
+          "unit_id": "U02",
+          "label": "横木",
+          "freecad_object": "U02_Rail_002",
+          "step_object": "U02_Rail_002",
+          "glb_node": "U02_Rail_002",
+          "svg_ids": {
+            "front": "front-U02_Rail_002",
+            "top": "top-U02_Rail_002",
+            "side": "side-U02_Rail_002"
+          },
+          "dimension_ids": [
+            "U02-unit-width",
+            "U02_Rail_002-length",
+            "U02_Rail_002-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.174,
+            1.4246666666666667,
+            8.475,
+            -0.075,
+            1.5086666666666668
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "U01-post-height",
+          "label": "U01 post height",
+          "value_m": 2.2,
+          "kind": "true",
+          "part_ids": []
+        },
+        {
+          "id": "U01-post-centres",
+          "label": "U01 post centres",
+          "value_m": 1.2,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-width",
+          "label": "U01 post section X",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-depth",
+          "label": "U01 post section Y",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-unit-width",
+          "label": "U01 unit width",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005",
+            "U01_Rail_001",
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U01_Rail_001-length",
+          "label": "U01_Rail_001 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_001"
+          ]
+        },
+        {
+          "id": "U01_Rail_001-elevation",
+          "label": "U01_Rail_001 centre elevation",
+          "value_m": 0.7333333333333334,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_001"
+          ]
+        },
+        {
+          "id": "U01_Rail_002-length",
+          "label": "U01_Rail_002 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U01_Rail_002-elevation",
+          "label": "U01_Rail_002 centre elevation",
+          "value_m": 1.4666666666666668,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U02-post-height",
+          "label": "U02 post height",
+          "value_m": 2.2,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-centres",
+          "label": "U02 post centres",
+          "value_m": 1.2,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-width",
+          "label": "U02 post section X",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-depth",
+          "label": "U02 post section Y",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-unit-width",
+          "label": "U02 unit width",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005",
+            "U02_Rail_001",
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "U02_Rail_001-length",
+          "label": "U02_Rail_001 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_001"
+          ]
+        },
+        {
+          "id": "U02_Rail_001-elevation",
+          "label": "U02_Rail_001 centre elevation",
+          "value_m": 0.7333333333333334,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_001"
+          ]
+        },
+        {
+          "id": "U02_Rail_002-length",
+          "label": "U02_Rail_002 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "U02_Rail_002-elevation",
+          "label": "U02_Rail_002 centre elevation",
+          "value_m": 1.4666666666666668,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "assembly-width",
+          "label": "Assembly width",
+          "value_m": 10.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005",
+            "U01_Rail_001",
+            "U01_Rail_002",
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005",
+            "U02_Rail_001",
+            "U02_Rail_002"
+          ]
+        }
+      ],
+      "native_svg_exports": {
+        "front": {
+          "path": "native-front.svg",
+          "sha256": "5cd9b1115f372839c44345619d0a00a52bfe05215be3f30bb018e62bdea59783"
+        },
+        "top": {
+          "path": "native-top.svg",
+          "sha256": "cc992f1586faa030caaab166b9ed4e827928eb72c412f2643538207adf86d2de"
+        },
+        "side": {
+          "path": "native-side.svg",
+          "sha256": "e275aa89a8507615704517206786a2f83063a8523a2f29af7cdeb5f79406b304"
+        }
+      },
+      "research_snapshot_sha256": "0454925a1805193a13efa123d025244857051a7032d34f31aff4454dde1115af"
+    }
+  },
+  {
+    "name": "empty-changes",
+    "revision": "B1",
+    "result": "ACCEPTED",
+    "input": {
+      "schema_version": 1,
+      "revision": "B1",
+      "basis": "D",
+      "cad_eligibility": "reference_only",
+      "assembly_id": "PAL-ASSEMBLY",
+      "source_commit": "d1c367ca4b143cacc45ba8848b026701abf03b9c",
+      "previous_revision": "B0",
+      "changes": [],
+      "files": {
+        "glb": {
+          "path": "assembly.glb",
+          "sha256": "79a078103bc9c64a68c718fa49b8b31adafbd25f34d09e164e0fb3962d824cc7"
+        },
+        "svg": {
+          "path": "drawing.svg",
+          "sha256": "eb107e00f040e5e52b1c6d19b2b080004fdbd6e3937306514ce65e37e13d5350"
+        }
+      },
+      "parts": [
+        {
+          "id": "U01_Post_001",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_001",
+          "step_object": "U01_Post_001",
+          "glb_node": "U01_Post_001",
+          "svg_ids": {
+            "front": "front-U01_Post_001",
+            "top": "top-U01_Post_001",
+            "side": "side-U01_Post_001"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.075,
+            0,
+            -2.325,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_002",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_002",
+          "step_object": "U01_Post_002",
+          "glb_node": "U01_Post_002",
+          "svg_ids": {
+            "front": "front-U01_Post_002",
+            "top": "top-U01_Post_002",
+            "side": "side-U01_Post_002"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -1.275,
+            -0.075,
+            0,
+            -1.125,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_003",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_003",
+          "step_object": "U01_Post_003",
+          "glb_node": "U01_Post_003",
+          "svg_ids": {
+            "front": "front-U01_Post_003",
+            "top": "top-U01_Post_003",
+            "side": "side-U01_Post_003"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -0.075,
+            -0.075,
+            0,
+            0.075,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_004",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_004",
+          "step_object": "U01_Post_004",
+          "glb_node": "U01_Post_004",
+          "svg_ids": {
+            "front": "front-U01_Post_004",
+            "top": "top-U01_Post_004",
+            "side": "side-U01_Post_004"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            1.125,
+            -0.075,
+            0,
+            1.275,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Post_005",
+          "unit_id": "U01",
+          "label": "柱",
+          "freecad_object": "U01_Post_005",
+          "step_object": "U01_Post_005",
+          "glb_node": "U01_Post_005",
+          "svg_ids": {
+            "front": "front-U01_Post_005",
+            "top": "top-U01_Post_005",
+            "side": "side-U01_Post_005"
+          },
+          "dimension_ids": [
+            "U01-post-height",
+            "U01-post-centres",
+            "U01-post-width",
+            "U01-post-depth",
+            "U01-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            2.325,
+            -0.075,
+            0,
+            2.475,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Rail_001",
+          "unit_id": "U01",
+          "label": "横木",
+          "freecad_object": "U01_Rail_001",
+          "step_object": "U01_Rail_001",
+          "glb_node": "U01_Rail_001",
+          "svg_ids": {
+            "front": "front-U01_Rail_001",
+            "top": "top-U01_Rail_001",
+            "side": "side-U01_Rail_001"
+          },
+          "dimension_ids": [
+            "U01-unit-width",
+            "U01_Rail_001-length",
+            "U01_Rail_001-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.174,
+            0.758,
+            2.475,
+            -0.075,
+            0.842
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U01_Rail_002",
+          "unit_id": "U01",
+          "label": "横木",
+          "freecad_object": "U01_Rail_002",
+          "step_object": "U01_Rail_002",
+          "glb_node": "U01_Rail_002",
+          "svg_ids": {
+            "front": "front-U01_Rail_002",
+            "top": "top-U01_Rail_002",
+            "side": "side-U01_Rail_002"
+          },
+          "dimension_ids": [
+            "U01-unit-width",
+            "U01_Rail_002-length",
+            "U01_Rail_002-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            -2.475,
+            -0.174,
+            1.558,
+            2.475,
+            -0.075,
+            1.642
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_001",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_001",
+          "step_object": "U02_Post_001",
+          "glb_node": "U02_Post_001",
+          "svg_ids": {
+            "front": "front-U02_Post_001",
+            "top": "top-U02_Post_001",
+            "side": "side-U02_Post_001"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.075,
+            0,
+            3.675,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_002",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_002",
+          "step_object": "U02_Post_002",
+          "glb_node": "U02_Post_002",
+          "svg_ids": {
+            "front": "front-U02_Post_002",
+            "top": "top-U02_Post_002",
+            "side": "side-U02_Post_002"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            4.725,
+            -0.075,
+            0,
+            4.875,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_003",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_003",
+          "step_object": "U02_Post_003",
+          "glb_node": "U02_Post_003",
+          "svg_ids": {
+            "front": "front-U02_Post_003",
+            "top": "top-U02_Post_003",
+            "side": "side-U02_Post_003"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            5.925,
+            -0.075,
+            0,
+            6.075,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_004",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_004",
+          "step_object": "U02_Post_004",
+          "glb_node": "U02_Post_004",
+          "svg_ids": {
+            "front": "front-U02_Post_004",
+            "top": "top-U02_Post_004",
+            "side": "side-U02_Post_004"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            7.125,
+            -0.075,
+            0,
+            7.275,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Post_005",
+          "unit_id": "U02",
+          "label": "柱",
+          "freecad_object": "U02_Post_005",
+          "step_object": "U02_Post_005",
+          "glb_node": "U02_Post_005",
+          "svg_ids": {
+            "front": "front-U02_Post_005",
+            "top": "top-U02_Post_005",
+            "side": "side-U02_Post_005"
+          },
+          "dimension_ids": [
+            "U02-post-height",
+            "U02-post-centres",
+            "U02-post-width",
+            "U02-post-depth",
+            "U02-unit-width",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            8.325,
+            -0.075,
+            0,
+            8.475,
+            0.075,
+            2.4
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Rail_001",
+          "unit_id": "U02",
+          "label": "横木",
+          "freecad_object": "U02_Rail_001",
+          "step_object": "U02_Rail_001",
+          "glb_node": "U02_Rail_001",
+          "svg_ids": {
+            "front": "front-U02_Rail_001",
+            "top": "top-U02_Rail_001",
+            "side": "side-U02_Rail_001"
+          },
+          "dimension_ids": [
+            "U02-unit-width",
+            "U02_Rail_001-length",
+            "U02_Rail_001-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.174,
+            0.758,
+            8.475,
+            -0.075,
+            0.842
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        },
+        {
+          "id": "U02_Rail_002",
+          "unit_id": "U02",
+          "label": "横木",
+          "freecad_object": "U02_Rail_002",
+          "step_object": "U02_Rail_002",
+          "glb_node": "U02_Rail_002",
+          "svg_ids": {
+            "front": "front-U02_Rail_002",
+            "top": "top-U02_Rail_002",
+            "side": "side-U02_Rail_002"
+          },
+          "dimension_ids": [
+            "U02-unit-width",
+            "U02_Rail_002-length",
+            "U02_Rail_002-elevation",
+            "assembly-width"
+          ],
+          "bounds_m": [
+            3.525,
+            -0.174,
+            1.558,
+            8.475,
+            -0.075,
+            1.642
+          ],
+          "research_refs": [
+            {
+              "id": "CMP-0001",
+              "path": "research/comparisons/CMP-0001.json"
+            },
+            {
+              "id": "DEC-0001",
+              "path": "design/decisions/DEC-0001-r1.json"
+            },
+            {
+              "id": "DEC-0002",
+              "path": "design/decisions/DEC-0002-r1.json"
+            },
+            {
+              "id": "HYP-0001",
+              "path": "research/hypotheses/HYP-0001.json"
+            },
+            {
+              "id": "HYP-0002",
+              "path": "research/hypotheses/HYP-0002.json"
+            },
+            {
+              "id": "OBS-0001",
+              "path": "observations/records/OBS-0001.json"
+            },
+            {
+              "id": "OBS-0002",
+              "path": "observations/records/OBS-0002.json"
+            },
+            {
+              "id": "OBS-0003",
+              "path": "observations/records/OBS-0003.json"
+            },
+            {
+              "id": "OBS-0004",
+              "path": "observations/records/OBS-0004.json"
+            },
+            {
+              "id": "OBS-0005",
+              "path": "observations/records/OBS-0005.json"
+            },
+            {
+              "id": "OBS-0006",
+              "path": "observations/records/OBS-0006.json"
+            },
+            {
+              "id": "SRC-0001",
+              "path": "sources/records/SRC-0001.json"
+            },
+            {
+              "id": "SRC-0002",
+              "path": "sources/records/SRC-0002.json"
+            },
+            {
+              "id": "SRC-0003",
+              "path": "sources/records/SRC-0003.json"
+            },
+            {
+              "id": "SRC-0004",
+              "path": "sources/records/SRC-0004.json"
+            },
+            {
+              "id": "SRC-0005",
+              "path": "sources/records/SRC-0005.json"
+            },
+            {
+              "id": "SRC-0006",
+              "path": "sources/records/SRC-0006.json"
+            },
+            {
+              "id": "SRC-0007",
+              "path": "sources/records/SRC-0007.json"
+            },
+            {
+              "id": "SRC-0008",
+              "path": "sources/records/SRC-0008.json"
+            },
+            {
+              "id": "SRC-0009",
+              "path": "sources/records/SRC-0009.json"
+            },
+            {
+              "id": "SRC-0010",
+              "path": "sources/records/SRC-0010.json"
+            },
+            {
+              "id": "VER-0001",
+              "path": "observations/verification/records/VER-0001-r1.json"
+            },
+            {
+              "id": "VER-0002",
+              "path": "observations/verification/records/VER-0002-r1.json"
+            },
+            {
+              "id": "VER-0003",
+              "path": "observations/verification/records/VER-0003-r1.json"
+            },
+            {
+              "id": "VER-0004",
+              "path": "observations/verification/records/VER-0004-r1.json"
+            },
+            {
+              "id": "VER-0005",
+              "path": "observations/verification/records/VER-0005-r1.json"
+            },
+            {
+              "id": "VER-0006",
+              "path": "observations/verification/records/VER-0006-r1.json"
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "U01-post-height",
+          "label": "U01 post height",
+          "value_m": 2.4,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-centres",
+          "label": "U01 post centres",
+          "value_m": 1.2,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-width",
+          "label": "U01 post section X",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-post-depth",
+          "label": "U01 post section Y",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005"
+          ]
+        },
+        {
+          "id": "U01-unit-width",
+          "label": "U01 unit width",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005",
+            "U01_Rail_001",
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U01_Rail_001-length",
+          "label": "U01_Rail_001 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_001"
+          ]
+        },
+        {
+          "id": "U01_Rail_001-elevation",
+          "label": "U01_Rail_001 centre elevation",
+          "value_m": 0.8,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_001"
+          ]
+        },
+        {
+          "id": "U01_Rail_002-length",
+          "label": "U01_Rail_002 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U01_Rail_002-elevation",
+          "label": "U01_Rail_002 centre elevation",
+          "value_m": 1.6,
+          "kind": "true",
+          "part_ids": [
+            "U01_Rail_002"
+          ]
+        },
+        {
+          "id": "U02-post-height",
+          "label": "U02 post height",
+          "value_m": 2.4,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-centres",
+          "label": "U02 post centres",
+          "value_m": 1.2,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-width",
+          "label": "U02 post section X",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-post-depth",
+          "label": "U02 post section Y",
+          "value_m": 0.15,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005"
+          ]
+        },
+        {
+          "id": "U02-unit-width",
+          "label": "U02 unit width",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005",
+            "U02_Rail_001",
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "U02_Rail_001-length",
+          "label": "U02_Rail_001 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_001"
+          ]
+        },
+        {
+          "id": "U02_Rail_001-elevation",
+          "label": "U02_Rail_001 centre elevation",
+          "value_m": 0.8,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_001"
+          ]
+        },
+        {
+          "id": "U02_Rail_002-length",
+          "label": "U02_Rail_002 length",
+          "value_m": 4.95,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "U02_Rail_002-elevation",
+          "label": "U02_Rail_002 centre elevation",
+          "value_m": 1.6,
+          "kind": "true",
+          "part_ids": [
+            "U02_Rail_002"
+          ]
+        },
+        {
+          "id": "assembly-width",
+          "label": "Assembly width",
+          "value_m": 10.95,
+          "kind": "true",
+          "part_ids": [
+            "U01_Post_001",
+            "U01_Post_002",
+            "U01_Post_003",
+            "U01_Post_004",
+            "U01_Post_005",
+            "U01_Rail_001",
+            "U01_Rail_002",
+            "U02_Post_001",
+            "U02_Post_002",
+            "U02_Post_003",
+            "U02_Post_004",
+            "U02_Post_005",
+            "U02_Rail_001",
+            "U02_Rail_002"
+          ]
+        }
+      ],
+      "native_svg_exports": {
+        "front": {
+          "path": "native-front.svg",
+          "sha256": "2b8b738bd7f0c3fd46e04cd9a64380ff7ca26858efcc201ef92c7ece4355e56e"
+        },
+        "top": {
+          "path": "native-top.svg",
+          "sha256": "7d27ce95b4292fe28529913a3307a362dfd2785eebac349c08b9204fea826a62"
+        },
+        "side": {
+          "path": "native-side.svg",
+          "sha256": "6dd32d7a476f2d2b04eb7ab60bad84c0d8fe14c24d1f88d417758d8584676c25"
+        }
+      },
+      "research_snapshot_sha256": "0454925a1805193a13efa123d025244857051a7032d34f31aff4454dde1115af"
+    }
+  }
+]

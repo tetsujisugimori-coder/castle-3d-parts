@@ -1,0 +1,505 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="340mm" viewBox="0 0 420 340" data-revision="B2"><g data-view="front" id="view-front"><rect x="0" y="0" width="420" height="340" fill="white"/><text x="10" y="14" font-family="sans-serif" font-size="6">PAL-ASSEMBLY / B2 / FRONT / mm / D prototype</text><g id="front-U01_Post_001" data-part-id="U01_Post_001" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 -2475 L -2400 -2475 " />
+<path d=" M 0 -2325 L -2400 -2325 " />
+<path d=" M 0 -2475 L 0 -2325 " />
+<path d=" M -2400 -2475 L -2400 -2325 " />
+</g>
+</g><g id="front-U01_Post_002" data-part-id="U01_Post_002" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 -1275 L -2400 -1275 " />
+<path d=" M 0 -1125 L -2400 -1125 " />
+<path d=" M 0 -1275 L 0 -1125 " />
+<path d=" M -2400 -1275 L -2400 -1125 " />
+</g>
+</g><g id="front-U01_Post_003" data-part-id="U01_Post_003" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 -75 L -2400 -75 " />
+<path d=" M 0 75 L -2400 75 " />
+<path d=" M 0 -75 L 0 75 " />
+<path d=" M -2400 -75 L -2400 75 " />
+</g>
+</g><g id="front-U01_Post_004" data-part-id="U01_Post_004" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 1125 L -2400 1125 " />
+<path d=" M 0 1275 L -2400 1275 " />
+<path d=" M 0 1125 L 0 1275 " />
+<path d=" M -2400 1125 L -2400 1275 " />
+</g>
+</g><g id="front-U01_Post_005" data-part-id="U01_Post_005" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 2325 L -2400 2325 " />
+<path d=" M 0 2475 L -2400 2475 " />
+<path d=" M 0 2325 L 0 2475 " />
+<path d=" M -2400 2325 L -2400 2475 " />
+</g>
+</g><g id="front-U01_Rail_001" data-part-id="U01_Rail_001" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -758 -2475 L -842 -2475 " />
+<path d=" M -758 2475 L -842 2475 " />
+<path d=" M -758 -2475 L -758 2475 " />
+<path d=" M -842 -2475 L -842 2475 " />
+</g>
+</g><g id="front-U01_Rail_002" data-part-id="U01_Rail_002" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -1558 -2475 L -1642 -2475 " />
+<path d=" M -1558 2475 L -1642 2475 " />
+<path d=" M -1558 -2475 L -1558 2475 " />
+<path d=" M -1642 -2475 L -1642 2475 " />
+</g>
+</g><g id="front-U02_Post_001" data-part-id="U02_Post_001" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 3325 L -2400 3325 " />
+<path d=" M 0 3475 L -2400 3475 " />
+<path d=" M 0 3325 L 0 3475 " />
+<path d=" M -2400 3325 L -2400 3475 " />
+</g>
+</g><g id="front-U02_Post_002" data-part-id="U02_Post_002" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 4625 L -2400 4625 " />
+<path d=" M 0 4775 L -2400 4775 " />
+<path d=" M 0 4625 L 0 4775 " />
+<path d=" M -2400 4625 L -2400 4775 " />
+</g>
+</g><g id="front-U02_Post_003" data-part-id="U02_Post_003" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 5925 L -2400 5925 " />
+<path d=" M 0 6075 L -2400 6075 " />
+<path d=" M 0 5925 L 0 6075 " />
+<path d=" M -2400 5925 L -2400 6075 " />
+</g>
+</g><g id="front-U02_Post_004" data-part-id="U02_Post_004" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 7225 L -2400 7225 " />
+<path d=" M 0 7375 L -2400 7375 " />
+<path d=" M 0 7225 L 0 7375 " />
+<path d=" M -2400 7225 L -2400 7375 " />
+</g>
+</g><g id="front-U02_Post_005" data-part-id="U02_Post_005" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 8525 L -2400 8525 " />
+<path d=" M 0 8675 L -2400 8675 " />
+<path d=" M 0 8525 L 0 8675 " />
+<path d=" M -2400 8525 L -2400 8675 " />
+</g>
+</g><g id="front-U02_Rail_001" data-part-id="U02_Rail_001" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -758 3325 L -842 3325 " />
+<path d=" M -758 8675 L -842 8675 " />
+<path d=" M -758 3325 L -758 8675 " />
+<path d=" M -842 3325 L -842 8675 " />
+</g>
+</g><g id="front-U02_Rail_002" data-part-id="U02_Rail_002" transform="matrix(0 0.025 -0.025 0 96.875 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -1558 3325 L -1642 3325 " />
+<path d=" M -1558 8675 L -1642 8675 " />
+<path d=" M -1558 3325 L -1558 8675 " />
+<path d=" M -1642 3325 L -1642 8675 " />
+</g>
+</g><g id="dimension-front-U01-post-height" data-dimension-id="U01-post-height" data-value-m="2.4" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="145">U01 post height: 2400.0 mm (true 3D)</text><path d="M12 150 h60.0 M12 148 v4 M72.0 148 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-U01-post-centres" data-dimension-id="U01-post-centres" data-value-m="1.2" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="162">U01 post centres: 1200.0 mm (true 3D)</text><path d="M12 167 h30.0 M12 165 v4 M42.0 165 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-U01_Rail_001-length" data-dimension-id="U01_Rail_001-length" data-value-m="4.95" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="179">U01_Rail_001 length: 4950.0 mm (true 3D)</text><path d="M12 184 h123.75 M12 182 v4 M135.75 182 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-U01_Rail_002-length" data-dimension-id="U01_Rail_002-length" data-value-m="4.95" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="196">U01_Rail_002 length: 4950.0 mm (true 3D)</text><path d="M12 201 h123.75 M12 199 v4 M135.75 199 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-U02-post-height" data-dimension-id="U02-post-height" data-value-m="2.4" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="213">U02 post height: 2400.0 mm (true 3D)</text><path d="M12 218 h60.0 M12 216 v4 M72.0 216 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-U02-post-centres" data-dimension-id="U02-post-centres" data-value-m="1.3" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="230">U02 post centres: 1300.0 mm (true 3D)</text><path d="M12 235 h32.5 M12 233 v4 M44.5 233 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-U02_Rail_001-length" data-dimension-id="U02_Rail_001-length" data-value-m="5.35" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="247">U02_Rail_001 length: 5350.0 mm (true 3D)</text><path d="M12 252 h133.75 M12 250 v4 M145.75 250 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-U02_Rail_002-length" data-dimension-id="U02_Rail_002-length" data-value-m="5.35" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="264">U02_Rail_002 length: 5350.0 mm (true 3D)</text><path d="M12 269 h133.75 M12 267 v4 M145.75 267 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><text x="10" y="328" font-family="sans-serif" font-size="3.5">Projection 1:40. Native linked measurements with scale witnesses below. Geometry is prototype D.</text></g><g data-view="top" id="view-top"><rect x="0" y="0" width="420" height="340" fill="white"/><text x="10" y="14" font-family="sans-serif" font-size="6">PAL-ASSEMBLY / B2 / TOP / mm / D prototype</text><g id="top-U01_Post_001" data-part-id="U01_Post_001" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -2475 -75 L -2475 75 " />
+<path d=" M -2325 -75 L -2325 75 " />
+<path d=" M -2475 -75 L -2325 -75 " />
+<path d=" M -2475 75 L -2325 75 " />
+</g>
+</g><g id="top-U01_Post_002" data-part-id="U01_Post_002" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -1275 -75 L -1275 75 " />
+<path d=" M -1125 -75 L -1125 75 " />
+<path d=" M -1275 -75 L -1125 -75 " />
+<path d=" M -1275 75 L -1125 75 " />
+</g>
+</g><g id="top-U01_Post_003" data-part-id="U01_Post_003" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -75 -75 L -75 75 " />
+<path d=" M 75 -75 L 75 75 " />
+<path d=" M -75 -75 L 75 -75 " />
+<path d=" M -75 75 L 75 75 " />
+</g>
+</g><g id="top-U01_Post_004" data-part-id="U01_Post_004" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 1125 -75 L 1125 75 " />
+<path d=" M 1275 -75 L 1275 75 " />
+<path d=" M 1125 -75 L 1275 -75 " />
+<path d=" M 1125 75 L 1275 75 " />
+</g>
+</g><g id="top-U01_Post_005" data-part-id="U01_Post_005" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 2325 -75 L 2325 75 " />
+<path d=" M 2475 -75 L 2475 75 " />
+<path d=" M 2325 -75 L 2475 -75 " />
+<path d=" M 2325 75 L 2475 75 " />
+</g>
+</g><g id="top-U01_Rail_001" data-part-id="U01_Rail_001" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -2475 -174 L -2475 -75 " />
+<path d=" M 2475 -174 L 2475 -75 " />
+<path d=" M -2475 -174 L 2475 -174 " />
+<path d=" M -2475 -75 L 2475 -75 " />
+</g>
+</g><g id="top-U01_Rail_002" data-part-id="U01_Rail_002" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -2475 -174 L -2475 -75 " />
+<path d=" M 2475 -174 L 2475 -75 " />
+<path d=" M -2475 -174 L 2475 -174 " />
+<path d=" M -2475 -75 L 2475 -75 " />
+</g>
+</g><g id="top-U02_Post_001" data-part-id="U02_Post_001" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 3325 -75 L 3325 75 " />
+<path d=" M 3475 -75 L 3475 75 " />
+<path d=" M 3325 -75 L 3475 -75 " />
+<path d=" M 3325 75 L 3475 75 " />
+</g>
+</g><g id="top-U02_Post_002" data-part-id="U02_Post_002" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 4625 -75 L 4625 75 " />
+<path d=" M 4775 -75 L 4775 75 " />
+<path d=" M 4625 -75 L 4775 -75 " />
+<path d=" M 4625 75 L 4775 75 " />
+</g>
+</g><g id="top-U02_Post_003" data-part-id="U02_Post_003" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 5925 -75 L 5925 75 " />
+<path d=" M 6075 -75 L 6075 75 " />
+<path d=" M 5925 -75 L 6075 -75 " />
+<path d=" M 5925 75 L 6075 75 " />
+</g>
+</g><g id="top-U02_Post_004" data-part-id="U02_Post_004" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 7225 -75 L 7225 75 " />
+<path d=" M 7375 -75 L 7375 75 " />
+<path d=" M 7225 -75 L 7375 -75 " />
+<path d=" M 7225 75 L 7375 75 " />
+</g>
+</g><g id="top-U02_Post_005" data-part-id="U02_Post_005" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 8525 -75 L 8525 75 " />
+<path d=" M 8675 -75 L 8675 75 " />
+<path d=" M 8525 -75 L 8675 -75 " />
+<path d=" M 8525 75 L 8675 75 " />
+</g>
+</g><g id="top-U02_Rail_001" data-part-id="U02_Rail_001" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 3325 -174 L 3325 -75 " />
+<path d=" M 8675 -174 L 8675 -75 " />
+<path d=" M 3325 -174 L 8675 -174 " />
+<path d=" M 3325 -75 L 8675 -75 " />
+</g>
+</g><g id="top-U02_Rail_002" data-part-id="U02_Rail_002" transform="matrix(0.025 0 0 0.025 96.875 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 3325 -174 L 3325 -75 " />
+<path d=" M 8675 -174 L 8675 -75 " />
+<path d=" M 3325 -174 L 8675 -174 " />
+<path d=" M 3325 -75 L 8675 -75 " />
+</g>
+</g><g id="dimension-top-U01-post-width" data-dimension-id="U01-post-width" data-value-m="0.15" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="145">U01 post section X: 150.0 mm (true 3D)</text><path d="M12 150 h3.75 M12 148 v4 M15.75 148 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-top-U01-unit-width" data-dimension-id="U01-unit-width" data-value-m="4.95" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="162">U01 unit width: 4950.0 mm (true 3D)</text><path d="M12 167 h123.75 M12 165 v4 M135.75 165 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-top-U02-post-width" data-dimension-id="U02-post-width" data-value-m="0.15" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="179">U02 post section X: 150.0 mm (true 3D)</text><path d="M12 184 h3.75 M12 182 v4 M15.75 182 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-top-U02-unit-width" data-dimension-id="U02-unit-width" data-value-m="5.35" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="196">U02 unit width: 5350.0 mm (true 3D)</text><path d="M12 201 h133.75 M12 199 v4 M145.75 199 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-top-assembly-width" data-dimension-id="assembly-width" data-value-m="11.15" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="213">Assembly width: 11150.0 mm (true 3D)</text><path d="M12 218 h278.75 M12 216 v4 M290.75 216 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><text x="10" y="328" font-family="sans-serif" font-size="3.5">Projection 1:40. Native linked measurements with scale witnesses below. Geometry is prototype D.</text></g><g data-view="side" id="view-side"><rect x="0" y="0" width="420" height="340" fill="white"/><text x="10" y="14" font-family="sans-serif" font-size="6">PAL-ASSEMBLY / B2 / SIDE / mm / D prototype</text><g id="side-U01_Post_001" data-part-id="U01_Post_001" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U01_Post_002" data-part-id="U01_Post_002" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U01_Post_003" data-part-id="U01_Post_003" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U01_Post_004" data-part-id="U01_Post_004" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U01_Post_005" data-part-id="U01_Post_005" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U01_Rail_001" data-part-id="U01_Rail_001" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 758 174 L 842 174 " />
+<path d=" M 842 174 L 842 75 " />
+<path d=" M 758 75 L 842 75 " />
+<path d=" M 758 174 L 758 75 " />
+</g>
+</g><g id="side-U01_Rail_002" data-part-id="U01_Rail_002" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 1558 174 L 1642 174 " />
+<path d=" M 1642 174 L 1642 75 " />
+<path d=" M 1558 75 L 1642 75 " />
+<path d=" M 1558 174 L 1558 75 " />
+</g>
+</g><g id="side-U02_Post_001" data-part-id="U02_Post_001" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U02_Post_002" data-part-id="U02_Post_002" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U02_Post_003" data-part-id="U02_Post_003" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U02_Post_004" data-part-id="U02_Post_004" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U02_Post_005" data-part-id="U02_Post_005" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2400 75 " />
+<path d=" M 2400 75 L 2400 -75 " />
+<path d=" M 0 -75 L 2400 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-U02_Rail_001" data-part-id="U02_Rail_001" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 758 174 L 842 174 " />
+<path d=" M 842 174 L 842 75 " />
+<path d=" M 758 75 L 842 75 " />
+<path d=" M 758 174 L 758 75 " />
+</g>
+</g><g id="side-U02_Rail_002" data-part-id="U02_Rail_002" transform="matrix(0 -0.025 0.025 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 1558 174 L 1642 174 " />
+<path d=" M 1642 174 L 1642 75 " />
+<path d=" M 1558 75 L 1642 75 " />
+<path d=" M 1558 174 L 1558 75 " />
+</g>
+</g><g id="dimension-side-U01-post-depth" data-dimension-id="U01-post-depth" data-value-m="0.15" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="145">U01 post section Y: 150.0 mm (true 3D)</text><path d="M12 150 h3.75 M12 148 v4 M15.75 148 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-side-U01_Rail_001-elevation" data-dimension-id="U01_Rail_001-elevation" data-value-m="0.8" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="162">U01_Rail_001 centre elevation: 800.0 mm (true 3D)</text><path d="M12 167 h20.0 M12 165 v4 M32.0 165 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-side-U01_Rail_002-elevation" data-dimension-id="U01_Rail_002-elevation" data-value-m="1.6" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="179">U01_Rail_002 centre elevation: 1600.0 mm (true 3D)</text><path d="M12 184 h40.0 M12 182 v4 M52.0 182 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-side-U02-post-depth" data-dimension-id="U02-post-depth" data-value-m="0.15" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="196">U02 post section Y: 150.0 mm (true 3D)</text><path d="M12 201 h3.75 M12 199 v4 M15.75 199 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-side-U02_Rail_001-elevation" data-dimension-id="U02_Rail_001-elevation" data-value-m="0.8" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="213">U02_Rail_001 centre elevation: 800.0 mm (true 3D)</text><path d="M12 218 h20.0 M12 216 v4 M32.0 216 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-side-U02_Rail_002-elevation" data-dimension-id="U02_Rail_002-elevation" data-value-m="1.6" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="230">U02_Rail_002 centre elevation: 1600.0 mm (true 3D)</text><path d="M12 235 h40.0 M12 233 v4 M52.0 233 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><text x="10" y="328" font-family="sans-serif" font-size="3.5">Projection 1:40. Native linked measurements with scale witnesses below. Geometry is prototype D.</text></g></svg>

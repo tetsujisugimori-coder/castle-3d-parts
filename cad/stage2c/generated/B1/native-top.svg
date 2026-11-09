@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="297mm" viewBox="0 0 4200 2970" xmlns:cc="http://creativecommons.org/ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.2" xmlns:freecad="https://www.freecad.org/wiki/index.php?title=Svg_Namespace" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" width="420mm" baseProfile="tiny" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <title>FreeCAD SVG Export</title>
+ <desc>Drawing page: TopPage exported from FreeCAD document: assembly</desc>
+ <defs/>
+ <g id="TopPage" inkscape:label="TechDraw" inkscape:groupmode="layer">
+  <g id="page-template1.svg" transform="scale(10.000000, 10.000000)" style="stroke: none;">
+   <rect height="287" y="5" stroke="black" x="5" fill="white" width="410" stroke-width=".4"/>
+   <g fill="black" font-family="sans-serif">
+    <text y="18" x="12" font-size="6">PAL-ASSEMBLY / Stage 2-C / B1 / D prototype / reference_only</text>
+    <text y="278" x="12" font-size="4">Units mm / Scale 1:40 / True 3D reference dimensions / Native TechDraw</text>
+    <text y="286" x="12" font-size="3">Two unconnected prototype units. No historical or structural certification.</text>
+   </g>
+  </g>
+  <g id="DrawingContent" stroke="black" fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="1" stroke-linejoin="bevel">
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-1368.75,31.125 L-131.25,31.125 L-131.25,6.375 L-131.25,-31.125 L-168.75,-31.125 L-168.75,6.375 L-431.25,6.375 L-431.25,-31.125 L-468.75,-31.125 L-468.75,6.375 L-731.25,6.375 L-731.25,-31.125 L-768.75,-31.125 L-768.75,6.375 L-1031.25,6.375 L-1031.25,-31.125 L-1068.75,-31.125 L-1068.75,6.375 L-1331.25,6.375 L-1331.25,-31.125 L-1368.75,-31.125 L-1368.75,6.375 L-1368.75,31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M131.25,31.125 L1368.75,31.125 L1368.75,6.375 L1368.75,-31.125 L1331.25,-31.125 L1331.25,6.375 L1068.75,6.375 L1068.75,-31.125 L1031.25,-31.125 L1031.25,6.375 L768.75,6.375 L768.75,-31.125 L731.25,-31.125 L731.25,6.375 L468.75,6.375 L468.75,-31.125 L431.25,-31.125 L431.25,6.375 L168.75,6.375 L168.75,-31.125 L131.25,-31.125 L131.25,6.375 L131.25,31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-1368.75,31.125 L-131.25,31.125 L-131.25,6.375 L-168.75,6.375 L-431.25,6.375 L-468.75,6.375 L-731.25,6.375 L-768.75,6.375 L-1031.25,6.375 L-1068.75,6.375 L-1331.25,6.375 L-1368.75,6.375 L-1368.75,31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M131.25,31.125 L1368.75,31.125 L1368.75,6.375 L1331.25,6.375 L1068.75,6.375 L1031.25,6.375 L768.75,6.375 L731.25,6.375 L468.75,6.375 L431.25,6.375 L168.75,6.375 L131.25,6.375 L131.25,31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-168.75,6.375 L-131.25,6.375 L-131.25,-31.125 L-168.75,-31.125 L-168.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M1331.25,6.375 L1368.75,6.375 L1368.75,-31.125 L1331.25,-31.125 L1331.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M1031.25,6.375 L1068.75,6.375 L1068.75,-31.125 L1031.25,-31.125 L1031.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M731.25,6.375 L768.75,6.375 L768.75,-31.125 L731.25,-31.125 L731.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M431.25,6.375 L468.75,6.375 L468.75,-31.125 L431.25,-31.125 L431.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M131.25,6.375 L168.75,6.375 L168.75,-31.125 L131.25,-31.125 L131.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-468.75,6.375 L-431.25,6.375 L-431.25,-31.125 L-468.75,-31.125 L-468.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-768.75,6.375 L-731.25,6.375 L-731.25,-31.125 L-768.75,-31.125 L-768.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-1068.75,6.375 L-1031.25,6.375 L-1031.25,-31.125 L-1068.75,-31.125 L-1068.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" fill-opacity="1" stroke="none" font-weight="400" fill="#ffffff" font-family="OpenAI Sans" font-size="42.3333">
+    <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-1368.75,6.375 L-1331.25,6.375 L-1331.25,-31.125 L-1368.75,-31.125 L-1368.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1368.75,6.375 L-1368.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1331.25,6.375 L-1331.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1368.75,6.375 L-1331.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1368.75,-31.125 L-1331.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1068.75,6.375 L-1068.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1031.25,6.375 L-1031.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1068.75,6.375 L-1031.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1068.75,-31.125 L-1031.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-768.75,6.375 L-768.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-731.25,6.375 L-731.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-768.75,6.375 L-731.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-768.75,-31.125 L-731.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-468.75,6.375 L-468.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-431.25,6.375 L-431.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-468.75,6.375 L-431.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-468.75,-31.125 L-431.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-168.75,6.375 L-168.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-131.25,6.375 L-131.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-168.75,6.375 L-131.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-168.75,-31.125 L-131.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1368.75,31.125 L-1368.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-131.25,31.125 L-131.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1368.75,31.125 L-131.25,31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1331.25,6.375 L-1068.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1031.25,6.375 L-768.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-731.25,6.375 L-468.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-431.25,6.375 L-168.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M131.25,6.375 L131.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M168.75,6.375 L168.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M131.25,6.375 L168.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M131.25,-31.125 L168.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M431.25,6.375 L431.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M468.75,6.375 L468.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M431.25,6.375 L468.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M431.25,-31.125 L468.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M731.25,6.375 L731.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M768.75,6.375 L768.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M731.25,6.375 L768.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M731.25,-31.125 L768.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1031.25,6.375 L1031.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1068.75,6.375 L1068.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1031.25,6.375 L1068.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1031.25,-31.125 L1068.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1331.25,6.375 L1331.25,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1368.75,6.375 L1368.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1331.25,6.375 L1368.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1331.25,-31.125 L1368.75,-31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M131.25,31.125 L131.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1368.75,31.125 L1368.75,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M131.25,31.125 L1368.75,31.125"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M168.75,6.375 L431.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M468.75,6.375 L731.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M768.75,6.375 L1031.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="7" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M1068.75,6.375 L1331.25,6.375"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,579.844,1176)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="square" stroke-width="1" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <text font-style="normal" fill-opacity="1" stroke="none" y="55" font-weight="400" fill="#000000" xml:space="preserve" x="4" font-family="osifont" font-size="67">150.0</text>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1520.58,287 L-1261.25,287 M-1331.25,6.375 L-1331.25,315 M-1368.75,6.375 L-1368.75,315"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,768.75,1257)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L35,5.83333 L35,-5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,731.25,1257)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L-35,-5.83333 L-35,5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,557.258,1326)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="square" stroke-width="1" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <text font-style="normal" fill-opacity="1" stroke="none" y="55" font-weight="400" fill="#000000" xml:space="preserve" x="4" font-family="osifont" font-size="67">4950.0</text>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1542.62,437 L-61.25,437 M-131.25,6.375 L-131.25,465 M-1368.75,6.375 L-1368.75,465"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,1968.75,1407)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L35,5.83333 L35,-5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,731.25,1407)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L-35,-5.83333 L-35,5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,3529.84,1476)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="square" stroke-width="1" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <text font-style="normal" fill-opacity="1" stroke="none" y="55" font-weight="400" fill="#000000" xml:space="preserve" x="4" font-family="osifont" font-size="67">150.0</text>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M61.25,587 L1570.58,587 M168.75,6.375 L168.75,615 M131.25,6.375 L131.25,615"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2268.75,1557)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L35,5.83333 L35,-5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2231.25,1557)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L-35,-5.83333 L-35,5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,3507.26,1626)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="square" stroke-width="1" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <text font-style="normal" fill-opacity="1" stroke="none" y="55" font-weight="400" fill="#000000" xml:space="preserve" x="4" font-family="osifont" font-size="67">4950.0</text>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M61.25,737 L1592.62,737 M1368.75,6.375 L1368.75,765 M131.25,6.375 L131.25,765"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,3468.75,1707)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L35,5.83333 L35,-5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2231.25,1707)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L-35,-5.83333 L-35,5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,3497.34,1776)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="square" stroke-width="1" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <text font-style="normal" fill-opacity="1" stroke="none" y="55" font-weight="400" fill="#000000" xml:space="preserve" x="4" font-family="osifont" font-size="67">10950.0</text>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,2100,970)" stroke-opacity="1" stroke="#000000" font-weight="400" fill="none" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M-1438.75,887 L1603.08,887 M1368.75,-12.375 L1368.75,915 M-1368.75,-12.375 L-1368.75,915"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,3468.75,1857)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L35,5.83333 L35,-5.83333 L0,0"/>
+   </g>
+   <g font-style="normal" transform="matrix(1,0,0,1,731.25,1857)" stroke-opacity="1" fill-opacity="1" stroke="#000000" font-weight="400" fill="#000000" stroke-linecap="round" stroke-width="3.5" font-family="OpenAI Sans" stroke-linejoin="bevel" font-size="42.3333">
+    <path vector-effect="none" fill-rule="evenodd" d="M0,0 L-35,-5.83333 L-35,5.83333 L0,0"/>
+   </g>
+  </g>
+ </g>
+</svg>

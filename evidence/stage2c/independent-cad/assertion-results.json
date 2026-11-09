@@ -1,0 +1,44 @@
+{
+  "native_missing_view_source": {
+    "mutation": "front view source count reduced from14 to1",
+    "before": "ACCEPTED_INCORRECTLY",
+    "after": "REJECTED",
+    "after_code": "VIEW_SOURCE front"
+  },
+  "web_counterexamples": [
+    {
+      "case": "wrong-part-dimension",
+      "before": "ACCEPTED_INCORRECTLY",
+      "after": "REJECTED"
+    },
+    {
+      "case": "empty-dimension-part-links",
+      "before": "ACCEPTED_INCORRECTLY",
+      "after": "REJECTED"
+    },
+    {
+      "case": "empty-changes-B1",
+      "before": "ACCEPTED_INCORRECTLY",
+      "after": "REJECTED"
+    }
+  ],
+  "final_native_checks": {
+    "revisions": 3,
+    "parts_per_revision": 14,
+    "step_solids_per_revision": 14,
+    "native_values_and_assembly_extents": "PASS"
+  },
+  "direct_glb_bounds": {
+    "revisions": 3,
+    "mesh_nodes_per_revision": 14,
+    "tolerance_m": 1e-05,
+    "result": "PASS"
+  },
+  "web_contract_reexecution": {
+    "pass": 42,
+    "fail": 0,
+    "skipped": 0
+  },
+  "extended_static_build": "PASS",
+  "remote_final_ci": "PENDING"
+}

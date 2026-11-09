@@ -1,0 +1,17 @@
+[
+  {
+    "name": "wrong-part",
+    "revision": "B0",
+    "result": "dimension reference missing"
+  },
+  {
+    "name": "empty-parts",
+    "revision": "B0",
+    "result": "dimension part reference missing"
+  },
+  {
+    "name": "empty-changes",
+    "revision": "B1",
+    "result": "changes missing"
+  }
+]
