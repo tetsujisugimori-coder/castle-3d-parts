@@ -21,16 +21,33 @@ try {
       const context = await browser.newContext();
       await context.tracing.start({screenshots: true, snapshots: true});
       const page = await context.newPage();
-      const row = {engine: name, browser_version: browser.version(), mode, result: 'FAIL', physical_iphone: 'NOT_TESTED'};
+      const row = {engine: name, browser_version: browser.version(), mode, result: 'FAIL', stages: [], physical_iphone: 'NOT_TESTED'};
       try {
+        const checkStage = async (stage, revision, requireValue = true) => {
+          // A committed main-frame navigation alone does not mean the fixture's
+          // load-time select synchronization has run. Require URL AND DOM state.
+          await page.waitForLoadState('load');
+          await page.waitForFunction(({expected, requireValue}) =>
+            (new URL(location.href).searchParams.get('revision') || 'B0') === expected &&
+            (!requireValue || document.getElementById('revision')?.value === expected), {expected: revision, requireValue});
+          row.stages.push({stage, url: page.url(), value: await page.locator('#revision').inputValue()});
+        };
         await page.goto(`http://127.0.0.1:${server.address().port}/${mode}/`);
+        await checkStage('initial', 'B0');
         for (const revision of ['B1', 'B2']) {
-          if (mode === 'document') await Promise.all([page.waitForEvent('framenavigated', f => f === page.mainFrame()), page.selectOption('#revision', revision, {noWaitAfter: true})]);
+          if (mode === 'document') await Promise.all([page.waitForURL(url => url.searchParams.get('revision') === revision, {waitUntil: 'load'}), page.selectOption('#revision', revision, {noWaitAfter: true})]);
           else await page.selectOption('#revision', revision);
+          await checkStage(`select-${revision}`, revision);
         }
         await page.goBack();
+        // Native form-value restoration during traversal is observed, not an
+        // application contract of this minimal crash-only fixture. The product
+        // matrix separately requires URL, revision, model and dimensions to agree.
+        await checkStage('back', 'B1', false);
         await page.goForward();
+        await checkStage('forward', 'B2', false);
         await page.reload();
+        await checkStage('reload', 'B2');
         if (await page.locator('#revision').inputValue() !== 'B2') throw Error('wrong revision after reload');
         row.result = 'PASS';
       } catch (error) { row.error = error.message; }
