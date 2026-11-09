@@ -1,0 +1,12 @@
+{
+  "candidate": "db735477af7038a09d141e272b85160f785ca1a5",
+  "tree": "c45aa34d2dc430e74b72ad09e4d8847fb1a025ae",
+  "run": 42597615624,
+  "job": 129094029790,
+  "artifact": 13663683188,
+  "artifact_sha256": "cd82627b8c133beca5a63586e0640402814ef6dbb8f371c95a630797380fe8c4",
+  "result": "FAIL",
+  "error": "BASELINE_CHANGED .github/workflows/pages.yml",
+  "cause": "Additional whole-repository preservation consumer in hypothesis-evidence had not yet been migrated; ordinary Node tests did not execute this command.",
+  "correction": "Include the ninth explicit code migration with unchanged original manifest and archived bytes plus exact replacement SHA. Keep all six original commands and independent artifact readback. This failure is not counted as successful CI."
+}

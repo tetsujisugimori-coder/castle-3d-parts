@@ -1,0 +1,219 @@
+{
+  "scope": "Intermediate local diagnostic, not final CI or deployed URL acceptance",
+  "base_head": "5bb0e5c0eaa0541349a5cdbb5ef600d38b4d037c",
+  "candidate_modified_files": [
+    "scripts/build-stage2d-site.mjs",
+    "scripts/stage2d-browser.mjs"
+  ],
+  "local_browser": "WebKit 26.0 with extracted official Debian dependency libraries; no physical device",
+  "condition": "390px normal; ordinary document revision navigation",
+  "normal_pass": 1,
+  "fault_pass": 10,
+  "rows": [
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 390,
+      "motion": "no-preference",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 661,
+          "navigation": [
+            {
+              "dom_ms": 46,
+              "load_ms": 93
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2,
+              "bytes": 17852
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2,
+              "bytes": 24926
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 555,
+          "navigation": [
+            {
+              "dom_ms": 46,
+              "load_ms": 89
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2,
+              "bytes": 17852
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 3,
+              "bytes": 24926
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 606,
+          "navigation": [
+            {
+              "dom_ms": 31,
+              "load_ms": 54
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 5.000000000000057,
+              "bytes": 17852
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 6.000000000000057,
+              "bytes": 24926
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 572
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 633
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 826
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 187.72970008850098,
+          "y": 202.37338256835938,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 175.9303436279297,
+            "y": 201.57244873046875,
+            "width": 94.39485168457031,
+            "height": 1.60186767578125
+          }
+        },
+        {
+          "x": 187.72970008850098,
+          "y": 201.10208129882812,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 175.9303436279297,
+            "y": 200.3011474609375,
+            "width": 94.39485168457031,
+            "height": 1.60186767578125
+          }
+        },
+        {
+          "x": 184.86924934387207,
+          "y": 201.10208129882812,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 172.1164093017578,
+            "y": 200.3011474609375,
+            "width": 102.02272033691406,
+            "height": 1.60186767578125
+          }
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-glb",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "old-glb",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "old-svg",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-part",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "duplicate-dimension",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "retry",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "stale-response",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "lost-context",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "svg-script",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "svg-external",
+      "status": "PASS"
+    }
+  ],
+  "red_evidence": [
+    {
+      "run_id": 42597615732,
+      "head": "db735477af7038a09d141e272b85160f785ca1a5",
+      "artifact_id": 13663724929,
+      "sha256": "2438bea57043b09c3a09fac48dd8b8bb1fff1a1beee6dde1a3eac5dcf6184bb6"
+    },
+    {
+      "run_id": 42598179554,
+      "head": "5bb0e5c0eaa0541349a5cdbb5ef600d38b4d037c",
+      "artifact_id": 13665330989,
+      "sha256": "fdae4ae647c96d8869c8a65d05522296125f57eb2c055a4d8d8e4e1d6f660446"
+    }
+  ]
+}

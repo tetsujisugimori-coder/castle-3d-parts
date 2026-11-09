@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "scope": "local working-tree correction; old HEAD label is retained and not misrepresented as already pushed",
+  "base_candidate": "db735477af7038a09d141e272b85160f785ca1a5",
+  "commands": [
+    {
+      "args": [
+        "scripts/source-register.mjs"
+      ],
+      "exit_code": 0,
+      "signal": null,
+      "stdout_sha256": "475e9624e123695b496790d26afc96cdec87b510dc798a5f2709eac77441b1ef",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "scripts/observation-register.mjs"
+      ],
+      "exit_code": 0,
+      "signal": null,
+      "stdout_sha256": "060e82ecda764ece7613aa2ee082c7dfa4af14a14f89bcef266b879e6629a8b8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "scripts/hypothesis-register.mjs"
+      ],
+      "exit_code": 0,
+      "signal": null,
+      "stdout_sha256": "7b691878dae2304de2da4151dc0ab69962f9e88e06cb236805aa4c9fe76da052",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "--test"
+      ],
+      "exit_code": 0,
+      "signal": null,
+      "stdout_sha256": "72840d6bc62b09d36805306f131ac854cbcdf0afdd1ac966fc35dfea9ae45ca1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "scripts/hypothesis-red-green.mjs"
+      ],
+      "exit_code": 0,
+      "signal": null,
+      "stdout_sha256": "db3dd962f8a060febda97e4a5b30f32606f2a4c9d8160e9f61869708e8b67684",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "scripts/build-site.mjs"
+      ],
+      "exit_code": 0,
+      "signal": null,
+      "stdout_sha256": "033b18d7d9a4514fa6b07aa3ca7419325397499ffffba29acb773a42bb7f00bd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "preservation": {
+    "status": "PASS",
+    "baseline_commit": "37531176a21a8922bf23b1bc8fff1b704d9f252f",
+    "files": 65,
+    "pr_base": "dec85b596f6b82bfd69129e4b1edbc75d182318c"
+  },
+  "original_result_sha256": "2a2a946fb9f3b251b12623ddb01648cabe38a50e603c15efb1026ae8c7393eb9"
+}

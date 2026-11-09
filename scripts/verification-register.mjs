@@ -1,3 +1,4 @@
+import {originalBytes} from './stage2d/preservation.mjs';
 import {readFileSync,writeFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
@@ -35,7 +36,7 @@ export function validate(rows=load()){
  }
  for(let i=1;i<=6;i++)if(!keys.has('VER-'+String(i).padStart(4,'0')+'-r1.json'))fail('COVERAGE_MISSING');return rows;
 }
-export function preserve(){pins();const b=read(dir+'baseline.json');for(const [p,h] of Object.entries(b.files)){if(hash(readFileSync(root+p))!==h)fail('LEGACY_CHANGED '+p)}return Object.keys(b.files).length;}
+export function preserve(){pins();const b=read(dir+'baseline.json');for(const [p,h] of Object.entries(b.files)){if(hash(originalBytes(root,p,h))!==h)fail('LEGACY_CHANGED '+p)}return Object.keys(b.files).length;}
 export function history(base=process.env.PR_BASE_SHA){if(!base)return 'NOT_TESTED: no PR_BASE_SHA';if(!/^[a-f0-9]{40}$/.test(base))fail('HISTORY_BASE');const paths=execFileSync('git',['ls-tree','-r','--name-only',base,'--',dir+'records'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);for(const p of paths){let bytes;try{bytes=readFileSync(root+p)}catch{fail('HISTORY_DELETED')}if(!bytes.equals(execFileSync('git',['show',base+':'+p],{cwd:root})))fail('HISTORY_MUTATED')}return paths.length;}
 export function render(rows=load()){return '# 原資料検証追補（Issue #9）\n\n旧SRC・OBSを変更しないJSON正本の追補。資料記載の確認と史実の確証は別。CAD書込み不可。\n\n'+validate(rows).map(({data:d})=>`## ${d.id} r${d.revision} / ${d.observation_id}\n\n${d.site}：${d.summary}\n\n`+d.anchor_ids.map(id=>{const a=read(dir+'extractions.json').anchors.find(x=>x.id===id);return `- ${id} / ${a.source_id} / ${a.locator} / [原資料](${a.url}) / 原発掘報告確認: ${a.original_report_checked}\n  ${a.summary}`}).join('\n')+'\n\n'+d.measurements.map(m=>`- ${m.anchor_id}/${m.id}: ${m.measurement_target} = ${m.value} ${m.unit} (${m.qualifier}; ${m.original_label??'集合'})`).join('\n')+'\n\n未確認: '+d.unknowns.join(' / ')+'\n').join('\n')+'\n';}
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){try{const a=process.argv.slice(2);validate();preserve();history();if(a[0]==='generate'&&a.length===1)writeFileSync(root+dir+'index.md',render());else if(a[0]==='search'&&a.length===2){const rows=validate().filter(x=>x.data.observation_id===a[1]||x.data.site===a[1]);console.log(JSON.stringify(rows,null,2))}else if(!a.length){if(readFileSync(root+dir+'index.md','utf8')!==render())fail('GENERATED_DRIFT');console.log('PASS: 6 collection verifications; no CAD writes')}else fail('CLI_ARGUMENT')}catch(e){console.error(e.message);process.exitCode=1}}
