@@ -1,3 +1,4 @@
+import {originalBytes} from './stage2d/preservation.mjs';
 // Capture actual commands, nonzero exits, fixed source hashes and immutable-history checks.
 import {mkdirSync,existsSync,readFileSync,writeFileSync} from 'node:fs';
 import {spawnSync} from 'node:child_process';import {createHash} from 'node:crypto';import {join} from 'node:path';
@@ -12,7 +13,7 @@ const baseline=JSON.parse(readFileSync('research/baseline.json','utf8'));
 try {
  const entries=git('ls-tree','-r',baseline.commit).split('\n').filter(Boolean).map(l=>{const m=l.match(/^\d+ blob ([a-f0-9]+)\t(.*)$/);if(!m)throw Error('BASE_TREE_ENTRY');return [m[2],m[1]]});
  if(canonical(Object.fromEntries(entries))!==canonical(baseline.files))throw Error('BASELINE_MANIFEST_MISMATCH');
- for(const [p,h] of entries){const b=readFileSync(p);if(createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex')!==h)throw Error(`BASELINE_CHANGED ${p}`)}
+ for(const [p,h] of entries){const b=originalBytes(process.cwd(),p,h,'git-blob');if(createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex')!==h)throw Error(`BASELINE_CHANGED ${p}`)}
  const base=process.env.PR_BASE_SHA;
  if(base){if(!/^[a-f0-9]{40}$/.test(base))throw Error('BASE_SHA');const tree=git('ls-tree','-r','--name-only',base);if(tree.split('\n').includes('research/history/records.json')){const old=JSON.parse(git('show',`${base}:research/history/records.json`)),now=JSON.parse(readFileSync('research/history/records.json','utf8'));for(const r of old)if(!now.some(x=>canonical(x)===canonical(r)))throw Error('HISTORY_CHANGED_OR_REMOVED')}}
  result.preservation={status:'PASS',baseline_commit:baseline.commit,files:entries.length,pr_base:base??null};

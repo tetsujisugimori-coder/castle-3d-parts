@@ -2,7 +2,7 @@
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
-export const REPLACEMENTS = ['.github/workflows/pages.yml','scripts/research-cad.mjs','scripts/stage2b.mjs','tests/hypothesis-preservation.test.mjs','scripts/cad-prototype.mjs','scripts/design-register.mjs','scripts/verification-register.mjs','cad/stage2c/check.py'];
+export const REPLACEMENTS = ['.github/workflows/pages.yml','scripts/research-cad.mjs','scripts/stage2b.mjs','tests/hypothesis-preservation.test.mjs','scripts/cad-prototype.mjs','scripts/design-register.mjs','scripts/verification-register.mjs','scripts/hypothesis-evidence.mjs','cad/stage2c/check.py'];
 const digest=(b,kind)=>kind==='git-blob'?createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex'):createHash('sha256').update(b).digest('hex');
 export function originalBytes(root,path,expected,kind='sha256'){
  const current=readFileSync(resolve(root,path));

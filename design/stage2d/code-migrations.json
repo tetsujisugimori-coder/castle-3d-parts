@@ -43,10 +43,16 @@
       "after_sha256": "64fb2f0d477189d45cb163eb6e2412387ab1d5bce50dcd64e2fc714891642264",
       "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
     },
+    "scripts/hypothesis-evidence.mjs": {
+      "archive": "design/stage2d/originals/scripts/hypothesis-evidence.mjs.txt",
+      "before_sha256": "f52d8bfa823f561eebb7f36f666c9aa32652fe439ee6fe3d5d8374d76de06338",
+      "after_sha256": "c94339f517f887c9dab47037262362409e03b99037840bfba39abc197d55245e",
+      "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
+    },
     "cad/stage2c/check.py": {
       "archive": "design/stage2d/originals/cad/stage2c/check.py.txt",
       "before_sha256": "6fc5d4265089a81c139b2a0e52dbbb09808e0880a4fc5ffeb9e4a84992a6db05",
-      "after_sha256": "38ed7a9a2f6a69a84cfe53787b94e917fbc9aad2d2570c2941c30941d536dde9",
+      "after_sha256": "de60923b7c47261ebab5a932d5c5a4451c65f57021910f6bde58ee4cec0642ef",
       "reason": "Exact-hash preservation contract migration; source/CAD/research remains byte protected"
     }
   }

@@ -2,7 +2,7 @@
 import subprocess,json,hashlib
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]
-paths=['.github/workflows/pages.yml','scripts/research-cad.mjs','scripts/stage2b.mjs','tests/hypothesis-preservation.test.mjs','scripts/cad-prototype.mjs','scripts/design-register.mjs','scripts/verification-register.mjs','cad/stage2c/check.py']
+paths=['.github/workflows/pages.yml','scripts/research-cad.mjs','scripts/stage2b.mjs','tests/hypothesis-preservation.test.mjs','scripts/cad-prototype.mjs','scripts/design-register.mjs','scripts/verification-register.mjs','scripts/hypothesis-evidence.mjs','cad/stage2c/check.py']
 h=lambda b:hashlib.sha256(b).hexdigest()
 rows={}
 for p in paths:
