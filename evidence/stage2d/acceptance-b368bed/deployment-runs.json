@@ -1,0 +1,38 @@
+[
+  {
+    "id": 42605570058,
+    "name": "Deploy GitHub Pages",
+    "event": "workflow_dispatch",
+    "branch": "feat/stage2d-pages-integration",
+    "head": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42605570058",
+    "created_at": "2026-11-09T11:01:07Z",
+    "updated_at": "2026-11-09T11:01:44Z"
+  },
+  {
+    "id": 42606066587,
+    "name": "Verify Stage 2-D public candidate",
+    "event": "push",
+    "branch": "evidence/stage2d-public-b368bed",
+    "head": "14e114dfd958d765545fe9297d8a97153fcff4dd",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42606066587",
+    "created_at": "2026-11-09T11:04:44Z",
+    "updated_at": "2026-11-09T11:08:57Z"
+  },
+  {
+    "id": 42607054459,
+    "name": "Deploy GitHub Pages",
+    "event": "workflow_dispatch",
+    "branch": "main",
+    "head": "dec85b596f6b82bfd69129e4b1edbc75d182318c",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42607054459",
+    "created_at": "2026-11-09T11:11:51Z",
+    "updated_at": "2026-11-09T11:12:24Z"
+  }
+]

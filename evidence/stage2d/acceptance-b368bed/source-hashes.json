@@ -1,0 +1,6 @@
+{
+  "scripts/build-stage2d-site.mjs": "123978facabb6d117f80854526322b3cea9ac569375e320361088a23b7bb635a",
+  "site/stage2c/app.mjs": "79a7cd4d588a80be93e5ba6aba46de202684389974af15d47373810c56e98175",
+  ".github/workflows/pages.yml": "5e538484be8b7f9d30fd37ef906d51b0b975db3c39832a1f0dd06f19b6d2ad88",
+  "docs/stage2d/guide.html": "bc21b3a877ce796ffaf68e1129d6d41005cadbd0bea0c48024ac25a817cbe745"
+}

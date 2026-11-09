@@ -1,0 +1,23 @@
+{
+  "artifacts": [
+    {
+      "id": 13667657898,
+      "name": "stage2d-public-b368bed",
+      "size_in_bytes": 83638725,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/castle-3d-parts/actions/artifacts/13667657898",
+      "archive_download_url": "https://api.github.com/repos/tetsujisugimori-coder/castle-3d-parts/actions/artifacts/13667657898/zip",
+      "expired": false,
+      "created_at": "2026-11-09T11:08:54Z",
+      "expires_at": "2027-02-07T11:04:44Z",
+      "updated_at": "2026-11-09T11:08:54Z",
+      "digest": "sha256:5c6cd4002c9718344d97dd5d4f7e3a4e83e1e7ad4900c20fb9392e89157a8a7d",
+      "workflow_run": {
+        "id": 42606066587,
+        "repository_id": 1449280559,
+        "head_repository_id": 1449280559,
+        "head_branch": "evidence/stage2d-public-b368bed",
+        "head_sha": "14e114dfd958d765545fe9297d8a97153fcff4dd"
+      }
+    }
+  ]
+}

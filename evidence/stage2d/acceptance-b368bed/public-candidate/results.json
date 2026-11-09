@@ -1,0 +1,813 @@
+{
+  "checked_at": "2026-11-09T11:03:33.129670+00:00",
+  "scope": "Actual production HTTPS responses, no mocking and no TLS bypass",
+  "expected_commit": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+  "expected_tree": "9d6620277aead6021a3da070bbd41d8646916c08",
+  "rows": [
+    {
+      "path": "app.js",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/app.js",
+      "expected_sha256": "0533c2199dde08fa044927270d9ca504bc58493a7fcf81b0c5e2666da01fbc2b",
+      "status": 200,
+      "bytes": 5691,
+      "sha256": "0533c2199dde08fa044927270d9ca504bc58493a7fcf81b0c5e2666da01fbc2b",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/app.js",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/app.js",
+      "expected_sha256": "3bc7ecfb217a98fe3c16d242cd92325bb2435c1a71b9570152d9f316616cf018",
+      "status": 200,
+      "bytes": 3094,
+      "sha256": "3bc7ecfb217a98fe3c16d242cd92325bb2435c1a71b9570152d9f316616cf018",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/index.html",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/index.html",
+      "expected_sha256": "f223b0c0640e170aab23412edb56ffed49c6a2706dd67f8df0f9b1de40d27827",
+      "status": 200,
+      "bytes": 2099,
+      "sha256": "f223b0c0640e170aab23412edb56ffed49c6a2706dd67f8df0f9b1de40d27827",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/palisade.glb",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/palisade.glb",
+      "expected_sha256": "6a09e4230c6c992ffa9e1627c2287508472d13d5654f913d1f46c20e1f1634ba",
+      "status": 200,
+      "bytes": 72296,
+      "sha256": "6a09e4230c6c992ffa9e1627c2287508472d13d5654f913d1f46c20e1f1634ba",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B0/assembly.glb",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B0/assembly.glb",
+      "expected_sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc",
+      "status": 200,
+      "bytes": 17552,
+      "sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B0/cad-audit.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B0/cad-audit.json",
+      "expected_sha256": "77c920b13bb96d30bf3bb5d39a92dccb71388d5b4f357ec8ad7ec3f6e26ddb6f",
+      "status": 200,
+      "bytes": 10465,
+      "sha256": "77c920b13bb96d30bf3bb5d39a92dccb71388d5b4f357ec8ad7ec3f6e26ddb6f",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B0/drawing.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B0/drawing.svg",
+      "expected_sha256": "b303e1b80286bec89c10a2e7269312a7cb33e8315c3c05a41e542e7c252ea7b2",
+      "status": 200,
+      "bytes": 11836,
+      "sha256": "b303e1b80286bec89c10a2e7269312a7cb33e8315c3c05a41e542e7c252ea7b2",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B0/manifest.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B0/manifest.json",
+      "expected_sha256": "b2e6632aaed5d95efa302cb466016bacbb40ee26b097079ab76d0cbb7337917e",
+      "status": 200,
+      "bytes": 1613,
+      "sha256": "b2e6632aaed5d95efa302cb466016bacbb40ee26b097079ab76d0cbb7337917e",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B1/assembly.glb",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B1/assembly.glb",
+      "expected_sha256": "79a078103bc9c64a68c718fa49b8b31adafbd25f34d09e164e0fb3962d824cc7",
+      "status": 200,
+      "bytes": 17560,
+      "sha256": "79a078103bc9c64a68c718fa49b8b31adafbd25f34d09e164e0fb3962d824cc7",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B1/cad-audit.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B1/cad-audit.json",
+      "expected_sha256": "9464f051c93de45aaeb37f1c5d82b84ffd784408968f1bee440ae790f6f27559",
+      "status": 200,
+      "bytes": 10190,
+      "sha256": "9464f051c93de45aaeb37f1c5d82b84ffd784408968f1bee440ae790f6f27559",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B1/drawing.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B1/drawing.svg",
+      "expected_sha256": "17fb1589607701c22bd3949d88cdd8f4443a196360d0e73643f09ab44986dfbc",
+      "status": 200,
+      "bytes": 11307,
+      "sha256": "17fb1589607701c22bd3949d88cdd8f4443a196360d0e73643f09ab44986dfbc",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B1/manifest.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B1/manifest.json",
+      "expected_sha256": "aa41ce83a78c4c45efd22f226a8e2ef603191ee11eba1c67a350fa943058fb12",
+      "status": 200,
+      "bytes": 1613,
+      "sha256": "aa41ce83a78c4c45efd22f226a8e2ef603191ee11eba1c67a350fa943058fb12",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B2/assembly.glb",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B2/assembly.glb",
+      "expected_sha256": "9cb407e1c591594e8d46ca24ccb7c51eddeefd1ace7c3f917acc0a96a1c6ab93",
+      "status": 200,
+      "bytes": 17760,
+      "sha256": "9cb407e1c591594e8d46ca24ccb7c51eddeefd1ace7c3f917acc0a96a1c6ab93",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B2/cad-audit.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B2/cad-audit.json",
+      "expected_sha256": "555089ba384c8218517e4250272efd01bb894b30353e88311fe8cfc53b262657",
+      "status": 200,
+      "bytes": 10190,
+      "sha256": "555089ba384c8218517e4250272efd01bb894b30353e88311fe8cfc53b262657",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B2/drawing.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B2/drawing.svg",
+      "expected_sha256": "18212dfe3cb8c3389fc377a0c6ef1a19586ef7235a40215962a24cedc4b93aec",
+      "status": 200,
+      "bytes": 11307,
+      "sha256": "18212dfe3cb8c3389fc377a0c6ef1a19586ef7235a40215962a24cedc4b93aec",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2b/generated/B2/manifest.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2b/generated/B2/manifest.json",
+      "expected_sha256": "722327988b7d380a7e543697402bdf7077e47448c5660a34070fbd721c53ed02",
+      "status": 200,
+      "bytes": 1613,
+      "sha256": "722327988b7d380a7e543697402bdf7077e47448c5660a34070fbd721c53ed02",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B0/assembly.glb",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B0/assembly.glb",
+      "expected_sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc",
+      "status": 200,
+      "bytes": 17552,
+      "sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B0/drawing.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B0/drawing.svg",
+      "expected_sha256": "2caa8bbe3bfee527520606922ee510dbcfc6562f50eb6d547ad0b5c3d4e26e16",
+      "status": 200,
+      "bytes": 24626,
+      "sha256": "2caa8bbe3bfee527520606922ee510dbcfc6562f50eb6d547ad0b5c3d4e26e16",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B0/link-manifest.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B0/link-manifest.json",
+      "expected_sha256": "266f57f654dfe29aecd9ecced472870b3a9fa1d2ea44878fedde7b47a46f6109",
+      "status": 200,
+      "bytes": 55277,
+      "sha256": "266f57f654dfe29aecd9ecced472870b3a9fa1d2ea44878fedde7b47a46f6109",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B0/native-front.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B0/native-front.svg",
+      "expected_sha256": "4fe8e904e31e82fb3f863f14be6e3d7214250f46ac5a495b30f45506804f83d0",
+      "status": 200,
+      "bytes": 63313,
+      "sha256": "4fe8e904e31e82fb3f863f14be6e3d7214250f46ac5a495b30f45506804f83d0",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B0/native-side.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B0/native-side.svg",
+      "expected_sha256": "ed75bb9559df17879bb44889e2f806e854697a446b864551d01f54c6f76f33cb",
+      "status": 200,
+      "bytes": 15702,
+      "sha256": "ed75bb9559df17879bb44889e2f806e854697a446b864551d01f54c6f76f33cb",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B0/native-top.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B0/native-top.svg",
+      "expected_sha256": "3068a8a6fcbb8a22e2b8b3ce0c37912610b7d4bbc8cd785879edbe1fc046962b",
+      "status": 200,
+      "bytes": 32947,
+      "sha256": "3068a8a6fcbb8a22e2b8b3ce0c37912610b7d4bbc8cd785879edbe1fc046962b",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B1/assembly.glb",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B1/assembly.glb",
+      "expected_sha256": "79a078103bc9c64a68c718fa49b8b31adafbd25f34d09e164e0fb3962d824cc7",
+      "status": 200,
+      "bytes": 17560,
+      "sha256": "79a078103bc9c64a68c718fa49b8b31adafbd25f34d09e164e0fb3962d824cc7",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B1/drawing.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B1/drawing.svg",
+      "expected_sha256": "eb107e00f040e5e52b1c6d19b2b080004fdbd6e3937306514ce65e37e13d5350",
+      "status": 200,
+      "bytes": 24234,
+      "sha256": "eb107e00f040e5e52b1c6d19b2b080004fdbd6e3937306514ce65e37e13d5350",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B1/link-manifest.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B1/link-manifest.json",
+      "expected_sha256": "7fde4214574170b3580f0033cfe1cd0783126f588f291ac77ab9fcfe17268a51",
+      "status": 200,
+      "bytes": 55791,
+      "sha256": "7fde4214574170b3580f0033cfe1cd0783126f588f291ac77ab9fcfe17268a51",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B1/native-front.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B1/native-front.svg",
+      "expected_sha256": "dcb75aad50a1a973b2531361e125bf4296bc17db9cf4f3e66f131257e693cc1f",
+      "status": 200,
+      "bytes": 62329,
+      "sha256": "dcb75aad50a1a973b2531361e125bf4296bc17db9cf4f3e66f131257e693cc1f",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B1/native-side.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B1/native-side.svg",
+      "expected_sha256": "f82827902589d068e0b09fda5e20600dfe42ee3e1204c51f2b0e70107ea111f3",
+      "status": 200,
+      "bytes": 15555,
+      "sha256": "f82827902589d068e0b09fda5e20600dfe42ee3e1204c51f2b0e70107ea111f3",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B1/native-top.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B1/native-top.svg",
+      "expected_sha256": "bc81c233f97863c056fcc8837d716be089059076a95683e2a31841a846b546e6",
+      "status": 200,
+      "bytes": 32947,
+      "sha256": "bc81c233f97863c056fcc8837d716be089059076a95683e2a31841a846b546e6",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B2/assembly.glb",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B2/assembly.glb",
+      "expected_sha256": "9cb407e1c591594e8d46ca24ccb7c51eddeefd1ace7c3f917acc0a96a1c6ab93",
+      "status": 200,
+      "bytes": 17760,
+      "sha256": "9cb407e1c591594e8d46ca24ccb7c51eddeefd1ace7c3f917acc0a96a1c6ab93",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B2/drawing.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B2/drawing.svg",
+      "expected_sha256": "64c499102a9a4ec5b15ae3e94071d0e0fbca6cd4c494063eff5e604bb976baac",
+      "status": 200,
+      "bytes": 24234,
+      "sha256": "64c499102a9a4ec5b15ae3e94071d0e0fbca6cd4c494063eff5e604bb976baac",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B2/link-manifest.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B2/link-manifest.json",
+      "expected_sha256": "93c90202c3e80ce67868cdc70c129c95e5be2c0dfb5dfabd21b2ec13c335152a",
+      "status": 200,
+      "bytes": 55622,
+      "sha256": "93c90202c3e80ce67868cdc70c129c95e5be2c0dfb5dfabd21b2ec13c335152a",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B2/native-front.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B2/native-front.svg",
+      "expected_sha256": "b01953e5e88d7cefc40ee6fa85f2d49e9165f45b23648a52d16667602f82d824",
+      "status": 200,
+      "bytes": 62255,
+      "sha256": "b01953e5e88d7cefc40ee6fa85f2d49e9165f45b23648a52d16667602f82d824",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B2/native-side.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B2/native-side.svg",
+      "expected_sha256": "0ab67c311542e11294d1e01ab6c768d52207117dfc65d85959259de2b9b720ec",
+      "status": 200,
+      "bytes": 15555,
+      "sha256": "0ab67c311542e11294d1e01ab6c768d52207117dfc65d85959259de2b9b720ec",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/stage2c/generated/B2/native-top.svg",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/stage2c/generated/B2/native-top.svg",
+      "expected_sha256": "b396ad1924038db8ed4b90eaa02657caaab1463432b4953897b4cfe48d0bdc01",
+      "status": 200,
+      "bytes": 32916,
+      "sha256": "b396ad1924038db8ed4b90eaa02657caaab1463432b4953897b4cfe48d0bdc01",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "cad/style.css",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/cad/style.css",
+      "expected_sha256": "d3467b11e2364c0cf69cbdf58f27bf3a75d010a533b841ec9d7070c4bbd08a8c",
+      "status": 200,
+      "bytes": 1195,
+      "sha256": "d3467b11e2364c0cf69cbdf58f27bf3a75d010a533b841ec9d7070c4bbd08a8c",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "data/wooden-palisade-v0.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/data/wooden-palisade-v0.json",
+      "expected_sha256": "65f0b948edd837445708940d1ca9d9731a847f8b2441fc8386b24d01d2e6c118",
+      "status": 200,
+      "bytes": 1078,
+      "sha256": "65f0b948edd837445708940d1ca9d9731a847f8b2441fc8386b24d01d2e6c118",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "deployment-manifest.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/deployment-manifest.json",
+      "expected_sha256": "c35f6a92393130034b5049773322b69999dcfd38be317ada3c56cc1280927f31",
+      "status": 200,
+      "bytes": 1269,
+      "sha256": "c35f6a92393130034b5049773322b69999dcfd38be317ada3c56cc1280927f31",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "source_commit": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "source_tree": "9d6620277aead6021a3da070bbd41d8646916c08",
+      "match": true,
+      "asset_manifest_matches": true
+    },
+    {
+      "path": "design/decisions/DEC-0001-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/design/decisions/DEC-0001-r1.json",
+      "expected_sha256": "136b500a89d3829088dc44ed254f4507f4ecadae0d295b4ef024c61e0a7fe6bb",
+      "status": 200,
+      "bytes": 5522,
+      "sha256": "136b500a89d3829088dc44ed254f4507f4ecadae0d295b4ef024c61e0a7fe6bb",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "design/decisions/DEC-0002-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/design/decisions/DEC-0002-r1.json",
+      "expected_sha256": "df08021ddc590fcfe41c870895f048b5484fd70d60dfd518386f464322c768cf",
+      "status": 200,
+      "bytes": 5581,
+      "sha256": "df08021ddc590fcfe41c870895f048b5484fd70d60dfd518386f464322c768cf",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "fence.mjs",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/fence.mjs",
+      "expected_sha256": "62a8cffedb812ab7601826a37a8091e1cc31fa4d2475e01303c541319a531e17",
+      "status": 200,
+      "bytes": 1395,
+      "sha256": "62a8cffedb812ab7601826a37a8091e1cc31fa4d2475e01303c541319a531e17",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "guide.html",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/guide.html",
+      "expected_sha256": "bc21b3a877ce796ffaf68e1129d6d41005cadbd0bea0c48024ac25a817cbe745",
+      "status": 200,
+      "bytes": 3109,
+      "sha256": "bc21b3a877ce796ffaf68e1129d6d41005cadbd0bea0c48024ac25a817cbe745",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "index.html",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/",
+      "expected_sha256": "9eca5c4dd32e398b59b3e42255265ed56cfed3573435e0f74782917a5e0f80af",
+      "status": 200,
+      "bytes": 5524,
+      "sha256": "9eca5c4dd32e398b59b3e42255265ed56cfed3573435e0f74782917a5e0f80af",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/records/OBS-0001.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/records/OBS-0001.json",
+      "expected_sha256": "2fd8937d193b061227009e98aa0c9d07f9e407d37b5f2dbbd5d9dc8d1bb5348d",
+      "status": 200,
+      "bytes": 2814,
+      "sha256": "2fd8937d193b061227009e98aa0c9d07f9e407d37b5f2dbbd5d9dc8d1bb5348d",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/records/OBS-0002.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/records/OBS-0002.json",
+      "expected_sha256": "0403d7b2d29d93e2bb34711decb1f7054ef9340208a214be8788a9511fb948ed",
+      "status": 200,
+      "bytes": 2446,
+      "sha256": "0403d7b2d29d93e2bb34711decb1f7054ef9340208a214be8788a9511fb948ed",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/records/OBS-0003.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/records/OBS-0003.json",
+      "expected_sha256": "086f093ee82f5a9eaa686db20aa5bd31e9cf1fd28d98ab020e9c2c0b2bd5cb36",
+      "status": 200,
+      "bytes": 2394,
+      "sha256": "086f093ee82f5a9eaa686db20aa5bd31e9cf1fd28d98ab020e9c2c0b2bd5cb36",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/records/OBS-0004.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/records/OBS-0004.json",
+      "expected_sha256": "b4aadeba0a4b8a3619200776fcaf20d78f9de94c7e77f7e963c728a6d15801ed",
+      "status": 200,
+      "bytes": 2665,
+      "sha256": "b4aadeba0a4b8a3619200776fcaf20d78f9de94c7e77f7e963c728a6d15801ed",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/records/OBS-0005.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/records/OBS-0005.json",
+      "expected_sha256": "11f76a79b7f8e53456e026cfe591ff84563d7b2f4b0dc0e02aacc67e230f531c",
+      "status": 200,
+      "bytes": 2880,
+      "sha256": "11f76a79b7f8e53456e026cfe591ff84563d7b2f4b0dc0e02aacc67e230f531c",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/records/OBS-0006.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/records/OBS-0006.json",
+      "expected_sha256": "50bd5d47d8ed6ce5049c7f2063c87fad7da12fbc2331a52e3ceb11d4c41c9298",
+      "status": 200,
+      "bytes": 8958,
+      "sha256": "50bd5d47d8ed6ce5049c7f2063c87fad7da12fbc2331a52e3ceb11d4c41c9298",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/verification/records/VER-0001-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/verification/records/VER-0001-r1.json",
+      "expected_sha256": "7ce2cbc904e9c4fe27f26b87b41cf2f04f2b088d609308a4fc47ad6eb0153b49",
+      "status": 200,
+      "bytes": 1606,
+      "sha256": "7ce2cbc904e9c4fe27f26b87b41cf2f04f2b088d609308a4fc47ad6eb0153b49",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/verification/records/VER-0002-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/verification/records/VER-0002-r1.json",
+      "expected_sha256": "c99d01faac715e31f9ba754bc69497554f4e1979427b3703731a3cef3aa1034f",
+      "status": 200,
+      "bytes": 1843,
+      "sha256": "c99d01faac715e31f9ba754bc69497554f4e1979427b3703731a3cef3aa1034f",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/verification/records/VER-0003-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/verification/records/VER-0003-r1.json",
+      "expected_sha256": "f4a4b66b2db1141ceae341224d4888a418d658ad15041d258aad43c388965efa",
+      "status": 200,
+      "bytes": 1651,
+      "sha256": "f4a4b66b2db1141ceae341224d4888a418d658ad15041d258aad43c388965efa",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/verification/records/VER-0004-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/verification/records/VER-0004-r1.json",
+      "expected_sha256": "95e2fec7d7d4f5a4c852d6cbd6d99dfd8b3752473ccfe84f440aad33e98cbb8b",
+      "status": 200,
+      "bytes": 1592,
+      "sha256": "95e2fec7d7d4f5a4c852d6cbd6d99dfd8b3752473ccfe84f440aad33e98cbb8b",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/verification/records/VER-0005-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/verification/records/VER-0005-r1.json",
+      "expected_sha256": "7d1b9ed69b3f10abe51036f0ddd051e826e4ac08da8e7ba2b688bbb221160cc1",
+      "status": 200,
+      "bytes": 1610,
+      "sha256": "7d1b9ed69b3f10abe51036f0ddd051e826e4ac08da8e7ba2b688bbb221160cc1",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "observations/verification/records/VER-0006-r1.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/observations/verification/records/VER-0006-r1.json",
+      "expected_sha256": "0f5252bd1729d498a94f5abab75a6d483804207c31a9d06635630e8c8b388cc2",
+      "status": 200,
+      "bytes": 3368,
+      "sha256": "0f5252bd1729d498a94f5abab75a6d483804207c31a9d06635630e8c8b388cc2",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research-cad/app.mjs",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research-cad/app.mjs",
+      "expected_sha256": "6f18b06252a3bc71d5721561c9e3dd00bf95a8e1c6e1cf2029d7ae8680dfda6d",
+      "status": 200,
+      "bytes": 4786,
+      "sha256": "6f18b06252a3bc71d5721561c9e3dd00bf95a8e1c6e1cf2029d7ae8680dfda6d",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research-cad/data.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research-cad/data.json",
+      "expected_sha256": "282e2a8b77be010c2092d5d189fab280f7c77ce0936446fb09db0d426562d8e5",
+      "status": 200,
+      "bytes": 585866,
+      "sha256": "282e2a8b77be010c2092d5d189fab280f7c77ce0936446fb09db0d426562d8e5",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research-cad/index.html",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research-cad/index.html",
+      "expected_sha256": "a4ab5aeb62628277189397b1ea21ee956fb6397c22ed37289a3d126e4c335695",
+      "status": 200,
+      "bytes": 2748,
+      "sha256": "a4ab5aeb62628277189397b1ea21ee956fb6397c22ed37289a3d126e4c335695",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research-cad/style.css",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research-cad/style.css",
+      "expected_sha256": "859a6fa5882ae259fa40ac7663f3bdde7c9935078c2bde0324f1d619f1c75e69",
+      "status": 200,
+      "bytes": 1851,
+      "sha256": "859a6fa5882ae259fa40ac7663f3bdde7c9935078c2bde0324f1d619f1c75e69",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research-cad/view-model.mjs",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research-cad/view-model.mjs",
+      "expected_sha256": "eebbf50907a9987a03225afdac87aebf873d68328aa1496f55d2cd55414f0898",
+      "status": 200,
+      "bytes": 801,
+      "sha256": "eebbf50907a9987a03225afdac87aebf873d68328aa1496f55d2cd55414f0898",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research/comparisons/CMP-0001.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research/comparisons/CMP-0001.json",
+      "expected_sha256": "c6327be870d451beb38d43b2951f69668c9753ed2732e5d86ef9d33e18b283f9",
+      "status": 200,
+      "bytes": 7366,
+      "sha256": "c6327be870d451beb38d43b2951f69668c9753ed2732e5d86ef9d33e18b283f9",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research/hypotheses/HYP-0001.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research/hypotheses/HYP-0001.json",
+      "expected_sha256": "6b3793e534167139d45d19884f9263f6aa80a1278ce146886b6af85671d87703",
+      "status": 200,
+      "bytes": 6154,
+      "sha256": "6b3793e534167139d45d19884f9263f6aa80a1278ce146886b6af85671d87703",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "research/hypotheses/HYP-0002.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/research/hypotheses/HYP-0002.json",
+      "expected_sha256": "b9a36cb9016c91f2733d9d098e2112809d1548a8f135358dd9b451ea0ba7b577",
+      "status": 200,
+      "bytes": 6539,
+      "sha256": "b9a36cb9016c91f2733d9d098e2112809d1548a8f135358dd9b451ea0ba7b577",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0001.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0001.json",
+      "expected_sha256": "0c6d3c8399f3fc8a5be26ec79d8d965ec65d54c697ef41e3bad0e0430fda7d87",
+      "status": 200,
+      "bytes": 4558,
+      "sha256": "0c6d3c8399f3fc8a5be26ec79d8d965ec65d54c697ef41e3bad0e0430fda7d87",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0002.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0002.json",
+      "expected_sha256": "0eb867c72851a90aea328c387af3ded82d8bbb32a99c332560606f4cf7a35eca",
+      "status": 200,
+      "bytes": 3097,
+      "sha256": "0eb867c72851a90aea328c387af3ded82d8bbb32a99c332560606f4cf7a35eca",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0003.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0003.json",
+      "expected_sha256": "3167fc971e294b4fc3d510ba3a7f88427c1ab0b3337ac11bfff18ebb23eb627a",
+      "status": 200,
+      "bytes": 2881,
+      "sha256": "3167fc971e294b4fc3d510ba3a7f88427c1ab0b3337ac11bfff18ebb23eb627a",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0004.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0004.json",
+      "expected_sha256": "fc56d1e43612a8ff0d062a61aaba1509238020c6b80cc65ce4069780c2b8d802",
+      "status": 200,
+      "bytes": 3190,
+      "sha256": "fc56d1e43612a8ff0d062a61aaba1509238020c6b80cc65ce4069780c2b8d802",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0005.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0005.json",
+      "expected_sha256": "78acf50b3114461f6df71a67d407f97b3ce9576e396bc73aa7300737f9dc0fc0",
+      "status": 200,
+      "bytes": 3461,
+      "sha256": "78acf50b3114461f6df71a67d407f97b3ce9576e396bc73aa7300737f9dc0fc0",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0006.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0006.json",
+      "expected_sha256": "129a60f49decd93ed3c9649a3b7b7377a4aee8cf4fde6c85d1dc9e4b28678beb",
+      "status": 200,
+      "bytes": 2457,
+      "sha256": "129a60f49decd93ed3c9649a3b7b7377a4aee8cf4fde6c85d1dc9e4b28678beb",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0007.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0007.json",
+      "expected_sha256": "1c675a68f347cb2cd86333ef10c4c2291754edbf315665bbeda8680dd0220f48",
+      "status": 200,
+      "bytes": 3809,
+      "sha256": "1c675a68f347cb2cd86333ef10c4c2291754edbf315665bbeda8680dd0220f48",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0008.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0008.json",
+      "expected_sha256": "bed107c7f002a8106189f9bd748eaaf5150a6f72d46fd822c886bb8f146ba6bc",
+      "status": 200,
+      "bytes": 4107,
+      "sha256": "bed107c7f002a8106189f9bd748eaaf5150a6f72d46fd822c886bb8f146ba6bc",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0009.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0009.json",
+      "expected_sha256": "91198a17c6e8cc0742988b114c81b837b2ff82482c38341cd00a00920300dc17",
+      "status": 200,
+      "bytes": 2305,
+      "sha256": "91198a17c6e8cc0742988b114c81b837b2ff82482c38341cd00a00920300dc17",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "sources/records/SRC-0010.json",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/sources/records/SRC-0010.json",
+      "expected_sha256": "016a9b6a92c6736d99b02bc192ac3b5b7ccb1c50cbfe5c1576338c44dd97962a",
+      "status": 200,
+      "bytes": 2789,
+      "sha256": "016a9b6a92c6736d99b02bc192ac3b5b7ccb1c50cbfe5c1576338c44dd97962a",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "stage2b/app.mjs",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2b/app.mjs",
+      "expected_sha256": "a32340b5ccd09ca39f84e8e1021516f753d45c28e66eaab246de70d068e36bc5",
+      "status": 200,
+      "bytes": 4444,
+      "sha256": "a32340b5ccd09ca39f84e8e1021516f753d45c28e66eaab246de70d068e36bc5",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "stage2b/index.html",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2b/index.html",
+      "expected_sha256": "e590870f8de4c063a867951e02673e23fcbb26b2d0314ce3da7025264df9720c",
+      "status": 200,
+      "bytes": 1711,
+      "sha256": "e590870f8de4c063a867951e02673e23fcbb26b2d0314ce3da7025264df9720c",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "stage2b/style.css",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2b/style.css",
+      "expected_sha256": "275adab7109545dbafaeb115c9ce2deeff5e97295769645d63a123527c4fa3be",
+      "status": 200,
+      "bytes": 697,
+      "sha256": "275adab7109545dbafaeb115c9ce2deeff5e97295769645d63a123527c4fa3be",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "stage2c/app.mjs",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2c/app.mjs",
+      "expected_sha256": "7d12b0ccfd2aa3e1881f9bb3a21a0b99e1fe51b54acf21a6c1dd2100acb6b4b8",
+      "status": 200,
+      "bytes": 12644,
+      "sha256": "7d12b0ccfd2aa3e1881f9bb3a21a0b99e1fe51b54acf21a6c1dd2100acb6b4b8",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "stage2c/contract.mjs",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2c/contract.mjs",
+      "expected_sha256": "7419097374a15f489c53f5cae780d08fd408050cb1e9119cd2ec7c81487fe69c",
+      "status": 200,
+      "bytes": 8289,
+      "sha256": "7419097374a15f489c53f5cae780d08fd408050cb1e9119cd2ec7c81487fe69c",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "stage2c/index.html",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2c/index.html",
+      "expected_sha256": "469a0dd011a5e54f856ee48c228e67473e76ae4c3fe066c5306bdd2dd1fddabf",
+      "status": 200,
+      "bytes": 3654,
+      "sha256": "469a0dd011a5e54f856ee48c228e67473e76ae4c3fe066c5306bdd2dd1fddabf",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "stage2c/style.css",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2c/style.css",
+      "expected_sha256": "c280738a61c7ce7849857c4fd340a2651cbf096fb5be80031b740af19cf2c245",
+      "status": 200,
+      "bytes": 1966,
+      "sha256": "c280738a61c7ce7849857c4fd340a2651cbf096fb5be80031b740af19cf2c245",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    },
+    {
+      "path": "styles.css",
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/styles.css",
+      "expected_sha256": "b49f665dd72096a261f8aed917ef14387336470114d7a649ca4e0c0ef8aebd2f",
+      "status": 200,
+      "bytes": 4575,
+      "sha256": "b49f665dd72096a261f8aed917ef14387336470114d7a649ca4e0c0ef8aebd2f",
+      "last_modified": "Mon, 09 Nov 2026 11:01:37 GMT",
+      "match": true
+    }
+  ],
+  "all_match": true,
+  "physical_iphone": "NOT_TESTED"
+}

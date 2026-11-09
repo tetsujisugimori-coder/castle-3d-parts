@@ -1,0 +1,8 @@
+{
+  "id": 5825093161,
+  "state": "COMMENTED",
+  "commit_id": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+  "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/pull/23#pullrequestreview-5825093161",
+  "submitted_at": "2026-11-09T11:17:20Z",
+  "body": "公開検証・復元の独立追補。評価HEADは b368bedd2cfa67cf6eeda53e8234ef8460aebaf2 のまま。\n\n[実公開URL run42606066587](https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42606066587) と [原artifact13667657898](https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42606066587/artifacts/13667657898) を独立照合した。原ZIPのSHA256はGitHub metadataの 5c6cd4002c9718344d97dd5d4f7e3a4e83e1e7ad4900c20fb9392e89157a8a7d と一致し、展開内容も全件ZIP原本と一致。\n\n- 試験設定commit14e114dのworkflowをremoteから取得し、実装b368固定checkoutを確認。原git.txt・試験前後の同一manifestはb368/tree9d662027を示す。\n- 実HTTPS公開URL、CDN無置換で16条件・160チェックすべてPASS。公開側故障注入は0。原traceの公開ホスト通信とjsDelivr200応答、16 PNG、代表的な375px WebKit/1280px Chromium画像を確認。79公開ファイルの取得記録hashは独立レビュー済みCI payloadと一致し、80番目の識別manifestも対象commit/treeと整合。\n- WebGL Disabledだった設定済みChromeの安全停止画像・記録も確認。この環境の3D表示失敗を成功へ置換していない。公開自動試験の成功とは別記録。\n- [元main復元run42607054459](https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42607054459) のsuccessと原ログのdec85b596固定deployを確認。復元後に自分でもHTTP再取得し、トップ200/hash599fbeab…、既存stage2c200/hash84fa7fe…、候補manifest404が公開前の値と一致。保護復元画像では一時feature規則削除、mainのみ1 branch/0 tagsを確認した。現在の公開内容は候補ではなく旧mainである。\n\n追補判定: 候補一時公開中の実公開URL検証はPASS。限定技術マージ推奨YESを維持し、総合PARTIALを維持する。恒常公開は未マージ・旧main復元済みのため未採用。連動するのはTechDraw実寸照合済みCAD投影SVGであり、別リンクのnative TechDraw SVG自体の双方向選択は未実装なので設計図の全面受入はPARTIAL。実機iPhone Safari、非拡大の極細部材タップ、物理指の操作性は引き続き未受入。マージ・コード変更は行っていない。"
+}

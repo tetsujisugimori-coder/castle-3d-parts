@@ -1,0 +1,12 @@
+{
+  "scope": "Pattern-based scan of81 generated public files; not a universal secret detection guarantee",
+  "findings": [],
+  "cad_originals_in_public": [],
+  "external_library": {
+    "name": "three",
+    "version": "0.180.0",
+    "license": "MIT",
+    "source": "https://github.com/mrdoob/three.js/blob/r180/LICENSE",
+    "delivery": "Pinned jsDelivr URL"
+  }
+}

@@ -1,0 +1,2366 @@
+{
+  "scope": "actual deployed URL; CDN unmocked",
+  "base": "https://tetsujisugimori-coder.github.io/castle-3d-parts/",
+  "head": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+  "tree": "9d6620277aead6021a3da070bbd41d8646916c08",
+  "measured_at": "2026-11-09T11:08:51.037Z",
+  "platform": "linux",
+  "node": "v22.23.4",
+  "pilot_load_trials_per_condition": 3,
+  "expected_normal": 16,
+  "expected_faults": 0,
+  "rows": [
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 375,
+      "motion": "no-preference",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 213,
+          "navigation": [
+            {
+              "dom_ms": 21.89999999999418,
+              "load_ms": 24.5
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2.1000000000058208,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.1999999999970896,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 17100000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 207,
+          "navigation": [
+            {
+              "dom_ms": 16.60000000000582,
+              "load_ms": 17.5
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.099999999991269,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 17100000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 206,
+          "navigation": [
+            {
+              "dom_ms": 16.19999999999709,
+              "load_ms": 17.09999999999127
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.2000000000116415,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.5999999999912689,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 17100000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 209
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 477
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 265
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 187.49988555908203,
+          "y": 262.625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.67047119140625,
+            "y": 257.81719970703125,
+            "width": 566.6353149414062,
+            "height": 9.6156005859375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 187.49988555908203,
+          "y": 262.62506103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.67047119140625,
+            "y": 257.8172607421875,
+            "width": 566.6353149414062,
+            "height": 9.6156005859375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 187.49989318847656,
+          "y": 262.62506103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 110.94688415527344,
+            "y": 257.8172607421875,
+            "width": 612.424072265625,
+            "height": 9.6156005859375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 375,
+      "motion": "reduce",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 214,
+          "navigation": [
+            {
+              "dom_ms": 24.90000000000873,
+              "load_ms": 25.69999999999709
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.0999999999912689,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.5,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 217,
+          "navigation": [
+            {
+              "dom_ms": 16.90000000000873,
+              "load_ms": 17.60000000000582
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.3999999999941792,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.7000000000116415,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 212,
+          "navigation": [
+            {
+              "dom_ms": 16.70000000001164,
+              "load_ms": 22.10000000000582
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.6000000000058208,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.6999999999970896,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 217
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 246
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 245
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 187.49988555908203,
+          "y": 262.625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.67047119140625,
+            "y": 257.81719970703125,
+            "width": 566.6353149414062,
+            "height": 9.6156005859375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 187.49988555908203,
+          "y": 262.62506103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.67047119140625,
+            "y": 257.8172607421875,
+            "width": 566.6353149414062,
+            "height": 9.6156005859375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 187.49989318847656,
+          "y": 262.62506103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 110.94688415527344,
+            "y": 257.8172607421875,
+            "width": 612.424072265625,
+            "height": 9.6156005859375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 390,
+      "motion": "no-preference",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 216,
+          "navigation": [
+            {
+              "dom_ms": 21.39999999999418,
+              "load_ms": 24
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 3.3999999999941792,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 3.400000000008731,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 216,
+          "navigation": [
+            {
+              "dom_ms": 17.40000000000873,
+              "load_ms": 18.30000000000291
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.6000000000058208,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.5999999999912689,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 218,
+          "navigation": [
+            {
+              "dom_ms": 17.5,
+              "load_ms": 18.5
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2.6999999999970896,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.6000000000058208,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 203
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 247
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 234
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 194.9998779296875,
+          "y": 262.03125,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 120.9606704711914,
+            "y": 257.00555419921875,
+            "width": 592.3136596679688,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 194.9998779296875,
+          "y": 262.03131103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 120.9606704711914,
+            "y": 257.005615234375,
+            "width": 592.3136596679688,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 195.00003814697266,
+          "y": 262.03131103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 114.97785186767578,
+            "y": 257.005615234375,
+            "width": 640.177490234375,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 390,
+      "motion": "reduce",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 216,
+          "navigation": [
+            {
+              "dom_ms": 20.60000000000582,
+              "load_ms": 22.89999999999418
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.5999999999912689,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.3000000000029104,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 215,
+          "navigation": [
+            {
+              "dom_ms": 19.09999999999127,
+              "load_ms": 19.79999999998836
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.3000000000029104,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.1999999999970896,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 196,
+          "navigation": [
+            {
+              "dom_ms": 12.89999999999418,
+              "load_ms": 15.19999999999709
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.1000000000058208,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 200
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 242
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 259
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 194.9998779296875,
+          "y": 262.03125,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 120.9606704711914,
+            "y": 257.00555419921875,
+            "width": 592.3136596679688,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 194.9998779296875,
+          "y": 262.03131103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 120.9606704711914,
+            "y": 257.005615234375,
+            "width": 592.3136596679688,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 195.00003814697266,
+          "y": 262.03131103515625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 114.97785186767578,
+            "y": 257.005615234375,
+            "width": 640.177490234375,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 765,
+      "motion": "no-preference",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 222,
+          "navigation": [
+            {
+              "dom_ms": 26.80000000000291,
+              "load_ms": 27.69999999999709
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.3000000000029104,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.5999999999912689,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 12700000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 220,
+          "navigation": [
+            {
+              "dom_ms": 12.30000000000291,
+              "load_ms": 15.5
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.5,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.5,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 12700000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 224,
+          "navigation": [
+            {
+              "dom_ms": 18.89999999999418,
+              "load_ms": 19.89999999999418
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.2999999999883585,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.5,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 12700000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 218
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 272
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 344
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 568.7500305175781,
+          "y": 204.1875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 499.3115234375,
+            "y": 199.47410583496094,
+            "width": 555.508056640625,
+            "height": 9.426788330078125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 568.7500305175781,
+          "y": 204.1875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 499.3115234375,
+            "y": 199.47410583496094,
+            "width": 555.508056640625,
+            "height": 9.426788330078125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 568.7501831054688,
+          "y": 204.1875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 493.7004699707031,
+            "y": 199.47410583496094,
+            "width": 600.397705078125,
+            "height": 9.426788330078125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 765,
+      "motion": "reduce",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 239,
+          "navigation": [
+            {
+              "dom_ms": 27.5,
+              "load_ms": 28.20000000001164
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.2000000000116415,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.7000000000116415,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 13400000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 225,
+          "navigation": [
+            {
+              "dom_ms": 17.199999999982538,
+              "load_ms": 18.199999999982538
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.7000000000116415,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.1000000000058208,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 13400000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 208,
+          "navigation": [
+            {
+              "dom_ms": 13.5,
+              "load_ms": 16.10000000000582
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 13400000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 235
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 267
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 273
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 568.7500305175781,
+          "y": 204.1875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 499.3115234375,
+            "y": 199.47410583496094,
+            "width": 555.508056640625,
+            "height": 9.426788330078125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 568.7500305175781,
+          "y": 204.1875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 499.3115234375,
+            "y": 199.47410583496094,
+            "width": 555.508056640625,
+            "height": 9.426788330078125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 568.7501831054688,
+          "y": 204.1875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 493.7004699707031,
+            "y": 199.47410583496094,
+            "width": 600.397705078125,
+            "height": 9.426788330078125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 1280,
+      "motion": "no-preference",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 230,
+          "navigation": [
+            {
+              "dom_ms": 19.800000000017462,
+              "load_ms": 23
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.2000000000116415,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.7000000000116415,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 246,
+          "navigation": [
+            {
+              "dom_ms": 29.39999999999418,
+              "load_ms": 30.5
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.8999999999941792,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 221,
+          "navigation": [
+            {
+              "dom_ms": 17.89999999999418,
+              "load_ms": 18.79999999998836
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2.5,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.5,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 14300000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 242
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 260
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 262
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 954.9999237060547,
+          "y": 227.40625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 889.2025146484375,
+            "y": 222.94000244140625,
+            "width": 526.3792724609375,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 954.9999237060547,
+          "y": 227.40625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 889.2025146484375,
+            "y": 222.94000244140625,
+            "width": 526.3792724609375,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 954.9997711181641,
+          "y": 227.40625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 883.8853759765625,
+            "y": 222.94000244140625,
+            "width": 568.9151611328125,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "width": 1280,
+      "motion": "reduce",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 234,
+          "navigation": [
+            {
+              "dom_ms": 25.099999999976717,
+              "load_ms": 26.29999999998836
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 1.2999999999883585,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 1.6999999999825377,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 12700000
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 246,
+          "navigation": [
+            {
+              "dom_ms": 31.20000000001164,
+              "load_ms": 32.20000000001164
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2.8999999999941792,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 3.1000000000058208,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 12700000
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 212,
+          "navigation": [
+            {
+              "dom_ms": 13.5,
+              "load_ms": 15.799999999988358
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 2.6000000000058208,
+              "bytes": 0
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 2.400000000023283,
+              "bytes": 0
+            }
+          ],
+          "memory_bytes": 12700000
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 240
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 248
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 251
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 954.9999237060547,
+          "y": 227.40625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 889.2025146484375,
+            "y": 222.94000244140625,
+            "width": 526.3792724609375,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 954.9999237060547,
+          "y": 227.40625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 889.2025146484375,
+            "y": 222.94000244140625,
+            "width": 526.3792724609375,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 954.9997711181641,
+          "y": 227.40625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 883.8853759765625,
+            "y": 222.94000244140625,
+            "width": 568.9151611328125,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 375,
+      "motion": "no-preference",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 246,
+          "navigation": [
+            {
+              "dom_ms": 30,
+              "load_ms": 31
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 234,
+          "navigation": [
+            {
+              "dom_ms": 25,
+              "load_ms": 25
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 8,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 8,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 238,
+          "navigation": [
+            {
+              "dom_ms": 26.000000000000004,
+              "load_ms": 27
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7.999999999999986,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 6.999999999999986,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 250
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 246
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 248
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 187.78156280517578,
+          "y": 261.1133117675781,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.9521484375,
+            "y": 256.30548095703125,
+            "width": 566.6353149414062,
+            "height": 9.61566162109375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 187.78156280517578,
+          "y": 259.7566833496094,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.9521484375,
+            "y": 254.9488525390625,
+            "width": 566.6353149414062,
+            "height": 9.61566162109375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 189.43533325195312,
+          "y": 259.7566833496094,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 112.88233184814453,
+            "y": 254.9488525390625,
+            "width": 612.4240112304688,
+            "height": 9.61566162109375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 375,
+      "motion": "reduce",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 228,
+          "navigation": [
+            {
+              "dom_ms": 24,
+              "load_ms": 25
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 8,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 223,
+          "navigation": [
+            {
+              "dom_ms": 24,
+              "load_ms": 24
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 8,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 9,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 228,
+          "navigation": [
+            {
+              "dom_ms": 31,
+              "load_ms": 32
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 236
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 275
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 255
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 187.78156280517578,
+          "y": 261.1133117675781,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.9521484375,
+            "y": 256.30548095703125,
+            "width": 566.6353149414062,
+            "height": 9.61566162109375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 187.78156280517578,
+          "y": 259.7566833496094,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 116.9521484375,
+            "y": 254.9488525390625,
+            "width": 566.6353149414062,
+            "height": 9.61566162109375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 189.43533325195312,
+          "y": 259.7566833496094,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 112.88233184814453,
+            "y": 254.9488525390625,
+            "width": 612.4240112304688,
+            "height": 9.61566162109375
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 390,
+      "motion": "no-preference",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 238,
+          "navigation": [
+            {
+              "dom_ms": 27,
+              "load_ms": 27
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 6.999999999999986,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 6.999999999999986,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 262,
+          "navigation": [
+            {
+              "dom_ms": 24,
+              "load_ms": 24
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 10,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 9,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 220,
+          "navigation": [
+            {
+              "dom_ms": 26.000000000000004,
+              "load_ms": 27
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 10,
+              "bytes": 2661
+            },
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 12,
+              "bytes": 2427
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 248
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 242
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 277
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 193.30384063720703,
+          "y": 257.40875244140625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 119.26464080810547,
+            "y": 252.383056640625,
+            "width": 592.3135986328125,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 193.30384063720703,
+          "y": 261.9810791015625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 119.26464080810547,
+            "y": 256.95538330078125,
+            "width": 592.3135986328125,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 194.17945098876953,
+          "y": 261.9810791015625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 114.15727996826172,
+            "y": 256.95538330078125,
+            "width": 640.1773681640625,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 390,
+      "motion": "reduce",
+      "input": "Playwright emulated touch + mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 257,
+          "navigation": [
+            {
+              "dom_ms": 24,
+              "load_ms": 24
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 6,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 249,
+          "navigation": [
+            {
+              "dom_ms": 22,
+              "load_ms": 23
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7.999999999999986,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 227,
+          "navigation": [
+            {
+              "dom_ms": 23,
+              "load_ms": 24
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 233
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 283
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 285
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 193.30384063720703,
+          "y": 257.40875244140625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 119.26464080810547,
+            "y": 252.383056640625,
+            "width": 592.3135986328125,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 193.30384063720703,
+          "y": 261.9810791015625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 119.26464080810547,
+            "y": 256.95538330078125,
+            "width": 592.3135986328125,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        },
+        {
+          "x": 194.17945098876953,
+          "y": 261.9810791015625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 114.15727996826172,
+            "y": 256.95538330078125,
+            "width": 640.1773681640625,
+            "height": 10.0513916015625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then emulated touch"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 765,
+      "motion": "no-preference",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 261,
+          "navigation": [
+            {
+              "dom_ms": 28,
+              "load_ms": 28
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 10,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 9,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 278,
+          "navigation": [
+            {
+              "dom_ms": 34,
+              "load_ms": 34
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7.000000000000014,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 6.000000000000014,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 268,
+          "navigation": [
+            {
+              "dom_ms": 28,
+              "load_ms": 28
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 8,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 8,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 263
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 315
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 324
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 569.8886108398438,
+          "y": 204.60073852539062,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 500.4501037597656,
+            "y": 199.8873291015625,
+            "width": 555.508056640625,
+            "height": 9.42681884765625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 569.8886108398438,
+          "y": 209.6688232421875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 500.4501037597656,
+            "y": 204.9554443359375,
+            "width": 555.508056640625,
+            "height": 9.4267578125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 571.8795623779297,
+          "y": 209.6688232421875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 496.8298645019531,
+            "y": 204.9554443359375,
+            "width": 600.3975830078125,
+            "height": 9.4267578125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 765,
+      "motion": "reduce",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 280,
+          "navigation": [
+            {
+              "dom_ms": 35,
+              "load_ms": 36.00000000000001
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 8,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 8,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 270,
+          "navigation": [
+            {
+              "dom_ms": 25,
+              "load_ms": 26.000000000000004
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 9,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 8,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 274,
+          "navigation": [
+            {
+              "dom_ms": 36.00000000000001,
+              "load_ms": 36.00000000000001
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 11.999999999999986,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 10.999999999999986,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 282
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 292
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 320
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 569.8886108398438,
+          "y": 204.60073852539062,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 500.4501037597656,
+            "y": 199.8873291015625,
+            "width": 555.508056640625,
+            "height": 9.42681884765625
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 569.8886108398438,
+          "y": 209.6688232421875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 500.4501037597656,
+            "y": 204.9554443359375,
+            "width": 555.508056640625,
+            "height": 9.4267578125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 571.8795623779297,
+          "y": 209.6688232421875,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 496.8298645019531,
+            "y": 204.9554443359375,
+            "width": 600.3975830078125,
+            "height": 9.4267578125
+          },
+          "zoom_button_presses": 7,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 1280,
+      "motion": "no-preference",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 299,
+          "navigation": [
+            {
+              "dom_ms": 29,
+              "load_ms": 30
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 6.999999999999972,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 6.999999999999972,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 301,
+          "navigation": [
+            {
+              "dom_ms": 35,
+              "load_ms": 36.00000000000001
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            },
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7,
+              "bytes": 2427
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 286,
+          "navigation": [
+            {
+              "dom_ms": 24,
+              "load_ms": 24
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 8,
+              "bytes": 2661
+            },
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 8,
+              "bytes": 2427
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 287
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 314
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 347
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 951.5874633789062,
+          "y": 228.24859619140625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 885.7900390625,
+            "y": 223.7823486328125,
+            "width": 526.37939453125,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 951.5874633789062,
+          "y": 224.8721923828125,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 885.7900390625,
+            "y": 220.40594482421875,
+            "width": 526.37939453125,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 954.2012405395508,
+          "y": 224.8721923828125,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 883.0868530273438,
+            "y": 220.40594482421875,
+            "width": 568.9151000976562,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "width": 1280,
+      "motion": "reduce",
+      "input": "Playwright mouse/keyboard",
+      "physical_iphone": "NOT_TESTED",
+      "status": "PASS",
+      "checks": [
+        "public entry and project-prefix model load",
+        "three prespecified load measurements",
+        "B0 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B1 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "B2 19 dimensions, actual 3D/drawing selection and research retrieval",
+        "revision URL back forward reload and selection reset",
+        "rendered rotation zoom reset and drawing zoom",
+        "orientation resize and overflow",
+        "linked Stage2B and research viewer compatibility",
+        "no JS errors or HTTP failures"
+      ],
+      "performance": [
+        {
+          "trial": 1,
+          "initial_ready_wall_ms": 298,
+          "navigation": [
+            {
+              "dom_ms": 28,
+              "load_ms": 28
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            },
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7,
+              "bytes": 2427
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 2,
+          "initial_ready_wall_ms": 313,
+          "navigation": [
+            {
+              "dom_ms": 39,
+              "load_ms": 40
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 7,
+              "bytes": 2661
+            },
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 7,
+              "bytes": 2427
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "trial": 3,
+          "initial_ready_wall_ms": 274,
+          "navigation": [
+            {
+              "dom_ms": 27,
+              "load_ms": 28
+            }
+          ],
+          "assets": [
+            {
+              "name": "B0/assembly.glb",
+              "duration_ms": 9,
+              "bytes": 2427
+            },
+            {
+              "name": "B0/drawing.svg",
+              "duration_ms": 8,
+              "bytes": 2661
+            }
+          ],
+          "memory_bytes": null
+        },
+        {
+          "revision": "B0",
+          "ready_ms": 290
+        },
+        {
+          "revision": "B1",
+          "ready_ms": 331
+        },
+        {
+          "revision": "B2",
+          "ready_ms": 341
+        }
+      ],
+      "pointer_samples": [
+        {
+          "x": 951.5874633789062,
+          "y": 228.24859619140625,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 885.7900390625,
+            "y": 223.7823486328125,
+            "width": 526.37939453125,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 951.5874633789062,
+          "y": 224.8721923828125,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 885.7900390625,
+            "y": 220.40594482421875,
+            "width": 526.37939453125,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        },
+        {
+          "x": 954.2012405395508,
+          "y": 224.8721923828125,
+          "target": "front-U02_Rail_001",
+          "rect": {
+            "x": 883.0868530273438,
+            "y": 220.40594482421875,
+            "width": 568.9151000976562,
+            "height": 8.9324951171875
+          },
+          "zoom_button_presses": 5,
+          "setup_input": "Playwright mouse pan and zoom button; then mouse click"
+        }
+      ],
+      "errors": [],
+      "http_errors": []
+    }
+  ]
+}

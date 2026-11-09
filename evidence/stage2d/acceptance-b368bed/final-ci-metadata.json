@@ -1,0 +1,136 @@
+{
+  "candidate": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+  "tree": "9d6620277aead6021a3da070bbd41d8646916c08",
+  "runs": [
+    {
+      "id": 42604464321,
+      "name": "Verify archaeology supplements",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464321",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:53:19Z"
+    },
+    {
+      "id": 42604464474,
+      "name": "Validate prototype",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464474",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:53:07Z"
+    },
+    {
+      "id": 42604464368,
+      "name": "Validate comparison and hypothesis register",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464368",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:53:21Z"
+    },
+    {
+      "id": 42604464334,
+      "name": "Validate design decision register",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464334",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:53:25Z"
+    },
+    {
+      "id": 42604464306,
+      "name": "CAD prototype evidence",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464306",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:54:11Z"
+    },
+    {
+      "id": 42604464303,
+      "name": "Stage 2-A research CAD linkage",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464303",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:54:25Z"
+    },
+    {
+      "id": 42604464330,
+      "name": "Stage 2-C linked drawings",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464330",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:54:41Z"
+    },
+    {
+      "id": 42604464304,
+      "name": "Stage 2-B multipart revisions",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464304",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:54:50Z"
+    },
+    {
+      "id": 42604464401,
+      "name": "Stage 2-D Pages integration",
+      "html_url": "https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/42604464401",
+      "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "conclusion": "success",
+      "status": "completed",
+      "created_at": "2026-11-09T10:52:45Z",
+      "updated_at": "2026-11-09T10:56:44Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13666763693,
+      "name": "stage2d-contracts-b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "size_in_bytes": 297274,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/castle-3d-parts/actions/artifacts/13666763693",
+      "archive_download_url": "https://api.github.com/repos/tetsujisugimori-coder/castle-3d-parts/actions/artifacts/13666763693/zip",
+      "expired": false,
+      "created_at": "2026-11-09T10:53:39Z",
+      "expires_at": "2027-02-07T10:52:46Z",
+      "updated_at": "2026-11-09T10:53:39Z",
+      "digest": "sha256:c125209f1718b5d302a6b32ec52c9e94d604347d7a7fbc8c53773235b8cec4b0",
+      "workflow_run": {
+        "id": 42604464401,
+        "repository_id": 1449280559,
+        "head_repository_id": 1449280559,
+        "head_branch": "feat/stage2d-pages-integration",
+        "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2"
+      }
+    },
+    {
+      "id": 13666644183,
+      "name": "stage2d-browser-b368bedd2cfa67cf6eeda53e8234ef8460aebaf2",
+      "size_in_bytes": 217954076,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/castle-3d-parts/actions/artifacts/13666644183",
+      "archive_download_url": "https://api.github.com/repos/tetsujisugimori-coder/castle-3d-parts/actions/artifacts/13666644183/zip",
+      "expired": false,
+      "created_at": "2026-11-09T10:56:41Z",
+      "expires_at": "2027-02-07T10:52:46Z",
+      "updated_at": "2026-11-09T10:56:41Z",
+      "digest": "sha256:a7e70b02c5831a4b34ac93a8b164752070abc747426e45586029be362599bc4b",
+      "workflow_run": {
+        "id": 42604464401,
+        "repository_id": 1449280559,
+        "head_repository_id": 1449280559,
+        "head_branch": "feat/stage2d-pages-integration",
+        "head_sha": "b368bedd2cfa67cf6eeda53e8234ef8460aebaf2"
+      }
+    }
+  ]
+}

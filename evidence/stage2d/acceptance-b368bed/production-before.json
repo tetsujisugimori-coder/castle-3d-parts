@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-09T10:39:50.848978+00:00",
+  "scope": "public production before temporary candidate deployment",
+  "rows": [
+    {
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/",
+      "status": 200,
+      "sha256": "599fbeab3701506172afd1434885022877ac47dc8b08187a2dc30f51a147503e",
+      "bytes": 5212,
+      "etag": "\"6af190ce-145c\"",
+      "last_modified": "Mon, 09 Nov 2026 09:22:22 GMT",
+      "linked_viewer_entry_present": false
+    },
+    {
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2c/",
+      "status": 200,
+      "sha256": "84fa7fe431b445354736385940bb58df877bfc067d7fc2430a8339bc16f6c3e5",
+      "bytes": 3221,
+      "etag": "\"6af190cd-c95\"",
+      "last_modified": "Mon, 09 Nov 2026 09:22:21 GMT",
+      "linked_viewer_entry_present": false
+    },
+    {
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/deployment-manifest.json",
+      "status": 404,
+      "sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "bytes": 9379,
+      "etag": "\"6abcf5c5-24a3\"",
+      "last_modified": null,
+      "linked_viewer_entry_present": false
+    }
+  ]
+}

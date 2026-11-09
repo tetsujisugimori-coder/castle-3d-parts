@@ -1,0 +1,41 @@
+name: Verify Stage 2-D public candidate
+on:
+  push:
+    branches: [evidence/stage2d-public-b368bed]
+permissions:
+  contents: read
+jobs:
+  published-browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: b368bedd2cfa67cf6eeda53e8234ef8460aebaf2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pin implementation and deployed revision
+        run: |
+          mkdir -p stage2d-public-ci
+          git rev-parse HEAD HEAD^{tree} > stage2d-public-ci/git.txt
+          test "$(git rev-parse HEAD)" = b368bedd2cfa67cf6eeda53e8234ef8460aebaf2
+          curl --fail --silent --show-error https://tetsujisugimori-coder.github.io/castle-3d-parts/deployment-manifest.json > stage2d-public-ci/deployment-before.json
+          node -e "const m=require('./stage2d-public-ci/deployment-before.json');if(m.source_commit!=='b368bedd2cfa67cf6eeda53e8234ef8460aebaf2'||m.source_tree!=='9d6620277aead6021a3da070bbd41d8646916c08')throw Error('wrong production candidate')"
+      - run: npm install --prefix /tmp/castle2d-pw playwright@1.56.1 three@0.180.0
+      - run: /tmp/castle2d-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - name: Actual public URL, no CDN mocking
+        run: node scripts/stage2d-browser.mjs
+        env:
+          STAGE2D_PUBLIC_URL: https://tetsujisugimori-coder.github.io/castle-3d-parts/
+          STAGE2D_OUT: stage2d-public-ci/browser
+      - name: Recheck production revision after test
+        if: always()
+        run: |
+          curl --fail --silent --show-error https://tetsujisugimori-coder.github.io/castle-3d-parts/deployment-manifest.json > stage2d-public-ci/deployment-after.json
+          node -e "const m=require('./stage2d-public-ci/deployment-after.json');if(m.source_commit!=='b368bedd2cfa67cf6eeda53e8234ef8460aebaf2'||m.source_tree!=='9d6620277aead6021a3da070bbd41d8646916c08')throw Error('production changed during test')"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2d-public-b368bed
+          path: stage2d-public-ci/
+          if-no-files-found: error

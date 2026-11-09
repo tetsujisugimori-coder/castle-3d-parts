@@ -1,0 +1,437 @@
+{
+  "scope": "GitHub Actions Ubuntu24.04; same-context laboratory navigation wall time, not cold physical-device; three prespecified samples per condition. CDN supplied using pinned Three.js0.180.0 package bytes. No improvement percentage claimed.",
+  "rows": [
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 375,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 230,
+      "initial_ready_samples_ms": [
+        230,
+        224,
+        235
+      ],
+      "revision_ready_ms": {
+        "B0": 256,
+        "B1": 256,
+        "B2": 266
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 3.2000000000116415,
+        "drawing.svg": 3.3000000000174623
+      },
+      "memory_samples_bytes": [
+        15200000,
+        15200000,
+        15200000
+      ]
+    },
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 375,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 256,
+      "initial_ready_samples_ms": [
+        224,
+        256,
+        301
+      ],
+      "revision_ready_ms": {
+        "B0": 260,
+        "B1": 234,
+        "B2": 244
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 2.1000000000058208,
+        "drawing.svg": 3.1000000000058208
+      },
+      "memory_samples_bytes": [
+        17100000,
+        17100000,
+        17100000
+      ]
+    },
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 390,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 234,
+      "initial_ready_samples_ms": [
+        220,
+        236,
+        234
+      ],
+      "revision_ready_ms": {
+        "B0": 237,
+        "B1": 269,
+        "B2": 243
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1.8999999999941792,
+        "drawing.svg": 2.3999999999941792
+      },
+      "memory_samples_bytes": [
+        17100000,
+        17100000,
+        17100000
+      ]
+    },
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 390,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 222,
+      "initial_ready_samples_ms": [
+        220,
+        222,
+        232
+      ],
+      "revision_ready_ms": {
+        "B0": 229,
+        "B1": 242,
+        "B2": 278
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 2.1999999999825377,
+        "drawing.svg": 2.8000000000174623
+      },
+      "memory_samples_bytes": [
+        17100000,
+        17100000,
+        17100000
+      ]
+    },
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 765,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 233,
+      "initial_ready_samples_ms": [
+        233,
+        233,
+        236
+      ],
+      "revision_ready_ms": {
+        "B0": 236,
+        "B1": 265,
+        "B2": 238
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 2,
+        "drawing.svg": 2.7000000000116415
+      },
+      "memory_samples_bytes": [
+        15200000,
+        15200000,
+        15200000
+      ]
+    },
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 765,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 232,
+      "initial_ready_samples_ms": [
+        250,
+        226,
+        232
+      ],
+      "revision_ready_ms": {
+        "B0": 270,
+        "B1": 241,
+        "B2": 283
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 2,
+        "drawing.svg": 2.1999999999825377
+      },
+      "memory_samples_bytes": [
+        12700000,
+        12700000,
+        12700000
+      ]
+    },
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 1280,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 243,
+      "initial_ready_samples_ms": [
+        246,
+        233,
+        243
+      ],
+      "revision_ready_ms": {
+        "B0": 243,
+        "B1": 256,
+        "B2": 257
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 2.3999999999941792,
+        "drawing.svg": 2.2999999999883585
+      },
+      "memory_samples_bytes": [
+        14300000,
+        14300000,
+        14300000
+      ]
+    },
+    {
+      "engine": "chromium",
+      "version": "141.0.7390.37",
+      "width": 1280,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 234,
+      "initial_ready_samples_ms": [
+        232,
+        246,
+        234
+      ],
+      "revision_ready_ms": {
+        "B0": 253,
+        "B1": 241,
+        "B2": 275
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 2.8999999999941792,
+        "drawing.svg": 3.3999999999941792
+      },
+      "memory_samples_bytes": [
+        11900000,
+        11900000,
+        11900000
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 375,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 221,
+      "initial_ready_samples_ms": [
+        250,
+        208,
+        221
+      ],
+      "revision_ready_ms": {
+        "B0": 228,
+        "B1": 245,
+        "B2": 278
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1,
+        "drawing.svg": 0.9999999999999716
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 375,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 230,
+      "initial_ready_samples_ms": [
+        227,
+        230,
+        236
+      ],
+      "revision_ready_ms": {
+        "B0": 246,
+        "B1": 245,
+        "B2": 263
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1,
+        "drawing.svg": 1
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 390,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 207,
+      "initial_ready_samples_ms": [
+        209,
+        207,
+        206
+      ],
+      "revision_ready_ms": {
+        "B0": 233,
+        "B1": 276,
+        "B2": 264
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1,
+        "drawing.svg": 1
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 390,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 208,
+      "initial_ready_samples_ms": [
+        208,
+        217,
+        195
+      ],
+      "revision_ready_ms": {
+        "B0": 226,
+        "B1": 253,
+        "B2": 241
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 0,
+        "drawing.svg": 1
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 765,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 242,
+      "initial_ready_samples_ms": [
+        266,
+        228,
+        242
+      ],
+      "revision_ready_ms": {
+        "B0": 270,
+        "B1": 274,
+        "B2": 278
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1,
+        "drawing.svg": 1
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 765,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 245,
+      "initial_ready_samples_ms": [
+        245,
+        245,
+        227
+      ],
+      "revision_ready_ms": {
+        "B0": 253,
+        "B1": 300,
+        "B2": 296
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1,
+        "drawing.svg": 0
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 1280,
+      "motion": "no-preference",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 240,
+      "initial_ready_samples_ms": [
+        245,
+        240,
+        229
+      ],
+      "revision_ready_ms": {
+        "B0": 259,
+        "B1": 278,
+        "B2": 282
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1,
+        "drawing.svg": 1
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.0",
+      "width": 1280,
+      "motion": "reduce",
+      "initial_ready_n": 3,
+      "initial_ready_median_ms": 268,
+      "initial_ready_samples_ms": [
+        278,
+        268,
+        267
+      ],
+      "revision_ready_ms": {
+        "B0": 280,
+        "B1": 288,
+        "B2": 294
+      },
+      "resource_medians_ms": {
+        "assembly.glb": 1,
+        "drawing.svg": 1
+      },
+      "memory_samples_bytes": [
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}

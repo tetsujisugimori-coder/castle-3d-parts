@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-09T11:13:59.263875+00:00",
+  "restoration_run": 42607054459,
+  "main_sha": "dec85b596f6b82bfd69129e4b1edbc75d182318c",
+  "all_match": true,
+  "rows": [
+    {
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/",
+      "status": 200,
+      "sha256": "599fbeab3701506172afd1434885022877ac47dc8b08187a2dc30f51a147503e",
+      "expected_status": 200,
+      "expected_sha256": "599fbeab3701506172afd1434885022877ac47dc8b08187a2dc30f51a147503e",
+      "status_match": true,
+      "bytes_match": true,
+      "linked_viewer_entry_present": false
+    },
+    {
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/stage2c/",
+      "status": 200,
+      "sha256": "84fa7fe431b445354736385940bb58df877bfc067d7fc2430a8339bc16f6c3e5",
+      "expected_status": 200,
+      "expected_sha256": "84fa7fe431b445354736385940bb58df877bfc067d7fc2430a8339bc16f6c3e5",
+      "status_match": true,
+      "bytes_match": true,
+      "linked_viewer_entry_present": false
+    },
+    {
+      "url": "https://tetsujisugimori-coder.github.io/castle-3d-parts/deployment-manifest.json",
+      "status": 404,
+      "sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "expected_status": 404,
+      "expected_sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "status_match": true,
+      "bytes_match": true,
+      "linked_viewer_entry_present": false
+    }
+  ],
+  "scope": "Actual HTTPS responses after original main redeployment; environment protection is separately verified"
+}

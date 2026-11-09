@@ -1,0 +1,159 @@
+{
+  "head": "5651e8afeb779e8d4705e64416be25a8a1ad2c16",
+  "measured_at": "2026-11-09T10:56:34.803Z",
+  "rows": [
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "mode": "legacy",
+      "result": "PASS",
+      "stages": [
+        {
+          "stage": "initial",
+          "url": "http://127.0.0.1:34561/legacy/",
+          "value": "B0"
+        },
+        {
+          "stage": "select-B1",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B1",
+          "value": "B1"
+        },
+        {
+          "stage": "select-B2",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B2",
+          "value": "B2"
+        },
+        {
+          "stage": "back",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B1",
+          "value": "B1"
+        },
+        {
+          "stage": "forward",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B2",
+          "value": "B2"
+        },
+        {
+          "stage": "reload",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B2",
+          "value": "B2"
+        }
+      ],
+      "physical_iphone": "NOT_TESTED"
+    },
+    {
+      "engine": "chromium",
+      "browser_version": "141.0.7390.37",
+      "mode": "document",
+      "result": "PASS",
+      "stages": [
+        {
+          "stage": "initial",
+          "url": "http://127.0.0.1:34561/document/",
+          "value": "B0"
+        },
+        {
+          "stage": "select-B1",
+          "url": "http://127.0.0.1:34561/document/?revision=B1",
+          "value": "B1"
+        },
+        {
+          "stage": "select-B2",
+          "url": "http://127.0.0.1:34561/document/?revision=B2",
+          "value": "B2"
+        },
+        {
+          "stage": "back",
+          "url": "http://127.0.0.1:34561/document/?revision=B1",
+          "value": "B2"
+        },
+        {
+          "stage": "forward",
+          "url": "http://127.0.0.1:34561/document/?revision=B2",
+          "value": "B2"
+        },
+        {
+          "stage": "reload",
+          "url": "http://127.0.0.1:34561/document/?revision=B2",
+          "value": "B2"
+        }
+      ],
+      "physical_iphone": "NOT_TESTED"
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "mode": "legacy",
+      "result": "FAIL",
+      "stages": [
+        {
+          "stage": "initial",
+          "url": "http://127.0.0.1:34561/legacy/",
+          "value": "B0"
+        },
+        {
+          "stage": "select-B1",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B1",
+          "value": "B1"
+        },
+        {
+          "stage": "select-B2",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B2",
+          "value": "B2"
+        },
+        {
+          "stage": "back",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B1",
+          "value": "B1"
+        },
+        {
+          "stage": "forward",
+          "url": "http://127.0.0.1:34561/legacy/?revision=B2",
+          "value": "B2"
+        }
+      ],
+      "physical_iphone": "NOT_TESTED",
+      "error": "page.reload: Page crashed\nCall log:\n  - waiting for navigation until \"load\"\n"
+    },
+    {
+      "engine": "webkit",
+      "browser_version": "26.0",
+      "mode": "document",
+      "result": "PASS",
+      "stages": [
+        {
+          "stage": "initial",
+          "url": "http://127.0.0.1:34561/document/",
+          "value": "B0"
+        },
+        {
+          "stage": "select-B1",
+          "url": "http://127.0.0.1:34561/document/?revision=B1",
+          "value": "B1"
+        },
+        {
+          "stage": "select-B2",
+          "url": "http://127.0.0.1:34561/document/?revision=B2",
+          "value": "B2"
+        },
+        {
+          "stage": "back",
+          "url": "http://127.0.0.1:34561/document/?revision=B1",
+          "value": "B1"
+        },
+        {
+          "stage": "forward",
+          "url": "http://127.0.0.1:34561/document/?revision=B2",
+          "value": "B2"
+        },
+        {
+          "stage": "reload",
+          "url": "http://127.0.0.1:34561/document/?revision=B2",
+          "value": "B2"
+        }
+      ],
+      "physical_iphone": "NOT_TESTED"
+    }
+  ],
+  "note": "Legacy result is observed, not required to fail on every future browser. Document navigation must pass. Physical Safari is untested."
+}
