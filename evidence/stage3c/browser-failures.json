@@ -1,0 +1,9 @@
+{
+  "attempt": "local stage3c first",
+  "failure": "375px resized to385px horizontal overflow from long part selector labels",
+  "scope": "new Stage3C UI",
+  "evidence": "FAIL-chromium-375-no-preference.png and trace retained in local stage3c-browser-first; initial log retained",
+  "action": "Own active browser run interrupted after same overflow in small widths; unexecuted later cases NOT_TESTED in this attempt. No PASS claimed.",
+  "fix": "Bound labels/select width to100%, preserve ID and readable selected text",
+  "retest": "Separate next attempt, same resize assertion"
+}

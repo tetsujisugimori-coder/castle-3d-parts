@@ -1,0 +1,21 @@
+[
+  {
+    "fault": "delete_pair",
+    "before": "ACCEPTED",
+    "after": "REJECTED",
+    "after_reason": "collision pair coverage"
+  },
+  {
+    "fault": "remove_interior_bolt",
+    "before": "ACCEPTED",
+    "after": "REJECTED",
+    "after_reason": "bolt sample coverage"
+  },
+  {
+    "fault": "wrong_positive_volume",
+    "before": "REJECTED",
+    "before_reason": "collision classification",
+    "after": "REJECTED",
+    "after_reason": "collision classification"
+  }
+]
