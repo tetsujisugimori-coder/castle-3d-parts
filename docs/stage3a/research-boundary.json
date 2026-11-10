@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "DEC-GATE-SIMPLE-01-r1",
+  "part_id": "GATE-SIMPLE-01",
+  "basis": "D",
+  "cad_eligibility": "prototype_only",
+  "target_period": "戦国時代末期を想定した教材用試作。年代認定ではない。",
+  "historical_existence": {"status":"UNKNOWN","reason":"今回、特定遺構と本木戸を結ぶ史料は確認していない。"},
+  "form_and_structure": {"status":"ASSUMPTION","claim":"単純な片開き板戸と模式軸を採用する。歴史的蝶番構造の再現ではない。"},
+  "dimensions": {"status":"PROTOTYPE","source":"cad/stage3a/spec.json","reason":"既存木柵との接続・変換・表示を検証するための設計値。発掘実測値ではない。"},
+  "comparative_examples": {"status":"NOT_CONFIRMED","reason":"他城類例の外形や寸法を今回の設計根拠として採用していない。"},
+  "reference_only": [
+    {"path":"sources/records/SRC-0001.json","use":"既存の書誌・確認状態を参照。木戸の実在・構造・寸法を立証しない。"},
+    {"path":"research/hypotheses/HYP-0001.json","use":"既存の柱穴と施設帰属の不確実性を確認。木戸への転用禁止。"},
+    {"path":"cad/stage2b/spec.json","use":"木柵の試作接続幾何を参照。史料ではない。"}
+  ],
+  "unresolved": ["特定城の木戸の存在と位置","板組・接合・軸受の歴史的構造","原寸法","連続動作の干渉と耐久性","現実の施工・構造安全性"],
+  "revision_history": [{"revision":1,"date":"2026-11-10","reason":"Issue #24に基づく試作D設計境界の新設。既存SRC/OBS/HYP/DECは変更しない。"}]
+}
