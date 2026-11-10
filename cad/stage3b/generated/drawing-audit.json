@@ -1,0 +1,30 @@
+{
+  "native_dimensions": [
+    {
+      "id": "ShaftRadius",
+      "object": "GATE_Spindle_Lower",
+      "edge": "Edge1",
+      "radius_mm": 12.0,
+      "source": "actual CAD circular edge"
+    },
+    {
+      "id": "BoreRadius",
+      "object": "GATE_Bearing_Lower",
+      "edge": "Edge15",
+      "radius_mm": 12.5,
+      "source": "actual CAD circular edge"
+    },
+    {
+      "id": "OpeningRange",
+      "value_degrees": 90,
+      "edited_value_degrees": 50,
+      "parameters": [
+        10,
+        60
+      ]
+    }
+  ],
+  "saved_reopened": true,
+  "manual_gui": "NOT_TESTED",
+  "radial_gap_mm": 0.5
+}

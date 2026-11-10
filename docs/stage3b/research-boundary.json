@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "DEC-GATE-MECHANISM-01-r1",
+  "part_id": "GATE-SIMPLE-01",
+  "basis": "D",
+  "cad_eligibility": "prototype_only",
+  "baseline_commit": "b0713ecc0f18772fc119ba4b51359855d383e086",
+  "historical_existence": {
+    "status": "UNKNOWN",
+    "reason": "特定城の木戸との同一性を確認していない。"
+  },
+  "mechanism_hypothesis": {
+    "status": "UNCONFIRMED",
+    "basis": "C",
+    "claim": "上下軸受による木製回転支持を比較候補とする。戦国末期の標準構造という認定ではない。"
+  },
+  "prototype_decision": {
+    "basis": "D",
+    "reason": "既存の模式軸と7部材を保全し、軸支持・連結・角度制限を分離して機構と変換を検証する。",
+    "modern_hinge_claim": false
+  },
+  "dimensions": {
+    "status": "PROTOTYPE",
+    "source": "cad/stage3b/spec.json",
+    "archaeological_measurement": false
+  },
+  "references": [
+    {
+      "path": "sources/records/SRC-0001.json",
+      "use": "既存の部分照合済み書誌・施設記述を読む。軸受形式・寸法の証拠に転用しない。"
+    },
+    {
+      "path": "research/hypotheses/HYP-0001.json",
+      "use": "板塀と柱穴帰属の研究仮説。木戸支持形式を証明しない。"
+    },
+    {
+      "path": "docs/stage3a/research-boundary.json",
+      "use": "前工程の未確認事項と試作値の継承。"
+    },
+    {
+      "path": "cad/stage3a/spec.json",
+      "use": "試作0/45/90度と接続幾何。史料値ではない。"
+    }
+  ],
+  "comparison_sources": {
+    "status": "NOT_CONFIRMED",
+    "reason": "支持構造の同時代類例は本工程で確証していない。類例の断定なしで試作Dを進める。"
+  },
+  "unresolved": [
+    "時代・城固有の木戸支持構造",
+    "摩擦・摩耗・材料変形・耐久",
+    "実施工の締結と荷重支持",
+    "物理接触の動力学"
+  ],
+  "revision_history": [
+    {
+      "revision": 1,
+      "date": "2026-11-10",
+      "issue": 26,
+      "reason": "機構試作の独立設計判断。旧SRC/OBS/HYP/DECは不変。"
+    }
+  ]
+}

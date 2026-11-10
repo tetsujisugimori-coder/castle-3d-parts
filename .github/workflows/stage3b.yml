@@ -1,0 +1,32 @@
+name: Stage 3-B gate mechanism
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mechanism:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: mkdir -p stage3b-ci && node --test > stage3b-ci/tests.log 2>&1
+      - run: python3 cad/stage3b/check.py > stage3b-ci/cad-check.json
+      - run: python3 cad/stage3b/check_test.py > stage3b-ci/cad-tests.log 2>&1
+      - run: node scripts/build-stage3b-site.mjs > stage3b-ci/build.log
+      - run: npm install --prefix /tmp/castle2d-pw playwright@1.56.1 three@0.180.0
+      - run: /tmp/castle2d-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/stage3b-browser.mjs
+        env:
+          STAGE3B_OUT: stage3b-ci/browser
+      - run: git rev-parse HEAD HEAD^{tree} > stage3b-ci/git.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3b-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage3b-ci/
+          if-no-files-found: error

@@ -1,0 +1,266 @@
+{
+  "runs": [
+    {
+      "log": "gate3b-cad.log",
+      "sha256": "9057adf74868882ab09f23f13a7a922495c2dabeaf2d7429b0d0de1882ca51a6",
+      "failure_tail": [
+        "PivotWitness: Failed to create edge",
+        "No valid GL context found!",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "PivotWitness: Failed to create edge",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 61, in <module>",
+        "    rec(d);assert abs(n.getRawValue()-540)<1e-6",
+        "                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad10.log",
+      "sha256": "87027dd82b4eed69fffb548ad24cb208d0ac3e0c07180b4309f55dac4f689a4f",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 63, in <module>",
+        "    G.activeDocument().getObject('FrontPage').show();n.touch();d.recompute();rec(d);print('DIM',p.PivotX.Value,w.Shape.Length,n.getRawValue(),n.State,n.References3D,n.Type,flush=True);assert abs(n.getRawValue()-540)<1e-6",
+        "                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError",
+        "DIM -540.0 540.0 0.0 ['Up-to-date'] [(<Part::PartFeature>, ('Edge1',))] Distance"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad11.log",
+      "sha256": "bfa0a4e7350f105ea8e7bae5fd53cea6bb7fd84eabece9c4e85c54f6049e5477",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 72, in <module>",
+        "    assert abs(d.getObject('PivotDimension').getRawValue()-540)<1e-6",
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad12.log",
+      "sha256": "c624103a46d3d27daa570eaecd92e28a53ba0206a7149a83b533504484af8bf7",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 83, in <module>",
+        "    assert x.cut(y).Volume+y.cut(x).Volume<1e-3,(label,name)",
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError: ('B0', 'GATE_Door')"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad13.log",
+      "sha256": "d99a98ea97f2cb888f842b752a57cc576b87af39bcc92993d56caf95f977809c",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 76, in <module>",
+        "    assert abs(d.getObject('PivotDimension').getRawValue()-540)<1e-6",
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError",
+        "TrajectoryView is waiting for HLR to finish",
+        "SideView is waiting for HLR to finish",
+        "TopView is waiting for HLR to finish"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad14.log",
+      "sha256": "72bd0d25dc9959139447c3f9c5dbe66e37151ee5f04bb18accaeddc9d454b370",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 85, in <module>",
+        "    assert x.cut(y).Volume+y.cut(x).Volume<1e-3,(label,name)",
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError: ('B0', 'GATE_Door')",
+        "FrontView is waiting for HLR to finish",
+        "TopView is waiting for HLR to finish"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad15.log",
+      "sha256": "21cd8388a810f38837b99b15d0e9d58c71b4837bf128d9cee7d59744c6920dcf",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 92, in <module>",
+        "    assert abs(o.Shape.Volume-s.Shape.Volume)<.01",
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad16.log",
+      "sha256": "52df4fabc4056e3b2db7fd5a593f8fa6b90ded41c1a5b74996ccf3408ed07045",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad2.log",
+      "sha256": "90cfb4c0d74f8515f3cdee0a9c07c5285068ed074475e5d25ae5f2abc9d1f1f5",
+      "failure_tail": [
+        "No valid GL context found!",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "No valid GL context found!",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 61, in <module>",
+        "    rec(d);assert abs(n.getRawValue()-540)<1e-6",
+        "                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad3.log",
+      "sha256": "60407ded310ab481430f3af05bb7c947edd1261c56282c7e50c24473450bd569",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "No valid GL context found!",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 61, in <module>",
+        "    rec(d);print('DIM',p.PivotX.Value,w.Shape.Length,n.getRawValue(),flush=True);assert abs(n.getRawValue()-540)<1e-6",
+        "                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError",
+        "DIM -540.0 540.0 0.0"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad4.log",
+      "sha256": "eed53f0866c3adc9e279d51ba89cc78c307b409260bec33b302fd1bbbf54a95f",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "No valid GL context found!",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 61, in <module>",
+        "    rec(d);print('DIM',p.PivotX.Value,w.Shape.Length,n.getRawValue(),flush=True);assert abs(n.getRawValue()-540)<1e-6",
+        "                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError",
+        "DIM -540.0 540.0 0.0"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad5.log",
+      "sha256": "e4d45932b79ffb08ba5f9ee660d7ef7437c57d16460d6ac2147d05c574f27a06",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "No valid GL context found!",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 62, in <module>",
+        "    rec(d);print('DIM',p.PivotX.Value,w.Shape.Length,n.getRawValue(),flush=True);assert abs(n.getRawValue()-540)<1e-6",
+        "                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError",
+        "DIM -540.0 540.0 0.0"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad6.log",
+      "sha256": "547ce10f9631c00bf25a7b82626d59795b92b39cf7720b3f096004a06aa17554",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 62, in <module>",
+        "    G.activeDocument().getObject('FrontPage').show();rec(d);print('DIM',p.PivotX.Value,w.Shape.Length,n.getRawValue(),flush=True);assert abs(n.getRawValue()-540)<1e-6",
+        "                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError",
+        "DIM -540.0 540.0 0.0"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad7.log",
+      "sha256": "86cfe7a85768555b7ae623df94230e99f49516367d5050b7040590206616db4e",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "QOpenGLWidget: Failed to create context",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 62, in <module>",
+        "    G.activeDocument().getObject('FrontPage').show();n.touch();d.recompute(True);rec(d);print('DIM',p.PivotX.Value,w.Shape.Length,n.getRawValue(),n.State,n.References3D,n.Type,flush=True);assert abs(n.getRawValue()-540)<1e-6",
+        "                                                               ~~~~~~~~~~~^^^^^^",
+        "TypeError: expect input of sequence of document objects"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad8.log",
+      "sha256": "e30f9ca9ff9ff8749b63fd72071a02f599ed6240522f1cbac5a3e685a84fd9aa",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 66, in <module>",
+        "    pose(0);d.saveAs(str(OUT/'assembly.FCStd'));A.closeDocument(d.Name);d=A.openDocument(str(OUT/'assembly.FCStd'));p=d.getObject('Mechanism');objs=[d.getObject(o.Name) for o in objs];rec(d)",
+        "                                                                                                                                                                 ^^^^^^",
+        "ReferenceError: Cannot access attribute 'Name' of deleted object",
+        "DIM -540.0 540.0 540.0 ['Up-to-date'] [(<Part::PartFeature>, ('Edge1',))] Distance"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    },
+    {
+      "log": "gate3b-cad9.log",
+      "sha256": "87027dd82b4eed69fffb548ad24cb208d0ac3e0c07180b4309f55dac4f689a4f",
+      "failure_tail": [
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed",
+        "Traceback (most recent call last):",
+        "  File \"/workspace/scratch/e622c1e9421e/castle-gate-stage3b/cad/stage3b/build.py\", line 63, in <module>",
+        "    G.activeDocument().getObject('FrontPage').show();n.touch();d.recompute();rec(d);print('DIM',p.PivotX.Value,w.Shape.Length,n.getRawValue(),n.State,n.References3D,n.Type,flush=True);assert abs(n.getRawValue()-540)<1e-6",
+        "                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "AssertionError",
+        "DIM -540.0 540.0 0.0 ['Up-to-date'] [(<Part::PartFeature>, ('Edge1',))] Distance"
+      ],
+      "status": "FAILED_OR_INTERRUPTED; not counted as successful generation"
+    }
+  ],
+  "corrections": [
+    "Native dimensions: bounded Qt event/recompute condition wait, writable cache",
+    "Pivot-local shapes: preserve analytic geometry within compound, avoiding overridden Shape placement and STEP spline approximation",
+    "Split headless collision from Qt repaint loop",
+    "Closed-bottom thrust seat, exact collar contact, and parameter-driven limit fixtures"
+  ]
+}

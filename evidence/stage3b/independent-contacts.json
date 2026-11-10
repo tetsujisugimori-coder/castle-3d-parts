@@ -1,0 +1,62 @@
+{
+  "contacts": [
+    {
+      "a": "GATE_Spindle_Lower",
+      "b": "GATE_Bearing_Lower",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0,
+      "surface_contact_mm2": 452.3893421169303
+    },
+    {
+      "a": "GATE_Axis",
+      "b": "GATE_Coupler_Lower",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0,
+      "surface_contact_mm2": 2261.946710584651
+    },
+    {
+      "a": "GATE_Axis",
+      "b": "GATE_Coupler_Upper",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0,
+      "surface_contact_mm2": 2261.946710584651
+    },
+    {
+      "a": "GATE_Door",
+      "b": "GATE_Coupler_Lower",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0,
+      "surface_contact_mm2": 1080.0
+    },
+    {
+      "a": "GATE_Door",
+      "b": "GATE_Coupler_Upper",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0,
+      "surface_contact_mm2": 1080.0
+    },
+    {
+      "a": "GATE_Post_Left",
+      "b": "GATE_Bearing_Lower",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0,
+      "surface_contact_mm2": 750.0
+    },
+    {
+      "a": "GATE_Post_Left",
+      "b": "GATE_Bearing_Upper",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0,
+      "surface_contact_mm2": 750.0
+    }
+  ],
+  "shaft_radii_mm": [
+    12.0
+  ],
+  "bearing_radii_mm": [
+    25.0,
+    12.5
+  ],
+  "radial_clearance_mm": 0.5,
+  "joint_scope": "geometric contact only; torque/strength NOT_TESTED"
+}

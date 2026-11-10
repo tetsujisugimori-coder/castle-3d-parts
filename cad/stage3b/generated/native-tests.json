@@ -1,0 +1,87 @@
+{
+  "fresh_reload": true,
+  "oracle": "independent rotation of preserved Stage3A B0 solid",
+  "poses_tested": [
+    0,
+    45,
+    90,
+    45,
+    0,
+    37,
+    89,
+    12,
+    0,
+    0,
+    45,
+    90,
+    45,
+    0,
+    37,
+    89,
+    12,
+    0,
+    0,
+    45,
+    90,
+    45,
+    0,
+    37,
+    89,
+    12,
+    0
+  ],
+  "faults": [
+    {
+      "id": "angle-overrun",
+      "result": "REJECT"
+    },
+    {
+      "id": "negative-angle",
+      "result": "REJECT"
+    },
+    {
+      "id": "axis-shift",
+      "result": "REJECT"
+    },
+    {
+      "id": "gap-metadata-mismatch",
+      "result": "REJECT"
+    },
+    {
+      "id": "support-penetration",
+      "result": "REJECT"
+    },
+    {
+      "id": "before-pivot-fix",
+      "result": "REJECT"
+    }
+  ],
+  "contacts": [
+    {
+      "a": "GATE_Spindle_Lower",
+      "b": "GATE_Bearing_Lower",
+      "contact_area_m2": 0.0004523893421169303,
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "GATE_Axis",
+      "b": "GATE_Coupler_Lower",
+      "contact_area_m2": 0.002261946710584651,
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "GATE_Door",
+      "b": "GATE_Coupler_Lower",
+      "contact_area_m2": 0.00108,
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "GATE_Post_Left",
+      "b": "GATE_Bearing_Lower",
+      "contact_area_m2": 0.00075,
+      "overlap_mm3": 0.0
+    }
+  ],
+  "strength": "NOT_TESTED",
+  "physical_joint_function": "NOT_TESTED"
+}
