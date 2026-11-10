@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "part_id": "GATE-MECHANISM-01",
+  "basis": "D",
+  "unit": "m",
+  "source": "cad/stage3a/spec.json",
+  "pivot_m": [
+    -0.54,
+    0,
+    0.1
+  ],
+  "angle_range_deg": [
+    0,
+    90
+  ],
+  "presets_deg": [
+    0,
+    45,
+    90
+  ],
+  "shaft_radius_m": 0.012,
+  "bearing_bore_radius_m": 0.0125,
+  "bearing_outer_radius_m": 0.025,
+  "lower_thrust_seat_z_m": 0.08,
+  "coupler_bore_radius_m": 0.012,
+  "joint_model": "Ideal rigid coupler contact, not a tested friction or keyed torque joint",
+  "live_edit_supported": [
+    "Angle",
+    "MinimumAngle",
+    "MaximumAngle"
+  ],
+  "other_dimension_changes": "Regenerate and reverify all geometry; editing CAD metadata alone is not supported",
+  "continuous_clearance": "UNKNOWN",
+  "history": "UNKNOWN",
+  "strength": "NOT_TESTED",
+  "limit_edit_scope": "0 <= MinimumAngle < MaximumAngle <= 90, physical stop fixtures follow limit angles"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "engine": "chromium",
+    "result": "PASS",
+    "progressed": 11.998020000000004,
+    "paused": 16.999019999999998,
+    "frozen": 8.500019999999996,
+    "checks": [
+      "real RAF progress",
+      "pause stability",
+      "reverse reaches0",
+      "three projections selectable actual paths",
+      "offscreen stops before endpoint and never auto resumes"
+    ],
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "result": "PASS",
+    "progressed": 11.580000000000002,
+    "paused": 14.820000000000006,
+    "frozen": 9.450000000000003,
+    "checks": [
+      "real RAF progress",
+      "pause stability",
+      "reverse reaches0",
+      "three projections selectable actual paths",
+      "offscreen stops before endpoint and never auto resumes"
+    ],
+    "errors": []
+  }
+]

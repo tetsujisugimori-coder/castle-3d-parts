@@ -1,0 +1,86 @@
+{
+  "raw_configurations": [
+    {
+      "name": "chromium-375-no-preference",
+      "png_sha256": "38541a4e1e031f052531ba4083fb840e2829acae7a6b0d7276754aa66ea97896",
+      "trace_sha256": "8476fbf0651b2d5129458ca85b49a7f7a8df0d98b674b0b5b7a0913dca5d9fdd"
+    },
+    {
+      "name": "chromium-375-reduce",
+      "png_sha256": "38541a4e1e031f052531ba4083fb840e2829acae7a6b0d7276754aa66ea97896",
+      "trace_sha256": "5fedcc337fa218ccd6e872bfcbb200e9c2a69f5c101c442fa2f7a1cd22f20a55"
+    },
+    {
+      "name": "chromium-390-no-preference",
+      "png_sha256": "22121beadf374913a3632a428a2c5c1e2ccfe3172e57049705c0290ed5fa381b",
+      "trace_sha256": "5f9ba13757581fbfc52e68cd52ec8bad4bda252b9b4bcc42179f7faca217af3d"
+    },
+    {
+      "name": "chromium-390-reduce",
+      "png_sha256": "22121beadf374913a3632a428a2c5c1e2ccfe3172e57049705c0290ed5fa381b",
+      "trace_sha256": "7691b8e57fb4ba82b46e9cd60782929cc18f0ef600991b5d95e4ddf3901fe38a"
+    },
+    {
+      "name": "chromium-765-no-preference",
+      "png_sha256": "068881f59a5ebb53bb2f03590d2a48e05651f606450f816d9be4a91c7e447b32",
+      "trace_sha256": "ae0719179e3dc4032fb911c67d7ecffc028a783dd0d03b5f0da09b0c6b129e07"
+    },
+    {
+      "name": "chromium-765-reduce",
+      "png_sha256": "068881f59a5ebb53bb2f03590d2a48e05651f606450f816d9be4a91c7e447b32",
+      "trace_sha256": "dafa5173e86a7af2149136e306f631fbbd100d140cb7bb58214584cda5d13ddb"
+    },
+    {
+      "name": "chromium-1280-no-preference",
+      "png_sha256": "0a509db5f49be2f5210e2c84a387a17984115486d00a226066406a93c869c7cc",
+      "trace_sha256": "3ec331254c662399496f8a8e97d747c8b3cce15aa085fa5a15d24a65ed96d947"
+    },
+    {
+      "name": "chromium-1280-reduce",
+      "png_sha256": "0a509db5f49be2f5210e2c84a387a17984115486d00a226066406a93c869c7cc",
+      "trace_sha256": "4b70f6ab8510c8c8bc32b87a0a721b570f48a73753f5c2df30b2998bdda67ede"
+    },
+    {
+      "name": "webkit-375-no-preference",
+      "png_sha256": "5e5be93c273bd8590a4c94a5b56e1d2554b5db031c0502921d5e3bebe26f022c",
+      "trace_sha256": "55e26d27c57c310ba7cbabb9c7436a2bff70763636373143dd5c8b022b24b46b"
+    },
+    {
+      "name": "webkit-375-reduce",
+      "png_sha256": "5e5be93c273bd8590a4c94a5b56e1d2554b5db031c0502921d5e3bebe26f022c",
+      "trace_sha256": "e0162deae02d1ac39abd5585fc3e9d045d0f984efdb2a42a58cc69c1f42fddc1"
+    },
+    {
+      "name": "webkit-390-no-preference",
+      "png_sha256": "4116744fd2c80cdb9f343266a1ef8b613b330dfd582261f3492d10e1c19584be",
+      "trace_sha256": "1afbdf4e3c24c6432557b03c9465b419cf6e59b98581db26cd278d587c32f113"
+    },
+    {
+      "name": "webkit-390-reduce",
+      "png_sha256": "4116744fd2c80cdb9f343266a1ef8b613b330dfd582261f3492d10e1c19584be",
+      "trace_sha256": "1108764aec143befe6958055edca2edf99a51e7b20892bf88ea47a81cffdc810"
+    },
+    {
+      "name": "webkit-765-no-preference",
+      "png_sha256": "4ea7d4909d92c4c21c40ec752957c3daf2bd00dcad7680f3fcd6446ce266f535",
+      "trace_sha256": "e731faff543ffff85d1fb38450cd102865d055249dd0d8a1b590388e12f88070"
+    },
+    {
+      "name": "webkit-765-reduce",
+      "png_sha256": "4ea7d4909d92c4c21c40ec752957c3daf2bd00dcad7680f3fcd6446ce266f535",
+      "trace_sha256": "2a981459155af46816be6442342d78dae3796dd84db79a8fc4a193638455aee7"
+    },
+    {
+      "name": "webkit-1280-no-preference",
+      "png_sha256": "721f05ac40f83c4fa817e123063f8434f93866ed554aea838fb9ebb9773e4768",
+      "trace_sha256": "65578eb3fd3ee6e0e9f809efc0bde3fea8080f900e41dcb1d9c2dea5589da8da"
+    },
+    {
+      "name": "webkit-1280-reduce",
+      "png_sha256": "721f05ac40f83c4fa817e123063f8434f93866ed554aea838fb9ebb9773e4768",
+      "trace_sha256": "da83980ceced243838aa737e569711093841f265fb65a956989e43441375a40c"
+    }
+  ],
+  "fault_rows": 26,
+  "results_sha256": "8c9d3349c034fd335cefd54bf0df9559381afae203e200ee43028f2d9d6dac2a"
+}

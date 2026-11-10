@@ -1,0 +1,23 @@
+{
+  "legacy_poses": [
+    {
+      "pose": "B0",
+      "angle_degrees": 0,
+      "seven_original_members": "MATCH"
+    },
+    {
+      "pose": "B1",
+      "angle_degrees": 45,
+      "seven_original_members": "MATCH"
+    },
+    {
+      "pose": "B2",
+      "angle_degrees": 90,
+      "seven_original_members": "MATCH"
+    }
+  ],
+  "fcstd_reloaded": true,
+  "step_reloaded": true,
+  "native_dimension_edit": true,
+  "run_note": "run16 interrupted after mesh-transfer export, before first collision sample; collision continued headlessly"
+}

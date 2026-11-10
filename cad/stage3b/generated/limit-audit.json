@@ -1,0 +1,22 @@
+{
+  "saved_reopened_range": [
+    10,
+    60
+  ],
+  "saved_reopened_angle": 35,
+  "endpoint_contacts": [
+    {
+      "angle_degrees": 10,
+      "stop": "GATE_Stop_Closed",
+      "overlap_mm3": 0.0,
+      "gap_m": 0.0
+    },
+    {
+      "angle_degrees": 60,
+      "stop": "GATE_Stop_Open",
+      "overlap_mm3": 0.0,
+      "gap_m": 0.0
+    }
+  ],
+  "other_parameter_edits": "NOT_TESTED"
+}
