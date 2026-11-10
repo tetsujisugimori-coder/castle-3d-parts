@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "id": "DEC-GATE-LOCK-01-r1",
+  "basis": "D",
+  "cad_eligibility": "prototype_only",
+  "checked_at": "2026-11-10T19:08:00Z",
+  "historical_existence": {
+    "status": "UNKNOWN",
+    "reason": "山中城または1590年前後の特定木戸に本機構を比定しない。"
+  },
+  "sources": [
+    {
+      "id": "SRC-GATE-LOCK-01",
+      "title": "JAANUS / kannuki 閂",
+      "url": "https://www.aisf.or.jp/~jaanus/deta/k/kannuki.htm",
+      "type": "architectural_dictionary",
+      "observation_id": "OBS-GATE-LOCK-01",
+      "observation": "閂と保持部材の一般的な語義を本文で確認した。",
+      "verified_scope": "本文を閲覧。図版転載なし。挙示例は日光東照宮神厩であり、戦国期山中城の直接根拠ではない。",
+      "unverified": [
+        "同時代採用",
+        "寸法",
+        "材料強度"
+      ],
+      "rights": "画像・文章の転載をしない。URLと独自要約のみ。"
+    },
+    {
+      "id": "SRC-GATE-LOCK-02",
+      "title": "JAANUS / kidomon 木戸門",
+      "url": "https://www.aisf.or.jp/~jaanus/deta/k/kidomon.htm",
+      "type": "architectural_dictionary",
+      "observation_id": "OBS-GATE-LOCK-02",
+      "observation": "柱・横材・扉を含む一般的構成の説明を閲覧。",
+      "verified_scope": "語義の比較のみ。本試作の単扉・無屋根・支持方式を史実認定しない。",
+      "unverified": [
+        "1590年前後との同一性",
+        "具体的な仕口"
+      ],
+      "rights": "図版転載なし。"
+    },
+    {
+      "id": "SRC-GATE-LOCK-03",
+      "title": "山中城跡環境整備事業",
+      "url": "https://www.city.mishima.shizuoka.jp/page/1301.html",
+      "publisher": "三島市文化財課",
+      "type": "official_site",
+      "observation_id": "OBS-GATE-LOCK-03",
+      "observation": "西木戸口を含む整備範囲と修景表示の説明を確認。",
+      "verified_scope": "Web本文の整備記述。閂寸法・接合構造の根拠は取得していない。",
+      "unverified": [
+        "木戸閉鎖機構",
+        "発掘閂",
+        "仕口詳細"
+      ]
+    }
+  ],
+  "hypothesis": {
+    "id": "HYP-GATE-LOCK-01",
+    "basis": "C",
+    "status": "UNCONFIRMED",
+    "claim": "直動閂と保持部を木戸閉鎖の比較候補とする。一般語義から個別城の形式を確定しない。"
+  },
+  "decision": {
+    "id": "DEC-GATE-LOCK-01",
+    "basis": "D",
+    "reason": "CAD機構・接触・状態遷移の検証に適した直動閂を暫定採用。既存形状を残し、追加支持と接合候補を別IDで管理。",
+    "dimensions": "cad/stage3c/spec.json",
+    "archaeological_measurement": false,
+    "modern_hinge_standard_claim": false
+  },
+  "verification": {
+    "id": "VER-GATE-LOCK-01",
+    "scope": "保存再読込、形式変換、標本姿勢、状態拒否、Web対応の範囲のみ。",
+    "evidence": "cad/stage3c/generated",
+    "physical_load_strength": "UNKNOWN",
+    "continuous_path": "UNKNOWN",
+    "historical_validation": "UNKNOWN"
+  },
+  "previous_references": [
+    "sources/records/SRC-0001.json",
+    "research/hypotheses/HYP-0001.json",
+    "docs/stage3b/research-boundary.json"
+  ],
+  "register_policy": "既存SRC/OBS/HYP/DEC/VERの状態は変更しない。Stage3C名前空間で出典→観察→仮説→判断→技術検証を接続する。"
+}

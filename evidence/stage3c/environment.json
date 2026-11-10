@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-10T19:10:09.482571+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "node": "v24.22.1",
+  "git": "git version 2.52.0",
+  "mode": "cloud Linux; FreeCAD Qt offscreen and Blender background; physical Safari and manual GUI NOT_TESTED",
+  "tmp_constraint": "/tmp 100% at start; no unrelated files deleted; workspace-local TMPDIR used",
+  "baseline_checks": {
+    "node": 473,
+    "portable_stage3b": 15,
+    "state": "PASS before new tests completed"
+  }
+}
