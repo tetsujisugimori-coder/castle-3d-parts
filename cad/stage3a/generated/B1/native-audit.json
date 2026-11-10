@@ -1,0 +1,642 @@
+{
+  "native_linked_dimensions": "PASS",
+  "created": [
+    {
+      "id": "beam-length",
+      "view": "front",
+      "part_ids": [
+        "GATE_Beam"
+      ],
+      "value_m": 1.5,
+      "native_object": "Dim_beam_length",
+      "witness": "Witness_beam_length",
+      "expression": "GATE_Beam.Length",
+      "witness_expressions": {
+        "X1": "GATE_Beam.Placement.Base.x",
+        "X2": "GATE_Beam.Placement.Base.x + GATE_Beam.Length",
+        "Y1": "GATE_Beam.Placement.Base.y",
+        "Y2": "GATE_Beam.Placement.Base.y",
+        "Z1": "GATE_Beam.Placement.Base.z",
+        "Z2": "GATE_Beam.Placement.Base.z"
+      }
+    },
+    {
+      "id": "post-height",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 2.2,
+      "native_object": "Dim_post_height",
+      "witness": "Witness_post_height",
+      "expression": "GATE_Post_Left.Height",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x",
+        "X2": "GATE_Post_Left.Placement.Base.x",
+        "Y1": "GATE_Post_Left.Placement.Base.y",
+        "Y2": "GATE_Post_Left.Placement.Base.y",
+        "Z1": "GATE_Post_Left.Placement.Base.z",
+        "Z2": "GATE_Post_Left.Placement.Base.z + GATE_Post_Left.Height"
+      }
+    },
+    {
+      "id": "opening",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 1.2,
+      "native_object": "Dim_opening",
+      "witness": "Witness_opening",
+      "expression": "Parameters.opening",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x + GATE_Post_Left.Length",
+        "X2": "GATE_Post_Right.Placement.Base.x",
+        "Y1": "0 mm",
+        "Y2": "0 mm",
+        "Z1": "0 mm",
+        "Z2": "0 mm"
+      }
+    },
+    {
+      "id": "door-width",
+      "view": "front",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.12,
+      "native_object": "Dim_door_width",
+      "witness": "Witness_door_width",
+      "expression": "GATE_Door.Length",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x + GATE_Door.Length * cos(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Length * sin(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "door-height",
+      "view": "side",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.9,
+      "native_object": "Dim_door_height",
+      "witness": "Witness_door_height",
+      "expression": "GATE_Door.Height",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z + GATE_Door.Height"
+      }
+    },
+    {
+      "id": "door-thickness",
+      "view": "top",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 0.045,
+      "native_object": "Dim_door_thickness",
+      "witness": "Witness_door_thickness",
+      "expression": "GATE_Door.Width",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x - GATE_Door.Width * sin(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Width * cos(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "axis-radius",
+      "view": "pivot",
+      "part_ids": [
+        "GATE_Axis"
+      ],
+      "value_m": 0.012,
+      "native_object": "Dim_axis_radius",
+      "witness": "Witness_axis_radius",
+      "expression": "GATE_Axis.Radius",
+      "witness_expressions": {
+        "X1": "GATE_Axis.Placement.Base.x",
+        "X2": "GATE_Axis.Placement.Base.x + GATE_Axis.Radius",
+        "Y1": "GATE_Axis.Placement.Base.y",
+        "Y2": "GATE_Axis.Placement.Base.y",
+        "Z1": "GATE_Axis.Placement.Base.z",
+        "Z2": "GATE_Axis.Placement.Base.z"
+      }
+    },
+    {
+      "id": "connector-length",
+      "view": "connection",
+      "part_ids": [
+        "GATE_Connector_Left",
+        "GATE_Connector_Right"
+      ],
+      "value_m": 0.45,
+      "native_object": "Dim_connector_length",
+      "witness": "Witness_connector_length",
+      "expression": "GATE_Connector_Left.Length",
+      "witness_expressions": {
+        "X1": "GATE_Connector_Left.Placement.Base.x",
+        "X2": "GATE_Connector_Left.Placement.Base.x + GATE_Connector_Left.Length",
+        "Y1": "GATE_Connector_Left.Placement.Base.y",
+        "Y2": "GATE_Connector_Left.Placement.Base.y",
+        "Z1": "GATE_Connector_Left.Placement.Base.z",
+        "Z2": "GATE_Connector_Left.Placement.Base.z"
+      }
+    }
+  ],
+  "reopened": [
+    {
+      "id": "beam-length",
+      "view": "front",
+      "part_ids": [
+        "GATE_Beam"
+      ],
+      "value_m": 1.5,
+      "native_object": "Dim_beam_length",
+      "witness": "Witness_beam_length",
+      "expression": "GATE_Beam.Length",
+      "witness_expressions": {
+        "X1": "GATE_Beam.Placement.Base.x",
+        "X2": "GATE_Beam.Placement.Base.x + GATE_Beam.Length",
+        "Y1": "GATE_Beam.Placement.Base.y",
+        "Y2": "GATE_Beam.Placement.Base.y",
+        "Z1": "GATE_Beam.Placement.Base.z",
+        "Z2": "GATE_Beam.Placement.Base.z"
+      }
+    },
+    {
+      "id": "post-height",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 2.2,
+      "native_object": "Dim_post_height",
+      "witness": "Witness_post_height",
+      "expression": "GATE_Post_Left.Height",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x",
+        "X2": "GATE_Post_Left.Placement.Base.x",
+        "Y1": "GATE_Post_Left.Placement.Base.y",
+        "Y2": "GATE_Post_Left.Placement.Base.y",
+        "Z1": "GATE_Post_Left.Placement.Base.z",
+        "Z2": "GATE_Post_Left.Placement.Base.z + GATE_Post_Left.Height"
+      }
+    },
+    {
+      "id": "opening",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 1.2,
+      "native_object": "Dim_opening",
+      "witness": "Witness_opening",
+      "expression": "Parameters.opening",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x + GATE_Post_Left.Length",
+        "X2": "GATE_Post_Right.Placement.Base.x",
+        "Y1": "0 mm",
+        "Y2": "0 mm",
+        "Z1": "0 mm",
+        "Z2": "0 mm"
+      }
+    },
+    {
+      "id": "door-width",
+      "view": "front",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.12,
+      "native_object": "Dim_door_width",
+      "witness": "Witness_door_width",
+      "expression": "GATE_Door.Length",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x + GATE_Door.Length * cos(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Length * sin(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "door-height",
+      "view": "side",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.9,
+      "native_object": "Dim_door_height",
+      "witness": "Witness_door_height",
+      "expression": "GATE_Door.Height",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z + GATE_Door.Height"
+      }
+    },
+    {
+      "id": "door-thickness",
+      "view": "top",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 0.045,
+      "native_object": "Dim_door_thickness",
+      "witness": "Witness_door_thickness",
+      "expression": "GATE_Door.Width",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x - GATE_Door.Width * sin(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Width * cos(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "axis-radius",
+      "view": "pivot",
+      "part_ids": [
+        "GATE_Axis"
+      ],
+      "value_m": 0.012,
+      "native_object": "Dim_axis_radius",
+      "witness": "Witness_axis_radius",
+      "expression": "GATE_Axis.Radius",
+      "witness_expressions": {
+        "X1": "GATE_Axis.Placement.Base.x",
+        "X2": "GATE_Axis.Placement.Base.x + GATE_Axis.Radius",
+        "Y1": "GATE_Axis.Placement.Base.y",
+        "Y2": "GATE_Axis.Placement.Base.y",
+        "Z1": "GATE_Axis.Placement.Base.z",
+        "Z2": "GATE_Axis.Placement.Base.z"
+      }
+    },
+    {
+      "id": "connector-length",
+      "view": "connection",
+      "part_ids": [
+        "GATE_Connector_Left",
+        "GATE_Connector_Right"
+      ],
+      "value_m": 0.45,
+      "native_object": "Dim_connector_length",
+      "witness": "Witness_connector_length",
+      "expression": "GATE_Connector_Left.Length",
+      "witness_expressions": {
+        "X1": "GATE_Connector_Left.Placement.Base.x",
+        "X2": "GATE_Connector_Left.Placement.Base.x + GATE_Connector_Left.Length",
+        "Y1": "GATE_Connector_Left.Placement.Base.y",
+        "Y2": "GATE_Connector_Left.Placement.Base.y",
+        "Z1": "GATE_Connector_Left.Placement.Base.z",
+        "Z2": "GATE_Connector_Left.Placement.Base.z"
+      }
+    }
+  ],
+  "parameter_variation_reopened": [
+    {
+      "id": "beam-length",
+      "view": "front",
+      "part_ids": [
+        "GATE_Beam"
+      ],
+      "value_m": 1.5,
+      "native_object": "Dim_beam_length",
+      "witness": "Witness_beam_length",
+      "expression": "GATE_Beam.Length",
+      "witness_expressions": {
+        "X1": "GATE_Beam.Placement.Base.x",
+        "X2": "GATE_Beam.Placement.Base.x + GATE_Beam.Length",
+        "Y1": "GATE_Beam.Placement.Base.y",
+        "Y2": "GATE_Beam.Placement.Base.y",
+        "Z1": "GATE_Beam.Placement.Base.z",
+        "Z2": "GATE_Beam.Placement.Base.z"
+      }
+    },
+    {
+      "id": "post-height",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 2.3,
+      "native_object": "Dim_post_height",
+      "witness": "Witness_post_height",
+      "expression": "GATE_Post_Left.Height",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x",
+        "X2": "GATE_Post_Left.Placement.Base.x",
+        "Y1": "GATE_Post_Left.Placement.Base.y",
+        "Y2": "GATE_Post_Left.Placement.Base.y",
+        "Z1": "GATE_Post_Left.Placement.Base.z",
+        "Z2": "GATE_Post_Left.Placement.Base.z + GATE_Post_Left.Height"
+      }
+    },
+    {
+      "id": "opening",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 1.2,
+      "native_object": "Dim_opening",
+      "witness": "Witness_opening",
+      "expression": "Parameters.opening",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x + GATE_Post_Left.Length",
+        "X2": "GATE_Post_Right.Placement.Base.x",
+        "Y1": "0 mm",
+        "Y2": "0 mm",
+        "Z1": "0 mm",
+        "Z2": "0 mm"
+      }
+    },
+    {
+      "id": "door-width",
+      "view": "front",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.12,
+      "native_object": "Dim_door_width",
+      "witness": "Witness_door_width",
+      "expression": "GATE_Door.Length",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x + GATE_Door.Length * cos(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Length * sin(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "door-height",
+      "view": "side",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.9,
+      "native_object": "Dim_door_height",
+      "witness": "Witness_door_height",
+      "expression": "GATE_Door.Height",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z + GATE_Door.Height"
+      }
+    },
+    {
+      "id": "door-thickness",
+      "view": "top",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 0.045,
+      "native_object": "Dim_door_thickness",
+      "witness": "Witness_door_thickness",
+      "expression": "GATE_Door.Width",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x - GATE_Door.Width * sin(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Width * cos(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "axis-radius",
+      "view": "pivot",
+      "part_ids": [
+        "GATE_Axis"
+      ],
+      "value_m": 0.012,
+      "native_object": "Dim_axis_radius",
+      "witness": "Witness_axis_radius",
+      "expression": "GATE_Axis.Radius",
+      "witness_expressions": {
+        "X1": "GATE_Axis.Placement.Base.x",
+        "X2": "GATE_Axis.Placement.Base.x + GATE_Axis.Radius",
+        "Y1": "GATE_Axis.Placement.Base.y",
+        "Y2": "GATE_Axis.Placement.Base.y",
+        "Z1": "GATE_Axis.Placement.Base.z",
+        "Z2": "GATE_Axis.Placement.Base.z"
+      }
+    },
+    {
+      "id": "connector-length",
+      "view": "connection",
+      "part_ids": [
+        "GATE_Connector_Left",
+        "GATE_Connector_Right"
+      ],
+      "value_m": 0.45,
+      "native_object": "Dim_connector_length",
+      "witness": "Witness_connector_length",
+      "expression": "GATE_Connector_Left.Length",
+      "witness_expressions": {
+        "X1": "GATE_Connector_Left.Placement.Base.x",
+        "X2": "GATE_Connector_Left.Placement.Base.x + GATE_Connector_Left.Length",
+        "Y1": "GATE_Connector_Left.Placement.Base.y",
+        "Y2": "GATE_Connector_Left.Placement.Base.y",
+        "Z1": "GATE_Connector_Left.Placement.Base.z",
+        "Z2": "GATE_Connector_Left.Placement.Base.z"
+      }
+    }
+  ],
+  "restored": [
+    {
+      "id": "beam-length",
+      "view": "front",
+      "part_ids": [
+        "GATE_Beam"
+      ],
+      "value_m": 1.5,
+      "native_object": "Dim_beam_length",
+      "witness": "Witness_beam_length",
+      "expression": "GATE_Beam.Length",
+      "witness_expressions": {
+        "X1": "GATE_Beam.Placement.Base.x",
+        "X2": "GATE_Beam.Placement.Base.x + GATE_Beam.Length",
+        "Y1": "GATE_Beam.Placement.Base.y",
+        "Y2": "GATE_Beam.Placement.Base.y",
+        "Z1": "GATE_Beam.Placement.Base.z",
+        "Z2": "GATE_Beam.Placement.Base.z"
+      }
+    },
+    {
+      "id": "post-height",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 2.2,
+      "native_object": "Dim_post_height",
+      "witness": "Witness_post_height",
+      "expression": "GATE_Post_Left.Height",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x",
+        "X2": "GATE_Post_Left.Placement.Base.x",
+        "Y1": "GATE_Post_Left.Placement.Base.y",
+        "Y2": "GATE_Post_Left.Placement.Base.y",
+        "Z1": "GATE_Post_Left.Placement.Base.z",
+        "Z2": "GATE_Post_Left.Placement.Base.z + GATE_Post_Left.Height"
+      }
+    },
+    {
+      "id": "opening",
+      "view": "front",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ],
+      "value_m": 1.2,
+      "native_object": "Dim_opening",
+      "witness": "Witness_opening",
+      "expression": "Parameters.opening",
+      "witness_expressions": {
+        "X1": "GATE_Post_Left.Placement.Base.x + GATE_Post_Left.Length",
+        "X2": "GATE_Post_Right.Placement.Base.x",
+        "Y1": "0 mm",
+        "Y2": "0 mm",
+        "Z1": "0 mm",
+        "Z2": "0 mm"
+      }
+    },
+    {
+      "id": "door-width",
+      "view": "front",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.12,
+      "native_object": "Dim_door_width",
+      "witness": "Witness_door_width",
+      "expression": "GATE_Door.Length",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x + GATE_Door.Length * cos(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Length * sin(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "door-height",
+      "view": "side",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 1.9,
+      "native_object": "Dim_door_height",
+      "witness": "Witness_door_height",
+      "expression": "GATE_Door.Height",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z + GATE_Door.Height"
+      }
+    },
+    {
+      "id": "door-thickness",
+      "view": "top",
+      "part_ids": [
+        "GATE_Door"
+      ],
+      "value_m": 0.045,
+      "native_object": "Dim_door_thickness",
+      "witness": "Witness_door_thickness",
+      "expression": "GATE_Door.Width",
+      "witness_expressions": {
+        "X1": "GATE_Door.Placement.Base.x",
+        "X2": "GATE_Door.Placement.Base.x - GATE_Door.Width * sin(Parameters.pose_angle)",
+        "Y1": "GATE_Door.Placement.Base.y",
+        "Y2": "GATE_Door.Placement.Base.y + GATE_Door.Width * cos(Parameters.pose_angle)",
+        "Z1": "GATE_Door.Placement.Base.z",
+        "Z2": "GATE_Door.Placement.Base.z"
+      }
+    },
+    {
+      "id": "axis-radius",
+      "view": "pivot",
+      "part_ids": [
+        "GATE_Axis"
+      ],
+      "value_m": 0.012,
+      "native_object": "Dim_axis_radius",
+      "witness": "Witness_axis_radius",
+      "expression": "GATE_Axis.Radius",
+      "witness_expressions": {
+        "X1": "GATE_Axis.Placement.Base.x",
+        "X2": "GATE_Axis.Placement.Base.x + GATE_Axis.Radius",
+        "Y1": "GATE_Axis.Placement.Base.y",
+        "Y2": "GATE_Axis.Placement.Base.y",
+        "Z1": "GATE_Axis.Placement.Base.z",
+        "Z2": "GATE_Axis.Placement.Base.z"
+      }
+    },
+    {
+      "id": "connector-length",
+      "view": "connection",
+      "part_ids": [
+        "GATE_Connector_Left",
+        "GATE_Connector_Right"
+      ],
+      "value_m": 0.45,
+      "native_object": "Dim_connector_length",
+      "witness": "Witness_connector_length",
+      "expression": "GATE_Connector_Left.Length",
+      "witness_expressions": {
+        "X1": "GATE_Connector_Left.Placement.Base.x",
+        "X2": "GATE_Connector_Left.Placement.Base.x + GATE_Connector_Left.Length",
+        "Y1": "GATE_Connector_Left.Placement.Base.y",
+        "Y2": "GATE_Connector_Left.Placement.Base.y",
+        "Z1": "GATE_Connector_Left.Placement.Base.z",
+        "Z2": "GATE_Connector_Left.Placement.Base.z"
+      }
+    }
+  ],
+  "fault_controls": [
+    {
+      "id": "arbitrary",
+      "result": "REJECT"
+    },
+    {
+      "id": "missing-reference",
+      "result": "REJECT"
+    }
+  ],
+  "manual_gui": "NOT_TESTED"
+}

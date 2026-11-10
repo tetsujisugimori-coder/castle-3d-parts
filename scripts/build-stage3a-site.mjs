@@ -1,0 +1,31 @@
+/** Additive composition: renderer/gesture/selection code remains the Stage2C source. */
+import{execFileSync}from'node:child_process';import{readFile,writeFile,cp,mkdir}from'node:fs/promises';
+execFileSync(process.execPath,['scripts/build-stage2d-site.mjs'],{stdio:'inherit'});
+const replace=(s,a,b)=>{if(s.split(a).length!==2)throw Error('Renderer adapter anchor mismatch: '+a);return s.replace(a,b)};
+let html=await readFile('dist/stage2c/index.html','utf8');
+html=html.replaceAll('木柵','簡易木戸').replaceAll('Stage 2-D','Stage 3-A').replace('改訂版 <select','木戸姿勢 <select').replace('<option>B0</option><option>B1</option><option>B2</option>','<option value="B0">木戸 B0：閉鎖 0°</option><option value="B1">木戸 B1：半開 45°</option><option value="B2">木戸 B2：開放 90°</option>');
+html=replace(html,'<main>','<main><nav aria-label="部品一覧"><a href="../stage2c/">木柵単体（既存B0/B1/B2改訂版）</a> · <a href="./">木戸単体（姿勢B0/B1/B2）</a></nav><p>山中城に存在した木戸の復元ではありません。静的姿勢の比較であり、強度・耐久・連続開閉の保証ではありません。</p>');
+html=replace(html,'<button id="clear"','<label><input type="checkbox" id="assembly">木柵と接続表示</label><button id="clear"');
+html=replace(html,'<p id="status"','<p>接続表示の木柵は配置比較用。木柵部材の図面選択は「木柵単体」から操作できます。</p><p id="connection-state"></p><p id="status"');
+html=replace(html,'<button id="clear"','<button id="front-3d" data-ready>3D正面</button><button id="side-3d" data-ready>3D側面</button><button id="top-3d" data-ready>3D平面</button><button id="clear"');
+html=replace(html,'寸法と改訂差分','寸法・姿勢・接続');
+html=replace(html,'<p id="revision-note">','<p>Native TechDraw詳細図：<a id="native-pivot">扉と軸</a> · <a id="native-connection">木柵接続</a></p><p id="revision-note">');
+let app=await readFile('dist/stage2c/app.mjs','utf8');
+app=app.replaceAll('cad/stage2c/generated/','cad/stage3a/generated/');
+app=replace(app,'const distance=Math.max(18,6.5/(Math.tan(20*Math.PI/180)*Math.max(camera.aspect,.2)));camera.position.set(3+distance*.2,1+distance*.18,distance);controls.target.set(3,1,0);',"const wide=$('assembly').checked;const distance=Math.max(wide?18:6,(wide?6.5:1.3)/(Math.tan(20*Math.PI/180)*Math.max(camera.aspect,.2)));camera.position.set(distance*.2,1+distance*.18,distance);controls.target.set(0,1.1,0);");
+app=replace(app,"' · 14部品'","' · '+m.parts.length+'部品'");
+app=replace(app,'同一改訂のGLB・SVG・14部品を照合済み。','同一木戸姿勢のGLB・SVG・部材を照合済み。');
+app=replace(app,"'B0：Stage 2-B基準形状。全寸法は試作D。'","'木戸 '+rev+'：静的姿勢。全寸法は試作D、史実未認定。木柵の改訂B0/B1/B2とは別です。'");
+app=app.replaceAll("['front','top','side']","['front','top','side','pivot','connection']").replace("'native-side']","'native-side','native-pivot','native-connection']");
+app=replace(app,"await load();",`for(const [id,p]of[['front-3d',[0,1.2,10]],['side-3d',[10,1.2,0]],['top-3d',[0,10,.001]]])$(id).onclick=()=>{camera.position.set(...p);controls.target.set(0,1.1,0);controls.update();render()};await load();`);
+app=replace(app,'async function load(){',await readFile('site/stage3a/assembly-snippet.txt','utf8')+'\nasync function load(){');
+app=replace(app,'function remove(){','function remove(){removeFence();');
+app=replace(app,'ready(true);showView();','await loadFence(ticket);if(ticket!==epoch||lost)return;ready(true);showView();reset3d();');
+app=replace(app,"$('revision').addEventListener","$('assembly').onchange=load;$('revision').addEventListener");
+app=replace(app,"function baseReset(){","function baseReset(){$('connection-state').textContent='';");
+await mkdir('dist/docs/stage3a',{recursive:true});await cp('docs/stage3a/research-boundary.json','dist/docs/stage3a/research-boundary.json');
+html=replace(html,'</header>','<p><a href="../docs/stage3a/research-boundary.json">史料と試作値の境界・未確認事項</a></p></header>');
+await mkdir('dist/stage3a',{recursive:true});await writeFile('dist/stage3a/index.html',html);await writeFile('dist/stage3a/app.mjs',app);await cp('site/stage2c/style.css','dist/stage3a/style.css');
+for(const rev of['B0','B1','B2']){const path='cad/stage3a/generated/'+rev;await mkdir('dist/'+path,{recursive:true});for(const f of['assembly.glb','drawing.svg','link-manifest.json','native-front.svg','native-side.svg','native-top.svg','native-pivot.svg','native-connection.svg'])await cp(path+'/'+f,'dist/'+path+'/'+f);const m=JSON.parse(await readFile(path+'/link-manifest.json'));for(const p of m.parts)for(const r of p.research_refs){await mkdir('dist/'+r.path.split('/').slice(0,-1).join('/'),{recursive:true});await cp(r.path,'dist/'+r.path)}}
+let root=await readFile('dist/index.html','utf8');root=replace(root,'<main>','<main><p><a id="gate-viewer-entry" href="./stage3a/">簡易木戸：試作D・木柵接続・CAD設計図</a></p>');await writeFile('dist/index.html',root);
+console.log('Stage3A candidate build only. No deployment.');

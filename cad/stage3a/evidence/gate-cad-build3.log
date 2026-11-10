@@ -1,0 +1,177 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-2018.ttf
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-FreeCAD.ttf
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_b78bd2e5-56ae-46ac-993b-16d2f97872e6_da39a3_451044'
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/shiboken2/files.dir/shibokensupport/feature.py", line 139, in _import
+    return original_import(name, *args, **kwargs)
+<class 'ModuleNotFoundError'>: No module named 'AttachmentEditor'
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: QOpenGLContext creation failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Failed to rename '/tmp/gate-native-hcs0vmyr/' to '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_b78bd2e5-56ae-46ac-993b-16d2f97872e6_c41f71_451044'
+imageFromFramebuffer failed because no context is active
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_42a067c3-1de0-41cb-9269-cb3db6981a4b_da39a3_451044'
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_b78bd2e5-56ae-46ac-993b-16d2f97872e6_c41f71_451044'
+Reading failed from embedded file: page-template.svg (566 bytes, 347 bytes compressed)
+Reading failed from embedded file: page-template1.svg (566 bytes, 347 bytes compressed)
+Reading failed from embedded file: page-template2.svg (566 bytes, 347 bytes compressed)
+Reading failed from embedded file: page-template3.svg (566 bytes, 347 bytes compressed)
+Reading failed from embedded file: page-template4.svg (566 bytes, 347 bytes compressed)
+QOpenGLWidget: Failed to create context
+DrawSVGTemplate::processTemplate can't read embedded template /page-template.svg!
+QGISVGTemplate::createClickHandles - error opening template file /page-template.svg
+DrawSVGTemplate::processTemplate can't read embedded template /page-template.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /page-template1.svg!
+QGISVGTemplate::createClickHandles - error opening template file /page-template1.svg
+DrawSVGTemplate::processTemplate can't read embedded template /page-template1.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /page-template2.svg!
+QGISVGTemplate::createClickHandles - error opening template file /page-template2.svg
+DrawSVGTemplate::processTemplate can't read embedded template /page-template2.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /page-template3.svg!
+QGISVGTemplate::createClickHandles - error opening template file /page-template3.svg
+DrawSVGTemplate::processTemplate can't read embedded template /page-template3.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /page-template4.svg!
+QGISVGTemplate::createClickHandles - error opening template file /page-template4.svg
+DrawSVGTemplate::processTemplate can't read embedded template /page-template4.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_b78bd2e5-56ae-46ac-993b-16d2f97872e6_1a6038_451044'
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 100, in <module>
+    for pose in SPEC['poses']:build(pose,Path(sys.argv[1])/pose['id'])
+                              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 78, in build
+    d.saveAs(str(out/'parameter-variation.FCStd'));A.closeDocument(d.Name);d=A.openDocument(str(out/'parameter-variation.FCStd'));ready(d);assert dimcheck(d)==changed;d.getObject('Parameters').post_height=old;rec(d);assert dimcheck(d)==created
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: {'sclassname': 'N4Base15FileSystemErrorE', 'sErrMsg': "PropertyFileIncluded::SaveDocFile(): File '/page-template.svg' in transient directory doesn't exist.", 'sfile': '', 'iline': 0, 'sfunction': '', 'swhat': "PropertyFileIncluded::SaveDocFile(): File '/page-template.svg' in transient directory doesn't exist.", 'btranslatable': False, 'breported': False}

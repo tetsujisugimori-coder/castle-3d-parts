@@ -1,0 +1,137 @@
+{
+  "basis": "D",
+  "static_only": true,
+  "rows": [
+    {
+      "pose": "B0",
+      "connections": [
+        {
+          "side": "left",
+          "translation_m": [
+            -3.525,
+            0,
+            0
+          ],
+          "fence_unit": "U01",
+          "fence_revision": "B0",
+          "pair_tests": 49,
+          "upper_rail_connector_distance_m": 0.0,
+          "penetration": "NONE"
+        },
+        {
+          "side": "right",
+          "translation_m": [
+            3.525,
+            0,
+            0
+          ],
+          "fence_unit": "U01",
+          "fence_revision": "B0",
+          "pair_tests": 49,
+          "upper_rail_connector_distance_m": 0.0,
+          "penetration": "NONE"
+        }
+      ],
+      "post_contacts": [
+        {
+          "side": "left",
+          "contact_area_m2": 0.012599999999999998,
+          "overlap_mm3": 0.0
+        },
+        {
+          "side": "right",
+          "contact_area_m2": 0.012599999999999998,
+          "overlap_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "pose": "B1",
+      "connections": [
+        {
+          "side": "left",
+          "translation_m": [
+            -3.525,
+            0,
+            0
+          ],
+          "fence_unit": "U01",
+          "fence_revision": "B0",
+          "pair_tests": 49,
+          "upper_rail_connector_distance_m": 0.0,
+          "penetration": "NONE"
+        },
+        {
+          "side": "right",
+          "translation_m": [
+            3.525,
+            0,
+            0
+          ],
+          "fence_unit": "U01",
+          "fence_revision": "B0",
+          "pair_tests": 49,
+          "upper_rail_connector_distance_m": 0.0,
+          "penetration": "NONE"
+        }
+      ],
+      "post_contacts": [
+        {
+          "side": "left",
+          "contact_area_m2": 0.012599999999999998,
+          "overlap_mm3": 0.0
+        },
+        {
+          "side": "right",
+          "contact_area_m2": 0.012599999999999998,
+          "overlap_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "pose": "B2",
+      "connections": [
+        {
+          "side": "left",
+          "translation_m": [
+            -3.525,
+            0,
+            0
+          ],
+          "fence_unit": "U01",
+          "fence_revision": "B0",
+          "pair_tests": 49,
+          "upper_rail_connector_distance_m": 0.0,
+          "penetration": "NONE"
+        },
+        {
+          "side": "right",
+          "translation_m": [
+            3.525,
+            0,
+            0
+          ],
+          "fence_unit": "U01",
+          "fence_revision": "B0",
+          "pair_tests": 49,
+          "upper_rail_connector_distance_m": 0.0,
+          "penetration": "NONE"
+        }
+      ],
+      "post_contacts": [
+        {
+          "side": "left",
+          "contact_area_m2": 0.012599999999999998,
+          "overlap_mm3": 0.0
+        },
+        {
+          "side": "right",
+          "contact_area_m2": 0.012599999999999998,
+          "overlap_mm3": 0.0
+        }
+      ]
+    }
+  ],
+  "fence_source": "cad/stage2c/generated/B0/assembly.FCStd",
+  "historical_position": "UNKNOWN"
+}

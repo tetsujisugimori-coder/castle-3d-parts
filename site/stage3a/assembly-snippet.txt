@@ -1,0 +1,19 @@
+let fenceModel;
+function removeFence(){if(fenceModel){scene.remove(fenceModel);dispose(fenceModel);fenceModel=null}}
+async function loadFence(ticket){
+ if(!$('assembly').checked)return;
+ const legacy=await import('../stage2c/contract.mjs'),base=new URL('cad/stage2c/generated/B0/',repositoryRoot).href;
+ const fm=legacy.validateManifest(JSON.parse(new TextDecoder().decode(await fetchBytes(base+'link-manifest.json'))),'B0');
+ const bytes=await fetchBytes(base+'assembly.glb');await verifyHash(bytes,fm.files.glb.sha256);
+ const gltf=await new GLTFLoader().parseAsync(bytes,'');gltf.scene.updateMatrixWorld(true);const bounds=[];
+ gltf.scene.traverse(o=>{if(o.isMesh){const b=new THREE.Box3().setFromObject(o);bounds.push({name:o.name,revision:o.userData.assembly_revision,basis:o.userData.basis,eligibility:o.userData.cad_eligibility,bounds_m:[b.min.x,-b.max.z,b.min.y,b.max.x,-b.min.z,b.max.y]})}});
+ try{legacy.validateMeshes(fm,bounds)}catch(e){dispose(gltf.scene);throw e}
+ const group=new THREE.Group();
+ for(const [side,shift]of[['left',-3.525],['right',3.525]]){
+  const unit=new THREE.Group();gltf.scene.traverse(o=>{if(o.isMesh&&o.name.startsWith('U01_')){const copy=o.clone();copy.geometry=o.geometry.clone();copy.material=o.material.clone();copy.name='fence-'+side+'-'+o.name;copy.matrix.copy(o.matrixWorld);copy.matrixAutoUpdate=false;unit.add(copy)}});
+  if(unit.children.length!==7){dispose(group);dispose(gltf.scene);throw Error('Fence U01 part count')}
+  unit.position.x=shift;unit.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(unit);if(Math.abs((side==='left'?b.max.x:b.min.x)-(side==='left'?-1.05:1.05))>1e-4){dispose(unit);dispose(group);dispose(gltf.scene);throw Error('Fence connection face mismatch')}group.add(unit);
+ }
+ dispose(gltf.scene);if(ticket!==epoch||lost){dispose(group);return}fenceModel=group;scene.add(group);
+ $('connection-state').textContent='木柵B0のU01を左右に各1組、CAD X±3.525 mへ配置。接続面X±1.05 mで設計接触（隙間0）。構造強度の保証ではありません。';render();
+}

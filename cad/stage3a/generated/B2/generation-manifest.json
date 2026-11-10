@@ -1,0 +1,35 @@
+{
+  "revision": "B2",
+  "source_commit": "1cc50d1a6d1af8164cada51124cb02279dbe316c",
+  "spec_sha256": "e237124e9f92502d56642ee968eac14ed3ade861913fe64f170692bfddaef743",
+  "source_scripts": {
+    "cad/stage3a/build.py": "21e3e3011998b1d0a62c5f7f948b2e58ac6f543e314e492e264e1a27cd8195cc",
+    "cad/stage3a/link.py": "465a6a71673cd28da008ea56d43793f21da7fa9493ab712a7776395b8751353c",
+    "cad/stage3a/run.py": "4452b75a5f2e6f10ad20b4346bb294a9aeefbc02528e24acde5d549c59e97223",
+    "blender/stage3a/build.py": "f30ad2f364b46a3312e53dca5a5e778fd768a9f4a769679261c193f53e3907cc",
+    "cad/stage3a/connection.py": "d056f5e1763dc9cd970c33321c209324c716d8bff264e3f677bcecd7fb74bf0c",
+    "cad/stage3a/faults.py": "6bdd764f000ce9242851c904fba362c76233af7434b16942db3dbc0472cf4264",
+    "cad/stage3a/check.py": "272e768fd7d77738a5589f41f7dca364199fde1993090c40363ba32e58502fc6",
+    "cad/stage3a/check_test.py": "ced7f602b2653512b1a749e454dff16b8063241d5e8a18293c34133b261be261"
+  },
+  "outputs": {
+    "assembly.FCStd": "0c8696c82ee0d55d98cad0b48bb145b831aac3c07591996450f365bd66f77b3d",
+    "assembly.blend": "02d1a466a4f6052d58b91026654869c400c8a06a5b41aeeb23271afae447a0dd",
+    "assembly.glb": "7eef6ef4e577bbdfdeca8250817220eb699aacc50ef8dc00efd494e8a2910cd2",
+    "assembly.step": "f01e6b42f0608d606bff8cd904ea38420c8f6561c0a45920417321e5d2753838",
+    "blender-audit.json": "2b91af274fefa21c2ef36c3ee48c855786a229fa4eebef304307c3ac3690a1d2",
+    "cad-audit.json": "86e046b86a36755ff78cd4119d50f46e77cf25c69c726e43cb9904c15aa33ca4",
+    "drawing.svg": "06e1ff6192ca66d02c5dd1e53e1c426fe8af74ab10e79a6ea4023dbe082fb084",
+    "link-manifest.json": "31e100a8cf4b8f25f7b4327c047bab9e76d6bb6538abd9d6551f56a48fb946ec",
+    "mesh-transfer.json": "12a911882a4a4b577c310d06893d21382a5b8d352866087e4abf1014ebc85043",
+    "native-audit.json": "f5ae4556ed7c46a77c64b7b3be607b3d0179bc069485d99e41cd68868ca8c829",
+    "native-connection.svg": "3684044dece68cbe499a222c5312a8a4709c0ea7b83ea41764666d3e5a75fc08",
+    "native-front.svg": "96b60c99ecaa3986687f2d3b04ff90c4f005928ce1d5f5b72d482b4aadbb73d4",
+    "native-pivot.svg": "f7e8bf11ef69e30f0b9fe68c126378b4ee0f13c8898e4979d6190da3c342611c",
+    "native-side.svg": "9e58c1a145e3ff3e79dfe97ca9ac2b19e4320740d61e594702d2682f602f7bee",
+    "native-top.svg": "de643ab9ef9f1bd1ad8fb0c433f270ece18c043ee37a7a890037123a915bd47b",
+    "page-template.svg": "148766c4d1134f2f2033355791baaf13767ea1d153e6c01274132c8081ab94ef",
+    "parameter-variation.FCStd": "11ff5e10cb875ec4cb3a5e986bf466307ff8204880ca684edc202534e322a39a",
+    "pose-variation.FCStd": "9e93524b1c4f88994e00edbd0a979413ee3adb231c4518decc62e7deab1fc91f"
+  }
+}
