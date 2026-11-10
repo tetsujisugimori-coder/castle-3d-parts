@@ -1,0 +1,32 @@
+name: Stage 3-A simple gate
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: mkdir -p stage3a-ci && node --test > stage3a-ci/tests.log 2>&1
+      - run: python3 cad/stage3a/check.py > stage3a-ci/cad-check.json
+      - run: python3 cad/stage3a/check_test.py > stage3a-ci/cad-tests.log 2>&1
+      - run: node scripts/build-stage3a-site.mjs > stage3a-ci/build.log
+      - run: npm install --prefix /tmp/castle2d-pw playwright@1.56.1 three@0.180.0
+      - run: /tmp/castle2d-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/stage3a-browser.mjs
+        env:
+          STAGE3A_OUT: stage3a-ci/browser
+      - run: git rev-parse HEAD HEAD^{tree} > stage3a-ci/git.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3a-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage3a-ci/
+          if-no-files-found: error

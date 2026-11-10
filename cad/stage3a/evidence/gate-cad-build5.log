@@ -1,0 +1,477 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-2018.ttf
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-FreeCAD.ttf
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/shiboken2/files.dir/shibokensupport/feature.py", line 139, in _import
+    return original_import(name, *args, **kwargs)
+<class 'ModuleNotFoundError'>: No module named 'AttachmentEditor'
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: QOpenGLContext creation failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+imageFromFramebuffer failed because no context is active
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+imageFromFramebuffer failed because no context is active
+This plugin does not support propagateSizeHints()
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Dim_post_height - True dimension has no 3D References
+Dim_post_height - True dimension has no 3D References
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Dim_post_height - True dimension has no 3D References
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+imageFromFramebuffer failed because no context is active
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+This plugin does not support propagateSizeHints()
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+imageFromFramebuffer failed because no context is active
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+imageFromFramebuffer failed because no context is active
+This plugin does not support propagateSizeHints()
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Dim_post_height - True dimension has no 3D References
+Dim_post_height - True dimension has no 3D References
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Dim_post_height - True dimension has no 3D References
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+imageFromFramebuffer failed because no context is active
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+This plugin does not support propagateSizeHints()
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 100, in <module>
+    for pose in SPEC['poses']:build(pose,Path(sys.argv[1])/pose['id'])
+                              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 67, in build
+    rec(d);before=audit(d)
+                  ~~~~~^^^
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 27, in audit
+    volume=shapes[i].common(shapes[j]).Volume;assert volume<1e-4,('INTERFERENCE',os[i].Name,os[j].Name,volume)
+                                                     ^^^^^^^^^^^
+AssertionError: ('INTERFERENCE', 'GATE_Door', 'GATE_Post_Left', 579499.9999999993)

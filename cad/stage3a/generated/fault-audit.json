@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "door_width",
+      "input": "-1",
+      "actual": "REJECT"
+    },
+    {
+      "case": "post_height",
+      "input": "nan",
+      "actual": "REJECT"
+    },
+    {
+      "case": "axis_radius",
+      "input": "0.1",
+      "actual": "REJECT"
+    },
+    {
+      "case": "missing-door",
+      "actual": "REJECT"
+    },
+    {
+      "case": "axis-inset-40mm-B2",
+      "actual": "REJECT",
+      "reason": "('INTERFERENCE', 'GATE_Door', 'GATE_Post_Left', 579499.9999999993)",
+      "corrected_input_m": 0.06,
+      "corrected_evidence": "B2/cad-audit.json"
+    }
+  ]
+}

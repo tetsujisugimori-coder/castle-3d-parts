@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="340mm" viewBox="0 0 420 340" data-revision="B0"><g data-view="front" id="view-front"><rect x="0" y="0" width="420" height="340" fill="white"/><text x="10" y="14" font-family="sans-serif" font-size="6">GATE-SIMPLE-01 / B0 / FRONT / mm / D prototype</text><g id="front-GATE_Post_Left" data-part-id="GATE_Post_Left" transform="matrix(0 0.06 -0.06 0 98.0 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 -750 L -2200 -750 " />
+<path d=" M 0 -600 L -2200 -600 " />
+<path d=" M 0 -750 L 0 -600 " />
+<path d=" M -2200 -750 L -2200 -600 " />
+</g>
+</g><g id="front-GATE_Post_Right" data-part-id="GATE_Post_Right" transform="matrix(0 0.06 -0.06 0 98.0 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 600 L -2200 600 " />
+<path d=" M 0 750 L -2200 750 " />
+<path d=" M 0 600 L 0 750 " />
+<path d=" M -2200 600 L -2200 750 " />
+</g>
+</g><g id="front-GATE_Beam" data-part-id="GATE_Beam" transform="matrix(0 0.06 -0.06 0 98.0 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -2200 -750 L -2350 -750 " />
+<path d=" M -2200 750 L -2350 750 " />
+<path d=" M -2200 -750 L -2200 750 " />
+<path d=" M -2350 -750 L -2350 750 " />
+</g>
+</g><g id="front-GATE_Door" data-part-id="GATE_Door" transform="matrix(0 0.06 -0.06 0 98.0 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -100 -526 L -2000 -526 " />
+<path d=" M -100 594 L -2000 594 " />
+<path d=" M -100 -526 L -100 594 " />
+<path d=" M -2000 -526 L -2000 594 " />
+</g>
+</g><g id="front-GATE_Axis" data-part-id="GATE_Axis" transform="matrix(0 0.06 -0.06 0 98.0 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -2000 -552 L -100 -552 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -100 -528 L -2000 -528 " />
+<path d="M-100, -552 L-100, -551.699  L-100, -550.812  L-100, -549.382  L-100, -547.482  L-100, -545.207  L-100, -542.67  L-100, -540  L-100, -537.33  L-100, -534.793  L-100, -532.518  L-100, -530.618  L-100, -529.188  L-100, -528.301  L-100, -528 " /><path d="M-2000, -552 L-2000, -551.699  L-2000, -550.812  L-2000, -549.382  L-2000, -547.482  L-2000, -545.207  L-2000, -542.67  L-2000, -540  L-2000, -537.33  L-2000, -534.793  L-2000, -532.518  L-2000, -530.618  L-2000, -529.188  L-2000, -528.301  L-2000, -528 " /></g>
+</g><g id="front-GATE_Connector_Left" data-part-id="GATE_Connector_Left" transform="matrix(0 0.06 -0.06 0 98.0 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -1424.67 -1050 L -1508.67 -1050 " />
+<path d=" M -1424.67 -600 L -1508.67 -600 " />
+<path d=" M -1424.67 -1050 L -1424.67 -600 " />
+<path d=" M -1508.67 -1050 L -1508.67 -600 " />
+</g>
+</g><g id="front-GATE_Connector_Right" data-part-id="GATE_Connector_Right" transform="matrix(0 0.06 -0.06 0 98.0 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -1424.67 600 L -1508.67 600 " />
+<path d=" M -1424.67 1050 L -1508.67 1050 " />
+<path d=" M -1424.67 600 L -1424.67 1050 " />
+<path d=" M -1508.67 600 L -1508.67 1050 " />
+</g>
+</g><g id="dimension-front-beam-length" data-dimension-id="beam-length" data-value-m="1.5" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="145">beam-length: 1500.0 mm (true 3D)</text><path d="M12 150 h90.0 M12 148 v4 M102.0 148 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-post-height" data-dimension-id="post-height" data-value-m="2.2" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="162">post-height: 2200.0 mm (true 3D)</text><path d="M12 167 h132.0 M12 165 v4 M144.0 165 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-opening" data-dimension-id="opening" data-value-m="1.2" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="179">opening: 1200.0 mm (true 3D)</text><path d="M12 184 h72.0 M12 182 v4 M84.0 182 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-door-width" data-dimension-id="door-width" data-value-m="1.12" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="196">door-width: 1120.0 mm (true 3D)</text><path d="M12 201 h67.2 M12 199 v4 M79.2 199 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-front-connector-length" data-dimension-id="connector-length" data-value-m="0.45" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="213">connector-length: 450.0 mm (true 3D)</text><path d="M12 218 h27.0 M12 216 v4 M39.0 216 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><text x="10" y="328" font-family="sans-serif" font-size="3.5">Projection 1:16.667. Native linked measurements with scale witnesses below. Geometry is prototype D.</text></g><g data-view="top" id="view-top"><rect x="0" y="0" width="420" height="340" fill="white"/><text x="10" y="14" font-family="sans-serif" font-size="6">GATE-SIMPLE-01 / B0 / TOP / mm / D prototype</text><g id="top-GATE_Post_Left" data-part-id="GATE_Post_Left" transform="matrix(0.06 0 0 0.06 98.0 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -750 -75 L -750 75 " />
+<path d=" M -600 -75 L -600 75 " />
+<path d=" M -750 -75 L -600 -75 " />
+<path d=" M -750 75 L -600 75 " />
+</g>
+</g><g id="top-GATE_Post_Right" data-part-id="GATE_Post_Right" transform="matrix(0.06 0 0 0.06 98.0 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 600 -75 L 600 75 " />
+<path d=" M 750 -75 L 750 75 " />
+<path d=" M 600 -75 L 750 -75 " />
+<path d=" M 600 75 L 750 75 " />
+</g>
+</g><g id="top-GATE_Beam" data-part-id="GATE_Beam" transform="matrix(0.06 0 0 0.06 98.0 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -750 -75 L -750 75 " />
+<path d=" M 750 -75 L 750 75 " />
+<path d=" M -750 -75 L 750 -75 " />
+<path d=" M -750 75 L 750 75 " />
+</g>
+</g><g id="top-GATE_Door" data-part-id="GATE_Door" transform="matrix(0.06 0 0 0.06 98.0 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -526 0 L -526 45 " />
+<path d=" M 594 0 L 594 45 " />
+<path d=" M -526 0 L 594 0 " />
+<path d=" M -526 45 L 594 45 " />
+</g>
+</g><g id="top-GATE_Axis" data-part-id="GATE_Axis" transform="matrix(0.06 0 0 0.06 98.0 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<circle cx ="-540" cy ="0" r ="12" /></g>
+</g><g id="top-GATE_Connector_Left" data-part-id="GATE_Connector_Left" transform="matrix(0.06 0 0 0.06 98.0 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M -1050 -174 L -1050 -75 " />
+<path d=" M -600 -174 L -600 -75 " />
+<path d=" M -1050 -174 L -600 -174 " />
+<path d=" M -1050 -75 L -600 -75 " />
+</g>
+</g><g id="top-GATE_Connector_Right" data-part-id="GATE_Connector_Right" transform="matrix(0.06 0 0 0.06 98.0 80)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 600 -174 L 600 -75 " />
+<path d=" M 1050 -174 L 1050 -75 " />
+<path d=" M 600 -174 L 1050 -174 " />
+<path d=" M 600 -75 L 1050 -75 " />
+</g>
+</g><g id="dimension-top-door-thickness" data-dimension-id="door-thickness" data-value-m="0.045" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="145">door-thickness: 45.0 mm (true 3D)</text><path d="M12 150 h2.6999999999999997 M12 148 v4 M14.7 148 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><g id="dimension-top-axis-radius" data-dimension-id="axis-radius" data-value-m="0.012" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="162">axis-radius: 12.0 mm (true 3D)</text><path d="M12 167 h0.72 M12 165 v4 M12.72 165 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><text x="10" y="328" font-family="sans-serif" font-size="3.5">Projection 1:16.667. Native linked measurements with scale witnesses below. Geometry is prototype D.</text></g><g data-view="side" id="view-side"><rect x="0" y="0" width="420" height="340" fill="white"/><text x="10" y="14" font-family="sans-serif" font-size="6">GATE-SIMPLE-01 / B0 / SIDE / mm / D prototype</text><g id="side-GATE_Post_Left" data-part-id="GATE_Post_Left" transform="matrix(0 -0.06 0.06 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2200 75 " />
+<path d=" M 2200 75 L 2200 -75 " />
+<path d=" M 0 -75 L 2200 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-GATE_Post_Right" data-part-id="GATE_Post_Right" transform="matrix(0 -0.06 0.06 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 0 75 L 2200 75 " />
+<path d=" M 2200 75 L 2200 -75 " />
+<path d=" M 0 -75 L 2200 -75 " />
+<path d=" M 0 75 L 0 -75 " />
+</g>
+</g><g id="side-GATE_Beam" data-part-id="GATE_Beam" transform="matrix(0 -0.06 0.06 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 2200 75 L 2350 75 " />
+<path d=" M 2350 75 L 2350 -75 " />
+<path d=" M 2200 -75 L 2350 -75 " />
+<path d=" M 2200 75 L 2200 -75 " />
+</g>
+</g><g id="side-GATE_Door" data-part-id="GATE_Door" transform="matrix(0 -0.06 0.06 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 100 0 L 2000 0 " />
+<path d=" M 2000 0 L 2000 -45 " />
+<path d=" M 100 -45 L 2000 -45 " />
+<path d=" M 100 0 L 100 -45 " />
+</g>
+</g><g id="side-GATE_Axis" data-part-id="GATE_Axis" transform="matrix(0 -0.06 0.06 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 2000 12 L 100 12 " />
+<path d=" M 2000 -12 L 100 -12 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d="M100, 0 L100, -1.34357  L100, -2.67025  L100, -3.96335  L100, -5.2066  L100, -6.38438  L100, -7.48188  L100, -8.48528  L100, -9.38198  L100, -10.1607  L100, -10.8116  L100, -11.3266  L100, -11.6991  L100, -11.9245  L100, -12 " /><path d="M100, 12 L100, 11.9245  L100, 11.6991  L100, 11.3266  L100, 10.8116  L100, 10.1607  L100, 9.38198  L100, 8.48528  L100, 7.48188  L100, 6.38438  L100, 5.2066  L100, 3.96335  L100, 2.67025  L100, 1.34357  L100, 2.88658e-15 " /><path d="M2000, 0 L2000, -1.34357  L2000, -2.67025  L2000, -3.96335  L2000, -5.2066  L2000, -6.38438  L2000, -7.48188  L2000, -8.48528  L2000, -9.38198  L2000, -10.1607  L2000, -10.8116  L2000, -11.3266  L2000, -11.6991  L2000, -11.9245  L2000, -12 " /><path d="M2000, 12 L2000, 11.9245  L2000, 11.6991  L2000, 11.3266  L2000, 10.8116  L2000, 10.1607  L2000, 9.38198  L2000, 8.48528  L2000, 7.48188  L2000, 6.38438  L2000, 5.2066  L2000, 3.96335  L2000, 2.67025  L2000, 1.34357  L2000, 2.88658e-15 " /></g>
+</g><g id="side-GATE_Connector_Left" data-part-id="GATE_Connector_Left" transform="matrix(0 -0.06 0.06 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 1424.67 174 L 1508.67 174 " />
+<path d=" M 1508.67 174 L 1508.67 75 " />
+<path d=" M 1424.67 75 L 1508.67 75 " />
+<path d=" M 1424.67 174 L 1424.67 75 " />
+</g>
+</g><g id="side-GATE_Connector_Right" data-part-id="GATE_Connector_Right" transform="matrix(0 -0.06 0.06 0 70 110)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="8"
+   transform="scale(1, -1)"
+  >
+<path d=" M 1424.67 174 L 1508.67 174 " />
+<path d=" M 1508.67 174 L 1508.67 75 " />
+<path d=" M 1424.67 75 L 1508.67 75 " />
+<path d=" M 1424.67 174 L 1424.67 75 " />
+</g>
+</g><g id="dimension-side-door-height" data-dimension-id="door-height" data-value-m="1.9" data-kind="true" font-family="sans-serif" font-size="3.8"><text x="12" y="145">door-height: 1900.0 mm (true 3D)</text><path d="M12 150 h114.0 M12 148 v4 M126.0 148 v4" stroke="#145a80" stroke-width=".25" fill="none"/></g><text x="10" y="328" font-family="sans-serif" font-size="3.5">Projection 1:16.667. Native linked measurements with scale witnesses below. Geometry is prototype D.</text></g></svg>

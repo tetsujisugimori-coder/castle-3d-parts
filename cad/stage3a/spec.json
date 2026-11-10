@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "part_id": "GATE-SIMPLE-01",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "unit": "m",
+  "up": "Z",
+  "parameters": {
+    "post_height": 2.2,
+    "post_width": 0.15,
+    "opening": 1.2,
+    "door_width": 1.12,
+    "door_height": 1.9,
+    "door_thickness": 0.045,
+    "ground_clearance": 0.1,
+    "axis_radius": 0.012,
+    "axis_inset": 0.06,
+    "connector_length": 0.45,
+    "connector_height": 0.084,
+    "connector_depth": 0.099
+  },
+  "poses": [
+    {
+      "id": "B0",
+      "angle_degrees": 0
+    },
+    {
+      "id": "B1",
+      "angle_degrees": 45
+    },
+    {
+      "id": "B2",
+      "angle_degrees": 90
+    }
+  ],
+  "fence_reference": {
+    "path": "cad/stage2b/spec.json",
+    "revision": "B0",
+    "unit": "U01",
+    "post_height_m": 2.2,
+    "post_width_m": 0.15,
+    "rails": 2
+  },
+  "limitations": [
+    "Prototype dimensions, not archaeological measurements",
+    "Axis schematic with deliberate gap; no functioning hinge joint or strength claim",
+    "Connectors have 0.15m face overlap on posts and meet fence upper rail at outer faces +/-1.05m; fastening and support engineering unverified",
+    "Static pose clearances only"
+  ]
+}

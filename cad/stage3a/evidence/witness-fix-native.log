@@ -1,0 +1,85 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-2018.ttf
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-FreeCAD.ttf
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/shiboken2/files.dir/shibokensupport/feature.py", line 139, in _import
+    return original_import(name, *args, **kwargs)
+<class 'ModuleNotFoundError'>: No module named 'AttachmentEditor'
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: QOpenGLContext creation failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+QOpenGLWidget: Failed to create context
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+No valid GL context found!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 139, in <module>
+    for pose in SPEC['poses']:build(pose,Path(sys.argv[1])/pose['id'])
+                              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 110, in build
+    rec(d);created=dimcheck(d);d.saveAs(str(out/'assembly.FCStd'));A.closeDocument(d.Name);d=A.openDocument(str(out/'assembly.FCStd'));ready(d);after=audit(d);equivalent(after,before);reopened=dimcheck(d);assert created==reopened
+                   ~~~~~~~~^^^
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py", line 64, in dimcheck
+    assert dict(w.ExpressionEngine)==dict(zip(['X1','Y1','Z1','X2','Y2','Z2'],witness_expressions(id))),'EXPRESSION'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EXPRESSION
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/run.py", line 7, in <module>
+    subprocess.run(['/usr/bin/python3',str(root/'cad/stage3a/build.py'),str(out)],env=env,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/build.py', '/workspace/scratch/e622c1e9421e/castle-gate-stage3a/cad/stage3a/generated']' returned non-zero exit status 1.

@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "revision": "B0",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "assembly_id": "GATE-SIMPLE-01",
+  "source_commit": "1cc50d1a6d1af8164cada51124cb02279dbe316c",
+  "previous_revision": null,
+  "changes": [],
+  "files": {
+    "glb": {
+      "path": "assembly.glb",
+      "sha256": "c82d0f634570d3f0e87ced3f432d693e4703a5663d9ff1312e289cc65d02fe69"
+    },
+    "svg": {
+      "path": "drawing.svg",
+      "sha256": "0f548e5a87b1dc91e7299153e693cf594c2f5896bf208da5cf97a7bddc9efc81"
+    }
+  },
+  "parts": [
+    {
+      "id": "GATE_Post_Left",
+      "unit_id": "GATE",
+      "label": "左支持柱",
+      "freecad_object": "GATE_Post_Left",
+      "step_object": "GATE_Post_Left",
+      "glb_node": "GATE_Post_Left",
+      "svg_ids": {
+        "front": "front-GATE_Post_Left",
+        "top": "top-GATE_Post_Left",
+        "side": "side-GATE_Post_Left"
+      },
+      "dimension_ids": [
+        "post-height",
+        "opening"
+      ],
+      "bounds_m": [
+        -0.75,
+        -0.075,
+        0.0,
+        -0.6,
+        0.075,
+        2.2
+      ],
+      "research_refs": [
+        {
+          "id": "DEC-GATE-001",
+          "path": "cad/stage3a/spec.json"
+        }
+      ]
+    },
+    {
+      "id": "GATE_Post_Right",
+      "unit_id": "GATE",
+      "label": "右支持柱",
+      "freecad_object": "GATE_Post_Right",
+      "step_object": "GATE_Post_Right",
+      "glb_node": "GATE_Post_Right",
+      "svg_ids": {
+        "front": "front-GATE_Post_Right",
+        "top": "top-GATE_Post_Right",
+        "side": "side-GATE_Post_Right"
+      },
+      "dimension_ids": [
+        "post-height",
+        "opening"
+      ],
+      "bounds_m": [
+        0.6,
+        -0.075,
+        0.0,
+        0.75,
+        0.075,
+        2.2
+      ],
+      "research_refs": [
+        {
+          "id": "DEC-GATE-001",
+          "path": "cad/stage3a/spec.json"
+        }
+      ]
+    },
+    {
+      "id": "GATE_Beam",
+      "unit_id": "GATE",
+      "label": "上部横材",
+      "freecad_object": "GATE_Beam",
+      "step_object": "GATE_Beam",
+      "glb_node": "GATE_Beam",
+      "svg_ids": {
+        "front": "front-GATE_Beam",
+        "top": "top-GATE_Beam",
+        "side": "side-GATE_Beam"
+      },
+      "dimension_ids": [
+        "beam-length"
+      ],
+      "bounds_m": [
+        -0.75,
+        -0.075,
+        2.2,
+        0.75,
+        0.075,
+        2.35
+      ],
+      "research_refs": [
+        {
+          "id": "DEC-GATE-001",
+          "path": "cad/stage3a/spec.json"
+        }
+      ]
+    },
+    {
+      "id": "GATE_Door",
+      "unit_id": "GATE",
+      "label": "板戸",
+      "freecad_object": "GATE_Door",
+      "step_object": "GATE_Door",
+      "glb_node": "GATE_Door",
+      "svg_ids": {
+        "front": "front-GATE_Door",
+        "top": "top-GATE_Door",
+        "side": "side-GATE_Door"
+      },
+      "dimension_ids": [
+        "door-width",
+        "door-height",
+        "door-thickness"
+      ],
+      "bounds_m": [
+        -0.526,
+        0.0,
+        0.1,
+        0.594,
+        0.045,
+        2.0
+      ],
+      "research_refs": [
+        {
+          "id": "DEC-GATE-001",
+          "path": "cad/stage3a/spec.json"
+        }
+      ]
+    },
+    {
+      "id": "GATE_Axis",
+      "unit_id": "GATE",
+      "label": "模式軸",
+      "freecad_object": "GATE_Axis",
+      "step_object": "GATE_Axis",
+      "glb_node": "GATE_Axis",
+      "svg_ids": {
+        "front": "front-GATE_Axis",
+        "top": "top-GATE_Axis",
+        "side": "side-GATE_Axis"
+      },
+      "dimension_ids": [
+        "axis-radius"
+      ],
+      "bounds_m": [
+        -0.552,
+        -0.012,
+        0.1,
+        -0.528,
+        0.012,
+        2.0
+      ],
+      "research_refs": [
+        {
+          "id": "DEC-GATE-001",
+          "path": "cad/stage3a/spec.json"
+        }
+      ]
+    },
+    {
+      "id": "GATE_Connector_Left",
+      "unit_id": "GATE",
+      "label": "左接続部",
+      "freecad_object": "GATE_Connector_Left",
+      "step_object": "GATE_Connector_Left",
+      "glb_node": "GATE_Connector_Left",
+      "svg_ids": {
+        "front": "front-GATE_Connector_Left",
+        "top": "top-GATE_Connector_Left",
+        "side": "side-GATE_Connector_Left"
+      },
+      "dimension_ids": [
+        "connector-length"
+      ],
+      "bounds_m": [
+        -1.05,
+        -0.174,
+        1.4246666666666667,
+        -0.6,
+        -0.075,
+        1.5086666666666668
+      ],
+      "research_refs": [
+        {
+          "id": "DEC-GATE-001",
+          "path": "cad/stage3a/spec.json"
+        }
+      ]
+    },
+    {
+      "id": "GATE_Connector_Right",
+      "unit_id": "GATE",
+      "label": "右接続部",
+      "freecad_object": "GATE_Connector_Right",
+      "step_object": "GATE_Connector_Right",
+      "glb_node": "GATE_Connector_Right",
+      "svg_ids": {
+        "front": "front-GATE_Connector_Right",
+        "top": "top-GATE_Connector_Right",
+        "side": "side-GATE_Connector_Right"
+      },
+      "dimension_ids": [
+        "connector-length"
+      ],
+      "bounds_m": [
+        0.6,
+        -0.174,
+        1.4246666666666667,
+        1.05,
+        -0.075,
+        1.5086666666666668
+      ],
+      "research_refs": [
+        {
+          "id": "DEC-GATE-001",
+          "path": "cad/stage3a/spec.json"
+        }
+      ]
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "beam-length",
+      "label": "beam-length",
+      "value_m": 1.5,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Beam"
+      ]
+    },
+    {
+      "id": "post-height",
+      "label": "post-height",
+      "value_m": 2.2,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ]
+    },
+    {
+      "id": "opening",
+      "label": "opening",
+      "value_m": 1.2,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Post_Left",
+        "GATE_Post_Right"
+      ]
+    },
+    {
+      "id": "door-width",
+      "label": "door-width",
+      "value_m": 1.12,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Door"
+      ]
+    },
+    {
+      "id": "door-height",
+      "label": "door-height",
+      "value_m": 1.9,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Door"
+      ]
+    },
+    {
+      "id": "door-thickness",
+      "label": "door-thickness",
+      "value_m": 0.045,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Door"
+      ]
+    },
+    {
+      "id": "axis-radius",
+      "label": "axis-radius",
+      "value_m": 0.012,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Axis"
+      ]
+    },
+    {
+      "id": "connector-length",
+      "label": "connector-length",
+      "value_m": 0.45,
+      "kind": "true",
+      "part_ids": [
+        "GATE_Connector_Left",
+        "GATE_Connector_Right"
+      ]
+    }
+  ],
+  "native_svg_exports": {
+    "front": {
+      "path": "native-front.svg",
+      "sha256": "8d193220f2287106c13b133d1b3c65079fe25f7fcbc570e4af83510c50d01483"
+    },
+    "top": {
+      "path": "native-top.svg",
+      "sha256": "784d067ec78d8b4a80d2157345cc220bf2405e18d6a556f9e6d5cea8fa49a191"
+    },
+    "side": {
+      "path": "native-side.svg",
+      "sha256": "4130d7168feb3e18581c66c1369877c4995cf63cc9623e7c28764e5f5e6b4162"
+    },
+    "pivot": {
+      "path": "native-pivot.svg",
+      "sha256": "3c76b076bb4c186bf49d8140d060992cb6d0e6d261cfd1ae9c3ad5371ca17d11"
+    },
+    "connection": {
+      "path": "native-connection.svg",
+      "sha256": "2f73c0725930a1cac60d9ce2d0a3eb84dabe48d3d82ccb5f29ff15720e8fa042"
+    }
+  },
+  "research_snapshot_sha256": "0454925a1805193a13efa123d025244857051a7032d34f31aff4454dde1115af",
+  "pose_angle_degrees": 0,
+  "fence_connections": [
+    {
+      "fence_revision": "B0",
+      "unit_id": "U01",
+      "translation_m": [
+        -3.525,
+        0,
+        0
+      ]
+    },
+    {
+      "fence_revision": "B0",
+      "unit_id": "U01",
+      "translation_m": [
+        3.525,
+        0,
+        0
+      ]
+    }
+  ]
+}

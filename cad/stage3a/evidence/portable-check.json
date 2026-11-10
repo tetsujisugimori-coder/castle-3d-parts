@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "poses": 3,
+  "gate_parts_per_pose": 7,
+  "native_dimensions_per_pose": 8,
+  "gate_pair_checks": 63,
+  "fence_pair_checks": 294,
+  "native_dimension_fault_controls": 6,
+  "additional_fault_controls": 5,
+  "native_execution": "recorded separately; this checker is portable"
+}

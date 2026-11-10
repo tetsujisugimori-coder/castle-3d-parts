@@ -1,0 +1,485 @@
+{
+  "software": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "mode": "real FreeCAD with Qt offscreen; manual GUI NOT_TESTED",
+  "pose": {
+    "id": "B1",
+    "angle_degrees": 45
+  },
+  "created": {
+    "solids": 7,
+    "dimensions_m": [
+      2.1,
+      1.0076788950189395,
+      2.35
+    ],
+    "components": [
+      {
+        "id": "GATE_Post_Left",
+        "part_id": "GATE_Post_Left",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.75,
+          -0.075,
+          0.0,
+          -0.6,
+          0.075,
+          2.2
+        ]
+      },
+      {
+        "id": "GATE_Post_Right",
+        "part_id": "GATE_Post_Right",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          0.6,
+          -0.075,
+          0.0,
+          0.75,
+          0.075,
+          2.2
+        ]
+      },
+      {
+        "id": "GATE_Beam",
+        "part_id": "GATE_Beam",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.75,
+          -0.075,
+          2.2,
+          0.75,
+          0.075,
+          2.35
+        ]
+      },
+      {
+        "id": "GATE_Door",
+        "part_id": "GATE_Door",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.561920310216783,
+          0.009899494936611663,
+          0.1,
+          0.2618590898655448,
+          0.8336788950189395,
+          2.0
+        ]
+      },
+      {
+        "id": "GATE_Axis",
+        "part_id": "GATE_Axis",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.552,
+          -0.012,
+          0.1,
+          -0.528,
+          0.012,
+          2.0
+        ]
+      },
+      {
+        "id": "GATE_Connector_Left",
+        "part_id": "GATE_Connector_Left",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -1.05,
+          -0.174,
+          1.4246666666666667,
+          -0.6,
+          -0.075,
+          1.5086666666666668
+        ]
+      },
+      {
+        "id": "GATE_Connector_Right",
+        "part_id": "GATE_Connector_Right",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          0.6,
+          -0.174,
+          1.4246666666666667,
+          1.05,
+          -0.075,
+          1.5086666666666668
+        ]
+      }
+    ],
+    "pairwise_clearances": [
+      {
+        "a": "GATE_Post_Right",
+        "b": "GATE_Post_Left",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Beam",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Beam",
+        "b": "GATE_Post_Right",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Door",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.03807968978321696,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Door",
+        "b": "GATE_Post_Right",
+        "distance_m": 0.7530687219636731,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Door",
+        "b": "GATE_Beam",
+        "distance_m": 0.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.048,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Post_Right",
+        "distance_m": 1.128,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Beam",
+        "distance_m": 0.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Door",
+        "distance_m": 0.0019999999999999974,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Post_Right",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Beam",
+        "distance_m": 0.6913333333333332,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Door",
+        "distance_m": 0.10997210388496322,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Axis",
+        "distance_m": 0.08404686356149275,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Post_Left",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Post_Right",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Beam",
+        "distance_m": 0.6913333333333332,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Door",
+        "distance_m": 0.8591347391416554,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Axis",
+        "distance_m": 1.1304644414597769,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Connector_Left",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      }
+    ]
+  },
+  "fcstd_reopened": {
+    "solids": 7,
+    "dimensions_m": [
+      2.1,
+      1.0076788950189401,
+      2.35
+    ],
+    "components": [
+      {
+        "id": "GATE_Post_Left",
+        "part_id": "GATE_Post_Left",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.75,
+          -0.075,
+          0.0,
+          -0.6,
+          0.075,
+          2.2
+        ]
+      },
+      {
+        "id": "GATE_Post_Right",
+        "part_id": "GATE_Post_Right",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          0.6,
+          -0.075,
+          0.0,
+          0.75,
+          0.075,
+          2.2
+        ]
+      },
+      {
+        "id": "GATE_Beam",
+        "part_id": "GATE_Beam",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.75,
+          -0.075,
+          2.2,
+          0.75,
+          0.075,
+          2.35
+        ]
+      },
+      {
+        "id": "GATE_Door",
+        "part_id": "GATE_Door",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.561920310216783,
+          0.009899494936611663,
+          0.1,
+          0.2618590898655443,
+          0.8336788950189401,
+          2.0
+        ]
+      },
+      {
+        "id": "GATE_Axis",
+        "part_id": "GATE_Axis",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -0.552,
+          -0.012,
+          0.1,
+          -0.528,
+          0.012,
+          2.0
+        ]
+      },
+      {
+        "id": "GATE_Connector_Left",
+        "part_id": "GATE_Connector_Left",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          -1.05,
+          -0.174,
+          1.4246666666666667,
+          -0.6,
+          -0.075,
+          1.5086666666666668
+        ]
+      },
+      {
+        "id": "GATE_Connector_Right",
+        "part_id": "GATE_Connector_Right",
+        "revision": "GATE-SIMPLE-01/B1",
+        "bounds_m": [
+          0.6,
+          -0.174,
+          1.4246666666666667,
+          1.05,
+          -0.075,
+          1.5086666666666668
+        ]
+      }
+    ],
+    "pairwise_clearances": [
+      {
+        "a": "GATE_Post_Right",
+        "b": "GATE_Post_Left",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Beam",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Beam",
+        "b": "GATE_Post_Right",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Door",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.03807968978321696,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Door",
+        "b": "GATE_Post_Right",
+        "distance_m": 0.7530687219636736,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Door",
+        "b": "GATE_Beam",
+        "distance_m": 0.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.048,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Post_Right",
+        "distance_m": 1.128,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Beam",
+        "distance_m": 0.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Axis",
+        "b": "GATE_Door",
+        "distance_m": 0.0019999999999999974,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Post_Left",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Post_Right",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Beam",
+        "distance_m": 0.6913333333333332,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Door",
+        "distance_m": 0.10997210388496322,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Left",
+        "b": "GATE_Axis",
+        "distance_m": 0.08404686356149275,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Post_Left",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Post_Right",
+        "distance_m": 0.0,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Beam",
+        "distance_m": 0.6913333333333332,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Door",
+        "distance_m": 0.859134739141656,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Axis",
+        "distance_m": 1.1304644414597769,
+        "overlap_mm3": 0.0
+      },
+      {
+        "a": "GATE_Connector_Right",
+        "b": "GATE_Connector_Left",
+        "distance_m": 1.2,
+        "overlap_mm3": 0.0
+      }
+    ]
+  },
+  "step_reopened": true,
+  "parameter_edit_save_reopen": true,
+  "pose_parameter_edit_save_reopen": {
+    "angle_degrees": 30,
+    "reopened_angle_degrees": 30,
+    "restored_degrees": 45.0
+  },
+  "axis_m": [
+    -0.54,
+    0,
+    0.1
+  ]
+}
