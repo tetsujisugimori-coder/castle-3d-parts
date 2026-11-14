@@ -109,10 +109,23 @@ def native_cad(repo, generated, evidence):
     step = A.newDocument('SeparateProcessStepReadback')
     Import.insert(str(generated/'assembly.step'), step.Name)
     step.recompute()
-    imported = [o for o in step.Objects if hasattr(o,'Shape') and o.Shape.Solids]
-    assert len(imported)==23, len(imported)
-    assert {o.Label for o in imported}==set(ids) and len({o.Label for o in imported})==23, 'STEP exact PartID labels'
+    shaped = [o for o in step.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
+    inventory=[{'name':o.Name,'label':o.Label,'type_id':o.TypeId,'solids':len(o.Shape.Solids),'valid':o.Shape.isValid(),'volume_mm3':o.Shape.Volume} for o in shaped]
+    save(evidence/'step-import-inventory.json',inventory)
+    assert all(o.Shape.isValid() and len(o.Shape.Solids)>0 for o in shaped), ('STEP invalid/open shape',inventory)
+    imported=[o for o in shaped if len(o.Shape.Solids)==1]
+    aggregates=[o for o in shaped if len(o.Shape.Solids)>1]
+    assert len(imported)==23, ('STEP leaf count',inventory)
+    assert {o.Label for o in imported}==set(ids) and len({o.Label for o in imported})==23, ('STEP exact PartID labels',inventory)
     assert all(o.Shape.isValid() and len(o.Shape.Solids)==1 for o in imported), 'STEP valid single solids'
+    assembled=Part.makeCompound([o.Shape for o in imported])
+    aggregate_rows=[]
+    for aggregate in aggregates:
+        assert aggregate.Label not in ids and aggregate.Name not in ids, ('STEP aggregate uses reserved PartID',inventory)
+        assert len(aggregate.Shape.Solids)==23, ('STEP incomplete aggregate',inventory)
+        delta=aggregate.Shape.cut(assembled).Volume+assembled.cut(aggregate.Shape).Volume
+        assert delta<.01,('STEP aggregate differs from exact 23 leaves',aggregate.Label,delta)
+        aggregate_rows.append({'name':aggregate.Name,'label':aggregate.Label,'solids':23,'symmetric_difference_mm3':delta})
     step_rows=[]
     for name in ids:
         matches=[o for o in imported if o.Label==name]
@@ -149,7 +162,7 @@ def native_cad(repo, generated, evidence):
     transition(doc,0,.07)
     doc.saveAs(str(evidence/'separate-reopen-state.FCStd'))
     result={'status':'PASS','FreeCAD':A.Version(),'parts':23,'separate_process_fcstd_reopen':True,
-            'separate_process_step_reopen':True,'semantic_reference_comparison':semantic,'step_comparison':step_rows,
+            'separate_process_step_reopen':True,'semantic_reference_comparison':semantic,'step_comparison':step_rows,'step_import_inventory':inventory,'step_aggregate_comparison':aggregate_rows,
             'native_dimension_variants':dimension_rows,'saved_state':{'angle_degrees':0,'bolt_m':.07},
             'continuous_path':'UNKNOWN','manual_gui':'NOT_TESTED','physical_strength':'NOT_TESTED'}
     save(evidence/'native-independent-readback.json',result)

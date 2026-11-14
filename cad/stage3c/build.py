@@ -114,10 +114,22 @@ assert len(objs)==23 and {o.PartID for o in objs}==set(spec['part_ids'])
 assert all(o.Name==o.PartID==o.Label for o in objs),'SOURCE_PART_ID_LABEL'
 Import.export(objs,str(OUT/'assembly.step'),exportHidden=True,legacy=False,keepPlacement=True)
 st=A.newDocument('ReloadStep');Import.insert(str(OUT/'assembly.step'),st.Name);st.recompute()
-ss=[o for o in st.Objects if hasattr(o,'Shape') and o.Shape.Solids]
+step_inventory=[{'name':o.Name,'label':o.Label,'type_id':o.TypeId,'solids':len(o.Shape.Solids) if hasattr(o,'Shape') else None,'shape_is_null':o.Shape.isNull() if hasattr(o,'Shape') else None,'children':[child.Name for child in o.OutList]} for o in st.Objects]
+(OUT/'step-import-inventory.json').write_text(json.dumps(step_inventory,indent=2))
+print('STEP_IMPORT_INVENTORY '+json.dumps(step_inventory),flush=True)
+shaped=[o for o in st.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
+ss=[o for o in shaped if len(o.Shape.Solids)==1]
 assert len(ss)==23 and len({s.Label for s in ss})==23,'STEP_PART_COUNT_OR_DUPLICATE_LABEL'
 assert {s.Label for s in ss}==set(spec['part_ids']),'STEP_PART_ID_LABELS'
 step_by_id={s.Label:s for s in ss}
+leaf_compound=Part.makeCompound([s.Shape for s in ss]);step_aggregates=[]
+for aggregate in shaped:
+ if len(aggregate.Shape.Solids)==1:continue
+ assert aggregate.Label not in set(spec['part_ids']),'STEP_AGGREGATE_USES_RESERVED_PART_ID'
+ assert aggregate.Shape.isValid() and len(aggregate.Shape.Solids)==23,('STEP_UNEXPECTED_EXTRA_SHAPE',aggregate.Name,aggregate.Label,len(aggregate.Shape.Solids))
+ difference=aggregate.Shape.cut(leaf_compound).Volume+leaf_compound.cut(aggregate.Shape).Volume
+ assert math.isfinite(difference) and 0<=difference<.01,('STEP_AGGREGATE_GEOMETRY',aggregate.Name,difference)
+ step_aggregates.append({'imported_name':aggregate.Name,'imported_label':aggregate.Label,'solids':23,'symmetric_difference_mm3':difference})
 meshes=[];step_identity=[]
 for o in objs:
  s=step_by_id[o.PartID]
@@ -129,5 +141,5 @@ for o in objs:
  step_identity.append({'id':o.PartID,'imported_name':s.Name,'imported_label':s.Label,'symmetric_difference_mm3':difference})
  vs,fs=s.Shape.tessellate(.1);meshes.append({'id':o.Name,'moving':o.Moving,'movement':o.Movement,'motion':o.Movement,'vertices_m':[[v.x/1000,v.y/1000,v.z/1000] for v in vs],'faces':fs,'bounds_m':bounds(o.Shape)})
 (OUT/'mesh-transfer.json').write_text(json.dumps({'objects':meshes,'pivot_m':spec['pivot_m'],'bolt':spec['bolt']},separators=(',',':')))
-(OUT/'cad-audit.json').write_text(json.dumps({'FreeCAD':A.Version(),'parts':23,'fcstd_reloaded':True,'step_reloaded':True,'step_identity_method':'OCAF exported Label equals PartID; exact unique imported Label lookup, never file order','step_identity':step_identity,'native_dimension_edit':True,'dimension_before_mm':900,'dimension_changed_mm':880,'dimension_reloaded_mm':n.getRawValue(),'native_dimensions':dimension_rows,'parameter_variations':paramrows,'pose_bounds':rows,'manual_gui':'NOT_TESTED'},indent=2))
+(OUT/'cad-audit.json').write_text(json.dumps({'FreeCAD':A.Version(),'parts':23,'fcstd_reloaded':True,'step_reloaded':True,'step_identity_method':'OCAF exported Label equals PartID; exact unique imported single-solid Label lookup, never file order; any aggregate must equal all 23 leaves','step_identity':step_identity,'step_import_inventory':step_inventory,'step_aggregates':step_aggregates,'native_dimension_edit':True,'dimension_before_mm':900,'dimension_changed_mm':880,'dimension_reloaded_mm':n.getRawValue(),'native_dimensions':dimension_rows,'parameter_variations':paramrows,'pose_bounds':rows,'manual_gui':'NOT_TESTED'},indent=2))
 print('NATIVE PASS',flush=True);os._exit(0)

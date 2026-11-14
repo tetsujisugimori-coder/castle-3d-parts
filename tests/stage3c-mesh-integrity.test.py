@@ -39,4 +39,14 @@ class MeshIntegrity(unittest.TestCase):
             with self.assertRaises(AssertionError):module.compare_mesh(V,F,vertices,faces)
         with self.assertRaises(AssertionError):module.compare_mesh(V,F,V[:-1],F)
 
+    def test_double_seam_noise_can_round_to_one_float32_vertex(self):
+        import struct
+        expected=copy.deepcopy(V)+[[1+5e-16,0,0]]
+        faces=copy.deepcopy(F);faces[0]=[9 if i==1 else i for i in faces[0]]
+        actual=[list(struct.unpack('fff',struct.pack('fff',*p))) for p in expected]
+        result=module.compare_mesh(expected,faces,actual,faces)
+        self.assertEqual(result['unique_vertices'],len(V))
+        self.assertEqual(result['source_exact_unique_vertices'],len(V)+1)
+        self.assertLessEqual(result['maximum_source_weld_distance_m'],1e-9)
+
 if __name__=='__main__':unittest.main()

@@ -79,6 +79,10 @@ if(stage==='stage3a') {
 }
 
 if (stage==='stage2d') {
+  const researchReady="await p.goto(base+'research-cad/');await p.waitForSelector('#status');";
+  if(!code.includes(researchReady))throw Error('Stage2D linked research viewer readiness contract changed');
+  code=code.replace(researchReady,"await p.goto(base+'research-cad/');await p.waitForSelector('#status[data-loaded=true]');await p.waitForLoadState('networkidle');");
+
   // A pending held navigation can block the next action's prechecks. Inject the
   // race only in the fault control; normal selectOption coverage stays intact.
   const oldHelper="async function changeRevision(p,rev){await Promise.all([p.waitForEvent('framenavigated',f=>f===p.mainFrame()),p.selectOption('#revision',rev,{noWaitAfter:true})])}";
