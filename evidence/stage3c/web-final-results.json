@@ -1,0 +1,423 @@
+{
+  "head": "9ed57db22c386ec67a2afabf40b7412fcf957a55",
+  "tree": "41dc1226b004181c3f5e27ba1c0ec6bc272652cc",
+  "working_tree_status": "A  .github/workflows/stage3c.yml\nA  cad/stage3c/.gitignore\nA  cad/stage3c/README.md\nA  cad/stage3c/blender.py\nA  cad/stage3c/build.py\nA  cad/stage3c/check.py\nA  cad/stage3c/check_test.py\nA  cad/stage3c/collision.py\nA  cad/stage3c/evidence/blender1.log\nA  cad/stage3c/evidence/blender2.log\nA  cad/stage3c/evidence/build.log\nA  cad/stage3c/evidence/build2.log\nA  cad/stage3c/evidence/build3.log\nA  cad/stage3c/evidence/build4.log\nA  cad/stage3c/evidence/build5.log\nA  cad/stage3c/evidence/collision-final.log\nA  cad/stage3c/evidence/collision1.log\nA  cad/stage3c/evidence/failures.json\nA  cad/stage3c/evidence/state1.log\nA  cad/stage3c/evidence/state2.log\nA  cad/stage3c/evidence/state3.log\nA  cad/stage3c/evidence/state4.log\nA  cad/stage3c/evidence/state5.log\nA  cad/stage3c/evidence/state6.log\nA  cad/stage3c/finalize.py\nA  cad/stage3c/generated/assembly.FCStd\nA  cad/stage3c/generated/assembly.blend\nA  cad/stage3c/generated/assembly.glb\nA  cad/stage3c/generated/assembly.step\nA  cad/stage3c/generated/blender-audit.json\nA  cad/stage3c/generated/cad-audit.json\nAM cad/stage3c/generated/counterexample-0-141.FCStd\nAM cad/stage3c/generated/counterexample-45-140.FCStd\nAM cad/stage3c/generated/counterexample-90-70.FCStd\nAM cad/stage3c/generated/counterexample-91-0.FCStd\nA  cad/stage3c/generated/legacy-audit.json\nA  cad/stage3c/generated/mesh-transfer.json\nA  cad/stage3c/generated/native-assembly.svg\nA  cad/stage3c/generated/native-bolt.svg\nA  cad/stage3c/generated/native-doorstop.svg\nA  cad/stage3c/generated/native-joinery.svg\nA  cad/stage3c/generated/native-positions-locked.svg\nA  cad/stage3c/generated/native-positions.svg\nA  cad/stage3c/generated/native-support.svg\nA  cad/stage3c/generated/state-audit.json\nA  cad/stage3c/generated/template-assembly.svg\nA  cad/stage3c/generated/template-bolt.svg\nA  cad/stage3c/generated/template-doorstop.svg\nA  cad/stage3c/generated/template-joinery.svg\nA  cad/stage3c/generated/template-positions.svg\nA  cad/stage3c/generated/template-support.svg\nA  cad/stage3c/legacy.py\nA  cad/stage3c/native_test.py\nA  cad/stage3c/run.py\nA  cad/stage3c/spec.json\nA  cad/stage3c/state.py\nMM docs/stage3c/README.md\nAM docs/stage3c/independent-review.md\nA  evidence/stage3c/independent/before-collision-validator.mjs.txt\nA  evidence/stage3c/independent/before-portable-check.py.txt\nAM evidence/stage3c/independent/blender-review.json\nA  evidence/stage3c/independent/blender-review.log\nA  evidence/stage3c/independent/blender-review.py\nAM evidence/stage3c/independent/browser-review.mjs\nA  evidence/stage3c/independent/contract-counterexample.mjs\nA  evidence/stage3c/independent/dimension-review.json\nA  evidence/stage3c/independent/dimension-review.log\nA  evidence/stage3c/independent/dimension-review.py\nA  evidence/stage3c/independent/dimension-review2.log\nA  evidence/stage3c/independent/dimension-review3.log\nA  evidence/stage3c/independent/native-assembly-final.png\nA  evidence/stage3c/independent/native-bolt.png\nA  evidence/stage3c/independent/native-doorstop-final.png\nA  evidence/stage3c/independent/native-gui-final.log\nA  evidence/stage3c/independent/native-gui-review.log\nA  evidence/stage3c/independent/native-joinery-final.png\nA  evidence/stage3c/independent/native-joinery.png\nA  evidence/stage3c/independent/native-pairs.json\nA  evidence/stage3c/independent/native-positions-final.png\nA  evidence/stage3c/independent/native-review.log\nA  evidence/stage3c/independent/native-review.py\nA  evidence/stage3c/independent/native-support-final.png\nA  evidence/stage3c/independent/native-support.png\nA  evidence/stage3c/independent/portable-counterexample.py\nA  evidence/stage3c/independent/portable-executable.log\nA  evidence/stage3c/independent/portable-review.json\nA  evidence/stage3c/independent/portable-review.log\nA  evidence/stage3c/independent/portable-review.py\nA  evidence/stage3c/independent/portable-review2.log\nA  evidence/stage3c/independent/portable.FCMacro\nA  evidence/stage3c/independent/state-review.json\nA  evidence/stage3c/independent/state-review.mjs\nA  evidence/stage3c/independent/submission-files.txt\nA  evidence/stage3c/local-checks.json\nA  evidence/stage3c/node-final.log\nA  evidence/stage3c/node-tmp-enospc.log\nA  evidence/stage3c/web-regression-summary.json\nM  scripts/build-stage3b-site.mjs\nA  scripts/build-stage3c-site.mjs\nA  scripts/stage3c-browser.mjs\nA  site/shared/gate-viewer.mjs\nM  site/stage3b/app.mjs\nA  site/stage3c/app.mjs\nA  site/stage3c/contract.mjs\nA  site/stage3c/index.html\nAM site/stage3c/style.css\nA  tests/stage3c-state.test.mjs\n?? .runtime/\n?? cad/stage3c/evidence/collision-final2.log\n?? cad/stage3c/evidence/legacy.log\n?? cad/stage3c/evidence/state-final.log\n?? cad/stage3c/evidence/state-final2.log\n?? cad/stage3c/evidence/state-final3.log\n?? cad/stage3c/evidence/state-final4.log\n?? evidence/stage3c/browser-failures.json\n?? evidence/stage3c/independent/blender-before-final.json\n?? evidence/stage3c/independent/blender-final.log\n?? evidence/stage3c/independent/browser-before-css.json\n?? evidence/stage3c/independent/browser-review.json\n?? evidence/stage3c/independent/browser-review.log\n?? evidence/stage3c/independent/browser-review2.log\n?? evidence/stage3c/independent/browser-review3.log\n?? evidence/stage3c/independent/build.log\n?? evidence/stage3c/independent/build2.log\n?? evidence/stage3c/independent/chromium-before-css.png\n?? evidence/stage3c/independent/chromium-fresh-trace.zip\n?? evidence/stage3c/independent/chromium-fresh.png\n?? evidence/stage3c/independent/contract-counterexample.json\n?? evidence/stage3c/independent/portable-counterexample.json\n?? evidence/stage3c/independent/preservation.json\n?? evidence/stage3c/independent/provenance-review.json\n?? evidence/stage3c/independent/review-half-bolt.FCStd.0523b136-3162-4be8-b893-e355a38737d4\n?? evidence/stage3c/independent/review-half-bolt.FCStd.92cb2528-c468-435a-aa5b-3129341cf3fe\n?? evidence/stage3c/independent/review-half-bolt.FCStd.d87b9813-bdf7-4697-ab3d-71ef628ecdf9\n?? evidence/stage3c/independent/reviewed-source-hashes.json\n?? evidence/stage3c/independent/submission-manifest.json\n?? evidence/stage3c/independent/tmp/\n?? evidence/stage3c/independent/webkit-before-css.png\n?? evidence/stage3c/independent/webkit-fresh-trace.zip\n?? evidence/stage3c/independent/webkit-fresh.png\n",
+  "manifest_sha256": "5b6b392375c88080993bf1ebb1f6e505ec748cb1ad30ca91cba38c418ba9da44",
+  "glb_sha256": "2342946734197cdf7610153be72970eedc92178f440a6d45c302d6787cae8712",
+  "collision_sha256": "9b0bb7161f0d4db9af0974b45956c81bac205aeba8be8f4eafa6fbbca2b8eded",
+  "webkit_executable": "/tmp/stage3b-recovery/webkit-local.sh",
+  "scope": "local candidate, emulated input, physical Safari NOT_TESTED",
+  "expected": 50,
+  "rows": [
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-pivot",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-unit",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-moving",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-hierarchy",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-bounds",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-glb",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-tolerance",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-pair",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-contact",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "projection-index",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "projection-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-bolt-axis",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-bolt-range",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-bolt",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "partial-bolt-coverage",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "width": 375,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 375,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 765,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 765,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 1280,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 1280,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "CAD lock/unlock, open-lock rejection, partial bolt interlock, keyboard, zoom",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-pivot",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-unit",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-moving",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-hierarchy",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-bounds",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-glb",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-tolerance",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-pair",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-contact",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "projection-index",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "projection-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-bolt-axis",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-bolt-range",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-bolt",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "partial-bolt-coverage",
+      "status": "PASS"
+    }
+  ]
+}

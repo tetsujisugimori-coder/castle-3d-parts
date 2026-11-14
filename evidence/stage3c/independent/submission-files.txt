@@ -1,0 +1,3 @@
+Include: review scripts (*.py, *.mjs, *.FCMacro), logs (*.log), completed raw records (*.json), original/updated renders (*.png), fresh-browser traces (*-trace.zip), validator snapshot (*.txt).
+Exclude: tmp/ (isolated copies and extracted SVGs), review-half-bolt.FCStd.* (incomplete failed saves), __pycache__/.
+Failures are preserved in logs; partial binaries are not claimed as valid originals.

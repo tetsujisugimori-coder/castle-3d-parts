@@ -1,0 +1,35 @@
+{
+  "node": {
+    "status": "PASS",
+    "tests": 487,
+    "fail": 0,
+    "skip": 0,
+    "log": "node-final.log",
+    "environment": "Linux, Node22, isolated workspace TMPDIR"
+  },
+  "initial_node": {
+    "status": "FAIL",
+    "reason": "ENOSPC in shared /tmp during existing test fixture copy",
+    "log": "node-tmp-enospc.log",
+    "correction": "Change temporary-directory location only; same tests rerun"
+  },
+  "stage3b_portable": {
+    "status": "PASS",
+    "tests": 15,
+    "native_rerun": false,
+    "preserved_angles": 91
+  },
+  "stage3c_portable_faults": {
+    "status": "PASS",
+    "tests": 11
+  },
+  "stage3c_browser": {
+    "status": "PASS",
+    "normal_conditions": 16,
+    "fault_conditions": 34,
+    "raw_summary": "web-final-results.json",
+    "physical_Safari": "NOT_TESTED"
+  },
+  "final_ci": "PENDING",
+  "physical_iPhone_Safari": "NOT_TESTED"
+}

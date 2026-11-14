@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scope": "batch native generation and separate-process reopen, not manual GUI",
+  "commands": 8,
+  "binary_comparison": [
+    {
+      "path": "assembly.FCStd",
+      "saved_sha256": "4597bee609eb4f3e262a60c8989f1cfb0ba90081408b4c3f0703c2ae8fd911a2",
+      "regenerated_sha256": "c3ca0f1ee580fbb4665c4039dfd63200a73c77eaea6ef3114a0d17bd56d70d1a",
+      "byte_identical": false,
+      "semantic_comparison": "PASS; independent native/STEP/Blender readback reports"
+    },
+    {
+      "path": "assembly.step",
+      "saved_sha256": "8912ac71b197f9375ec7a48ebb958c8cae1577d1181b00aac1def4fd4d4dd386",
+      "regenerated_sha256": "2112a03a6ef52d58954390cf981be31ae59e07aa48abd557d82e47f7cb422dcb",
+      "byte_identical": false,
+      "semantic_comparison": "PASS; independent native/STEP/Blender readback reports"
+    },
+    {
+      "path": "assembly.blend",
+      "saved_sha256": "fd6143aca19bb6f6dcfeabfa802f73c6e4f60c29268997686d640cbc60d1f5f2",
+      "regenerated_sha256": "75dc62a2ea093a07685152c1b9a40027ccd3e44d305243f86a074ba8c12545b2",
+      "byte_identical": false,
+      "semantic_comparison": "PASS; independent native/STEP/Blender readback reports"
+    },
+    {
+      "path": "assembly.glb",
+      "saved_sha256": "2342946734197cdf7610153be72970eedc92178f440a6d45c302d6787cae8712",
+      "regenerated_sha256": "0045617718260c8917da1af5f4dd8fea5b0d835ad7bca76fc6f7bb0d77a9706f",
+      "byte_identical": false,
+      "semantic_comparison": "PASS; independent native/STEP/Blender readback reports"
+    }
+  ],
+  "continuous_path": "UNKNOWN",
+  "physical_strength": "NOT_TESTED",
+  "historical_certainty": "UNKNOWN",
+  "source_head": "0d3f142c00cc98391d32cde8603223e78a3029f7",
+  "source_artifact_sha256": "fc7c57b8de2d14d3ee3c7b6bb7ab3189751db0ba49905b6fc0b7b498058bc562",
+  "source_run": 43602228621,
+  "adoption_scope": "20 changed generated files from 30 manifest-declared files; prior originals remain in preserved commit/bundle/ZIP; final HEAD CI pending"
+}

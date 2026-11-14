@@ -1,0 +1,56 @@
+"""Portable evidence integrity check. Does not claim to rerun FreeCAD or Blender."""
+import json, math, hashlib, struct, zipfile
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]
+BASE=set(['GATE_Post_Left','GATE_Post_Right','GATE_Beam','GATE_Door','GATE_Axis','GATE_Connector_Left','GATE_Connector_Right','GATE_Spindle_Lower','GATE_Spindle_Upper','GATE_Bearing_Lower','GATE_Bearing_Upper','GATE_Coupler_Lower','GATE_Coupler_Upper','GATE_Stop_Closed','GATE_Stop_Open'])
+NEW=set(['GATE_Bolt','GATE_BoltGuide_Left','GATE_BoltGuide_Right','GATE_BoltReceiver','GATE_Doorstop','GATE_Joint_Left','GATE_Joint_Right','GATE_AxialKeeper'])
+PARTS=BASE|NEW
+MOVING=set(['GATE_Door','GATE_Axis','GATE_Spindle_Lower','GATE_Spindle_Upper','GATE_Coupler_Lower','GATE_Coupler_Upper','GATE_Bolt','GATE_BoltGuide_Left','GATE_BoltGuide_Right'])
+FENCE={'FENCE_'+side+'_U01_'+p for side in ['Left','Right'] for p in ['Post_001','Post_002','Post_003','Post_004','Post_005','Rail_001','Rail_002']}
+IDS=PARTS|FENCE|{'GROUND'}
+def need(v,m):
+ if not v:raise AssertionError(m)
+def finite(x):return isinstance(x,(int,float)) and not isinstance(x,bool) and math.isfinite(x)
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def load(p):return json.loads(p.read_text())
+def pairs_expected(moving):return {tuple(sorted([a,b])) for a in IDS for b in IDS if a!=b and (a in moving or b in moving)}
+def validate_pairs(rows,expected,tol):
+ need(isinstance(rows,list),'pair list');seen=set()
+ for p in rows:
+  key=tuple(sorted([p['a'],p['b']]));need(key in expected and key not in seen,'pair identity/duplicate');seen.add(key)
+  d=p['distance_m'];v=p['overlap_mm3'];need(finite(d) and d>=0 and finite(v) and v>=0,'pair number')
+  state='PENETRATION' if v>tol else 'TOUCHING' if d<1e-8 else 'CLEAR';need(p['contact']==state,'pair classification');need(state!='PENETRATION','unresolved penetration')
+ need(seen==expected,'pair coverage')
+def validate_collision(c):
+ need(c['tolerance_mm3']==.0001 and c['distance_tolerance_m']==1e-8,'tolerance');need(c['continuous_path']=='UNKNOWN','continuous claim')
+ need(c.get('failures')==[],'failed collision');need(len(c['samples'])==91,'angle count');need(len(c['bolt_samples'])==141,'bolt count')
+ for a,r in enumerate(c['samples']):
+  need(r['angle_degrees']==a and r['bolt_m']==0,'angle identity');validate_pairs(r['pairs'],pairs_expected(MOVING),c['tolerance_mm3'])
+ for i,r in enumerate(c['bolt_samples']):
+  need(r['angle_degrees']==0 and r['bolt_m']==i/1000 and r['position_m']==i/1000,'bolt identity');validate_pairs(r['pairs'],pairs_expected({'GATE_Bolt'}),c['tolerance_mm3'])
+ fixed={tuple(sorted([a,b])) for a in IDS-MOVING for b in IDS-MOVING if a!=b};validate_pairs(c['fixed_pairs'],fixed,c['tolerance_mm3'])
+ return {'door_samples':91,'door_pairs':sum(len(r['pairs']) for r in c['samples']),'bolt_samples':141,'bolt_pairs':sum(len(r['pairs']) for r in c['bolt_samples']),'fixed_pairs':len(fixed)}
+def check(out=None):
+ out=Path(out or ROOT/'cad/stage3c/generated');m=load(out/'manifest.json');need(m['basis']=='D' and m['cad_eligibility']=='reference_only' and m['unit']=='m' and m['up']=='Z','classification');need(m['part_id']=='GATE-LOCK-01','part id');need(m['pivot_m']==[-.54,0,.1] and m['angle_range_deg']==[0,90],'CAD axes');need(m['poses']==[0,45,90],'presets')
+ need(len(m['parts'])==23 and {p['id'] for p in m['parts']}==PARTS,'part set');need(set(m['moving_ids'])==MOVING and len(m['moving_ids'])==9,'motion set');need(set(m['collision_ids'])==IDS and len(m['collision_ids'])==38,'collision IDs');need(m['sampled_angles_deg']==list(range(91)) and m['sampled_bolt_positions_m']==[i/1000 for i in range(141)],'sample set')
+ for p in m['parts']:need(len(p['bounds_m'])==6 and all(finite(v) for v in p['bounds_m']) and all(p['bounds_m'][i]<p['bounds_m'][i+3] for i in range(3)),'bounds')
+ spec=load(ROOT/'cad/stage3c/spec.json');need(m['bolt']==spec['bolt'],'CAD state spec');need(m['bolt']['travel_m']==[0,.14] and m['bolt']['axis']==[1,0,0] and m['bolt']['closure_tolerance_deg']==0,'lock limits')
+ for f in ['assembly.FCStd','assembly.step','assembly.blend','assembly.glb','mesh-transfer.json','cad-audit.json','blender-audit.json','collision.json','state-audit.json','native-tests.json']:need(f in m['evidence_hashes'],'missing mandatory artifact '+f)
+ for f,h in m['evidence_hashes'].items():need(Path(f).name==f and sha(out/f)==h,'artifact hash '+f)
+ for f,h in m['source_hashes'].items():need(Path(f).name==f and sha(ROOT/'cad/stage3c'/f)==h,'generator hash '+f)
+ need(m['glb']['sha256']==sha(out/'assembly.glb') and m['collision']['sha256']==sha(out/'collision.json'),'reference hashes')
+ with zipfile.ZipFile(out/'assembly.FCStd') as z:
+  xml=z.read('Document.xml').decode();need(all(x in xml for x in PARTS),'CAD IDs');need(all('template-'+n+'.svg' in z.namelist() for n in ['assembly','bolt','positions','doorstop','support','joinery']),'embedded templates')
+ data=(out/'assembly.glb').read_bytes();magic,version,length=struct.unpack_from('<III',data);need(magic==0x46546c67 and version==2 and length==len(data),'GLB header');n,t=struct.unpack_from('<II',data,12);need(t==0x4e4f534a,'GLB JSON');g=json.loads(data[20:20+n]);nodes=g['nodes'];names=[x.get('name') for x in nodes];need(all(names.count(p)==1 for p in PARTS|{'GatePivot','BoltSlide'}),'GLB IDs');need(len([x for x in nodes if 'mesh' in x])==23,'GLB part count')
+ audit=load(out/'cad-audit.json');need(audit['parts']==23 and audit['fcstd_reloaded'] and audit['step_reloaded'] and audit['native_dimension_edit'],'native audit');need(audit['dimension_before_mm']==900 and audit['dimension_changed_mm']==880 and audit['dimension_reloaded_mm']==900,'dimension linkage')
+ b=load(out/'blender-audit.json');poses=[(1,0,0),(31,0,.14),(61,0,0),(106,45,0),(151,90,0),(241,0,0)]
+ for k in ['created','blend_reopened','glb_reopened']:
+  need(len(b[k])==6,'Blender coverage');need([(r['frame'],r['angle_degrees'],r['bolt_m']) for r in b[k]]==poses,'Blender poses');need(all(r['parts']==23 and r['bounds_and_hierarchy']=='PASS' for r in b[k]),'Blender evidence')
+ s=load(out/'state-audit.json');need(len(s['persisted_faults'])>=4 and all(r['saved_reloaded'] and r['rejected'] for r in s['persisted_faults']),'persisted fault detection');need(len(s['contacts'])==11,'contact coverage')
+ for p in s['contacts']:need(p['a'] in PARTS and p['b'] in PARTS and finite(p['distance_m']) and p['distance_m']<1e-9 and 0<=p['overlap_mm3']<=.0001 and p['load_transfer']=='NOT_TESTED','contact contract')
+ need(len(s['parameter_variants'])==3,'dimension variants')
+ for v in s['parameter_variants']:
+  need(v['receiver_engagement_mm']>0 and len(v['parts'])==3,'engagement');need(all(abs(p['gap_mm']-v['gap_mm'])<1e-6 and p['overlap_mm3']<=.0001 for p in v['parts']),'variant actual gap')
+ f=load(out/'native-tests.json');need(len(f['faults'])>=10 and all(r['detected'] for r in f['faults']),'native faults')
+ collision=load(out/'collision.json');need(collision['generator_sha256']==sha(ROOT/'cad/stage3c/collision.py') and collision['cad_sha256']==sha(out/'assembly.FCStd'),'collision provenance');counts=validate_collision(collision);return {'status':'PASS','scope':'portable artifact integrity; native execution is in preserved audit, not rerun here','parts':23,**counts,'continuous_path':'UNKNOWN','physical_strength':'NOT_TESTED'}
+if __name__=='__main__':print(json.dumps(check(),indent=2))

@@ -1,0 +1,7 @@
+{
+  "site/shared/gate-viewer.mjs": "4a92c45afb72858b64a39daeab348386901337452486a347fd4b760d726e1e6b",
+  "site/stage3c/contract.mjs": "baf275b53a5dc6fffe7bd8486e81b19feeb66d8bf788c8786e8b01ccc0ca547e",
+  "site/stage3c/style.css": "7d172bd8ddde1d569db21fa4441420a0ec848fa426d450b0c0f7bebae2888950",
+  "site/stage3c/index.html": "ffb1dd52b06246b22156ef15a2930471450aca799a1f27dfc6c584eb4d0147ee",
+  "cad/stage3c/check.py": "ad35a7db249ed0e804826495ea85bdb3f2bacbb7acfc1ca2a06b520e05dd5cf6"
+}

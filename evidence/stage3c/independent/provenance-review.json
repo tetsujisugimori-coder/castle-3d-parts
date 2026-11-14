@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "5b6b392375c88080993bf1ebb1f6e505ec748cb1ad30ca91cba38c418ba9da44",
+  "native_independent_source_matches": true,
+  "blend_glb_mesh_independent_hashes_match": true,
+  "sources": {
+    "finalize.py": "23e93752e910b24ce73d41fb2660ecbedc6f2c3b6e6ae88810db350dc859534b",
+    "run.py": "6db1405a097e427ab6f9aa1d6b406a80cfedf8789908f0f01fe9c931523c0357",
+    "state.py": "c0266748bb8cb0e628ceb88ba42f734274b4ff358c25ae7f1bcb029f701e670a",
+    "blender.py": "c37525cf6d64557797c79729a02538d2e9d961eff27bcdcbb64eb75600d3d720",
+    "build.py": "1de622c7fbd5ce3bdde13bc62c64bd6fe7d4cde8a82407d5e3a458820bf610fc",
+    "check_test.py": "af865662ca0d5f8cc7a828ebee0078b0f1480e61f7d062b139273da19e445e74",
+    "native_test.py": "9024ad13342de96f5fd8eef2b058a301fb2a4ffaa9276a18d94ce954c63af9c4",
+    "legacy.py": "5ca1087583637203b7296319470fba951fa51a27b47012709bc63856dbe7f1e5",
+    "check.py": "ad35a7db249ed0e804826495ea85bdb3f2bacbb7acfc1ca2a06b520e05dd5cf6",
+    "collision.py": "da82bab57be9fd55b77ec8c24a2c5c324581bbdb6044d6c87851f028a5c68f41",
+    "spec.json": "5d345c4b82012e96252a9a782d4a66e9a706f0a6eb4b070010a1f02d1469699a"
+  }
+}

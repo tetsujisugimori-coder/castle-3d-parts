@@ -1,0 +1,30 @@
+04:25:18 | INFO: Data are loaded, start creating Blender stuff
+04:25:18 | INFO: Blender create Mesh node GATE_Bolt
+04:25:18 | INFO: Blender create Mesh node GATE_Axis
+04:25:18 | INFO: Blender create Mesh node GATE_BoltGuide_Left
+04:25:18 | INFO: Blender create Mesh node GATE_BoltGuide_Right
+04:25:18 | INFO: Blender create Mesh node GATE_Coupler_Lower
+04:25:18 | INFO: Blender create Mesh node GATE_Coupler_Upper
+04:25:18 | INFO: Blender create Mesh node GATE_Door
+04:25:18 | INFO: Blender create Mesh node GATE_Spindle_Lower
+04:25:18 | INFO: Blender create Mesh node GATE_Spindle_Upper
+04:25:18 | INFO: Blender create Mesh node GATE_Post_Left
+04:25:18 | INFO: Blender create Mesh node GATE_Post_Right
+04:25:18 | INFO: Blender create Mesh node GATE_Beam
+04:25:18 | INFO: Blender create Mesh node GATE_Connector_Left
+04:25:18 | INFO: Blender create Mesh node GATE_Connector_Right
+04:25:18 | INFO: Blender create Mesh node GATE_Bearing_Lower
+04:25:18 | INFO: Blender create Mesh node GATE_Bearing_Upper
+04:25:18 | INFO: Blender create Mesh node GATE_Stop_Closed
+04:25:18 | INFO: Blender create Mesh node GATE_Stop_Open
+04:25:18 | INFO: Blender create Mesh node GATE_BoltReceiver
+04:25:18 | INFO: Blender create Mesh node GATE_Doorstop
+04:25:18 | INFO: Blender create Mesh node GATE_Joint_Left
+04:25:18 | INFO: Blender create Mesh node GATE_Joint_Right
+04:25:18 | INFO: Blender create Mesh node GATE_AxialKeeper
+04:25:18 | INFO: glTF import finished in 0.05s
+INDEPENDENT BLENDER PASS 16
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/cad/stage3c/generated/assembly.blend"
+
+Blender quit

@@ -1,0 +1,37 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/cad/stage3c/build.py", line 7, in <module>
+    import FreeCAD as A,FreeCADGui as G,Part,TechDrawGui
+  File "/usr/lib/python3/dist-packages/shiboken2/files.dir/shibokensupport/feature.py", line 139, in _import
+    return original_import(name, *args, **kwargs)
+ImportError: Cannot load Gui module in console application.
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories

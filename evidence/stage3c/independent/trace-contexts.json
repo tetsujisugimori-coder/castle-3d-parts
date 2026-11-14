@@ -1,0 +1,146 @@
+[
+  {
+    "trace": "chromium-375-reduce.zip",
+    "browser": "chromium",
+    "width": 375,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "chromium-375-no-preference.zip",
+    "browser": "chromium",
+    "width": 375,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-1280-no-preference.zip",
+    "browser": "webkit",
+    "width": 1280,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "chromium-1280-reduce.zip",
+    "browser": "chromium",
+    "width": 1280,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "chromium-1280-no-preference.zip",
+    "browser": "chromium",
+    "width": 1280,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "chromium-390-no-preference.zip",
+    "browser": "chromium",
+    "width": 390,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "chromium-390-reduce.zip",
+    "browser": "chromium",
+    "width": 390,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "chromium-765-no-preference.zip",
+    "browser": "chromium",
+    "width": 765,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-765-no-preference.zip",
+    "browser": "webkit",
+    "width": 765,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-1280-reduce.zip",
+    "browser": "webkit",
+    "width": 1280,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-375-reduce.zip",
+    "browser": "webkit",
+    "width": 375,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-375-no-preference.zip",
+    "browser": "webkit",
+    "width": 375,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-390-reduce.zip",
+    "browser": "webkit",
+    "width": 390,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-390-no-preference.zip",
+    "browser": "webkit",
+    "width": 390,
+    "motion": "no-preference",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "chromium-765-reduce.zip",
+    "browser": "chromium",
+    "width": 765,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  },
+  {
+    "trace": "webkit-765-reduce.zip",
+    "browser": "webkit",
+    "width": 765,
+    "motion": "reduce",
+    "platform": "linux",
+    "action_calls": 135,
+    "resizes": 3
+  }
+]

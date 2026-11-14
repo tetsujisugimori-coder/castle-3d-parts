@@ -1,0 +1,27 @@
+{
+  "scope": "independent fault injection against transaction ledger using supplied native double; NOT FreeCAD execution",
+  "results": [
+    {
+      "name": "direct valid property edit rejected before native mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "same-count native name replacement rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "pending transaction in owned session rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "unexpected illegal native restore rejected and pose recovered",
+      "status": "PASS"
+    }
+  ],
+  "hardening": {
+    "name": "native name mutation during undo callback",
+    "result": "REJECTED; pose restored; unrepairable native names cause explicit poison",
+    "classification": "resolved; independent same counterexample GREEN"
+  },
+  "source_sha256": "d38f3f7211a8aaab7bbc93b95626214c3e45ec5b49757692f0fea1b21d84e043"
+}

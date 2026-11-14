@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "normal_conditions": 16,
+  "fault_conditions": 34,
+  "raw_results_identical": true,
+  "manifest_glb_collision_match": true,
+  "files": [
+    {
+      "file": "chromium-375-no-preference.png",
+      "bytes": 231379,
+      "sha256": "7527a0075ba7e8318a2378c336712ab91be743f29ad063da9bdb81375bad699f"
+    },
+    {
+      "file": "chromium-375-no-preference.zip",
+      "bytes": 3654958,
+      "sha256": "801feb3c3be48e9f08601e545545e159722e204b14984cd6f24d71fb2c2aa739"
+    },
+    {
+      "file": "chromium-375-reduce.png",
+      "bytes": 231379,
+      "sha256": "7527a0075ba7e8318a2378c336712ab91be743f29ad063da9bdb81375bad699f"
+    },
+    {
+      "file": "chromium-375-reduce.zip",
+      "bytes": 2797803,
+      "sha256": "dd6b7bc268a53b4756ef2263bbc9a006bc2c641c8b003256814fece30c95c295"
+    },
+    {
+      "file": "chromium-390-no-preference.png",
+      "bytes": 232238,
+      "sha256": "194a2e8daa5de2fdf9883e1e0d00b1d0fdff487b599040329d529b86a53e1980"
+    },
+    {
+      "file": "chromium-390-no-preference.zip",
+      "bytes": 3323805,
+      "sha256": "019104fa5f8adc377b4b6297f523d0d9858c220c4b27489b8cecbb8c3628e9e2"
+    },
+    {
+      "file": "chromium-390-reduce.png",
+      "bytes": 232238,
+      "sha256": "194a2e8daa5de2fdf9883e1e0d00b1d0fdff487b599040329d529b86a53e1980"
+    },
+    {
+      "file": "chromium-390-reduce.zip",
+      "bytes": 2817743,
+      "sha256": "3e0ba0e9bcdfe223de7bdb1120d30ed124955237d61a6b0a66e19043512a22c2"
+    },
+    {
+      "file": "chromium-765-no-preference.png",
+      "bytes": 239341,
+      "sha256": "aff78c512626bbb5c18f39d1d5054aebbc6641b61803d15d67c2d5f33be523df"
+    },
+    {
+      "file": "chromium-765-no-preference.zip",
+      "bytes": 4091951,
+      "sha256": "72682ccdc723bbeafa0c6462d75d3babd3ed400242e191a18df16ed42ce17bd8"
+    },
+    {
+      "file": "chromium-765-reduce.png",
+      "bytes": 239341,
+      "sha256": "aff78c512626bbb5c18f39d1d5054aebbc6641b61803d15d67c2d5f33be523df"
+    },
+    {
+      "file": "chromium-765-reduce.zip",
+      "bytes": 3282871,
+      "sha256": "7ee9f7b026c50d92f031dd4fd7fa4753842fd051a422c1c5e13d741a36aa5a50"
+    },
+    {
+      "file": "chromium-1280-no-preference.png",
+      "bytes": 241325,
+      "sha256": "d1f1d16111f4dce4dc10bc29a463d6c4db29d87349aa7a01e90cdcc4c3413e2c"
+    },
+    {
+      "file": "chromium-1280-no-preference.zip",
+      "bytes": 5107368,
+      "sha256": "949ab935ef9d4e76f5d2c69f4fc89aecf48e3b0c110e2cd2819064e9ec6f4d97"
+    },
+    {
+      "file": "chromium-1280-reduce.png",
+      "bytes": 241325,
+      "sha256": "d1f1d16111f4dce4dc10bc29a463d6c4db29d87349aa7a01e90cdcc4c3413e2c"
+    },
+    {
+      "file": "chromium-1280-reduce.zip",
+      "bytes": 3519555,
+      "sha256": "a60456041e6857a13b95dabfa2b6d7ffb83c38523e27ab343deac76a71acc03c"
+    },
+    {
+      "file": "webkit-375-no-preference.png",
+      "bytes": 301995,
+      "sha256": "9f9246bbb5803e22f171188a332a5ec366c7c01c3ad3497112c6c232f3a8a0b8"
+    },
+    {
+      "file": "webkit-375-no-preference.zip",
+      "bytes": 3043278,
+      "sha256": "8aa8c5ccbd24476dba4478a655c383e8622ce58ffbcf2a4b6028b62f95b4f82a"
+    },
+    {
+      "file": "webkit-375-reduce.png",
+      "bytes": 301995,
+      "sha256": "9f9246bbb5803e22f171188a332a5ec366c7c01c3ad3497112c6c232f3a8a0b8"
+    },
+    {
+      "file": "webkit-375-reduce.zip",
+      "bytes": 2660903,
+      "sha256": "97a353c2d835bf2459e9ce484c7b6d6167e9394e8e534c8c1bd6f5b090733166"
+    },
+    {
+      "file": "webkit-390-no-preference.png",
+      "bytes": 300858,
+      "sha256": "04ae99a7d24b343a6bb9906bc68f0d56c1c07e5a91c2d6df06b6c6fff38d280f"
+    },
+    {
+      "file": "webkit-390-no-preference.zip",
+      "bytes": 2855969,
+      "sha256": "b35b2bdb1954a5a30409704680f0bd41bcab15b8fd793e799dad24fbe210315f"
+    },
+    {
+      "file": "webkit-390-reduce.png",
+      "bytes": 300858,
+      "sha256": "04ae99a7d24b343a6bb9906bc68f0d56c1c07e5a91c2d6df06b6c6fff38d280f"
+    },
+    {
+      "file": "webkit-390-reduce.zip",
+      "bytes": 2655654,
+      "sha256": "8a796b6f78f3a7f3831e24a4c064c1511595987133bf06bde9f19bd09b3db174"
+    },
+    {
+      "file": "webkit-765-no-preference.png",
+      "bytes": 299392,
+      "sha256": "943c59a968af26555731a2cef9ee646f36d02de2238d4ff5392dd2cb4614e530"
+    },
+    {
+      "file": "webkit-765-no-preference.zip",
+      "bytes": 3582818,
+      "sha256": "5fa5888e339420feb5167f6e0dfb6913c4ee4178e19711db2468dcf8232474de"
+    },
+    {
+      "file": "webkit-765-reduce.png",
+      "bytes": 299392,
+      "sha256": "943c59a968af26555731a2cef9ee646f36d02de2238d4ff5392dd2cb4614e530"
+    },
+    {
+      "file": "webkit-765-reduce.zip",
+      "bytes": 3104577,
+      "sha256": "198285d55fd3652d4e448c863f47fe3ba59ea52e2ed737469959a58428b54fb9"
+    },
+    {
+      "file": "webkit-1280-no-preference.png",
+      "bytes": 303127,
+      "sha256": "97b88b48a79de1796fd897cf63c7f82f30358fa18a88714f129c3804819a06e1"
+    },
+    {
+      "file": "webkit-1280-no-preference.zip",
+      "bytes": 3762332,
+      "sha256": "5563e60d6823b529c4cf24c4af5da005ac5571da91a7e5b720910ffec2ab3a8b"
+    },
+    {
+      "file": "webkit-1280-reduce.png",
+      "bytes": 303127,
+      "sha256": "97b88b48a79de1796fd897cf63c7f82f30358fa18a88714f129c3804819a06e1"
+    },
+    {
+      "file": "webkit-1280-reduce.zip",
+      "bytes": 3407222,
+      "sha256": "25f1986fef9dbc693e960cf101b0a5928430c23b53f0ad9520659e254426baa9"
+    }
+  ],
+  "precommit_head": "9ed57db22c386ec67a2afabf40b7412fcf957a55",
+  "note": "working tree run; final commit/CI pending"
+}

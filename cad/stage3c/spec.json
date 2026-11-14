@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "part_id": "GATE-LOCK-01",
+  "basis": "D",
+  "unit": "m",
+  "up": "Z",
+  "source": "cad/stage3b/generated/assembly.FCStd",
+  "pivot_m": [
+    -0.54,
+    0,
+    0.1
+  ],
+  "angle_range_deg": [
+    0,
+    90
+  ],
+  "presets_deg": [
+    0,
+    45,
+    90
+  ],
+  "bolt": {
+    "id": "GATE_Bolt",
+    "parent": "BoltSlide",
+    "travel_m": [
+      0,
+      0.14
+    ],
+    "axis": [
+      1,
+      0,
+      0
+    ],
+    "unlock_m": 0,
+    "lock_m": 0.14,
+    "closure_tolerance_deg": 0
+  },
+  "bolt_length_m": 0.9,
+  "bolt_width_m": 0.02,
+  "bolt_height_m": 0.04,
+  "guide_gap_m": 0.001,
+  "live_edit_supported": [
+    "Mechanism.Angle",
+    "LockMechanism.BoltPosition",
+    "LockMechanism.BoltLength",
+    "LockMechanism.BoltWidth",
+    "LockMechanism.BoltHeight",
+    "LockMechanism.GuideGap"
+  ],
+  "state_contract": "Door angle must be zero for bolt displacement; bolt position must be zero for door rotation. Partial insertion interlocks rotation. Native state API rejects invalid combinations; direct CAD property edits are detected by verification, not mechanically prevented.",
+  "continuous_path": "UNKNOWN",
+  "strength": "NOT_TESTED",
+  "history": "UNKNOWN",
+  "joint_model": "Prototype D external corner cleats and rectangular sliding wooden bolt. Ideal geometry does not establish fastener retention, load transmission or historical adoption.",
+  "part_ids": [
+    "GATE_Post_Left",
+    "GATE_Post_Right",
+    "GATE_Beam",
+    "GATE_Door",
+    "GATE_Axis",
+    "GATE_Connector_Left",
+    "GATE_Connector_Right",
+    "GATE_Spindle_Lower",
+    "GATE_Spindle_Upper",
+    "GATE_Bearing_Lower",
+    "GATE_Bearing_Upper",
+    "GATE_Coupler_Lower",
+    "GATE_Coupler_Upper",
+    "GATE_Stop_Closed",
+    "GATE_Stop_Open",
+    "GATE_Bolt",
+    "GATE_BoltGuide_Left",
+    "GATE_BoltGuide_Right",
+    "GATE_BoltReceiver",
+    "GATE_Doorstop",
+    "GATE_Joint_Left",
+    "GATE_Joint_Right",
+    "GATE_AxialKeeper"
+  ],
+  "supported_parameter_bounds_mm": {
+    "BoltLength": [
+      880,
+      900
+    ],
+    "BoltWidth": [
+      18,
+      22
+    ],
+    "BoltHeight": [
+      35,
+      45
+    ],
+    "GuideGap": [
+      0.5,
+      2
+    ]
+  },
+  "state_api": "cad/stage3c/state.py: transition; validate_document rejects invalid directly edited/reloaded tuples"
+}

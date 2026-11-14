@@ -1,0 +1,81 @@
+Info: Saved "assembly.blend"
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+04:16:53 | INFO: Starting glTF 2.0 export
+04:16:53 | INFO: Extracting primitive: GATE_Bolt
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Axis
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_BoltGuide_Left
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_BoltGuide_Right
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Coupler_Lower
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Coupler_Upper
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Door
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Spindle_Lower
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Spindle_Upper
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Post_Left
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Post_Right
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Beam
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Connector_Left
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Connector_Right
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Bearing_Lower
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Bearing_Upper
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Stop_Closed
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Stop_Open
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_BoltReceiver
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Doorstop
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Joint_Left
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_Joint_Right
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Extracting primitive: GATE_AxialKeeper
+04:16:53 | INFO: Primitives created: 1
+04:16:53 | INFO: Finished glTF 2.0 export in 0.09568905830383301 s
+
+04:16:53 | INFO: Data are loaded, start creating Blender stuff
+04:16:53 | INFO: Blender create Mesh node GATE_Bolt
+04:16:53 | INFO: Blender create Mesh node GATE_Axis
+04:16:53 | INFO: Blender create Mesh node GATE_BoltGuide_Left
+04:16:53 | INFO: Blender create Mesh node GATE_BoltGuide_Right
+04:16:53 | INFO: Blender create Mesh node GATE_Coupler_Lower
+04:16:53 | INFO: Blender create Mesh node GATE_Coupler_Upper
+04:16:53 | INFO: Blender create Mesh node GATE_Door
+04:16:53 | INFO: Blender create Mesh node GATE_Spindle_Lower
+04:16:53 | INFO: Blender create Mesh node GATE_Spindle_Upper
+04:16:53 | INFO: Blender create Mesh node GATE_Post_Left
+04:16:53 | INFO: Blender create Mesh node GATE_Post_Right
+04:16:53 | INFO: Blender create Mesh node GATE_Beam
+04:16:53 | INFO: Blender create Mesh node GATE_Connector_Left
+04:16:53 | INFO: Blender create Mesh node GATE_Connector_Right
+04:16:53 | INFO: Blender create Mesh node GATE_Bearing_Lower
+04:16:53 | INFO: Blender create Mesh node GATE_Bearing_Upper
+04:16:53 | INFO: Blender create Mesh node GATE_Stop_Closed
+04:16:53 | INFO: Blender create Mesh node GATE_Stop_Open
+04:16:53 | INFO: Blender create Mesh node GATE_BoltReceiver
+04:16:53 | INFO: Blender create Mesh node GATE_Doorstop
+04:16:53 | INFO: Blender create Mesh node GATE_Joint_Left
+04:16:53 | INFO: Blender create Mesh node GATE_Joint_Right
+04:16:53 | INFO: Blender create Mesh node GATE_AxialKeeper
+04:16:53 | INFO: glTF import finished in 0.03s
+BLENDER PASS
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/cad/stage3c/generated/assembly.blend"
+
+Blender quit

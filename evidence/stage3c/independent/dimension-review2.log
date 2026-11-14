@@ -1,0 +1,51 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_d583c5cb-3595-478a-9bb5-94a50baef7e8_da39a3_491628'
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+Failed to rename '/workspace/scratch/e622c1e9421e/castle-gate-stage3c/evidence/stage3c/independent/tmp/tmpmpyp4ti5/' to '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_bd382c8c-0583-42e3-a938-57fff50bd984_66c854_491628'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/shiboken2/files.dir/shibokensupport/feature.py", line 139, in _import
+    return original_import(name, *args, **kwargs)
+<class 'ModuleNotFoundError'>: No module named 'AttachmentEditor'
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-2018.ttf
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-FreeCAD.ttf
+QOpenGLWidget: Failed to create context
+(qt.qpa.backingstore) composeAndFlush: QOpenGLContext creation failed
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/evidence/stage3c/independent/dimension-review.py", line 13, in <module>
+    assert all(abs(x-y)<1e-5 for x,y in zip(vals,[length,width,height])),vals
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [0.0, 0.0, 0.0]

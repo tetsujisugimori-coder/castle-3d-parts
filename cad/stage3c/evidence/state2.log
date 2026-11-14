@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/cad/stage3c/native_test.py", line 29, in <module>
+    p.Angle=a;l.BoltPosition=b;d.recompute();dest=out/('counterexample-%s-%s.FCStd'%(a,b));d.saveAs(str(dest));A.closeDocument(d.Name);d=A.openDocument(str(dest));p=d.getObject('Mechanism');l=d.getObject('LockMechanism');rebind()
+                                                                                           ~~~~~~~~^^^^^^^^^^^
+OSError: {'sclassname': 'N4Base15FileSystemErrorE', 'sErrMsg': "PropertyFileIncluded::SaveDocFile(): File '/template-assembly.svg' in transient directory doesn't exist.", 'sfile': '', 'iline': 0, 'sfunction': '', 'swhat': "PropertyFileIncluded::SaveDocFile(): File '/template-assembly.svg' in transient directory doesn't exist.", 'btranslatable': False, 'breported': False}

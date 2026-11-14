@@ -1,0 +1,1595 @@
+{
+  "method": "Independent transformed STEP vertices vs imported blend/GLB KD nearest vertices",
+  "tolerance_m": 0.0001,
+  "samples": [
+    {
+      "format": "blend",
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "blend",
+      "angle_degrees": 0,
+      "bolt_m": 0.0375,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "blend",
+      "angle_degrees": 0,
+      "bolt_m": 0.14,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "blend",
+      "angle_degrees": 0.125,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 1.1920928955078125e-07
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 2.107342389479072e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 3.0719530030864917e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "blend",
+      "angle_degrees": 22.5,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 6.302790467316299e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 1.2287812012345967e-07
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 4.1857742161255374e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 5.372690026206328e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "blend",
+      "angle_degrees": 45,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 6.664001972467304e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 6.979950484264918e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 6.749358050228693e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 6.749358050228693e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 6.838723720647977e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 6.838723720647977e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 8.429369557916289e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 3.332000986233652e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "blend",
+      "angle_degrees": 89.9,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.967009286678149e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 7.859060247028538e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 7.286371328518726e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 7.286371328518726e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 7.36760910058365e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 7.36760910058365e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 1.3328003944934608e-07
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 6.664001972467304e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 8.429369557916289e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "blend",
+      "angle_degrees": 90,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 1.6858739115832577e-07
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 7.859060247028538e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 7.464574025561888e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 7.464574025561888e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 7.62149667821177e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 7.62149667821177e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 8.940696716308594e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 8.429369557916289e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 0,
+      "bolt_m": 0.0375,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 0,
+      "bolt_m": 0.14,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 0.125,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 5.961192073300481e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 1.1920928955078125e-07
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 2.107342389479072e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 3.0719530030864917e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 22.5,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 6.302790467316299e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 6.244724204407248e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 1.2287812012345967e-07
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 4.1857742161255374e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 5.372690026206328e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 45,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 6.664001972467304e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 6.979950484264918e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 6.749358050228693e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 6.749358050228693e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 6.838723720647977e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 6.838723720647977e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 8.429369557916289e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 3.332000986233652e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 1.4901161193847656e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 89.9,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 5.967009286678149e-08
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 7.859060247028538e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 7.286371328518726e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 7.286371328518726e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 7.36760910058365e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 7.36760910058365e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 1.3328003944934608e-07
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 6.664001972467304e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 8.429369557916289e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    },
+    {
+      "format": "glb",
+      "angle_degrees": 90,
+      "bolt_m": 0,
+      "parts": [
+        {
+          "id": "GATE_Post_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Post_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Beam",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Door",
+          "max_vertex_distance_m": 1.6858739115832577e-07
+        },
+        {
+          "id": "GATE_Axis",
+          "max_vertex_distance_m": 7.859060247028538e-08
+        },
+        {
+          "id": "GATE_Connector_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Connector_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Spindle_Lower",
+          "max_vertex_distance_m": 7.464574025561888e-08
+        },
+        {
+          "id": "GATE_Spindle_Upper",
+          "max_vertex_distance_m": 7.464574025561888e-08
+        },
+        {
+          "id": "GATE_Bearing_Lower",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bearing_Upper",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Coupler_Lower",
+          "max_vertex_distance_m": 7.62149667821177e-08
+        },
+        {
+          "id": "GATE_Coupler_Upper",
+          "max_vertex_distance_m": 7.62149667821177e-08
+        },
+        {
+          "id": "GATE_Stop_Closed",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Stop_Open",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Bolt",
+          "max_vertex_distance_m": 8.940696716308594e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Left",
+          "max_vertex_distance_m": 5.960464477539063e-08
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "max_vertex_distance_m": 8.429369557916289e-08
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Doorstop",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Left",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_Joint_Right",
+          "max_vertex_distance_m": 0
+        },
+        {
+          "id": "GATE_AxialKeeper",
+          "max_vertex_distance_m": 0
+        }
+      ]
+    }
+  ],
+  "hashes": {
+    "assembly.blend": "fd6143aca19bb6f6dcfeabfa802f73c6e4f60c29268997686d640cbc60d1f5f2",
+    "assembly.glb": "2342946734197cdf7610153be72970eedc92178f440a6d45c302d6787cae8712",
+    "mesh-transfer.json": "8632b4b5e2e7c7b481545b52dd865fb3f6cd52c34dc80cbec956e563372fa27d"
+  }
+}

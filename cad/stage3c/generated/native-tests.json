@@ -1,0 +1,71 @@
+{
+  "faults": [
+    {
+      "input": [
+        "1",
+        140
+      ],
+      "detected": true
+    },
+    {
+      "input": [
+        "45",
+        1
+      ],
+      "detected": true
+    },
+    {
+      "input": [
+        "-1",
+        0
+      ],
+      "detected": true
+    },
+    {
+      "input": [
+        "91",
+        0
+      ],
+      "detected": true
+    },
+    {
+      "input": [
+        "0",
+        -1
+      ],
+      "detected": true
+    },
+    {
+      "input": [
+        "0",
+        141
+      ],
+      "detected": true
+    },
+    {
+      "input": [
+        "nan",
+        0
+      ],
+      "detected": true
+    },
+    {
+      "fault": "bolt_axis_shift_30mm",
+      "detected": true,
+      "overlap_mm3": 15999.999999999996
+    },
+    {
+      "fault": "bolt_width_exceeds_guide",
+      "detected": true,
+      "overlap_mm3": 2399.9999999999995
+    },
+    {
+      "fault": "forced_locked_rotation_1deg",
+      "detected": true,
+      "overlap_mm3": 31642.234586190578
+    }
+  ],
+  "state_contract": "PASS",
+  "source_saved": false,
+  "continuous_path": "UNKNOWN"
+}
