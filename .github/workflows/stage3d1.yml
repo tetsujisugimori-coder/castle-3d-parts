@@ -28,9 +28,9 @@ jobs:
           df -h . > stage3d1-ci/capacity.txt
           df -i . >> stage3d1-ci/capacity.txt
           dpkg-query -W freecad-python3 libfreecad-python3 > stage3d1-ci/versions.txt
-      - run: python3 scripts/stage3c-record-command.py stage3d1-ci/portable -- python3 -B cad/stage3d1/test_intervals.py
-      - run: python3 scripts/stage3c-record-command.py stage3d1-ci/controls -- python3 -B cad/stage3d1/controls.py stage3d1-ci/controls.json
-      - run: python3 scripts/stage3c-record-command.py stage3d1-ci/native-command -- python3 -B cad/stage3d1/native.py stage3d1-ci/native
+      - run: python3 cad/stage3d1/record.py stage3d1-ci/portable -- python3 -B cad/stage3d1/test_intervals.py
+      - run: python3 cad/stage3d1/record.py stage3d1-ci/controls -- python3 -B cad/stage3d1/controls.py stage3d1-ci/controls.json
+      - run: python3 cad/stage3d1/record.py stage3d1-ci/native-command -- python3 -B cad/stage3d1/native.py stage3d1-ci/native
       - name: Hash original evidence
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d1-ci
