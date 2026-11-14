@@ -111,7 +111,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/stage3c-native-scratch" stage3c-native-ci
           export TMPDIR="$RUNNER_TEMP/stage3c-native-scratch"
           export TEMP="$TMPDIR"
-          git show -s --format='%H %T %P' HEAD > stage3c-native-ci/git.txt
+          git -c safe.directory="$GITHUB_WORKSPACE" show -s --format='%H %T %P' HEAD > stage3c-native-ci/git.txt
           echo '${{ github.event.pull_request.head.sha || github.sha }}' > stage3c-native-ci/submitted-head.txt
           dpkg-query -W freecad-python3 libfreecad-python3 blender python3-pyside2.qtwidgets > stage3c-native-ci/package-versions.txt
           python3 scripts/stage3c-native-acceptance.py --repo "$GITHUB_WORKSPACE" --evidence "$GITHUB_WORKSPACE/stage3c-native-ci/native"

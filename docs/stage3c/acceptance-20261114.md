@@ -33,3 +33,7 @@
 ## 限界
 
 材料強度・実物の荷重支持・史実機構・全連続経路はUNKNOWN/NOT_TESTEDを維持。静的91角度・141閂位置は連続安全保証ではない。FreeCADバッチでGUI moduleを初期化しても、手動GUI操作とは呼ばない。実機iPhone Safari・物理touchはNOT_TESTED。総合PARTIALと限定技術受入は分離し、Draft維持。マージ・公開・Issue closeを行わない。
+
+## native CI初回の環境失敗と修正
+
+run43599339799のnative job132460526735はCAD処理前のgit showがdubious ownershipでexit128。原job logを正規APIで取得して確認した。artifact14115497309は343 bytes、SHA-256 `14ece740287b69295b6e8b1c422d742f8797120d7bf1eef91c5e7689b28ff6ca`。空git.txtと台帳だけなので、native生成・再読込はこのrunではNOT_TESTEDである。失敗を残し、CIの既知checkoutパスだけをgit -c safe.directoryでコマンド単位に指定する。ホスト全体の設定・所有権・ACLは変更しない。修正後runは別に照合する。
