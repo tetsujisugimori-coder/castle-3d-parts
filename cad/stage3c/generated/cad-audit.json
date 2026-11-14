@@ -10,6 +10,795 @@
   "parts": 23,
   "fcstd_reloaded": true,
   "step_reloaded": true,
+  "step_identity_method": "OCAF exported Label equals PartID; exact unique imported single-solid Label lookup, never file order; any aggregate must bijectively match all 23 leaves by BRep",
+  "step_identity": [
+    {
+      "id": "GATE_Post_Left",
+      "imported_name": "Part__Feature",
+      "imported_label": "GATE_Post_Left",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Post_Right",
+      "imported_name": "Part__Feature001",
+      "imported_label": "GATE_Post_Right",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Beam",
+      "imported_name": "Part__Feature002",
+      "imported_label": "GATE_Beam",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Door",
+      "imported_name": "Part__Feature003",
+      "imported_label": "GATE_Door",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Axis",
+      "imported_name": "Part__Feature004",
+      "imported_label": "GATE_Axis",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Left",
+      "imported_name": "Part__Feature005",
+      "imported_label": "GATE_Connector_Left",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Right",
+      "imported_name": "Part__Feature006",
+      "imported_label": "GATE_Connector_Right",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Lower",
+      "imported_name": "Part__Feature007",
+      "imported_label": "GATE_Spindle_Lower",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Upper",
+      "imported_name": "Part__Feature008",
+      "imported_label": "GATE_Spindle_Upper",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Lower",
+      "imported_name": "Part__Feature009",
+      "imported_label": "GATE_Bearing_Lower",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Upper",
+      "imported_name": "Part__Feature010",
+      "imported_label": "GATE_Bearing_Upper",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Lower",
+      "imported_name": "Part__Feature011",
+      "imported_label": "GATE_Coupler_Lower",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Upper",
+      "imported_name": "Part__Feature012",
+      "imported_label": "GATE_Coupler_Upper",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Closed",
+      "imported_name": "Part__Feature013",
+      "imported_label": "GATE_Stop_Closed",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Open",
+      "imported_name": "Part__Feature014",
+      "imported_label": "GATE_Stop_Open",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bolt",
+      "imported_name": "Part__Feature015",
+      "imported_label": "GATE_Bolt",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_BoltGuide_Left",
+      "imported_name": "Part__Feature016",
+      "imported_label": "GATE_BoltGuide_Left",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_BoltGuide_Right",
+      "imported_name": "Part__Feature017",
+      "imported_label": "GATE_BoltGuide_Right",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_BoltReceiver",
+      "imported_name": "Part__Feature018",
+      "imported_label": "GATE_BoltReceiver",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Doorstop",
+      "imported_name": "Part__Feature019",
+      "imported_label": "GATE_Doorstop",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Joint_Left",
+      "imported_name": "Part__Feature020",
+      "imported_label": "GATE_Joint_Left",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Joint_Right",
+      "imported_name": "Part__Feature021",
+      "imported_label": "GATE_Joint_Right",
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_AxialKeeper",
+      "imported_name": "Part__Feature022",
+      "imported_label": "GATE_AxialKeeper",
+      "symmetric_difference_mm3": 0.0
+    }
+  ],
+  "step_import_inventory": [
+    {
+      "name": "Part__Feature",
+      "label": "GATE_Post_Left",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature001",
+      "label": "GATE_Post_Right",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature002",
+      "label": "GATE_Beam",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature003",
+      "label": "GATE_Door",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature004",
+      "label": "GATE_Axis",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature005",
+      "label": "GATE_Connector_Left",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature006",
+      "label": "GATE_Connector_Right",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature007",
+      "label": "GATE_Spindle_Lower",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature008",
+      "label": "GATE_Spindle_Upper",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature009",
+      "label": "GATE_Bearing_Lower",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature010",
+      "label": "GATE_Bearing_Upper",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature011",
+      "label": "GATE_Coupler_Lower",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature012",
+      "label": "GATE_Coupler_Upper",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature013",
+      "label": "GATE_Stop_Closed",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature014",
+      "label": "GATE_Stop_Open",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature015",
+      "label": "GATE_Bolt",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature016",
+      "label": "GATE_BoltGuide_Left",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature017",
+      "label": "GATE_BoltGuide_Right",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature018",
+      "label": "GATE_BoltReceiver",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature019",
+      "label": "GATE_Doorstop",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature020",
+      "label": "GATE_Joint_Left",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature021",
+      "label": "GATE_Joint_Right",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Part__Feature022",
+      "label": "GATE_AxialKeeper",
+      "type_id": "Part::Feature",
+      "solids": 1,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "GateLockReload",
+      "label": "GateLockReload",
+      "type_id": "App::Part",
+      "solids": 23,
+      "shape_is_null": false,
+      "children": [
+        "Origin",
+        "Part__Feature",
+        "Part__Feature001",
+        "Part__Feature002",
+        "Part__Feature003",
+        "Part__Feature004",
+        "Part__Feature005",
+        "Part__Feature006",
+        "Part__Feature007",
+        "Part__Feature008",
+        "Part__Feature009",
+        "Part__Feature010",
+        "Part__Feature011",
+        "Part__Feature012",
+        "Part__Feature013",
+        "Part__Feature014",
+        "Part__Feature015",
+        "Part__Feature016",
+        "Part__Feature017",
+        "Part__Feature018",
+        "Part__Feature019",
+        "Part__Feature020",
+        "Part__Feature021",
+        "Part__Feature022"
+      ],
+      "parents": [],
+      "role": null,
+      "origin": "Origin",
+      "origin_features": []
+    },
+    {
+      "name": "Origin",
+      "label": "Origin",
+      "type_id": "App::Origin",
+      "solids": null,
+      "shape_is_null": null,
+      "children": [
+        "X_Axis",
+        "Y_Axis",
+        "Z_Axis",
+        "XY_Plane",
+        "XZ_Plane",
+        "YZ_Plane"
+      ],
+      "parents": [
+        "GateLockReload"
+      ],
+      "role": null,
+      "origin": null,
+      "origin_features": [
+        "X_Axis",
+        "Y_Axis",
+        "Z_Axis",
+        "XY_Plane",
+        "XZ_Plane",
+        "YZ_Plane"
+      ]
+    },
+    {
+      "name": "X_Axis",
+      "label": "X-axis",
+      "type_id": "App::Line",
+      "solids": 0,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "Origin"
+      ],
+      "role": "X_Axis",
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Y_Axis",
+      "label": "Y-axis",
+      "type_id": "App::Line",
+      "solids": 0,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "Origin"
+      ],
+      "role": "Y_Axis",
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "Z_Axis",
+      "label": "Z-axis",
+      "type_id": "App::Line",
+      "solids": 0,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "Origin"
+      ],
+      "role": "Z_Axis",
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "XY_Plane",
+      "label": "XY-plane",
+      "type_id": "App::Plane",
+      "solids": 0,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "Origin"
+      ],
+      "role": "XY_Plane",
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "XZ_Plane",
+      "label": "XZ-plane",
+      "type_id": "App::Plane",
+      "solids": 0,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "Origin"
+      ],
+      "role": "XZ_Plane",
+      "origin": null,
+      "origin_features": []
+    },
+    {
+      "name": "YZ_Plane",
+      "label": "YZ-plane",
+      "type_id": "App::Plane",
+      "solids": 0,
+      "shape_is_null": false,
+      "children": [],
+      "parents": [
+        "Origin"
+      ],
+      "role": "YZ_Plane",
+      "origin": null,
+      "origin_features": []
+    }
+  ],
+  "step_reference_geometry": [
+    {
+      "name": "X_Axis",
+      "role": "X_Axis",
+      "type_id": "App::Line",
+      "owner_part": "GateLockReload",
+      "owner_origin": "Origin",
+      "solids": 0
+    },
+    {
+      "name": "Y_Axis",
+      "role": "Y_Axis",
+      "type_id": "App::Line",
+      "owner_part": "GateLockReload",
+      "owner_origin": "Origin",
+      "solids": 0
+    },
+    {
+      "name": "Z_Axis",
+      "role": "Z_Axis",
+      "type_id": "App::Line",
+      "owner_part": "GateLockReload",
+      "owner_origin": "Origin",
+      "solids": 0
+    },
+    {
+      "name": "XY_Plane",
+      "role": "XY_Plane",
+      "type_id": "App::Plane",
+      "owner_part": "GateLockReload",
+      "owner_origin": "Origin",
+      "solids": 0
+    },
+    {
+      "name": "XZ_Plane",
+      "role": "XZ_Plane",
+      "type_id": "App::Plane",
+      "owner_part": "GateLockReload",
+      "owner_origin": "Origin",
+      "solids": 0
+    },
+    {
+      "name": "YZ_Plane",
+      "role": "YZ_Plane",
+      "type_id": "App::Plane",
+      "owner_part": "GateLockReload",
+      "owner_origin": "Origin",
+      "solids": 0
+    }
+  ],
+  "step_aggregates": [
+    {
+      "imported_name": "GateLockReload",
+      "imported_label": "GateLockReload",
+      "solids": 23,
+      "matching_method": "unique bounds/volume filtered BRep symmetric difference; all 23 existing aggregate solids consumed once; no name reassignment",
+      "matches": [
+        {
+          "leaf_id": "GATE_Post_Left",
+          "aggregate_solid_index": 0,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Post_Right",
+          "aggregate_solid_index": 1,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Beam",
+          "aggregate_solid_index": 2,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Door",
+          "aggregate_solid_index": 3,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Axis",
+          "aggregate_solid_index": 4,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Connector_Left",
+          "aggregate_solid_index": 5,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Connector_Right",
+          "aggregate_solid_index": 6,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Spindle_Lower",
+          "aggregate_solid_index": 7,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Spindle_Upper",
+          "aggregate_solid_index": 8,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Bearing_Lower",
+          "aggregate_solid_index": 9,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Bearing_Upper",
+          "aggregate_solid_index": 10,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Coupler_Lower",
+          "aggregate_solid_index": 11,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Coupler_Upper",
+          "aggregate_solid_index": 12,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Stop_Closed",
+          "aggregate_solid_index": 13,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Stop_Open",
+          "aggregate_solid_index": 14,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Bolt",
+          "aggregate_solid_index": 15,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_BoltGuide_Left",
+          "aggregate_solid_index": 16,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_BoltGuide_Right",
+          "aggregate_solid_index": 17,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_BoltReceiver",
+          "aggregate_solid_index": 18,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Doorstop",
+          "aggregate_solid_index": 19,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Joint_Left",
+          "aggregate_solid_index": 20,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_Joint_Right",
+          "aggregate_solid_index": 21,
+          "symmetric_difference_mm3": 0.0
+        },
+        {
+          "leaf_id": "GATE_AxialKeeper",
+          "aggregate_solid_index": 22,
+          "symmetric_difference_mm3": 0.0
+        }
+      ]
+    }
+  ],
   "native_dimension_edit": true,
   "dimension_before_mm": 900,
   "dimension_changed_mm": 880,

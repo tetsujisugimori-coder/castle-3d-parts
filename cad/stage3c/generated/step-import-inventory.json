@@ -1,0 +1,473 @@
+[
+  {
+    "name": "Part__Feature",
+    "label": "GATE_Post_Left",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature001",
+    "label": "GATE_Post_Right",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature002",
+    "label": "GATE_Beam",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature003",
+    "label": "GATE_Door",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature004",
+    "label": "GATE_Axis",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature005",
+    "label": "GATE_Connector_Left",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature006",
+    "label": "GATE_Connector_Right",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature007",
+    "label": "GATE_Spindle_Lower",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature008",
+    "label": "GATE_Spindle_Upper",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature009",
+    "label": "GATE_Bearing_Lower",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature010",
+    "label": "GATE_Bearing_Upper",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature011",
+    "label": "GATE_Coupler_Lower",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature012",
+    "label": "GATE_Coupler_Upper",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature013",
+    "label": "GATE_Stop_Closed",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature014",
+    "label": "GATE_Stop_Open",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature015",
+    "label": "GATE_Bolt",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature016",
+    "label": "GATE_BoltGuide_Left",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature017",
+    "label": "GATE_BoltGuide_Right",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature018",
+    "label": "GATE_BoltReceiver",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature019",
+    "label": "GATE_Doorstop",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature020",
+    "label": "GATE_Joint_Left",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature021",
+    "label": "GATE_Joint_Right",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Part__Feature022",
+    "label": "GATE_AxialKeeper",
+    "type_id": "Part::Feature",
+    "solids": 1,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "GateLockReload",
+    "label": "GateLockReload",
+    "type_id": "App::Part",
+    "solids": 23,
+    "shape_is_null": false,
+    "children": [
+      "Origin",
+      "Part__Feature",
+      "Part__Feature001",
+      "Part__Feature002",
+      "Part__Feature003",
+      "Part__Feature004",
+      "Part__Feature005",
+      "Part__Feature006",
+      "Part__Feature007",
+      "Part__Feature008",
+      "Part__Feature009",
+      "Part__Feature010",
+      "Part__Feature011",
+      "Part__Feature012",
+      "Part__Feature013",
+      "Part__Feature014",
+      "Part__Feature015",
+      "Part__Feature016",
+      "Part__Feature017",
+      "Part__Feature018",
+      "Part__Feature019",
+      "Part__Feature020",
+      "Part__Feature021",
+      "Part__Feature022"
+    ],
+    "parents": [],
+    "role": null,
+    "origin": "Origin",
+    "origin_features": []
+  },
+  {
+    "name": "Origin",
+    "label": "Origin",
+    "type_id": "App::Origin",
+    "solids": null,
+    "shape_is_null": null,
+    "children": [
+      "X_Axis",
+      "Y_Axis",
+      "Z_Axis",
+      "XY_Plane",
+      "XZ_Plane",
+      "YZ_Plane"
+    ],
+    "parents": [
+      "GateLockReload"
+    ],
+    "role": null,
+    "origin": null,
+    "origin_features": [
+      "X_Axis",
+      "Y_Axis",
+      "Z_Axis",
+      "XY_Plane",
+      "XZ_Plane",
+      "YZ_Plane"
+    ]
+  },
+  {
+    "name": "X_Axis",
+    "label": "X-axis",
+    "type_id": "App::Line",
+    "solids": 0,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "Origin"
+    ],
+    "role": "X_Axis",
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Y_Axis",
+    "label": "Y-axis",
+    "type_id": "App::Line",
+    "solids": 0,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "Origin"
+    ],
+    "role": "Y_Axis",
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "Z_Axis",
+    "label": "Z-axis",
+    "type_id": "App::Line",
+    "solids": 0,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "Origin"
+    ],
+    "role": "Z_Axis",
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "XY_Plane",
+    "label": "XY-plane",
+    "type_id": "App::Plane",
+    "solids": 0,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "Origin"
+    ],
+    "role": "XY_Plane",
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "XZ_Plane",
+    "label": "XZ-plane",
+    "type_id": "App::Plane",
+    "solids": 0,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "Origin"
+    ],
+    "role": "XZ_Plane",
+    "origin": null,
+    "origin_features": []
+  },
+  {
+    "name": "YZ_Plane",
+    "label": "YZ-plane",
+    "type_id": "App::Plane",
+    "solids": 0,
+    "shape_is_null": false,
+    "children": [],
+    "parents": [
+      "Origin"
+    ],
+    "role": "YZ_Plane",
+    "origin": null,
+    "origin_features": []
+  }
+]

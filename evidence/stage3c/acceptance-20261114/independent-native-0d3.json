@@ -1,0 +1,43 @@
+{
+  "head": "0d3f142c00cc98391d32cde8603223e78a3029f7",
+  "tree": "8ab3203332d9660188d19155863277682e2407ee",
+  "scope": "independent source and raw original artifact readback",
+  "artifacts": [
+    {
+      "zip_sha256": "fc7c57b8de2d14d3ee3c7b6bb7ab3189751db0ba49905b6fc0b7b498058bc562",
+      "bytes": 1186293,
+      "entries": 87,
+      "crc": "PASS",
+      "identity": [
+        "23395180e19377c571413bb3211488143662394c",
+        "8ab3203332d9660188d19155863277682e2407ee",
+        "34956e1978794aa3d4858c564c51da37d84bfa27",
+        "0d3f142c00cc98391d32cde8603223e78a3029f7"
+      ],
+      "native_commands": 8,
+      "independent_native_pose_maximum_error_mm": 2.2737367544323206e-13,
+      "parts": 23,
+      "dimension_variants": 3,
+      "history_rows": 75,
+      "collision_measurements": 32650,
+      "door_angles": 91,
+      "bolt_positions": 141,
+      "blend_glb_poses": 12,
+      "vertex_triangle_object_pose_comparisons": 276,
+      "native_scope": "Independent raw artifact/code review; wrapper authored by another agent. Batch GUI bootstrap is not manual GUI. Continuous path and strength remain UNKNOWN/NOT_TESTED",
+      "status": "PASS"
+    },
+    {
+      "name": "stage3c-0d3f142c00cc98391d32cde8603223e78a3029f7.zip",
+      "status": "FAIL",
+      "error": "AssertionError()"
+    }
+  ],
+  "not_claimed": [
+    "manual GUI",
+    "physical Safari",
+    "continuous-path clearance",
+    "physical strength",
+    "historical certainty"
+  ]
+}

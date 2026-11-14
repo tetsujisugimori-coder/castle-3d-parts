@@ -57,3 +57,11 @@ mesh検証器の独立反例では、同一境界点の5e-16m差がfloat32丸め
 run43601558970のinventoryでroot App::Partが23solidを持ち、そのほかに23個の正しいPartID leafを持つことを確認した。ただし新しいPart.makeCompound呼出しでSIGSEGVとなり、このrunのnative受入はFAIL。原artifactは119,841 bytes、SHA-256 `b47203aea85bef8ea2f65c6d852651ea3f5947eedd96a17aeb7febc4a6c86ea2`。直接原因の詳細はUNKNOWN。検査をskipせず、既存aggregateの23solidをleaf形状へ境界・体積・BRep対称差で唯一対応させ、全件消費する検査へ変更する。
 
 原inventoryにはApp::Originの3軸/3平面も含まれ、solid0であっても正規の参照datumだった。App::Part→Origin→6Roleの正逆所有リンク、型、名称を確認して参照として分類する。任意の余剰faceや未知objectを除外するのではない。全objectを既知leaf・aggregate・所有Origin・6datumへ分類できなければ拒否する。次CIでこのAPI経路と実測を確認する。
+
+## 確認済みnative成果の正式生成物への反映
+
+run [43602228621](https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/43602228621)、生成ソースHEAD `0d3f142c00cc98391d32cde8603223e78a3029f7`のnative jobは全8コマンド成功。原ZIP1,186,293 bytes、SHA-256 `fc7c57b8de2d14d3ee3c7b6bb7ab3189751db0ba49905b6fc0b7b498058bc562`、87entryのCRC/台帳と現行CADソース15件hashを照合した。別担当も同原票を読み、23CAD/STEP IDとBRep、31object分類、aggregate23solidの完全一対一（全対称差0）、TechDraw3寸法組、別プロセス状態/履歴再読込、75履歴状態の実BRep移動、32,650pair測定、blend/GLBの276 object-pose頂点・三角形を照合した。
+
+独立剛体変換計算によるDoor/Boltの最大bounds誤差は2.27e-13mm。blend/GLB最大頂点誤差は2.366236835271437e-7m。実原票でsource weldの使用は0件であり、5e-16m反例は検証器の正当roundtrip互換性試験である。FreeCAD1.0.0+dfsg-8+deb13u3、Blender4.3.2、PySide5.15.16を原package記録から確認した。
+
+30個のmanifest宣言ファイルのうちbyte差のあった20件だけ正式generatedへ反映した。runtime/cache/履歴試験出力はコピーしない。4主要binaryはすべて旧版とbyte差があるが、全23CAD BRepの意味的一致と新STEP IDを実ソフトで確認している。旧原本は445f3718、bundle、保全ZIPで保持する。この反映後はportable検査も再びPASSとなった。最終HEADの全CI原artifact照合は別に行い、完了判定はIssue/PR追記へ記録する。

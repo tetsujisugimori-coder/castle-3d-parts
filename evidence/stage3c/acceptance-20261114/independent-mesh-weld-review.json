@@ -1,0 +1,143 @@
+{
+  "source_sha256": "32a7962e0d05076e1f333cfdb2dacd7b501a9a7783677286e5cc0a97ad49ee0c",
+  "scope": "independent geometry acceptance and adversarial mesh controls; NOT actual Blender execution",
+  "rows": [
+    {
+      "name": "exact same mesh",
+      "status": "PASS",
+      "expected_accept": true,
+      "accepted": true,
+      "error": null,
+      "result": {
+        "status": "PASS",
+        "unique_vertices": 8,
+        "actual_vertices": 8,
+        "triangles": 12,
+        "maximum_vertex_error_m": 0.0,
+        "tolerance_m": 1e-05,
+        "vertex_splits_and_reordering_allowed": true,
+        "source_exact_unique_vertices": 8,
+        "source_weld_tolerance_m": 1e-09,
+        "maximum_source_weld_distance_m": 0.0
+      }
+    },
+    {
+      "name": "GLB split vertices + arbitrary vertex/face order + cyclic indices",
+      "status": "PASS",
+      "expected_accept": true,
+      "accepted": true,
+      "error": null,
+      "result": {
+        "status": "PASS",
+        "unique_vertices": 8,
+        "actual_vertices": 36,
+        "triangles": 12,
+        "maximum_vertex_error_m": 0.0,
+        "tolerance_m": 1e-05,
+        "vertex_splits_and_reordering_allowed": true,
+        "source_exact_unique_vertices": 8,
+        "source_weld_tolerance_m": 1e-09,
+        "maximum_source_weld_distance_m": 0.0
+      }
+    },
+    {
+      "name": "sub-tolerance coordinate roundtrip",
+      "status": "PASS",
+      "expected_accept": true,
+      "accepted": true,
+      "error": null,
+      "result": {
+        "status": "PASS",
+        "unique_vertices": 8,
+        "actual_vertices": 8,
+        "triangles": 12,
+        "maximum_vertex_error_m": 3.000000000086267e-06,
+        "tolerance_m": 1e-05,
+        "vertex_splits_and_reordering_allowed": true,
+        "source_exact_unique_vertices": 8,
+        "source_weld_tolerance_m": 1e-09,
+        "maximum_source_weld_distance_m": 0.0
+      }
+    },
+    {
+      "name": "same bbox corner displaced inward",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "unexpected mesh vertex",
+      "result": null
+    },
+    {
+      "name": "same bbox missing one triangle",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle coverage/winding mismatch",
+      "result": null
+    },
+    {
+      "name": "same counts triangle duplicate substitutes missing face",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle coverage/winding mismatch",
+      "result": null
+    },
+    {
+      "name": "all surface faces absent, vertices and bbox unchanged",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "missing triangle faces",
+      "result": null
+    },
+    {
+      "name": "triangle index order rewired across cube",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle coverage/winding mismatch",
+      "result": null
+    },
+    {
+      "name": "nonfinite vertex",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "vertex coordinates",
+      "result": null
+    },
+    {
+      "name": "negative vertex index",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle indices",
+      "result": null
+    },
+    {
+      "name": "out of range vertex index",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle indices",
+      "result": null
+    },
+    {
+      "name": "coordinate outside tolerance",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "unexpected mesh vertex",
+      "result": null
+    },
+    {
+      "name": "collapsed triangle",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "degenerate triangle",
+      "result": null
+    }
+  ]
+}
