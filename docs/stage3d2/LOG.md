@@ -1,0 +1,5 @@
+# Stage 3-D-2 execution log
+- Started from PR31 f4a6a25/tree2c63b94, main7f32781 unchanged. PR31 unmerged; Issue32 and stacked branch created. PR31 stale metadata PENDING corrected with final report links; no D1 commit changed.
+- Fixed Bolt/Guide_Left / door0° / bolt0..140mm before execution. Source build/spec and native read-only3poses agree nominally; all actual CAD guarantees remain UNKNOWN. No originals regenerated or saved.
+- Initial20 unit + D1 10 tests PASS. Exact model gives128 PASS /0 FAIL/0 UNKNOWN, while actual CAD application gives0 PASS/0 FAIL/128 UNKNOWN. Endpoint-only synthetic counterexample false-accepts, new exact midpoint witness rejects. This is not an old CAD product false-acceptance claim.
+- Independent review separately derived piecewise-quadratic exact minimum distance over full travel=1mm, checked100fixtures/192leaves. Runner binding copy mutation rejected by pinned contract hash; no pre-fix RED execution exists for that concern and none is claimed. P3 fixed PASS log changed to computed counts. FormalCI and preservation require final-HEAD evidence separately.
