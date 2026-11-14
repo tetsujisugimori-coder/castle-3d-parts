@@ -1,0 +1,55 @@
+{
+  "scope": "independent algorithm counterexamples; no browser/GUI execution",
+  "results": [
+    {
+      "name": "animation gesture restores initial state in one undo and final state in redo",
+      "status": "PASS"
+    },
+    {
+      "name": "undo before animation end commits then undoes entire gesture",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid frame inside gesture does not consume stacks or state",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized snapshot cannot import a poisoned target or history",
+      "status": "PASS"
+    },
+    {
+      "name": "model and returned state cannot mutate private history",
+      "status": "PASS"
+    }
+  ],
+  "netNoop": {
+    "before": "apply angle90; undo -> initial with redo90",
+    "operations": "begin; angle45; angle0; end",
+    "actual": {
+      "state": {
+        "angle": 0,
+        "bolt": 0
+      },
+      "past": [],
+      "future": [
+        {
+          "angle": 90,
+          "bolt": 0
+        }
+      ],
+      "gesture": null
+    },
+    "canRedo": true,
+    "redoResult": {
+      "angle": 90,
+      "bolt": 0
+    },
+    "classification": "CONTRACT_CLARIFICATION_REQUIRED; net-noop keeps old redo despite accepted intermediate moves"
+  },
+  "sourceHashes": {
+    "site/stage3c/history.mjs": "45377ebed8b723999cf6581949919ac527a16343997fb67805620ae14a6d7476",
+    "site/shared/gate-viewer.mjs": "4aa67cc0d491324b1b90f519070356b09ca7374d7f7798dc1161da321fa283de",
+    "scripts/stage3c-browser-runtime.mjs": "2c394b8a6639d92fdd3ce9b497cedc4fe2795f5eeb0e0bc61eac395291d11ea9",
+    "tests/stage3c-history.test.mjs": "ca43ba0d32a4d21481c16d3a353e110e3f515cb01fc2487e039c1cfda2ba9ad9"
+  }
+}

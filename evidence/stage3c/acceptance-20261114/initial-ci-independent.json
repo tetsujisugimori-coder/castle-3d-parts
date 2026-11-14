@@ -1,0 +1,750 @@
+{
+  "audited_at_utc": "2026-11-14T13:08:18.151814+00:00",
+  "artifact_id": 14112691722,
+  "run_id": 43591306326,
+  "original_zip_bytes": 47891651,
+  "original_zip_sha256": "42d1692b8be91edd2b687c3150458bc3acae8ea19369d0c544dbbeb042400715",
+  "github_digest_matches": true,
+  "zip_entries": 38,
+  "all_entry_size_crc": "PASS",
+  "uncompressed_bytes": 50197010,
+  "submitted_head": "445f37182f07dae98441bc2a57f103e140c628a9",
+  "checked_merge_ref": "a79b7e86b1b378891d991a76a7e1977b869c070a",
+  "checked_tree": "9005551d740e5fc70451e8986df5056480d80d06",
+  "merge_parents": [
+    "34956e1978794aa3d4858c564c51da37d84bfa27",
+    "445f37182f07dae98441bc2a57f103e140c628a9"
+  ],
+  "merge_tree_equals_submission_tree": true,
+  "node": {
+    "tests": 487,
+    "pass": 487,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "cad_portable": {
+    "status": "PASS",
+    "scope": "portable artifact integrity; native execution is in preserved audit, not rerun here",
+    "parts": 23,
+    "door_samples": 91,
+    "door_pairs": 27027,
+    "bolt_samples": 141,
+    "bolt_pairs": 5217,
+    "fixed_pairs": 406,
+    "continuous_path": "UNKNOWN",
+    "physical_strength": "NOT_TESTED"
+  },
+  "cad_negative_tests": 11,
+  "browser_normal_rows": 16,
+  "browser_fault_rows": 34,
+  "browser_all_rows_pass": true,
+  "browser_traces": [
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        385,
+        3341
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        385,
+        3341
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        400,
+        3291
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        400,
+        3291
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        775,
+        2553
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        775,
+        2553
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        1290,
+        2318
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        1290,
+        2318
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 375,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        385,
+        3317
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 375,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        385,
+        3317
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        400,
+        3268
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        400,
+        3268
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 765,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        775,
+        2564
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 765,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        775,
+        2564
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 1280,
+      "motion": "no-preference",
+      "platform": "linux",
+      "png_dimensions": [
+        1290,
+        2309
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 1280,
+      "motion": "reduce",
+      "platform": "linux",
+      "png_dimensions": [
+        1290,
+        2309
+      ],
+      "trace_crc": "PASS",
+      "context_match": true,
+      "call_count": 135,
+      "all_calls_completed_without_error": true,
+      "key_operations_confirmed": true,
+      "api_methods": {
+        "goto": 1,
+        "waitForSelector": 17,
+        "fulfill": 5,
+        "queryCount": 10,
+        "getAttribute": 35,
+        "textContent": 7,
+        "selectOption": 13,
+        "click": 18,
+        "focus": 3,
+        "keyboardPress": 3,
+        "check": 4,
+        "isVisible": 1,
+        "waitForTimeout": 2,
+        "setViewportSize": 3,
+        "evaluateExpression": 1,
+        "mouseClick": 1,
+        "waitForFunction": 2,
+        "screenshot": 1,
+        "evalOnSelectorAll": 1,
+        "fetch": 7
+      }
+    }
+  ],
+  "candidate_artifact_hashes": {
+    "manifest.json": "5b6b392375c88080993bf1ebb1f6e505ec748cb1ad30ca91cba38c418ba9da44",
+    "assembly.glb": "2342946734197cdf7610153be72970eedc92178f440a6d45c302d6787cae8712",
+    "collision.json": "9b0bb7161f0d4db9af0974b45956c81bac205aeba8be8f4eafa6fbbca2b8eded"
+  },
+  "job_steps": [
+    {
+      "number": 1,
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "number": 2,
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "number": 3,
+      "name": "Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "number": 4,
+      "name": "Run mkdir -p stage3c-ci && node --test > stage3c-ci/tests.log 2>&1",
+      "conclusion": "success"
+    },
+    {
+      "number": 5,
+      "name": "Run python3 cad/stage3c/check.py > stage3c-ci/cad-check.json",
+      "conclusion": "success"
+    },
+    {
+      "number": 6,
+      "name": "Run python3 cad/stage3c/check_test.py > stage3c-ci/cad-negative.log 2>&1",
+      "conclusion": "success"
+    },
+    {
+      "number": 7,
+      "name": "Run node scripts/build-stage3c-site.mjs > stage3c-ci/build.log",
+      "conclusion": "success"
+    },
+    {
+      "number": 8,
+      "name": "Run npm install --prefix /tmp/castle2d-pw playwright@1.56.1 three@0.180.0",
+      "conclusion": "success"
+    },
+    {
+      "number": 9,
+      "name": "Run /tmp/castle2d-pw/node_modules/.bin/playwright install --with-deps chromium webkit",
+      "conclusion": "success"
+    },
+    {
+      "number": 10,
+      "name": "Run node scripts/stage3c-browser.mjs",
+      "conclusion": "success"
+    },
+    {
+      "number": 11,
+      "name": "Run git rev-parse HEAD HEAD^{tree} > stage3c-ci/git.txt",
+      "conclusion": "success"
+    },
+    {
+      "number": 12,
+      "name": "Run actions/upload-artifact@v4",
+      "conclusion": "success"
+    },
+    {
+      "number": 23,
+      "name": "Post Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "number": 24,
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "number": 25,
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "limitations": [
+    "Native FreeCAD/Blender regeneration and real application reopen NOT_TESTED by this CI.",
+    "34 fault rows have original results.json entries and successful job step, but per-fault PNG/trace were not emitted: NOT_OBTAINED.",
+    "Original job log retrieval via gh run view --log blocked by access denied writing GitHub CLI cache; no permission changes or alternate cache path used. Artifact command logs are obtained.",
+    "Historical independence claims in docs/stage3c/independent-review.md concern preserved local evidence; this audit does not independently rerun CAD or promote that report to final candidate acceptance.",
+    "Physical iPhone Safari and manual FreeCAD GUI NOT_TESTED; continuous path and physical strength UNKNOWN."
+  ],
+  "conclusion": "Artifact transport/integrity and merge-ref source equivalence PASS; normal16 trace/matrix/operations PASS; fault34 summary execution PASS with raw per-fault evidence NOT_OBTAINED; not final product acceptance.",
+  "preserved_independent_review_source_bindings": {
+    "site/shared/gate-viewer.mjs": true,
+    "site/stage3c/contract.mjs": true,
+    "site/stage3c/style.css": true,
+    "site/stage3c/index.html": true,
+    "cad/stage3c/check.py": true,
+    "cad/stage3c/finalize.py": true,
+    "cad/stage3c/run.py": true,
+    "cad/stage3c/state.py": true,
+    "cad/stage3c/blender.py": true,
+    "cad/stage3c/build.py": true,
+    "cad/stage3c/check_test.py": true,
+    "cad/stage3c/native_test.py": true,
+    "cad/stage3c/legacy.py": true,
+    "cad/stage3c/collision.py": true,
+    "cad/stage3c/spec.json": true
+  },
+  "visual_inspection": {
+    "representative_normal_pngs": [
+      "chromium-375-no-preference",
+      "webkit-1280-reduce"
+    ],
+    "result": "3D gate/fence, drawing projection, bolt unlocked45deg pose and research boundaries visible; mobile width385 and desktop1290 render readable; no obvious overflow observed. Not physical Safari."
+  }
+}

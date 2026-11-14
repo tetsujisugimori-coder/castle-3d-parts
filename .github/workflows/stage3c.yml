@@ -5,8 +5,10 @@ on:
 permissions:
   contents: read
 jobs:
-  locking:
+  portable:
     runs-on: ubuntu-24.04
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -14,19 +16,111 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: mkdir -p stage3c-ci && node --test > stage3c-ci/tests.log 2>&1
-      - run: python3 cad/stage3c/check.py > stage3c-ci/cad-check.json
-      - run: python3 cad/stage3c/check_test.py > stage3c-ci/cad-negative.log 2>&1
-      - run: node scripts/build-stage3c-site.mjs > stage3c-ci/build.log
-      - run: npm install --prefix /tmp/castle2d-pw playwright@1.56.1 three@0.180.0
-      - run: /tmp/castle2d-pw/node_modules/.bin/playwright install --with-deps chromium webkit
-      - run: node scripts/stage3c-browser.mjs
-        env:
-          STAGE3C_OUT: stage3c-ci/browser
-      - run: git rev-parse HEAD HEAD^{tree} > stage3c-ci/git.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Establish dedicated scratch and checkout identity
+        run: |
+          mkdir -p "$RUNNER_TEMP/stage3c-scratch" stage3c-ci
+          echo "TMPDIR=$RUNNER_TEMP/stage3c-scratch" >> "$GITHUB_ENV"
+          git show -s --format='%H %T %P' HEAD > stage3c-ci/git.txt
+          echo '${{ github.event.pull_request.head.sha || github.sha }}' > stage3c-ci/submitted-head.txt
+      - run: python scripts/stage3c-record-command.py stage3c-ci/node -- node --test
+      - run: python scripts/stage3c-record-command.py stage3c-ci/cad-portable -- python -B cad/stage3c/check.py
+      - run: python scripts/stage3c-record-command.py stage3c-ci/cad-faults -- python -B cad/stage3c/check_test.py
+      - run: python scripts/stage3c-record-command.py stage3c-ci/cad-stage3b -- python -B cad/stage3b/check_test.py
+      - run: python scripts/stage3c-record-command.py stage3c-ci/history-double -- python -B cad/stage3c/history_test.py
+      - run: python scripts/stage3c-record-command.py stage3c-ci/history-parity -- python -B cad/stage3c/history_parity_test.py
+      - run: python scripts/stage3c-record-command.py stage3c-ci/red-green-command -- python -B scripts/stage3c-history-red-green.py stage3c-ci/red-green
+      - run: python scripts/stage3c-record-command.py stage3c-ci/build -- node scripts/build-stage3c-site.mjs
+      - name: Hash original evidence
+        if: always()
+        run: python scripts/stage3c-hash-evidence.py stage3c-ci
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: stage3c-${{ github.event.pull_request.head.sha || github.sha }}
           path: stage3c-ci/
+          if-no-files-found: error
+  browsers:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        stage: [stage3c, stage3b, stage3a, stage2d]
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Preserve repository bytes
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Establish dedicated scratch and identity
+        run: |
+          New-Item -ItemType Directory "$env:RUNNER_TEMP/stage3c-scratch",stage3c-ci | Out-Null
+          "TEMP=$env:RUNNER_TEMP/stage3c-scratch" >> $env:GITHUB_ENV
+          "TMP=$env:RUNNER_TEMP/stage3c-scratch" >> $env:GITHUB_ENV
+          "PLAYWRIGHT_BROWSERS_PATH=$env:RUNNER_TEMP/stage3c-browsers" >> $env:GITHUB_ENV
+          git show -s --format='%H %T %P' HEAD > stage3c-ci/git.txt
+          '${{ github.event.pull_request.head.sha || github.sha }}' > stage3c-ci/submitted-head.txt
+      - name: Install pinned browser dependencies
+        run: |
+          npm install --prefix "$env:RUNNER_TEMP/stage3c-deps" --cache "$env:RUNNER_TEMP/stage3c-npm-cache" --ignore-scripts --no-audit --no-fund playwright@1.56.1 three@0.180.0
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & "$env:RUNNER_TEMP/stage3c-deps/node_modules/.bin/playwright.cmd" install chromium webkit
+      - name: Browser contract and raw normal/fault evidence
+        run: |
+          $env:PW_MODULE = "$env:RUNNER_TEMP/stage3c-deps/node_modules/playwright/index.mjs"
+          $env:THREE_DIR = "$env:RUNNER_TEMP/stage3c-deps/node_modules/three"
+          [Environment]::SetEnvironmentVariable('${{ matrix.stage }}'.ToUpper() + '_OUT', 'stage3c-ci/browser')
+          python scripts/stage3c-record-command.py stage3c-ci/command -- node scripts/stage3c-browser-runtime.mjs '${{ matrix.stage }}'
+      - name: Hash original evidence
+        if: always()
+        run: python scripts/stage3c-hash-evidence.py stage3c-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3c-${{ github.event.pull_request.head.sha || github.sha }}-${{ matrix.stage }}-browser
+          path: stage3c-ci/
+          if-no-files-found: error
+  native:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONDONTWRITEBYTECODE: '1'
+      QT_QPA_PLATFORM: offscreen
+      PYTHONPATH: /usr/lib/freecad-python3/lib
+    steps:
+      - name: Install native production tools in isolated runner
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3 blender python3-pyside2.qtwidgets libgl1-mesa-dri
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Dedicated native workspace and original logs
+        run: |
+          mkdir -p "$RUNNER_TEMP/stage3c-native-scratch" stage3c-native-ci
+          export TMPDIR="$RUNNER_TEMP/stage3c-native-scratch"
+          export TEMP="$TMPDIR"
+          git show -s --format='%H %T %P' HEAD > stage3c-native-ci/git.txt
+          echo '${{ github.event.pull_request.head.sha || github.sha }}' > stage3c-native-ci/submitted-head.txt
+          dpkg-query -W freecad-python3 libfreecad-python3 blender python3-pyside2.qtwidgets > stage3c-native-ci/package-versions.txt
+          python3 scripts/stage3c-native-acceptance.py --repo "$GITHUB_WORKSPACE" --evidence "$GITHUB_WORKSPACE/stage3c-native-ci/native"
+      - name: Hash original native evidence
+        if: always()
+        run: python3 scripts/stage3c-hash-evidence.py stage3c-native-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3c-${{ github.event.pull_request.head.sha || github.sha }}-native
+          path: stage3c-native-ci/
           if-no-files-found: error

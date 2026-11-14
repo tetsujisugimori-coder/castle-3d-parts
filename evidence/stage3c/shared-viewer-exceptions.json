@@ -1,0 +1,23 @@
+{
+  "baseline_head": "34956e1978794aa3d4858c564c51da37d84bfa27",
+  "preserved_implementation_head": "445f37182f07dae98441bc2a57f103e140c628a9",
+  "files": {
+    "site/stage3b/app.mjs": {
+      "before_sha256": "85b8b87a65fd4122e4c93525834fe1ca7328d2d6b7f747dd911ef757df940a12",
+      "after_sha256": "3f6e429b9031b2c3a91fc7897f5cdbec26ad2da76d47c70c6f78ee0310de2404",
+      "permitted_patch": "evidence/stage3c/acceptance-20261114/app-stage3b-permitted.patch",
+      "patch_sha256": "2814b6c9e483509c97e5c6415c3d4191baa121675554532eb369cfbf3406bf3f",
+      "reason": "Delegate to the shared gate viewer; preserve Stage3B angle, selection, drawing and motion behavior. Stage3C locking is enabled only by the Stage3C configuration."
+    },
+    "scripts/build-stage3b-site.mjs": {
+      "before_sha256": "18ec0d6db221e5dfbc735eee09caf5d1fa6e7c411e42ffe90bb616bb84544df0",
+      "after_sha256": "e35206f67e4747b4723d40e6ad2a83fc0b5783cb62b72ca70c2d63e0c400ea10",
+      "permitted_patch": "evidence/stage3c/acceptance-20261114/build-stage3b-permitted.patch",
+      "patch_sha256": "8f4259fcf4ff94e2803d46db3355272823d36de93205d8af23b3e65bbbe2987d",
+      "reason": "Copy the shared viewer module required by the delegated Stage3B entry point; keep all existing Stage3A/2D build steps."
+    }
+  },
+  "shared_viewer_sha256": "cc306f0ec5fe6b1b6c12ccda0c1736752c4e457aee947cfe617edd939493fadb",
+  "regression_acceptance": "Requires fresh Stage3B/Stage3A/Stage2D browser evidence; hash identity alone is not behavioral acceptance.",
+  "history_scope": "Stage3C state history only. Stage3B default lockMode=false has no history controls."
+}
