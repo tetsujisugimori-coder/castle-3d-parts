@@ -1,0 +1,12 @@
+import FreeCAD as A,FreeCADGui as G, json, traceback
+from pathlib import Path
+root=Path('/workspace/scratch/e622c1e9421e/castle-gate-stage3c/evidence/stage3c/independent')
+try:
+ d=A.openDocument(str(root/'tmp/portable/only.FCStd'))
+ before={'transient':d.TransientDir,'templates':[o.Template for o in d.Objects if o.TypeId=='TechDraw::DrawSVGTemplate']}
+ d.LockMechanism.BoltPosition=70;d.recompute();d.saveAs(str(root/'tmp/portable/resaved.FCStd'));A.closeDocument(d.Name)
+ d=A.openDocument(str(root/'tmp/portable/resaved.FCStd'));assert d.LockMechanism.BoltPosition.Value==70
+ before['result']='PASS'
+except:before={'result':'FAIL','trace':traceback.format_exc()}
+(root/'portable-executable.json').write_text(json.dumps(before,indent=2))
+G.getMainWindow().close()

@@ -1,0 +1,14 @@
+{
+ "status":"Failures preserved, not discarded",
+ "events":[
+ {"file":"build.log","failure":"TechDrawGui imported before G.showMainWindow","fix":"initialize FreeCAD GUI first","retry":"build3.log"},
+ {"file":"build2.log","failure":"Inherited source GUI restore stalled; interrupted","fix":"hidden source load and copy only mechanism/parts into candidate","retry":"build3.log"},
+ {"file":"state1.log","failure":"Standalone console openDocument leaves TransientDir empty for embedded TechDraw templates; save failed","fix":"state.load_document creates document, assigns caller-owned TransientDir and FileName, calls restore() to extract embedded templates. No original template path rewrite.","retry":"state6.log"},
+ {"file":"state4.log","failure":"Left guide lost contact with bolt at locked position with shortened bolt","fix":"Guide x=-300mm to -200mm in trial candidate; source unchanged","retry":"state6.log"},
+ {"file":"blender1.log","failure":"Default ACTIONS GLB export split bolt motion from door clip; imported bolt did not move","fix":"ACTIVE_ACTIONS merged export; all six cycle poses independently recalculated after GLB reimport","retry":"blender2.log"},
+ {"file":"collision1.log","failure":"Interrupted initial design sample run after guide fix identified; partial, not a final PASS","fix":"Full final candidate sampling rerun"},
+ {"file":"collision-final.log","failure":"Interrupted to run final shared-state validation source; partial, not a final PASS","fix":"Full final collision-final2.log rerun with exact FCStd and generator hashes"}
+ ],
+ "manual_gui":"NOT_TESTED",
+ "graphics_warnings":"Offscreen GPU context errors preserved. Native BRep and SVG measured results are separate; no interactive viewport success claim."
+}

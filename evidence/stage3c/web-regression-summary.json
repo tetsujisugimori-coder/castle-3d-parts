@@ -1,0 +1,361 @@
+{
+  "scope": "local shared viewer Stage3B regression before final HEAD; raw PNG/trace retained in runtime; final CI separately",
+  "normal_conditions": 16,
+  "fault_cases": 26,
+  "rows": [
+    {
+      "engine": "webkit",
+      "width": 375,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 375,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 765,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 765,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 1280,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 1280,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-pivot",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-unit",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-moving",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-hierarchy",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "wrong-bounds",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "missing-glb",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-tolerance",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-pair",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-contact",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "collision-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "projection-index",
+      "status": "PASS"
+    },
+    {
+      "engine": "webkit",
+      "fault": "projection-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 765,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "no-preference",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "motion": "reduce",
+      "status": "PASS",
+      "checks": [
+        "absolute arbitrary forward/reverse poses and part selection",
+        "keyboard slider, drawing, CAD axis/path and fence toggles",
+        "pause, reverse, reduced motion, resize",
+        "3D ray selection",
+        "offscreen stop without revival"
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-pivot",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-unit",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-moving",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-hierarchy",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "wrong-bounds",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "missing-glb",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-tolerance",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-pair",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-contact",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "collision-hash",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "projection-index",
+      "status": "PASS"
+    },
+    {
+      "engine": "chromium",
+      "fault": "projection-hash",
+      "status": "PASS"
+    }
+  ]
+}

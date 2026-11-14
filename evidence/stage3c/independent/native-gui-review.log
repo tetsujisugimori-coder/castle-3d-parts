@@ -1,0 +1,142 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-2018.ttf
+TechDraw failed to load font file: -1 from: /usr/share/freecad/Mod/TechDraw/Resources/fonts/Y14.5-FreeCAD.ttf
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_aba6f170-2710-4684-8e95-ee4aa0cbc9f0_da39a3_490342'
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_79d920a4-9b47-43e4-9cab-27d43b921952_1f93a1_490342'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/shiboken2/files.dir/shibokensupport/feature.py", line 139, in _import
+    return original_import(name, *args, **kwargs)
+<class 'ModuleNotFoundError'>: No module named 'AttachmentEditor'
+Reading failed from embedded file: template-assembly.svg (581 bytes, 360 bytes compressed)
+Reading failed from embedded file: template-bolt.svg (576 bytes, 352 bytes compressed)
+Reading failed from embedded file: template-positions.svg (581 bytes, 353 bytes compressed)
+Reading failed from embedded file: template-doorstop.svg (580 bytes, 354 bytes compressed)
+Reading failed from embedded file: template-support.svg (578 bytes, 356 bytes compressed)
+Reading failed from embedded file: template-joinery.svg (579 bytes, 355 bytes compressed)
+QOpenGLWidget: Failed to create context
+DrawSVGTemplate::processTemplate can't read embedded template /template-assembly.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template-assembly.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template-assembly.svg!
+DrawSVGTemplate::processTemplate can't read embedded template /template-bolt.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template-bolt.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template-bolt.svg!
+DrawSVGTemplate::processTemplate can't read embedded template /template-joinery.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template-joinery.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template-joinery.svg!
+DrawSVGTemplate::processTemplate can't read embedded template /template-support.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template-support.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template-support.svg!
+DrawSVGTemplate::processTemplate can't read embedded template /template-positions.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template-positions.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template-positions.svg!
+DrawSVGTemplate::processTemplate can't read embedded template /template-doorstop.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template-doorstop.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template-doorstop.svg!
+(qt.qpa.backingstore) composeAndFlush: QOpenGLContext creation failed
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_d31b7b78-6fba-4a69-b809-11fedaace26f_da39a3_490342'
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+QOpenGLWidget: Failed to create context
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_4a43cb4f-e5be-4942-bbb5-24e67375c7df_23dc40_490342'
+Reading failed from embedded file: template.svg (587 bytes, 365 bytes compressed)
+Reading failed from embedded file: template1.svg (587 bytes, 365 bytes compressed)
+Reading failed from embedded file: template2.svg (587 bytes, 365 bytes compressed)
+Reading failed from embedded file: template3.svg (582 bytes, 359 bytes compressed)
+Reading failed from embedded file: template4.svg (587 bytes, 365 bytes compressed)
+QOpenGLWidget: Failed to create context
+DrawSVGTemplate::processTemplate can't read embedded template /template.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /template1.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template1.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template1.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /template2.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template2.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template2.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /template3.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template3.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template3.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+DrawSVGTemplate::processTemplate can't read embedded template /template4.svg!
+QGISVGTemplate::createClickHandles - error opening template file /template4.svg
+DrawSVGTemplate::processTemplate can't read embedded template /template4.svg!
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+(qt.qpa.backingstore) composeAndFlush: makeCurrent() failed
+Failed to create '/home/agent/.cache/FreeCAD/Cache/FreeCAD_Doc_79d920a4-9b47-43e4-9cab-27d43b921952_b923d7_490342'
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/evidence/stage3c/independent/native-review.py", line 35, in <module>
+    p.Angle=0;l.BoltPosition=70;d.recompute();temp=OUT/'review-half-bolt.FCStd';d.saveAs(str(temp));A.closeDocument(d.Name);d=A.openDocument(str(temp));d.recompute();assert d.LockMechanism.BoltPosition.Value==70
+                                                                                ~~~~~~~~^^^^^^^^^^^
+OSError: {'sclassname': 'N4Base15FileSystemErrorE', 'sErrMsg': "PropertyFileIncluded::SaveDocFile(): File '/template-assembly.svg' in transient directory doesn't exist.", 'sfile': '', 'iline': 0, 'sfunction': '', 'swhat': "PropertyFileIncluded::SaveDocFile(): File '/template-assembly.svg' in transient directory doesn't exist.", 'btranslatable': False, 'breported': False}

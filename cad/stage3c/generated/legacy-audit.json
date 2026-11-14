@@ -1,0 +1,231 @@
+{
+  "part_count": 15,
+  "rows": [
+    {
+      "id": "GATE_Post_Left",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Post_Right",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Beam",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Door",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Axis",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Left",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Right",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Lower",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Upper",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Lower",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Upper",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Lower",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Upper",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Closed",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Open",
+      "angle_degrees": 0,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Post_Left",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Post_Right",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Beam",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Door",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Axis",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Left",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Right",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Lower",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Upper",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Lower",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Upper",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Lower",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Upper",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Closed",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Open",
+      "angle_degrees": 45,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Post_Left",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Post_Right",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Beam",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Door",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Axis",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Left",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Connector_Right",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Lower",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Spindle_Upper",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Lower",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Bearing_Upper",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Lower",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Coupler_Upper",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Closed",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    },
+    {
+      "id": "GATE_Stop_Open",
+      "angle_degrees": 90,
+      "symmetric_difference_mm3": 0.0
+    }
+  ],
+  "result": "PASS"
+}

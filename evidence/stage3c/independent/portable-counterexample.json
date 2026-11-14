@@ -1,0 +1,14 @@
+[
+  {
+    "mutation": "missing_sources",
+    "before": "ACCEPTED",
+    "after": "REJECTED",
+    "after_reason": "source provenance coverage"
+  },
+  {
+    "mutation": "duplicate_contacts",
+    "before": "ACCEPTED",
+    "after": "REJECTED",
+    "after_reason": "contact identity coverage"
+  }
+]

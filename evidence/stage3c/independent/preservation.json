@@ -1,0 +1,10 @@
+{
+  "base": "34956e1978794aa3d4858c564c51da37d84bfa27",
+  "files": 1133,
+  "changes": [
+    "scripts/build-stage3b-site.mjs",
+    "site/stage3b/app.mjs"
+  ],
+  "method": "git ls-tree baseline object IDs against independently hashed working files",
+  "status": "PASS"
+}

@@ -1,0 +1,203 @@
+{
+  "atomic_rejection": {
+    "invalid_dimension": 24,
+    "rejected": "DIMENSION_BOUNDS",
+    "unchanged_angle": 0.0,
+    "unchanged_bolt_mm": 0.0
+  },
+  "persisted_faults": [
+    {
+      "angle_degrees": 45,
+      "bolt_mm": 140,
+      "saved_reloaded": true,
+      "rejected": "INTERLOCK"
+    },
+    {
+      "angle_degrees": 90,
+      "bolt_mm": 70,
+      "saved_reloaded": true,
+      "rejected": "INTERLOCK"
+    },
+    {
+      "angle_degrees": 0,
+      "bolt_mm": 141,
+      "saved_reloaded": true,
+      "rejected": "RANGE"
+    },
+    {
+      "angle_degrees": 91,
+      "bolt_mm": 0,
+      "saved_reloaded": true,
+      "rejected": "RANGE"
+    }
+  ],
+  "contacts": [
+    {
+      "a": "GATE_BoltGuide_Left",
+      "b": "GATE_Door",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_BoltGuide_Right",
+      "b": "GATE_Door",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_BoltReceiver",
+      "b": "GATE_Post_Right",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_Doorstop",
+      "b": "GATE_Post_Right",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_Doorstop",
+      "b": "GATE_Door",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_Joint_Left",
+      "b": "GATE_Post_Left",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_Joint_Left",
+      "b": "GATE_Beam",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_Joint_Right",
+      "b": "GATE_Post_Right",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_Joint_Right",
+      "b": "GATE_Beam",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_AxialKeeper",
+      "b": "GATE_Bearing_Upper",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    },
+    {
+      "a": "GATE_AxialKeeper",
+      "b": "GATE_Spindle_Upper",
+      "distance_m": 0.0,
+      "overlap_mm3": 0.0,
+      "contact": "TOUCHING",
+      "load_transfer": "NOT_TESTED"
+    }
+  ],
+  "parameter_variants": [
+    {
+      "length_mm": 880,
+      "width_mm": 18,
+      "height_mm": 35,
+      "gap_mm": 0.5,
+      "parts": [
+        {
+          "id": "GATE_BoltGuide_Left",
+          "gap_mm": 0.5,
+          "overlap_mm3": 0.0
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "gap_mm": 0.5,
+          "overlap_mm3": 0.0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "gap_mm": 0.5,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "receiver_engagement_mm": 20.0,
+      "engagement_basis": "BRep axial bounding interval overlap; not contact/load transfer"
+    },
+    {
+      "length_mm": 900,
+      "width_mm": 22,
+      "height_mm": 45,
+      "gap_mm": 2,
+      "parts": [
+        {
+          "id": "GATE_BoltGuide_Left",
+          "gap_mm": 2.0,
+          "overlap_mm3": 0.0
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "gap_mm": 2.0,
+          "overlap_mm3": 0.0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "gap_mm": 2.0,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "receiver_engagement_mm": 40.0,
+      "engagement_basis": "BRep axial bounding interval overlap; not contact/load transfer"
+    },
+    {
+      "length_mm": 900,
+      "width_mm": 20,
+      "height_mm": 40,
+      "gap_mm": 1,
+      "parts": [
+        {
+          "id": "GATE_BoltGuide_Left",
+          "gap_mm": 1.0,
+          "overlap_mm3": 0.0
+        },
+        {
+          "id": "GATE_BoltGuide_Right",
+          "gap_mm": 1.0,
+          "overlap_mm3": 0.0
+        },
+        {
+          "id": "GATE_BoltReceiver",
+          "gap_mm": 1.0,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "receiver_engagement_mm": 40.0,
+      "engagement_basis": "BRep axial bounding interval overlap; not contact/load transfer"
+    }
+  ],
+  "manual_editor_interlock": "NOT_ENFORCED; validator rejects invalid persisted combinations",
+  "continuous_path": "UNKNOWN"
+}

@@ -1,0 +1,136 @@
+{
+  "version": "4.3.2",
+  "created": [
+    {
+      "frame": 1,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 31,
+      "angle_degrees": 0,
+      "bolt_m": 0.14,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 61,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 106,
+      "angle_degrees": 45,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 151,
+      "angle_degrees": 90,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 241,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    }
+  ],
+  "manual_gui": "NOT_TESTED",
+  "blend_reopened": [
+    {
+      "frame": 1,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 31,
+      "angle_degrees": 0,
+      "bolt_m": 0.14,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 61,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 106,
+      "angle_degrees": 45,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 151,
+      "angle_degrees": 90,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 241,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    }
+  ],
+  "glb_reopened": [
+    {
+      "frame": 1,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 31,
+      "angle_degrees": 0,
+      "bolt_m": 0.14,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 61,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 106,
+      "angle_degrees": 45,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 151,
+      "angle_degrees": 90,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    },
+    {
+      "frame": 241,
+      "angle_degrees": 0,
+      "bolt_m": 0,
+      "parts": 23,
+      "bounds_and_hierarchy": "PASS"
+    }
+  ]
+}

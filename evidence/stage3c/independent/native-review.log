@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/evidence/stage3c/independent/native-review.py", line 26, in <module>
+    p.Angle=0;l.BoltPosition=70;d.recompute();temp=OUT/'review-half-bolt.FCStd';d.saveAs(str(temp));A.closeDocument(d.Name);d=A.openDocument(str(temp));d.recompute();assert d.LockMechanism.BoltPosition.Value==70
+                                                                                ~~~~~~~~^^^^^^^^^^^
+OSError: {'sclassname': 'N4Base15FileSystemErrorE', 'sErrMsg': "PropertyFileIncluded::SaveDocFile(): File '/template-assembly.svg' in transient directory doesn't exist.", 'sfile': '', 'iline': 0, 'sfunction': '', 'swhat': "PropertyFileIncluded::SaveDocFile(): File '/template-assembly.svg' in transient directory doesn't exist.", 'btranslatable': False, 'breported': False}

@@ -1,0 +1,10 @@
+QStandardPaths: wrong permissions on runtime directory /home/agent/.local/run, 0755 instead of 0700
+Program received signal SIGSEGV, Segmentation fault.
+#0  /lib/x86_64-linux-gnu/libc.so.6(+0x3fd70) [0x7f6dc28dcd70]
+#1  /lib/x86_64-linux-gnu/libc.so.6(+0x179198) [0x7f6dc2a16198]
+#2  /lib/x86_64-linux-gnu/libpython3.13.so.1.0(+0x2dc287) [0x7f6dc439b287]
+#3  /lib/x86_64-linux-gnu/libpython3.13.so.1.0(Py_EncodeLocale+0x57) [0x7f6dc439b5d7]
+#4  /usr/bin/freecad(+0x7b0b) [0x555b4ff1eb0b]
+#5  /lib/x86_64-linux-gnu/libc.so.6(+0x29ca8) [0x7f6dc28c6ca8]
+#6  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x85) [0x7f6dc28c6d65]
+#7  /usr/bin/freecad(+0x92b1) [0x555b4ff202b1]

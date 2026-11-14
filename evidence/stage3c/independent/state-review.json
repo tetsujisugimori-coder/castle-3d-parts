@@ -1,0 +1,5 @@
+{
+  "checks": 158,
+  "result": "PASS",
+  "scope": "independent boundary truth table; no physical guarantee"
+}

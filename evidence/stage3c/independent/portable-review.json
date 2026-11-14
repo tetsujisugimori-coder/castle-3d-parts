@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "templates": 6,
+  "source_sha256": "4597bee609eb4f3e262a60c8989f1cfb0ba90081408b4c3f0703c2ae8fd911a2",
+  "method": "copy FCStd alone; newDocument + fresh TransientDir + FileName + restore; embedded SVG extraction; change bolt70mm, saveAs, close, restore, assert dimension and geometry",
+  "ordinary_openDocument": "FAILED in this runtime, empty TransientDir",
+  "manual_GUI": "NOT_TESTED"
+}

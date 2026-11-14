@@ -1,0 +1,90 @@
+Info: Saved "assembly.blend"
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+04:15:45 | INFO: Starting glTF 2.0 export
+04:15:45 | INFO: Extracting primitive: GATE_Bolt
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Axis
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_BoltGuide_Left
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_BoltGuide_Right
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Coupler_Lower
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Coupler_Upper
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Door
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Spindle_Lower
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Spindle_Upper
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Post_Left
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Post_Right
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Beam
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Connector_Left
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Connector_Right
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Bearing_Lower
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Bearing_Upper
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Stop_Closed
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Stop_Open
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_BoltReceiver
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Doorstop
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Joint_Left
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_Joint_Right
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Extracting primitive: GATE_AxialKeeper
+04:15:45 | INFO: Primitives created: 1
+04:15:45 | INFO: Finished glTF 2.0 export in 0.1629955768585205 s
+
+04:15:45 | INFO: Data are loaded, start creating Blender stuff
+04:15:45 | INFO: Blender create Mesh node GATE_Bolt
+04:15:45 | INFO: Blender create Mesh node GATE_Axis
+04:15:45 | INFO: Blender create Mesh node GATE_BoltGuide_Left
+04:15:45 | INFO: Blender create Mesh node GATE_BoltGuide_Right
+04:15:45 | INFO: Blender create Mesh node GATE_Coupler_Lower
+04:15:45 | INFO: Blender create Mesh node GATE_Coupler_Upper
+04:15:45 | INFO: Blender create Mesh node GATE_Door
+04:15:45 | INFO: Blender create Mesh node GATE_Spindle_Lower
+04:15:45 | INFO: Blender create Mesh node GATE_Spindle_Upper
+04:15:45 | INFO: Blender create Mesh node GATE_Post_Left
+04:15:45 | INFO: Blender create Mesh node GATE_Post_Right
+04:15:45 | INFO: Blender create Mesh node GATE_Beam
+04:15:45 | INFO: Blender create Mesh node GATE_Connector_Left
+04:15:45 | INFO: Blender create Mesh node GATE_Connector_Right
+04:15:45 | INFO: Blender create Mesh node GATE_Bearing_Lower
+04:15:45 | INFO: Blender create Mesh node GATE_Bearing_Upper
+04:15:45 | INFO: Blender create Mesh node GATE_Stop_Closed
+04:15:45 | INFO: Blender create Mesh node GATE_Stop_Open
+04:15:45 | INFO: Blender create Mesh node GATE_BoltReceiver
+04:15:45 | INFO: Blender create Mesh node GATE_Doorstop
+04:15:45 | INFO: Blender create Mesh node GATE_Joint_Left
+04:15:45 | INFO: Blender create Mesh node GATE_Joint_Right
+04:15:45 | INFO: Blender create Mesh node GATE_AxialKeeper
+04:15:45 | INFO: glTF import finished in 0.04s
+Traceback (most recent call last):
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/cad/stage3c/blender.py", line 39, in <module>
+    bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False);bpy.ops.import_scene.gltf(filepath=str(out/'assembly.glb'));r['glb_reopened']=audit();(out/'blender-audit.json').write_text(json.dumps(r,indent=2))
+                                                                                                                                                                     ~~~~~^^
+  File "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/cad/stage3c/blender.py", line 31, in audit
+    target=[min(v[i] for v in expected) for i in range(3)]+[max(v[i] for v in expected) for i in range(3)];vs=[o.matrix_world@v.co for v in o.data.vertices];actual=[min(v[i] for v in vs) for i in range(3)]+[max(v[i] for v in vs) for i in range(3)];assert max(abs(a-b) for a,b in zip(actual,target))<1e-5,(frame,e['id'],actual,target)
+                                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (31, 'GATE_Bolt', [-0.4000000059604645, -0.11500000208616257, 1.0, 0.4999999403953552, -0.0949999988079071, 1.0399999618530273], [-0.26, -0.115, 1.0, 0.6400000000000001, -0.095, 1.04])
+
+Error: script failed, file: 'cad/stage3c/blender.py', exiting.
+Blender 4.3.2
+Read blend: "/workspace/scratch/e622c1e9421e/castle-gate-stage3c/cad/stage3c/generated/assembly.blend"
+
+Blender quit

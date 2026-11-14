@@ -1,0 +1,32 @@
+name: Stage 3-C gate locking
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  locking:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: mkdir -p stage3c-ci && node --test > stage3c-ci/tests.log 2>&1
+      - run: python3 cad/stage3c/check.py > stage3c-ci/cad-check.json
+      - run: python3 cad/stage3c/check_test.py > stage3c-ci/cad-negative.log 2>&1
+      - run: node scripts/build-stage3c-site.mjs > stage3c-ci/build.log
+      - run: npm install --prefix /tmp/castle2d-pw playwright@1.56.1 three@0.180.0
+      - run: /tmp/castle2d-pw/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/stage3c-browser.mjs
+        env:
+          STAGE3C_OUT: stage3c-ci/browser
+      - run: git rev-parse HEAD HEAD^{tree} > stage3c-ci/git.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3c-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage3c-ci/
+          if-no-files-found: error

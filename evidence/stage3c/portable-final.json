@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "portable artifact integrity; native execution is in preserved audit, not rerun here",
+  "parts": 23,
+  "door_samples": 91,
+  "door_pairs": 27027,
+  "bolt_samples": 141,
+  "bolt_pairs": 5217,
+  "fixed_pairs": 406,
+  "continuous_path": "UNKNOWN",
+  "physical_strength": "NOT_TESTED"
+}
