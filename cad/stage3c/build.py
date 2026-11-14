@@ -114,22 +114,58 @@ assert len(objs)==23 and {o.PartID for o in objs}==set(spec['part_ids'])
 assert all(o.Name==o.PartID==o.Label for o in objs),'SOURCE_PART_ID_LABEL'
 Import.export(objs,str(OUT/'assembly.step'),exportHidden=True,legacy=False,keepPlacement=True)
 st=A.newDocument('ReloadStep');Import.insert(str(OUT/'assembly.step'),st.Name);st.recompute()
-step_inventory=[{'name':o.Name,'label':o.Label,'type_id':o.TypeId,'solids':len(o.Shape.Solids) if hasattr(o,'Shape') else None,'shape_is_null':o.Shape.isNull() if hasattr(o,'Shape') else None,'children':[child.Name for child in o.OutList]} for o in st.Objects]
+step_inventory=[{'name':o.Name,'label':o.Label,'type_id':o.TypeId,'solids':len(o.Shape.Solids) if hasattr(o,'Shape') else None,'shape_is_null':o.Shape.isNull() if hasattr(o,'Shape') else None,'children':[child.Name for child in o.OutList],'parents':[parent.Name for parent in o.InList],'role':getattr(o,'Role',None),'origin':getattr(o,'Origin',None).Name if getattr(o,'Origin',None) else None,'origin_features':[feature.Name for feature in getattr(o,'OriginFeatures',[])]} for o in st.Objects]
 (OUT/'step-import-inventory.json').write_text(json.dumps(step_inventory,indent=2))
 print('STEP_IMPORT_INVENTORY '+json.dumps(step_inventory),flush=True)
-shaped=[o for o in st.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
+# The STEP importer creates six coordinate datums owned by App::Part.Origin.
+# Only this exact ownership/Role/TypeId graph is reference geometry; an arbitrary
+# zero-solid Part::Feature must still enter the extra-shape rejection below.
+datum_types={role:kind for roles,kind in [(('X_Axis','Y_Axis','Z_Axis'),'App::Line'),(('XY_Plane','XZ_Plane','YZ_Plane'),'App::Plane')] for role in roles}
+reference_geometry=[];reference_names=set();owned_origins=set()
+for owner in [obj for obj in st.Objects if obj.TypeId=='App::Part']:
+ origin=owner.Origin
+ assert origin and origin.TypeId=='App::Origin' and origin.Name in {child.Name for child in owner.OutList},'STEP_ORIGIN_OWNER_LINK'
+ assert {parent.Name for parent in origin.InList}=={owner.Name},'STEP_ORIGIN_PARENT'
+ features=list(origin.OriginFeatures)
+ assert len(features)==6 and {feature.Role for feature in features}==set(datum_types),'STEP_ORIGIN_FEATURE_ROLES'
+ assert {child.Name for child in origin.OutList}=={feature.Name for feature in features},'STEP_ORIGIN_CHILD_LINKS'
+ owned_origins.add(origin.Name)
+ for feature in features:
+  assert feature.Name==feature.Role and feature.TypeId==datum_types[feature.Role] and feature.Label not in set(spec['part_ids']),'STEP_REFERENCE_DATUM_TYPE_NAME_ROLE'
+  assert {parent.Name for parent in feature.InList}=={origin.Name} and len(feature.Shape.Solids)==0,'STEP_REFERENCE_DATUM_OWNERSHIP'
+  assert feature.Name not in reference_names,'STEP_REFERENCE_DATUM_REUSED'
+  reference_names.add(feature.Name);reference_geometry.append({'name':feature.Name,'role':feature.Role,'type_id':feature.TypeId,'owner_part':owner.Name,'owner_origin':origin.Name,'solids':0})
+assert {obj.Name for obj in st.Objects if obj.TypeId=='App::Origin'}==owned_origins,'STEP_UNOWNED_ORIGIN'
+shaped=[o for o in st.Objects if hasattr(o,'Shape') and not o.Shape.isNull() and o.Name not in reference_names]
 ss=[o for o in shaped if len(o.Shape.Solids)==1]
 assert len(ss)==23 and len({s.Label for s in ss})==23,'STEP_PART_COUNT_OR_DUPLICATE_LABEL'
 assert {s.Label for s in ss}==set(spec['part_ids']),'STEP_PART_ID_LABELS'
 step_by_id={s.Label:s for s in ss}
-leaf_compound=Part.makeCompound([s.Shape for s in ss]);step_aggregates=[]
+step_aggregates=[]
 for aggregate in shaped:
  if len(aggregate.Shape.Solids)==1:continue
  assert aggregate.Label not in set(spec['part_ids']),'STEP_AGGREGATE_USES_RESERVED_PART_ID'
  assert aggregate.Shape.isValid() and len(aggregate.Shape.Solids)==23,('STEP_UNEXPECTED_EXTRA_SHAPE',aggregate.Name,aggregate.Label,len(aggregate.Shape.Solids))
- difference=aggregate.Shape.cut(leaf_compound).Volume+leaf_compound.cut(aggregate.Shape).Volume
- assert math.isfinite(difference) and 0<=difference<.01,('STEP_AGGREGATE_GEOMETRY',aggregate.Name,difference)
- step_aggregates.append({'imported_name':aggregate.Name,'imported_label':aggregate.Label,'solids':23,'symmetric_difference_mm3':difference})
+ # Do not construct another compound: makeCompound crashed in native a132 CI.
+ # Match the existing aggregate solids to all named leaves geometrically, with
+ # exactly one candidate per leaf and no aggregate solid left over or reused.
+ aggregate_solids=aggregate.Shape.Solids;consumed=set();matches=[]
+ assert all(solid.isValid() for solid in aggregate_solids),'STEP_AGGREGATE_INVALID_SOLID'
+ for leaf in ss:
+  leaf_shape=leaf.Shape;found=[]
+  for index,solid in enumerate(aggregate_solids):
+   if max(abs(a-b) for a,b in zip(bounds(leaf_shape),bounds(solid)))>=1e-7 or abs(leaf_shape.Volume-solid.Volume)>=.01:continue
+   difference=leaf_shape.cut(solid).Volume+solid.cut(leaf_shape).Volume
+   assert math.isfinite(difference) and difference>=0,'STEP_AGGREGATE_NONFINITE_DIFFERENCE'
+   if difference<.01:found.append((index,difference))
+  assert len(found)==1,('STEP_AGGREGATE_UNIQUE_GEOMETRIC_MATCH',aggregate.Name,leaf.Label,found)
+  index,difference=found[0]
+  assert index not in consumed,('STEP_AGGREGATE_REUSED_SOLID',aggregate.Name,index)
+  consumed.add(index);matches.append({'leaf_id':leaf.Label,'aggregate_solid_index':index,'symmetric_difference_mm3':difference})
+ assert consumed==set(range(23)),('STEP_AGGREGATE_UNUSED_SOLIDS',aggregate.Name,sorted(consumed))
+ step_aggregates.append({'imported_name':aggregate.Name,'imported_label':aggregate.Label,'solids':23,'matching_method':'unique bounds/volume filtered BRep symmetric difference; all 23 existing aggregate solids consumed once; no name reassignment','matches':matches})
+classified={leaf.Name for leaf in ss}|reference_names|owned_origins|{row['imported_name'] for row in step_aggregates}
+assert {obj.Name for obj in st.Objects}==classified,('STEP_UNCLASSIFIED_IMPORT_OBJECTS',sorted({obj.Name for obj in st.Objects}-classified))
 meshes=[];step_identity=[]
 for o in objs:
  s=step_by_id[o.PartID]
@@ -141,5 +177,5 @@ for o in objs:
  step_identity.append({'id':o.PartID,'imported_name':s.Name,'imported_label':s.Label,'symmetric_difference_mm3':difference})
  vs,fs=s.Shape.tessellate(.1);meshes.append({'id':o.Name,'moving':o.Moving,'movement':o.Movement,'motion':o.Movement,'vertices_m':[[v.x/1000,v.y/1000,v.z/1000] for v in vs],'faces':fs,'bounds_m':bounds(o.Shape)})
 (OUT/'mesh-transfer.json').write_text(json.dumps({'objects':meshes,'pivot_m':spec['pivot_m'],'bolt':spec['bolt']},separators=(',',':')))
-(OUT/'cad-audit.json').write_text(json.dumps({'FreeCAD':A.Version(),'parts':23,'fcstd_reloaded':True,'step_reloaded':True,'step_identity_method':'OCAF exported Label equals PartID; exact unique imported single-solid Label lookup, never file order; any aggregate must equal all 23 leaves','step_identity':step_identity,'step_import_inventory':step_inventory,'step_aggregates':step_aggregates,'native_dimension_edit':True,'dimension_before_mm':900,'dimension_changed_mm':880,'dimension_reloaded_mm':n.getRawValue(),'native_dimensions':dimension_rows,'parameter_variations':paramrows,'pose_bounds':rows,'manual_gui':'NOT_TESTED'},indent=2))
+(OUT/'cad-audit.json').write_text(json.dumps({'FreeCAD':A.Version(),'parts':23,'fcstd_reloaded':True,'step_reloaded':True,'step_identity_method':'OCAF exported Label equals PartID; exact unique imported single-solid Label lookup, never file order; any aggregate must bijectively match all 23 leaves by BRep','step_identity':step_identity,'step_import_inventory':step_inventory,'step_reference_geometry':reference_geometry,'step_aggregates':step_aggregates,'native_dimension_edit':True,'dimension_before_mm':900,'dimension_changed_mm':880,'dimension_reloaded_mm':n.getRawValue(),'native_dimensions':dimension_rows,'parameter_variations':paramrows,'pose_bounds':rows,'manual_gui':'NOT_TESTED'},indent=2))
 print('NATIVE PASS',flush=True);os._exit(0)

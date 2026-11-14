@@ -52,8 +52,16 @@ def check(out=None):
  audit=load(out/'cad-audit.json');need(audit['parts']==23 and audit['fcstd_reloaded'] and audit['step_reloaded'] and audit['native_dimension_edit'],'native audit');need(audit['dimension_before_mm']==900 and audit['dimension_changed_mm']==880 and audit['dimension_reloaded_mm']==900,'dimension linkage')
  step=audit.get('step_identity',[]);need(len(step)==23 and {r['id'] for r in step}==PARTS,'STEP identity coverage')
  for row in step:need(row['imported_label']==row['id'] and finite(row['symmetric_difference_mm3']) and 0<=row['symmetric_difference_mm3']<.01,'STEP named semantic identity')
- need('step_import_inventory' in audit and 'step_aggregates' in audit,'STEP import inventory')
- for row in audit['step_aggregates']:need(row['imported_label'] not in PARTS and row['solids']==23 and finite(row['symmetric_difference_mm3']) and 0<=row['symmetric_difference_mm3']<.01,'STEP aggregate equals all leaves')
+ need('step_import_inventory' in audit and 'step_aggregates' in audit and 'step_reference_geometry' in audit,'STEP import inventory')
+ datum_types={role:kind for roles,kind in [(('X_Axis','Y_Axis','Z_Axis'),'App::Line'),(('XY_Plane','XZ_Plane','YZ_Plane'),'App::Plane')] for role in roles}
+ references=audit['step_reference_geometry'];owners={r['owner_origin'] for r in references}
+ for owner in owners:
+  features=[r for r in references if r['owner_origin']==owner];need(len(features)==6 and {r['role'] for r in features}==set(datum_types),'STEP origin six datum roles')
+ for row in references:need(row['name']==row['role'] and row['type_id']==datum_types[row['role']] and row['solids']==0,'STEP reference datum identity')
+ for row in audit['step_aggregates']:
+  need(row['imported_label'] not in PARTS and row['solids']==23,'STEP aggregate identity/count')
+  matches=row.get('matches',[]);need(len(matches)==23 and {m['leaf_id'] for m in matches}==PARTS and {m['aggregate_solid_index'] for m in matches}==set(range(23)),'STEP aggregate leaf-solid bijection')
+  for match in matches:need(finite(match['symmetric_difference_mm3']) and 0<=match['symmetric_difference_mm3']<.01,'STEP aggregate BRep match')
  b=load(out/'blender-audit.json');poses=[(1,0,0),(31,0,.14),(61,0,0),(106,45,0),(151,90,0),(241,0,0)]
  for k in ['created','blend_reopened','glb_reopened']:
   need(len(b[k])==6,'Blender coverage');need([(r['frame'],r['angle_degrees'],r['bolt_m']) for r in b[k]]==poses,'Blender poses');need(all(r['parts']==23 and r['bounds_and_hierarchy']=='PASS' for r in b[k]),'Blender evidence')

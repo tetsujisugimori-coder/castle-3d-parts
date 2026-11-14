@@ -109,23 +109,74 @@ def native_cad(repo, generated, evidence):
     step = A.newDocument('SeparateProcessStepReadback')
     Import.insert(str(generated/'assembly.step'), step.Name)
     step.recompute()
-    shaped = [o for o in step.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
-    inventory=[{'name':o.Name,'label':o.Label,'type_id':o.TypeId,'solids':len(o.Shape.Solids),'valid':o.Shape.isValid(),'volume_mm3':o.Shape.Volume} for o in shaped]
+    # An imported App::Part owns one Origin and exactly six standard datum
+    # features. They are reference geometry, never arbitrary zero-solid skips.
+    def link_name(value):return value.Name if hasattr(value,'Name') else None
+    inventory=[]
+    for obj in step.Objects:
+        shape=obj.Shape if hasattr(obj,'Shape') else None
+        inventory.append({'name':obj.Name,'label':obj.Label,'type_id':obj.TypeId,
+                          'solids':len(shape.Solids) if shape is not None else None,
+                          'valid':shape.isValid() if shape is not None else None,
+                          'shape_is_null':shape.isNull() if shape is not None else None,
+                          'volume_mm3':shape.Volume if shape is not None else None,
+                          'owners':[o.Name for o in obj.InList],
+                          'origin':link_name(getattr(obj,'Origin',None)),
+                          'origin_features':[o.Name for o in getattr(obj,'OriginFeatures',[])],
+                          'role':str(obj.Role) if hasattr(obj,'Role') else None})
     save(evidence/'step-import-inventory.json',inventory)
-    assert all(o.Shape.isValid() and len(o.Shape.Solids)>0 for o in shaped), ('STEP invalid/open shape',inventory)
+    roles={'X_Axis':'App::Line','Y_Axis':'App::Line','Z_Axis':'App::Line',
+           'XY_Plane':'App::Plane','XZ_Plane':'App::Plane','YZ_Plane':'App::Plane'}
+    references=set();reference_rows=[]
+    for owner in [o for o in step.Objects if o.TypeId=='App::Part']:
+        origin=getattr(owner,'Origin',None)
+        assert origin is not None and origin.TypeId=='App::Origin' and origin in step.Objects, ('STEP invalid owned Origin',inventory)
+        assert origin in owner.OutList and list(origin.InList)==[owner] and origin.Name not in references, ('STEP shared/unowned Origin',inventory)
+        features=list(origin.OriginFeatures)
+        assert len(features)==6 and len({o.Name for o in features})==6, ('STEP Origin feature coverage',inventory)
+        assert {str(o.Role):o.TypeId for o in features}==roles and {o.Name for o in origin.OutList}=={o.Name for o in features}, ('STEP Origin role/type/children mismatch',inventory)
+        references.add(origin.Name)
+        for feature in features:
+            assert feature in step.Objects and list(feature.InList)==[origin] and feature.Name==str(feature.Role) and feature.Name not in references, ('STEP unowned/shared/misnamed datum',inventory)
+            assert hasattr(feature,'Shape') and len(feature.Shape.Solids)==0, ('STEP datum contains physical solid',inventory)
+            references.add(feature.Name)
+            reference_rows.append({'name':feature.Name,'role':str(feature.Role),'type_id':feature.TypeId,'origin':origin.Name,'owner_part':owner.Name,'solid_count':0})
+    shaped=[o for o in step.Objects if o.Name not in references and hasattr(o,'Shape') and not o.Shape.isNull()]
+    assert all(o.Shape.isValid() and len(o.Shape.Solids)>0 for o in shaped), ('STEP invalid/open non-reference shape',inventory)
     imported=[o for o in shaped if len(o.Shape.Solids)==1]
     aggregates=[o for o in shaped if len(o.Shape.Solids)>1]
     assert len(imported)==23, ('STEP leaf count',inventory)
     assert {o.Label for o in imported}==set(ids) and len({o.Label for o in imported})==23, ('STEP exact PartID labels',inventory)
     assert all(o.Shape.isValid() and len(o.Shape.Solids)==1 for o in imported), 'STEP valid single solids'
-    assembled=Part.makeCompound([o.Shape for o in imported])
     aggregate_rows=[]
+    # Validate a unique complete geometric bijection instead of calling the
+    # Part.makeCompound API that crashed in the preserved a132 native run.
+    # Solid indices are diagnostics only; file order never assigns a PartID.
+    import math
+    def mm_bounds(shape):
+        box=shape.BoundBox
+        return [getattr(box,key) for key in ['XMin','YMin','ZMin','XMax','YMax','ZMax']]
     for aggregate in aggregates:
         assert aggregate.Label not in ids and aggregate.Name not in ids, ('STEP aggregate uses reserved PartID',inventory)
-        assert len(aggregate.Shape.Solids)==23, ('STEP incomplete aggregate',inventory)
-        delta=aggregate.Shape.cut(assembled).Volume+assembled.cut(aggregate.Shape).Volume
-        assert delta<.01,('STEP aggregate differs from exact 23 leaves',aggregate.Label,delta)
-        aggregate_rows.append({'name':aggregate.Name,'label':aggregate.Label,'solids':23,'symmetric_difference_mm3':delta})
+        solids=list(aggregate.Shape.Solids)
+        assert len(solids)==23 and all(s.isValid() and len(s.Solids)==1 for s in solids), ('STEP incomplete/invalid aggregate',inventory)
+        remaining=set(range(23));mapping=[]
+        for leaf in sorted(imported,key=lambda o:o.Label):
+            shape=leaf.Shape;bounds=mm_bounds(shape);matches=[]
+            for index in remaining:
+                candidate=solids[index]
+                if abs(shape.Volume-candidate.Volume)>=.01:continue
+                if max(abs(a-b) for a,b in zip(bounds,mm_bounds(candidate)))>=1e-4:continue
+                difference=shape.cut(candidate).Volume+candidate.cut(shape).Volume
+                assert math.isfinite(difference) and difference>=0, ('STEP invalid geometric comparison',leaf.Label,index,difference)
+                if difference<.01:matches.append((index,difference))
+            assert len(matches)==1, ('STEP aggregate leaf match missing/ambiguous',aggregate.Label,leaf.Label,matches)
+            index,difference=matches[0];remaining.remove(index)
+            mapping.append({'leaf_id':leaf.Label,'aggregate_solid_index':index,'symmetric_difference_mm3':difference})
+        assert not remaining and len(mapping)==23, ('STEP aggregate extra/unconsumed solid',remaining)
+        aggregate_rows.append({'name':aggregate.Name,'label':aggregate.Label,'solids':23,'matching_method':'unique bounds/volume-prefiltered symmetric-difference bijection; never file order','all_solids_consumed':True,'matches':mapping})
+    recognized={o.Name for o in imported+aggregates}|references
+    assert recognized=={o.Name for o in step.Objects}, ('STEP unexpected nonphysical/import object',inventory)
     step_rows=[]
     for name in ids:
         matches=[o for o in imported if o.Label==name]
@@ -162,7 +213,7 @@ def native_cad(repo, generated, evidence):
     transition(doc,0,.07)
     doc.saveAs(str(evidence/'separate-reopen-state.FCStd'))
     result={'status':'PASS','FreeCAD':A.Version(),'parts':23,'separate_process_fcstd_reopen':True,
-            'separate_process_step_reopen':True,'semantic_reference_comparison':semantic,'step_comparison':step_rows,'step_import_inventory':inventory,'step_aggregate_comparison':aggregate_rows,
+            'separate_process_step_reopen':True,'semantic_reference_comparison':semantic,'step_comparison':step_rows,'step_import_inventory':inventory,'step_aggregate_comparison':aggregate_rows,'step_reference_datums':reference_rows,
             'native_dimension_variants':dimension_rows,'saved_state':{'angle_degrees':0,'bolt_m':.07},
             'continuous_path':'UNKNOWN','manual_gui':'NOT_TESTED','physical_strength':'NOT_TESTED'}
     save(evidence/'native-independent-readback.json',result)

@@ -51,3 +51,9 @@ run43600661295の名前付きSTEP rawには23 PartIDが入ったが、読込Shap
 mesh検証器の独立反例では、同一境界点の5e-16m差がfloat32丸めで一つになる正常な転送をexact-tuple検査が拒否した。元fixtureを保持し、sourceを固定代表点への距離min(1e-9m, 比較許容値/1000)以内だけ同値化する。近傍の連鎖でclusterを無制限に広げない。出力に元unique数・同値化後数・最大距離と許容値を記録する。欠落・変形・逆向き・重複の三角形反例は引き続き拒否する。
 
 2-Dの旧traceでは、最後のresearch viewerがstatus要素の存在だけでcloseされ依存配信が未完了の例があった。新runnerはstatus[data-loaded=true]とnetworkidleまで待ち、最後のJS/HTTPエラー検査を実ロード後に行う。元の正常行列と全assertは維持する。
+
+## STEP集約検査のnative異常と参照datumの分類
+
+run43601558970のinventoryでroot App::Partが23solidを持ち、そのほかに23個の正しいPartID leafを持つことを確認した。ただし新しいPart.makeCompound呼出しでSIGSEGVとなり、このrunのnative受入はFAIL。原artifactは119,841 bytes、SHA-256 `b47203aea85bef8ea2f65c6d852651ea3f5947eedd96a17aeb7febc4a6c86ea2`。直接原因の詳細はUNKNOWN。検査をskipせず、既存aggregateの23solidをleaf形状へ境界・体積・BRep対称差で唯一対応させ、全件消費する検査へ変更する。
+
+原inventoryにはApp::Originの3軸/3平面も含まれ、solid0であっても正規の参照datumだった。App::Part→Origin→6Roleの正逆所有リンク、型、名称を確認して参照として分類する。任意の余剰faceや未知objectを除外するのではない。全objectを既知leaf・aggregate・所有Origin・6datumへ分類できなければ拒否する。次CIでこのAPI経路と実測を確認する。
