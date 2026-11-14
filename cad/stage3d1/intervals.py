@@ -7,7 +7,7 @@ def rational(x):
 
 def classify(lo, hi, sample, speed, clearance=0, max_depth=6, depth=0):
     lo,hi,speed,clearance=map(rational,(lo,hi,speed,clearance))
-    if lo>=hi or speed<0 or clearance<0 or not isinstance(max_depth,int) or not 0<=max_depth<=12:
+    if lo>=hi or speed<0 or clearance<0 or type(max_depth) is not int or not 0<=max_depth<=12 or type(depth) is not int or not 0<=depth<=max_depth:
         raise ValueError('INVALID_CONTRACT')
     mid=(lo+hi)/2
     obs=sample(mid)

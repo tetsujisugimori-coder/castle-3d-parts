@@ -24,6 +24,11 @@ class Intervals(unittest.TestCase):
  def test_invalid(self):
   for args in [(1,0,1),(0,1,-1)]:
    with self.assertRaises(ValueError):classify(args[0],args[1],oracle(lambda x:1),args[2])
+ def test_recursion_budget_input(self):
+  for depth in [-1,-10000,True,0.5,1]:
+   with self.assertRaises(ValueError):classify(0,1,oracle(lambda x:0),0,max_depth=0,depth=depth)
+  for budget in [True,False,0.5,-1,13]:
+   with self.assertRaises(ValueError):classify(0,1,oracle(lambda x:0),0,max_depth=budget)
  def test_refinement_normal(self):
   r=classify(0,1,oracle(lambda x:F(1,10)),1);self.assertTrue(all(x['status']=='PASS' for x in r));validate_cover(r,0,1)
 if __name__=='__main__':unittest.main()
