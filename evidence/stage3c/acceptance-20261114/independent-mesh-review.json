@@ -1,0 +1,134 @@
+{
+  "source_sha256": "8a83520087e2c9f0209429338e69d85faef62a34ed8e65f347dc17468bffa2bc",
+  "scope": "independent geometry acceptance and adversarial mesh controls; NOT actual Blender execution",
+  "rows": [
+    {
+      "name": "exact same mesh",
+      "status": "PASS",
+      "expected_accept": true,
+      "accepted": true,
+      "error": null,
+      "result": {
+        "status": "PASS",
+        "unique_vertices": 8,
+        "actual_vertices": 8,
+        "triangles": 12,
+        "maximum_vertex_error_m": 0.0,
+        "tolerance_m": 1e-05,
+        "vertex_splits_and_reordering_allowed": true
+      }
+    },
+    {
+      "name": "GLB split vertices + arbitrary vertex/face order + cyclic indices",
+      "status": "PASS",
+      "expected_accept": true,
+      "accepted": true,
+      "error": null,
+      "result": {
+        "status": "PASS",
+        "unique_vertices": 8,
+        "actual_vertices": 36,
+        "triangles": 12,
+        "maximum_vertex_error_m": 0.0,
+        "tolerance_m": 1e-05,
+        "vertex_splits_and_reordering_allowed": true
+      }
+    },
+    {
+      "name": "sub-tolerance coordinate roundtrip",
+      "status": "PASS",
+      "expected_accept": true,
+      "accepted": true,
+      "error": null,
+      "result": {
+        "status": "PASS",
+        "unique_vertices": 8,
+        "actual_vertices": 8,
+        "triangles": 12,
+        "maximum_vertex_error_m": 3.000000000086267e-06,
+        "tolerance_m": 1e-05,
+        "vertex_splits_and_reordering_allowed": true
+      }
+    },
+    {
+      "name": "same bbox corner displaced inward",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "unexpected mesh vertex",
+      "result": null
+    },
+    {
+      "name": "same bbox missing one triangle",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle coverage/winding mismatch",
+      "result": null
+    },
+    {
+      "name": "same counts triangle duplicate substitutes missing face",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle coverage/winding mismatch",
+      "result": null
+    },
+    {
+      "name": "all surface faces absent, vertices and bbox unchanged",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "missing triangle faces",
+      "result": null
+    },
+    {
+      "name": "triangle index order rewired across cube",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle coverage/winding mismatch",
+      "result": null
+    },
+    {
+      "name": "nonfinite vertex",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "vertex coordinates",
+      "result": null
+    },
+    {
+      "name": "negative vertex index",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle indices",
+      "result": null
+    },
+    {
+      "name": "out of range vertex index",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "triangle indices",
+      "result": null
+    },
+    {
+      "name": "coordinate outside tolerance",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "unexpected mesh vertex",
+      "result": null
+    },
+    {
+      "name": "collapsed triangle",
+      "status": "PASS",
+      "expected_accept": false,
+      "accepted": false,
+      "error": "degenerate triangle",
+      "result": null
+    }
+  ]
+}

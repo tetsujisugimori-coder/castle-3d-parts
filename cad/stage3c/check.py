@@ -30,7 +30,9 @@ def validate_collision(c):
   need(r['angle_degrees']==0 and r['bolt_m']==i/1000 and r['position_m']==i/1000,'bolt identity');validate_pairs(r['pairs'],pairs_expected({'GATE_Bolt'}),c['tolerance_mm3'])
  fixed={tuple(sorted([a,b])) for a in IDS-MOVING for b in IDS-MOVING if a!=b};validate_pairs(c['fixed_pairs'],fixed,c['tolerance_mm3'])
  return {'door_samples':91,'door_pairs':sum(len(r['pairs']) for r in c['samples']),'bolt_samples':141,'bolt_pairs':sum(len(r['pairs']) for r in c['bolt_samples']),'fixed_pairs':len(fixed)}
-SOURCES={'build.py','state.py','native_test.py','blender.py','collision.py','run.py','legacy.py','finalize.py','check.py','check_test.py','spec.json'}
+CORE_SOURCES={'build.py','state.py','native_test.py','blender.py','collision.py','run.py','legacy.py','finalize.py','check.py','check_test.py','spec.json'}
+HISTORY_SOURCES={'history.py','history_test.py','history_native_test.py','history_parity_test.py'}
+SOURCES=CORE_SOURCES|HISTORY_SOURCES
 CONTACTS={tuple(sorted(x)) for x in [('GATE_BoltGuide_Left','GATE_Door'),('GATE_BoltGuide_Right','GATE_Door'),('GATE_BoltReceiver','GATE_Post_Right'),('GATE_Doorstop','GATE_Post_Right'),('GATE_Doorstop','GATE_Door'),('GATE_Joint_Left','GATE_Post_Left'),('GATE_Joint_Left','GATE_Beam'),('GATE_Joint_Right','GATE_Post_Right'),('GATE_Joint_Right','GATE_Beam'),('GATE_AxialKeeper','GATE_Bearing_Upper'),('GATE_AxialKeeper','GATE_Spindle_Upper')]}
 def validate_sources(hashes):need(set(hashes)==SOURCES,'source provenance coverage')
 def validate_contacts(rows):need(len(rows)==len(CONTACTS) and {tuple(sorted((p['a'],p['b']))) for p in rows}==CONTACTS,'contact identity coverage')
@@ -48,6 +50,8 @@ def check(out=None):
   xml=z.read('Document.xml').decode();need(all(x in xml for x in PARTS),'CAD IDs');need(all('template-'+n+'.svg' in z.namelist() for n in ['assembly','bolt','positions','doorstop','support','joinery']),'embedded templates')
  data=(out/'assembly.glb').read_bytes();magic,version,length=struct.unpack_from('<III',data);need(magic==0x46546c67 and version==2 and length==len(data),'GLB header');n,t=struct.unpack_from('<II',data,12);need(t==0x4e4f534a,'GLB JSON');g=json.loads(data[20:20+n]);nodes=g['nodes'];names=[x.get('name') for x in nodes];need(all(names.count(p)==1 for p in PARTS|{'GatePivot','BoltSlide'}),'GLB IDs');need(len([x for x in nodes if 'mesh' in x])==23,'GLB part count')
  audit=load(out/'cad-audit.json');need(audit['parts']==23 and audit['fcstd_reloaded'] and audit['step_reloaded'] and audit['native_dimension_edit'],'native audit');need(audit['dimension_before_mm']==900 and audit['dimension_changed_mm']==880 and audit['dimension_reloaded_mm']==900,'dimension linkage')
+ step=audit.get('step_identity',[]);need(len(step)==23 and {r['id'] for r in step}==PARTS,'STEP identity coverage')
+ for row in step:need(row['imported_label']==row['id'] and finite(row['symmetric_difference_mm3']) and 0<=row['symmetric_difference_mm3']<.01,'STEP named semantic identity')
  b=load(out/'blender-audit.json');poses=[(1,0,0),(31,0,.14),(61,0,0),(106,45,0),(151,90,0),(241,0,0)]
  for k in ['created','blend_reopened','glb_reopened']:
   need(len(b[k])==6,'Blender coverage');need([(r['frame'],r['angle_degrees'],r['bolt_m']) for r in b[k]]==poses,'Blender poses');need(all(r['parts']==23 and r['bounds_and_hierarchy']=='PASS' for r in b[k]),'Blender evidence')

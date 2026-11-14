@@ -6,7 +6,7 @@ from PySide2 import QtWidgets,QtCore
 import faulthandler
 faulthandler.dump_traceback_later(40,repeat=True)
 q=QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
-import FreeCAD as A,FreeCADGui as G,Part
+import FreeCAD as A,FreeCADGui as G,Part,Import
 A.ConfigSet("AppTempPath",tempfile.gettempdir()+"/")
 G.showMainWindow()
 import TechDrawGui
@@ -107,12 +107,27 @@ state(0,0);d.saveAs(str(OUT/'assembly.FCStd'));names=[o.Name for o in objs];A.cl
 rows=[]
 for angle,position in [(0,0),(0,70),(0,140),(45,0),(90,0),(0,0)]:
  state(angle,position);rows.append({'angle_degrees':angle,'bolt_m':position/1000,'parts':[{'id':o.Name,'bounds_m':bounds(o.Shape)} for o in objs]})
-state(0,0);Part.export(objs,str(OUT/'assembly.step'));st=A.newDocument('ReloadStep');Part.insert(str(OUT/'assembly.step'),st.Name);st.recompute();ss=[o for o in st.Objects if hasattr(o,'Shape') and o.Shape.Solids];assert len(ss)==23
-meshes=[]
-for o,s in zip(objs,ss):
+state(0,0)
+# STEP identity travels as the object Label through FreeCAD's OCAF exporter.
+# Part.export writes bare BRep and loses these names; file order is not identity.
+assert len(objs)==23 and {o.PartID for o in objs}==set(spec['part_ids'])
+assert all(o.Name==o.PartID==o.Label for o in objs),'SOURCE_PART_ID_LABEL'
+Import.export(objs,str(OUT/'assembly.step'),exportHidden=True,legacy=False,keepPlacement=True)
+st=A.newDocument('ReloadStep');Import.insert(str(OUT/'assembly.step'),st.Name);st.recompute()
+ss=[o for o in st.Objects if hasattr(o,'Shape') and o.Shape.Solids]
+assert len(ss)==23 and len({s.Label for s in ss})==23,'STEP_PART_COUNT_OR_DUPLICATE_LABEL'
+assert {s.Label for s in ss}==set(spec['part_ids']),'STEP_PART_ID_LABELS'
+step_by_id={s.Label:s for s in ss}
+meshes=[];step_identity=[]
+for o in objs:
+ s=step_by_id[o.PartID]
+ assert s.Shape.isValid() and len(s.Shape.Solids)==1,(o.PartID,'STEP_SINGLE_VALID_SOLID')
  assert max(abs(a-b) for a,b in zip(bounds(o.Shape),bounds(s.Shape)))<1e-7,(o.Name,'BOUNDS')
  assert abs(o.Shape.Volume-s.Shape.Volume)<.01
+ difference=o.Shape.cut(s.Shape).Volume+s.Shape.cut(o.Shape).Volume
+ assert math.isfinite(difference) and 0<=difference<.01,(o.PartID,'STEP_SYMMETRIC_DIFFERENCE',difference)
+ step_identity.append({'id':o.PartID,'imported_name':s.Name,'imported_label':s.Label,'symmetric_difference_mm3':difference})
  vs,fs=s.Shape.tessellate(.1);meshes.append({'id':o.Name,'moving':o.Moving,'movement':o.Movement,'motion':o.Movement,'vertices_m':[[v.x/1000,v.y/1000,v.z/1000] for v in vs],'faces':fs,'bounds_m':bounds(o.Shape)})
 (OUT/'mesh-transfer.json').write_text(json.dumps({'objects':meshes,'pivot_m':spec['pivot_m'],'bolt':spec['bolt']},separators=(',',':')))
-(OUT/'cad-audit.json').write_text(json.dumps({'FreeCAD':A.Version(),'parts':23,'fcstd_reloaded':True,'step_reloaded':True,'native_dimension_edit':True,'dimension_before_mm':900,'dimension_changed_mm':880,'dimension_reloaded_mm':n.getRawValue(),'native_dimensions':dimension_rows,'parameter_variations':paramrows,'pose_bounds':rows,'manual_gui':'NOT_TESTED'},indent=2))
+(OUT/'cad-audit.json').write_text(json.dumps({'FreeCAD':A.Version(),'parts':23,'fcstd_reloaded':True,'step_reloaded':True,'step_identity_method':'OCAF exported Label equals PartID; exact unique imported Label lookup, never file order','step_identity':step_identity,'native_dimension_edit':True,'dimension_before_mm':900,'dimension_changed_mm':880,'dimension_reloaded_mm':n.getRawValue(),'native_dimensions':dimension_rows,'parameter_variations':paramrows,'pose_bounds':rows,'manual_gui':'NOT_TESTED'},indent=2))
 print('NATIVE PASS',flush=True);os._exit(0)

@@ -32,6 +32,8 @@ jobs:
       - run: python scripts/stage3c-record-command.py stage3c-ci/history-double -- python -B cad/stage3c/history_test.py
       - run: python scripts/stage3c-record-command.py stage3c-ci/history-parity -- python -B cad/stage3c/history_parity_test.py
       - run: python scripts/stage3c-record-command.py stage3c-ci/red-green-command -- python -B scripts/stage3c-history-red-green.py stage3c-ci/red-green
+      - run: python scripts/stage3c-record-command.py stage3c-ci/mesh-tests -- python -B tests/stage3c-mesh-integrity.test.py
+      - run: python scripts/stage3c-record-command.py stage3c-ci/mesh-red-green-command -- python -B scripts/stage3c-mesh-red-green.py stage3c-ci/mesh-red-green
       - run: python scripts/stage3c-record-command.py stage3c-ci/build -- node scripts/build-stage3c-site.mjs
       - name: Hash original evidence
         if: always()

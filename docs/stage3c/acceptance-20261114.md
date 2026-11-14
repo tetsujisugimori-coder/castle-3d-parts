@@ -37,3 +37,9 @@
 ## native CI初回の環境失敗と修正
 
 run43599339799のnative job132460526735はCAD処理前のgit showがdubious ownershipでexit128。原job logを正規APIで取得して確認した。artifact14115497309は343 bytes、SHA-256 `14ece740287b69295b6e8b1c422d742f8797120d7bf1eef91c5e7689b28ff6ca`。空git.txtと台帳だけなので、native生成・再読込はこのrunではNOT_TESTEDである。失敗を残し、CIの既知checkoutパスだけをgit -c safe.directoryでコマンド単位に指定する。ホスト全体の設定・所有権・ACLは変更しない。修正後runは別に照合する。
+
+## 実生成で発見したSTEPと検証器の不整合
+
+run43599726462（候補e53d67d）のnativeはFCStd/STEP/blend/GLB再生成と32,650pairの意味的比較まで成功したが、STEP ID検査で停止した。旧Part.export出力は汎用PRODUCTと無名solidを持ち、23 PartIDを埋め込んでいない。裸形状の順番対応を受入根拠にしない。新buildはOCAF Import.export/Import.insertで23 PartIDとLabelを保持し、一意なLabel辞書とBRep対称差で検証する。CORE11＋履歴4のsource hashを明示し直すため、旧保存生成物は新ソース検査では意図的に不合格となる。正しい隔離再生成成果を取得後、必要な正式生成物だけ更新し、最終CIで再照合する。旧原本は445f3718と保全ZIPに残る。
+
+別担当は旧Blender再読込検査へ、外接寸法を保つ頂点変形と面欠落を注入し誤受理を実証した（synthetic bpy adapterであり実Blender実行とは区別）。新検証器は全頂点の座標対応と向きを含む三角形集合を照合し、glTFの頂点分割・並び替えだけ許容する。同じ反例を拒否し、正当なfloat32丸めも23部材すべて受理することを独立確認。最終nativeでは実blend/GLBの各23部材×6姿勢へこの検証器を適用する。

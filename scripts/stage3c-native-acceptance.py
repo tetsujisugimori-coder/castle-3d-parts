@@ -1,4 +1,5 @@
-"""Stage3C native CI orchestration. Core generation scripts remain unchanged.
+"""Stage3C native CI orchestration with strict named STEP identity.
+Preserved original generators remain in Git history; current source hashes are verified.
 
 Run inside the Debian trixie native CI job, after installing FreeCAD/Blender.
 This is a batch software test, never manual GUI or physical-Safari evidence.
@@ -32,19 +33,19 @@ def load_module(path, name):
 
 def portable(repo, generated):
     checker = load_module(repo/'cad/stage3c/check.py', 'native_portable_checker')
-    assert checker.SOURCES == CORE, 'Preserved core source contract changed'
+    assert checker.SOURCES == CORE | HISTORY, 'Native source contract must explicitly cover core plus history'
     manifest = json.loads((generated/'manifest.json').read_text())
     expected = CORE | HISTORY
     assert set(manifest['source_hashes']) == expected, 'Unexpected/missing native source file'
     assert all(digest(repo/'cad/stage3c'/f) == h for f,h in manifest['source_hashes'].items())
-    # Explicit strict extension, not a skipped check or edited source/manifest.
-    # check() still verifies every core and history source hash and artifact hash.
-    checker.SOURCES = expected
+    # check.py declares the same strict core+history set. No runtime weakening.
+    # check() verifies every source hash and artifact hash; no manifest rewrite.
+    assert checker.SOURCES == expected
     result = checker.check(generated)
     result['scope'] = 'Portable validation of newly regenerated artifacts; native execution recorded separately'
     result['source_contract'] = {'core_generators': sorted(CORE), 'runtime_history_tests': sorted(HISTORY),
                                  'all_declared_hashes_verified': True,
-                                 'checker_source_modified': False,
+                                 'checker_contract': 'Explicit CORE11 plus HISTORY4 in checked source',
                                  'manifest_source_hashes_modified': False}
     return result
 
@@ -79,6 +80,7 @@ def native_cad(repo, generated, evidence):
     import FreeCAD as A
     import FreeCADGui as G
     import Part
+    import Import
     G.showMainWindow()
     import TechDrawGui
     sys.path.insert(0, str(repo/'cad/stage3c'))
@@ -105,13 +107,15 @@ def native_cad(repo, generated, evidence):
         semantic.append({'id':name,'symmetric_difference_mm3':delta,'volume_mm3':b.Volume})
     # STEP importer identity is required; no silent pairing merely by file order.
     step = A.newDocument('SeparateProcessStepReadback')
-    Part.insert(str(generated/'assembly.step'), step.Name)
+    Import.insert(str(generated/'assembly.step'), step.Name)
     step.recompute()
     imported = [o for o in step.Objects if hasattr(o,'Shape') and o.Shape.Solids]
     assert len(imported)==23, len(imported)
+    assert {o.Label for o in imported}==set(ids) and len({o.Label for o in imported})==23, 'STEP exact PartID labels'
+    assert all(o.Shape.isValid() and len(o.Shape.Solids)==1 for o in imported), 'STEP valid single solids'
     step_rows=[]
     for name in ids:
-        matches=[o for o in imported if name in {o.Name,o.Label}]
+        matches=[o for o in imported if o.Label==name]
         assert len(matches)==1, (name,'STEP identity',[(o.Name,o.Label) for o in imported])
         a=doc.getObject(name).Shape;b=matches[0].Shape
         delta=a.cut(b).Volume+b.cut(a).Volume
@@ -200,6 +204,7 @@ def native_blender(repo, generated, evidence, kind):
     from mathutils import Vector
     import math
     source=json.loads((generated/'mesh-transfer.json').read_text())
+    mesh_validator=load_module(repo/'scripts/stage3c-mesh-integrity.py','stage3c_mesh_integrity')
     pivot=Vector(source['pivot_m'])
     if kind=='blend':bpy.ops.wm.open_mainfile(filepath=str(generated/'assembly.blend'))
     else:
@@ -211,7 +216,7 @@ def native_blender(repo, generated, evidence, kind):
     for frame,angle,bolt in poses:
         bpy.context.scene.frame_set(frame);bpy.context.view_layer.update()
         c=math.cos(math.radians(angle));s=math.sin(math.radians(angle))
-        max_error=0
+        max_error=0;mesh_rows=[]
         for part in source['objects']:
             obj=bpy.data.objects.get(part['id']);assert obj and obj.get('part_id')==part['id']
             expected_parent='BoltSlide' if part['movement']=='bolt' else 'GatePivot' if part['moving'] else None
@@ -223,12 +228,17 @@ def native_blender(repo, generated, evidence, kind):
                     x=pivot.x+dx*c-dy*s;y=pivot.y+dx*s+dy*c
                 target.append((x,y,z))
             vs=[obj.matrix_world@v.co for v in obj.data.vertices]
+            obj.data.calc_loop_triangles()
+            actual_faces=[list(triangle.vertices) for triangle in obj.data.loop_triangles]
+            mesh_counts=mesh_validator.compare_mesh(target,part['faces'],[list(v) for v in vs],actual_faces,tolerance=1e-5)
+            mesh_rows.append({'id':part['id'],'status':'PASS',**mesh_counts})
             expected=[min(v[i] for v in target) for i in range(3)]+[max(v[i] for v in target) for i in range(3)]
             actual=[min(v[i] for v in vs) for i in range(3)]+[max(v[i] for v in vs) for i in range(3)]
             error=max(abs(a-b) for a,b in zip(expected,actual));assert error<1e-5,(part['id'],frame,error)
             max_error=max(max_error,error)
-        rows.append({'frame':frame,'angle_degrees':angle,'bolt_m':bolt,'parts':23,'maximum_bounds_error_m':max_error})
-    save(evidence/('separate-process-'+kind+'.json'),{'status':'PASS','Blender':bpy.app.version_string,'format':kind,'separate_process_reopen':True,'poses':rows,'manual_gui':'NOT_TESTED'})
+        assert len(mesh_rows)==23
+        rows.append({'frame':frame,'angle_degrees':angle,'bolt_m':bolt,'parts':23,'maximum_bounds_error_m':max_error,'vertex_triangle_comparison':'PASS','mesh_comparisons':mesh_rows})
+    save(evidence/('separate-process-'+kind+'.json'),{'status':'PASS','Blender':bpy.app.version_string,'format':kind,'separate_process_reopen':True,'poses':rows,'vertex_triangle_object_pose_comparisons':sum(len(row['mesh_comparisons']) for row in rows),'mesh_validator_sha256':digest(repo/'scripts/stage3c-mesh-integrity.py'),'manual_gui':'NOT_TESTED'})
 
 def orchestrate(args):
     repo=args.repo.resolve();evidence=args.evidence.resolve()
