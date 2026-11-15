@@ -54,6 +54,7 @@ class Archive(unittest.TestCase):
             data['x/analytical.json']=json.dumps(r).encode()
         if mode=='brep':data['x/native/'+PARTS[0]+'.brep']=b'wrong'
         if mode=='extra':data['extra/execution.json']=data['portable/execution.json'];data['extra/source/'+name]=data['portable/source/'+name]
+        if mode=='root':data={n.removeprefix('x/'):b for n,b in data.items()}
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'fixture.zip'
             with zipfile.ZipFile(p,'w') as z:
@@ -61,6 +62,7 @@ class Archive(unittest.TestCase):
             # This test scopes source inventory to one file; production audit does not.
             with patch.object(auditor,'source_paths',return_value=[ROOT/name]):return auditor.audit(p)
     def test_normal(self):self.assertEqual(self.check('normal')['d4_command_count'],7)
+    def test_root(self):self.assertEqual(self.check('root')['d4_command_count'],7)
     def test_faults(self):
         for mode in ['hidden','changed','failed','log','missing','promoted','extra','faces','source','intervals','boundary','brep']:
             with self.subTest(mode=mode),self.assertRaises((ValueError,KeyError)):self.check(mode)

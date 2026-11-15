@@ -29,3 +29,8 @@ The runner now imports each original and mutation operand independently from fix
 - Actual native raw JSON/BRep from implementation was inspected, but this reviewer did not independently rerun FreeCAD or import every BRep into another geometry kernel.
 - Formal final HEAD CI, original artifact retention and Library readback are PENDING and not certified here.
 - No remaining blocking P1/P2 found in reviewed local scope after corrections. Limited local technical review PASS, overall PARTIAL until final CI/evidence audits. CAD128UNKNOWN remains.
+
+## Independent addendum, 2026-11-15 09:20 UTC
+Separate reviewer independently compared the Library-retrieved local evidence bundle with the source ZIP: all bytes,24,564,854 bytes,SHA256 d108b7eb7ffb7868b01bbd6e167a1c6d2876715a01579ebee174fa432870d803,outer CRC,1,863 manifest entries including exact set/size/hash,and16 nested ZIP CRC checks passed. This is later local evidence packaging, not a formal CI original artifact. Library access scope and retention duration UNKNOWN.
+
+The exact-root-name correction retains slash-boundary matching and duplicate refusal. Independent use of the same normal/root synthetic fixtures against HEAD's old audit and changed audit reproduced old normal accepted/root rejected and new both accepted.41 unit methods independently passed. No added blocking finding; formal final CI and original-artifact audit remain PENDING.

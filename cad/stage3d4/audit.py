@@ -25,7 +25,7 @@ def audit(path):
             for suffix in ['stdout.log','stderr.log']:
                 if n.rsplit('/',1)[0]+'/'+suffix not in names:raise ValueError('LOG_MISSING')
         def unique(suffix):
-            found=[n for n in names if n.endswith(suffix)]
+            found=[n for n in names if n==suffix.lstrip('/') or n.endswith(suffix)]
             if len(found)!=1:raise ValueError('RESULT_MISSING_OR_DUPLICATED:'+suffix)
             return found[0],json.loads(z.read(found[0]))
         native_path,native=unique('/native/native.json');_,analytical=unique('/analytical.json')
