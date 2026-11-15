@@ -1,0 +1,9 @@
+{
+  "source_sha256": "f54c705d95b7e7699da1c69221e739fdd8fd84534114ac63e9dc2790adbe29a6",
+  "input": "real schema, model zero rotation matrix",
+  "actual": {
+    "status": "UNKNOWN",
+    "reason": "real-geometric-correspondence-and-inclusion-unproved"
+  },
+  "reason": "known non-rigid matrix should reject under a proper-rigid metadata contract; never a real safety PASS"
+}

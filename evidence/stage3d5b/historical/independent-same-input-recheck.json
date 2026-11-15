@@ -1,0 +1,29 @@
+{
+  "scope": "new independent execution of hash-matched reconstructed source v1 vs final v3, not original-time raw evidence",
+  "closed_tangent": {
+    "before": {
+      "status": "PASS",
+      "scope": "conditional analytic void only; bounds not verified here",
+      "inner_radius_m": "1",
+      "half_extents_m": [
+        "3/5",
+        "4/5"
+      ],
+      "real_brep": "UNKNOWN"
+    },
+    "after": {
+      "status": "FAIL",
+      "reason": "rectangle-touches-or-exits-open-void"
+    }
+  },
+  "missing_real_geometry": {
+    "before": {
+      "status": "UNKNOWN",
+      "reason": "real-geometric-correspondence-and-inclusion-unproved"
+    },
+    "after": {
+      "status": "FAIL",
+      "reason": "'geometry'"
+    }
+  }
+}

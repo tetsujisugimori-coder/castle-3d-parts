@@ -1,0 +1,66 @@
+name: Stage 3-D-5B boundary correspondence
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  portable:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      SUBMITTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record checkout identity
+        run: |
+          mkdir -p stage3d5b-portable
+          git show -s --format='%H %T %P' HEAD > stage3d5b-portable/checkout.txt
+          echo "$SUBMITTED_HEAD" > stage3d5b-portable/submitted-head.txt
+      - run: python -B cad/stage3d5b/record.py stage3d5b-portable/tests -- python -B -m unittest discover -s cad/stage3d5b -p 'test_*.py' -v
+      - run: python -B cad/stage3d5b/record.py stage3d5b-portable/d5 -- python -B -m unittest discover -s cad/stage3d5 -p 'test_*.py' -v
+      - run: python -B cad/stage3d5b/record.py stage3d5b-portable/report-command -- python -B cad/stage3d5b/run.py stage3d5b-portable/report
+      - run: python -B cad/stage3d5b/record.py stage3d5b-portable/independent-command -- python -B cad/stage3d5b/independent_check.py --candidate-dir cad/stage3d5b --output-dir stage3d5b-portable/independent
+      - name: Hash original evidence
+        if: always()
+        run: python scripts/stage3c-hash-evidence.py stage3d5b-portable
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3d5b-${{ github.event.pull_request.head.sha }}-portable
+          path: stage3d5b-portable/
+          if-no-files-found: error
+  native:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONDONTWRITEBYTECODE: '1'
+      QT_QPA_PLATFORM: offscreen
+      SUBMITTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Dedicated scratch and runtime versions
+        run: |
+          mkdir -p "$RUNNER_TEMP/stage3d5b" stage3d5b-native
+          echo "TMPDIR=$RUNNER_TEMP/stage3d5b" >> "$GITHUB_ENV"
+          dpkg-query -W freecad-python3 libfreecad-python3 > stage3d5b-native/package-versions.txt
+          git -c safe.directory="$GITHUB_WORKSPACE" show -s --format='%H %T %P' HEAD > stage3d5b-native/checkout.txt
+          echo "$SUBMITTED_HEAD" > stage3d5b-native/submitted-head.txt
+      - run: python3 -B cad/stage3d5b/record.py stage3d5b-native/command -- python3 -B cad/stage3d5b/native.py stage3d5b-native/extraction
+      - name: Hash original evidence
+        if: always()
+        run: python3 scripts/stage3c-hash-evidence.py stage3d5b-native
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3d5b-${{ github.event.pull_request.head.sha }}-native
+          path: stage3d5b-native/
+          if-no-files-found: error

@@ -1,0 +1,55 @@
+{
+  "scope": "fresh post-transplant conditional arithmetic/observation-contract check; no real CAD proof",
+  "status": "PASS",
+  "source_sha256": {
+    "boundary_contract.py": "42dd5d5f24a6a12ff6d9c68fe3eb50adb5a8173b55d3afb8ab62d904a64f8b51",
+    "circular_contract.py": "d848af9b6745c86478b4a7fcab7214354aef979b181ae0ea2816f3b11ff83289",
+    "test_boundary_contract.py": "892696f9c015850c04ad9a74e8d706cf12e9bf347a3e904bcd1c56b1fe2ea96d",
+    "test_circular_contract.py": "63197b571ec57251c78e586b835170aab8f052c81856c67d72baff4040d5be73"
+  },
+  "preserved_source_bytes_match": {
+    "boundary_contract.py": true,
+    "circular_contract.py": true,
+    "test_boundary_contract.py": true,
+    "test_circular_contract.py": true
+  },
+  "checker_sha256": "1f09079787f5319a58949d566b0239b12eee3cb5f31e3a280122c623a664bc05",
+  "seed": 35052,
+  "counts": {
+    "independent_fault_inputs": 17,
+    "normal_inputs": 1,
+    "contact_inputs": 3,
+    "real_gate_inputs": 1,
+    "rectangle_inputs": 10000,
+    "rounding_input_pairs": 5000
+  },
+  "failures": [],
+  "interval_snapshots": {
+    "old_reference": {
+      "PASS": 0,
+      "FAIL": 0,
+      "UNKNOWN": 128,
+      "NOT_TESTED": 0
+    },
+    "current_not_executed": {
+      "PASS": 0,
+      "FAIL": 0,
+      "UNKNOWN": 0,
+      "NOT_TESTED": 128
+    }
+  },
+  "shared_components": [
+    "implementation is called only as system under test",
+    "reference and implementation both use Python Fraction",
+    "same explicit closed-material/open-void semantics",
+    "candidate observation validation uses candidate circular.rigid; reviewer does not independently read actual transforms"
+  ],
+  "independent_components": [
+    "reviewer fixture and mutations",
+    "four-corner reference equations",
+    "divmod grid-rounding reference"
+  ],
+  "real_brep_inclusion": "UNKNOWN",
+  "actual_cad_execution": "NOT_TESTED",
+  "command_template": "python -B cad/stage3d5b/independent_check.py --candidate-dir cad/stage3d5b --output-dir NEW_OUTPUT"
+}
