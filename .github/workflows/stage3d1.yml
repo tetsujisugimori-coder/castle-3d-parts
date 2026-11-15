@@ -1,0 +1,42 @@
+name: Stage 3-D-1 continuous clearance evidence
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  interval-evidence:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONDONTWRITEBYTECODE: '1'
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fixed source and dedicated scratch
+        run: |
+          mkdir -p "$RUNNER_TEMP/stage3d1" stage3d1-ci/source
+          echo "TMPDIR=$RUNNER_TEMP/stage3d1" >> "$GITHUB_ENV"
+          git -c safe.directory="$GITHUB_WORKSPACE" show -s --format='%H %T %P' HEAD > stage3d1-ci/git.txt
+          echo '${{ github.event.pull_request.head.sha || github.sha }}' > stage3d1-ci/submitted-head.txt
+          cp -r cad/stage3d1 stage3d1-ci/source/
+          cp docs/stage3d1/PLAN.md stage3d1-ci/source/
+          df -h . > stage3d1-ci/capacity.txt
+          df -i . >> stage3d1-ci/capacity.txt
+          dpkg-query -W freecad-python3 libfreecad-python3 > stage3d1-ci/versions.txt
+      - run: python3 cad/stage3d1/record.py stage3d1-ci/portable -- python3 -B cad/stage3d1/test_intervals.py
+      - run: python3 cad/stage3d1/record.py stage3d1-ci/controls -- python3 -B cad/stage3d1/controls.py stage3d1-ci/controls.json
+      - run: python3 cad/stage3d1/record.py stage3d1-ci/native-command -- python3 -B cad/stage3d1/native.py stage3d1-ci/native
+      - name: Hash original evidence
+        if: always()
+        run: python3 scripts/stage3c-hash-evidence.py stage3d1-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3d1-${{ github.event.pull_request.head.sha || github.sha }}
+          path: stage3d1-ci/
+          if-no-files-found: error
