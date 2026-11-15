@@ -7,7 +7,7 @@ from correspondence import SOURCES, PARTS, evaluate
 def reference():
     return {'sources':dict(SOURCES), 'unit':'mm', 'coordinate_frame':'FreeCAD world; project m -> native mm x1000',
             'door_degrees':0, 'travel_mm':[0,140],
-            'parts':{p:{'valid':True,'solids':1,'brep_sha256':'synthetic-only','placement_observed':'synthetic'} for p in PARTS}}
+            'parts':{p:{'valid':True,'solids':1,'brep_sha256':'synthetic-only','placement_observed':'synthetic','brep_bytes':1,'faces':6,'edges':12,'vertices':8,'bounds_mm_observed':[0,0,0,1,1,1]} for p in PARTS}}
 
 
 class Gate(unittest.TestCase):
@@ -38,6 +38,13 @@ class Gate(unittest.TestCase):
         self.assertEqual(evaluate(o,r)['shape_containment'],'UNKNOWN')
     def test_absent_reference(self):
         self.assertNotEqual(evaluate(reference(),{})['status'],'PASS')
+    def test_missing_shape_field(self):
+        self.check_change(lambda o:o['parts'][PARTS[0]].pop('faces'),'INCOMPLETE_PART_EVIDENCE:'+PARTS[0])
+    def test_empty_part(self):
+        self.check_change(lambda o:o['parts'].update({PARTS[0]:{}}),'MISSING_PART_EVIDENCE:'+PARTS[0])
+    def test_empty_reference_part(self):
+        r=reference();o=copy.deepcopy(r);r['parts'][PARTS[0]]={}
+        self.assertIn('MISSING_REFERENCE_EVIDENCE:'+PARTS[0],evaluate(o,r)['reasons'])
     def test_numeric_equality_not_proof(self):
         r=reference();r.update(difference_volume=0,tolerance=1e-7,observed_distance=1)
         self.assertEqual(evaluate(r,r)['status'],'UNKNOWN')

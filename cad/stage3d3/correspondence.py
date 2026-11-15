@@ -31,8 +31,16 @@ def evaluate(observation, reference):
     for part in PARTS:
         actual = observation.get('parts', {}).get(part)
         expected = reference.get('parts', {}).get(part)
-        if not actual or not expected:
+        if not isinstance(actual, dict) or not actual:
+            reasons.append('MISSING_PART_EVIDENCE:' + part)
             continue
+        if not isinstance(expected, dict) or not expected:
+            reasons.append('MISSING_REFERENCE_EVIDENCE:' + part)
+            continue
+        required = {'brep_sha256','brep_bytes','valid','solids','faces','edges','vertices',
+                    'bounds_mm_observed','placement_observed'}
+        if not required.issubset(actual) or not required.issubset(expected):
+            reasons.append('INCOMPLETE_PART_EVIDENCE:' + part)
         if actual != expected:
             reasons.append('SHAPE_OR_PLACEMENT_CHANGED:' + part)
         if actual.get('valid') is not True or actual.get('solids') != 1:
