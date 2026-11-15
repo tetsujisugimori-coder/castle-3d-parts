@@ -17,7 +17,7 @@ class Bridge(unittest.TestCase):
             lambda x:x['parts'][PARTS[0]].update(faces=[]),lambda x:x['parts'][PARTS[0]].update(solids=2),
             lambda x:x['parts'][PARTS[0]].update(closed=False),lambda x:x['parts'][PARTS[0]]['faces'][0].update(surface='Cylinder'),
             lambda x:x['parts'][PARTS[0]]['faces'][0].update(wires=[]),lambda x:x['parts'][PARTS[0]]['faces'][0].update(orientation='Internal'),
-            lambda x:x['parts'][PARTS[0]]['faces'][0]['wires'][0].update(closed=False),lambda x:x.update(travel_mm=[0,141])]
+            lambda x:x['parts'][PARTS[0]]['faces'][0]['wires'][0].update(closed=False),lambda x:x.update(travel_mm=[0,141]),lambda x:x.update(door_degrees=False),lambda x:x.update(travel_mm=[False,140])]
         for mutate in mutations:
             with self.subTest(mutate=mutate):
                 x=fixture();mutate(x);self.assertEqual(assess(x)['eligibility'],'REJECTED')

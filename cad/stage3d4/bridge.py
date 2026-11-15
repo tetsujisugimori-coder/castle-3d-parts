@@ -17,7 +17,7 @@ def assess(data):
     reasons=[]
     if data.get('sources')!=sources():reasons.append('SOURCE_IDENTITY')
     if data.get('unit')!='mm' or data.get('frame')!='FreeCAD world':reasons.append('UNIT_FRAME')
-    if data.get('door_degrees')!=0 or data.get('travel_mm')!=[0,140]:reasons.append('MOTION_SCOPE')
+    if type(data.get('door_degrees')) is not int or data['door_degrees']!=0 or data.get('travel_mm')!=[0,140] or any(type(v) is not int for v in data.get('travel_mm',[])):reasons.append('MOTION_SCOPE')
     parts=data.get('parts',{})
     if set(parts)!=set(PARTS):reasons.append('PART_SET')
     for name in PARTS:

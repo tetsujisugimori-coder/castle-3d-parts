@@ -33,7 +33,10 @@ def main(out):
     for o in d.Objects:
         if 'KeepUpdated' in o.PropertiesList:o.KeepUpdated=False
     transition(d,0,0)
-    originals={n:d.getObject(n).Shape.copy() for n in PARTS}
+    serialized={n:d.getObject(n).Shape.exportBrepToString() for n in PARTS}
+    def clone(name):
+        shape=Part.Shape();shape.importBrepFromString(serialized[name]);return shape
+    originals={n:clone(n) for n in PARTS}
     def record(shapes):return {'sources':before,'unit':'mm','frame':'FreeCAD world','door_degrees':0,'travel_mm':[0,140],
                                'parts':{n:describe(s) for n,s in shapes.items()}}
     data=record(originals);(out/'original.json').write_text(json.dumps(data,indent=2));rows=[{'case':'original','input':data,'assessment':assess(data)}]
@@ -43,23 +46,28 @@ def main(out):
     stage('before-mutations')
     expanded=Part.makeBox(900,24,40,A.Vector(-400,-117,1000))
     stage('expanded')
-    shrunk=originals[g].fuse(Part.makeBox(20,2,42,A.Vector(-200,-116,999)))
+    shrunk=clone(g).fuse(Part.makeBox(20,2,42,A.Vector(-200,-116,999)))
     stage('shrunk')
-    shift=originals[b].copy();shift.translate(A.Vector(0,1,0))
+    shift=clone(b);shift.translate(A.Vector(0,1,0))
     stage('shift')
-    reverse=originals[b].copy();reverse.reverse()
+    reverse=clone(b);reverse.reverse()
     stage('reverse')
-    opened=Part.makeShell(originals[b].Faces[:-1])
+    opened=Part.makeShell(clone(b).Faces[:-1])
     stage('opened')
     curved=Part.makeCylinder(10,40,A.Vector(-400,-115,1000))
     stage('curved')
-    extra=originals[b].fuse(Part.makeBox(1,1,1,A.Vector(0,0,0)))
+    extra=clone(b).fuse(Part.makeBox(1,1,1,A.Vector(0,0,0)))
     stage('extra')
     for case,n,s in [('bolt_enlarged',b,expanded),('hole_shrunk',g,shrunk),('placement_shift',b,shift),
                      ('orientation_reversed',b,reverse),('missing_face_open_shell',b,opened),
                      ('unsupported_curved',b,curved),('extra_solid',b,extra)]:
         stage(case)
-        changed=dict(originals);changed[n]=s;r=record(changed);v=assess(r)
+        changed={part:clone(part) for part in PARTS};changed[n]=s;r=record(changed);v=assess(r)
+        rowdir=out/case;rowdir.mkdir()
+        for part,shape in changed.items():
+            raw=shape.exportBrepToString().encode();(rowdir/(part+'.brep')).write_bytes(raw)
+            if hashlib.sha256(raw).hexdigest()!=r['parts'][part]['brep_sha256']:raise AssertionError('UNSTABLE_EXPORT:'+case+':'+part)
+            if part!=n and r['parts'][part]['brep_sha256']!=data['parts'][part]['brep_sha256']:raise AssertionError('UNCHANGED_PART_MUTATED:'+case+':'+part)
         identity_changed=r['parts'][n]['brep_sha256']!=data['parts'][n]['brep_sha256']
         if not identity_changed or v['cad_intervals']['PASS']!=0:raise AssertionError(case)
         rows.append({'case':case,'kind':'real FreeCAD isolated in-memory mutation','input':r,'assessment':v,'BRep_changed':identity_changed,'fixed_observation_match':'REJECTED_BREP_CHANGED'})
