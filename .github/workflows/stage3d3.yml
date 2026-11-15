@@ -1,0 +1,41 @@
+name: Stage 3-D-3 CAD correspondence observations
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  correspondence:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONDONTWRITEBYTECODE: '1'
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Dedicated scratch and resource identity
+        run: |
+          mkdir -p "$RUNNER_TEMP/stage3d3" stage3d3-ci
+          echo "TMPDIR=$RUNNER_TEMP/stage3d3" >> "$GITHUB_ENV"
+          echo '${{ github.event.pull_request.head.sha }}' > stage3d3-ci/submitted-head.txt
+          df -h . > stage3d3-ci/capacity.txt
+          df -i . >> stage3d3-ci/capacity.txt
+          dpkg-query -W freecad-python3 libfreecad-python3 > stage3d3-ci/versions.txt
+      - run: python3 cad/stage3d3/record.py stage3d3-ci/portable -- python3 -B cad/stage3d3/test_correspondence.py
+      - run: python3 cad/stage3d3/record.py stage3d3-ci/archive-controls -- python3 -B cad/stage3d3/test_archive.py
+      - run: python3 cad/stage3d3/record.py stage3d3-ci/native-command -- python3 -B cad/stage3d3/native.py stage3d3-ci/native
+      - run: python3 cad/stage3d3/record.py stage3d3-ci/d2-regression -- python3 -B cad/stage3d2/test_proof.py
+      - run: python3 cad/stage3d3/record.py stage3d3-ci/d1-regression -- python3 -B cad/stage3d1/test_intervals.py
+      - name: Hash raw evidence including failures
+        if: always()
+        run: python3 scripts/stage3c-hash-evidence.py stage3d3-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3d3-${{ github.event.pull_request.head.sha }}
+          path: stage3d3-ci/
+          if-no-files-found: error
+          include-hidden-files: true
