@@ -15,7 +15,8 @@ def git(*args):return subprocess.check_output(['git','-c','safe.directory='+str(
 def now():return datetime.datetime.now(datetime.timezone.utc).isoformat()
 paths=[p for p in (root/'cad/stage3d3').glob('*.py')]+list((root/'docs/stage3d3').glob('*.md'))
 paths += [root/p for p in json.loads((root/'cad/stage3d2/contract.json').read_text())['sources']]
-paths += [root/'cad/stage3d2/contract.json',root/'.github/workflows/stage3d3.yml']
+paths += list((root/'cad/stage3d1').glob('*.py')) + list((root/'cad/stage3d2').glob('*.py'))
+paths += [root/'cad/stage3d2/contract.json',root/'.github/workflows/stage3d3.yml',root/'scripts/stage3c-hash-evidence.py']
 manifest={}
 for p in paths:
     rel=p.relative_to(root);dst=out/'source'/rel;dst.parent.mkdir(parents=True,exist_ok=True)
