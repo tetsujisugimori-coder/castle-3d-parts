@@ -1,0 +1,10 @@
+# Stage 3-D-3 local results (not final CI)
+Baseline main 028f12f2d8f1f5687c153b16771756b8895d61b9 / e02508fcc2ce7e9f12cd28181d8f2477fe8327ac. Candidate sources captured before each final local command. Original CAD raw SHA256 c3ca0f1ee580fbb4665c4039dfd63200a73c77eaea6ef3114a0d17bd56d70d1a; unchanged before/after.
+
+Real FreeCAD1.0.0 read-only original:23 IDs retained; bolt6 planar faces/12edges/8vertices, guide10 planar faces/24edges/16vertices. Observed maximum tolerance bolt1e-7mm, guide7.252927599527694e-5mm; **neither is an absolute distance or shape error certificate**. Positions0/70/140mm observed only. Planar surface names and wire/vertex data do not certify trimmed-solid containment. Stock and bore dependencies/placements and BRep bytes are saved.
+
+Normal original observation contract PASS; actual containment UNKNOWN. Five native isolated shape changes all rejected for SHAPE_OR_PLACEMENT_CHANGED: enlarged bolt, shrunken hole, displacement, nominal contact, near-tolerance displacement. These are real FreeCAD memory mutations, not physical faults, GUI tests or guaranteed collision witnesses. Portable metadata tests16PASS; D2 tests20PASS, D1 tests10PASS. D2 analytical128PASS and actualCAD128UNKNOWN unchanged. No historical old-version RED claimed.
+
+Related local regression: Node497 tests PASS; Stage3C portable check and15fault tests, history19 and parity1 PASS; Stage3B portable tests PASS; actual FreeCAD Undo/Redo/native persisted-state test and separate-process reopen PASS, performed on dedicated copies, not originals. ManualGUI/browser/physical safety NOT_TESTED in this local run; unchanged formal workflows provide separate evidence when complete.
+
+Independent review PENDING because concurrent-agent limit prevented creating a reviewer at this point. Formal final-HEAD CI PENDING; original CI artifact audit and persistent archive independent readback PENDING. Self-checks are not independent review. Overall PARTIAL, CAD application UNKNOWN, limited merge recommendation NO until independent review and final CI/evidence checks are complete. No merge/publication or Yamanaka changes.
