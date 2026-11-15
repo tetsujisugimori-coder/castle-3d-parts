@@ -34,6 +34,7 @@ jobs:
           name: stage3d5b-${{ github.event.pull_request.head.sha }}-portable
           path: stage3d5b-portable/
           if-no-files-found: error
+          include-hidden-files: true
   native:
     runs-on: ubuntu-24.04
     container: debian:trixie
@@ -64,3 +65,4 @@ jobs:
           name: stage3d5b-${{ github.event.pull_request.head.sha }}-native
           path: stage3d5b-native/
           if-no-files-found: error
+          include-hidden-files: true
