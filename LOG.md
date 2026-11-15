@@ -20,3 +20,7 @@ Independent D4 review found source/input/topology/count-only ZIP false acceptanc
 Independent recheck additionally found unmodified-part BRep hash drift in hole-shrink evidence; old missing raw counterpart cannot establish its cause. Each fault now uses independently imported fixed BRep and preserves both parts per row with unchanged-side equality checks. Same hole-shrink condition passed without weakening the contract; old observations retained.
 
 Stage3D4 post-submission packaging check: root-format normal ZIP false rejection fixed with exact or slash-delimited name matching; same control exit1→0. Existing deficient-evidence rejection unchanged, native128UNKNOWN. Final CI pending on subsequent submission.
+
+
+## Stage 3-D-5C limited native proof obligations (2026-11-16 JST)
+Issue #38; stacked on PR #39 HEAD6ed080ff. New isolated full-topology/pcurve capture, exact represented coefficient verifier, native-observation fault controls, eight real-error obligations and fixed first D2 interval gate. All original tracked bytes retained except this appended log. Actual material/void/errors/all-state correspondence UNKNOWN and representative/128 realCAD NOT_TESTED; no safety claim. Independent review corrections and local/formal evidence scopes are in docs/stage3d5c/RESULTS.md. Final CI and archive audit remain separate gates.
