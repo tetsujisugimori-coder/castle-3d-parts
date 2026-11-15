@@ -19,3 +19,5 @@ References for observed API semantics (not enclosure proofs):
 - https://github.com/FreeCAD/FreeCAD/blob/main/src/Mod/Part/App/TopoShape.h
 
 2026-11-16 JST.
+
+Static API compatibility correction after initial314dcfc submission: FreeCAD1.0.0 exposes Edge.Degenerated as a property, not isDegenerated() method. Corrected without changing geometric acceptance; old source/CI preserved, no pre-correction native result inferred. Final CI must use subsequent actual HEAD.

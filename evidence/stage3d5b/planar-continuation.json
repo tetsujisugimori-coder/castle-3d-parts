@@ -21,8 +21,8 @@
       "sha256": "bd2b7257f2c8f3f0da90e5b4652f6e5f493edc231d71d235d2fde08bc80051d5"
     },
     "cad/stage3d5b/planar_native.py": {
-      "size_bytes": 13309,
-      "sha256": "162e9131e02bef0468dfafce621013296550a7999e6c97a43d3389395135fbe5"
+      "size_bytes": 13305,
+      "sha256": "71d789853cb6bb06f4a8e85f91874d68e901c2b2c6b4fa4216f56b4105a20dd5"
     },
     "cad/stage3d5b/test_planar_contract.py": {
       "size_bytes": 7897,
@@ -49,8 +49,8 @@
       "sha256": "071bbc00aec2865baece373accbdfebf24232cbaa3e005232acfbd093c3d44f9"
     },
     "docs/stage3d5b/PLANAR_RESULTS.md": {
-      "size_bytes": 3388,
-      "sha256": "8bcab31ac1cf1bc1e260426d094776f6c674508f640ebc54bb68e0e73c94ea6a"
+      "size_bytes": 3699,
+      "sha256": "9db530ba1a84a12a463b6264dd8c121debdcf82637b0244dce3c98defa965973"
     },
     "evidence/stage3d5b/planar-independent/independent-local-summary.json": {
       "size_bytes": 2310,

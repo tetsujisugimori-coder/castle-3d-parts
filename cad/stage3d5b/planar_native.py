@@ -43,7 +43,7 @@ def topology(shape):
                                 'orientation': e.Orientation, 'curve_type': type(c).__name__,
                                 'parameters_ieee': [rational(e.FirstParameter), rational(e.LastParameter)],
                                 'tolerance_mm_observed': e.getTolerance(1),
-                                'degenerated_observed': e.isDegenerated(),
+                                'degenerated_observed': e.Degenerated,
                                 'curve_location_mm_observed': native.optional(c, 'Location', [], 'curve'),
                                 'curve_direction_observed': native.optional(c, 'Direction', [], 'curve')})
     for w in wires:
