@@ -1,0 +1,113 @@
+{
+  "scope": "independent synthetic analytic reference and observation-adapter fault audit",
+  "shared": [
+    "Python Fraction",
+    "schema",
+    "closed-material/open-void semantics",
+    "candidate functions called for comparisons"
+  ],
+  "independent": [
+    "analytic stock-minus-rectangular-hole fixture and exact8cells/volume40",
+    "full mutation inputs",
+    "affine coefficient/domain endpoint enumeration"
+  ],
+  "not_independent": [
+    "same Python runtime",
+    "native input extraction and FreeCAD kernel NOT_TESTED by this reviewer"
+  ],
+  "normal_volume_m3": "40",
+  "reference_cells_m": [
+    [
+      "0",
+      "0",
+      "0",
+      "2",
+      "1",
+      "2"
+    ],
+    [
+      "0",
+      "0",
+      "2",
+      "2",
+      "1",
+      "4"
+    ],
+    [
+      "0",
+      "0",
+      "4",
+      "2",
+      "1",
+      "6"
+    ],
+    [
+      "0",
+      "1",
+      "0",
+      "2",
+      "3",
+      "2"
+    ],
+    [
+      "0",
+      "1",
+      "4",
+      "2",
+      "3",
+      "6"
+    ],
+    [
+      "0",
+      "3",
+      "0",
+      "2",
+      "4",
+      "2"
+    ],
+    [
+      "0",
+      "3",
+      "2",
+      "2",
+      "4",
+      "4"
+    ],
+    [
+      "0",
+      "3",
+      "4",
+      "2",
+      "4",
+      "6"
+    ]
+  ],
+  "affine_reference_row_ranges": [
+    [
+      "-103/1000",
+      "203/1000"
+    ],
+    [
+      "-1/25",
+      "2/25"
+    ],
+    [
+      "0",
+      "0"
+    ]
+  ],
+  "affine_reference_error_m": "283/1000",
+  "case_count": 31,
+  "all_comparisons_pass": true,
+  "source_sha256": {
+    "planar_contract.py": "25e23f3ffae616b293b2221ba571e60504caa5eb9c3c36a9a653892e6615a6a3",
+    "transform_bounds.py": "58d6b0eed8171279e4299523c04d60cadfcb2994c2900f59bc02c2b96dc1f0ce",
+    "planar_native.py": "162e9131e02bef0468dfafce621013296550a7999e6c97a43d3389395135fbe5",
+    "planar_document.py": "788ecfbe1b74c1109905557f8cbbe3e411ed11f63493e50165fcaa31c7220652"
+  },
+  "runner_sha256": "9a5d95248d9f198002eae91495eb3ab1359a57d9ac5275e1a04d72a4eaf320b9",
+  "real_brep_inclusion": "UNKNOWN",
+  "finite_real_error": "UNKNOWN",
+  "independent_kernel_rerun": "NOT_TESTED",
+  "raw_execution_report_sha256": "03d2821056934079314271ffc5f1de69787fc5f517cb7e2c46fd537d26f6c247"
+}

@@ -1,0 +1,47 @@
+{
+  "scope": "independent synthetic observation-adapter inventory defect, no real safety falsePASS",
+  "reproduction": "independent_planar.py topology_fixture, append unreferenced entity cases; use preserved pre-fix source for before",
+  "before_source_sha256": "c133c437c36d6cbeebadecd3e15c78a766c805f505d58f9aeca3b88644de4a81",
+  "after_source_sha256": "162e9131e02bef0468dfafce621013296550a7999e6c97a43d3389395135fbe5",
+  "raw_before_sha256": "baccd8444f10213e38273f08b78f603ee51381bb1c7682cd0af1c799a96ccea6",
+  "raw_after_sha256": "7249905fe567e3a4a43844f75923014cd24880443ec4af8bab7019970e35d906",
+  "raw_origin": "actual local reviewer executions, retained separately from later summary; no kernel rerun",
+  "rows": [
+    {
+      "id": "normal-synthetic-topology",
+      "input_canonical_sha256": "6e0a4a9b0b7f6494868321e8db0890f2066c819a54056cd5d3d481f03c4e200f",
+      "before": "PASS",
+      "after": "PASS",
+      "after_reason": null,
+      "same_input": true
+    },
+    {
+      "id": "unreferenced-vertex",
+      "input_canonical_sha256": "13021b42da6ccc1af771ca95d511e9bd0896e08000019ed4c9d726fcf50b03c4",
+      "before": "PASS",
+      "after": "FAIL",
+      "after_reason": "UNCOVERED_OR_NONMANIFOLD_TOPOLOGY",
+      "same_input": true
+    },
+    {
+      "id": "unreferenced-edge",
+      "input_canonical_sha256": "80950df721af3108a333a5ebced183ca155d9e5e36f8857363e5ee5050ec566b",
+      "before": "PASS",
+      "after": "FAIL",
+      "after_reason": "UNCOVERED_OR_NONMANIFOLD_TOPOLOGY",
+      "same_input": true
+    },
+    {
+      "id": "unreferenced-wire",
+      "input_canonical_sha256": "4c653968e5e2de14e524be3b0fa9748bea8a1b4b7e1ba43386b817580a7b2651",
+      "before": "PASS",
+      "after": "FAIL",
+      "after_reason": "UNCOVERED_OR_NONMANIFOLD_TOPOLOGY",
+      "same_input": true
+    }
+  ],
+  "current_independent_case_count": 31,
+  "current_all_comparisons_pass": true,
+  "real_brep_inclusion": "UNKNOWN",
+  "independent_kernel_rerun": "NOT_TESTED"
+}

@@ -25,6 +25,7 @@ jobs:
       - run: python -B cad/stage3d5b/record.py stage3d5b-portable/d5 -- python -B -m unittest discover -s cad/stage3d5 -p 'test_*.py' -v
       - run: python -B cad/stage3d5b/record.py stage3d5b-portable/report-command -- python -B cad/stage3d5b/run.py stage3d5b-portable/report
       - run: python -B cad/stage3d5b/record.py stage3d5b-portable/independent-command -- python -B cad/stage3d5b/independent_check.py --candidate-dir cad/stage3d5b --output-dir stage3d5b-portable/independent
+      - run: python -B cad/stage3d5b/record.py stage3d5b-portable/planar-independent-command -- python -B cad/stage3d5b/independent_planar.py --output-dir stage3d5b-portable/planar-independent
       - name: Hash original evidence
         if: always()
         run: python scripts/stage3c-hash-evidence.py stage3d5b-portable
@@ -56,6 +57,8 @@ jobs:
           git -c safe.directory="$GITHUB_WORKSPACE" show -s --format='%H %T %P' HEAD > stage3d5b-native/checkout.txt
           echo "$SUBMITTED_HEAD" > stage3d5b-native/submitted-head.txt
       - run: python3 -B cad/stage3d5b/record.py stage3d5b-native/command -- python3 -B cad/stage3d5b/native.py stage3d5b-native/extraction
+      - run: python3 -B cad/stage3d5b/record.py stage3d5b-native/planar-command -- python3 -B cad/stage3d5b/planar_native.py stage3d5b-native/planar
+      - run: python3 -B cad/stage3d5b/record.py stage3d5b-native/document-command -- python3 -B cad/stage3d5b/planar_document.py stage3d5b-native/document
       - name: Hash original evidence
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5b-native
