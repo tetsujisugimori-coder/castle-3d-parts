@@ -1,0 +1,72 @@
+{
+  "schema": "aabb-union-translation-v1",
+  "unit": "mm",
+  "parts": [
+    "GATE_Bolt",
+    "GATE_BoltGuide_Left"
+  ],
+  "door_degrees": "0",
+  "range": [
+    "0",
+    "140"
+  ],
+  "required_clearance": "0",
+  "moving_box": [
+    "-400",
+    "-115",
+    "1000",
+    "500",
+    "-95",
+    "1040"
+  ],
+  "moving_velocity": [
+    "1",
+    "0",
+    "0"
+  ],
+  "obstacle_velocity": [
+    "0",
+    "0",
+    "0"
+  ],
+  "obstacle_boxes": [
+    [
+      "-200",
+      "-130",
+      "990",
+      "-180",
+      "-116",
+      "1050"
+    ],
+    [
+      "-200",
+      "-94",
+      "990",
+      "-180",
+      "0",
+      "1050"
+    ],
+    [
+      "-200",
+      "-116",
+      "990",
+      "-180",
+      "-94",
+      "999"
+    ],
+    [
+      "-200",
+      "-116",
+      "1041",
+      "-180",
+      "-94",
+      "1050"
+    ]
+  ],
+  "sources": {
+    "cad/stage3c/generated/assembly.FCStd": "c3ca0f1ee580fbb4665c4039dfd63200a73c77eaea6ef3114a0d17bd56d70d1a",
+    "cad/stage3c/spec.json": "5d345c4b82012e96252a9a782d4a66e9a706f0a6eb4b070010a1f02d1469699a",
+    "cad/stage3c/build.py": "5e0a538d942278ff017dbc9ca168ca7edc7df42fac1d468fa49e94cd6b08a42b",
+    "cad/stage3c/state.py": "c0266748bb8cb0e628ceb88ba42f734274b4ff358c25ae7f1bcb029f701e670a"
+  }
+}
