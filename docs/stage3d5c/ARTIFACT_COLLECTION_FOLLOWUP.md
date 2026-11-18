@@ -9,10 +9,12 @@
 
 ## New forward-only gate
 1. `git archive HEAD` creates `cad-ci/source/` with dot-prefixed paths. Preserve existing unit/geometry/build commands and the original manifest.
-2. `verify-cad-contract-archive.py` independently reads the *Git HEAD tree* (not manifest claims), validates exact source paths, bytes, SHA-256, and manifest, including hidden paths. Save `source-audit-pre.json` before upload. Reject absent/extra/mutated or unsupported sources.
-3. `upload-artifact@v4` explicitly sets `include-hidden-files: true`.
-4. A distinct downstream Actions job uses `download-artifact@v4` to read back the newly uploaded `cad-contract`, re-derives the Git tree expected set, and compares the pre-upload count/digest/HEAD/tree. Fail on any mismatch and archive the post-audit report.
+2. `verify_cad_contract_archive.py` independently reads the *Git HEAD tree* (not manifest claims), validates exact source paths, bytes, SHA-256, and manifest, including hidden paths. Save `source-audit-pre.json` before upload. Reject absent/extra/mutated or unsupported sources.
+3. The existing `cad-prototype.yml` is a byte-protected historical baseline. It is **not changed**. A separate `cad-contract-source-completeness.yml` collects a forward-only `cad-contract-complete` artifact and uses `upload-artifact@v4` with `include-hidden-files: true`. The old `cad-contract` artifact remains incomplete where its legacy upload excludes hidden paths.
+4. A distinct downstream Actions job uses `download-artifact@v4` to read back the newly uploaded `cad-contract-complete`, re-derives the Git tree expected set, and compares the pre-upload count/digest/HEAD/tree. Fail on any mismatch and archive the post-audit report.
 5. Synthetic regressions include the historical pattern of **exactly 30 hidden path omissions**, one ordinary omission, modified bytes, extra bytes, malformed manifest, and untrusted pre-audit.
+
+The initial attempt to modify the protected legacy workflow at `c8021c4458e375edbdee417729b8d4420c409563` triggered 14 legacy byte-preservation failures; that failed raw result is retained, and the legacy workflow was restored byte-for-byte in the next corrective commit. The separate workflow is additive and does not silently relax historical invariants.
 
 This is a new-version CI check, not an independent external auditor or automatic permanent preservation. GitHub upload/download and source set matching do not prove old artifact completeness, long-term availability, or CAD safety. Preserve the old ZIP; archive new artifacts under the applicable v0.2.0 owner-approved conditions, with a separate independent readback before considering the P2 closed.
 
