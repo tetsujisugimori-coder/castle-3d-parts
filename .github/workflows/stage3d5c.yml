@@ -28,3 +28,46 @@ jobs:
           path: stage3d5c-evidence/
           if-no-files-found: error
           include-hidden-files: true
+  source-collect:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Collect Git tree bytes (including hidden paths)
+        run: |
+          mkdir -p cad-contract-complete/source
+          git ls-files -z | xargs -0 sha256sum > cad-contract-complete/manifest.sha256
+          git archive HEAD | tar -x -C cad-contract-complete/source
+      - name: Fail closed on missing source and historical omission controls
+        run: |
+          python3 -B -m unittest discover -s cad/stage3d5c -p 'test_verify_cad_contract_archive.py' -v > cad-contract-complete/fault-tests.log 2>&1 || { cat cad-contract-complete/fault-tests.log; exit 1; }
+          python3 -B cad/stage3d5c/verify_cad_contract_archive.py --repo . --artifact-dir cad-contract-complete --report cad-contract-complete/source-audit-pre.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cad-contract-complete-${{ github.event.pull_request.head.sha }}
+          path: cad-contract-complete/
+          if-no-files-found: error
+          include-hidden-files: true
+  source-readback:
+    needs: source-collect
+    if: ${{ needs.source-collect.result == 'success' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: cad-contract-complete-${{ github.event.pull_request.head.sha }}
+          path: cad-contract-readback
+      - name: Independently verify downloaded bytes and pre-upload receipt
+        run: |
+          python3 -B cad/stage3d5c/verify_cad_contract_archive.py --repo . --artifact-dir cad-contract-readback --prior cad-contract-readback/source-audit-pre.json --report cad-contract-readback-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cad-contract-complete-audit-${{ github.event.pull_request.head.sha }}
+          path: cad-contract-readback-report.json
+          if-no-files-found: error
