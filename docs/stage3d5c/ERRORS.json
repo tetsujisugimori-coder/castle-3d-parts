@@ -1,0 +1,113 @@
+{
+  "schema": "stage3d5c-errors-v1",
+  "scope": "actual native error budgets, not supplied synthetic values",
+  "terms": [
+    {
+      "id": "geometry",
+      "definition": "sup norm/Hausdorff bound between native material boundary and represented model, with separate inward void guarantee",
+      "finite_condition": "complete trim and orientation theorem plus conservative enclosure of all native sets",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "No certified native-set interpretation/trim and material theorem",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    },
+    {
+      "id": "extraction",
+      "definition": "sup discrepancy between native curve/surface and extracted coefficient function over the entire trim",
+      "finite_condition": "API must return enclosing coefficients or a documented exact real mapping",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "API returns doubles; no enclosing extraction contract",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    },
+    {
+      "id": "kernel_representation",
+      "definition": "sup discrepancy of serialized and evaluated native real geometry",
+      "finite_condition": "kernel arithmetic and tolerance semantics with certified operation error",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "OCCT stored tolerance is not a model error bound",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    },
+    {
+      "id": "coordinate_transform",
+      "definition": "sup norm of true transformed points minus model transform over bounded domain",
+      "finite_condition": "enclosed matrix coefficients, domain radius and composition error",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "read observations do not certify all transform evaluations",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    },
+    {
+      "id": "unit",
+      "definition": "sup error attributable only to unit scale and conversion",
+      "finite_condition": "certified mm/m scale semantics and exact 1/1000 arithmetic",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "represented rational factor exact; native application provenance not certified",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    },
+    {
+      "id": "arithmetic_rounding",
+      "definition": "sup accumulated difference between ideal real evaluation and executed arithmetic",
+      "finite_condition": "directed rounding or rational enclosure of every relevant operation",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "exact rational submodel has zero rounding, but native path is not enclosed",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    },
+    {
+      "id": "state_generation",
+      "definition": "sup native pose versus modeled pose for all continuous parameter states",
+      "finite_condition": "complete state function equivalence including parents and order",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "three samples and XML/Object matches do not prove all states",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    },
+    {
+      "id": "continuous_displacement",
+      "definition": "sup motion from representative pose across fixed leaf",
+      "finite_condition": "certified trajectory Lipschitz/interval bound applied to actual object",
+      "input": "fixed FCStd SHA in PLAN; represented coefficients and original D2 contract",
+      "unit": "m",
+      "upper": null,
+      "status": "UNKNOWN",
+      "reason": "model35/64 mm bound exists; native trajectory bridge absent",
+      "conservative_rounding": "exact Fraction endpoints and interval outward enclosure for conditional submodel; no unsupported native bound",
+      "independent_check": "separate coefficient calculation and conditional chain/error tests; native bound certification NOT_TESTED",
+      "provenance": "PROOF_BOUNDARY.md official API sources + existing stage3d5b/transform_bounds.py"
+    }
+  ],
+  "sum_upper_m": null,
+  "status": "UNKNOWN",
+  "rule": "all terms required; null never treated as zero; synthetic underreport rejected; nonpositive clearance is UNKNOWN not collision"
+}
