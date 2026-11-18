@@ -1,0 +1,227 @@
+"""Whole-topology observations -> explicitly conditional rational proposals.
+
+Kernel doubles are lifted exactly, never snapped. Polygon winding normalization
+is an exposed proposal operation, not proof of OCCT orientation semantics.
+No input, including self-declared certificates, can enable a real CAD PASS.
+"""
+from fractions import Fraction as F
+import copy
+import hashlib
+import json
+import os
+from pathlib import Path
+import sys
+import traceback
+
+import native
+
+
+def rational(value):
+    if isinstance(value, bool):
+        raise ValueError('BOOLEAN_COORDINATE')
+    return str(F(value))  # float constructor uses exact as_integer_ratio.
+
+
+def index_same(item, all_items):
+    ids = [i for i, obj in enumerate(all_items) if item.isSame(obj)]
+    if len(ids) != 1:
+        raise ValueError('TOPOLOGY_ID_AMBIGUOUS')
+    return ids[0]
+
+
+def topology(shape):
+    """Collect every use and global identity (within this fixed import only)."""
+    vertices, edges, wires = shape.Vertexes, shape.Edges, shape.Wires
+    result = {'vertices': [], 'edges': [], 'wires': [], 'faces': []}
+    for v in vertices:
+        result['vertices'].append({'point_mm_ieee': [rational(x) for x in native.point(v.Point)],
+                                   'orientation': v.Orientation,
+                                   'tolerance_mm_observed': v.getTolerance(1)})
+    for e in edges:
+        c = e.Curve
+        result['edges'].append({'vertex_ids': [index_same(v, vertices) for v in e.Vertexes],
+                                'orientation': e.Orientation, 'curve_type': type(c).__name__,
+                                'parameters_ieee': [rational(e.FirstParameter), rational(e.LastParameter)],
+                                'tolerance_mm_observed': e.getTolerance(1),
+                                'degenerated_observed': e.Degenerated,
+                                'curve_location_mm_observed': native.optional(c, 'Location', [], 'curve'),
+                                'curve_direction_observed': native.optional(c, 'Direction', [], 'curve')})
+    for w in wires:
+        result['wires'].append({'orientation': w.Orientation, 'closed_observed': w.isClosed(),
+                                'ordered_edge_ids': [index_same(e, edges) for e in w.OrderedEdges],
+                                'ordered_vertex_ids': [index_same(v, vertices) for v in w.OrderedVertexes],
+                                'edge_use_orientations': [e.Orientation for e in w.OrderedEdges]})
+    for f in shape.Faces:
+        uv = f.ParameterRange
+        result['faces'].append({'orientation': f.Orientation, 'surface_type': type(f.Surface).__name__,
+                                'position_mm_ieee': [rational(x) for x in native.point(f.Surface.Position)],
+                                'surface_axis_ieee': [rational(x) for x in native.point(f.Surface.Axis)],
+                                'normal_ieee': [rational(x) for x in native.point(f.normalAt((uv[0]+uv[1])/2, (uv[2]+uv[3])/2))],
+                                'uv_ieee': [rational(x) for x in uv],
+                                'wire_ids': [index_same(w, wires) for w in f.Wires],
+                                'wire_roles': ['outer' if w.isSame(f.OuterWire) else 'inner' for w in f.Wires],
+                                'edge_ids': [index_same(e, edges) for e in f.Edges],
+                                'vertex_ids': [index_same(v, vertices) for v in f.Vertexes]})
+    result['counts'] = {k: len(result[k]) for k in ('vertices', 'edges', 'wires', 'faces')}
+    result['all_edges_used'] = set(range(len(edges))) == {i for f in result['faces'] for i in f['edge_ids']}
+    result['all_vertices_used'] = set(range(len(vertices))) == {i for e in result['edges'] for i in e['vertex_ids']}
+    return result
+
+
+def proposal(t):
+    """Exact rational model of observed vertex data, not an enclosure of BRep."""
+    # Recompute complete incidence from the actual inventories. The summary
+    # booleans are observations, never an authority for exclusion of entries.
+    from collections import Counter
+    nv, ne, nw = (len(t[k]) for k in ('vertices','edges','wires'))
+    def ids(values, limit):
+        if any(type(i) is not int or i < 0 or i >= limit for i in values):
+            raise ValueError('INVALID_TOPOLOGY_REFERENCE')
+        return set(values)
+    all_vertices = set(range(nv)); all_edges = set(range(ne)); all_wires = set(range(nw))
+    referenced_vertices = set()
+    for e in t['edges']:
+        vi = ids(e['vertex_ids'], nv)
+        if len(vi) != 2: raise ValueError('EDGE_ENDPOINT_INVENTORY')
+        referenced_vertices.update(vi)
+    wire_uses, edge_uses = Counter(), Counter()
+    for f in t['faces']:
+        wi = ids(f['wire_ids'], nw)
+        if len(wi) != len(f['wire_ids']) or len(wi) != len(f['wire_roles']):
+            raise ValueError('FACE_WIRE_INVENTORY')
+        wire_uses.update(wi)
+        ei = set(); vi = set()
+        for i in wi:
+            w=t['wires'][i]
+            ei.update(ids(w['ordered_edge_ids'], ne));vi.update(ids(w['ordered_vertex_ids'], nv))
+        if ids(f['edge_ids'], ne) != ei or ids(f['vertex_ids'], nv) != vi:
+            raise ValueError('FACE_WIRE_EDGE_VERTEX_INVENTORY')
+        edge_uses.update(ei)
+    if (referenced_vertices != all_vertices or set(wire_uses) != all_wires or
+            set(edge_uses) != all_edges or any(v != 1 for v in wire_uses.values()) or
+            any(v != 2 for v in edge_uses.values())):
+        raise ValueError('UNCOVERED_OR_NONMANIFOLD_TOPOLOGY')
+    if 'counts' in t and t['counts'] != {k:len(t[k]) for k in ('vertices','edges','wires','faces')}:
+        raise ValueError('TOPOLOGY_COUNT_MISMATCH')
+    faces, normalizations = [], []
+    for i, f in enumerate(t['faces']):
+        if f['surface_type'] != 'Plane':
+            raise ValueError('UNSUPPORTED_SURFACE')
+        normal = list(map(F, f['normal_ieee']))
+        axes = [j for j in range(3) if normal[j] != 0]
+        if len(axes) != 1 or abs(normal[axes[0]]) != 1:
+            raise ValueError('NON_AXIAL_NORMAL_NO_SNAPPING')
+        axis = axes[0]; sign = int(normal[axis])
+        coord = F(f['position_mm_ieee'][axis]) / 1000
+        loops = []
+        for wi, role in zip(f['wire_ids'], f['wire_roles']):
+            w = t['wires'][wi]
+            if not w['closed_observed']:
+                raise ValueError('OPEN_WIRE')
+            if any(t['edges'][e]['curve_type'] != 'Line' or t['edges'][e]['degenerated_observed'] for e in w['ordered_edge_ids']):
+                raise ValueError('UNSUPPORTED_OR_DEGENERATE_CURVE')
+            ids = w['ordered_vertex_ids']
+            if ids and ids[-1] == ids[0]:
+                ids = ids[:-1]
+            if len(ids) != len(w['ordered_edge_ids']) or len(ids) < 4:
+                raise ValueError('ORDERED_WIRE_CARDINALITY')
+            pts = [[F(x)/1000 for x in t['vertices'][v]['point_mm_ieee']] for v in ids]
+            if any(p[axis] != coord for p in pts):
+                raise ValueError('OBSERVED_VERTEX_OFF_PLANE')
+            # Check every proposed segment against its native topological Edge.
+            actual = {frozenset(t['edges'][e]['vertex_ids']) for e in w['ordered_edge_ids']}
+            expected = {frozenset((ids[k], ids[(k+1)%len(ids)])) for k in range(len(ids))}
+            if len(actual) != len(ids) or actual != expected:
+                raise ValueError('EDGE_VERTEX_CONNECTIVITY')
+            u, v = (axis+1)%3, (axis+2)%3
+            area2 = sum(pts[k][u]*pts[(k+1)%len(pts)][v]-pts[(k+1)%len(pts)][u]*pts[k][v] for k in range(len(pts)))
+            if area2 == 0:
+                raise ValueError('DEGENERATE_TRIM')
+            desired = sign if role == 'outer' else -sign
+            reversed_order = (area2 > 0) != (desired > 0)
+            if reversed_order:
+                pts.reverse()
+            normalizations.append({'face': i, 'wire': wi, 'role': role,
+                                   'raw_projected_area2_m2': str(area2), 'proposal_order_reversed': reversed_order,
+                                   'native_orientation_semantics': 'UNKNOWN'})
+            loops.append({'id': 'wire-'+str(wi), 'role': role, 'curve_type': 'Line',
+                          'vertices': [[str(x) for x in p] for p in pts]})
+        faces.append({'id': 'face-'+str(i), 'surface': 'Plane', 'axis': axis,
+                      'coordinate': str(coord), 'normal_sign': sign, 'wires': loops})
+    return {'schema': 'rectilinear-boundary-v1', 'unit': 'm', 'faces': faces}, normalizations
+
+
+def assess(t, boxes):
+    from planar_contract import verify_boundary, compare_cells
+    try:
+        d, order = proposal(t)
+        return {'proposal': d, 'winding_proposal_operations': order,
+                'boundary_math': verify_boundary(d), 'D4_material_comparison': compare_cells(d, boxes),
+                'real_material_inclusion': 'UNKNOWN', 'real_void_inclusion': 'UNKNOWN',
+                'unproved': ['kernel-real surface/3D-curve/pcurve enclosures and SameParameter consistency',
+                             'OCCT orientation/interior semantics and complete trim-to-native correspondence',
+                             'native topology to regular-closed mathematical set equivalence',
+                             'finite extraction/representation and world-placement bounds']}
+    except (ValueError, KeyError, IndexError, TypeError) as e:
+        unsupported = str(e).startswith(('UNSUPPORTED','NON_AXIAL','OBSERVED_VERTEX_OFF_PLANE'))
+        return {'candidate_status': 'UNKNOWN' if unsupported else 'FAIL', 'reason': str(e), 'real_material_inclusion': 'UNKNOWN'}
+
+
+def main(out):
+    sys.path.extend(['/usr/lib/freecad-python3/lib', '/usr/lib/freecad/lib'])
+    import FreeCAD as A
+    import Part
+    import zipfile
+    out.mkdir(parents=True, exist_ok=False)
+    original = native.FCSTD.read_bytes()
+    if native.digest(original) != native.FCSTD_PIN:
+        raise ValueError('FIXED_INPUT_MISMATCH')
+    contract = json.loads(native.CONTRACT.read_bytes())
+    if native.digest(native.CONTRACT.read_bytes()) != native.CONTRACT_PIN:
+        raise ValueError('CONTRACT_MISMATCH')
+    models = {native.PARTS[0]: [contract['moving_box']], native.PARTS[1]: contract['obstacle_boxes']}
+    rows = {}
+    with zipfile.ZipFile(native.FCSTD) as archive:
+        for name in native.PARTS:
+            raw = archive.read(name+'.Shape.brp'); s = Part.Shape(); s.importBrepFromString(raw.decode())
+            before = s.exportBrepToString().encode(); t = topology(s)
+            boxes = [[str(F(x)/1000) for x in b] for b in models[name]]
+            r = assess(t, boxes)
+            faults = []
+            for case in ('missing-face', 'missing-trim', 'normal-reversed', 'opening-shift', 'unsupported-curve', 'missing-edge'):
+                m = copy.deepcopy(t)
+                if case == 'missing-face': m['faces'].pop()
+                elif case == 'missing-trim':
+                    m['faces'][0]['wire_ids'].pop(); m['faces'][0]['wire_roles'].pop()
+                elif case == 'normal-reversed': m['faces'][0]['normal_ieee'] = [str(-F(x)) for x in m['faces'][0]['normal_ieee']]
+                elif case == 'unsupported-curve': m['edges'][0]['curve_type'] = 'BSplineCurve'
+                elif case == 'missing-edge': m['wires'][0]['ordered_edge_ids'].pop()
+                else:
+                    if name != native.PARTS[1]: continue
+                    # Change one observed trim vertex only; keep input record for replay.
+                    vi = m['wires'][m['faces'][0]['wire_ids'][-1]]['ordered_vertex_ids'][0]
+                    m['vertices'][vi]['point_mm_ieee'][1] = str(F(m['vertices'][vi]['point_mm_ieee'][1])+1)
+                result = assess(m, boxes)
+                faults.append({'id': case, 'kind': 'mutation of native-derived observation data; no CAD kernel mutation',
+                               'input': m, 'result': result})
+            if before != s.exportBrepToString().encode(): raise AssertionError('EXTRACTION_CHANGED_SHAPE')
+            rows[name] = {'input_sha256': native.FCSTD_PIN, 'object_id': name,
+                          'shape_member': name+'.Shape.brp', 'shape_sha256': native.digest(raw),
+                          'topology': t, 'assessment': r, 'observation_data_faults': faults,
+                          'source_shape_unchanged': True}
+    if original != native.FCSTD.read_bytes(): raise AssertionError('ORIGINAL_CHANGED')
+    result = {'schema': 'planar-native-proposals-v1', 'FreeCAD': A.Version(), 'OCCT': Part.OCC_VERSION,
+              'source_fcstd_sha256': native.FCSTD_PIN, 'source_fcstd_bytes': len(original),
+              'document_opened': False, 'unit': 'm (exact lift of observed mm doubles /1000)',
+              'records': rows, 'real_material_inclusion': 'UNKNOWN', 'real_void_inclusion': 'UNKNOWN',
+              'finite_real_errors_m': {k: None for k in ('representation','extraction','transform','rounding','pose','motion')},
+              'real_intervals': {'PASS':0,'FAIL':0,'UNKNOWN':0,'NOT_TESTED':128}}
+    (out/'planar.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
+    print('Whole-topology native proposal evaluated; real inclusion UNKNOWN', flush=True)
+
+
+if __name__ == '__main__':
+    try: main(Path(sys.argv[1]))
+    except BaseException:
+        os.write(2, traceback.format_exc().encode()); os._exit(1)
+    os._exit(0)

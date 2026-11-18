@@ -1,0 +1,68 @@
+{
+  "baseline_head": "563195c4be12bf647fdd0b8c063512893b53530a",
+  "baseline_tree": "adffd2d13e6bb12746f3e338267c300bc68ae59f",
+  "main": "18ffb29eeb3db067d47513f76e3a2ef44865c45a",
+  "scope": "planar mathematical bridge, native observations and interval arithmetic; no real inclusion PASS",
+  "files": {
+    ".github/workflows/stage3d5b.yml": {
+      "size_bytes": 3626,
+      "sha256": "accafc1b202b07575137c4a3472ade6a46adf4c96399f1d0ba1b6d900224197b"
+    },
+    "cad/stage3d5b/independent_planar.py": {
+      "size_bytes": 11576,
+      "sha256": "9a5d95248d9f198002eae91495eb3ab1359a57d9ac5275e1a04d72a4eaf320b9"
+    },
+    "cad/stage3d5b/planar_contract.py": {
+      "size_bytes": 16293,
+      "sha256": "25e23f3ffae616b293b2221ba571e60504caa5eb9c3c36a9a653892e6615a6a3"
+    },
+    "cad/stage3d5b/planar_document.py": {
+      "size_bytes": 8387,
+      "sha256": "bd2b7257f2c8f3f0da90e5b4652f6e5f493edc231d71d235d2fde08bc80051d5"
+    },
+    "cad/stage3d5b/planar_native.py": {
+      "size_bytes": 13305,
+      "sha256": "71d789853cb6bb06f4a8e85f91874d68e901c2b2c6b4fa4216f56b4105a20dd5"
+    },
+    "cad/stage3d5b/test_planar_contract.py": {
+      "size_bytes": 7897,
+      "sha256": "ad24b1fa243dc2bba8df8c09a5188ccda46c20a9418f7f45071efb3c68657ffb"
+    },
+    "cad/stage3d5b/test_planar_native.py": {
+      "size_bytes": 4124,
+      "sha256": "979293d7f9f95661cc76193dd35506c5543df2894ef775b0bb15339355689aad"
+    },
+    "cad/stage3d5b/test_transform_bounds.py": {
+      "size_bytes": 6486,
+      "sha256": "246e8c4851b5b6354ca3967ba07cddb950da480f0d72cb0b45cdd38788d87213"
+    },
+    "cad/stage3d5b/transform_bounds.py": {
+      "size_bytes": 12939,
+      "sha256": "58d6b0eed8171279e4299523c04d60cadfcb2994c2900f59bc02c2b96dc1f0ce"
+    },
+    "docs/stage3d5b/PLANAR_CONTRACT.md": {
+      "size_bytes": 4512,
+      "sha256": "1a020574431a6d0b5a8d50cfaa5962cdd0fb9f24ca7bc283768affb4cbb9e8e1"
+    },
+    "docs/stage3d5b/PLANAR_INDEPENDENT.md": {
+      "size_bytes": 4799,
+      "sha256": "071bbc00aec2865baece373accbdfebf24232cbaa3e005232acfbd093c3d44f9"
+    },
+    "docs/stage3d5b/PLANAR_RESULTS.md": {
+      "size_bytes": 3699,
+      "sha256": "9db530ba1a84a12a463b6264dd8c121debdcf82637b0244dce3c98defa965973"
+    },
+    "evidence/stage3d5b/planar-independent/independent-local-summary.json": {
+      "size_bytes": 2310,
+      "sha256": "0f0ec94ea84baec724967b70e33ecc8c939ecf88577a4bd1744a7a5d840c4d5f"
+    },
+    "evidence/stage3d5b/planar-independent/inventory-recheck.json": {
+      "size_bytes": 2024,
+      "sha256": "be01ab843899807dca2d304cb9e4de90d622e87cfd38ef333774517aa765946e"
+    },
+    "evidence/stage3d5b/planar-independent/planar_native-before-inventory-fix.py.txt": {
+      "size_bytes": 11474,
+      "sha256": "c133c437c36d6cbeebadecd3e15c78a766c805f505d58f9aeca3b88644de4a81"
+    }
+  }
+}

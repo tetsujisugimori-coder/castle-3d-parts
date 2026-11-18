@@ -1,0 +1,44 @@
+{
+  "source_sha256": "f54c705d95b7e7699da1c69221e739fdd8fd84534114ac63e9dc2790adbe29a6",
+  "cases": [
+    {
+      "case": "closed-cell-touches-open-void-boundary",
+      "before": {
+        "status": "PASS",
+        "scope": "conditional analytic void only; bounds not verified here",
+        "inner_radius_m": "1",
+        "half_extents_m": [
+          "3/5",
+          "4/5"
+        ],
+        "real_brep": "UNKNOWN"
+      },
+      "after": {
+        "status": "FAIL",
+        "reason": "rectangle-touches-or-exits-open-void"
+      }
+    },
+    {
+      "case": "real-missing-geometry",
+      "before": {
+        "status": "UNKNOWN",
+        "reason": "real-geometric-correspondence-and-inclusion-unproved"
+      },
+      "after": {
+        "status": "FAIL",
+        "reason": "'geometry'"
+      }
+    },
+    {
+      "case": "real-open-solid",
+      "before": {
+        "status": "UNKNOWN",
+        "reason": "real-geometric-correspondence-and-inclusion-unproved"
+      },
+      "after": {
+        "status": "FAIL",
+        "reason": "invalid-or-open-solid"
+      }
+    }
+  ]
+}

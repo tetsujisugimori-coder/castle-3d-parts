@@ -1,0 +1,46 @@
+{
+  "scope": "independent pre-fix observations; not BRep proof",
+  "source_hashes": {
+    "boundary_contract.py": "442806180503086fe5f9ed421ad941933e2e5bf5f22c18cae79921cf0a8c76ab",
+    "circular_contract.py": "d848af9b6745c86478b4a7fcab7214354aef979b181ae0ea2816f3b11ff83289",
+    "test_boundary_contract.py": "d7d7e356addd959b03efbd74a363a5bb5d5959965aca20d077347a37a7b58599",
+    "test_circular_contract.py": "63197b571ec57251c78e586b835170aab8f052c81856c67d72baff4040d5be73"
+  },
+  "findings": [
+    {
+      "id": "closed-cell-tangent",
+      "input": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "3/5",
+        "4/5",
+        "1/1000"
+      ],
+      "actual": {
+        "status": "PASS",
+        "scope": "conditional analytic void only; bounds not verified here",
+        "inner_radius_m": "1",
+        "half_extents_m": [
+          "3/5",
+          "4/5"
+        ],
+        "real_brep": "UNKNOWN"
+      },
+      "expected": "not PASS for guaranteed empty CLOSED rectangle",
+      "independent_corner_squared_radius": "1",
+      "circle_squared_radius": "1",
+      "reason": "open cylinder excludes its wall; closed material includes tangent corner"
+    },
+    {
+      "id": "missing-real-geometry",
+      "actual": {
+        "status": "UNKNOWN",
+        "reason": "real-geometric-correspondence-and-inclusion-unproved"
+      },
+      "expected": "FAIL mandatory-evidence or missing geometry",
+      "reason": "early real return precedes geometry structure checks"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "source_sha256": "442806180503086fe5f9ed421ad941933e2e5bf5f22c18cae79921cf0a8c76ab",
+  "cases": [
+    {
+      "name": "closed-cell-touches-open-void-boundary",
+      "arguments": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "3/5",
+        "4/5",
+        "1/1000"
+      ],
+      "before": {
+        "status": "PASS",
+        "scope": "conditional analytic void only; bounds not verified here",
+        "inner_radius_m": "1",
+        "half_extents_m": [
+          "3/5",
+          "4/5"
+        ],
+        "real_brep": "UNKNOWN"
+      }
+    },
+    {
+      "name": "real-missing-geometry",
+      "input": {
+        "schema": "brep-observation-v1",
+        "manifest_sha256": "99d35512273e0bf7ceb7a67b0ec97805a5c6cfb2b30a8852e5c452c6cf6a108f",
+        "evidence": {
+          "input": "synthetic-definition:input",
+          "topology": "synthetic-definition:topology",
+          "geometry": "synthetic-definition:geometry",
+          "placement": "synthetic-definition:placement",
+          "tolerance": "synthetic-definition:tolerance"
+        },
+        "records": {
+          "source": {
+            "object_id": "GATE_BoltGuide_Left",
+            "shape_sha256": "890eb9e8ab4dd570fe8ab0207b019df7c80a115002a59b4fc0b2d484d33f78b3",
+            "fcstd_sha256": "fa29bdd7d88653e4dca0e68a05cae9988f26050ae334a10de0005f4120276e4f",
+            "axis_local": [
+              "0",
+              "0",
+              "1"
+            ],
+            "raw_unit": "mm",
+            "geometry_unit": "m",
+            "scale_to_m": "1/1000",
+            "placement_applications": 1,
+            "transform_order": [
+              "scale",
+              "rotate",
+              "translate"
+            ],
+            "primitive_frame": "local",
+            "brep_tolerance_m": "0",
+            "tolerance_budget_m": "0"
+          },
+          "model": {
+            "object_id": "GATE_BoltGuide_Left",
+            "shape_sha256": "890eb9e8ab4dd570fe8ab0207b019df7c80a115002a59b4fc0b2d484d33f78b3",
+            "fcstd_sha256": "fa29bdd7d88653e4dca0e68a05cae9988f26050ae334a10de0005f4120276e4f",
+            "axis_local": [
+              "0",
+              "0",
+              "1"
+            ],
+            "raw_unit": "mm",
+            "geometry_unit": "m",
+            "scale_to_m": "1/1000",
+            "placement_applications": 1,
+            "transform_order": [
+              "scale",
+              "rotate",
+              "translate"
+            ],
+            "primitive_frame": "local",
+            "brep_tolerance_m": "0",
+            "tolerance_budget_m": "0"
+          }
+        }
+      },
+      "before": {
+        "status": "UNKNOWN",
+        "reason": "real-geometric-correspondence-and-inclusion-unproved"
+      }
+    },
+    {
+      "name": "real-open-solid",
+      "input": {
+        "schema": "brep-observation-v1",
+        "manifest_sha256": "99d35512273e0bf7ceb7a67b0ec97805a5c6cfb2b30a8852e5c452c6cf6a108f",
+        "evidence": {
+          "input": "synthetic-definition:input",
+          "topology": "synthetic-definition:topology",
+          "geometry": "synthetic-definition:geometry",
+          "placement": "synthetic-definition:placement",
+          "tolerance": "synthetic-definition:tolerance"
+        },
+        "records": {
+          "source": {
+            "object_id": "GATE_BoltGuide_Left",
+            "shape_sha256": "890eb9e8ab4dd570fe8ab0207b019df7c80a115002a59b4fc0b2d484d33f78b3",
+            "fcstd_sha256": "fa29bdd7d88653e4dca0e68a05cae9988f26050ae334a10de0005f4120276e4f",
+            "axis_local": [
+              "0",
+              "0",
+              "1"
+            ],
+            "raw_unit": "mm",
+            "geometry_unit": "m",
+            "scale_to_m": "1/1000",
+            "placement_applications": 1,
+            "transform_order": [
+              "scale",
+              "rotate",
+              "translate"
+            ],
+            "primitive_frame": "local",
+            "brep_tolerance_m": "0",
+            "tolerance_budget_m": "0"
+          },
+          "model": {
+            "object_id": "GATE_BoltGuide_Left",
+            "shape_sha256": "890eb9e8ab4dd570fe8ab0207b019df7c80a115002a59b4fc0b2d484d33f78b3",
+            "fcstd_sha256": "fa29bdd7d88653e4dca0e68a05cae9988f26050ae334a10de0005f4120276e4f",
+            "axis_local": [
+              "0",
+              "0",
+              "1"
+            ],
+            "raw_unit": "mm",
+            "geometry_unit": "m",
+            "scale_to_m": "1/1000",
+            "placement_applications": 1,
+            "transform_order": [
+              "scale",
+              "rotate",
+              "translate"
+            ],
+            "primitive_frame": "local",
+            "brep_tolerance_m": "0",
+            "tolerance_budget_m": "0"
+          }
+        },
+        "geometry": {
+          "kind": "synthetic-box-through-cylinder-v1",
+          "unit": "m",
+          "source": {
+            "valid": true,
+            "closed": false,
+            "solids": 1,
+            "faces": {
+              "xmin": "-X",
+              "xmax": "+X",
+              "ymin": "-Y",
+              "ymax": "+Y",
+              "zmin": "-Z",
+              "zmax": "+Z",
+              "bore": "toward-axis"
+            },
+            "box_m": [
+              "-1",
+              "-1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "hole": {
+              "kind": "circular-through-Z",
+              "center_xy_m": [
+                "0",
+                "0"
+              ],
+              "radius_m": "1/5",
+              "wall_role": "bore",
+              "openings": [
+                "zmin",
+                "zmax"
+              ]
+            },
+            "placement": {
+              "rotation": [
+                "1",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "1"
+              ],
+              "translation_m": [
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          },
+          "model": {
+            "valid": true,
+            "closed": true,
+            "solids": 1,
+            "faces": {
+              "xmin": "-X",
+              "xmax": "+X",
+              "ymin": "-Y",
+              "ymax": "+Y",
+              "zmin": "-Z",
+              "zmax": "+Z",
+              "bore": "toward-axis"
+            },
+            "box_m": [
+              "-1",
+              "-1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "hole": {
+              "kind": "circular-through-Z",
+              "center_xy_m": [
+                "0",
+                "0"
+              ],
+              "radius_m": "1/5",
+              "wall_role": "bore",
+              "openings": [
+                "zmin",
+                "zmax"
+              ]
+            },
+            "placement": {
+              "rotation": [
+                "1",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "1"
+              ],
+              "translation_m": [
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          },
+          "face_mapping": {
+            "xmin": "xmin",
+            "xmax": "xmax",
+            "ymin": "ymin",
+            "ymax": "ymax",
+            "zmin": "zmin",
+            "zmax": "zmax",
+            "bore": "bore"
+          },
+          "errors_m": {
+            "approximation": "0",
+            "transform": "0",
+            "distance_rounding": "0",
+            "representation": "0",
+            "pose": "0",
+            "motion": "0"
+          },
+          "rounding": {
+            "exact_upper_m": "1/3",
+            "quantum_m": "1/1000",
+            "reported_upper_m": "167/500"
+          }
+        }
+      },
+      "before": {
+        "status": "UNKNOWN",
+        "reason": "real-geometric-correspondence-and-inclusion-unproved"
+      }
+    }
+  ]
+}

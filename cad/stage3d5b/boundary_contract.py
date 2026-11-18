@@ -1,0 +1,122 @@
+"""Observation contract guards, not an OCCT extractor or BRep proof checker.
+
+Independent anchors must come from separately hashed input bytes. Synthetic
+fixtures define geometry explicitly. Real records always remain UNKNOWN even
+when all metadata checks pass: their geometric proof is not implemented here.
+"""
+from fractions import Fraction
+import re
+from circular_contract import q, rigid, validate as circular_validate
+
+EVIDENCE = {'input','topology','geometry','placement','tolerance'}
+ERRORS = {'approximation','transform','distance_rounding','representation','pose','motion'}
+STATES = {'PASS','FAIL','UNKNOWN','NOT_TESTED'}
+
+
+def sha(v):
+    if not isinstance(v,str) or not re.fullmatch('[0-9a-f]{64}',v):
+        raise ValueError('invalid-sha256')
+    return v
+
+
+def validate_observation(d, anchors):
+    try:
+        if d['schema'] not in ('synthetic-observation-v1','brep-observation-v1'):
+            raise ValueError('observation-schema')
+        if set(d['evidence'])!=EVIDENCE or any(not isinstance(v,str) or not v for v in d['evidence'].values()):
+            raise ValueError('mandatory-evidence')
+        if sha(d['manifest_sha256'])!=sha(anchors['manifest_sha256']):
+            raise ValueError('manifest-anchor-mismatch')
+        if set(d['records'])!={'source','model'}: raise ValueError('record-inventory')
+        nonzero_tolerance = False
+        for role in ('source','model'):
+            s=d['records'][role];a=anchors[role]
+            if s['object_id']!=a['object_id'] or sha(s['shape_sha256'])!=sha(a['shape_sha256']):
+                raise ValueError('shape-anchor-mismatch')
+            if sha(s['fcstd_sha256'])!=sha(a['fcstd_sha256']):
+                raise ValueError('input-anchor-mismatch')
+            if s['axis_local']!=['0','0','1']:
+                raise ValueError('directed-hole-frame')
+            if s['raw_unit']!='mm' or s['geometry_unit']!='m' or q(s['scale_to_m'])!=Fraction(1,1000):
+                raise ValueError('unit-conversion')
+            if type(s['placement_applications']) is not int or s['placement_applications']!=1:
+                raise ValueError('placement-application-count')
+            if s['transform_order']!=['scale','rotate','translate'] or s['primitive_frame']!='local':
+                raise ValueError('transform-order-or-frame')
+            tolerance,budget=q(s['brep_tolerance_m']),q(s['tolerance_budget_m'])
+            if tolerance<0 or budget<0 or tolerance>budget:
+                raise ValueError('tolerance-exceeds-declared-budget')
+            nonzero_tolerance |= tolerance!=0 or budget!=0
+        # Metadata existence/known invalid topology are checked even for real
+        # records. This does not establish that the metadata matches the BRep.
+        geometry=d['geometry']
+        if not isinstance(geometry,dict) or not isinstance(geometry['kind'],str):
+            raise ValueError('mandatory-geometry')
+        for role in ('source','model'):
+            body=geometry[role]
+            if body['valid'] is not True or body['closed'] is not True or type(body['solids']) is not int or body['solids']!=1:
+                raise ValueError('invalid-or-open-solid')
+            if not isinstance(body['faces'],dict) or not body['faces']:
+                raise ValueError('mandatory-face-inventory')
+            placement=body['placement']
+            if not isinstance(placement,dict) or set(placement)!={'rotation','translation_m'}:
+                raise ValueError('placement schema')
+            for key,length in [('rotation',9),('translation_m',3)]:
+                if not isinstance(placement[key],list) or len(placement[key])!=length:
+                    raise ValueError('placement schema')
+                list(map(q,placement[key]))
+            # This schema declares an exact rational proper rigid transform.
+            # Approximate OCCT matrices need interval-error evidence and a
+            # different contract; they are not silently treated as exact here.
+            rigid(placement)
+        if d['schema']=='brep-observation-v1':
+            return {'status':'UNKNOWN','reason':'real-geometric-correspondence-and-inclusion-unproved'}
+        if d['geometry']['kind']!='synthetic-box-through-cylinder-v1':
+            raise ValueError('synthetic-geometry-kind')
+        base=circular_validate(d['geometry'])
+        if base['status']!='PASS': return base
+        if nonzero_tolerance:
+            return {'status':'UNKNOWN','reason':'stored-tolerance-is-not-inclusion-error-proof'}
+        return {'status':'PASS','scope':'synthetic static geometry and observation-contract only',
+                'real_brep':'UNKNOWN','continuous_motion':'NOT_TESTED','epsilon_m':'0'}
+    except (KeyError,ValueError,TypeError,IndexError,AttributeError,ZeroDivisionError) as e:
+        return {'status':'FAIL','reason':str(e)}
+
+
+def round_grid(value, quantum, direction):
+    """Exact lower/upper grid rounding, including negative coordinates."""
+    x,h=q(value),q(quantum)
+    if h<=0 or direction not in ('lower','upper'): raise ValueError('rounding-domain')
+    z=x/h
+    k=z.numerator//z.denominator
+    if direction=='upper' and z.denominator!=1: k+=1
+    return k*h
+
+
+def void_rectangle(radius, center_error_l1, radius_error, transform_error, half_width, half_height, quantum):
+    """Conditional analytic void enclosure in nominal-center coordinates.
+
+    If all supplied errors are independently proven nonnegative metre bounds,
+    the disk of radius r-e_center-e_radius-e_transform is guaranteed empty.
+    A CLOSED rectangle lies in the OPEN void disk iff hx^2+hy^2 < rho^2.
+    Equality touches material boundary and cannot certify empty space.
+    Inner half extents round DOWN. This routine does not establish the bounds
+    from OCCT, and its PASS cannot authorize a real-CAD safety result.
+    """
+    vals=list(map(q,(radius,center_error_l1,radius_error,transform_error,half_width,half_height,quantum)))
+    r,ec,er,et,hx,hy,h=vals
+    if r<=0 or min(ec,er,et)<0 or min(hx,hy,h)<=0: raise ValueError('void-bound-domain')
+    rho=r-ec-er-et
+    if rho<=0: return {'status':'UNKNOWN','reason':'no-proven-positive-empty-radius'}
+    x,y=round_grid(half_width,quantum,'lower'),round_grid(half_height,quantum,'lower')
+    if min(x,y)<=0: return {'status':'UNKNOWN','reason':'grid-collapses-void-cell'}
+    if x*x+y*y>=rho*rho: return {'status':'FAIL','reason':'rectangle-touches-or-exits-open-void'}
+    return {'status':'PASS','scope':'conditional analytic void only; bounds not verified here',
+            'inner_radius_m':str(rho),'half_extents_m':[str(x),str(y)],'real_brep':'UNKNOWN'}
+
+
+def aggregate_intervals(rows):
+    """Count one supplied model/stage snapshot; never constructs interval bounds."""
+    if not isinstance(rows,list) or len(rows)!=128 or any(not isinstance(v,str) or v not in STATES for v in rows):
+        raise ValueError('one-model-one-stage-128-required')
+    return {v:rows.count(v) for v in ('PASS','FAIL','UNKNOWN','NOT_TESTED')}

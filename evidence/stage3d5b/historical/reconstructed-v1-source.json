@@ -1,0 +1,7 @@
+{
+  "scope": "later reconstruction, not an original saved execution artifact",
+  "reconstructed_file": "reconstructed-v1-boundary_contract.py.txt",
+  "sha256": "442806180503086fe5f9ed421ad941933e2e5bf5f22c18cae79921cf0a8c76ab",
+  "matches_independently_observed_pre_fix_source_sha": true,
+  "method": "reverse known narrow source changes; exact SHA equality"
+}

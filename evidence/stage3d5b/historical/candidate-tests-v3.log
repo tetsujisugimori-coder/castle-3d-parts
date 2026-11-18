@@ -1,0 +1,18 @@
+test_faults (test_boundary_contract.ContractTests.test_faults) ... ok
+test_inner_void_boundary (test_boundary_contract.ContractTests.test_inner_void_boundary) ... ok
+test_interval_snapshots (test_boundary_contract.ContractTests.test_interval_snapshots) ... ok
+test_normal (test_boundary_contract.ContractTests.test_normal) ... ok
+test_old_extension_gap (test_boundary_contract.ContractTests.test_old_extension_gap) ... ok
+test_real_and_tolerance_gate (test_boundary_contract.ContractTests.test_real_and_tolerance_gate) ... ok
+test_real_missing_and_open (test_boundary_contract.ContractTests.test_real_missing_and_open) ... ok
+test_rounding (test_boundary_contract.ContractTests.test_rounding) ... ok
+test_control (test_circular_contract.Tests.test_control) ... ok
+test_faults (test_circular_contract.Tests.test_faults) ... ok
+test_primitive_theorem (test_circular_contract.Tests.test_primitive_theorem) ... ok
+test_schema_types (test_circular_contract.Tests.test_schema_types) ... ok
+test_unproved_and_real (test_circular_contract.Tests.test_unproved_and_real) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.007s
+
+OK

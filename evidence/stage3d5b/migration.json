@@ -1,0 +1,93 @@
+{
+  "repository": "tetsujisugimori-coder/castle-3d-parts",
+  "account_verified": "tetsujisugimori-coder",
+  "base_main": "18ffb29eeb3db067d47513f76e3a2ef44865c45a",
+  "base_tree": "423d33c5a8283445832ea3c5495dc94090796090",
+  "old_base": "445f37182f07dae98441bc2a57f103e140c628a9",
+  "old_tree": "9005551d740e5fc70451e8986df5056480d80d06",
+  "branch": "feat/stage3d5b-brep-containment",
+  "dependencies": [
+    {
+      "number": 29,
+      "merged": true,
+      "merge_commit": "7f32781089b12d56d78392c985bfddb6bf5aca02",
+      "ancestor_of_start_main": true
+    },
+    {
+      "number": 31,
+      "merged": true,
+      "merge_commit": "f18162fc221366dea23dc2ea0b2234488c2445f9",
+      "ancestor_of_start_main": true
+    },
+    {
+      "number": 33,
+      "merged": true,
+      "merge_commit": "028f12f2d8f1f5687c153b16771756b8895d61b9",
+      "ancestor_of_start_main": true
+    },
+    {
+      "number": 35,
+      "merged": true,
+      "merge_commit": "4f9f973e5384b207a6dac0fd22d8e3e28a833cf3",
+      "ancestor_of_start_main": true
+    },
+    {
+      "number": 37,
+      "merged": true,
+      "merge_commit": "18ffb29eeb3db067d47513f76e3a2ef44865c45a",
+      "ancestor_of_start_main": true
+    }
+  ],
+  "code_copies": [
+    {
+      "source": "evidence/stage3d5b/run-20261115T134606Z/candidate/circular_contract.py",
+      "target": "cad/stage3d5b/circular_contract.py",
+      "sha256": "d848af9b6745c86478b4a7fcab7214354aef979b181ae0ea2816f3b11ff83289",
+      "size_bytes": 5329,
+      "byte_equal": true
+    },
+    {
+      "source": "evidence/stage3d5b/run-20261115T134606Z/candidate/test_circular_contract.py",
+      "target": "cad/stage3d5b/test_circular_contract.py",
+      "sha256": "63197b571ec57251c78e586b835170aab8f052c81856c67d72baff4040d5be73",
+      "size_bytes": 3721,
+      "byte_equal": true
+    },
+    {
+      "source": "evidence/stage3d5b/run-20261115T134606Z/candidate/boundary_contract.py",
+      "target": "cad/stage3d5b/boundary_contract.py",
+      "sha256": "42dd5d5f24a6a12ff6d9c68fe3eb50adb5a8173b55d3afb8ab62d904a64f8b51",
+      "size_bytes": 6969,
+      "byte_equal": true
+    },
+    {
+      "source": "evidence/stage3d5b/run-20261115T134606Z/candidate/test_boundary_contract.py",
+      "target": "cad/stage3d5b/test_boundary_contract.py",
+      "sha256": "892696f9c015850c04ad9a74e8d706cf12e9bf347a3e904bcd1c56b1fe2ea96d",
+      "size_bytes": 6164,
+      "byte_equal": true
+    },
+    {
+      "source": "cad/stage3d5/bounds.py",
+      "target": "cad/stage3d5/bounds.py",
+      "sha256": "6f501d310fd42ab0457e6ccc891c4df757bb759ab70f67e8540eba0ce9bf125b",
+      "size_bytes": 5368,
+      "byte_equal": true
+    },
+    {
+      "source": "cad/stage3d5/test_bounds.py",
+      "target": "cad/stage3d5/test_bounds.py",
+      "sha256": "4e7a7c953c378bc1631d6a364ef17bba43103cfed7e66359489d81f4261d4c4a",
+      "size_bytes": 4488,
+      "byte_equal": true
+    }
+  ],
+  "fixed_input": {
+    "current_fcstd_sha256": "c3ca0f1ee580fbb4665c4039dfd63200a73c77eaea6ef3114a0d17bd56d70d1a",
+    "historical_candidate_sha256": "4597bee609eb4f3e262a60c8989f1cfb0ba90081408b4c3f0703c2ae8fd911a2",
+    "same_input": false
+  },
+  "overlap_decision": "D4 verifies orthogonal exact-model boundaries; synthetic circular contract is additional. Keep audited source modules rather than alter existing D4 implementation. Shared rational rounding concepts do not establish BRep relation.",
+  "source_evidence_manifest_sha256": "5c15005b8523b87fcc62e6136571920ab28d63bee0485b53f3d9405673e6aa18",
+  "historical_provenance": "historical files preserve prior result/reconstruction classifications, not current-head CI or current-main native evidence"
+}
