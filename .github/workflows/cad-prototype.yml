@@ -21,12 +21,17 @@ jobs:
           node scripts/build-site.mjs
           git ls-files -z | xargs -0 sha256sum > cad-ci/manifest.sha256
           git archive HEAD | tar -x -C cad-ci/source
+      - name: Verify full source before upload (including hidden paths)
+        run: |
+          python3 -B -m unittest discover -s scripts -p 'test_verify_cad_contract_archive.py' -v > cad-ci/audit-tests.log 2>&1 || { cat cad-ci/audit-tests.log; exit 1; }
+          python3 -B scripts/verify_cad_contract_archive.py --repo . --artifact-dir cad-ci --report cad-ci/source-audit-pre.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: cad-contract-${{ github.event.pull_request.head.sha || github.sha }}
           path: cad-ci/
           if-no-files-found: error
+          include-hidden-files: true
   browser:
     runs-on: ubuntu-24.04
     steps:
@@ -48,4 +53,26 @@ jobs:
         with:
           name: cad-browser-${{ github.event.pull_request.head.sha || github.sha }}
           path: cad-browser-ci/
+          if-no-files-found: error
+
+  verify-contract-upload:
+    needs: contract
+    if: ${{ needs.contract.result == 'success' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: cad-contract-${{ github.event.pull_request.head.sha || github.sha }}
+          path: cad-contract-download
+      - name: Independently compare downloaded source against Git tree and pre-upload receipt
+        run: |
+          python3 -B scripts/verify_cad_contract_archive.py --repo . --artifact-dir cad-contract-download --prior cad-contract-download/source-audit-pre.json --report cad-contract-readback.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cad-contract-audit-${{ github.event.pull_request.head.sha || github.sha }}
+          path: cad-contract-readback.json
           if-no-files-found: error
