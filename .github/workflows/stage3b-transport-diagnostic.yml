@@ -31,8 +31,8 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Capture fixed identity and run bounded Stage 3-B probe
         run: |
-          "PW_MODULE=$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/playwright/index.mjs" >> $env:GITHUB_ENV
-          "THREE_DIR=$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/three" >> $env:GITHUB_ENV
+          $env:PW_MODULE = "$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/playwright/index.mjs"
+          $env:THREE_DIR = "$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/three"
           git show -s --format='%H %T %P' HEAD > stage3b-transport-git.txt
           node scripts/stage3b-transport-diagnostic.mjs stage3b-transport-ci
       - name: Hash raw evidence
