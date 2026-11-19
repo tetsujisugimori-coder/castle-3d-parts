@@ -1,0 +1,48 @@
+name: Stage 3-B transport diagnostic (bounded)
+on:
+  pull_request:
+    paths:
+      - scripts/stage3b-transport-diagnostic.mjs
+      - .github/workflows/stage3b-transport-diagnostic.yml
+permissions:
+  contents: read
+jobs:
+  stage3b-transport:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Preserve repository bytes
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin dependencies and install browsers
+        run: |
+          "PLAYWRIGHT_BROWSERS_PATH=$env:RUNNER_TEMP/stage3b-netdiag-browsers" >> $env:GITHUB_ENV
+          npm install --prefix "$env:RUNNER_TEMP/stage3b-netdiag-deps" --cache "$env:RUNNER_TEMP/stage3b-netdiag-npm" --ignore-scripts --no-audit --no-fund playwright@1.56.1 three@0.180.0
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & "$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/.bin/playwright.cmd" install chromium webkit
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Capture fixed identity and run bounded Stage 3-B probe
+        run: |
+          "PW_MODULE=$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/playwright/index.mjs" >> $env:GITHUB_ENV
+          "THREE_DIR=$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/three" >> $env:GITHUB_ENV
+          git show -s --format='%H %T %P' HEAD > stage3b-transport-git.txt
+          node scripts/stage3b-transport-diagnostic.mjs stage3b-transport-ci
+      - name: Hash raw evidence
+        if: always()
+        run: python scripts/stage3c-hash-evidence.py stage3b-transport-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3b-network-diagnostic-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            stage3b-transport-ci/
+            stage3b-transport-git.txt
+          if-no-files-found: error
