@@ -4,18 +4,69 @@ on:
     paths:
       - scripts/stage3b-transport-diagnostic.mjs
       - .github/workflows/stage3b-transport-diagnostic.yml
+  workflow_dispatch:
+    inputs:
+      expected_head:
+        description: 'Immutable 40-character Git commit SHA to diagnose'
+        required: true
+        type: string
 permissions:
   contents: read
 jobs:
   stage3b-transport:
     runs-on: windows-latest
     timeout-minutes: 15
+    env:
+      EXPECTED_HEAD: ${{ inputs.expected_head || '' }}
     steps:
       - name: Preserve repository bytes
         run: git config --global core.autocrlf false
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.expected_head || github.sha }}
+      - name: Validate immutable SHA for manual diagnosis
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
+            if ($env:EXPECTED_HEAD -cnotmatch '^[0-9a-fA-F]{40}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin dependencies and install browsers
+        run: |
+          $env:PLAYWRIGHT_BROWSERS_PATH = "$env:RUNNER_TEMP/stage3b-netdiag-browsers"
+          "PLAYWRIGHT_BROWSERS_PATH=$env:PLAYWRIGHT_BROWSERS_PATH" >> $env:GITHUB_ENV
+          npm install --prefix "$env:RUNNER_TEMP/stage3b-netdiag-deps" --cache "$env:RUNNER_TEMP/stage3b-netdiag-npm" --ignore-scripts --no-audit --no-fund playwright@1.56.1 three@0.180.0
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & "$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/.bin/playwright.cmd" install chromium webkit
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Offline P2 legacy RED and evidence gate GREEN
+        run: node --test scripts/stage3b-transport-evidence.test.mjs
+      - name: Capture fixed identity and run bounded Stage 3-B probe
+        run: |
+          $env:PW_MODULE = "$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/playwright/index.mjs"
+          $env:THREE_DIR = "$env:RUNNER_TEMP/stage3b-netdiag-deps/node_modules/three"
+          git show -s --format='%H %T %P' HEAD > stage3b-transport-git.txt
+          node scripts/stage3b-transport-diagnostic.mjs stage3b-transport-ci
+      - name: Hash raw evidence
+        if: always()
+        run: python scripts/stage3c-hash-evidence.py stage3b-transport-ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3b-network-diagnostic-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            stage3b-transport-ci/
+            stage3b-transport-git.txt
+          if-no-files-found: error
+) { throw "expected_head must be a full Git commit SHA" }
+            $actual = (git rev-parse HEAD).Trim()
+            if ($actual -cne $env:EXPECTED_HEAD) { throw "Checkout SHA mismatch: $actual" }
+          }
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

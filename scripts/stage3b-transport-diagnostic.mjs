@@ -5,6 +5,7 @@ import { createServer } from 'node:http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync } from 'node:fs';
 import { resolve, relative, isAbsolute, extname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { auditEvidence, outcome } from './stage3b-transport-evidence.mjs';
 
 const out = resolve(process.argv[2] || 'stage3b-transport-ci');
 if (existsSync(out)) throw Error('Diagnostic output must be a new directory');
@@ -43,9 +44,10 @@ const contentTypes = { '.html':'text/html', '.mjs':'text/javascript', '.js':'tex
 let socketId = 0;
 const server = createServer((req, res) => {
   const url = req.url || '';
-  log('server-request', { url, socket: req.socket._stage3bDiagId || null });
-  res.on('finish', () => log('server-response-finish', { url, status:res.statusCode, bytesWritten:res.socket?.bytesWritten ?? null }));
-  res.on('close', () => log('server-response-close', { url, status:res.statusCode, writableEnded:res.writableEnded }));
+  const socket = req.socket._stage3bDiagId ?? null;
+  log('server-request', { url, socket });
+  res.on('finish', () => log('server-response-finish', { url, socket, status:res.statusCode, bytesWritten:res.socket?.bytesWritten ?? null }));
+  res.on('close', () => log('server-response-close', { url, socket, status:res.statusCode, writableEnded:res.writableEnded }));
   try {
     const pathname = new URL(url, 'http://local').pathname.replace(/\/$/, '/index.html');
     const path = resolve(root, '.' + pathname);
@@ -54,7 +56,7 @@ const server = createServer((req, res) => {
     res.setHeader('Content-Type', contentTypes[extname(path)] || 'application/octet-stream');
     res.end(readFileSync(path));
   } catch (err) {
-    log('server-read-error', { url, error:err.message });
+    log('server-read-error', { url, socket, error:err.message });
     res.statusCode=404;
     res.end('missing');
   }
@@ -66,7 +68,7 @@ server.on('connection', socket => {
   socket.on('error', err => log('server-socket-error', { socket:id, code:err.code||null, message:err.message }));
   socket.on('close', hadError => log('server-socket-close', { socket:id, hadError }));
 });
-server.on('clientError', err => log('server-client-error', { code:err.code||null, message:err.message }));
+server.on('clientError', (err, socket) => log('server-client-error', { socket: socket?._stage3bDiagId ?? null, code:err.code||null, message:err.message }));
 server.on('error', err => log('server-error', { code:err.code||null, message:err.message }));
 await new Promise((ok, fail) => server.listen(0, '127.0.0.1', err => err ? fail(err) : ok()));
 const base = `http://127.0.0.1:${server.address().port}/`;
@@ -137,10 +139,17 @@ try {
   await new Promise(resolve => server.close(resolve));
   log('server-closed');
   const report={metadata:meta,scenarios,results,counts:results.reduce((c,r)=>(c[r.status]=(c[r.status]||0)+1,c),{})};
+  // Save case results first. An incomplete trace/PNG must not be masked by PASS counts.
   writeFileSync(join(out, 'results.json'), JSON.stringify(report,null,2));
   const expectedNormal=scenarios.filter(s=>!s.synthetic).reduce((n,s)=>n+s.count,0);
   const normalPass=results.filter(r=>!r.synthetic&&r.status==='PASS').length;
   const syntheticPass=results.filter(r=>r.synthetic&&r.status==='EXPECTED_SYNTHETIC_FAIL').length;
-  console.log(JSON.stringify({normalPass,expectedNormal,syntheticPass,expectedSynthetic:1,results:results.map(r=>({tag:r.tag,status:r.status,error:r.error?.slice(0,250)}))}));
-  if(normalPass!==expectedNormal||syntheticPass!==1)process.exitCode=1;
+  const evidence = auditEvidence({directory:out, rows:results, expectedCount:expectedNormal+1});
+  const decision = outcome({transportSuccess:normalPass===expectedNormal&&syntheticPass===1, evidenceStatus:evidence.status});
+  report.evidence = evidence;
+  report.assessment = decision.status;
+  writeFileSync(join(out, 'results.json'), JSON.stringify(report,null,2));
+  writeFileSync(join(out, 'evidence-status.json'), JSON.stringify({evidence,decision},null,2));
+  console.log(JSON.stringify({normalPass,expectedNormal,syntheticPass,expectedSynthetic:1,evidenceStatus:evidence.status,decision,results:results.map(r=>({tag:r.tag,status:r.status,error:r.error?.slice(0,250)}))}));
+  process.exitCode = decision.exitCode;
 }
