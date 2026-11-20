@@ -28,10 +28,23 @@ jobs:
           dpkg-query -W freecad-python3 libfreecad-python3 > stage3d5d-evidence/engine.txt
       - name: Portable proof gate tests
         run: python3 -B -m unittest discover -s cad/stage3d5d -p 'test_*.py' -v > stage3d5d-evidence/tests.log 2>&1
-      - name: One native reference pose (preserve exit and logs)
+      - name: One native reference pose (trace restricted to new source)
         run: |
           set +e
-          python3 -X faulthandler -u -B cad/stage3d5d/one_slice.py stage3d5d-evidence/one-slice > stage3d5d-evidence/native-stdout.log 2> stage3d5d-evidence/native-stderr.log
+          python3 -X faulthandler -u -B - > stage3d5d-evidence/native-stdout.log 2> stage3d5d-evidence/native-stderr.log <<'PY'
+          import runpy
+          import sys
+          source = 'cad/stage3d5d/one_slice.py'
+          logpath = 'stage3d5d-evidence/native-lines.log'
+          def trace(frame, event, arg):
+              if event == 'line' and frame.f_code.co_filename.endswith('stage3d5d/one_slice.py'):
+                  with open(logpath, 'a') as out:
+                      out.write(str(frame.f_lineno) + '\n')
+              return trace
+          sys.settrace(trace)
+          sys.argv = [source, 'stage3d5d-evidence/one-slice']
+          runpy.run_path(source, run_name='__main__')
+          PY
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/native-exit.txt
           find stage3d5d-evidence -maxdepth 2 -type f -print > stage3d5d-evidence/native-files.txt
