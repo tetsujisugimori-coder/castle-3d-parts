@@ -176,7 +176,7 @@ if __name__ == '__main__':
     dest = Path(sys.argv[1])
     try:
         sys.exit(main(dest))
-    except BaseException:
+    except Exception:
         if dest.is_dir():
             (dest/'error.txt').write_text(traceback.format_exc(),encoding='utf-8')
         raise
