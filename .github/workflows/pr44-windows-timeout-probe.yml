@@ -1,0 +1,27 @@
+name: PR44 Windows timeout observation
+on:
+  push:
+    branches: [diagnostic/pr44-windows-timeout-20261120]
+    paths: ['.github/workflows/pr44-windows-timeout-probe.yml']
+permissions:
+  contents: read
+jobs:
+  windows:
+    if: github.run_attempt == 1
+    runs-on: windows-2025
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Observe one CLI timeout
+        shell: pwsh
+        run: ./scripts/pr44-windows-timeout-probe.ps1
+      - name: Upload raw observation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr44-windows-timeout-observation
+          path: ${{ runner.temp }}/pr44-timeout-${{ github.run_id }}/evidence/
+          if-no-files-found: error
