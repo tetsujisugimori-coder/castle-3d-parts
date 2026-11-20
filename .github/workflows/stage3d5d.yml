@@ -28,8 +28,14 @@ jobs:
           dpkg-query -W freecad-python3 libfreecad-python3 > stage3d5d-evidence/engine.txt
       - name: Portable proof gate tests
         run: python3 -B -m unittest discover -s cad/stage3d5d -p 'test_*.py' -v > stage3d5d-evidence/tests.log 2>&1
-      - name: One native reference pose
-        run: python3 -B cad/stage3d5d/one_slice.py stage3d5d-evidence/one-slice > stage3d5d-evidence/native-stdout.log 2> stage3d5d-evidence/native-stderr.log
+      - name: One native reference pose (preserve exit and logs)
+        run: |
+          set +e
+          python3 -X faulthandler -u -B cad/stage3d5d/one_slice.py stage3d5d-evidence/one-slice > stage3d5d-evidence/native-stdout.log 2> stage3d5d-evidence/native-stderr.log
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-exit.txt
+          find stage3d5d-evidence -maxdepth 2 -type f -print > stage3d5d-evidence/native-files.txt
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
