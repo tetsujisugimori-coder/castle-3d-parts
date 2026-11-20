@@ -78,6 +78,17 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/pcurve-verify.exit
           exit "$code"
+      - name: Prove one holed Guide face's represented continuous domain
+        run: |
+          set +e
+          python3 -B cad/stage3d5d/face_region.py \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/face-region "$GITHUB_WORKSPACE" \
+            > stage3d5d-evidence/face-region.stdout 2> stage3d5d-evidence/face-region.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face-region.exit
+          exit "$code"
       - name: Guide oriented Solid and through-void region observations
         run: |
           set +e
