@@ -89,6 +89,25 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/face-region.exit
           exit "$code"
+      - name: Direct OCCT FaceClassifier of five Guide Face 0 UV points
+        run: |
+          set +e
+          binary="$RUNNER_TEMP/stage3d5d-face0-classifier"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_face0_classifier.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/face0-build.stdout 2> stage3d5d-evidence/face0-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/face0-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          python3 -X faulthandler -u -B cad/stage3d5d/verify_face0_uv.py \
+            "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            stage3d5d-evidence/face-region/face-region.json \
+            stage3d5d-evidence/face0-uv \
+            > stage3d5d-evidence/face0-verify.stdout 2> stage3d5d-evidence/face0-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face0-verify.exit
+          exit "$code"
       - name: Guide oriented Solid and through-void region observations
         run: |
           set +e
