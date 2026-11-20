@@ -135,12 +135,16 @@ def main(output):
     sys.path.insert(0, str(ROOT / 'cad/stage3d5d'))
     import planar_native
     from correspondence import correspondence, pair_gap
+    from trim_correspondence import observe as observe_trim
     exact = {}
+    trim = {}
     for name, shape in native.items():
         topology = planar_native.topology(shape)
         boxes_mm = [list(map(str, moved))] if name == PARTS[0] else contract['obstacle_boxes']
         query_mm = leaf['model_query_channel_mm'] if name == PARTS[1] else None
         candidate = correspondence(topology, boxes_mm, query_mm)
+        trim[name] = {'source_brep_sha256': hash_bytes(raw[name]),
+                      **observe_trim(shape, boxes_mm, planar_native.index_same)}
         native_observations = {
             'single_solid_observed': len(shape.Solids) == 1,
             'closed_observed': bool(shape.isClosed()),
@@ -153,6 +157,14 @@ def main(output):
             'full_topology_observation': topology,
             'conditional_exact_candidate': candidate,
         }
+    (output / 'trim-correspondence.json').write_text(json.dumps({
+        'schema':'d5d-api-affine-trim-correspondence-v1',
+        'source_fcstd_sha256':FCSTD_SHA, 'source_d2_sha256':CONTRACT_SHA,
+        'reference_pose_mm':str(REF), 'engine':{'freecad':App.Version(),'occt':Part.OCC_VERSION},
+        'parts':trim, 'error_enclosures':'UNKNOWN', 'all_state_mapping':'UNKNOWN',
+        'native_material_outer':'UNKNOWN','native_void_inner':'UNKNOWN',
+        'representative_continuous_interval':'NOT_TESTED','p7':'NOT_TESTED',
+    }, default=str, indent=2, allow_nan=False)+'\n',encoding='utf-8')
     candidates = {name: exact[name]['conditional_exact_candidate'] for name in PARTS}
     pair = pair_gap(candidates[PARTS[0]], candidates[PARTS[1]])
     (output / 'boundary-correspondence.json').write_text(
@@ -192,6 +204,8 @@ def main(output):
             exact[name]['native_observations_not_proof'].values()) for name in PARTS)
             or pair['status'] != 'PASS'):
         errors['exact_candidate_bridge'] = 'CANDIDATE_MISMATCH_OR_UNSUPPORTED_NATIVE_OBSERVATION'
+    if any(x['status'] != 'PASS' for x in trim.values()):
+        errors['represented_trim_bridge'] = 'TRIM_CORRESPONDENCE_NOT_PROVEN'
     if FCSTD.read_bytes() != source or CONTRACT.read_bytes() != contract_raw:
         raise ValueError('PINNED_SOURCE_CHANGED_DURING_READ')
     report = {
@@ -214,6 +228,14 @@ def main(output):
             'exact_pair': pair,
             'native_real_material': 'UNKNOWN', 'native_real_void': 'UNKNOWN',
             'native_all_states': 'NOT_TESTED'},
+        'represented_trim_correspondence': {
+            'file':'trim-correspondence.json',
+            'scope':'exact equalities of API-exposed affine coefficients and represented candidate sidedness',
+            'parts':{name:{'status':row['status'],'edge_use_count':row['edge_use_count']}
+                     for name,row in trim.items()},
+            'native_pcurve_storage_provenance':'UNKNOWN',
+            'native_material_outer':'UNKNOWN','native_void_inner':'UNKNOWN',
+        },
         'material_outer_required': 'real BRep subset proven outer candidate with finite error enclosure',
         'void_inner_required': 'closed query strictly inside actual open complement for all poses',
         'continuous_motion_required': 'certified state mapping, finite bounds and reference displacement',
