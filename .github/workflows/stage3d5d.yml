@@ -1,0 +1,42 @@
+name: Stage 3-D-5D one-slice native diagnostic
+on:
+  pull_request:
+    paths:
+      - 'cad/stage3d5d/**'
+      - 'docs/stage3d5d/**'
+      - '.github/workflows/stage3d5d.yml'
+permissions:
+  contents: read
+jobs:
+  native-one-slice:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONDONTWRITEBYTECODE: '1'
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fixed checkout and engine
+        run: |
+          mkdir -p stage3d5d-evidence
+          git -c safe.directory="$GITHUB_WORKSPACE" show -s --format='%H %T %P' HEAD > stage3d5d-evidence/checkout.txt
+          git -c safe.directory="$GITHUB_WORKSPACE" status --porcelain > stage3d5d-evidence/status.txt
+          dpkg-query -W freecad-python3 libfreecad-python3 > stage3d5d-evidence/engine.txt
+      - name: Portable proof gate tests
+        run: python3 -B -m unittest discover -s cad/stage3d5d -p 'test_*.py' -v > stage3d5d-evidence/tests.log 2>&1
+      - name: One native reference pose
+        run: python3 -B cad/stage3d5d/one_slice.py stage3d5d-evidence/one-slice > stage3d5d-evidence/native-stdout.log 2> stage3d5d-evidence/native-stderr.log
+      - name: Hash exact evidence files
+        if: always()
+        run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3d5d-one-slice
+          path: stage3d5d-evidence/
+          if-no-files-found: error
+          include-hidden-files: true
