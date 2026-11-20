@@ -58,7 +58,11 @@ def expected_samples(contract):
         row('void_near_floor',xm,ym,zl+1,'open_void'),
         row('void_near_roof',xm,ym,zh-1,'open_void'),
         row('material_roof',xm,ym,zh+1,'closed_material'),
+        row('end_plane_negative_x',x0,ym,zm,'open_void'),
+        row('end_inside_negative_x',x0+1,ym,zm,'open_void'),
         row('through_end_negative_x',x0-1,ym,zm,'open_void'),
+        row('end_plane_positive_x',x1,ym,zm,'open_void'),
+        row('end_inside_positive_x',x1-1,ym,zm,'open_void'),
         row('through_end_positive_x',x1+1,ym,zm,'open_void'),
         row('exterior_outer',xm,bottom_y[1]-1,zm,'external_void'),
     ]

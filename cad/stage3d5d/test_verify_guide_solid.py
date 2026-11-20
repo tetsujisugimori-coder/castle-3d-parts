@@ -34,7 +34,7 @@ def boundary_fixture():
 class GuideSolidContractTests(unittest.TestCase):
     def test_expected_region_names_are_separate(self):
         rows,native=sample_fixture()
-        self.assertEqual(len(rows),12)
+        self.assertEqual(len(rows),16)
         self.assertTrue(any(r['id'].startswith('through_end_') and r['expected']=='OUT' for r in rows))
         self.assertTrue(any(r['role']=='closed_material' and r['expected']=='IN' for r in rows))
         self.assertEqual(validate_classification(rows,native)['status'],'PASS')
@@ -54,7 +54,7 @@ class GuideSolidContractTests(unittest.TestCase):
             if defect=='missing':d['samples'].pop()
             elif defect=='duplicate':d['samples'].append(d['samples'][0])
             elif defect=='invalid':d['valid_observed']=False
-            else:next(x for x in d['samples'] if x['id']=='through_end_positive_x')['state']='IN'
+            else:next(x for x in d['samples'] if x['id']=='end_plane_positive_x')['state']='ON'
             self.assertEqual(validate_classification(rows,d)['status'],'FAIL')
 
     def test_boundary_use_and_hole_census(self):
