@@ -125,15 +125,18 @@ def main(output):
         native[name] = s
     moving = tuple(map(Q, contract['moving_box']))
     moved = tuple(v + REF if i in (0,3) else v for i,v in enumerate(moving))
-    nominal = {PARTS[0]: box(moved),
-               PARTS[1]: Part.makeCompound([box(tuple(map(Q, b))) for b in contract['obstacle_boxes']])}
+    nominal_bolt = box(moved)
     channel = box(tuple(map(Q, leaf['model_query_channel_mm'])))
     measured = {}
     errors = {}
     for name, shape in native.items():
         key = 'bolt' if name == PARTS[0] else 'guide'
         try:
-            measured[key+'_outside_model_volume_mm3'] = float(shape.cut(nominal[name]).Volume)
+            residual = shape.cut(nominal_bolt) if name == PARTS[0] else shape
+            if name == PARTS[1]:
+                for raw_box in contract['obstacle_boxes']:
+                    residual = residual.cut(box(tuple(map(Q, raw_box))))
+            measured[key+'_outside_model_volume_mm3'] = float(residual.Volume)
             measured[key+'_native_volume_mm3'] = float(shape.Volume)
             measured[key+'_is_valid_observed'] = bool(shape.isValid())
         except Exception as exc:
