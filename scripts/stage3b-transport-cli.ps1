@@ -78,18 +78,36 @@ $config=Join-Path $evidence 'worker-config.json'
 SaveJson $config @{sha=$sha;repo=$repo;worktree=$worktree;deps=$deps;browsers=$browsers;evidence=$evidence;cache=Join-Path $evidence 'npm-cache';output=Join-Path $evidence 'diagnostic'}
 $start=[DateTimeOffset]::UtcNow.ToString('o')
 $worker=$null;$code=4;$status='INCOMPLETE';$problem=$null;$seen=@();$remaining=@();$timedOut=$false;$snapshotOk=$false;$killExit=$null
+$workerHandle=[IntPtr]::Zero;$workerStartTicks=$null;$workerIdentityReady=$false;$stopAuthorized=$false
 try{
  $pwsh=(Get-Process -Id $PID).Path
  $arguments='-NoProfile -NonInteractive -File "'+$PSCommandPath+'" -WorkerConfig "'+$config+'"'
  $worker=Start-Process -FilePath $pwsh -ArgumentList $arguments -PassThru -RedirectStandardOutput (Join-Path $evidence 'stdout.log') -RedirectStandardError (Join-Path $evidence 'stderr.log') -ErrorAction Stop
+ # Capture a handle to this exact process immediately, before PID can be reused.
+ # Refuse any later stop request if we could not retain that identity.
+ try{
+  $workerHandle=$worker.Handle
+  $workerStartTicks=$worker.StartTime.ToUniversalTime().Ticks
+  $workerIdentityReady=($workerHandle -ne [IntPtr]::Zero)
+ }catch{$problem='Worker handle capture unavailable: '+$_.Exception.Message}
  try{Wait-Process -Id $worker.Id -Timeout $TimeoutSeconds -ErrorAction Stop}
  catch{$worker.Refresh();if(-not $worker.HasExited){$timedOut=$true}else{throw}}
  if($timedOut){
   $code=124;$status='TIMEOUT_RECOVERY_UNKNOWN'
-  try{$before=@(Get-CimInstance Win32_Process -ErrorAction Stop);$seen=@(ProcessTree $before ([int]$worker.Id));$snapshotOk=$true}
-  catch{$problem='Pre-kill enumeration unavailable: '+$_.Exception.Message}
-  try{& taskkill.exe /PID $worker.Id /T /F *> (Join-Path $evidence 'taskkill.log');$killExit=[int]$LASTEXITCODE}
-  catch{$problem='taskkill failed: '+$_.Exception.Message}
+  try{$before=@(Get-CimInstance Win32_Process -ErrorAction Stop);$seen=@(ProcessTree $before ([int]$worker.Id));$snapshotOk=(@($seen|Where-Object {[int]$_.ProcessId -eq [int]$worker.Id}).Count -eq 1)}
+  catch{$problem='Pre-stop enumeration unavailable: '+$_.Exception.Message}
+  # Never use taskkill /PID: that number may now identify an unrelated process.
+  # Kill() without the entireProcessTree flag targets only the captured worker.
+  if($workerIdentityReady -and $snapshotOk){
+   try{
+    if(-not $worker.HasExited -and $worker.Handle -eq $workerHandle -and
+       $worker.StartTime.ToUniversalTime().Ticks -eq $workerStartTicks){
+      $stopAuthorized=$true
+      $worker.Kill()
+      $killExit=0
+    }else{$problem='Worker identity unavailable; no stop requested'}
+   }catch{$problem='Handle-bound worker termination failed: '+$_.Exception.Message}
+  }else{$problem='Worker handle or process observation unavailable; no stop requested'}
   Start-Sleep -Seconds 2
   if($snapshotOk){
    try{
@@ -112,6 +130,8 @@ finally{
   scope='worktree,dependency install,browser install,offline tests,diagnosis';timeoutSeconds=$TimeoutSeconds
   expectedHead=$sha;workerPid=if($worker){[int]$worker.Id}else{$null};status=$status;exitCode=$code
   timeout=$timedOut;killExitCode=$killExit;processSnapshotAvailable=$snapshotOk
+  workerIdentityReady=$workerIdentityReady;stopAuthorized=$stopAuthorized
+  stopMethod='Process.Kill(original worker only, no PID taskkill)';workerStartTicks=$workerStartTicks
   observed=@($seen|ForEach-Object {@{pid=$_.ProcessId;created=$_.CreationDate;name=$_.Name}})
   residual=@($remaining|ForEach-Object {@{pid=$_.ProcessId;created=$_.CreationDate;name=$_.Name}})
   error=$problem;limitation='Detached or unobserved child processes cannot be proven absent'
