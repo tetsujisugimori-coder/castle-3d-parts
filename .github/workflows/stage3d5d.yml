@@ -16,7 +16,7 @@ jobs:
       PYTHONDONTWRITEBYTECODE: '1'
       QT_QPA_PLATFORM: offscreen
     steps:
-      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3
+      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3 file g++ libocct-modeling-data-dev libocct-modeling-algorithms-dev
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -25,7 +25,7 @@ jobs:
           mkdir -p stage3d5d-evidence
           git -c safe.directory="$GITHUB_WORKSPACE" show -s --format='%H %T %P' HEAD > stage3d5d-evidence/checkout.txt
           git -c safe.directory="$GITHUB_WORKSPACE" status --porcelain > stage3d5d-evidence/status.txt
-          dpkg-query -W freecad-python3 libfreecad-python3 > stage3d5d-evidence/engine.txt
+          dpkg-query -W freecad-python3 libfreecad-python3 libocct-foundation-dev libocct-modeling-data-dev libocct-modeling-algorithms-dev g++ > stage3d5d-evidence/engine.txt
       - name: Portable proof gate tests
         run: python3 -B -m unittest discover -s cad/stage3d5d -p 'test_*.py' -v > stage3d5d-evidence/tests.log 2>&1
       - name: One native reference pose (trace restricted to new source)
@@ -59,6 +59,24 @@ jobs:
             > stage3d5d-evidence/placement-stdout.log 2> stage3d5d-evidence/placement-stderr.log
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/placement-exit.txt
+          exit "$code"
+      - name: Verify stored pcurves at one occurrence, then gate the 72-use join
+        run: |
+          set +e
+          binary="${RUNNER_TEMP}/stage3d5d-stored-pcurve"
+          g++ --version > stage3d5d-evidence/pcurve-compiler-version.txt
+          g++ -std=c++17 -O2 -I/usr/include/opencascade cad/stage3d5d/stored_pcurve.cpp \
+            -o "$binary" -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/pcurve-build.stdout 2> stage3d5d-evidence/pcurve-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/pcurve-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          python3 -X faulthandler -u -B cad/stage3d5d/verify_stored_pcurve.py "$binary" \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve "${RUNNER_TEMP}/stage3d5d-brep-inputs" \
+            > stage3d5d-evidence/pcurve-verify.stdout 2> stage3d5d-evidence/pcurve-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/pcurve-verify.exit
           exit "$code"
       - name: Hash exact evidence files
         if: always()
