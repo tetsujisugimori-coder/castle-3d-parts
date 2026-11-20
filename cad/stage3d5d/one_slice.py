@@ -127,6 +127,45 @@ def main(output):
     moved = tuple(v + REF if i in (0,3) else v for i,v in enumerate(moving))
     nominal_bolt = box(moved)
     channel = box(tuple(map(Q, leaf['model_query_channel_mm'])))
+
+    # All actual faces/edges/wires/vertices are observed anew from the fixed
+    # BRep at the reference pose. The exact proof applies to these represented
+    # coefficients only and NEVER authorizes an OCCT-real safety claim.
+    sys.path.insert(0, str(ROOT / 'cad/stage3d5b'))
+    import planar_native
+    from correspondence import correspondence, pair_gap
+    exact = {}
+    for name, shape in native.items():
+        topology = planar_native.topology(shape)
+        boxes_mm = [list(map(str, moved))] if name == PARTS[0] else contract['obstacle_boxes']
+        query_mm = leaf['model_query_channel_mm'] if name == PARTS[1] else None
+        candidate = correspondence(topology, boxes_mm, query_mm)
+        native_observations = {
+            'single_solid_observed': len(shape.Solids) == 1,
+            'closed_observed': bool(shape.isClosed()),
+            'valid_observed': bool(shape.isValid()),
+        }
+        exact[name] = {
+            'source_brep_sha256': hash_bytes(raw[name]),
+            'reference_pose_mm': str(REF) if name == PARTS[0] else '0',
+            'native_observations_not_proof': native_observations,
+            'full_topology_observation': topology,
+            'conditional_exact_candidate': candidate,
+        }
+    candidates = {name: exact[name]['conditional_exact_candidate'] for name in PARTS}
+    pair = pair_gap(candidates[PARTS[0]], candidates[PARTS[1]])
+    (output / 'boundary-correspondence.json').write_text(
+        json.dumps({'schema':'d5d-full-native-candidate-bridge-v1',
+                    'fixed_fcstd_sha256':FCSTD_SHA, 'source_d2_sha256':CONTRACT_SHA,
+                    'reference_pose_mm':str(REF), 'parts':exact,
+                    'candidate_pair_distance':pair,
+                    'native_set_equality':'UNKNOWN',
+                    'native_material_outer':'UNKNOWN', 'native_void_inner':'UNKNOWN',
+                    'native_full_interval':'NOT_TESTED',
+                    'unproved':['pcurve-to-surface-to-edge continuous native-real equality',
+                                'trim domains and OCCT interior orientation semantics',
+                                'finite native-real error enclosure and world-state equivalence']},
+                   indent=2, allow_nan=False)+'\n', encoding='utf-8')
     measured = {}
     errors = {}
     for name, shape in native.items():
@@ -148,6 +187,10 @@ def main(output):
     except Exception as exc:
         measured['guide_to_closed_channel_distance_mm'] = None
         errors['void_probe'] = type(exc).__name__ + ': ' + str(exc)
+    if (any(candidates[name]['status'] != 'PASS' or not all(
+            exact[name]['native_observations_not_proof'].values()) for name in PARTS)
+            or pair['status'] != 'PASS'):
+        errors['exact_candidate_bridge'] = 'CANDIDATE_MISMATCH_OR_UNSUPPORTED_NATIVE_OBSERVATION'
     if FCSTD.read_bytes() != source or CONTRACT.read_bytes() != contract_raw:
         raise ValueError('PINNED_SOURCE_CHANGED_DURING_READ')
     report = {
@@ -159,6 +202,17 @@ def main(output):
         'target': leaf,
         'observed_native': measured, 'observation_errors': errors,
         'assessment': interpretation(measured),
+        'represented_boundary_correspondence': {
+            'scope': 'full native-derived rational candidate, NOT native-real set proof',
+            'file': 'boundary-correspondence.json',
+            'bolt_candidate': candidates[PARTS[0]]['status'],
+            'guide_candidate': candidates[PARTS[1]]['status'],
+            'bolt_D2_bidirectional': candidates[PARTS[0]].get('represented_set_equality'),
+            'guide_D2_bidirectional': candidates[PARTS[1]].get('represented_set_equality'),
+            'guide_strict_void': candidates[PARTS[1]].get('candidate_void_to_query'),
+            'exact_pair': pair,
+            'native_real_material': 'UNKNOWN', 'native_real_void': 'UNKNOWN',
+            'native_all_states': 'NOT_TESTED'},
         'material_outer_required': 'real BRep subset proven outer candidate with finite error enclosure',
         'void_inner_required': 'closed query strictly inside actual open complement for all poses',
         'continuous_motion_required': 'certified state mapping, finite bounds and reference displacement',
