@@ -13,6 +13,7 @@ param(
 )
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
+. (Join-Path $PSScriptRoot 'stage3b-cli-capture-decision.ps1')
 function SaveJson([string]$Path,[object]$Data) {
  [IO.File]::WriteAllText($Path,($Data|ConvertTo-Json -Depth 12),[Text.UTF8Encoding]::new($false))
 }
@@ -77,7 +78,7 @@ New-Item -ItemType Directory -Path $evidence -ErrorAction Stop|Out-Null
 $config=Join-Path $evidence 'worker-config.json'
 SaveJson $config @{sha=$sha;repo=$repo;worktree=$worktree;deps=$deps;browsers=$browsers;evidence=$evidence;cache=Join-Path $evidence 'npm-cache';output=Join-Path $evidence 'diagnostic'}
 $start=[DateTimeOffset]::UtcNow.ToString('o')
-$worker=$null;$code=4;$status='INCOMPLETE';$problem=$null;$seen=@();$remaining=@();$timedOut=$false;$snapshotOk=$false;$killExit=$null
+$worker=$null;$code=4;$status='INCOMPLETE';$workerExitCode=$null;$problem=$null;$seen=@();$remaining=@();$timedOut=$false;$snapshotOk=$false;$killExit=$null
 $workerHandle=[IntPtr]::Zero;$workerSafeHandle=$null;$workerStartTicks=$null;$workerIdentityReady=$false;$stopAuthorized=$false
 $stdoutStream=$null;$stderrStream=$null;$stdoutTask=$null;$stderrTask=$null
 try{
@@ -143,28 +144,72 @@ try{
    }catch{$problem='Post-kill enumeration unavailable: '+$_.Exception.Message}
   }
  }else{
-  $worker.Refresh();$code=[int]$worker.ExitCode
+  $worker.Refresh();$workerExitCode=[int]$worker.ExitCode;$code=$workerExitCode
   $status=if($code -eq 0){'PASS'}elseif($code -eq 1){'FAIL'}else{'INCOMPLETE'}
  }
 }catch{$problem=$_.Exception.Message;$code=4;$status='INCOMPLETE'}
 finally{
- # Preserve redirected stdout/stderr in the original evidence directory.
- # Never wait forever if a surviving descendant has inherited an open pipe.
- foreach($pair in @(@($stdoutTask,$stdoutStream,'stdout'),@($stderrTask,$stderrStream,'stderr'))){
-  $task=$pair[0];$stream=$pair[1];$streamName=$pair[2]
-  if($null -ne $task){
+ # Capture is independent from the worker's primary exit status.
+ $primaryExitCode=$code;$primaryStatus=$status
+ $captureProblems=[Collections.Generic.List[string]]::new()
+ $capturePaths=@(
+  [pscustomobject]@{name='stdout';task=$stdoutTask;stream=$stdoutStream;path=(Join-Path $evidence 'stdout.log')},
+  [pscustomobject]@{name='stderr';task=$stderrTask;stream=$stderrStream;path=(Join-Path $evidence 'stderr.log')}
+ )
+ foreach($entry in $capturePaths){
+  $task=$entry.task;$stream=$entry.stream;$streamName=$entry.name
+  $expectedBytes=$null
+  if($null -eq $task){
+   [void]$captureProblems.Add("$streamName transfer not started")
+  }else{
    try{
-    if(-not $task.Wait(2000)){$problem=("$problem; $streamName capture incomplete").Trim('; ')}
-   }catch{$problem=("$problem; $streamName capture error: "+$_.Exception.Message).Trim('; ')}
+    if(-not $task.Wait(2000)){
+     [void]$captureProblems.Add("$streamName transfer incomplete")
+    }elseif($task.IsCanceled -or $task.IsFaulted){
+     [void]$captureProblems.Add("$streamName transfer unsuccessful")
+    }
+   }catch{
+    [void]$captureProblems.Add("$streamName transfer exception: "+$_.Exception.Message)
+   }
   }
-  if($null -ne $stream){
-   try{$stream.Dispose()}catch{$problem=("$problem; $streamName flush error: "+$_.Exception.Message).Trim('; ')}
+  if($null -eq $stream){
+   [void]$captureProblems.Add("$streamName output stream missing")
+  }else{
+   try{
+    # Flush(true) asks FileStream to flush buffered data to disk.
+    $stream.Flush($true)
+    $expectedBytes=[long]$stream.Length
+   }catch{
+    [void]$captureProblems.Add("$streamName flush failure: "+$_.Exception.Message)
+   }
+   try{$stream.Dispose()}
+   catch{[void]$captureProblems.Add("$streamName close failure: "+$_.Exception.Message)}
+  }
+  if(-not(Test-Path -LiteralPath $entry.path -PathType Leaf)){
+   [void]$captureProblems.Add("$streamName output file missing")
+  }else{
+   try{
+    $readback=[IO.File]::Open($entry.path,[IO.FileMode]::Open,[IO.FileAccess]::Read,[IO.FileShare]::ReadWrite)
+    try{
+     $bytes=[long]$readback.Length
+     # Empty stderr is valid if capture completed.
+     if($null -ne $expectedBytes -and $bytes -ne $expectedBytes){
+      [void]$captureProblems.Add("$streamName readback length mismatch")
+     }
+    }finally{$readback.Dispose()}
+   }catch{
+    [void]$captureProblems.Add("$streamName readback failure: "+$_.Exception.Message)
+   }
   }
  }
+ $decision=Resolve-Stage3BCaptureDecision -PrimaryExitCode $primaryExitCode -PrimaryStatus $primaryStatus -WorkerExitCode $workerExitCode -CaptureProblems @($captureProblems.ToArray())
+ $status=$decision.Status;$code=$decision.ExitCode
  SaveJson (Join-Path $evidence 'controller-receipt.json') @{
   startedUtc=$start;endedUtc=[DateTimeOffset]::UtcNow.ToString('o')
   scope='worktree,dependency install,browser install,offline tests,diagnosis';timeoutSeconds=$TimeoutSeconds
   expectedHead=$sha;workerPid=if($worker){[int]$worker.Id}else{$null};status=$status;exitCode=$code
+  primaryStatus=$decision.PrimaryStatus;primaryExitCode=$decision.PrimaryExitCode;workerExitCode=$workerExitCode
+  captureStatus=$decision.CaptureStatus;captureProblems=$decision.CaptureProblems
   timeout=$timedOut;killExitCode=$killExit;processSnapshotAvailable=$snapshotOk
   workerIdentityReady=$workerIdentityReady;stopAuthorized=$stopAuthorized
   launchIdentitySource='System.Diagnostics.Process.Start creation-owned handle'

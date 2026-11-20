@@ -30,7 +30,7 @@ controllerは別のPowerShell workerを起動し、workerの開始から**worktr
 
 タイムアウト時は `System.Diagnostics.Process.Start` で生成時から関連付けられたプロセスハンドルを保持し、起動後にPIDを使ってハンドルを探し直さない。生成時のハンドル取得に失敗した場合、または停止直前の確認ができない場合は自動停止を要求しない。生成時のハンドルと開始時刻、停止直前の観測によって同一性を確認できる場合に限り、保持したworkerオブジェクトの `Kill()` で**元workerだけ**の停止を試みる。PID番号だけを指定する `taskkill` は使用しない。同一性が確認不能なら停止要求を出さず `TIMEOUT_RECOVERY_UNKNOWN` と記録する。子孫は強制停止しないため、残留プロセスの不在を保証しない。回収状態は `TIMEOUT_RECOVERED` / `TIMEOUT_RESIDUAL` / `TIMEOUT_RECOVERY_UNKNOWN` に区別し、すべてexit 124。事前・事後の列挙不能は回収不明であり、**親子関係を離脱した未知プロセスの不在まで保証しない**。確認できない場合にPASSとしない。
 
-`EvidenceRoot`にcontroller/worker receipts、worker stdout/stderr、終了時のtaskkillログ、`diagnostic/`の原結果を保存する。通信判定PASSでも必須trace/PNG・結果記録欠落なら `INCOMPLETE`／exit 2。証拠完備の期待値違反はFAIL／exit 1。準備失敗はINCOMPLETE／exit 4。
+`EvidenceRoot`にcontroller/worker receipts、worker stdout/stderr、終了時の収録判定と、`diagnostic/`の原結果を保存する。通信判定PASSでも必須trace/PNG・結果記録欠落なら `INCOMPLETE`／exit 2。加えて**Windows CLIのstdout/stderrの収録をworker結果とは別に判定**し、転送未完・例外・flush失敗・ファイル欠損・再取得不一致の場合は `captureStatus=INCOMPLETE` として、通常のworker終了0でも最終`INCOMPLETE`／exit 2にする。正常に0 bytesで終わるstderrは欠落ではない。`controller-receipt.json` に一次`workerExitCode`・`primaryStatus`・`primaryExitCode`と最終判定・収録障害を分離して保持する。タイムアウトのexit 124と準備失敗exit 4は維持し、収録不足は別欄で記録する。証拠完備の期待値違反はFAIL／exit 1。
 
 **CLIのWindows実機での15分超過・子孫回収の実証はNOT_TESTED**。workflowではPowerShell構文解析を確認できるが、実回収を証明したとは扱わない。必要になった時点で承認済み領域の合成ケースを使い、原ログと残留プロセスを別途照合する。
 
