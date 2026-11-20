@@ -24,3 +24,5 @@
 既存専用workflowのDebian環境で開発パッケージを使い、`stored_pcurve.cpp` を実体ライブラリへリンクする。既存テストと同じ `one_slice.py` で得た式を `verify_stored_pcurve.py <binary> <trim-correspondence.json> <new-evidence-directory> <new-input-directory>` へ渡す。BRepコピーは原ZIPの外に置く。出力は代表判定、対照、採取生JSON、各使用の明示判定、終了値とruntime/ABIの根拠。単体試験は `python3 -B -m unittest discover -s cad/stage3d5d -p 'test_*.py'`。
 
 限定受入は保存pcurveと既存の表示係数の式を正しく関連付けるところまで。SameParameter/SameRangeのtrueをネイティブ実曲面の厳密等式・誤差ゼロ・材料側の集合証明へ昇格させない。既存P1の式、P2の候補判定は維持。実材料外側・実空洞内側・有限実誤差・全状態はいずれもUNKNOWN。代表連続区間はNOT_TESTED、総合PARTIAL、Draft・マージHOLD。
+
+初回の[正式CI](https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/44768211413)（HEAD `14c9b1db`）は、Debianのヘッダー `NCollection_AliasedArray.hxx` がなくコンパイルで終了し、代表／全件は未到達。[正式失敗原ZIP](https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/44768211413/artifacts/14644249380) は保持する。不足していたヘッダーは[Debian amd64のlibocct-visualization-dev](https://packages.debian.org/trixie/amd64/libocct-visualization-dev/filelist)に属するため、CIの同版開発依存だけを追加する。ビューや表示処理は実行しない。C++/Pythonの式・合否条件・原BRepには変更なし。
