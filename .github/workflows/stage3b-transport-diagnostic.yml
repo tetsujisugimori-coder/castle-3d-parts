@@ -6,6 +6,7 @@ on:
       - scripts/stage3b-transport-evidence.mjs
       - scripts/stage3b-transport-evidence.test.mjs
       - scripts/stage3b-transport-cli.ps1
+      - scripts/stage3b-handle-ownership.test.ps1
       - docs/stage3b/NETWORK_DIAG_RUNBOOK.md
       - .github/workflows/stage3b-transport-diagnostic.yml
   workflow_dispatch:
@@ -64,6 +65,9 @@ jobs:
             $parseErrors | ForEach-Object { Write-Output $_.Message }
             exit 1
           }
+      - name: Non-destructive creation-owned handle counterexamples
+        shell: pwsh
+        run: pwsh -NoProfile -File scripts/stage3b-handle-ownership.test.ps1
       - name: Offline P2 legacy RED and evidence gate GREEN
         run: node --test scripts/stage3b-transport-evidence.test.mjs
       - name: Capture fixed identity and run bounded Stage 3-B probe

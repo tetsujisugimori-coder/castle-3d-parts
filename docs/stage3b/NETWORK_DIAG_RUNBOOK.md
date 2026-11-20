@@ -11,7 +11,7 @@ Issue #43／PR #44専用。診断基盤のPASSは旧通信障害の解決では�
 
 ## Windows PowerShell 7：Draft中の固定SHA診断
 
-`scripts/stage3b-transport-cli.ps1` を**診断ランナーを含む承認済みcheckout**から実行する。Git・Node 22・PowerShell 7、Windowsの `taskkill.exe` と `Get-CimInstance` を必要とする。入力はすべて絶対パス。Worktree、依存領域、ブラウザ領域、証拠領域には**存在しない新規パス**を指定する。既存領域を上書き・削除しない。
+`scripts/stage3b-transport-cli.ps1` を**診断ランナーを含む承認済みcheckout**から実行する。Git・Node 22・PowerShell 7、Windowsの `Get-CimInstance` を必要とする。入力はすべて絶対パス。Worktree、依存領域、ブラウザ領域、証拠領域には**存在しない新規パス**を指定する。既存領域を上書き・削除しない。
 
 ```powershell
 $params = @{
@@ -28,7 +28,7 @@ $params = @{
 
 controllerは別のPowerShell workerを起動し、workerの開始から**worktree作成、npm依存インストール、ブラウザインストール、P2証拠負対照、診断までを単一の900秒上限で監督**する。外側準備や既存repoの取得は時間上限の対象外。ユーザーが許可した領域以外に保存しない。
 
-タイムアウト時はworker起動直後から保持したプロセスハンドルと開始時刻、停止直前の観測によって同一性を確認できる場合に限り、保持したworkerオブジェクトの `Kill()` で**元workerだけ**の停止を試みる。PID番号だけを指定する `taskkill` は使用しない。同一性が確認不能なら停止要求を出さず `TIMEOUT_RECOVERY_UNKNOWN` と記録する。子孫は強制停止しないため、残留プロセスの不在を保証しない。回収状態は `TIMEOUT_RECOVERED` / `TIMEOUT_RESIDUAL` / `TIMEOUT_RECOVERY_UNKNOWN` に区別し、すべてexit 124。事前・事後の列挙不能は回収不明であり、**親子関係を離脱した未知プロセスの不在まで保証しない**。確認できない場合にPASSとしない。
+タイムアウト時は `System.Diagnostics.Process.Start` で生成時から関連付けられたプロセスハンドルを保持し、起動後にPIDを使ってハンドルを探し直さない。生成時のハンドル取得に失敗した場合、または停止直前の確認ができない場合は自動停止を要求しない。生成時のハンドルと開始時刻、停止直前の観測によって同一性を確認できる場合に限り、保持したworkerオブジェクトの `Kill()` で**元workerだけ**の停止を試みる。PID番号だけを指定する `taskkill` は使用しない。同一性が確認不能なら停止要求を出さず `TIMEOUT_RECOVERY_UNKNOWN` と記録する。子孫は強制停止しないため、残留プロセスの不在を保証しない。回収状態は `TIMEOUT_RECOVERED` / `TIMEOUT_RESIDUAL` / `TIMEOUT_RECOVERY_UNKNOWN` に区別し、すべてexit 124。事前・事後の列挙不能は回収不明であり、**親子関係を離脱した未知プロセスの不在まで保証しない**。確認できない場合にPASSとしない。
 
 `EvidenceRoot`にcontroller/worker receipts、worker stdout/stderr、終了時のtaskkillログ、`diagnostic/`の原結果を保存する。通信判定PASSでも必須trace/PNG・結果記録欠落なら `INCOMPLETE`／exit 2。証拠完備の期待値違反はFAIL／exit 1。準備失敗はINCOMPLETE／exit 4。
 

@@ -78,19 +78,39 @@ $config=Join-Path $evidence 'worker-config.json'
 SaveJson $config @{sha=$sha;repo=$repo;worktree=$worktree;deps=$deps;browsers=$browsers;evidence=$evidence;cache=Join-Path $evidence 'npm-cache';output=Join-Path $evidence 'diagnostic'}
 $start=[DateTimeOffset]::UtcNow.ToString('o')
 $worker=$null;$code=4;$status='INCOMPLETE';$problem=$null;$seen=@();$remaining=@();$timedOut=$false;$snapshotOk=$false;$killExit=$null
-$workerHandle=[IntPtr]::Zero;$workerStartTicks=$null;$workerIdentityReady=$false;$stopAuthorized=$false
+$workerHandle=[IntPtr]::Zero;$workerSafeHandle=$null;$workerStartTicks=$null;$workerIdentityReady=$false;$stopAuthorized=$false
+$stdoutStream=$null;$stderrStream=$null;$stdoutTask=$null;$stderrTask=$null
 try{
  $pwsh=(Get-Process -Id $PID).Path
  $arguments='-NoProfile -NonInteractive -File "'+$PSCommandPath+'" -WorkerConfig "'+$config+'"'
- $worker=Start-Process -FilePath $pwsh -ArgumentList $arguments -PassThru -RedirectStandardOutput (Join-Path $evidence 'stdout.log') -RedirectStandardError (Join-Path $evidence 'stderr.log') -ErrorAction Stop
- # Capture a handle to this exact process immediately, before PID can be reused.
- # Refuse any later stop request if we could not retain that identity.
+ # .NET Process.Start holds the native creation handle; never reopen a PID.
+ $info=[System.Diagnostics.ProcessStartInfo]::new()
+ $info.FileName=$pwsh
+ $info.UseShellExecute=$false
+ $info.CreateNoWindow=$true
+ $info.RedirectStandardOutput=$true
+ $info.RedirectStandardError=$true
+ foreach($arg in @('-NoProfile','-NonInteractive','-File',$PSCommandPath,'-WorkerConfig',$config)){
+  [void]$info.ArgumentList.Add([string]$arg)
+ }
+ $stdoutStream=[IO.File]::Create((Join-Path $evidence 'stdout.log'))
+ $stderrStream=[IO.File]::Create((Join-Path $evidence 'stderr.log'))
+ $worker=[System.Diagnostics.Process]::Start($info)
+ if($null -eq $worker){throw 'Worker process creation returned null'}
+ # Only accept a SafeHandle that belongs to the creation-returned Process.
  try{
-  $workerHandle=$worker.Handle
+  $workerSafeHandle=$worker.SafeHandle
+  if($null -eq $workerSafeHandle -or $workerSafeHandle.IsInvalid -or $workerSafeHandle.IsClosed){
+   throw 'Creation-owned SafeHandle unavailable'
+  }
+  $workerHandle=$workerSafeHandle.DangerousGetHandle()
   $workerStartTicks=$worker.StartTime.ToUniversalTime().Ticks
   $workerIdentityReady=($workerHandle -ne [IntPtr]::Zero)
- }catch{$problem='Worker handle capture unavailable: '+$_.Exception.Message}
- try{Wait-Process -Id $worker.Id -Timeout $TimeoutSeconds -ErrorAction Stop}
+ }catch{$workerIdentityReady=$false;$problem='Creation-owned handle unavailable: '+$_.Exception.Message}
+ # Drain both pipes concurrently, avoiding stdout/stderr buffer deadlocks.
+ $stdoutTask=$worker.StandardOutput.BaseStream.CopyToAsync($stdoutStream)
+ $stderrTask=$worker.StandardError.BaseStream.CopyToAsync($stderrStream)
+ try{$timedOut=(-not $worker.WaitForExit($TimeoutSeconds*1000))}
  catch{$worker.Refresh();if(-not $worker.HasExited){$timedOut=$true}else{throw}}
  if($timedOut){
   $code=124;$status='TIMEOUT_RECOVERY_UNKNOWN'
@@ -100,7 +120,10 @@ try{
   # Kill() without the entireProcessTree flag targets only the captured worker.
   if($workerIdentityReady -and $snapshotOk){
    try{
-    if(-not $worker.HasExited -and $worker.Handle -eq $workerHandle -and
+    if(-not $worker.HasExited -and
+       $null -ne $workerSafeHandle -and -not $workerSafeHandle.IsClosed -and
+       -not $workerSafeHandle.IsInvalid -and
+       $workerSafeHandle.DangerousGetHandle() -eq $workerHandle -and
        $worker.StartTime.ToUniversalTime().Ticks -eq $workerStartTicks){
       $stopAuthorized=$true
       $worker.Kill()
@@ -125,13 +148,27 @@ try{
  }
 }catch{$problem=$_.Exception.Message;$code=4;$status='INCOMPLETE'}
 finally{
+ # Preserve redirected stdout/stderr in the original evidence directory.
+ # Never wait forever if a surviving descendant has inherited an open pipe.
+ foreach($pair in @(@($stdoutTask,$stdoutStream,'stdout'),@($stderrTask,$stderrStream,'stderr'))){
+  $task=$pair[0];$stream=$pair[1];$streamName=$pair[2]
+  if($null -ne $task){
+   try{
+    if(-not $task.Wait(2000)){$problem=("$problem; $streamName capture incomplete").Trim('; ')}
+   }catch{$problem=("$problem; $streamName capture error: "+$_.Exception.Message).Trim('; ')}
+  }
+  if($null -ne $stream){
+   try{$stream.Dispose()}catch{$problem=("$problem; $streamName flush error: "+$_.Exception.Message).Trim('; ')}
+  }
+ }
  SaveJson (Join-Path $evidence 'controller-receipt.json') @{
   startedUtc=$start;endedUtc=[DateTimeOffset]::UtcNow.ToString('o')
   scope='worktree,dependency install,browser install,offline tests,diagnosis';timeoutSeconds=$TimeoutSeconds
   expectedHead=$sha;workerPid=if($worker){[int]$worker.Id}else{$null};status=$status;exitCode=$code
   timeout=$timedOut;killExitCode=$killExit;processSnapshotAvailable=$snapshotOk
   workerIdentityReady=$workerIdentityReady;stopAuthorized=$stopAuthorized
-  stopMethod='Process.Kill(original worker only, no PID taskkill)';workerStartTicks=$workerStartTicks
+  launchIdentitySource='System.Diagnostics.Process.Start creation-owned handle'
+  stopMethod='Process.Kill(creation-owned worker only; no PID taskkill)';workerStartTicks=$workerStartTicks
   observed=@($seen|ForEach-Object {@{pid=$_.ProcessId;created=$_.CreationDate;name=$_.Name}})
   residual=@($remaining|ForEach-Object {@{pid=$_.ProcessId;created=$_.CreationDate;name=$_.Name}})
   error=$problem;limitation='Detached or unobserved child processes cannot be proven absent'
