@@ -132,6 +132,7 @@ def main(output):
     # BRep at the reference pose. The exact proof applies to these represented
     # coefficients only and NEVER authorizes an OCCT-real safety claim.
     sys.path.insert(0, str(ROOT / 'cad/stage3d5b'))
+    sys.path.insert(0, str(ROOT / 'cad/stage3d5d'))
     import planar_native
     from correspondence import correspondence, pair_gap
     exact = {}
