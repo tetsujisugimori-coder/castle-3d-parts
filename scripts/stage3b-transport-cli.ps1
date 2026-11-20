@@ -185,21 +185,26 @@ finally{
    try{$stream.Dispose()}
    catch{[void]$captureProblems.Add("$streamName close failure: "+$_.Exception.Message)}
   }
-  if(-not(Test-Path -LiteralPath $entry.path -PathType Leaf)){
-   [void]$captureProblems.Add("$streamName output file missing")
-  }else{
-   try{
+  try{
+   if(-not(Test-Path -LiteralPath $entry.path -PathType Leaf -ErrorAction Stop)){
+    [void]$captureProblems.Add("$streamName output file missing")
+   }elseif($null -ne $expectedBytes){
     $readback=[IO.File]::Open($entry.path,[IO.FileMode]::Open,[IO.FileAccess]::Read,[IO.FileShare]::ReadWrite)
     try{
-     $bytes=[long]$readback.Length
+     $buffer=[byte[]]::new(65536)
+     $bytes=[long]0
+     while(($count=$readback.Read($buffer,0,$buffer.Length)) -gt 0){
+      $bytes+=$count
+      if($bytes -gt $expectedBytes){break}
+     }
      # Empty stderr is valid if capture completed.
-     if($null -ne $expectedBytes -and $bytes -ne $expectedBytes){
+     if($bytes -ne $expectedBytes){
       [void]$captureProblems.Add("$streamName readback length mismatch")
      }
     }finally{$readback.Dispose()}
-   }catch{
-    [void]$captureProblems.Add("$streamName readback failure: "+$_.Exception.Message)
    }
+  }catch{
+   [void]$captureProblems.Add("$streamName readback failure: "+$_.Exception.Message)
   }
  }
  $decision=Resolve-Stage3BCaptureDecision -PrimaryExitCode $primaryExitCode -PrimaryStatus $primaryStatus -WorkerExitCode $workerExitCode -CaptureProblems @($captureProblems.ToArray())
