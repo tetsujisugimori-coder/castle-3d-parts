@@ -1,54 +1,39 @@
-# Stage 3-B 通信診断の固定HEAD実行手順
+# Stage 3-B 通信診断：固定HEADでの実行と原票保全
 
-対象：Issue #43／PR #44。診断専用であり、既存Stage 3-Bの44条件契約、実CAD証明、障害対応PENDINGを置き換えない。
+Issue #43／PR #44専用。診断基盤のPASSは旧通信障害の解決ではない。障害PENDING／根本原因UNKNOWN、元PR #40 HOLDを維持する。
 
-## 1. GitHub Actions（診断workflowがdefault branchに導入された後）
+## GitHub Actions：default branchへの導入後
 
-1. Actionsの `Stage 3-B transport diagnostic (bounded)` を選択し、`Run workflow` を開く。
-2. `expected_head` に**診断対象Git commitの40桁SHA**を指定する。Workflow側は同SHAをcheckoutし、実checkout SHAを比較して不一致なら停止する。**そのcommitに診断スクリプトが含まれることが前提**。古いcommitに後から診断を注入する機能ではない。
-3. 15分の外側job timeoutを維持。CI原artifactの名前・run・job・SHA・stderr・`results.json`・`evidence-status.json`・`transport.jsonl`・trace/PNGを確認する。
-4. GitHubの再実行ボタンは**元のrunのSHA/ref**を再実行するものであり、新しい障害の任意SHAを調べる機能ではない。`workflow_dispatch`はdefault branchにworkflowが存在するまで利用できない。PRがDraftの間は下記CLI経路を利用する。
+1. `Stage 3-B transport diagnostic (bounded)` の `Run workflow` で `expected_head` に対象Git commitの**40桁SHA**を指定する。
+2. 実際のcheckout SHAを `git rev-parse HEAD` から取得し、手動時は指定SHAと比較。artifact名に**実checkout SHA**とrun ID／attemptを含める。起動refの `github.sha` を対象コミットと誤認しない。
+3. workflowの外側15分上限、依存バージョン、専用原票（identity/results/evidence-status/transport/trace/PNG）、GitHub artifact digestを確認する。
+4. 手動workflowはdefault branchへの導入後だけ使える。指定commitに診断ソースがない場合は失敗する。既存runの再実行は新しいSHAの選択ではない。
 
-## 2. Windows PowerShell（Draft中も使える固定HEADの診断経路）
+## Windows PowerShell 7：Draft中の固定SHA診断
 
-事前条件：Git、Node 22、ネットワーク経由のPlaywright/Three依存インストールが許可されていること。**診断対象HEADを受け取った承認済みrepo**で、専用の未使用worktree・依存保存先・原票保存先を準備する。既存フォルダーや証拠を上書き・削除しない。
+`scripts/stage3b-transport-cli.ps1` を**診断ランナーを含む承認済みcheckout**から実行する。Git・Node 22・PowerShell 7、Windowsの `taskkill.exe` と `Get-CimInstance` を必要とする。入力はすべて絶対パス。Worktree、依存領域、ブラウザ領域、証拠領域には**存在しない新規パス**を指定する。既存領域を上書き・削除しない。
 
 ```powershell
-$sha = '<診断対象の40桁Git commit SHA>'
-$repo = '<承認済みcastle-3d-parts cloneの絶対パス>'
-$worktree = '<新規・未使用のworktree絶対パス>'
-$deps = '<新規・未使用の依存保存先絶対パス>'
-$browsers = '<新規・未使用のPlaywrightブラウザ保存先絶対パス>'
-if ($sha -cnotmatch '^[0-9a-fA-F]{40}$') { throw 'invalid SHA' }
-git -C $repo cat-file -e "$sha^{commit}"
-if ($LASTEXITCODE -ne 0) { throw 'commit is not available locally' }
-git -C $repo worktree add --detach $worktree $sha
-if ($LASTEXITCODE -ne 0) { throw 'worktree creation failed' }
-Set-Location $worktree
-if ((git rev-parse HEAD).Trim() -cne $sha) { throw 'checkout HEAD mismatch' }
-if (Test-Path 'stage3b-transport-ci') { throw 'output directory exists' }
-$env:PLAYWRIGHT_BROWSERS_PATH = $browsers
-npm install --prefix $deps --ignore-scripts --no-audit --no-fund playwright@1.56.1 three@0.180.0
-if ($LASTEXITCODE -ne 0) { throw 'dependencies failed' }
-& "$deps/node_modules/.bin/playwright.cmd" install chromium webkit
-if ($LASTEXITCODE -ne 0) { throw 'browser installation failed' }
-$env:PW_MODULE = "$deps/node_modules/playwright/index.mjs"
-$env:THREE_DIR = "$deps/node_modules/three"
-node --test scripts/stage3b-transport-evidence.test.mjs
-if ($LASTEXITCODE -ne 0) { throw 'evidence gate test failed' }
-$p = Start-Process -FilePath node -ArgumentList @('scripts/stage3b-transport-diagnostic.mjs','stage3b-transport-ci') -WorkingDirectory $worktree -PassThru -RedirectStandardOutput 'stage3b-transport-stdout.log' -RedirectStandardError 'stage3b-transport-stderr.log'
-try { Wait-Process -Id $p.Id -Timeout 900 -ErrorAction Stop } catch { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; throw 'diagnostic timeout: inspect residual child processes' }
-$p.Refresh()
-if ($p.ExitCode -ne 0) { throw "diagnostic exit=$($p.ExitCode); preserve raw results" }
+$params = @{
+  ExpectedHead = '<40桁のGit commit SHA>'
+  RepositoryPath = '<承認済みリポジトリの絶対パス>'
+  WorktreePath = '<新規のworktree絶対パス>'
+  DependenciesPath = '<新規の依存保存先絶対パス>'
+  BrowsersPath = '<新規のブラウザ保存先絶対パス>'
+  EvidenceRoot = '<新規の原票保存先絶対パス>'
+  TimeoutSeconds = 900
+}
+& './scripts/stage3b-transport-cli.ps1' @params
 ```
 
-出力は`stage3b-transport-ci/`とstdout/stderr原票。15分超過時は終了状態・残留ブラウザプロセスを記録し、所有者承認なしに既存領域を削除しない。ログやZIPの上書き・再実行結果との混合はしない。別担当は保存先の原物を直接再取得し、必要な範囲でbyte/SHA/CRCを確認する。
+controllerは別のPowerShell workerを起動し、workerの開始から**worktree作成、npm依存インストール、ブラウザインストール、P2証拠負対照、診断までを単一の900秒上限で監督**する。外側準備や既存repoの取得は時間上限の対象外。ユーザーが許可した領域以外に保存しない。
 
-## 3. 判定
+タイムアウト時はworkerのPIDおよび現在観測できた子孫PID・生成日時を記録し、`taskkill /PID <worker> /T /F`で停止を試みたあと同一プロセスが残っているか検査する。回収状態は `TIMEOUT_RECOVERED` / `TIMEOUT_RESIDUAL` / `TIMEOUT_RECOVERY_UNKNOWN` に区別し、すべてexit 124。事前・事後の列挙不能は回収不明であり、**親子関係を離脱した未知プロセスの不在まで保証しない**。確認できない場合にPASSとしない。
 
-- `PASS`：正常5と合成負対照1が期待どおり、必須trace/PNG/results/transport/identityが揃う。
-- `INCOMPLETE`／exit 2：保存エラー、ファイル欠落・空、基本形式不正、ケース数不足。通信の結果を残したまま証拠の完全性を否定する。
-- `FAIL`／exit 1：証拠は完備しているが通信・合成対照の期待値が不成立。
-- 旧実障害が再現しなければ`NON_REPRODUCED`。原因が実測されなければ`UNKNOWN`、Issue #43は`PENDING`。
+`EvidenceRoot`にcontroller/worker receipts、worker stdout/stderr、終了時のtaskkillログ、`diagnostic/`の原結果を保存する。通信判定PASSでも必須trace/PNG・結果記録欠落なら `INCOMPLETE`／exit 2。証拠完備の期待値違反はFAIL／exit 1。準備失敗はINCOMPLETE／exit 4。
 
-原票欠落の負対照は`node --test scripts/stage3b-transport-evidence.test.mjs`で検証。旧集計はtrace保存失敗×6でもexit 0、新集計はINCOMPLETE／exit 2にする。
+**CLIのWindows実機での15分超過・子孫回収の実証はNOT_TESTED**。workflowではPowerShell構文解析を確認できるが、実回収を証明したとは扱わない。必要になった時点で承認済み領域の合成ケースを使い、原ログと残留プロセスを別途照合する。
+
+## 受入境界
+
+初回CIの履歴FAILと同一HEAD再実行PASS、合成故障は分離する。元原ZIPを上書きせず、再発時はブラウザ`requestfailed/response/pageerror`とNode`request/connection/clientError/socket`を時系列照合する。
