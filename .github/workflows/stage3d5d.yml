@@ -78,6 +78,26 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/pcurve-verify.exit
           exit "$code"
+      - name: Guide oriented Solid and through-void region observations
+        run: |
+          set +e
+          binary="$RUNNER_TEMP/stage3d5d-guide-classifier"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade cad/stage3d5d/guide_solid_classifier.cpp \
+            -o "$binary" -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKMath -lTKernel \
+            > stage3d5d-evidence/guide-build.stdout 2> stage3d5d-evidence/guide-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/guide-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          python3 -X faulthandler -u -B cad/stage3d5d/verify_guide_solid.py "$binary" \
+            "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/one-slice/boundary-correspondence.json \
+            stage3d5d-evidence/guide-solid \
+            > stage3d5d-evidence/guide-verify.stdout 2> stage3d5d-evidence/guide-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/guide-verify.exit
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
