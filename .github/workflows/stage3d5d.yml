@@ -121,6 +121,42 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/face0-bounds.exit
           exit "$code"
+      - name: Trace actual OCCT-selected Face 0 rays and intersected edges once
+        run: |
+          set +e
+          trace_so="$RUNNER_TEMP/stage3d5d-face0-actual-hooks.so"
+          mkdir -p stage3d5d-evidence/face0-trace
+          g++ -std=c++17 -O0 -fPIC -shared -I/usr/include/opencascade \
+            cad/stage3d5d/face0_trace_hooks.cpp -o "$trace_so" \
+            -ldl -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/face0-trace-build.stdout \
+            2> stage3d5d-evidence/face0-trace-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/face0-trace-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          nm -D -C "$trace_so" > stage3d5d-evidence/face0-trace/symbols.txt
+          ldd "$trace_so" > stage3d5d-evidence/face0-trace/ldd.txt
+          trace_dir="$GITHUB_WORKSPACE/stage3d5d-evidence/face0-trace"
+          : > "$trace_dir/hook-events.ndjson"
+          CASTLE_FACE0_TRACE="$trace_dir/hook-events.ndjson" LD_PRELOAD="$trace_so" \
+            "$RUNNER_TEMP/stage3d5d-face0-classifier" \
+            "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > "$trace_dir/native-interposed.stdout.json" \
+            2> "$trace_dir/native-interposed.stderr.txt"
+          trace_exit=$?
+          printf '%s\n' "$trace_exit" > stage3d5d-evidence/face0-trace-native.exit
+          if [ "$trace_exit" -ne 0 ]; then exit "$trace_exit"; fi
+          python3 -B cad/stage3d5d/verify_face0_trace.py \
+            stage3d5d-evidence/face0-uv/native-face0.stdout.json \
+            "$trace_dir/native-interposed.stdout.json" \
+            "$trace_dir/hook-events.ndjson" \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            "$trace_so" "$trace_dir" \
+            > stage3d5d-evidence/face0-trace-verify.stdout \
+            2> stage3d5d-evidence/face0-trace-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face0-trace-verify.exit
+          exit "$code"
       - name: Guide oriented Solid and through-void region observations
         run: |
           set +e
