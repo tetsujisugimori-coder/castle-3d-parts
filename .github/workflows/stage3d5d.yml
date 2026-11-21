@@ -207,6 +207,35 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/through-q-verify.exit
           exit "$code"
+      - name: Certify conditional roundoff of actual ten Geom_Plane point evaluators
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/native-plane-input
+          binary="$RUNNER_TEMP/stage3d5d-native-plane-arithmetic"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_plane_arithmetic.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/native-plane-build.stdout \
+            2> stage3d5d-evidence/native-plane-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/native-plane-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/native-plane-input/raw-frames.json \
+            2> stage3d5d-evidence/native-plane-input/stderr.txt
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-plane-extract.exit
+          if [ "$code" -ne 0 ]; then exit "$code"; fi
+          python3 -B cad/stage3d5d/verify_plane_roundoff.py \
+            stage3d5d-evidence/native-plane-input/raw-frames.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-plane-bound \
+            > stage3d5d-evidence/native-plane-verify.stdout \
+            2> stage3d5d-evidence/native-plane-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-plane-verify.exit
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
