@@ -168,8 +168,8 @@ def audit(n,trim,stored,through):
                 if key in extracted_keys:
                     raise ValueError('DUPLICATED_SAVED_EDGE_USE')
                 extracted_keys.add(key)
-                if use['represented_affine_link']!='PASS' or
-                    use['orientation'] not in ('Forward','Reversed'):
+                if (use['represented_affine_link']!='PASS' or
+                        use['orientation'] not in ('Forward','Reversed')):
                     raise ValueError('UNPROVEN_SAVED_LINEAR_EDGE')
                 endpoints=tuple(p3(x) for x in use['directed_3d'])
                 if len(set(endpoints))!=2:
