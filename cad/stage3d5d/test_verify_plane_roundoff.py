@@ -32,18 +32,20 @@ def synthetic():
               'source_brep_sha256':'043b1fb89aad7bf3004afeb1bf62c352e47250420c4e6f6f852265125e3cf261',
               'status':'PASS','faces':[]}}}
     t=(-540,0,100)
+    tr=[[1,0,0,t[0]],[0,1,0,t[1]],[0,0,1,t[2]],[0,0,0,1]]
+    trim['parts']['GATE_BoltGuide_Left']['shape_location']=[list(map(str,row)) for row in tr]
     for i,(o,u,v,b) in enumerate(WORLD):
-        local=[o[j]-t[j] for j in range(3)]
+        native_t=list(t) if i not in (5,6,7,8) else [-201,-116,999]
+        local=[o[j]-native_t[j] for j in range(3)]
         orientation='Reversed' if i in (0,1,3,6,7) else 'Forward'
         native['faces'].append({
             'face_index':i,'orientation':orientation,
             'local_plane_origin_mm':local,'native_u_direction':u,
-            'native_v_direction':v,'translation_mm':list(t),
+            'native_v_direction':v,'translation_mm':native_t,
             'transform_form':'Translation',
             'raw_transform_form_enum':2,
             'native_affine_matrix_is_identity':True,
             'native_face_uv_bounds':list(b)})
-        tr=[[1,0,0,t[0]],[0,1,0,t[1]],[0,0,1,t[2]],[0,0,0,1]]
         trim['parts']['GATE_BoltGuide_Left']['faces'].append({
             'face':i,'orientation':orientation,'plane':[list(map(str,row)) for row in (o,u,v)],
             'location':[list(map(str,row)) for row in tr],
@@ -66,6 +68,9 @@ class PlaneRoundoffTests(unittest.TestCase):
         self.assertEqual(r['brep_extrema_total_error_status'],'UNKNOWN')
         self.assertEqual(r['native_full_q_void_inclusion'],'UNKNOWN')
         self.assertEqual(len(r['face_details']),10)
+        self.assertEqual([x['face'] for x in r['face_details']
+                          if x['native_location_differs_from_freecad_shape_placement']],
+                         [5,6,7,8])
 
     def test_exact_gamma_and_outward_decimals(self):
         self.assertEqual(EPS,Q(1,2**53))
@@ -76,11 +81,12 @@ class PlaneRoundoffTests(unittest.TestCase):
         self.assertLessEqual(outward_down(Q(1)-2*z),Q(1)-2*z)
 
     def test_native_face_frame_and_location_faults_fail_closed(self):
-        for change in ('position','axis','translate','uv_bounds','mode','matrix','mirror','rounding'):
+        for change in ('position','axis','translate','assembly','uv_bounds','mode','matrix','mirror','rounding'):
             n,t,p=synthetic()
             if change=='position':n['faces'][6]['local_plane_origin_mm'][1]=-95
             if change=='axis':n['faces'][6]['native_v_direction'][0]=0.5
             if change=='translate':n['faces'][6]['translation_mm'][0]=-539
+            if change=='assembly':t['parts']['GATE_BoltGuide_Left']['faces'][6]['location'][0][3]='-539'
             if change=='uv_bounds':n['faces'][9]['native_face_uv_bounds'][1]=61
             if change=='mode':n['faces'][0]['transform_form']='Scale'
             if change=='matrix':n['faces'][0]['native_affine_matrix_is_identity']=False

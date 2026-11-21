@@ -94,13 +94,17 @@ def analyze(native,trim,through):
             raise ValueError('RAW_NATIVE_SURFACE_DIFFERS_FROM_WORLD_REPRESENTATION:'+str(i))
         if box != tuple(Q(x) for x in f['uv_bounds']):
             raise ValueError('RAW_NATIVE_UV_BOUNDS_CHANGED:'+str(i))
-        loc=tuple(tuple(Q(x) for x in row) for row in f['location'])
-        expected=((Q(1),Q(0),Q(0),tr[0]),
-                  (Q(0),Q(1),Q(0),tr[1]),
-                  (Q(0),Q(0),Q(1),tr[2]),
-                  (Q(0),Q(0),Q(0),Q(1)))
-        if loc!=expected:
-            raise ValueError('NATIVE_FRAME_LOCATION_DOUBLED_OR_DIFFERENT:'+str(i))
+        # FreeCAD records the assembly shape-level placement here. Each
+        # TFace can store its own *different* local origin/Location pair;
+        # OCCT BRep_Tool::Surface composes those internally. Never require
+        # native TFace Location == assembly placement. Require their final
+        # WORLD surface frames to be exactly equal (checked above).
+        assembly_loc=tuple(tuple(Q(x) for x in row)
+                           for row in guide['shape_location'])
+        saved_loc=tuple(tuple(Q(x) for x in row) for row in f['location'])
+        if saved_loc!=assembly_loc or len(saved_loc)!=4 or any(len(row)!=4 for row in saved_loc):
+            raise ValueError('UNPINNED_FREECAD_ASSEMBLY_PLACEMENT:'+str(i))
+        native_loc_differs=(tr!=tuple(assembly_loc[j][3] for j in range(3)))
         umax=max(abs(box[0]),abs(box[1]))
         vmax=max(abs(box[2]),abs(box[3]))
         per=[bound_for_coordinate(o[j],u[j],v[j],tr[j],umax,vmax)
@@ -109,7 +113,9 @@ def analyze(native,trim,through):
         max_coord_bound=max(max_coord_bound,localmax)
         details.append({
             'face':i,'native_raw_plane_frame_match':'PASS',
-            'native_translation_match':'PASS',
+            'native_world_frame_match':'PASS',
+            'native_surface_translation_mm':[str(t) for t in tr],
+            'native_location_differs_from_freecad_shape_placement':native_loc_differs,
             'coordinate_roundoff_upper_mm':str(localmax),
             'coordinate_roundoff_upper_decimal_mm':str(outward_up(localmax)),
             'exact_model_distance_to_q_sq_mm2':

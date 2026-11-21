@@ -12,6 +12,7 @@
 - Face 0〜9のネイティブ原点＋Location、U/V軸、Boundsを、元の48件保存pcurveから実際に得た`trim-correspondence.json`の表示世界座標と有理数で直接照合。Locationの`-540,0,+100`を**二重適用しない**。U/V軸が直交する座標軸単位ベクトル`0,±1`で、位置も2進で正確に保存された整数であることを要求する。
 - 実CIで`std::numeric_limits<double>::is_iec559`、`digits==53`、`std::fegetround()==FE_TONEAREST`を検査。失敗なら限定PASSを発行しない。
 - **Locationの生Formと実効変換を混同しない。** 初回native診断は`NON_TRANSLATION_FACE_LOCATION`で停止。OCCTの`TopLoc_Location`合成で`gp_CompoundTrsf`等のFormを保持していても、実効3×3線形行列が厳密に単位行列かつScaleFactor=1なら幾何的には平行移動。この両条件を実ネイティブから成分ごとに厳密照合し、CentralMirrorや非単位行列は拒否する。Form enumと実効同一行列の両方を原票に残す。
+- **SurfaceのローカルOrigin/Locationと、FreeCADで記録したassembly shape placementを同一視しない。** 次のnative診断はFace5で`NATIVE_FRAME_LOCATION_DOUBLED_OR_DIFFERENT`となった。実OCCT原票ではFace0〜4/9のLocal-Locationは(-540,0,100)だが、内壁Face5〜8は(-201,-116,999)を独立して持つ。両方とも**ローカル原点＋それぞれのnative Location**で得る世界Planeは保存済み係数と一致する。よって実判定は全10面の世界Planeの厳密一致、raw行列の同一性、assembly shape placementの原票一致を別々に検査する。表現だけ異なるLocationを理由に拒否しない。
 
 ## 根拠となる7.8.1の演算式
 - [Geom_Plane.cxx#L251-L253](https://github.com/Open-Cascade-SAS/OCCT/blob/V7_8_1/src/Geom/Geom_Plane.cxx#L251-L253)の`D0`は[ElSLib.cxx#L37-L46](https://github.com/Open-Cascade-SAS/OCCT/blob/V7_8_1/src/ElSLib/ElSLib.cxx#L37-L46)の`PlaneValue`を呼ぶ。各成分 `U*dirU + V*dirV + local_origin` を計算する。
@@ -29,7 +30,7 @@
 
 `dist(S_native_D0_float(U,V), Q_exact) >= 1 mm - 2E`
 
-が**面の直接座標評価という操作に限り**条件付きで成立する。Python側は全式を`Fraction`で計算し、十進出力には必ず外向き丸めを使う。前工程の10 Faceの数学的トリム領域・48件保存pcurve・距離1 mmのPASSを前提として固定する。
+が**各Faceのトリム済み領域内のUV点に限り、面の直接座標評価という操作について**条件付きで成立する。外輪だけのUVBounds全体には穴の内部が含まれるため、穴内部まで距離1 mmとは主張しない。Python側は全式を`Fraction`で計算し、十進出力には必ず外向き丸めを使う。前工程の10 Faceの数学的トリム領域・48件保存pcurve・距離1 mmのPASSを前提として固定する。
 
 **注意**：この距離下界は、Qを既存D2の正確な閉直方体としたときの`Geom_Plane::D0 + Location`による座標値の評価誤差に対するもの。OCCTが内部で選択するpcurve上のパラメータ位置誤差、任意のアルゴリズムの計算分岐、`BRepExtrema`が報告する最短距離の収束誤差、丸めモードを変えた実行、実Shape全体の空洞包含、連続閂運動には拡張しない。数値の正値を得ても`native_full_q_void_inclusion=UNKNOWN`、`brep_extrema_total_error_status=UNKNOWN`を維持する。
 
