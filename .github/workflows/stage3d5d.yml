@@ -108,6 +108,19 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/face0-verify.exit
           exit "$code"
+      - name: Certify recorded input encoding and ideal Face 0 query margins
+        run: |
+          set +e
+          python3 -B cad/stage3d5d/face0_error_bounds.py \
+            stage3d5d-evidence/face-region/face-region.json \
+            stage3d5d-evidence/face0-uv/native-face0.stdout.json \
+            stage3d5d-evidence/face0-uv/face0-uv-report.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/face0-bounds \
+            > stage3d5d-evidence/face0-bounds.stdout 2> stage3d5d-evidence/face0-bounds.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face0-bounds.exit
+          exit "$code"
       - name: Guide oriented Solid and through-void region observations
         run: |
           set +e
