@@ -184,7 +184,7 @@ jobs:
           binary="$RUNNER_TEMP/stage3d5d-q-native"
           g++ -std=c++17 -O2 -I/usr/include/opencascade \
             cad/stage3d5d/guide_q_native.cpp -o "$binary" \
-            -lTKPrim -lTKExtrema -lTKGeomAlgo -lTKTopAlgo -lTKBRep \
+            -lTKPrim -lTKGeomAlgo -lTKTopAlgo -lTKBRep \
             -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
             > stage3d5d-evidence/through-q-build.stdout \
             2> stage3d5d-evidence/through-q-build.stderr
