@@ -68,9 +68,20 @@ class PlaneRoundoffTests(unittest.TestCase):
         self.assertEqual(r['brep_extrema_total_error_status'],'UNKNOWN')
         self.assertEqual(r['native_full_q_void_inclusion'],'UNKNOWN')
         self.assertEqual(len(r['face_details']),10)
+        self.assertEqual(r['native_raw_transform_form_enums'],[2])
+        self.assertIn('TRIMMED FACE DOMAIN',r['bounded_operation'])
         self.assertEqual([x['face'] for x in r['face_details']
                           if x['native_location_differs_from_freecad_shape_placement']],
                          [5,6,7,8])
+
+    def test_compound_native_transform_keeps_same_conservative_bound(self):
+        n,t,p=synthetic()
+        for face in n['faces']:
+            face['raw_transform_form_enum']=7
+        actual=analyze(n,t,p)
+        self.assertEqual(actual['status'],'PASS')
+        self.assertEqual(actual['native_raw_transform_form_enums'],[7])
+        self.assertIn('gp_Trsf::Transforms',actual['occt_source_evaluation_path'])
 
     def test_exact_gamma_and_outward_decimals(self):
         self.assertEqual(EPS,Q(1,2**53))

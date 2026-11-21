@@ -133,7 +133,11 @@ def analyze(native,trim,through):
         'status':'PASS','face_count':10,
         'native_raw_frame_equal_saved_world_planes':'PASS',
         'binary64_rounding_assumptions_observed':'PASS',
-        'occt_source_evaluation_path':'Geom_Plane::D0 -> ElSLib::PlaneValue; gp_Pnt::Transform gp_Translation',
+        'native_raw_transform_form_enums':sorted({n['raw_transform_form_enum'] for n in native['faces']}),
+        'occt_source_evaluation_path':(
+            'Geom_Plane::D0 -> ElSLib::PlaneValue; gp_Pnt::Transform '
+            'direct translation OR gp_Trsf::Transforms(identity matrix + translation), '
+            'selected by raw OCCT gp_TrsfForm; gamma16 encloses both'),
         'roundoff_formula':'gamma16*(|local_origin|+|translation|+|du|*umax+|dv|*vmax+roundparam)+roundparam; roundparam=2^-53*(|du|*umax+|dv|*vmax)',
         'max_point_coordinate_roundoff_upper_exact_mm':str(max_coord_bound),
         'max_point_coordinate_roundoff_upper_decimal_mm':str(outward_up(max_coord_bound)),
@@ -143,7 +147,10 @@ def analyze(native,trim,through):
         'conditional_evaluated_plane_point_distance_to_exact_q_lower_decimal_mm':str(outward_down(safe_distance)),
         'model_boundary_distance_to_q_exact_mm':'1',
         'face_details':details,
-        'bounded_operation':'direct 10-plane native stored frame surface point evaluation for real UV once rounded into binary64',
+        'bounded_operation':(
+            'direct ten-plane native stored-frame point evaluation at real UV '
+            'within each PROVEN TRIMMED FACE DOMAIN, once rounded into binary64; '
+            'holes are excluded from the face domain'),
         'NOT_bounded':'BRepExtrema optimization, Geom2d/3d curve parameter generation, topology classification, arbitrary OpenCASCADE geometry',
         'brep_extrema_total_error_upper_mm':None,
         'brep_extrema_total_error_status':'UNKNOWN',
