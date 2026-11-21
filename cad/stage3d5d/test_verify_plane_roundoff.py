@@ -39,7 +39,10 @@ def synthetic():
             'face_index':i,'orientation':orientation,
             'local_plane_origin_mm':local,'native_u_direction':u,
             'native_v_direction':v,'translation_mm':list(t),
-            'transform_form':'Translation','native_face_uv_bounds':list(b)})
+            'transform_form':'Translation',
+            'raw_transform_form_enum':2,
+            'native_affine_matrix_is_identity':True,
+            'native_face_uv_bounds':list(b)})
         tr=[[1,0,0,t[0]],[0,1,0,t[1]],[0,0,1,t[2]],[0,0,0,1]]
         trim['parts']['GATE_BoltGuide_Left']['faces'].append({
             'face':i,'orientation':orientation,'plane':[list(map(str,row)) for row in (o,u,v)],
@@ -73,13 +76,15 @@ class PlaneRoundoffTests(unittest.TestCase):
         self.assertLessEqual(outward_down(Q(1)-2*z),Q(1)-2*z)
 
     def test_native_face_frame_and_location_faults_fail_closed(self):
-        for change in ('position','axis','translate','uv_bounds','mode','rounding'):
+        for change in ('position','axis','translate','uv_bounds','mode','matrix','mirror','rounding'):
             n,t,p=synthetic()
             if change=='position':n['faces'][6]['local_plane_origin_mm'][1]=-95
             if change=='axis':n['faces'][6]['native_v_direction'][0]=0.5
             if change=='translate':n['faces'][6]['translation_mm'][0]=-539
             if change=='uv_bounds':n['faces'][9]['native_face_uv_bounds'][1]=61
             if change=='mode':n['faces'][0]['transform_form']='Scale'
+            if change=='matrix':n['faces'][0]['native_affine_matrix_is_identity']=False
+            if change=='mirror':n['faces'][0]['raw_transform_form_enum']=3
             if change=='rounding':n['ieee_binary64_round_to_nearest']=False
             with self.subTest(change=change),self.assertRaises(ValueError):
                 analyze(n,t,p)

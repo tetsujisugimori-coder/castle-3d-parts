@@ -66,9 +66,20 @@ int main(int argc,char** argv) {
       Handle(Geom_Plane) plane=Handle(Geom_Plane)::DownCast(raw);
       if(plane.IsNull()) throw std::runtime_error("NON_PLANE_GUIDE_FACE");
       const gp_Trsf tr=loc.Transformation();
-      if(tr.Form()!=gp_Translation && tr.Form()!=gp_Identity)
-        throw std::runtime_error("NON_TRANSLATION_FACE_LOCATION");
-      if(tr.ScaleFactor()!=1.0) throw std::runtime_error("NON_UNIT_NATIVE_LOCATION_SCALE");
+      if(tr.ScaleFactor()!=1.0 || tr.Form()==gp_PntMirror)
+        throw std::runtime_error("NON_UNIT_OR_UNSUPPORTED_NATIVE_LOCATION");
+      // OCCT's composed TopLoc_Location may expose gp_CompoundTrsf
+      // although its effective linear matrix is exactly the identity.
+      // In that case gp_Pnt::Transform uses gp_Trsf::Transforms, which
+      // performs <=5 additional scalar operations per component.
+      for(int row=1;row<=3;++row)
+        for(int col=1;col<=3;++col)
+          if(tr.Value(row,col)!=(row==col?1.0:0.0))
+            throw std::runtime_error("NON_IDENTITY_LINEAR_NATIVE_LOCATION");
+      const gp_XYZ preTv=tr.TranslationPart();
+      if(tr.Form()==gp_Identity &&
+          (preTv.X()!=0 || preTv.Y()!=0 || preTv.Z()!=0))
+        throw std::runtime_error("IDENTITY_FORM_WITH_NONZERO_TRANSLATION");
       const gp_Ax3& ax=plane->Position();
       const gp_XYZ tv=tr.TranslationPart();
       double u0,u1,v0,v1;
@@ -86,7 +97,9 @@ int main(int argc,char** argv) {
       std::cout<<",\"translation_mm\":";
       xyz(tv.X(),tv.Y(),tv.Z());
       std::cout<<",\"transform_form\":\""<<(tr.Form()==gp_Identity?"Identity":"Translation")
-               <<"\",\"native_face_uv_bounds\":[";
+               <<"\",\"raw_transform_form_enum\":"<<static_cast<int>(tr.Form())
+               <<",\"native_affine_matrix_is_identity\":true"
+               <<",\"native_face_uv_bounds\":[";
       num(u0);std::cout<<',';num(u1);std::cout<<',';num(v0);std::cout<<',';num(v1);
       std::cout<<"]}";
     }

@@ -11,11 +11,12 @@
 - `BRep_Tool::Surface(face,TopLoc_Location)`の実オブジェクトが**全件`Geom_Plane`**であることを確認。ネイティブの`Geom_Plane::Position()`から実原点とU/V単位方向、Locationの実平行移動、実UVBoundsをbinary64で取得。
 - Face 0〜9のネイティブ原点＋Location、U/V軸、Boundsを、元の48件保存pcurveから実際に得た`trim-correspondence.json`の表示世界座標と有理数で直接照合。Locationの`-540,0,+100`を**二重適用しない**。U/V軸が直交する座標軸単位ベクトル`0,±1`で、位置も2進で正確に保存された整数であることを要求する。
 - 実CIで`std::numeric_limits<double>::is_iec559`、`digits==53`、`std::fegetround()==FE_TONEAREST`を検査。失敗なら限定PASSを発行しない。
+- **Locationの生Formと実効変換を混同しない。** 初回native診断は`NON_TRANSLATION_FACE_LOCATION`で停止。OCCTの`TopLoc_Location`合成で`gp_CompoundTrsf`等のFormを保持していても、実効3×3線形行列が厳密に単位行列かつScaleFactor=1なら幾何的には平行移動。この両条件を実ネイティブから成分ごとに厳密照合し、CentralMirrorや非単位行列は拒否する。Form enumと実効同一行列の両方を原票に残す。
 
 ## 根拠となる7.8.1の演算式
 - [Geom_Plane.cxx#L251-L253](https://github.com/Open-Cascade-SAS/OCCT/blob/V7_8_1/src/Geom/Geom_Plane.cxx#L251-L253)の`D0`は[ElSLib.cxx#L37-L46](https://github.com/Open-Cascade-SAS/OCCT/blob/V7_8_1/src/ElSLib/ElSLib.cxx#L37-L46)の`PlaneValue`を呼ぶ。各成分 `U*dirU + V*dirV + local_origin` を計算する。
 - [BRep_Tool.cxx#L77-L82](https://github.com/Open-Cascade-SAS/OCCT/blob/V7_8_1/src/BRep/BRep_Tool.cxx#L77-L82)のLocationを適用する際、[gp_Pnt.cxx#L30-L43](https://github.com/Open-Cascade-SAS/OCCT/blob/V7_8_1/src/gp/gp_Pnt.cxx#L30-L43)のgp_Translationなら各座標に平行移動量を加算する。非平行移動変換はこの証明器の対象外。
-- この`PlaneValue`と平行移動の**直接評価**は成分ごとに2乗算・3加算以下。実際の数値演算がIEEE binary64最近接で実行され、実数UVは入力時に1回だけ正しく丸められると仮定し、演算回数をわざと16回へ保守的に拡大する。
+- `gp_Translation` Formでは直接座標加算を行う。実効変換が単位行列でも生Formが`gp_CompoundTrsf`等の場合は、[gp_Trsf.hxx#L440-L468](https://github.com/Open-Cascade-SAS/OCCT/blob/V7_8_1/src/gp/gp_Trsf.hxx#L440-L468)のXYZ×3×3恒等行列と平行移動の経路になる。後者は`PlaneValue`の4演算に最大約6演算を加えた計10演算/座標成分で、今回採用する16演算の保守的上界内。実際の数値演算がIEEE binary64最近接で実行され、実数UVは入力時に1回だけ正しく丸められるという条件は変えない。
 
 ## 数学的な上界
 `u=2^-53`、`γ16=(16u)/(1−16u)`。各Faceの成分jについて、実UVBoundsから `Umax=max(|Umin|,|Umax|)`、`Vmax`も同様に置く。ネイティブ原点`O`、単位軸`dU,dV`、平行移動`T`は実バイナリ値として分数で厳密に読む。

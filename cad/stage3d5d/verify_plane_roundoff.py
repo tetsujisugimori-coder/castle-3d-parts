@@ -74,8 +74,13 @@ def analyze(native,trim,through):
         box=vec(n['native_face_uv_bounds'],4)
         if None in (o,u,v,tr,box):
             raise ValueError('NATIVE_FRAME_LENGTH_BAD')
-        if n['transform_form'] not in ('Identity','Translation'):
-            raise ValueError('NON_TRANSLATION_NATIVE_FRAME')
+        if (n['transform_form'] not in ('Identity','Translation')
+                or n.get('native_affine_matrix_is_identity') is not True
+                or type(n.get('raw_transform_form_enum')) is not int
+                or n['raw_transform_form_enum'] not in (0,1,2,4,5,6,7,8)):
+            raise ValueError('NON_UNIT_LINEAR_NATIVE_FRAME')
+        if n['transform_form']=='Identity' and n['raw_transform_form_enum']!=0:
+            raise ValueError('TRANSFORM_FORM_IDENTITY_DISAGREEMENT')
         if n['transform_form']=='Identity' and tr!=(0,0,0):
             raise ValueError('IDENTITY_FRAME_HAS_TRANSLATION')
         if (sorted(sum(x!=0 for x in w) for w in (u,v))!=[1,1]
