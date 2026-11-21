@@ -44,7 +44,8 @@ class Face0UVTests(unittest.TestCase):
                         ('face_exterior','IN')]:
             n=deepcopy(NATIVE)
             next(x for x in n['samples'] if x['id']==key)['state']=bad
-            with self.subTest(key=key),self.assertEqual(validate(n,REGION)['status'],'FAIL')
+            with self.subTest(key=key):
+                self.assertEqual(validate(n,REGION)['status'],'FAIL')
 
     def test_missing_or_extra_or_swapped_sample_rejected(self):
         for kind in ('missing','extra','swapped','coordinate','unknown'):
