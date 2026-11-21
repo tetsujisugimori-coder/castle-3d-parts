@@ -177,6 +177,36 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/guide-verify.exit
           exit "$code"
+      - name: Check the fixed D2 through-void Q against all 10 real Guide faces
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/through-q-native
+          binary="$RUNNER_TEMP/stage3d5d-q-native"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_q_native.cpp -o "$binary" \
+            -lTKPrim -lTKExtrema -lTKGeomAlgo -lTKTopAlgo -lTKBRep \
+            -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/through-q-build.stdout \
+            2> stage3d5d-evidence/through-q-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/through-q-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/through-q-native/native.json \
+            2> stage3d5d-evidence/through-q-native/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/through-q-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/through_q.py \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/through-q-native/native.json \
+            stage3d5d-evidence/through-q \
+            > stage3d5d-evidence/through-q-verify.stdout \
+            2> stage3d5d-evidence/through-q-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/through-q-verify.exit
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
