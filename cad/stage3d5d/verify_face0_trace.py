@@ -94,7 +94,7 @@ def validate(base, traced, events, tr):
                 ordinal_map[ordnum]=item['edge']
                 if e.get('edge_orientation') not in ('Forward','Reversed'):
                     raise ValueError('NATIVE_EDGE_ORIENTATION_UNSUPPORTED')
-                if e.get('use_bbox') is not False or rational(e.get('gap_check_tolerance'))!=F('0.1'):
+                if e.get('use_bbox') is not False or rational(e.get('gap_check_tolerance'))!=F.from_float(0.1):
                     raise ValueError('CLASSIFIER_OPTIONS_DIFFER_FROM_FIXED_CASE')
                 if kind=='intersector':
                     ray=e['ray']

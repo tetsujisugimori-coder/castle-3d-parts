@@ -60,6 +60,17 @@ class TraceContractTests(unittest.TestCase):
             with self.subTest(mutation=mutation):
                 self.assertEqual(validate(*d)['status'],'FAIL')
 
+    def test_binary64_option_exact_and_neighbor_rejected(self):
+        import math
+        valid=list(example())
+        self.assertEqual(validate(*valid)['status'],'PASS')
+        adjacent=list(example())
+        adjacent[2][1]['gap_check_tolerance']=math.nextafter(0.1, math.inf)
+        self.assertEqual(validate(*adjacent)['status'],'FAIL')
+        decimal_string=list(example())
+        decimal_string[2][1]['gap_check_tolerance']='0.1'
+        self.assertEqual(validate(*decimal_string)['status'],'FAIL')
+
     def test_interposed_output_must_equal_original(self):
         d=list(example())
         d[1]['samples'][0]['state']='OUT'
