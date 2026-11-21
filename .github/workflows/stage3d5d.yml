@@ -236,6 +236,36 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/native-plane-verify.exit
           exit "$code"
+      - name: Exhaust native Solid Shell Face Wire Edge Vertex boundary membership
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/solid-hierarchy-native
+          binary="$RUNNER_TEMP/stage3d5d-guide-solid-hierarchy"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_solid_hierarchy.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/solid-hierarchy-build.stdout \
+            2> stage3d5d-evidence/solid-hierarchy-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/solid-hierarchy-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/solid-hierarchy-native/native.json \
+            2> stage3d5d-evidence/solid-hierarchy-native/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/solid-hierarchy-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/verify_solid_hierarchy.py \
+            stage3d5d-evidence/solid-hierarchy-native/native.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/solid-boundary-census \
+            > stage3d5d-evidence/solid-hierarchy-verify.stdout \
+            2> stage3d5d-evidence/solid-hierarchy-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/solid-hierarchy-verify.exit
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
