@@ -151,7 +151,7 @@ jobs:
             "$trace_dir/native-interposed.stdout.json" \
             "$trace_dir/hook-events.ndjson" \
             stage3d5d-evidence/one-slice/trim-correspondence.json \
-            "$trace_so" "$trace_dir" \
+            "$trace_so" "$trace_dir/verified" \
             > stage3d5d-evidence/face0-trace-verify.stdout \
             2> stage3d5d-evidence/face0-trace-verify.stderr
           code=$?
