@@ -23,7 +23,7 @@ class ExactTrimToCSGBoundaryTests(unittest.TestCase):
         faults.append(original[:-1])
         flipped=deepcopy(original)
         box,_=flipped[5]
-        flipped[5]=(box,(F(1),F(0),F(0)))
+        flipped[5]=(box,(F(-1),F(0),F(0)))
         faults.append(flipped)
         shifted=deepcopy(original)
         box,normal=shifted[0]
