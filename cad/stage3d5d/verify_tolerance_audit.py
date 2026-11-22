@@ -10,7 +10,8 @@ from pathlib import Path
 import sys
 from zipfile import ZipFile
 
-from face_region import FCSTD_SHA, D2_SHA, GUIDE_BREP_SHA, GUIDE
+from face_region import FCSTD_SHA, D2_SHA, GUIDE_BREP_SHA, TRIM_SHA, GUIDE
+from trim_correspondence import affine_link
 from one_slice import FCSTD, CONTRACT
 from through_q import exact_q
 
@@ -22,6 +23,58 @@ def nonnegative(recorded):
     if value < 0:
         raise ValueError("NEGATIVE_NATIVE_TOLERANCE")
     return value
+
+
+
+def verified_trim_curve_uses(faces):
+    """Recompute each recorded 2D->3D affine identity; never trust PASS labels."""
+    keys = set()
+    for face_index, face in enumerate(faces):
+        if face.get("face") != face_index or face.get("status") != "PASS":
+            raise ValueError("TRIM_FACE_IDENTITY_OR_STATUS_CHANGED")
+        try:
+            plane = tuple(tuple(F(x) for x in axis) for axis in face["plane"])
+            if len(plane) != 3 or any(len(axis) != 3 for axis in plane):
+                raise ValueError("INVALID_TRIM_PLANE")
+            for wire_index, wire in enumerate(face["wires"]):
+                if wire.get("wire") != wire_index:
+                    raise ValueError("TRIM_WIRE_IDENTITY_CHANGED")
+                for use in wire["uses"]:
+                    key = (face_index, wire_index, use["edge"], use["use"])
+                    if (any(type(k) is not int or k < 0 for k in key)
+                            or key in keys):
+                        raise ValueError("DUPLICATE_OR_INVALID_TRIM_USE")
+                    keys.add(key)
+                    if use.get("represented_affine_link") != "PASS":
+                        raise ValueError("TRIM_AFFINE_LABEL_NOT_PASS")
+                    pc = tuple(tuple(F(x) for x in axis) for axis in use["pcurve"])
+                    curve = tuple(tuple(F(x) for x in axis) for axis in use["curve"])
+                    prange = tuple(F(x) for x in use["pcurve_range"])
+                    crange = tuple(F(x) for x in use["curve_range"])
+                    if (len(pc) != 2 or any(len(axis) != 2 for axis in pc)
+                            or len(curve) != 2 or any(len(axis) != 3 for axis in curve)
+                            or not affine_link(plane, pc, curve, prange, crange)):
+                        raise ValueError("TRIM_PCURVE_3D_AFFINE_MISMATCH")
+                    # Cross-check directed endpoint witnesses as well as coefficients.
+                    a, b = prange
+                    uv = [tuple(pc[0][i] + t * pc[1][i] for i in range(2))
+                          for t in (a, b)]
+                    xyz = [tuple(curve[0][i] + t * curve[1][i] for i in range(3))
+                           for t in (a, b)]
+                    ori = use["orientation"]
+                    if ori == "Reversed":
+                        uv.reverse()
+                        xyz.reverse()
+                    elif ori != "Forward":
+                        raise ValueError("UNSUPPORTED_TRIM_EDGE_ORIENTATION")
+                    if (uv != [tuple(F(x) for x in pair) for pair in use["directed_uv"]]
+                            or xyz != [tuple(F(x) for x in point) for point in use["directed_3d"]]):
+                        raise ValueError("TRIM_DIRECTED_ENDPOINTS_MISMATCH")
+        except (KeyError, TypeError, IndexError, ZeroDivisionError, OverflowError) as exc:
+            raise ValueError("INCOMPLETE_TRIM_AFFINE_SOURCE") from exc
+    if len(keys) != 48:
+        raise ValueError("INCOMPLETE_TRIM_48_USE_CENSUS")
+    return keys
 
 
 def validate(native, stored, trim, semantic, plane, through, contract):
@@ -49,6 +102,10 @@ def validate(native, stored, trim, semantic, plane, through, contract):
                      for r in stored_rows]
     if len(set(recorded_keys)) != 48:
         raise ValueError("DUPLICATED_ORIGINAL_CURVE_USE")
+    trim_keys = verified_trim_curve_uses(g["faces"])
+    if trim_keys != set(recorded_keys):
+        raise ValueError("TRIM_TO_STORED_48_USE_MISMATCH")
+    stored_by_key = dict(zip(recorded_keys, stored_rows))
     uses = native.get("uses")
     if not isinstance(uses, list) or len(uses) != 48:
         raise ValueError("INCOMPLETE_NATIVE_USE_INVENTORY")
@@ -59,6 +116,16 @@ def validate(native, stored, trim, semantic, plane, through, contract):
             raise ValueError("NONINTEGER_USE_ID")
         if key[0] >= 10 or key[2] >= 24:
             raise ValueError("OUT_OF_RANGE_USE_ID")
+        original = stored_by_key.get(key)
+        if original is None:
+            raise ValueError("NATIVE_USE_MISSING_FROM_STORED_RECORD")
+        # Ordered wire use and raw TopoDS storage order are NOT interchangeable.
+        if (type(r.get("native_storage_use")) is not int
+                or not 0 <= r["native_storage_use"] < 4
+                or type(original.get("native_storage_order")) is not int
+                or original["native_storage_order"] != r["native_storage_use"]
+                or original.get("native_ordered_use") != r["use"]):
+            raise ValueError("NATIVE_STORED_USE_ORDER_MISMATCH")
         for field in ("stored", "same_parameter", "same_range", "same_numeric_range",
                       "surface_plane", "pcurve_line", "curve_line"):
             if r.get(field) is not True:
@@ -144,6 +211,8 @@ def run(native_path, stored_path, trim_path, semantic_path, plane_path, through_
             raise ValueError("SOURCE_GUIDE_BREP_CHANGED")
     paths = (native_path, stored_path, trim_path, semantic_path, plane_path, through_path)
     contents = [p.read_bytes() for p in paths]
+    if sha256(contents[2]).hexdigest() != TRIM_SHA:
+        raise ValueError("PINNED_TRIM_SOURCE_SHA_CHANGED")
     try:
         report = validate(*(json.loads(raw) for raw in contents),
                           json.loads(CONTRACT.read_text(encoding="utf-8")))
