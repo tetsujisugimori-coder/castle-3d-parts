@@ -298,6 +298,39 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/semantic-bridge-verify.exit
           exit "$code"
+      - name: Audit native Guide tolerances and classifier-free Q proof scope
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/native-tolerance
+          binary="$RUNNER_TEMP/stage3d5d-guide-tolerance-audit"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_tolerance_audit.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/native-tolerance-build.stdout \
+            2> stage3d5d-evidence/native-tolerance-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/native-tolerance-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/native-tolerance/native.json \
+            2> stage3d5d-evidence/native-tolerance/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/native-tolerance-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/verify_tolerance_audit.py \
+            stage3d5d-evidence/native-tolerance/native.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/semantic-bridge/semantic-bridge.json \
+            stage3d5d-evidence/native-plane-bound/plane-roundoff-bound.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-tolerance/verified \
+            > stage3d5d-evidence/native-tolerance-verify.stdout \
+            2> stage3d5d-evidence/native-tolerance-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-tolerance-verify.exit
+          cat stage3d5d-evidence/native-tolerance-verify.stdout
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
