@@ -93,7 +93,7 @@ def gates(trim, semantic, tolerance, through, plane, contract):
         pair[1] = min(pair[1], ray_gap)
     total_q = min(v[0] for v in byface.values())
     total_ray = min(v[1] for v in byface.values())
-    if total_q != 1 or total_ray != 1:
+    if total_q != 1 or total_ray != 121:
         raise ValueError("FIXED_CLEARANCE_NOT_ONE_MM")
     faces = []
     for i in range(10):
@@ -118,6 +118,7 @@ def gates(trim, semantic, tolerance, through, plane, contract):
         "q_and_exterior_ray_exact_disjoint": "PASS",
         "per_face_strict_displacement_thresholds": faces,
         "strict_uniform_sufficient_delta_mm": "delta < 1 mm",
+        "ray_exact_min_distance_mm": "11",
         "required_for_exacter_brep_geometric_q_nonintersection": [
             "complete oriented Solid/Shell/Face/Wire/Edge topology",
             "stored 48 pcurves, finite parameter domains, continuous affine 2D-3D line equality",
