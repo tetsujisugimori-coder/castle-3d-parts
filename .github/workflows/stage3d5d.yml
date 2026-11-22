@@ -331,6 +331,22 @@ jobs:
           printf '%s\n' "$code" > stage3d5d-evidence/native-tolerance-verify.exit
           cat stage3d5d-evidence/native-tolerance-verify.stdout
           exit "$code"
+      - name: Narrow actual error obligations for fixed Q and exterior ray
+        run: |
+          set +e
+          python3 -B cad/stage3d5d/fixed_q_minimum_error_paths.py \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/semantic-bridge/semantic-bridge.json \
+            stage3d5d-evidence/native-tolerance/verified/native-tolerance-audit.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-plane-bound/plane-roundoff-bound.json \
+            stage3d5d-evidence/fixed-q-minimum-paths \
+            > stage3d5d-evidence/fixed-q-minimum-paths.stdout \
+            2> stage3d5d-evidence/fixed-q-minimum-paths.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/fixed-q-minimum-paths.exit
+          cat stage3d5d-evidence/fixed-q-minimum-paths.stdout
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
