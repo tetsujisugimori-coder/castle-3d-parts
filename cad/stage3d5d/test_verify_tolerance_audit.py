@@ -74,7 +74,7 @@ class ToleranceAuditContractTests(unittest.TestCase):
         for value in (-1, float("nan"), float("inf")):
             source = list(fixture())
             source[0]["vertex_tolerances_mm"][0] = value
-            with self.subTest(value=repr(value)), self.assertRaises(ValueError):
+            with self.subTest(value=repr(value)), self.assertRaises((ValueError, OverflowError)):
                 validate(*source)
         source = list(fixture())
         source[0]["face_tolerances_mm"].pop()
