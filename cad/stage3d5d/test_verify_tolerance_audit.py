@@ -102,9 +102,19 @@ class ToleranceAuditContractTests(unittest.TestCase):
 
     def test_normal_storage_order_can_differ_from_wire_use_order(self):
         source = list(fixture())
+        # Real BRep storage can be a permutation of ordered edge uses.
         source[0]["uses"][0]["native_storage_use"] = 3
+        source[0]["uses"][3]["native_storage_use"] = 0
         source[1]["parts"][GUIDE][0]["native_storage_order"] = 3
+        source[1]["parts"][GUIDE][3]["native_storage_order"] = 0
         self.assertEqual(validate(*source)["status"], "PASS")
+
+    def test_duplicate_native_storage_slot_rejected_even_if_stored_record_matches(self):
+        source = list(fixture())
+        source[0]["uses"][0]["native_storage_use"] = 1
+        source[1]["parts"][GUIDE][0]["native_storage_order"] = 1
+        with self.assertRaisesRegex(ValueError, "DUPLICATED_NATIVE_STORAGE_USE"):
+            validate(*source)
 
     def test_incomplete_or_duplicated_use_rejected(self):
         source = list(fixture())
