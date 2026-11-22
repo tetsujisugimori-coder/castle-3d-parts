@@ -119,7 +119,7 @@ class ToleranceAuditContractTests(unittest.TestCase):
     def test_incomplete_or_duplicated_use_rejected(self):
         source = list(fixture())
         source[0]["uses"][1] = deepcopy(source[0]["uses"][0])
-        with self.assertRaisesRegex(ValueError, "MISMATCH"):
+        with self.assertRaisesRegex(ValueError, "DUPLICATED|MISMATCH"):
             validate(*source)
 
     def test_nonfinite_negative_and_missing_tolerance_rejected(self):
