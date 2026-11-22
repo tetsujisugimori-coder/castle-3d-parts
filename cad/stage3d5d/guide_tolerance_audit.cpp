@@ -3,6 +3,7 @@
 #include <BRep_Builder.hxx>
 #include <BRep_Tool.hxx>
 #include <BRepTools.hxx>
+#include <BRepTools_WireExplorer.hxx>
 #include <Geom2d_Line.hxx>
 #include <Geom2d_TrimmedCurve.hxx>
 #include <Geom_Line.hxx>
@@ -80,6 +81,10 @@ int main(int argc, char** argv) {
           const TopoDS_Edge e=TopoDS::Edge(eIt.Value());
           const int ei=edges.FindIndex(e);
           if(ei<=0) throw std::runtime_error("EDGE_NOT_IN_GLOBAL_MAP");
+          int ordered_use=-1, ordered_matches=0, ordered_index=0;
+          for (BRepTools_WireExplorer we(w);we.More();we.Next(),++ordered_index)
+            if (we.Current().IsEqual(e)) { ordered_use=ordered_index; ++ordered_matches; }
+          if (ordered_matches!=1) throw std::runtime_error("AMBIGUOUS_ORDERED_EDGE_USE");
           double a=0,b=0,c=0,d=0;
           Standard_Boolean stored=Standard_False;
           const auto pc=BRep_Tool::CurveOnSurface(e,f,a,b,&stored);
@@ -91,7 +96,7 @@ int main(int argc, char** argv) {
           const bool line3=!Handle(Geom_Line)::DownCast(curve).IsNull();
           const bool range_equal=(a==c && b==d && a<b);
           if(uses)std::cout<<',';
-          std::cout << "{\"face\":"<<(fi-1)<<",\"wire\":"<<wi<<",\"use\":"<<ui
+          std::cout << "{\"face\":"<<(fi-1)<<",\"wire\":"<<wi<<",\"use\":"<<ordered_use<<",\"native_storage_use\":"<<ui
                     <<",\"edge\":"<<(ei-1)
                     <<",\"stored\":"<<js(stored)
                     <<",\"same_parameter\":"<<js(BRep_Tool::SameParameter(e))
