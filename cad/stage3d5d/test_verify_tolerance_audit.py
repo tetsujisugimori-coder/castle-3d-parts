@@ -10,13 +10,37 @@ from verify_tolerance_audit import validate
 
 
 def fixture():
-    uses = [{"face": i // 6, "wire": 0, "edge": i % 24, "use": i % 6,
-             "stored": True, "same_parameter": True, "same_range": True,
-             "same_numeric_range": True, "degenerated": False,
-             "surface_plane": True, "pcurve_line": True, "curve_line": True}
-            for i in range(48)]
-    # Use IDs match the original record, including all repeated edge
-    # occurrences, without inventing native geometry data.
+    uses = []
+    faces = []
+    for face_index in range(10):
+        wires = []
+        for wire_index in range(2 if face_index in (0, 9) else 1):
+            trim_uses = []
+            for use_index in range(4):
+                i = len(uses)
+                edge = i % 24
+                uses.append({
+                    "face": face_index, "wire": wire_index, "edge": edge,
+                    "use": use_index, "native_storage_use": use_index,
+                    "stored": True, "same_parameter": True, "same_range": True,
+                    "same_numeric_range": True, "degenerated": False,
+                    "surface_plane": True, "pcurve_line": True, "curve_line": True,
+                })
+                trim_uses.append({
+                    "edge": edge, "use": use_index, "orientation": "Forward",
+                    "represented_affine_link": "PASS",
+                    "pcurve": [[str(i), "0"], ["1", "0"]],
+                    "curve": [[str(i), "0", "0"], ["1", "0", "0"]],
+                    "pcurve_range": ["0", "1"], "curve_range": ["0", "1"],
+                    "directed_uv": [[str(i), "0"], [str(i + 1), "0"]],
+                    "directed_3d": [[str(i), "0", "0"], [str(i + 1), "0", "0"]],
+                })
+            wires.append({"wire": wire_index, "uses": trim_uses})
+        faces.append({
+            "face": face_index, "status": "PASS",
+            "plane": [["0", "0", "0"], ["1", "0", "0"], ["0", "1", "0"]],
+            "wires": wires,
+        })
     native = {"schema": 1, "occt": "7.8.1",
               "counts": {"faces": 10, "edges": 24, "vertices": 16, "uses": 48},
               "face_tolerances_mm": [1e-7] * 10,
@@ -26,9 +50,9 @@ def fixture():
               "native_full_q_void_inclusion": "UNKNOWN"}
     stored = {"parts": {GUIDE: [
         {"face": r["face"], "wire": r["wire"], "edge": r["edge"],
-         "formula_use_order": r["use"], "status": "PASS"} for r in uses]}}
-    trim = {"parts": {GUIDE: {"status": "PASS",
-                             "faces": [{"face": i} for i in range(10)],
+         "formula_use_order": r["use"], "native_storage_order": r["native_storage_use"],
+         "native_ordered_use": r["use"], "status": "PASS"} for r in uses]}}
+    trim = {"parts": {GUIDE: {"status": "PASS", "faces": faces,
                              "source_brep_sha256": GUIDE_BREP_SHA}}}
     sem = {"status": "PASS",
            "exact_real_oriented_boundary_all_point_equality": "PASS",
@@ -63,6 +87,24 @@ class ToleranceAuditContractTests(unittest.TestCase):
             with self.subTest(key=key), self.assertRaisesRegex(ValueError,
                      "NATIVE_CURVE_REPRESENTATION_NOT_VERIFIED"):
                 validate(*source)
+
+    def test_mutated_pcurve_coefficient_rejected_despite_pass_label(self):
+        source = list(fixture())
+        source[2]["parts"][GUIDE]["faces"][0]["wires"][0]["uses"][0]["pcurve"][0][0] = "999"
+        with self.assertRaisesRegex(ValueError, "TRIM_PCURVE_3D_AFFINE_MISMATCH"):
+            validate(*source)
+
+    def test_native_storage_ordinal_999_rejected_despite_pass_labels(self):
+        source = list(fixture())
+        source[0]["uses"][0]["native_storage_use"] = 999
+        with self.assertRaisesRegex(ValueError, "NATIVE_STORED_USE_ORDER_MISMATCH"):
+            validate(*source)
+
+    def test_normal_storage_order_can_differ_from_wire_use_order(self):
+        source = list(fixture())
+        source[0]["uses"][0]["native_storage_use"] = 3
+        source[1]["parts"][GUIDE][0]["native_storage_order"] = 3
+        self.assertEqual(validate(*source)["status"], "PASS")
 
     def test_incomplete_or_duplicated_use_rejected(self):
         source = list(fixture())
