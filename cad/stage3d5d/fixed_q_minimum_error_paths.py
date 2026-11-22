@@ -119,7 +119,7 @@ def gates(trim, semantic, tolerance, through, plane, contract):
         "per_face_strict_displacement_thresholds": faces,
         "strict_uniform_sufficient_delta_mm": "delta < 1 mm",
         "ray_exact_min_distance_mm": "11",
-        "required_for_exacter_brep_geometric_q_nonintersection": [
+        "required_for_exact_brep_geometric_q_nonintersection": [
             "complete oriented Solid/Shell/Face/Wire/Edge topology",
             "stored 48 pcurves, finite parameter domains, continuous affine 2D-3D line equality",
             "exact native world Location/Plane coefficients and true trimmed regions",
