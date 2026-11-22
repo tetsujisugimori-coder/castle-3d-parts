@@ -110,6 +110,7 @@ def validate(native, stored, trim, semantic, plane, through, contract):
     if not isinstance(uses, list) or len(uses) != 48:
         raise ValueError("INCOMPLETE_NATIVE_USE_INVENTORY")
     use_keys = []
+    storage_slots = set()
     for r in uses:
         key = (r["face"], r["wire"], r["edge"], r["use"])
         if any(type(n) is not int or n < 0 for n in key):
@@ -126,6 +127,10 @@ def validate(native, stored, trim, semantic, plane, through, contract):
                 or original["native_storage_order"] != r["native_storage_use"]
                 or original.get("native_ordered_use") != r["use"]):
             raise ValueError("NATIVE_STORED_USE_ORDER_MISMATCH")
+        storage_slot = (r["face"], r["wire"], r["native_storage_use"])
+        if storage_slot in storage_slots:
+            raise ValueError("DUPLICATED_NATIVE_STORAGE_USE")
+        storage_slots.add(storage_slot)
         for field in ("stored", "same_parameter", "same_range", "same_numeric_range",
                       "surface_plane", "pcurve_line", "curve_line"):
             if r.get(field) is not True:
