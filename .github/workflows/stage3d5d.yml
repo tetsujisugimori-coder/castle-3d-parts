@@ -266,6 +266,38 @@ jobs:
           code=$?
           printf '%s\n' "$code" > stage3d5d-evidence/solid-hierarchy-verify.exit
           exit "$code"
+      - name: Bridge OCCT trimmed Face semantics to entire exact D2 material boundary
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/face-semantics-native
+          binary="$RUNNER_TEMP/stage3d5d-face-semantics"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_face_semantics.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/face-semantics-build.stdout \
+            2> stage3d5d-evidence/face-semantics-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/face-semantics-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/face-semantics-native/native.json \
+            2> stage3d5d-evidence/face-semantics-native/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/face-semantics-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/occt_semantic_bridge.py \
+            stage3d5d-evidence/face-semantics-native/native.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/solid-boundary-census/solid-boundary-census.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-plane-bound/plane-roundoff-bound.json \
+            stage3d5d-evidence/semantic-bridge \
+            > stage3d5d-evidence/semantic-bridge-verify.stdout \
+            2> stage3d5d-evidence/semantic-bridge-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/semantic-bridge-verify.exit
+          exit "$code"
       - name: Hash exact evidence files
         if: always()
         run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
