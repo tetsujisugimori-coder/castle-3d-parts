@@ -54,7 +54,9 @@ class NativeHierarchyContractTests(unittest.TestCase):
         r=check_structure(example())
         self.assertEqual(r['status'],'PASS')
         self.assertEqual(r['unique_edge_uses'],48)
-        self.assertTrue(r['connected_native_vertex_graph'])
+        self.assertEqual(r['native_vertex_edge_graph_components'],2)
+        self.assertTrue(r['connected_native_face_graph'])
+        self.assertEqual(r['annular_faces_bridge_both_wire_components'],[0,9])
         self.assertEqual(r['represented_surface_euler_characteristic'],0)
 
     def test_missing_extra_or_misparented_face(self):

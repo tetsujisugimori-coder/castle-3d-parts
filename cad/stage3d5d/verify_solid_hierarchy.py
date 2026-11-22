@@ -24,17 +24,24 @@ def p3(point):
         raise ValueError('NATIVE_VERTEX_DIMENSION')
     return tuple(Q(x) for x in point)
 
-def graph_connected(edge_pairs, count):
+def graph_components(edge_pairs, count):
     graph=[set() for _ in range(count)]
     for a,b in edge_pairs:
         graph[a].add(b);graph[b].add(a)
-    visited={0}
-    todo=[0]
-    while todo:
-        for nxt in graph[todo.pop()]:
-            if nxt not in visited:
-                visited.add(nxt);todo.append(nxt)
-    return len(visited)==count
+    remaining=set(range(count))
+    groups=[]
+    while remaining:
+        start=min(remaining);remaining.remove(start)
+        visited={start};todo=[start]
+        while todo:
+            for nxt in graph[todo.pop()]:
+                if nxt not in visited:
+                    visited.add(nxt);remaining.discard(nxt);todo.append(nxt)
+        groups.append(visited)
+    return groups
+
+def graph_connected(edge_pairs, count):
+    return len(graph_components(edge_pairs,count))==1
 
 def check_structure(n):
     """Fail closed for missing/extra/duplicated OCCT topology."""
@@ -112,8 +119,25 @@ def check_structure(n):
     if (any(x!=3 for x in incidence) or
         any(row['edge_degree']!=3 for row in v)):
         raise ValueError('NATIVE_VERTEX_VALENCE_CHANGED')
-    if not graph_connected(native_edge_pairs,16):
-        raise ValueError('NATIVE_VERTEX_GRAPH_DISCONNECTED')
+    # The OUTER and INNER edge/vertex loops are separate 1-skeleton
+    # components: an annular FACE, not an edge, connects them.
+    vertex_components=graph_components(native_edge_pairs,16)
+    if len(vertex_components)!=2:
+        raise ValueError('NATIVE_INNER_OUTER_VERTEX_SKELETON_CHANGED')
+    face_pairs=[tuple(row['face_pair']) for row in e]
+    if not graph_connected(face_pairs,10):
+        raise ValueError('NATIVE_FACE_ADJACENCY_GRAPH_DISCONNECTED')
+    comp_of={v:i for i,group in enumerate(vertex_components) for v in group}
+    for fi in (0,9):
+        wire_comps=[]
+        for wi in f[fi]['direct_wires']:
+            comps={comp_of[v] for edge in w[wi]['edge_ordinals']
+                   for v in e[edge]['vertex_pair']}
+            if len(comps)!=1:
+                raise ValueError('ONE_WIRE_SPANS_TWO_VERTEX_COMPONENTS')
+            wire_comps.append(next(iter(comps)))
+        if set(wire_comps)!={0,1}:
+            raise ValueError('ANNULAR_FACE_NOT_CONNECTING_INNER_OUTER_LOOPS')
     # A torus-like cell complex has Euler characteristic 0, because the two
     # annular faces each have cell Euler contribution 0, unlike disks.
     if 16-24+(8*1+2*0)!=0:
@@ -121,7 +145,9 @@ def check_structure(n):
     return {'status':'PASS','solid_count':1,'shell_count':1,
             'direct_shell_face_count':10,'wire_count':12,'edge_count':24,
             'vertex_count':16,'unique_edge_uses':48,'vertex_degree':3,
-            'connected_native_vertex_graph':True,
+            'native_vertex_edge_graph_components':2,
+            'connected_native_face_graph':True,
+            'annular_faces_bridge_both_wire_components':[0,9],
             'represented_surface_euler_characteristic':0,
             'native_edge_ancestry':edge_faces,
             'native_vertices':vertices,
