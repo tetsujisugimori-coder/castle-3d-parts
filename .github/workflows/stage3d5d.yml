@@ -1,0 +1,359 @@
+name: Stage 3-D-5D one-slice native diagnostic
+on:
+  pull_request:
+    paths:
+      - 'cad/stage3d5d/**'
+      - 'docs/stage3d5d/**'
+      - '.github/workflows/stage3d5d.yml'
+permissions:
+  contents: read
+jobs:
+  native-one-slice:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONDONTWRITEBYTECODE: '1'
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3 file g++ libocct-modeling-data-dev libocct-modeling-algorithms-dev libocct-visualization-dev
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fixed checkout and engine
+        run: |
+          mkdir -p stage3d5d-evidence
+          git -c safe.directory="$GITHUB_WORKSPACE" show -s --format='%H %T %P' HEAD > stage3d5d-evidence/checkout.txt
+          git -c safe.directory="$GITHUB_WORKSPACE" status --porcelain > stage3d5d-evidence/status.txt
+          dpkg-query -W freecad-python3 libfreecad-python3 libocct-foundation-dev libocct-modeling-data-dev libocct-modeling-algorithms-dev libocct-visualization-dev g++ > stage3d5d-evidence/engine.txt
+      - name: Portable proof gate tests
+        run: python3 -B -m unittest discover -s cad/stage3d5d -p 'test_*.py' -v > stage3d5d-evidence/tests.log 2>&1
+      - name: One native reference pose (trace restricted to new source)
+        run: |
+          set +e
+          python3 -X faulthandler -u -B - > stage3d5d-evidence/native-stdout.log 2> stage3d5d-evidence/native-stderr.log <<'PY'
+          import runpy
+          import sys
+          source = 'cad/stage3d5d/one_slice.py'
+          logpath = 'stage3d5d-evidence/native-lines.log'
+          def trace(frame, event, arg):
+              if event == 'line' and frame.f_code.co_filename.endswith('stage3d5d/one_slice.py'):
+                  with open(logpath, 'a') as out:
+                      out.write(str(frame.f_lineno) + '\n')
+              return trace
+          sys.settrace(trace)
+          sys.argv = [source, 'stage3d5d-evidence/one-slice']
+          runpy.run_path(source, run_name='__main__')
+          PY
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-exit.txt
+          find stage3d5d-evidence -maxdepth 2 -type f -print > stage3d5d-evidence/native-files.txt
+          exit "$code"
+      - name: Observe isolated Document at leaf endpoints and midpoint
+        if: always()
+        run: |
+          mkdir -p stage3d5d-evidence
+          set +e
+          python3 -X faulthandler -u -B cad/stage3d5d/placement_observation.py \
+            stage3d5d-evidence/placement "${RUNNER_TEMP}/stage3d5d-document" \
+            > stage3d5d-evidence/placement-stdout.log 2> stage3d5d-evidence/placement-stderr.log
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/placement-exit.txt
+          exit "$code"
+      - name: Verify stored pcurves at one occurrence, then gate the 72-use join
+        run: |
+          set +e
+          binary="${RUNNER_TEMP}/stage3d5d-stored-pcurve"
+          g++ --version > stage3d5d-evidence/pcurve-compiler-version.txt
+          g++ -std=c++17 -O2 -I/usr/include/opencascade cad/stage3d5d/stored_pcurve.cpp \
+            -o "$binary" -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/pcurve-build.stdout 2> stage3d5d-evidence/pcurve-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/pcurve-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          python3 -X faulthandler -u -B cad/stage3d5d/verify_stored_pcurve.py "$binary" \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve "${RUNNER_TEMP}/stage3d5d-brep-inputs" \
+            > stage3d5d-evidence/pcurve-verify.stdout 2> stage3d5d-evidence/pcurve-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/pcurve-verify.exit
+          exit "$code"
+      - name: Prove one holed Guide face's represented continuous domain
+        run: |
+          set +e
+          python3 -B cad/stage3d5d/face_region.py \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/face-region "$GITHUB_WORKSPACE" \
+            > stage3d5d-evidence/face-region.stdout 2> stage3d5d-evidence/face-region.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face-region.exit
+          exit "$code"
+      - name: Direct OCCT FaceClassifier of five Guide Face 0 UV points
+        run: |
+          set +e
+          binary="$RUNNER_TEMP/stage3d5d-face0-classifier"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_face0_classifier.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/face0-build.stdout 2> stage3d5d-evidence/face0-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/face0-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          python3 -X faulthandler -u -B cad/stage3d5d/verify_face0_uv.py \
+            "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            stage3d5d-evidence/face-region/face-region.json \
+            stage3d5d-evidence/face0-uv \
+            > stage3d5d-evidence/face0-verify.stdout 2> stage3d5d-evidence/face0-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face0-verify.exit
+          exit "$code"
+      - name: Certify recorded input encoding and ideal Face 0 query margins
+        run: |
+          set +e
+          python3 -B cad/stage3d5d/face0_error_bounds.py \
+            stage3d5d-evidence/face-region/face-region.json \
+            stage3d5d-evidence/face0-uv/native-face0.stdout.json \
+            stage3d5d-evidence/face0-uv/face0-uv-report.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/face0-bounds \
+            > stage3d5d-evidence/face0-bounds.stdout 2> stage3d5d-evidence/face0-bounds.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face0-bounds.exit
+          exit "$code"
+      - name: Trace actual OCCT-selected Face 0 rays and intersected edges once
+        run: |
+          set +e
+          trace_so="$RUNNER_TEMP/stage3d5d-face0-actual-hooks.so"
+          mkdir -p stage3d5d-evidence/face0-trace
+          g++ -std=c++17 -O0 -fPIC -shared -I/usr/include/opencascade \
+            cad/stage3d5d/face0_trace_hooks.cpp -o "$trace_so" \
+            -ldl -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/face0-trace-build.stdout \
+            2> stage3d5d-evidence/face0-trace-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/face0-trace-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          nm -D -C "$trace_so" > stage3d5d-evidence/face0-trace/symbols.txt
+          ldd "$trace_so" > stage3d5d-evidence/face0-trace/ldd.txt
+          trace_dir="$GITHUB_WORKSPACE/stage3d5d-evidence/face0-trace"
+          : > "$trace_dir/hook-events.ndjson"
+          CASTLE_FACE0_TRACE="$trace_dir/hook-events.ndjson" LD_PRELOAD="$trace_so" \
+            "$RUNNER_TEMP/stage3d5d-face0-classifier" \
+            "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > "$trace_dir/native-interposed.stdout.json" \
+            2> "$trace_dir/native-interposed.stderr.txt"
+          trace_exit=$?
+          printf '%s\n' "$trace_exit" > stage3d5d-evidence/face0-trace-native.exit
+          if [ "$trace_exit" -ne 0 ]; then exit "$trace_exit"; fi
+          python3 -B cad/stage3d5d/verify_face0_trace.py \
+            stage3d5d-evidence/face0-uv/native-face0.stdout.json \
+            "$trace_dir/native-interposed.stdout.json" \
+            "$trace_dir/hook-events.ndjson" \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            "$trace_so" "$trace_dir/verified" \
+            > stage3d5d-evidence/face0-trace-verify.stdout \
+            2> stage3d5d-evidence/face0-trace-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/face0-trace-verify.exit
+          exit "$code"
+      - name: Guide oriented Solid and through-void region observations
+        run: |
+          set +e
+          binary="$RUNNER_TEMP/stage3d5d-guide-classifier"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade cad/stage3d5d/guide_solid_classifier.cpp \
+            -o "$binary" -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKMath -lTKernel \
+            > stage3d5d-evidence/guide-build.stdout 2> stage3d5d-evidence/guide-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/guide-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          python3 -X faulthandler -u -B cad/stage3d5d/verify_guide_solid.py "$binary" \
+            "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/one-slice/boundary-correspondence.json \
+            stage3d5d-evidence/guide-solid \
+            > stage3d5d-evidence/guide-verify.stdout 2> stage3d5d-evidence/guide-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/guide-verify.exit
+          exit "$code"
+      - name: Check the fixed D2 through-void Q against all 10 real Guide faces
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/through-q-native
+          binary="$RUNNER_TEMP/stage3d5d-q-native"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_q_native.cpp -o "$binary" \
+            -lTKPrim -lTKGeomAlgo -lTKTopAlgo -lTKBRep \
+            -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/through-q-build.stdout \
+            2> stage3d5d-evidence/through-q-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/through-q-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/through-q-native/native.json \
+            2> stage3d5d-evidence/through-q-native/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/through-q-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/through_q.py \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/through-q-native/native.json \
+            stage3d5d-evidence/through-q \
+            > stage3d5d-evidence/through-q-verify.stdout \
+            2> stage3d5d-evidence/through-q-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/through-q-verify.exit
+          exit "$code"
+      - name: Certify conditional roundoff of actual ten Geom_Plane point evaluators
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/native-plane-input
+          binary="$RUNNER_TEMP/stage3d5d-native-plane-arithmetic"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_plane_arithmetic.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/native-plane-build.stdout \
+            2> stage3d5d-evidence/native-plane-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/native-plane-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/native-plane-input/raw-frames.json \
+            2> stage3d5d-evidence/native-plane-input/stderr.txt
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-plane-extract.exit
+          if [ "$code" -ne 0 ]; then exit "$code"; fi
+          python3 -B cad/stage3d5d/verify_plane_roundoff.py \
+            stage3d5d-evidence/native-plane-input/raw-frames.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-plane-bound \
+            > stage3d5d-evidence/native-plane-verify.stdout \
+            2> stage3d5d-evidence/native-plane-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-plane-verify.exit
+          exit "$code"
+      - name: Exhaust native Solid Shell Face Wire Edge Vertex boundary membership
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/solid-hierarchy-native
+          binary="$RUNNER_TEMP/stage3d5d-guide-solid-hierarchy"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_solid_hierarchy.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/solid-hierarchy-build.stdout \
+            2> stage3d5d-evidence/solid-hierarchy-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/solid-hierarchy-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/solid-hierarchy-native/native.json \
+            2> stage3d5d-evidence/solid-hierarchy-native/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/solid-hierarchy-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/verify_solid_hierarchy.py \
+            stage3d5d-evidence/solid-hierarchy-native/native.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/solid-boundary-census \
+            > stage3d5d-evidence/solid-hierarchy-verify.stdout \
+            2> stage3d5d-evidence/solid-hierarchy-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/solid-hierarchy-verify.exit
+          exit "$code"
+      - name: Bridge OCCT trimmed Face semantics to entire exact D2 material boundary
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/face-semantics-native
+          binary="$RUNNER_TEMP/stage3d5d-face-semantics"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_face_semantics.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/face-semantics-build.stdout \
+            2> stage3d5d-evidence/face-semantics-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/face-semantics-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/face-semantics-native/native.json \
+            2> stage3d5d-evidence/face-semantics-native/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/face-semantics-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/occt_semantic_bridge.py \
+            stage3d5d-evidence/face-semantics-native/native.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/solid-boundary-census/solid-boundary-census.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-plane-bound/plane-roundoff-bound.json \
+            stage3d5d-evidence/semantic-bridge \
+            > stage3d5d-evidence/semantic-bridge-verify.stdout \
+            2> stage3d5d-evidence/semantic-bridge-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/semantic-bridge-verify.exit
+          exit "$code"
+      - name: Audit native Guide tolerances and classifier-free Q proof scope
+        run: |
+          set +e
+          mkdir -p stage3d5d-evidence/native-tolerance
+          binary="$RUNNER_TEMP/stage3d5d-guide-tolerance-audit"
+          g++ -std=c++17 -O2 -I/usr/include/opencascade \
+            cad/stage3d5d/guide_tolerance_audit.cpp -o "$binary" \
+            -lTKTopAlgo -lTKBRep -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel \
+            > stage3d5d-evidence/native-tolerance-build.stdout \
+            2> stage3d5d-evidence/native-tolerance-build.stderr
+          build=$?
+          printf '%s\n' "$build" > stage3d5d-evidence/native-tolerance-build.exit
+          if [ "$build" -ne 0 ]; then exit "$build"; fi
+          "$binary" "$RUNNER_TEMP/stage3d5d-brep-inputs/GATE_BoltGuide_Left.Shape.brp" \
+            > stage3d5d-evidence/native-tolerance/native.json \
+            2> stage3d5d-evidence/native-tolerance/stderr.txt
+          native=$?
+          printf '%s\n' "$native" > stage3d5d-evidence/native-tolerance-native.exit
+          if [ "$native" -ne 0 ]; then exit "$native"; fi
+          python3 -B cad/stage3d5d/verify_tolerance_audit.py \
+            stage3d5d-evidence/native-tolerance/native.json \
+            stage3d5d-evidence/stored-pcurve/stored-pcurve-report.json \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/semantic-bridge/semantic-bridge.json \
+            stage3d5d-evidence/native-plane-bound/plane-roundoff-bound.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-tolerance/verified \
+            > stage3d5d-evidence/native-tolerance-verify.stdout \
+            2> stage3d5d-evidence/native-tolerance-verify.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/native-tolerance-verify.exit
+          cat stage3d5d-evidence/native-tolerance-verify.stdout
+          exit "$code"
+      - name: Narrow actual error obligations for fixed Q and exterior ray
+        run: |
+          set +e
+          python3 -B cad/stage3d5d/fixed_q_minimum_error_paths.py \
+            stage3d5d-evidence/one-slice/trim-correspondence.json \
+            stage3d5d-evidence/semantic-bridge/semantic-bridge.json \
+            stage3d5d-evidence/native-tolerance/verified/native-tolerance-audit.json \
+            stage3d5d-evidence/through-q/through-q.json \
+            stage3d5d-evidence/native-plane-bound/plane-roundoff-bound.json \
+            stage3d5d-evidence/fixed-q-minimum-paths \
+            > stage3d5d-evidence/fixed-q-minimum-paths.stdout \
+            2> stage3d5d-evidence/fixed-q-minimum-paths.stderr
+          code=$?
+          printf '%s\n' "$code" > stage3d5d-evidence/fixed-q-minimum-paths.exit
+          cat stage3d5d-evidence/fixed-q-minimum-paths.stdout
+          exit "$code"
+      - name: Hash exact evidence files
+        if: always()
+        run: python3 scripts/stage3c-hash-evidence.py stage3d5d-evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3d5d-one-slice
+          path: stage3d5d-evidence/
+          if-no-files-found: error
+          include-hidden-files: true
