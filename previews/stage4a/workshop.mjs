@@ -67,7 +67,7 @@ try{
     clearBox();scene.add(candidate.group);
     try{
       if(!old)fit(candidate);else render();
-      if(lost)throw Error('WebGL context lost');
+      if(lost||renderer.getContext().isContextLost())throw Error('WebGL context lost');
       view=candidate;
     }catch(e){
       scene.remove(candidate.group);
@@ -113,20 +113,30 @@ try{
   async function run(action,success,preferred){
     if(busy||lost)return;
     busy=true;syncEnabled();msg('loading','処理中…');
+    let applied=false;
     try{
-      await action();
+      await action();applied=true;
       if(lost)return;
       refresh(typeof preferred==='function'?preferred():preferred);
       msg('ready',success);
     }catch(e){
-      if(!lost)msg('error','操作を拒否しました：'+e.message+(controller.snapshot()?'（最後の有効配置を保持）':''));
+      if(!lost){
+        if(applied){controller.stop();lost=true;msg('error','操作完了後の画面更新に失敗しました。ページを再読み込みしてください：'+e.message);}
+        else msg('error','操作を拒否しました：'+e.message+(controller.snapshot()?'（最後の有効配置を保持）':''));
+      }
     }finally{busy=false;syncEnabled()}
   }
   const edit=(command,success,preferred)=>run(()=>controller.edit(command()),success,preferred);
   const current=()=>controller.snapshot().instances.find(i=>i.id===selected);
   const pair=()=>({a:JSON.parse($('port-a').value),b:JSON.parse($('port-b').value)});
   setOptions($('definition'),catalog.definitions.map(d=>opt(label(d),d.id)));
-  $('instance').onchange=()=>{if(!busy&&!lost){selected=$('instance').value;fillSelection(controller.snapshot());syncEnabled()}};
+  function select(id){
+    if(busy||lost)return;
+    selected=id;$('instance').value=id;
+    try{fillSelection(controller.snapshot());syncEnabled()}
+    catch(e){controller.stop();lost=true;syncEnabled();msg('error','選択表示に失敗しました。ページを再読み込みしてください：'+e.message)}
+  }
+  $('instance').onchange=()=>select($('instance').value);
   for(const id of ['port-a','port-b','connection'])$(id).onchange=syncEnabled;
   $('add').onclick=()=>{
     let id='';
@@ -173,7 +183,7 @@ try{
     ray.setFromCamera(new THREE.Vector2((e.clientX-b.left)/b.width*2-1,-(e.clientY-b.top)/b.height*2+1),camera);
     const hit=ray.intersectObjects([...view.instances.values()],true)[0]?.object;
     if(hit?.parent?.userData.instance_id){
-      selected=hit.parent.userData.instance_id;$('instance').value=selected;fillSelection(controller.snapshot());syncEnabled();
+      select(hit.parent.userData.instance_id);
     }
   });
   renderer.domElement.addEventListener('webglcontextlost',e=>{
