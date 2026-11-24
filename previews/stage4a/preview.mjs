@@ -67,14 +67,16 @@ try {
   async function reload(){
     const ticket=++epoch;
     message('loading','固定GLBと配置データを照合中…');
-    let candidate=null;
+    let candidate=null,assembler=null;
     try {
       const [catalog,example]=await Promise.all([
         json('assembly/stage4a/catalog.json'),json('assembly/stage4a/example.json')
       ]);
       // Fresh assembler per reload ensures bytes are actually re-fetched.
-      candidate=await createGlbAssembler({THREE,GLTFLoader,catalog,root}).prepare(example);
-      if(ticket!==epoch||lost)return;
+      assembler=createGlbAssembler({THREE,GLTFLoader,catalog,root});
+      candidate=await assembler.prepare(example);
+      candidate.assembler=assembler;
+      if(ticket!==epoch||lost){assembler.dispose();return;}
       const markers=new THREE.Group();markers.name='connection-markers';
       for(const row of candidate.connectionRows){
         const marker=new THREE.Mesh(markerGeometry,markerMaterial);
@@ -87,6 +89,7 @@ try {
       try{fit()}catch(e){
         scene.remove(candidate.group);current=old;if(old)scene.add(old.group);throw e;
       }
+      if(old)old.assembler.dispose();
       $('parts').replaceChildren(...example.instances.map(i=>{
         const li=document.createElement('li');
         li.textContent=i.id+' / '+i.definition_id+' / CAD座標 '+i.translation_m.join(', ')+' m';
@@ -96,6 +99,7 @@ try {
       message('ready',candidate.instances.size+'配置・'+candidate.rows.length+'メッシュ・'+
         candidate.connectionRows.length+'接続点一致。試作D・参照模型。');
     }catch(e){
+      if(assembler&&current?.assembler!==assembler)assembler.dispose();
       if(ticket===epoch&&!lost){
         enable(Boolean(current));
         message('error','読込み失敗：'+e.message+(current?'（最後の有効表示を保持）':''));
