@@ -23,10 +23,14 @@ jobs:
     env:
       STAGE4A_ENGINE: ${{ matrix.engine }}
       EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
-      STAGE4A_OUT: ${{ runner.temp }}/stage4a-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.engine }}/evidence
-      DEPS_DIR: ${{ runner.temp }}/stage4a-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.engine }}/deps
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/stage4a-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.engine }}/browsers
     steps:
+      - name: Allocate isolated runner directories
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="$RUNNER_TEMP/stage4a-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$STAGE4A_ENGINE"
+          mkdir -p "$base/evidence" "$base/deps"
+          printf 'STAGE4A_OUT=%s\nDEPS_DIR=%s\nPLAYWRIGHT_BROWSERS_PATH=%s\n' "$base/evidence" "$base/deps" "$base/browsers" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
