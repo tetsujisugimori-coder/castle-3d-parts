@@ -1,0 +1,77 @@
+name: Stage 4-A workshop browser
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/stage4a-workshop.yml'
+      - 'assembly/stage4a/**'
+      - 'previews/stage4a/**'
+      - 'scripts/stage4a-workshop-browser.mjs'
+      - 'tests/stage4a-*.test.mjs'
+      - 'cad/stage2c/generated/B0/**'
+      - 'cad/stage3a/generated/B0/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: [chromium, webkit]
+    env:
+      STAGE4A_ENGINE: ${{ matrix.engine }}
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+      STAGE4A_OUT: ${{ runner.temp }}/stage4a-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.engine }}/evidence
+      DEPS_DIR: ${{ runner.temp }}/stage4a-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.engine }}/deps
+      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/stage4a-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.engine }}/browsers
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Record fixed source and environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$STAGE4A_OUT" "$DEPS_DIR"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git rev-parse HEAD HEAD^{tree} > "$STAGE4A_OUT/git.txt"
+          git status --porcelain > "$STAGE4A_OUT/source-status.txt"
+          test ! -s "$STAGE4A_OUT/source-status.txt"
+          node -v > "$STAGE4A_OUT/node.txt"
+          uname -a > "$STAGE4A_OUT/platform.txt"
+      - name: Install fixed browser dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$DEPS_DIR" --save-exact --no-audit --no-fund playwright@1.56.1 three@0.180.0 2>&1 | tee "$STAGE4A_OUT/npm-install.log"
+          npm ls --prefix "$DEPS_DIR" --all --json > "$STAGE4A_OUT/dependencies.json"
+          cp "$DEPS_DIR/package-lock.json" "$STAGE4A_OUT/package-lock.json"
+          "$DEPS_DIR/node_modules/.bin/playwright" install --with-deps "$STAGE4A_ENGINE" 2>&1 | tee "$STAGE4A_OUT/browser-install.log"
+      - name: Execute workshop browser suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PW_MODULE="$DEPS_DIR/node_modules/playwright/index.mjs"
+          export THREE_ROOT="$DEPS_DIR/node_modules/three"
+          node scripts/stage4a-workshop-browser.mjs 2>&1 | tee "$STAGE4A_OUT/browser.log"
+          node --input-type=module -e 'import fs from "node:fs"; const r=JSON.parse(fs.readFileSync(process.env.STAGE4A_OUT+"/results.json","utf8")); if(r.head!==process.env.EXPECTED_HEAD || r.expected!==10 || r.rows.length!==10 || r.fatal || r.rows.some(x=>x.status!=="PASS" || x.engine!==process.env.STAGE4A_ENGINE)) process.exit(1); console.log(JSON.stringify(r,null,2));'
+      - name: Record final evidence inventory
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p "$STAGE4A_OUT"
+          git status --porcelain > "$STAGE4A_OUT/final-source-status.txt" || exit 1
+          cd "$STAGE4A_OUT"
+          find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 -r sha256sum > SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage4a-workshop-${{ matrix.engine }}-${{ github.event.pull_request.head.sha || github.sha }}-attempt-${{ github.run_attempt }}
+          path: ${{ env.STAGE4A_OUT }}/
+          if-no-files-found: error
