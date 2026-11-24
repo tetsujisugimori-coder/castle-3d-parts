@@ -85,7 +85,23 @@ const boundsMatch=(a,b)=>close(a,b,DISPLAY_BOUNDS_TOLERANCE_M);
 // Consumers must not mutate or dispose shared resources.
 export function createGlbAssembler({THREE,GLTFLoader,catalog,root,fetcher=globalThis.fetch}) {
   const c=JSON.parse(canonicalJson(catalog)), base=new URL(root);
-  const pending=new Map();
+  const pending=new Map(), sources=new Set();
+  let disposed=false;
+  function release(source){
+    const geometries=new Set(),materials=new Set();
+    source.traverse(o=>{
+      if(o.geometry)geometries.add(o.geometry);
+      for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[])materials.add(m);
+    });
+    for(const g of geometries)g.dispose();
+    for(const m of materials)m.dispose();
+  }
+  function dispose(){
+    if(disposed)return;
+    disposed=true;pending.clear();
+    for(const source of sources)release(source);
+    sources.clear();
+  }
   const url=path=>new URL(path,base).href;
   async function fetchBytes(path) {
     const r=await fetcher(url(path));
@@ -99,6 +115,8 @@ export function createGlbAssembler({THREE,GLTFLoader,catalog,root,fetcher=global
     const selected=checkGlbNodes(d,manifest,inspectGlb(bytes));
     const gltf=await new GLTFLoader().parseAsync(bytes,'');
     const source=gltf.scene, meshes=new Map();
+    if(disposed){release(source);throw Error('assembler disposed');}
+    try {
     source.updateMatrixWorld(true);
     source.traverse(o=>{
       if(!o.isMesh)return;
@@ -114,7 +132,9 @@ export function createGlbAssembler({THREE,GLTFLoader,catalog,root,fetcher=global
       check(boundsMatch(boxArray(new THREE.Box3().setFromObject(mesh,true)),displayBounds(p.bounds_m)),
         'loaded mesh bounds mismatch: '+p.glb_node);
     }
+    sources.add(source);
     return selected.map(p=>({part:p,source:meshes.get(p.glb_node)}));
+    }catch(error){release(source);throw error;}
   }
   function template(d) {
     if(!pending.has(d.id)){
@@ -125,10 +145,12 @@ export function createGlbAssembler({THREE,GLTFLoader,catalog,root,fetcher=global
     return pending.get(d.id);
   }
   async function prepare(input) {
+    check(!disposed,'assembler disposed');
     const a=await loadAssembly(c,canonicalJson(input));
     const definitions=new Map(c.definitions.map(d=>[d.id,d]));
     const ids=[...new Set(a.instances.map(i=>i.definition_id))];
     const templates=new Map(await Promise.all(ids.map(async id=>[id,await template(definitions.get(id))])));
+    check(!disposed,'assembler disposed');
     const group=new THREE.Group(), instances=new Map(), ports=new Map(), rows=[];
     group.name='stage4a-assembly';
     for(const i of a.instances) {
@@ -178,5 +200,6 @@ export function createGlbAssembler({THREE,GLTFLoader,catalog,root,fetcher=global
     // Nothing is attached to a live scene until the caller accepts this result.
     return {group,instances,rows,portRows,connectionRows,status:'ANCHOR_ALIGNMENT_ONLY'};
   }
-  return {prepare};
+  // Call only after all consumer groups have been detached from live scenes.
+  return {prepare,dispose};
 }
