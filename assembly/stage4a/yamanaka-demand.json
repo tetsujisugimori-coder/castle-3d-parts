@@ -77,13 +77,14 @@
       "action": "RESEARCH",
       "basis": "CANDIDATE",
       "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/scripts/phase3b-build-blender.py#L92-L100",
         "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/docs/west-gate-left-door-components.md",
         "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/61"
       ],
       "historical_form": "UNKNOWN",
       "historical_dimensions": "UNKNOWN",
       "placement": "NOT_AUTHORIZED",
-      "note": "左門扉からの鏡像による史実確定は禁止。既存模型を別途照合。"
+      "note": "推定C模型の生成コードが左右門扉・両門柱・横架材を定義する。模型の部材構成を調査する根拠に限り、左門扉からの鏡像で史実は確定しない。"
     },
     {
       "id": "YAM-006",
@@ -158,12 +159,12 @@
       "action": "RESEARCH",
       "basis": "CANDIDATE",
       "source_refs": [
-        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/research/stage3b2/ledger.json"
+        "https://github.com/tetsujisugimori-coder/castle-3d-parts/issues/47"
       ],
       "historical_form": "UNKNOWN",
       "historical_dimensions": "UNKNOWN",
       "placement": "NOT_AUTHORIZED",
-      "note": "ロードマップ上の需要候補。個別施設の根拠・位置・必要性を調査するまで制作/配置を確定しない。"
+      "note": "2026-11-24ロードマップ第5節4項の開発候補。個別の史料・遺構に基づく需要、位置、必要性は未確認。Issue #47は開発計画の参照。"
     }
   ]
 }

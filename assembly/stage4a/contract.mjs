@@ -1,10 +1,16 @@
 // Stage 4-A: static reference assembly only. No geometry or historical certification.
+import {canonicalJson, parseUniqueJson} from "./json-data.mjs";
+
 const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
 const own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
 const obj=o=>o!==null&&typeof o==="object"&&!Array.isArray(o);
 const keys=(o,ks)=>obj(o)&&Object.keys(o).length===ks.length&&ks.every(k=>own(o,k));
 const id=s=>typeof s==="string"&&/^[A-Za-z][A-Za-z0-9_-]{0,63}$/.test(s);
-const vec=v=>Array.isArray(v)&&v.length===3&&v.every(n=>Number.isFinite(n)&&Math.abs(n)<=10000);
+const vec=v=>Array.isArray(v)&&v.length===3&&[0,1,2].every(
+  i=>own(v,i)&&Number.isFinite(v[i])&&Math.abs(v[i])<=10000
+);
+const SCHEMA_VERSION=2;
+const MAX_SAVE_LENGTH=1000000;
 const EPS=1e-9;
 const close=(a,b)=>a.every((v,i)=>Math.abs(v-b[i])<=EPS);
 const add=(a,b)=>a.map((v,i)=>v+b[i]);
@@ -31,9 +37,8 @@ export function worldPort(c,i,p){
   const port=d.ports[p];
   return {point_m:add(rotate(port.point_m,i.yaw_quarters),i.translation_m),outward:rotate(port.outward,i.yaw_quarters),type:port.type};
 }
-// Trusted catalog is the fixed, version-controlled catalog, not imported with a save.
-export function validateAssembly(c,a){
-  assert(keys(a,["schema_version","unit","frame","basis","catalog_commit","instances","connections"])&&a.schema_version===1&&a.unit===c.unit&&a.frame===c.frame&&a.basis==="D"&&a.catalog_commit===c.baseline_commit,"invalid assembly header");
+function validateStructure(c,a){
+  assert(keys(a,["schema_version","unit","frame","basis","catalog_commit","catalog_sha256","instances","connections"])&&a.unit===c.unit&&a.frame===c.frame&&a.basis==="D"&&a.catalog_commit===c.baseline_commit,"invalid assembly header");
   assert(Array.isArray(a.instances)&&a.instances.length>0&&a.instances.length<=1000&&Array.isArray(a.connections)&&a.connections.length<=2000,"invalid assembly counts");
   const instances=new Map();
   for(const i of a.instances){checkInstance(c,i);assert(!instances.has(i.id),"duplicate instance");instances.set(i.id,i)}
@@ -59,5 +64,49 @@ export function placeAtPort(c,fixed,fixedPort,moving,movingPort){
   const result={...origin,translation_m:sub(a.point_m,b.point_m)};
   checkInstance(c,result);return result;
 }
-export function saveAssembly(c,a){validateAssembly(c,a);return JSON.stringify(a,null,2)+"\n"}
-export function loadAssembly(c,s){assert(typeof s==="string"&&s.length<=1000000,"invalid save size");const a=JSON.parse(s);validateAssembly(c,a);return a}
+async function sha256(text) {
+  const bytes = new TextEncoder().encode(text);
+  const digest = await globalThis.crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
+export async function catalogSha256(catalog) {
+  return sha256(canonicalJson(catalog));
+}
+
+// Snapshot both inputs before Web Crypto yields. The caller supplies the
+// trusted, version-controlled catalog independently of the saved document.
+async function checkAssembly(catalog, input, allowUnbound) {
+  const assembly = JSON.parse(canonicalJson(input));
+  assert(assembly?.schema_version === SCHEMA_VERSION, "unsupported assembly schema version (expected 2)");
+  const catalogText = canonicalJson(catalog);
+  const frozenCatalog = JSON.parse(catalogText);
+
+  if (own(assembly, "catalog_sha256") || !allowUnbound) {
+    const digest = assembly.catalog_sha256;
+    assert(typeof digest === "string" && /^[a-f0-9]{64}$/.test(digest),
+      "missing or invalid catalog_sha256");
+    assert(digest === await sha256(catalogText), "catalog SHA-256 mismatch");
+  } else {
+    assembly.catalog_sha256 = await sha256(catalogText);
+  }
+  const validation = validateStructure(frozenCatalog, assembly);
+  return { assembly, validation };
+}
+
+export async function validateAssembly(catalog, assembly) {
+  return (await checkAssembly(catalog, assembly, false)).validation;
+}
+
+export async function saveAssembly(catalog, input) {
+  const {assembly} = await checkAssembly(catalog, input, true);
+  const text = JSON.stringify(assembly, null, 2) + "\n";
+  assert(text.length <= MAX_SAVE_LENGTH, "invalid save size");
+  return text;
+}
+
+export async function loadAssembly(catalog, text) {
+  assert(typeof text === "string" && text.length <= MAX_SAVE_LENGTH, "invalid save size");
+  const {assembly} = await checkAssembly(catalog, parseUniqueJson(text), false);
+  return assembly;
+}
