@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "site": "山中城",
+  "source_commit": "3499f5a5367d29cc97774d126223be6c4ca9f793",
+  "library_commit": "731fc4e760c60e3d3101ae5991126e28923700a6",
+  "policy": "需要は採用・配置・史実認定ではない。既存部品の再利用を先行し、差分を確認してから制作する。",
+  "items": [
+    {
+      "id": "YAM-001",
+      "priority": 1,
+      "area": "西木戸口",
+      "part": "左門扉の板材",
+      "action": "COMPARE_EXISTING",
+      "basis": "C_MODEL",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/docs/west-gate-left-door-components.md",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/61"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "模型の板6枚。GATE_Doorは単一板戸であり同一部品と認定しない。板単体化候補。"
+    },
+    {
+      "id": "YAM-002",
+      "priority": 1,
+      "area": "西木戸口",
+      "part": "上横桟",
+      "action": "COMPARE_EXISTING",
+      "basis": "C_MODEL",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/docs/west-gate-left-door-components.md",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/61"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "gate.door.rail.1.2.15。寸法・仕口を確認して汎用化。"
+    },
+    {
+      "id": "YAM-003",
+      "priority": 1,
+      "area": "西木戸口",
+      "part": "下横桟",
+      "action": "COMPARE_EXISTING",
+      "basis": "C_MODEL",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/docs/west-gate-left-door-components.md",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/61"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "gate.door.rail.1.0.45。上横桟との差を調査。"
+    },
+    {
+      "id": "YAM-004",
+      "priority": 1,
+      "area": "西木戸口",
+      "part": "門柱・門柱側取り合い",
+      "action": "COMPARE_EXISTING",
+      "basis": "C_MODEL",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/docs/west-gate-left-door-components.md",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/61"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "gate.post.1。接合点や蝶番の史実は未確定。"
+    },
+    {
+      "id": "YAM-005",
+      "priority": 1,
+      "area": "西木戸口",
+      "part": "右門扉・門全体",
+      "action": "RESEARCH",
+      "basis": "CANDIDATE",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/scripts/phase3b-build-blender.py#L92-L100",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/docs/west-gate-left-door-components.md",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/61"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "推定C模型の生成コードが左右門扉・両門柱・横架材を定義する。模型の部材構成を調査する根拠に限り、左門扉からの鏡像で史実は確定しない。"
+    },
+    {
+      "id": "YAM-006",
+      "priority": 2,
+      "area": "木柵・門周辺",
+      "part": "木柵ユニット",
+      "action": "REUSE",
+      "basis": "D_REFERENCE",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/public/parts/cad/pin.json",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/38"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "PAL-ASSEMBLY B0 U01。B1/B2を混同せず、採用版は城側で固定。"
+    },
+    {
+      "id": "YAM-007",
+      "priority": 2,
+      "area": "木柵・門周辺",
+      "part": "簡易木戸と接続材",
+      "action": "REUSE",
+      "basis": "D_REFERENCE",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/38",
+        "https://github.com/tetsujisugimori-coder/castle-3d-parts/pull/25"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "GATE-SIMPLE-01 B0姿勢と既存監査の接続を再利用。西木戸口模型への自動置換禁止。"
+    },
+    {
+      "id": "YAM-008",
+      "priority": 2,
+      "area": "木柵・門周辺",
+      "part": "閂・案内・受け・戸当たり",
+      "action": "COMPARE_EXISTING",
+      "basis": "D_REFERENCE",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/castle-3d-parts/pull/29",
+        "https://github.com/tetsujisugimori-coder/castle-3d-parts/pull/46",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/docs/west-gate-left-door-components.md"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "GATE-LOCK-01は試作D。実Solid安全性UNKNOWN。山中城での存在未確認。"
+    },
+    {
+      "id": "YAM-009",
+      "priority": 3,
+      "area": "西櫓",
+      "part": "柱・梁・床・屋根等の汎用部材",
+      "action": "RESEARCH",
+      "basis": "CANDIDATE",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/3499f5a5367d29cc97774d126223be6c4ca9f793/research/stage3b2/ledger.json",
+        "https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/46"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "西櫓geometry=null、placementAllowed=false。建物形式・部材構成の調査候補に限る。"
+    },
+    {
+      "id": "YAM-010",
+      "priority": 4,
+      "area": "その他",
+      "part": "門・橋・土塀",
+      "action": "RESEARCH",
+      "basis": "CANDIDATE",
+      "source_refs": [
+        "https://github.com/tetsujisugimori-coder/castle-3d-parts/issues/47"
+      ],
+      "historical_form": "UNKNOWN",
+      "historical_dimensions": "UNKNOWN",
+      "placement": "NOT_AUTHORIZED",
+      "note": "2026-11-24ロードマップ第5節4項の開発候補。個別の史料・遺構に基づく需要、位置、必要性は未確認。Issue #47は開発計画の参照。"
+    }
+  ]
+}

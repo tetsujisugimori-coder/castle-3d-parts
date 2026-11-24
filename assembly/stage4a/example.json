@@ -1,0 +1,68 @@
+{
+  "schema_version": 2,
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "basis": "D",
+  "catalog_commit": "731fc4e760c60e3d3101ae5991126e28923700a6",
+  "catalog_sha256": "2d5a0d001ba1ee65f58dd10a6f2169257bfdd52c7865dd6f85c63257dffb2589",
+  "instances": [
+    {
+      "id": "F01",
+      "definition_id": "PAL-U01",
+      "revision": "B0",
+      "pose": null,
+      "translation_m": [
+        -3.525,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "id": "G01",
+      "definition_id": "GATE-SIMPLE-01",
+      "revision": "stage3a-fixed",
+      "pose": "B0",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "id": "F02",
+      "definition_id": "PAL-U01",
+      "revision": "B0",
+      "pose": null,
+      "translation_m": [
+        3.525,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    }
+  ],
+  "connections": [
+    {
+      "a": {
+        "instance_id": "F01",
+        "port": "right"
+      },
+      "b": {
+        "instance_id": "G01",
+        "port": "left"
+      }
+    },
+    {
+      "a": {
+        "instance_id": "G01",
+        "port": "right"
+      },
+      "b": {
+        "instance_id": "F02",
+        "port": "left"
+      }
+    }
+  ]
+}

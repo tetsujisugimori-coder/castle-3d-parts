@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "baseline_commit": "731fc4e760c60e3d3101ae5991126e28923700a6",
+  "definitions": [
+    {
+      "id": "PAL-U01",
+      "upstream_id": "PAL-ASSEMBLY",
+      "revision": "B0",
+      "pose": null,
+      "subset": "U01",
+      "basis": "D",
+      "eligibility": "reference_only",
+      "manifest": "cad/stage2c/generated/B0/link-manifest.json",
+      "glb": "cad/stage2c/generated/B0/assembly.glb",
+      "glb_sha256": "0a64c2ab5629e43d61b7f3ae719d532bc69322f57b0050af56fe393bb1f5a0cc",
+      "nodes": [
+        "U01_Post_001",
+        "U01_Post_002",
+        "U01_Post_003",
+        "U01_Post_004",
+        "U01_Post_005",
+        "U01_Rail_001",
+        "U01_Rail_002"
+      ],
+      "ports": {
+        "left": {
+          "point_m": [
+            -2.475,
+            -0.1245,
+            1.4666666666666666
+          ],
+          "outward": [
+            -1,
+            0,
+            0
+          ],
+          "type": "upper-rail-end-v1"
+        },
+        "right": {
+          "point_m": [
+            2.475,
+            -0.1245,
+            1.4666666666666666
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "type": "upper-rail-end-v1"
+        }
+      }
+    },
+    {
+      "id": "GATE-SIMPLE-01",
+      "upstream_id": "GATE-SIMPLE-01",
+      "revision": "stage3a-fixed",
+      "pose": "B0",
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "manifest": "cad/stage3a/generated/B0/link-manifest.json",
+      "glb": "cad/stage3a/generated/B0/assembly.glb",
+      "glb_sha256": "c82d0f634570d3f0e87ced3f432d693e4703a5663d9ff1312e289cc65d02fe69",
+      "nodes": [
+        "GATE_Post_Left",
+        "GATE_Post_Right",
+        "GATE_Beam",
+        "GATE_Door",
+        "GATE_Axis",
+        "GATE_Connector_Left",
+        "GATE_Connector_Right"
+      ],
+      "ports": {
+        "left": {
+          "point_m": [
+            -1.05,
+            -0.1245,
+            1.4666666666666666
+          ],
+          "outward": [
+            -1,
+            0,
+            0
+          ],
+          "type": "upper-rail-end-v1"
+        },
+        "right": {
+          "point_m": [
+            1.05,
+            -0.1245,
+            1.4666666666666666
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "type": "upper-rail-end-v1"
+        }
+      }
+    }
+  ],
+  "limits": {
+    "historical": "UNKNOWN",
+    "physical_strength": "NOT_TESTED",
+    "continuous_motion": "UNKNOWN",
+    "new_cad_verification": "NOT_TESTED",
+    "connection": "ANCHOR_ALIGNMENT_ONLY"
+  }
+}
