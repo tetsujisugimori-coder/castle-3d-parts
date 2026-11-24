@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>城郭組立工房 | 城郭3D部品ライブラリ</title>
+<link rel="stylesheet" href="./workshop.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<script type="module" src="./workshop.mjs"></script>
+</head>
+<body><main>
+<header><p class="eyebrow">CASTLE 3D PARTS · STAGE 4-A / 開発用</p><h1>城郭組立工房</h1><p>部品を選び、配置し、接続する。</p></header>
+<p class="note">試作D・参照模型。接続点の一致のみを検査します。史実、実物強度、全体干渉、連続運動、安全性、山中城への配置は未確認です。</p>
+<p id="status" role="status" aria-live="polite" data-state="loading">3Dモデルを準備中…</p>
+<div class="workspace">
+<section class="panel library" aria-labelledby="library-title">
+<h2 id="library-title">部品棚</h2>
+<label for="definition">追加する部品</label>
+<select id="definition" data-edit disabled></select>
+<button id="add" data-edit disabled>部品を追加</button>
+<p class="hint">初期配置は既存部品の右側です。全体干渉は未検査。</p>
+<h3>配置済みの部品</h3>
+<label for="instance">編集対象</label>
+<select id="instance" size="5" data-edit disabled></select>
+<p class="hint">一覧、または3D模型のクリックで選択できます。</p>
+</section>
+<section class="panel view" aria-labelledby="view-title">
+<h2 id="view-title">3D組立ビュー</h2>
+<div id="viewport" role="img" aria-label="城郭部品の3D配置。ドラッグで回転、ピンチで拡大縮小。緑色の球は接続点です。"></div>
+<div class="buttons" aria-label="視点操作">
+<button id="fit" data-view disabled>全体表示</button><button id="turn" data-view disabled>視点回転</button>
+<button id="zoom" data-view disabled>拡大</button><button id="zoom-out" data-view disabled>縮小</button>
+</div>
+<p id="summary" aria-live="polite">配置数：— / 接続数：—</p>
+</section>
+<section class="panel edit" aria-labelledby="edit-title">
+<h2 id="edit-title">配置設定</h2>
+<p id="selection">未選択</p>
+<div class="coords">
+<label>X (m)<input id="x" type="number" step="any" min="-10000" max="10000" data-edit disabled></label>
+<label>Y (m)<input id="y" type="number" step="any" min="-10000" max="10000" data-edit disabled></label>
+<label>Z (m)<input id="z" type="number" step="any" min="-10000" max="10000" data-edit disabled></label>
+</div>
+<button id="move" data-selected disabled>座標を適用</button>
+<p id="yaw">回転角：—</p>
+<div class="buttons"><button id="left" data-selected disabled>−90°</button><button id="right" data-selected disabled>＋90°</button></div>
+<button id="remove" data-selected disabled>選択部品を削除</button>
+<p class="hint">接続中の部品を動かす場合は、先に接続を解除してください。</p>
+<h3>接続</h3>
+<label for="port-a">固定側の接続点</label><select id="port-a" data-edit disabled></select>
+<label for="port-b">移動側の接続点</label><select id="port-b" data-edit disabled></select>
+<button id="connect" data-connect disabled>現在位置で接続</button>
+<button id="align" data-connect disabled>位置合わせして接続</button>
+<label for="connection">既存接続</label><select id="connection" data-edit disabled></select>
+<button id="disconnect" data-disconnect disabled>接続を解除</button>
+</section>
+</div>
+<section class="panel persistence" aria-labelledby="save-title">
+<h2 id="save-title">設計の保存・読込</h2>
+<div class="buttons"><button id="save" data-edit disabled>JSONを作成</button><button id="download" data-edit disabled>JSONをダウンロード</button><button id="example" data-edit disabled>代表配置に戻す</button></div>
+<label for="json">保存・読込用JSON (v2)</label><textarea id="json" rows="5" spellcheck="false" data-edit disabled></textarea>
+<button id="load" data-edit disabled>入力JSONを読み込む</button>
+<label for="file">JSONファイルを選択</label><input id="file" type="file" accept=".json,application/json" data-edit disabled>
+<button id="load-file" data-edit disabled>ファイルを読み込む</button>
+<p class="hint">不正なデータは拒否し、最後に成功した配置を保持します。保存は手動です。</p>
+</section>
+<p><a href="./preview.html">固定GLB配置プレビュー</a></p>
+<noscript>JavaScriptが必要です。</noscript>
+</main></body></html>
