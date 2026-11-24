@@ -65,7 +65,8 @@ test('align-connect moves only disconnected part and exact anchors coincide',asy
   let s = await disconnect(example);
   s = await edit(s,{kind:'move',id:'F01',translation_m:[-20,1,1]});
   s = await edit(s,{kind:'align-connect',a:b,b:a});
-  assert.deepEqual(s.instances[0].translation_m,[-3.525,0,0]);
+  assert.ok(Math.abs(s.instances[0].translation_m[0]+3.525)<=1e-9);
+  assert.deepEqual(s.instances[0].translation_m.slice(1),[0,0]);
   const p=worldPort(c,s.instances[0],'right').point_m;
   const q=worldPort(c,s.instances[1],'left').point_m;
   assert.ok(p.every((v,i)=>Math.abs(v-q[i])<=1e-9));
