@@ -13,7 +13,7 @@ const neg=a=>a.map(v=>-v);
 export function rotate(v,q){
   assert(vec(v)&&Number.isInteger(q)&&q>=0&&q<=3,"invalid vector/rotation");
   const [x,y,z]=v;
-  return [[x,y,z],[-y,x,z],[-x,-y,z],[y,-x,z]][q];
+  return [[x,y,z],[-y,x,z],[-x,-y,z],[y,-x,z]][q].map(n=>n===0?0:n);
 }
 function def(c,i){
   const d=c.definitions.find(d=>d.id===i.definition_id);
