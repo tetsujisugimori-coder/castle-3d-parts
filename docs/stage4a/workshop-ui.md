@@ -1,6 +1,6 @@
 # Stage 4-A 第2便・操作画面増分（Refs #49 / PR #50）
-## 現行判定（2026-11-26）
-固定HEAD 027e261063a9eb16c268f99158ad95db6f234a5e の正式CIは18/18、30ジョブ成功。工房Chromium/WebKit各10/10、独立レビューの専用Node91/91。確認済み機能は限定PASS、Issue #49全体PARTIAL、第4工程HOLD。P2-01タッチ相当・故障復帰、P2-02永続保全は未完。以下の初回試験計画は履歴であり現行結果ではない。実機iPhone SafariはNOT_TESTED。
+## 現行の確認範囲
+正式CIの実行版と受入判定は [PR #50](https://github.com/tetsujisugimori-coder/castle-3d-parts/pull/50) に記録する。工房は試作Dの参照模型を扱う開発用画面で、第4工程で予定する展示室からの入口とビルド統合は対象外。
 ## 開発用画面
 リポジトリのルートで `python -m http.server 8000 --bind 127.0.0.1` を実行し、`http://127.0.0.1:8000/previews/stage4a/workshop.html` を開く。固定Three.js 0.180.0 CDNへの接続が必要。既存展示室・Pagesへの導線とビルド統合は次工程。公開していない。
 - 左の部品棚で木柵/木戸を選択・追加する。新規IDは未使用のP番号、初期座標はmax(0,既存X)+6m。これは干渉を回避できる保証ではない。
@@ -9,6 +9,11 @@
 - UIは処理を直列化する。検証→GLB準備→同期シーン反映→データ確定の順序とし、準備・反映失敗時に前の有効設計を保持する。反映後にUI更新が失敗した場合は操作を停止して再読み込みを求める。WebGL喪失は操作停止。自動保存なし。
 - 確認範囲は試作D、参照専用、アンカー一致。全体干渉・物理強度・史実・実Solid安全性・実運動・山中城への配置を認定しない。Stage 3-B HOLDと西櫓未配置を維持。
 ## 試験
-`node --test tests/stage4a-assembly.test.mjs tests/stage4a-workshop.test.mjs tests/stage4a-glb-scene.test.mjs tests/stage4a-workshop-ui.test.mjs`
-既存専用55件、編集16件、GLB10件、今回UI制御10件を対象とする。試験記述の件数であり実行成功数ではない。
-ブラウザ試験候補 `node scripts/stage4a-workshop-browser.mjs` はPlaywright 1.56.1 / Three.js 0.180.0を既存試験と同様に利用。PW_MODULEとTHREE_ROOTを案件別に準備済みの依存先へ設定し、STAGE4A_OUTを案件別証拠領域へ設定する。Chromium/WebKit各8通常条件（375/390/765/1280px × 通常/Reduced）および各2故障条件。試験用HTTPサーバーはlocalhostのみで公開対象を限定し、CDNの代わりに固定ローカルThree.jsを供給する。実操作、JSON同値性、画面幅、失敗時の無効化、スクリーンショット/trace/HEAD/treeを取得する試験候補。現時点では実行未確認。物理iPhone Safari、ダウンロードの実ファイル照合、タッチ実機、独立レビュー、正式原証拠保全は未検証。
+専用Node試験は `node --test tests/stage4a-assembly.test.mjs tests/stage4a-workshop.test.mjs tests/stage4a-glb-scene.test.mjs tests/stage4a-workshop-ui.test.mjs` で実行する。契約55・編集16・GLB10・UI制御10の計91件。
+
+工房の正式CIは Playwright 1.56.1 / Three.js 0.180.0 で Chromium・WebKit を実行する。各ブラウザの条件は、375/390/765/1280px × 通常/Reduced の8件、375px通常・390px Reduced のタッチ相当2件、木戸GLBの欠落・不正バイトの故障2件。正式CIの設定は `.github/workflows/stage4a-workshop.yml`。ローカル実行では `PW_MODULE` と `THREE_ROOT` を固定依存先、`STAGE4A_OUT` を証拠出力先に設定して `node scripts/stage4a-workshop-browser.mjs` を実行する。
+
+- 通常条件では編集と接続、キーボードによるF01→G01の選択、3Dマウス選択、クリップボードからのJSON貼付けとファイル読込、ダウンロードしたJSONの実バイト、狭幅表示を確認する。
+- タッチ相当条件はPlaywrightのタップを使い、各対象への信頼済み `touchstart/end` と `pointerType=touch` の `pointerdown/up`、3D選択と保存データを確認する。最小再現の有効・無効対照とマウス対照を別に記録する。WebKit WPEではタップが届いても `navigator.maxTouchPoints` が0になるため、この値は観測情報として記録する。
+- 故障対照は欠落とSHA不一致を理由別に確認し、故障解除後に同じページを再読込して3配置・21メッシュ・2接続と保存同値性まで検査する。
+- 物理iPhone Safari・実機タッチ・ピンチ・連続ドラッグはNOT_TESTED。Stage 3-B HOLD、西櫓未配置、実Solid安全性UNKNOWN、代表実運動NOT_TESTED。

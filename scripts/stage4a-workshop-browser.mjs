@@ -1,4 +1,4 @@
-// Candidate browser test, not a CI or physical Safari result.
+// Workshop browser suite for desktop input and Playwright touch emulation.
 import {createServer} from 'node:http';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {resolve,extname,sep} from 'node:path';
@@ -24,6 +24,7 @@ const server=createServer((req,res)=>{
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const base='http://127.0.0.1:'+server.address().port+'/previews/stage4a/workshop.html';
 const rows=[];
+const touchProbes=[];
 const engines=process.env.STAGE4A_ENGINE?[process.env.STAGE4A_ENGINE]:['chromium','webkit'];
 const threeRoot=resolve(process.env.THREE_ROOT||'/tmp/castle2d-pw/node_modules/three');
 const original=JSON.parse(readFileSync('assembly/stage4a/example.json','utf8'));
@@ -32,6 +33,23 @@ const ready=p=>p.waitForSelector('#status[data-state=ready]',{timeout:30000});
 const error=p=>p.waitForSelector('#status[data-state=error]',{timeout:30000});
 const click=async(p,id,ok=true)=>{await p.locator('#'+id).click();await (ok?ready(p):error(p))};
 async function save(p){await click(p,'save');return JSON.parse(await p.locator('#json').inputValue())}
+async function pasteDesign(page,design){
+  const input=page.locator('#json');
+  const text=JSON.stringify(design);
+  await input.evaluate(element=>{
+    delete element.dataset.trustedPaste;
+    element.addEventListener('paste',event=>{
+      if(event.isTrusted)element.dataset.trustedPaste=event.clipboardData.getData('text/plain');
+    },{once:true});
+  });
+  await input.fill(text);
+  await input.press('ControlOrMeta+a');
+  await input.press('ControlOrMeta+c');
+  await input.fill('');
+  await input.press('ControlOrMeta+v');
+  await page.waitForFunction(expected=>document.getElementById('json').dataset.trustedPaste===expected,text);
+  assert.equal(await input.inputValue(),text);
+}
 async function dependencies(c){
   await c.route('https://cdn.jsdelivr.net/npm/three@0.180.0/**',r=>{
     const path=resolve(threeRoot,r.request().url().split('/three@0.180.0/')[1]);
@@ -66,7 +84,7 @@ async function normal(p,row){
   assert.deepEqual(await save(p),original);
   await p.locator('#json').fill('{"schema_version":1}');await click(p,'load',false);
   assert.deepEqual(await save(p),original);
-  await p.locator('#json').fill(JSON.stringify(s));await click(p,'load');assert.deepEqual(await save(p),s);
+  await pasteDesign(p,s);await click(p,'load');assert.deepEqual(await save(p),s);
   await click(p,'example');assert.deepEqual(await save(p),original);
   await p.locator('#file').setInputFiles({name:'design.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(s))});
   await click(p,'load-file');assert.deepEqual(await save(p),s);
@@ -93,15 +111,65 @@ async function normal(p,row){
   assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'horizontal overflow');
   row.checks=['initial actual GLB load','connected edit rejection','add/move/rotate','align/reject/disconnect/remove','v2 JSON paste and file load','download byte equality','3D mouse selection','view buttons and exact keyboard selection','responsive width'];
 }
+async function observeTouchInput(page){
+  return page.evaluate(()=>{
+    window.__stage4aTouch=[];
+    for(const type of ['pointerdown','pointerup','touchstart','touchend']){
+      document.addEventListener(type,event=>{
+        const target=event.target.closest?.('button')?.id||event.target.tagName;
+        window.__stage4aTouch.push({
+          target,type,isTrusted:event.isTrusted,pointerType:event.pointerType??null,
+          changedTouches:event.changedTouches?.length??null
+        });
+      },true);
+    }
+    return {maxTouchPoints:navigator.maxTouchPoints,coarsePointer:matchMedia('(pointer:coarse)').matches};
+  });
+}
+const readTouchInput=page=>page.evaluate(()=>window.__stage4aTouch.splice(0));
+function requireTrustedTap(events,target){
+  const received=events.filter(e=>e.target===target&&e.isTrusted);
+  for(const type of ['pointerdown','pointerup']){
+    assert.ok(received.some(e=>e.type===type&&e.pointerType==='touch'),target+': missing trusted touch '+type);
+  }
+  for(const type of ['touchstart','touchend']){
+    assert.ok(received.some(e=>e.type===type&&e.changedTouches>0),target+': missing trusted '+type);
+  }
+}
+async function probeTouchInput(browser,engine){
+  for(const hasTouch of [false,true]){
+    const row={engine,version:browser.version(),hasTouch,status:'FAIL'};
+    touchProbes.push(row);
+    const context=await browser.newContext({hasTouch});
+    try{
+      const page=await context.newPage();
+      await page.setContent('<button id="probe" style="width:120px;height:100px">Touch probe</button>');
+      row.capabilities=await observeTouchInput(page);
+      if(hasTouch){
+        await page.touchscreen.tap(50,50);
+      }else{
+        await assert.rejects(page.touchscreen.tap(50,50),/hasTouch must be enabled/);
+      }
+      row.tapEvents=await readTouchInput(page);
+      if(hasTouch)requireTrustedTap(row.tapEvents,'probe');
+      else assert.deepEqual(row.tapEvents,[]);
+      await page.mouse.click(50,50);
+      row.mouseEvents=await readTouchInput(page);
+      for(const type of ['pointerdown','pointerup']){
+        assert.ok(row.mouseEvents.some(e=>e.type===type&&e.target==='probe'&&e.isTrusted&&e.pointerType==='mouse'));
+      }
+      assert.ok(row.mouseEvents.every(e=>e.pointerType==='mouse'));
+      row.status='PASS';
+    }catch(error){
+      row.error=error.stack;
+    }finally{await context.close()}
+  }
+}
 async function touchNormal(p,row){
   await initial(p);
-  await p.evaluate(()=>{
-    window.__stage4aTouch=[];
-    document.addEventListener('pointerup',e=>{
-      if(e.isTrusted&&e.pointerType==='touch')window.__stage4aTouch.push(e.target.closest('button')?.id||e.target.tagName);
-    },true);
-  });
-  assert.ok(await p.evaluate(()=>navigator.maxTouchPoints>0));
+  // WebKit WPE can report zero while delivering native emulated touch input.
+  // The observed events and resulting editor state are the acceptance criteria.
+  row.capabilities=await observeTouchInput(p);
   const tap=async id=>{await p.locator('#'+id).tap();await ready(p)};
   const canvas=p.locator('#viewport canvas');await canvas.scrollIntoViewIfNeeded();
   const box=await canvas.boundingBox();assert.ok(box);
@@ -124,17 +192,21 @@ async function touchNormal(p,row){
   await p.selectOption('#connection',conn);await tap('disconnect');await tap('remove');await tap('save');
   assert.deepEqual(JSON.parse(await p.locator('#json').inputValue()),original);
   for(const id of ['fit','turn','zoom','zoom-out'])await p.locator('#'+id).tap();
-  row.touchEvents=await p.evaluate(()=>window.__stage4aTouch);
+  row.touchEvents=await readTouchInput(p);
   for(const id of ['CANVAS','add','move','right','left','align','disconnect','remove','save','fit','turn','zoom','zoom-out'])
-    assert.ok(row.touchEvents.includes(id),'missing trusted touch event '+id);
-  row.checks=['trusted touch events','3D touch selection','tap edit and view controls','saved design equality'];
+    requireTrustedTap(row.touchEvents,id);
+  row.checks=['trusted touch pointerdown/up and touchstart/end','3D touch selection','tap edit and view controls','saved design equality'];
 }
 let fatal;
 try{
   const {chromium,webkit}=await import(pathToFileURL(process.env.PW_MODULE||'/tmp/castle2d-pw/node_modules/playwright/index.mjs').href);
   for(const engine of engines){
-    const b=await({chromium,webkit}[engine]).launch({headless:true,args:engine==='chromium'?['--no-sandbox','--enable-unsafe-swiftshader']:[]});
+    const b=await({chromium,webkit}[engine]).launch({
+      headless:true,executablePath:engine==='webkit'?process.env.WEBKIT_EXECUTABLE:undefined,
+      args:engine==='chromium'?['--no-sandbox','--enable-unsafe-swiftshader']:[]
+    });
     try{
+      await probeTouchInput(b,engine);
       for(const width of [375,390,765,1280])for(const motion of ['no-preference','reduce']){
         const id=engine+'-'+width+'-'+motion,row={engine,width,motion,status:'FAIL',checks:[],errors:[]};
         const c=await b.newContext({viewport:{width,height:900},reducedMotion:motion});
@@ -201,7 +273,8 @@ finally{
   writeFileSync(resolve(out,'results.json'),JSON.stringify({
     head:execFileSync('git',['rev-parse','HEAD']).toString().trim(),
     tree:execFileSync('git',['rev-parse','HEAD^{tree}']).toString().trim(),
-    expected:12*engines.length,rows,fatal:fatal??null,physical_iphone:'NOT_TESTED'
+    expected:12*engines.length,rows,touchProbes,fatal:fatal??null,physical_iphone:'NOT_TESTED'
   },null,2));
-  if(fatal||rows.length!==12*engines.length||rows.some(r=>r.status!=='PASS'))process.exitCode=1;
+  if(fatal||rows.length!==12*engines.length||rows.some(r=>r.status!=='PASS')||
+      touchProbes.length!==2*engines.length||touchProbes.some(r=>r.status!=='PASS'))process.exitCode=1;
 }
