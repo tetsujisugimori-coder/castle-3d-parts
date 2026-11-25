@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createHash} from 'node:crypto';
+import {preservedPagesHash} from '../scripts/stage4a/pages-preservation.mjs';
 const base=JSON.parse(readFileSync('evidence/stage3b/baseline.json'));
 function verify(reader=p=>readFileSync(p)){
  assert.equal(base.repository,'tetsujisugimori-coder/castle-3d-parts');
  assert.equal(base.commit,'b0713ecc0f18772fc119ba4b51359855d383e086');
  assert.equal(Object.keys(base.files).length,1072);
- for(const [p,v] of Object.entries(base.files))assert.equal(createHash('sha256').update(reader(p)).digest('hex'),v.sha256,p);
+ for(const [p,v] of Object.entries(base.files))assert.equal(preservedPagesHash(p,v.sha256,reader),v.sha256,p);
 }
 test('Stage3B preserves all 1072 baseline paths',()=>verify());
 test('old CAD byte corruption is rejected',()=>assert.throws(()=>verify(p=>p.endsWith('.FCStd')?Buffer.from('corrupt'):readFileSync(p))));

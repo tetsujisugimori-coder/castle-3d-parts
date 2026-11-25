@@ -6,6 +6,7 @@ on:
       - 'assembly/stage4a/**'
       - 'previews/stage4a/**'
       - 'scripts/stage4a-workshop-browser.mjs'
+      - 'scripts/stage4a-pages-check.mjs'
       - 'scripts/build-site.mjs'
       - 'scripts/build-stage2c-site.mjs'
       - 'scripts/build-stage2d-site.mjs'
@@ -70,6 +71,7 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/build-stage2d-site.mjs 2>&1 | tee "$STAGE4A_OUT/build.log"
+          node --test scripts/stage4a-pages-check.mjs 2>&1 | tee "$STAGE4A_OUT/pages-check.log"
           (cd dist; find . -type f -print0 | sort -z | xargs -0 -r sha256sum) > "$STAGE4A_OUT/dist-SHA256SUMS"
       - name: Execute workshop browser suite against Pages distribution
         env:

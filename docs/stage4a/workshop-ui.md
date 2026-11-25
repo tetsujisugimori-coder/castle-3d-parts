@@ -27,5 +27,7 @@ Issue #49。展示室トップの「城郭組立工房（試作D）」から `st
 
 ## 継続事項
 
+- 旧Stage 3-A/B/Cの保全検査は、引き続き過去の基準ファイル全件を検査する。配信ビルダーと関連する検証器2件の変更は `evidence/stage4a/pages-migration/manifest.json` に限定し、原本のSHA-256と現在版のSHA-256を検査する。
+
 - WebKit 26.0の旧方式の履歴再読込で観測した `Page crashed` の内部原因と、過去のStage 3-B回帰でローカル配信の取得が一時失敗した原因はUNKNOWN。第4工程のブラウザ結果と区別して記録する。
 - 正式CIの結果は対象HEAD・tree、実行ID、ジョブと原artifactの情報をDraft PRに記録する。GitHub Actionsの原ZIP・対応原ログを承認済み永続保存先に移す場合は案件別承認が必要。保存結果と別担当による取得・照合を、CI実行結果と別に記録する。

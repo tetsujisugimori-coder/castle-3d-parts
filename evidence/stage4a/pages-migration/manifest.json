@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "16b32c1b33ca9bb1a75127998ec029aa2f89b9db",
+  "issue": 49,
+  "files": {
+    "scripts/build-stage2d-site.mjs": {
+      "before_sha256": "123978facabb6d117f80854526322b3cea9ac569375e320361088a23b7bb635a",
+      "after_sha256": "710b7a826064b5e3b2fee8350496169374b6cb42b09c5edefd862f970b17f419",
+      "reason": "Add the Stage 4-A workshop to the official Pages build."
+    },
+    "tests/stage3a-preservation.test.mjs": {
+      "before_sha256": "e5b188ab3d52ff4eb3d1edfc9eea5211064d8eb92d9a56a9ea5f87852d475d87",
+      "after_sha256": "a0e7860b0dc395303e8c12b630ca550dd66a919e6343aa0dc25043e280326c3c",
+      "reason": "Verify both exact versions of the Pages builder while preserving all 974 baseline paths."
+    },
+    "tests/stage3b-preservation.test.mjs": {
+      "before_sha256": "f1bbad0d70dcd671b31c07d5e1961d865138de1755c89d8e08d2e914c793328c",
+      "after_sha256": "ff740b8dd8ddada9e74a98b4556ed5e9086dad0e432324206aca2f039a1bd3c9",
+      "reason": "Verify the Pages builder and Stage 3-A verifier against archived originals and exact current digests."
+    }
+  }
+}
