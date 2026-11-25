@@ -66,6 +66,8 @@ async function normal(p,row){
   assert.deepEqual(await save(p),original);
   await p.locator('#json').fill('{"schema_version":1}');await click(p,'load',false);
   assert.deepEqual(await save(p),original);
+  await p.locator('#json').fill(JSON.stringify(s));await click(p,'load');assert.deepEqual(await save(p),s);
+  await click(p,'example');assert.deepEqual(await save(p),original);
   await p.locator('#file').setInputFiles({name:'design.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(s))});
   await click(p,'load-file');assert.deepEqual(await save(p),s);
   await click(p,'example');assert.deepEqual(await save(p),original);
@@ -74,8 +76,22 @@ async function normal(p,row){
   await p.locator('#instance').focus();await p.keyboard.press('ArrowDown');
   assert.equal(await p.locator('#instance').inputValue(),'G01');
   assert.match(await p.locator('#selection').textContent(),/^G01 /);
+  const [download]=await Promise.all([p.waitForEvent('download'),p.locator('#download').click()]);
+  await ready(p);
+  assert.equal(await download.failure(),null);
+  assert.equal(download.suggestedFilename(),'castle-assembly-v2.json');
+  const bytes=readFileSync(await download.path());
+  assert.deepEqual(bytes,Buffer.from(await p.locator('#json').inputValue(),'utf8'));
+  assert.deepEqual(JSON.parse(bytes.toString('utf8')),original);
+  await p.selectOption('#instance','F01');
+  await p.locator('#fit').click();
+  const canvas=p.locator('#viewport canvas');await canvas.scrollIntoViewIfNeeded();
+  const box=await canvas.boundingBox();assert.ok(box);
+  await p.mouse.click(box.x+box.width/2,box.y+box.height/2);
+  await p.waitForFunction(()=>document.querySelector('#instance').value==='G01');
+  assert.match(await p.locator('#selection').textContent(),/^G01 /);
   assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'horizontal overflow');
-  row.checks=['initial actual GLB load','connected edit rejection','add/move/rotate','align/reject/disconnect/remove','v2 JSON and file load','view buttons and keyboard','responsive width'];
+  row.checks=['initial actual GLB load','connected edit rejection','add/move/rotate','align/reject/disconnect/remove','v2 JSON paste and file load','download byte equality','3D mouse selection','view buttons and exact keyboard selection','responsive width'];
 }
 let fatal;
 try{
