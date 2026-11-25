@@ -1,4 +1,4 @@
-// Workshop browser suite for desktop input and Playwright touch emulation.
+// Workshop browser suite for the development preview or the Pages distribution.
 import {createServer} from 'node:http';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {resolve,extname,sep} from 'node:path';
@@ -8,23 +8,31 @@ import assert from 'node:assert/strict';
 
 const out=resolve(process.env.STAGE4A_OUT||'stage4a-ui-evidence');
 mkdirSync(out,{recursive:true});
-const root=resolve('.');
+const distribution=process.env.STAGE4A_DISTRIBUTION==='1';
+const prefix='/castle-3d-parts/';
+const root=resolve(distribution?'dist':'.');
 const allow=['previews/stage4a/','assembly/stage4a/','cad/stage2c/generated/B0/','cad/stage3a/generated/B0/'];
-const mime={'.html':'text/html','.mjs':'text/javascript','.js':'text/javascript','.json':'application/json','.css':'text/css','.glb':'model/gltf-binary'};
+const mime={'.html':'text/html','.mjs':'text/javascript','.js':'text/javascript','.json':'application/json','.css':'text/css','.svg':'image/svg+xml','.glb':'model/gltf-binary'};
 const server=createServer((req,res)=>{
   try{
-    const path=decodeURIComponent(new URL(req.url,'http://local').pathname).replace(/^\//,'');
-    if(!allow.some(p=>path.startsWith(p)))throw Error('outside preview');
+    const pathname=decodeURIComponent(new URL(req.url,'http://local').pathname);
+    if(distribution&&!pathname.startsWith(prefix))throw Error('outside project prefix');
+    let path=pathname.slice(distribution?prefix.length:1);
+    if(distribution&&(path===''||path.endsWith('/')))path+='index.html';
+    if(!distribution&&!allow.some(p=>path.startsWith(p)))throw Error('outside preview');
     const p=resolve(root,path);
-    if(!p.startsWith(root+sep)||!allow.some(a=>p.startsWith(resolve(root,a)+sep)))throw Error('escape');
+    if(!p.startsWith(root+sep)||(!distribution&&!allow.some(a=>p.startsWith(resolve(root,a)+sep))))throw Error('escape');
     res.setHeader('Content-Type',mime[extname(p)]||'application/octet-stream');
     res.end(readFileSync(p));
   }catch{res.statusCode=404;res.end('missing')}
 });
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
-const base='http://127.0.0.1:'+server.address().port+'/previews/stage4a/workshop.html';
+const origin='http://127.0.0.1:'+server.address().port;
+const exhibition=origin+prefix;
+const base=distribution?exhibition+'stage4a/workshop/':origin+'/previews/stage4a/workshop.html';
 const rows=[];
 const touchProbes=[];
+const browserVersions={};
 const engines=process.env.STAGE4A_ENGINE?[process.env.STAGE4A_ENGINE]:['chromium','webkit'];
 const threeRoot=resolve(process.env.THREE_ROOT||'/tmp/castle2d-pw/node_modules/three');
 const original=JSON.parse(readFileSync('assembly/stage4a/example.json','utf8'));
@@ -57,9 +65,46 @@ async function dependencies(c){
     return r.fulfill({path,contentType:'text/javascript'});
   });
 }
-async function initial(p){await p.goto(base,{waitUntil:'domcontentloaded'});await ready(p);assert.equal(await p.locator('#viewport canvas').count(),1);assert.equal(await p.locator('#instance option').count(),3);assert.match(await p.locator('#summary').textContent(),/21.*2/)}
+async function follow(p,id,destination,input){
+  const link=p.locator('#'+id);
+  assert.equal(await link.evaluate(a=>a.href),destination);
+  const navigate=input==='touch'?()=>link.tap():
+    input==='keyboard'?()=>link.press('Enter'):()=>link.click();
+  await Promise.all([p.waitForURL(destination),navigate()]);
+}
+async function exhibitionReady(p){
+  await p.locator('#viewport canvas').waitFor({state:'visible'});
+  assert.equal(await p.locator('#linked-viewer-entry').getAttribute('href'),'./stage2c/');
+  assert.equal(await p.locator('#count-value').textContent(),'5 本');
+}
+async function initial(p,input){
+  if(distribution){
+    await p.goto(exhibition,{waitUntil:'domcontentloaded'});
+    await exhibitionReady(p);
+    await follow(p,'workshop-entry',base,input);
+  }else{
+    await p.goto(base,{waitUntil:'domcontentloaded'});
+  }
+  await ready(p);
+  assert.equal(await p.locator('#viewport canvas').count(),1);
+  assert.equal(await p.locator('#instance option').count(),3);
+  assert.match(await p.locator('#summary').textContent(),/21.*2/);
+}
+async function returnToExhibition(p,row,input){
+  await follow(p,'exhibition-entry',exhibition,input);
+  await exhibitionReady(p);
+  await p.locator('#count').press('ArrowRight');
+  assert.equal(await p.locator('#count-value').textContent(),'6 本');
+  assert.equal(await p.locator('#width-value').textContent(),'6.15 m');
+  if(input==='touch')await p.locator('#reset').tap();
+  else await p.locator('#reset').press('Enter');
+  assert.equal(await p.locator('#count-value').textContent(),'5 本');
+  assert.equal(await p.locator('#width-value').textContent(),'4.95 m');
+  row.checks.push(input+' navigation in both directions','exhibition rendering and live dimensions after return');
+}
 async function normal(p,row){
-  await initial(p);
+  const input=row.motion==='reduce'?'keyboard':'mouse';
+  await initial(p,input);
   assert.deepEqual(await save(p),original);
   await p.selectOption('#instance','F01');await p.locator('#x').fill('-4');
   await click(p,'move',false);assert.deepEqual(await save(p),original);
@@ -166,7 +211,7 @@ async function probeTouchInput(browser,engine){
   }
 }
 async function touchNormal(p,row){
-  await initial(p);
+  await initial(p,'touch');
   // WebKit WPE can report zero while delivering native emulated touch input.
   // The observed events and resulting editor state are the acceptance criteria.
   row.capabilities=await observeTouchInput(p);
@@ -206,6 +251,7 @@ try{
       args:engine==='chromium'?['--no-sandbox','--enable-unsafe-swiftshader']:[]
     });
     try{
+      browserVersions[engine]=b.version();
       await probeTouchInput(b,engine);
       for(const width of [375,390,765,1280])for(const motion of ['no-preference','reduce']){
         const id=engine+'-'+width+'-'+motion,row={engine,width,motion,status:'FAIL',checks:[],errors:[]};
@@ -213,7 +259,13 @@ try{
         try{
           await dependencies(c);const p=await c.newPage();p.on('pageerror',e=>row.errors.push(e.message));
           await c.tracing.start({screenshots:true,snapshots:true});
-          try{await normal(p,row);assert.deepEqual(row.errors,[]);await p.screenshot({path:resolve(out,id+'.png'),fullPage:true});row.status='PASS'}
+          try{
+            await normal(p,row);
+            await p.screenshot({path:resolve(out,id+'.png'),fullPage:true});
+            if(distribution)await returnToExhibition(p,row,motion==='reduce'?'keyboard':'mouse');
+            assert.deepEqual(row.errors,[]);
+            row.status='PASS';
+          }
           catch(e){row.error=e.stack;await p.screenshot({path:resolve(out,'FAIL-'+id+'.png'),fullPage:true}).catch(()=>{})}
           finally{await c.tracing.stop({path:resolve(out,id+'.zip')})}
         }catch(e){row.error=e.stack;row.status='FAIL'}
@@ -225,7 +277,13 @@ try{
         try{
           await dependencies(c);const p=await c.newPage();p.on('pageerror',e=>row.errors.push(e.message));
           await c.tracing.start({screenshots:true,snapshots:true});
-          try{await touchNormal(p,row);assert.deepEqual(row.errors,[]);await p.screenshot({path:resolve(out,id+'.png'),fullPage:true});row.status='PASS'}
+          try{
+            await touchNormal(p,row);
+            await p.screenshot({path:resolve(out,id+'.png'),fullPage:true});
+            if(distribution)await returnToExhibition(p,row,'touch');
+            assert.deepEqual(row.errors,[]);
+            row.status='PASS';
+          }
           catch(e){row.error=e.stack;await p.screenshot({path:resolve(out,'FAIL-'+id+'.png'),fullPage:true}).catch(()=>{})}
           finally{await c.tracing.stop({path:resolve(out,id+'.zip')})}
         }catch(e){row.error=e.stack;row.status='FAIL'}
@@ -245,6 +303,11 @@ try{
             await p.goto(base,{waitUntil:'domcontentloaded'});await error(p);
             assert.equal(injected,1);
             assert.equal(await p.locator('#add').isDisabled(),true);
+            if(distribution){
+              const returnLink=p.locator('#exhibition-entry');
+              assert.equal(await returnLink.isVisible(),true);
+              assert.equal(await returnLink.evaluate(a=>a.href),exhibition);
+            }
             assert.match(await p.locator('#summary').textContent(),/—/);
             row.failureReason=await p.locator('#status').textContent();
             assert.ok(row.failureReason.includes(fault==='missing-glb'?'asset HTTP 404 cad/stage3a/generated/B0/assembly.glb':'GLB SHA-256 mismatch'));
@@ -273,6 +336,8 @@ finally{
   writeFileSync(resolve(out,'results.json'),JSON.stringify({
     head:execFileSync('git',['rev-parse','HEAD']).toString().trim(),
     tree:execFileSync('git',['rev-parse','HEAD^{tree}']).toString().trim(),
+    scope:distribution?'Pages dist at project prefix':'development preview',
+    platform:process.platform,node:process.version,browserVersions,
     expected:12*engines.length,rows,touchProbes,fatal:fatal??null,physical_iphone:'NOT_TESTED'
   },null,2));
   if(fatal||rows.length!==12*engines.length||rows.some(r=>r.status!=='PASS')||
