@@ -70,8 +70,10 @@ async function normal(p,row){
   await click(p,'load-file');assert.deepEqual(await save(p),s);
   await click(p,'example');assert.deepEqual(await save(p),original);
   for(const id of ['fit','turn','zoom','zoom-out'])await p.locator('#'+id).click();
+  await p.selectOption('#instance','F01');
   await p.locator('#instance').focus();await p.keyboard.press('ArrowDown');
-  assert.ok(['F01','G01','F02'].includes(await p.locator('#instance').inputValue()));
+  assert.equal(await p.locator('#instance').inputValue(),'G01');
+  assert.match(await p.locator('#selection').textContent(),/^G01 /);
   assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'horizontal overflow');
   row.checks=['initial actual GLB load','connected edit rejection','add/move/rotate','align/reject/disconnect/remove','v2 JSON and file load','view buttons and keyboard','responsive width'];
 }
