@@ -93,6 +93,42 @@ async function normal(p,row){
   assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'horizontal overflow');
   row.checks=['initial actual GLB load','connected edit rejection','add/move/rotate','align/reject/disconnect/remove','v2 JSON paste and file load','download byte equality','3D mouse selection','view buttons and exact keyboard selection','responsive width'];
 }
+async function touchNormal(p,row){
+  await initial(p);
+  await p.evaluate(()=>{
+    window.__stage4aTouch=[];
+    document.addEventListener('pointerup',e=>{
+      if(e.isTrusted&&e.pointerType==='touch')window.__stage4aTouch.push(e.target.closest('button')?.id||e.target.tagName);
+    },true);
+  });
+  assert.ok(await p.evaluate(()=>navigator.maxTouchPoints>0));
+  const tap=async id=>{await p.locator('#'+id).tap();await ready(p)};
+  const canvas=p.locator('#viewport canvas');await canvas.scrollIntoViewIfNeeded();
+  const box=await canvas.boundingBox();assert.ok(box);
+  await p.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+  await p.waitForFunction(()=>document.querySelector('#instance').value==='G01');
+  assert.match(await p.locator('#selection').textContent(),/^G01 /);
+  await tap('add');assert.equal(await p.locator('#instance').inputValue(),'P1');
+  await p.locator('#x').fill('8');await p.locator('#y').fill('2');await p.locator('#z').fill('0');
+  await tap('move');await tap('right');await tap('save');
+  const a=JSON.parse(await p.locator('#json').inputValue());
+  assert.equal(a.instances.length,4);
+  assert.deepEqual(a.instances.find(i=>i.id==='P1').translation_m,[8,2,0]);
+  assert.equal(a.instances.find(i=>i.id==='P1').yaw_quarters,1);
+  assert.deepEqual(a.instances.slice(0,3),original.instances);
+  await tap('left');
+  await p.selectOption('#port-a',key('F02','right'));await p.selectOption('#port-b',key('P1','left'));
+  await tap('align');await tap('save');
+  assert.equal(JSON.parse(await p.locator('#json').inputValue()).connections.length,3);
+  const conn=await p.locator('#connection option').evaluateAll(os=>os.map(o=>o.value).filter(Boolean).find(v=>JSON.parse(v).b.instance_id==='P1'));
+  await p.selectOption('#connection',conn);await tap('disconnect');await tap('remove');await tap('save');
+  assert.deepEqual(JSON.parse(await p.locator('#json').inputValue()),original);
+  for(const id of ['fit','turn','zoom','zoom-out'])await p.locator('#'+id).tap();
+  row.touchEvents=await p.evaluate(()=>window.__stage4aTouch);
+  for(const id of ['CANVAS','add','move','right','left','align','disconnect','remove','save','fit','turn','zoom','zoom-out'])
+    assert.ok(row.touchEvents.includes(id),'missing trusted touch event '+id);
+  row.checks=['trusted touch events','3D touch selection','tap edit and view controls','saved design equality'];
+}
 let fatal;
 try{
   const {chromium,webkit}=await import(pathToFileURL(process.env.PW_MODULE||'/tmp/castle2d-pw/node_modules/playwright/index.mjs').href);
@@ -109,6 +145,18 @@ try{
           catch(e){row.error=e.stack;await p.screenshot({path:resolve(out,'FAIL-'+id+'.png'),fullPage:true}).catch(()=>{})}
           finally{await c.tracing.stop({path:resolve(out,id+'.zip')})}
         }catch(e){row.error=e.stack}
+        finally{rows.push(row);await c.close()}
+      }
+      for(const [width,motion] of [[375,'no-preference'],[390,'reduce']]){
+        const id=engine+'-touch-'+width+'-'+motion,row={engine,width,motion,input:'touch',status:'FAIL',errors:[]};
+        const c=await b.newContext({viewport:{width,height:900},reducedMotion:motion,hasTouch:true});
+        try{
+          await dependencies(c);const p=await c.newPage();p.on('pageerror',e=>row.errors.push(e.message));
+          await c.tracing.start({screenshots:true,snapshots:true});
+          try{await touchNormal(p,row);assert.deepEqual(row.errors,[]);await p.screenshot({path:resolve(out,id+'.png'),fullPage:true});row.status='PASS'}
+          catch(e){row.error=e.stack;await p.screenshot({path:resolve(out,'FAIL-'+id+'.png'),fullPage:true}).catch(()=>{})}
+          finally{await c.tracing.stop({path:resolve(out,id+'.zip')})}
+        }catch(e){row.error=e.stack;row.status='FAIL'}
         finally{rows.push(row);await c.close()}
       }
       for(const fault of ['missing-glb','wrong-glb']){
@@ -130,7 +178,7 @@ finally{
   writeFileSync(resolve(out,'results.json'),JSON.stringify({
     head:execFileSync('git',['rev-parse','HEAD']).toString().trim(),
     tree:execFileSync('git',['rev-parse','HEAD^{tree}']).toString().trim(),
-    expected:10*engines.length,rows,fatal:fatal??null,physical_iphone:'NOT_TESTED'
+    expected:12*engines.length,rows,fatal:fatal??null,physical_iphone:'NOT_TESTED'
   },null,2));
-  if(fatal||rows.length!==10*engines.length||rows.some(r=>r.status!=='PASS'))process.exitCode=1;
+  if(fatal||rows.length!==12*engines.length||rows.some(r=>r.status!=='PASS'))process.exitCode=1;
 }
