@@ -144,7 +144,7 @@ try{
           try{await normal(p,row);assert.deepEqual(row.errors,[]);await p.screenshot({path:resolve(out,id+'.png'),fullPage:true});row.status='PASS'}
           catch(e){row.error=e.stack;await p.screenshot({path:resolve(out,'FAIL-'+id+'.png'),fullPage:true}).catch(()=>{})}
           finally{await c.tracing.stop({path:resolve(out,id+'.zip')})}
-        }catch(e){row.error=e.stack}
+        }catch(e){row.error=e.stack;row.status='FAIL'}
         finally{rows.push(row);await c.close()}
       }
       for(const [width,motion] of [[375,'no-preference'],[390,'reduce']]){
@@ -160,15 +160,38 @@ try{
         finally{rows.push(row);await c.close()}
       }
       for(const fault of ['missing-glb','wrong-glb']){
-        const row={engine,fault,status:'FAIL'},c=await b.newContext();
+        const id=engine+'-'+fault,row={engine,fault,status:'FAIL',errors:[]},c=await b.newContext();
         try{
           await dependencies(c);
-          await c.route('**/cad/stage3a/generated/B0/assembly.glb',r=>r.fulfill(fault==='missing-glb'?{status:404,body:'missing'}:{status:200,body:Buffer.from([0,1,2,3])}));
-          const p=await c.newPage();await p.goto(base,{waitUntil:'domcontentloaded'});await error(p);
-          assert.equal(await p.locator('#add').isDisabled(),true);
-          assert.match(await p.locator('#summary').textContent(),/—/);
-          row.status='PASS';
-        }catch(e){row.error=e.stack}finally{rows.push(row);await c.close()}
+          const pattern='**/cad/stage3a/generated/B0/assembly.glb';
+          let injected=0;
+          const handler=r=>{injected++;return r.fulfill(fault==='missing-glb'?{status:404,body:'missing'}:{status:200,body:Buffer.from([0,1,2,3])})};
+          await c.route(pattern,handler);
+          const p=await c.newPage();p.on('pageerror',e=>row.errors.push(e.message));
+          await c.tracing.start({screenshots:true,snapshots:true});
+          try{
+            await p.goto(base,{waitUntil:'domcontentloaded'});await error(p);
+            assert.equal(injected,1);
+            assert.equal(await p.locator('#add').isDisabled(),true);
+            assert.match(await p.locator('#summary').textContent(),/—/);
+            row.failureReason=await p.locator('#status').textContent();
+            assert.ok(row.failureReason.includes(fault==='missing-glb'?'asset HTTP 404 cad/stage3a/generated/B0/assembly.glb':'GLB SHA-256 mismatch'));
+            await p.screenshot({path:resolve(out,id+'-rejected.png'),fullPage:true});
+            await c.unroute(pattern,handler);
+            const [response]=await Promise.all([p.waitForResponse(r=>r.url().endsWith('/cad/stage3a/generated/B0/assembly.glb')&&r.status()===200),p.reload({waitUntil:'domcontentloaded'})]);
+            assert.ok((await response.body()).length>4);
+            await ready(p);
+            assert.equal(await p.locator('#viewport canvas').count(),1);
+            assert.equal(await p.locator('#instance option').count(),3);
+            assert.equal(await p.locator('#summary').textContent(),'配置数：3 / メッシュ数：21 / 接続数：2（接続点一致のみ）');
+            assert.equal(await p.locator('#add').isEnabled(),true);
+            assert.deepEqual(await save(p),original);
+            assert.equal(injected,1);assert.deepEqual(row.errors,[]);
+            row.recoveredSummary=await p.locator('#summary').textContent();
+            await p.screenshot({path:resolve(out,id+'-recovered.png'),fullPage:true});
+            row.status='PASS';
+          }finally{await c.tracing.stop({path:resolve(out,id+'.zip')})}
+        }catch(e){row.error=e.stack;row.status='FAIL'}finally{rows.push(row);await c.close()}
       }
     }finally{await b.close()}
   }
