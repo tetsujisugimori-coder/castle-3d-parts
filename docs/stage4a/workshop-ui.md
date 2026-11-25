@@ -1,4 +1,6 @@
 # Stage 4-A 第2便・操作画面増分（Refs #49 / PR #50）
+## 現行判定（2026-11-26）
+固定HEAD 027e261063a9eb16c268f99158ad95db6f234a5e の正式CIは18/18、30ジョブ成功。工房Chromium/WebKit各10/10、独立レビューの専用Node91/91。確認済み機能は限定PASS、Issue #49全体PARTIAL、第4工程HOLD。P2-01タッチ相当・故障復帰、P2-02永続保全は未完。以下の初回試験計画は履歴であり現行結果ではない。実機iPhone SafariはNOT_TESTED。
 ## 開発用画面
 リポジトリのルートで `python -m http.server 8000 --bind 127.0.0.1` を実行し、`http://127.0.0.1:8000/previews/stage4a/workshop.html` を開く。固定Three.js 0.180.0 CDNへの接続が必要。既存展示室・Pagesへの導線とビルド統合は次工程。公開していない。
 - 左の部品棚で木柵/木戸を選択・追加する。新規IDは未使用のP番号、初期座標はmax(0,既存X)+6m。これは干渉を回避できる保証ではない。
