@@ -1,0 +1,23 @@
+{
+  "source_commit":"16e22645ee0d0c03926c4e15a753c7e64fb2c450",
+  "source_recipe_sha256":"691a106232f85dcfcd6b568507e0ad02328b96cba8dda88e6bd94ff7289b6b98",
+  "basis":"D",
+  "frame":"right-handed-Z-up",
+  "unit":"mm",
+  "revision":"D0",
+  "assembly_id":"YAM-WEST-LEFT-LEAF",
+  "definitions": {
+    "YAM-WEST-LEFT-BOARD": {"node":"WestGateBoard","stem":"west-gate-board-draft","size_mm":[270,130,2850]},
+    "YAM-WEST-LEFT-RAIL": {"node":"WestGateRail","stem":"west-gate-rail-draft","size_mm":[1850,170,150]}
+  },
+  "instances":[
+    {"id":"B01","source":"YAM-WEST-LEFT-BOARD","at_mm":[0,0,0]},
+    {"id":"B02","source":"YAM-WEST-LEFT-BOARD","at_mm":[290,0,0]},
+    {"id":"B03","source":"YAM-WEST-LEFT-BOARD","at_mm":[580,0,0]},
+    {"id":"B04","source":"YAM-WEST-LEFT-BOARD","at_mm":[870,0,0]},
+    {"id":"B05","source":"YAM-WEST-LEFT-BOARD","at_mm":[1160,0,0]},
+    {"id":"B06","source":"YAM-WEST-LEFT-BOARD","at_mm":[1450,0,0]},
+    {"id":"R01","source":"YAM-WEST-LEFT-RAIL","at_mm":[-65,130,400]},
+    {"id":"R02","source":"YAM-WEST-LEFT-RAIL","at_mm":[-65,130,2100]}
+  ]
+}

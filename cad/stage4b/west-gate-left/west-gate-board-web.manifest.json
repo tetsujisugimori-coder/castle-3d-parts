@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "assembly_id": "YAM-WEST-LEFT-BOARD",
+  "revision": "D0",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "parts": [
+    {
+      "glb_node": "WestGateBoard",
+      "bounds_m": [
+        0,
+        0,
+        0,
+        0.27,
+        0.13,
+        2.85
+      ]
+    }
+  ],
+  "files": {
+    "glb": {
+      "path": "west-gate-board-web.glb",
+      "sha256": "04adbd61be704eabd235d7e40d8e432d8a64175abc0dcdfc1bbad7daec86b26a"
+    }
+  }
+}

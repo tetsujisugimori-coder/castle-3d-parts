@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "assembly_id": "YAM-WEST-LEFT-LEAF",
+  "revision": "D0",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "parts": [
+    {
+      "glb_node": "B01",
+      "bounds_m": [
+        0,
+        0,
+        0,
+        0.27,
+        0.13,
+        2.85
+      ]
+    },
+    {
+      "glb_node": "B02",
+      "bounds_m": [
+        0.29,
+        0,
+        0,
+        0.56,
+        0.13,
+        2.85
+      ]
+    },
+    {
+      "glb_node": "B03",
+      "bounds_m": [
+        0.58,
+        0,
+        0,
+        0.85,
+        0.13,
+        2.85
+      ]
+    },
+    {
+      "glb_node": "B04",
+      "bounds_m": [
+        0.87,
+        0,
+        0,
+        1.14,
+        0.13,
+        2.85
+      ]
+    },
+    {
+      "glb_node": "B05",
+      "bounds_m": [
+        1.16,
+        0,
+        0,
+        1.43,
+        0.13,
+        2.85
+      ]
+    },
+    {
+      "glb_node": "B06",
+      "bounds_m": [
+        1.45,
+        0,
+        0,
+        1.72,
+        0.13,
+        2.85
+      ]
+    },
+    {
+      "glb_node": "R01",
+      "bounds_m": [
+        -0.065,
+        0.13,
+        0.4,
+        1.785,
+        0.3,
+        0.55
+      ]
+    },
+    {
+      "glb_node": "R02",
+      "bounds_m": [
+        -0.065,
+        0.13,
+        2.1,
+        1.785,
+        0.3,
+        2.25
+      ]
+    }
+  ],
+  "files": {
+    "glb": {
+      "path": "west-gate-left-leaf.glb",
+      "sha256": "3eced51663e41b05656ab5508769b130265fbd8ce2380ebcd9326cfc68da253d"
+    }
+  }
+}

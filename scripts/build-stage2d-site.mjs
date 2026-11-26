@@ -57,3 +57,6 @@ for(const rev of ['B0','B1','B2'])for(const f of ['assembly.glb','drawing.svg','
 await writeFile('dist/deployment-manifest.json',JSON.stringify(version,null,2)+'\n');
 await writeFile('dist/.nojekyll','');
 console.log('Official Pages composition complete (Stage 2-D exhibition and Stage 4-A workshop). No deployment performed by this command.');
+
+// The Stage 4-B leaf uses the same Pages project path; no deployment step here.
+await import('./build-stage4b-site.mjs');

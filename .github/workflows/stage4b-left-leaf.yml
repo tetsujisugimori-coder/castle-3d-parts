@@ -1,0 +1,81 @@
+name: Stage 4-B left leaf browser
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/stage4b-left-leaf.yml'
+      - '.github/workflows/pages.yml'
+      - 'assembly/stage4a/**'
+      - 'assembly/stage4b/**'
+      - 'previews/stage4a/**'
+      - 'cad/stage4b/**'
+      - 'blender/stage4b/**'
+      - 'scripts/stage4b/**'
+      - 'scripts/build-stage2d-site.mjs'
+      - 'tests/stage4b-*.test.mjs'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: [chromium, webkit]
+    env:
+      STAGE4B_ENGINE: ${{ matrix.engine }}
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Isolated evidence and dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="$RUNNER_TEMP/stage4b-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$STAGE4B_ENGINE"
+          mkdir -p "$base/evidence" "$base/deps"
+          printf 'STAGE4B_OUT=%s\nDEPS=%s\nPLAYWRIGHT_BROWSERS_PATH=%s\n' "$base/evidence" "$base/deps" "$base/browsers" >> "$GITHUB_ENV"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git rev-parse HEAD HEAD^{tree} > "$base/evidence/git.txt"
+          node --version > "$base/evidence/node.txt"
+          cat /etc/os-release > "$base/evidence/os-release.txt"
+      - name: Build Pages and check model contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test tests/stage4b-left-leaf.test.mjs 2>&1 | tee "$STAGE4B_OUT/model.log"
+          node scripts/build-stage2d-site.mjs 2>&1 | tee "$STAGE4B_OUT/build.log"
+          node --test scripts/stage4a-pages-check.mjs 2>&1 | tee "$STAGE4B_OUT/prior-pages.log"
+          (cd dist; find . -type f -print0 | sort -z | xargs -0 -r sha256sum) > "$STAGE4B_OUT/dist-SHA256SUMS"
+      - name: Install fixed Playwright and Three.js
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$DEPS" --save-exact --no-audit --no-fund playwright@1.56.1 three@0.180.0 2>&1 | tee "$STAGE4B_OUT/npm.log"
+          cp "$DEPS/package-lock.json" "$STAGE4B_OUT/package-lock.json"
+          "$DEPS/node_modules/.bin/playwright" install --with-deps "$STAGE4B_ENGINE" 2>&1 | tee "$STAGE4B_OUT/playwright.log"
+      - name: Check actual gallery and workshop routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PW_MODULE="$DEPS/node_modules/playwright/index.mjs"
+          export THREE_ROOT="$DEPS/node_modules/three"
+          node scripts/stage4b/browser.mjs 2>&1 | tee "$STAGE4B_OUT/browser.log"
+      - name: Hash artifacts
+        if: always() && env.STAGE4B_OUT != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$STAGE4B_OUT"
+          find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 -r sha256sum > SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        if: always() && env.STAGE4B_OUT != ''
+        with:
+          name: stage4b-left-leaf-${{ matrix.engine }}-${{ github.event.pull_request.head.sha }}-attempt-${{ github.run_attempt }}
+          path: ${{ env.STAGE4B_OUT }}/
+          if-no-files-found: error
