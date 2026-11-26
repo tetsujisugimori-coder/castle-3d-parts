@@ -1,0 +1,107 @@
+{
+  "basis": "D",
+  "catalog_commit": "8dcd835523c4de68f2f39e8cc5ea078c712a358d",
+  "connections": [],
+  "frame": "right-handed-Z-up",
+  "instances": [
+    {
+      "definition_id": "YAM-WEST-LEFT-BOARD",
+      "id": "B01",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "definition_id": "YAM-WEST-LEFT-BOARD",
+      "id": "B02",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        0.29,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "definition_id": "YAM-WEST-LEFT-BOARD",
+      "id": "B03",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        0.58,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "definition_id": "YAM-WEST-LEFT-BOARD",
+      "id": "B04",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        0.87,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "definition_id": "YAM-WEST-LEFT-BOARD",
+      "id": "B05",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        1.16,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "definition_id": "YAM-WEST-LEFT-BOARD",
+      "id": "B06",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        1.45,
+        0,
+        0
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "definition_id": "YAM-WEST-LEFT-RAIL",
+      "id": "R01",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        -0.065,
+        0.13,
+        0.4
+      ],
+      "yaw_quarters": 0
+    },
+    {
+      "definition_id": "YAM-WEST-LEFT-RAIL",
+      "id": "R02",
+      "pose": null,
+      "revision": "D0",
+      "translation_m": [
+        -0.065,
+        0.13,
+        2.1
+      ],
+      "yaw_quarters": 0
+    }
+  ],
+  "schema_version": 2,
+  "unit": "m",
+  "catalog_sha256": "bc6e6d35f8a0811b74f07db6746ef3fcfb8123cf9a5a7f08ecb51b4e17708fd1"
+}

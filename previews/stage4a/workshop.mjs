@@ -1,11 +1,15 @@
 import {createGlbAssembler} from '../../assembly/stage4a/glb-scene.mjs';
+import {saveAssembly} from '../../assembly/stage4a/contract.mjs';
 import {parseUniqueJson} from '../../assembly/stage4a/json-data.mjs';
 import {createWorkshopController,nextPlacement,translationFromFields,portOptions,MAX_IMPORT_BYTES} from '../../assembly/stage4a/workshop-ui.mjs';
 
 const $=id=>document.getElementById(id);
 const host=$('viewport'),status=$('status'),root=new URL('../../',import.meta.url);
 const msg=(state,text)=>{status.dataset.state=state;status.textContent=text};
-const label=d=>d.id==='PAL-U01'?'木柵 U01（B0）':'簡易木戸（固定B0）';
+const gatePage=document.body.dataset.model==='west-gate-left';
+const viewing=gatePage&&document.body.dataset.view==='exhibit';
+const modelRoot=gatePage?'assembly/stage4b/':'assembly/stage4a/';
+const label=d=>d.label??(d.id==='PAL-U01'?'木柵 U01（B0）':'簡易木戸（固定B0）');
 const opt=(text,value)=>new Option(text,value);
 const endLabel=e=>e.instance_id+' / '+e.port;
 async function fetchText(path){const r=await fetch(new URL(path,root));if(!r.ok)throw Error('HTTP '+r.status+' '+path);return r.text()}
@@ -13,9 +17,13 @@ let lost=false;
 try{
   const [THREE,{GLTFLoader},{OrbitControls},catalogText,exampleText]=await Promise.all([
     import('three'),import('three/addons/loaders/GLTFLoader.js'),import('three/addons/controls/OrbitControls.js'),
-    fetchText('assembly/stage4a/catalog.json'),fetchText('assembly/stage4a/example.json')
+    fetchText(modelRoot+'catalog.json'),fetchText(modelRoot+'example.json')
   ]);
   const catalog=parseUniqueJson(catalogText);
+  if(gatePage){
+    const {validateFixedLeaf}=await import('../../assembly/stage4b/fixed-leaf.mjs');
+    await validateFixedLeaf(catalog,exampleText);
+  }
   const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'low-power'});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
   host.append(renderer.domElement);
@@ -43,7 +51,7 @@ try{
     const halfX=Math.atan(Math.tan(halfY)*camera.aspect);
     const dist=1.2*radius/Math.sin(Math.min(halfX,halfY));
     orbit.maxDistance=Math.max(100,dist*2);camera.far=Math.max(200,dist*4);camera.updateProjectionMatrix();
-    orbit.target.copy(centre);camera.position.copy(centre).add(new THREE.Vector3(.30,.36,1).normalize().multiplyScalar(dist));
+    orbit.target.copy(centre);camera.position.copy(centre).add(new THREE.Vector3(gatePage ? .08 : .30,gatePage ? .22 : .36,gatePage ? -1 : 1).normalize().multiplyScalar(dist));
     orbit.update();render();
   }
   function clearBox(){
@@ -52,7 +60,7 @@ try{
   function showSelection(){
     clearBox();
     const g=view?.instances.get(selected);
-    if(g){selectionBox=new THREE.BoxHelper(g,0x1465a3);scene.add(selectionBox)}
+    if(g&&!viewing){selectionBox=new THREE.BoxHelper(g,0x1465a3);scene.add(selectionBox)}
     render();
   }
   function publish(candidate,next){
@@ -66,7 +74,7 @@ try{
     if(old)scene.remove(old.group);
     clearBox();scene.add(candidate.group);
     try{
-      if(!old)fit(candidate);else render();
+      if(!old||viewing)fit(candidate);else render();
       if(lost||renderer.getContext().isContextLost())throw Error('WebGL context lost');
       view=candidate;
     }catch(e){
@@ -88,7 +96,7 @@ try{
     const a=controller.snapshot(),ready=Boolean(a)&&!busy&&!lost;
     for(const el of document.querySelectorAll('[data-edit]'))el.disabled=!ready;
     for(const el of document.querySelectorAll('[data-selected]'))el.disabled=!ready||!selected;
-    for(const el of document.querySelectorAll('[data-view]'))el.disabled=!view||lost||busy;
+    for(const el of document.querySelectorAll('button[data-view], button[data-preset]'))el.disabled=!view||lost||busy;
     for(const el of document.querySelectorAll('[data-connect]'))el.disabled=!ready||!$('port-a').value||!$('port-b').value;
     $('disconnect').disabled=!ready||!$('connection').value;
   }
@@ -161,7 +169,7 @@ try{
     if(file.size>MAX_IMPORT_BYTES)throw Error('ファイルが大きすぎます。');
     await controller.load(await file.text());
   },'ファイルを読み込みました。');
-  $('example').onclick=()=>run(()=>controller.load(exampleText),'代表配置に戻しました。','F01');
+  $('example').onclick=()=>run(()=>controller.load(exampleText),gatePage?'左門扉の初期配置に戻しました。':'代表配置に戻しました。',gatePage?'B01':'F01');
   $('fit').onclick=()=>fit();$('turn').onclick=()=>{camera.position.sub(orbit.target).applyAxisAngle(new THREE.Vector3(0,1,0),Math.PI/6).add(orbit.target);orbit.update()};
   function zoom(scale){
     const d=camera.position.clone().sub(orbit.target);
@@ -189,7 +197,22 @@ try{
   renderer.domElement.addEventListener('webglcontextlost',e=>{
     e.preventDefault();lost=true;controller.stop();syncEnabled();msg('error','WebGL接続喪失。ページを再読み込みしてください。');
   });
-  await run(()=>controller.load(exampleText),'代表配置を読み込みました。','F01');
+  if(viewing){
+    const a=parseUniqueJson(exampleText);
+    const choices={assembly:null,board:'YAM-WEST-LEFT-BOARD',rail:'YAM-WEST-LEFT-RAIL'};
+    for(const button of document.querySelectorAll('button[data-preset]')){
+      button.onclick=()=>run(async()=>{
+        const key=button.dataset.preset;
+        if(!Object.hasOwn(choices,key))throw new Error('不明な展示');
+        const entry=catalog.definitions.find(d=>d.id===choices[key]);
+        await controller.load(entry?await saveAssembly(catalog,{...a,instances:[{
+          id:'P01',definition_id:entry.id,revision:entry.revision,pose:entry.pose,translation_m:[0,0,0],yaw_quarters:0,
+        }],connections:[]}):exampleText);
+        for(const b of document.querySelectorAll('button[data-preset]'))b.setAttribute('aria-pressed',String(b===button));
+      },button.textContent+'を表示しました。');
+    }
+  }
+  await run(()=>controller.load(exampleText),gatePage?'左門扉を読み込みました。':'代表配置を読み込みました。',gatePage?'B01':'F01');
   // Initial loading may fail; a reload is a deliberate fresh page request.
   if(!controller.snapshot()&&!lost)msg('error',status.textContent+' ページを再読み込みしてください。');
 }catch(e){msg('error','3D工房を開始できません：'+e.message)}

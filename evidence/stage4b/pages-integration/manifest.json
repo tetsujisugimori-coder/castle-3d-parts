@@ -1,0 +1,9 @@
+{
+  "files": {
+    "scripts/build-stage2d-site.mjs": {
+      "previous": "evidence/stage4b/pages-integration/build-stage2d-site.mjs.txt",
+      "before_sha256": "710b7a826064b5e3b2fee8350496169374b6cb42b09c5edefd862f970b17f419",
+      "after_sha256": "8da1bd7f138ff110fdb5286cda73727e2fa56fc298991977dceaa4b50f4dff00"
+    }
+  }
+}

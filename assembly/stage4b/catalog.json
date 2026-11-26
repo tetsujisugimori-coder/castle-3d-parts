@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "basis": "D",
+  "frame": "right-handed-Z-up",
+  "unit": "m",
+  "baseline_commit": "8dcd835523c4de68f2f39e8cc5ea078c712a358d",
+  "definitions": [
+    {
+      "id": "YAM-WEST-LEFT-BOARD",
+      "upstream_id": "YAM-WEST-LEFT-BOARD",
+      "revision": "D0",
+      "pose": null,
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "label": "左門扉の板材（D0）",
+      "nodes": [
+        "WestGateBoard"
+      ],
+      "ports": {},
+      "manifest": "cad/stage4b/west-gate-left/west-gate-board-web.manifest.json",
+      "glb": "cad/stage4b/west-gate-left/west-gate-board-web.glb",
+      "glb_sha256": "04adbd61be704eabd235d7e40d8e432d8a64175abc0dcdfc1bbad7daec86b26a"
+    },
+    {
+      "id": "YAM-WEST-LEFT-RAIL",
+      "upstream_id": "YAM-WEST-LEFT-RAIL",
+      "revision": "D0",
+      "pose": null,
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "label": "左門扉の横桟（D0）",
+      "nodes": [
+        "WestGateRail"
+      ],
+      "ports": {},
+      "manifest": "cad/stage4b/west-gate-left/west-gate-rail-draft.manifest.json",
+      "glb": "cad/stage4b/west-gate-left/west-gate-rail-draft.glb",
+      "glb_sha256": "8ebb5954e09e8a30957c785a6fc4a917eb7b0aea740a7ac8225ee679fc3e1777"
+    }
+  ],
+  "limits": {
+    "historical": "UNKNOWN",
+    "physical_strength": "NOT_TESTED",
+    "continuous_motion": "UNKNOWN",
+    "joinery": "UNKNOWN",
+    "connection": "NO_CERTIFIED_PORTS",
+    "model": "STATIC_REFERENCE_ONLY"
+  }
+}

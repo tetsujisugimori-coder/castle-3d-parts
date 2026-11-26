@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "assembly_id": "YAM-WEST-LEFT-RAIL",
+  "revision": "D0",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "parts": [
+    {
+      "glb_node": "WestGateRail",
+      "bounds_m": [
+        0,
+        0,
+        0,
+        1.85,
+        0.17,
+        0.15
+      ]
+    }
+  ],
+  "files": {
+    "glb": {
+      "path": "west-gate-rail-draft.glb",
+      "sha256": "8ebb5954e09e8a30957c785a6fc4a917eb7b0aea740a7ac8225ee679fc3e1777"
+    }
+  }
+}

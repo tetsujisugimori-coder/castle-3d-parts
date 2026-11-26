@@ -19,7 +19,14 @@
       "historical_form": "UNKNOWN",
       "historical_dimensions": "UNKNOWN",
       "placement": "NOT_AUTHORIZED",
-      "note": "模型の板6枚。GATE_Doorは単一板戸であり同一部品と認定しない。板単体化候補。"
+      "note": "模型の板6枚。GATE_Doorは単一板戸であり同一部品と認定しない。板単体化候補。",
+      "stage4b_candidate": {
+        "status": "PREPARED_DRAFT_D0",
+        "definition_id": "YAM-WEST-LEFT-BOARD",
+        "assembly_id": "YAM-WEST-LEFT-LEAF",
+        "handoff": "docs/stage4b/west-gate-left.md",
+        "adoption": "NOT_AUTHORIZED"
+      }
     },
     {
       "id": "YAM-002",
@@ -35,7 +42,14 @@
       "historical_form": "UNKNOWN",
       "historical_dimensions": "UNKNOWN",
       "placement": "NOT_AUTHORIZED",
-      "note": "gate.door.rail.1.2.15。寸法・仕口を確認して汎用化。"
+      "note": "gate.door.rail.1.2.15。寸法・仕口を確認して汎用化。",
+      "stage4b_candidate": {
+        "status": "PREPARED_DRAFT_D0",
+        "definition_id": "YAM-WEST-LEFT-RAIL",
+        "assembly_id": "YAM-WEST-LEFT-LEAF",
+        "handoff": "docs/stage4b/west-gate-left.md",
+        "adoption": "NOT_AUTHORIZED"
+      }
     },
     {
       "id": "YAM-003",
@@ -51,7 +65,14 @@
       "historical_form": "UNKNOWN",
       "historical_dimensions": "UNKNOWN",
       "placement": "NOT_AUTHORIZED",
-      "note": "gate.door.rail.1.0.45。上横桟との差を調査。"
+      "note": "gate.door.rail.1.0.45。上横桟との差を調査。",
+      "stage4b_candidate": {
+        "status": "PREPARED_DRAFT_D0",
+        "definition_id": "YAM-WEST-LEFT-RAIL",
+        "assembly_id": "YAM-WEST-LEFT-LEAF",
+        "handoff": "docs/stage4b/west-gate-left.md",
+        "adoption": "NOT_AUTHORIZED"
+      }
     },
     {
       "id": "YAM-004",
