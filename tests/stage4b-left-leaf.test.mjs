@@ -56,3 +56,25 @@ test('prototype inputs unchanged, metadata refresh deterministic',()=>{
  ])assert.equal(createHash('sha256').update(get(p)).digest('hex'),want);
  execFileSync(process.execPath,['scripts/stage4b/build-catalog.mjs','--check']);
 });
+
+test('canvas check rejects a blank image even when bulky, and accepts a highly compressed gate raster',async()=>{
+ const {deflateSync,crc32}=await import('node:zlib');
+ const {assertLeafPixels}=await import('../scripts/stage4b/png.mjs');
+ const make=(draw,level)=>{
+  const chunk=(type,b)=>{
+   const c=Buffer.alloc(12+b.length);c.writeUInt32BE(b.length);c.write(type,4);b.copy(c,8);
+   c.writeUInt32BE(crc32(c.subarray(4,-4)),c.length-4);return c;
+  };
+  const w=100,h=110,stride=w*3+1,header=Buffer.alloc(13),raw=Buffer.alloc(h*stride);
+  header.writeUInt32BE(w);header.writeUInt32BE(h,4);header[8]=8;header[9]=2;
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+   const b=draw&&x>=35&&x<64&&y>=15&&y<95?[130,78,35]:[195,204,183];
+   raw.set(b,y*stride+1+x*3);
+  }
+  return Buffer.concat([Buffer.from('89504e470d0a1a0a','hex'),chunk('IHDR',header),chunk('IDAT',deflateSync(raw,{level})),chunk('IEND',Buffer.alloc(0))]);
+ };
+ const good=make(true,9),bad=make(false,0);
+ assert(good.length<5000);assert(bad.length>5000);
+ assert.equal(assertLeafPixels(good).woodPixels,29*80);
+ assert.throws(()=>assertLeafPixels(bad),/rendered surface not found/);
+});

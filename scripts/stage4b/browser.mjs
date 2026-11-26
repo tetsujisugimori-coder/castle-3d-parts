@@ -3,6 +3,7 @@ import {createServer} from 'node:http';
 import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
 import {resolve,extname,sep} from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {assertLeafPixels} from './png.mjs';
 import {execFileSync} from 'node:child_process';
 
 const out=resolve(process.env.STAGE4B_OUT);
@@ -65,7 +66,7 @@ try{
    const view=page.locator('#viewport canvas');
    await view.waitFor({state:'visible'});
    const image=await view.screenshot({path:resolve(out,width+'-'+reducedMotion+'-complete.png')});
-   assert(image.length>5000,'assembly screenshot is unexpectedly small');
+   row.exhibitPixels=assertLeafPixels(image);chk('exhibit canvas contains actual gate pixels');
    for(const [preset,count] of [['board',1],['rail',1],['assembly',8]]){
     const b=page.locator('[data-preset="'+preset+'"]');
     await b.click();await status(page);await assertSummary(page,count);
@@ -74,6 +75,8 @@ try{
    await follow(page,'open-gate-workshop',index+'stage4b/workshop/',width!==390);
    await status(page);await assertSummary(page,8);
    assert(await noOverflow(page));chk('workshop 8 rendered, no overflow');
+   row.workshopPixels=assertLeafPixels(await page.locator('#viewport canvas').screenshot({path:resolve(out,width+'-'+reducedMotion+'-workshop.png')}));
+   chk('workshop canvas contains actual gate pixels');
    assert.deepEqual(await save(page),canonical);chk('v2 original round trip');
    const x=page.locator('#x');
    await x.fill('0.01');await click(page,'move');
@@ -103,5 +106,5 @@ try{
  server.close();
  writeFileSync(resolve(out,'results.json'),JSON.stringify(meta,null,2)+'\n');
 }
-if(rows.length!==4||rows.some(r=>r.status!=='PASS'||r.checks.length!==13))process.exitCode=1;
+if(rows.length!==4||rows.some(r=>r.status!=='PASS'||r.checks.length!==15))process.exitCode=1;
 console.log(JSON.stringify(meta,null,2));
