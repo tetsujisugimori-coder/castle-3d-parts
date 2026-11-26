@@ -8,12 +8,26 @@
 - 手動JSON保存（テキスト表示またはダウンロード要求）、貼り付け・ファイル読込・代表配置の再読込を提供する。v2契約、カタログSHA、既存資産の照合を再利用。ファイル上限4,000,000 bytes、読込テキストは契約の上限に従う。
 - UIは処理を直列化する。検証→GLB準備→同期シーン反映→データ確定の順序とし、準備・反映失敗時に前の有効設計を保持する。反映後にUI更新が失敗した場合は操作を停止して再読み込みを求める。WebGL喪失は操作停止。自動保存なし。
 - 確認範囲は試作D、参照専用、アンカー一致。全体干渉・物理強度・史実・実Solid安全性・実運動・山中城への配置を認定しない。Stage 3-B HOLDと西櫓未配置を維持。
+## 第4工程の配信用ビルド
+
+Issue #49。展示室トップの「城郭組立工房（試作D）」から `stage4a/workshop/` へ移動し、工房上部の「展示室へ戻る」で展示室トップへ戻る。両方とも通常のリンクで、GitHub Pagesのリポジトリ配下でも使える。工房で編集した設計は移動前にJSONへ保存できる。入口から新しく入り直すと代表配置を読み込む。
+
+`node scripts/build-stage2d-site.mjs` が、GitHub Pagesで使う `dist/` を生成する。工房は従来の開発プレビューと同じ実装を使い、配信には実行用モジュール、カタログ、代表例、木柵と木戸のB0 GLB・対応manifestを含める。木柵は展示室の配信資産を共有する。既存の展示室・設計図・研究根拠とStage 2-Dの配信manifestを引き続き検証する。開発用プレビューは従来どおり個別に利用できる。
+
 ## 試験
 専用Node試験は `node --test tests/stage4a-assembly.test.mjs tests/stage4a-workshop.test.mjs tests/stage4a-glb-scene.test.mjs tests/stage4a-workshop-ui.test.mjs` で実行する。契約55・編集16・GLB10・UI制御10の計91件。
 
-工房の正式CIは Playwright 1.56.1 / Three.js 0.180.0 で Chromium・WebKit を実行する。各ブラウザの条件は、375/390/765/1280px × 通常/Reduced の8件、375px通常・390px Reduced のタッチ相当2件、木戸GLBの欠落・不正バイトの故障2件。正式CIの設定は `.github/workflows/stage4a-workshop.yml`。ローカル実行では `PW_MODULE` と `THREE_ROOT` を固定依存先、`STAGE4A_OUT` を証拠出力先に設定して `node scripts/stage4a-workshop-browser.mjs` を実行する。
+工房の正式CIは Playwright 1.56.1 / Three.js 0.180.0 で Chromium・WebKit を実行する。各ブラウザの条件は、375/390/765/1280px × 通常/Reduced の8件、375px通常・390px Reduced のタッチ相当2件、木戸GLBの欠落・不正バイトの故障2件。正式CIの設定は `.github/workflows/stage4a-workshop.yml`。ローカル実行では `PW_MODULE` と `THREE_ROOT` を固定依存先、`STAGE4A_OUT` を証拠出力先に設定して `node scripts/stage4a-workshop-browser.mjs` を実行する。配信用ビルドを試験する場合は先にビルドし、`STAGE4A_DISTRIBUTION=1` を設定する。正式CIはこの設定で、入力イベント、配信ファイルのSHA-256一覧、実行ログ、結果、画像、traceを保存する。
 
+- 配信用ビルドでは、リポジトリ配下のURLでマウス・キーボード・タッチ相当の往復を行う。戻った展示室で木柵を表示し、本数変更で全幅が変わることと初期値への復帰を検査する。展示室のCADビューは従来のStage 2-Dブラウザ試験で検査する。
 - 通常条件では編集と接続、キーボードによるF01→G01の選択、3Dマウス選択、クリップボードからのJSON貼付けとファイル読込、ダウンロードしたJSONの実バイト、狭幅表示を確認する。
 - タッチ相当条件はPlaywrightのタップを使い、各対象への信頼済み `touchstart/end` と `pointerType=touch` の `pointerdown/up`、3D選択と保存データを確認する。最小再現の有効・無効対照とマウス対照を別に記録する。WebKit WPEではタップが届いても `navigator.maxTouchPoints` が0になるため、この値は観測情報として記録する。
 - 故障対照は欠落とSHA不一致を理由別に確認し、故障解除後に同じページを再読込して3配置・21メッシュ・2接続と保存同値性まで検査する。
 - 物理iPhone Safari・実機タッチ・ピンチ・連続ドラッグはNOT_TESTED。Stage 3-B HOLD、西櫓未配置、実Solid安全性UNKNOWN、代表実運動NOT_TESTED。
+
+## 継続事項
+
+- 旧Stage 3-A/B/Cの保全検査は、引き続き過去の基準ファイル全件を検査する。配信ビルダーと関連する検証器2件の変更は `evidence/stage4a/pages-migration/manifest.json` に限定し、原本のSHA-256と現在版のSHA-256を検査する。
+
+- WebKit 26.0の旧方式の履歴再読込で観測した `Page crashed` の内部原因と、過去のStage 3-B回帰でローカル配信の取得が一時失敗した原因はUNKNOWN。第4工程のブラウザ結果と区別して記録する。
+- 正式CIの結果は対象HEAD・tree、実行ID、ジョブと原artifactの情報をDraft PRに記録する。GitHub Actionsの原ZIP・対応原ログを承認済み永続保存先に移す場合は案件別承認が必要。保存結果と別担当による取得・照合を、CI実行結果と別に記録する。

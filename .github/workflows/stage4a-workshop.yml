@@ -6,6 +6,15 @@ on:
       - 'assembly/stage4a/**'
       - 'previews/stage4a/**'
       - 'scripts/stage4a-workshop-browser.mjs'
+      - 'scripts/stage4a-pages-check.mjs'
+      - 'scripts/build-site.mjs'
+      - 'scripts/build-stage2c-site.mjs'
+      - 'scripts/build-stage2d-site.mjs'
+      - 'site/index.html'
+      - 'site/app.js'
+      - 'site/fence.mjs'
+      - 'site/styles.css'
+      - 'catalog/wooden-palisade-v0.json'
       - 'tests/stage4a-*.test.mjs'
       - 'cad/stage2c/generated/B0/**'
       - 'cad/stage3a/generated/B0/**'
@@ -57,14 +66,23 @@ jobs:
           npm ls --prefix "$DEPS_DIR" --all --json > "$STAGE4A_OUT/dependencies.json"
           cp "$DEPS_DIR/package-lock.json" "$STAGE4A_OUT/package-lock.json"
           "$DEPS_DIR/node_modules/.bin/playwright" install --with-deps "$STAGE4A_ENGINE" 2>&1 | tee "$STAGE4A_OUT/browser-install.log"
-      - name: Execute workshop browser suite
+      - name: Build Pages distribution and record file hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/build-stage2d-site.mjs 2>&1 | tee "$STAGE4A_OUT/build.log"
+          node --test scripts/stage4a-pages-check.mjs 2>&1 | tee "$STAGE4A_OUT/pages-check.log"
+          (cd dist; find . -type f -print0 | sort -z | xargs -0 -r sha256sum) > "$STAGE4A_OUT/dist-SHA256SUMS"
+      - name: Execute workshop browser suite against Pages distribution
+        env:
+          STAGE4A_DISTRIBUTION: '1'
         shell: bash
         run: |
           set -euo pipefail
           export PW_MODULE="$DEPS_DIR/node_modules/playwright/index.mjs"
           export THREE_ROOT="$DEPS_DIR/node_modules/three"
           node scripts/stage4a-workshop-browser.mjs 2>&1 | tee "$STAGE4A_OUT/browser.log"
-          node --input-type=module -e 'import fs from "node:fs"; const r=JSON.parse(fs.readFileSync(process.env.STAGE4A_OUT+"/results.json","utf8")); if(r.head!==process.env.EXPECTED_HEAD || r.expected!==12 || r.rows.length!==12 || r.fatal || r.rows.some(x=>x.status!=="PASS" || x.engine!==process.env.STAGE4A_ENGINE)) process.exit(1); console.log(JSON.stringify(r,null,2));'
+          node --input-type=module -e 'import fs from "node:fs"; const r=JSON.parse(fs.readFileSync(process.env.STAGE4A_OUT+"/results.json","utf8")); if(r.head!==process.env.EXPECTED_HEAD || r.scope!=="Pages dist at project prefix" || r.expected!==12 || r.rows.length!==12 || r.fatal || r.rows.some(x=>x.status!=="PASS" || x.engine!==process.env.STAGE4A_ENGINE)) process.exit(1); console.log(JSON.stringify(r,null,2));'
       - name: Record final evidence inventory
         if: always()
         shell: bash

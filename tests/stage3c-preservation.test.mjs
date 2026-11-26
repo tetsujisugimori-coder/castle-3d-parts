@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {preservedPagesHash} from '../scripts/stage4a/pages-preservation.mjs';
 import {createHash} from 'node:crypto';
 const b=JSON.parse(readFileSync('evidence/stage3c/baseline.json'));
 const allowed=new Set(['site/stage3b/app.mjs','scripts/build-stage3b-site.mjs']);
@@ -19,7 +20,8 @@ function verify(read=p=>readFileSync(p)) {
    assert.equal(hash(read(e.permitted_patch)),e.patch_sha256,p+' permitted diff');
    assert(e.reason.length>20);expected=e.after_sha256;
   }
-  assert.equal(hash(read(p)),expected,p);
+  const actual=allowed.has(p)?hash(read(p)):preservedPagesHash(p,expected,read);
+  assert.equal(actual,expected,p);
  }
  assert.equal(hash(read('site/shared/gate-viewer.mjs')),exceptions.shared_viewer_sha256,'shared dependency');
 }
