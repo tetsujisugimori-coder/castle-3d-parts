@@ -3,7 +3,7 @@
     "AGENTS.md": {
       "previous": "evidence/stage4b/policy-migration/AGENTS.md.txt",
       "before_sha256": "214c11b29e29c95284150648314ec7c9faaa41c42e89ab7c365af796f5ab09de",
-      "after_sha256": "acbdb84f001c49bba953506a77549ac0bcd96aa969187d25375d970afa464741"
+      "after_sha256": "9e369db30e5ec846a046be5ffbe3905b0bf8d860a0cb3d439bb0aa1c4d8285fe"
     },
     "scripts/stage2d/preservation.mjs": {
       "previous": "evidence/stage4b/policy-migration/stage2d-preservation.mjs.txt",

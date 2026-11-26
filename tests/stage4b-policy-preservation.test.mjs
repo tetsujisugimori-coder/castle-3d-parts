@@ -14,3 +14,13 @@ test('policy exception accepts only the exact predecessor and exact approved rep
  }
  assert.equal(priorPolicyBytes('site/index.html',Buffer.from('other'),read),null);
 });
+
+test('coordinated AGENTS + receipt hash edits and changes to the historical prefix are rejected',()=>{
+ const read=p=>readFileSync(p),h=b=>createHash('sha256').update(b).digest('hex');
+ const path='AGENTS.md', receipt='evidence/stage4b/policy-migration/manifest.json';
+ for(const bad of [Buffer.from('# replacement\n'),Buffer.concat([read(path),Buffer.from('unexpected suffix\n')]),read(path).subarray(1)]){
+  const content=JSON.parse(read(receipt));
+  content.files[path].after_sha256=h(bad);
+  assert.throws(()=>priorPolicyBytes(path,bad,p=>p===receipt?Buffer.from(JSON.stringify(content)):read(p)),/unexpected approved replacement fingerprint/);
+ }
+});
