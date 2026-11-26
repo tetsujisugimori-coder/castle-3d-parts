@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
+import {priorPolicyBytes} from '../stage4b/policy-preservation.mjs';
 
 const evidence='evidence/stage4a/pages-migration/';
 const migration=JSON.parse(readFileSync(new URL('../../'+evidence+'manifest.json',import.meta.url),'utf8'));
@@ -9,6 +10,8 @@ const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 
 /** Return the original digest for an explicitly recorded migration with both versions present. */
 export function preservedPagesHash(path,expected,read){
+ const historical=priorPolicyBytes(path,read(path),read);
+ if(historical&&sha(historical)===expected)return expected;
  let actual=sha(read(path));
  if(path==='scripts/build-stage2d-site.mjs'){
   const {files}=JSON.parse(read('evidence/stage4b/pages-integration/manifest.json'));

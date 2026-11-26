@@ -27,10 +27,20 @@ def validate_xml(xml,rows):
   pts=[float(prop(w,k).find('Float').attrib['value']) for k in ['X1','Y1','Z1','X2','Y2','Z2']];assert abs(math.dist(pts[:3],pts[3:])-d['value_mm'])<1e-6
  return True
 
+def validate_policy_append(prior,current,baseline_hash):
+ # Stage 4-B's policy-only exception. The old prefix and exact current bytes
+ # are independently fixed; receipt text cannot bless another file.
+ same(hashlib.sha256(prior).hexdigest(),baseline_hash)
+ same(hashlib.sha256(current).hexdigest(),'9e369db30e5ec846a046be5ffbe3905b0bf8d860a0cb3d439bb0aa1c4d8285fe')
+ assert current.startswith(prior) and len(current)>len(prior),'not the approved append'
+
 def check(root=ROOT,outputs=None):
  same(h(root/'design/stage2c/baseline.json'),'57f2855f39fb1642be5d838f53dd226e02a1e024505d912dedda69d79d53d47a');base=json.loads((root/'design/stage2c/baseline.json').read_text());same(base['commit'],'d1c367ca4b143cacc45ba8848b026701abf03b9c');same(len(base['hashes']),839)
  for p,hash in base['hashes'].items():
   if h(root/p)==hash:continue
+  if p=='AGENTS.md':
+   validate_policy_append((root/'evidence/stage4b/policy-migration/AGENTS.md.txt').read_bytes(),(root/p).read_bytes(),hash)
+   continue
   allowed={'.github/workflows/pages.yml','scripts/research-cad.mjs','scripts/stage2b.mjs','tests/hypothesis-preservation.test.mjs','scripts/cad-prototype.mjs','scripts/design-register.mjs','scripts/verification-register.mjs','scripts/hypothesis-evidence.mjs','cad/stage2c/check.py'}
   assert p in allowed,('ORIGINAL_CHANGED',p)
   migration=json.loads((root/'design/stage2d/code-migrations.json').read_text())['files'];same(set(migration),allowed);entry=migration[p]

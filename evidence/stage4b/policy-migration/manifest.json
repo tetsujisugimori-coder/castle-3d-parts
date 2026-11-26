@@ -1,0 +1,19 @@
+{
+  "files": {
+    "AGENTS.md": {
+      "previous": "evidence/stage4b/policy-migration/AGENTS.md.txt",
+      "before_sha256": "214c11b29e29c95284150648314ec7c9faaa41c42e89ab7c365af796f5ab09de",
+      "after_sha256": "9e369db30e5ec846a046be5ffbe3905b0bf8d860a0cb3d439bb0aa1c4d8285fe"
+    },
+    "scripts/stage2d/preservation.mjs": {
+      "previous": "evidence/stage4b/policy-migration/stage2d-preservation.mjs.txt",
+      "before_sha256": "efe2cc3fc367162c0f104f0d41756456f0a611378c5c207a24aef78b3cb4b37b",
+      "after_sha256": "d709e94e01771afa0ad777b38fb3e6480523691691619ab6373a9d9e30b5ef1c"
+    },
+    "cad/stage2c/check.py": {
+      "previous": "evidence/stage4b/policy-migration/stage2c-check.py.txt",
+      "before_sha256": "de60923b7c47261ebab5a932d5c5a4451c65f57021910f6bde58ee4cec0642ef",
+      "after_sha256": "20a3b6498c822afb9398f0bf7446be834c7f5dac0f7350db0208672664efaff9"
+    }
+  }
+}
