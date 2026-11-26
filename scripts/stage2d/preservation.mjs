@@ -14,6 +14,6 @@ export function originalBytes(root,path,expected,kind='sha256'){
  const changes=JSON.parse(readFileSync(resolve(root,'design/stage2d/code-migrations.json')));
  if(Object.keys(changes.files).sort().join('|')!==[...REPLACEMENTS].sort().join('|'))throw Error('MIGRATION_SET');
  const entry=changes.files[path],old=readFileSync(resolve(root,entry.archive));
- if(entry.archive!=='design/stage2d/originals/'+path+'.txt'||digest(old,kind)!==expected||digest(old,'sha256')!==entry.before_sha256||digest(current,'sha256')!==entry.after_sha256)throw Error('MIGRATION_HASH '+path);
+ if(entry.archive!=='design/stage2d/originals/'+path+'.txt'||digest(old,kind)!==expected||digest(old,'sha256')!==entry.before_sha256||digest(historical??current,'sha256')!==entry.after_sha256)throw Error('MIGRATION_HASH '+path);
  return old;
 }
