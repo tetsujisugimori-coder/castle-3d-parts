@@ -88,7 +88,18 @@
       "historical_form": "UNKNOWN",
       "historical_dimensions": "UNKNOWN",
       "placement": "NOT_AUTHORIZED",
-      "note": "gate.post.1。接合点や蝶番の史実は未確定。"
+      "note": "gate.post.1。接合点や蝶番の史実は未確定。",
+      "stage4b_wave2_candidate": {
+        "status": "PREPARED_DRAFT_D1",
+        "assembly_id": "YAM-WEST-GATE-BASIC",
+        "definition_ids": [
+          "YAM-WEST-POST",
+          "YAM-WEST-BEARING",
+          "YAM-WEST-PIVOT"
+        ],
+        "handoff": "docs/stage4b/west-gate-wave2.md",
+        "adoption": "NOT_AUTHORIZED"
+      }
     },
     {
       "id": "YAM-005",
@@ -105,7 +116,17 @@
       "historical_form": "UNKNOWN",
       "historical_dimensions": "UNKNOWN",
       "placement": "NOT_AUTHORIZED",
-      "note": "推定C模型の生成コードが左右門扉・両門柱・横架材を定義する。模型の部材構成を調査する根拠に限り、左門扉からの鏡像で史実は確定しない。"
+      "note": "推定C模型の生成コードが左右門扉・両門柱・横架材を定義する。模型の部材構成を調査する根拠に限り、左門扉からの鏡像で史実は確定しない。",
+      "stage4b_wave2_candidate": {
+        "status": "PREPARED_DRAFT_D1",
+        "assembly_id": "YAM-WEST-GATE-BASIC",
+        "definition_ids": [
+          "YAM-WEST-LEFT-BOARD",
+          "YAM-WEST-LEFT-RAIL"
+        ],
+        "handoff": "docs/stage4b/west-gate-wave2.md",
+        "adoption": "NOT_AUTHORIZED"
+      }
     },
     {
       "id": "YAM-006",

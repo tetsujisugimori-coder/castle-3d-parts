@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "basis": "D",
+  "baseline_commit": "e4f0247b34fe3ab9ac0a96bbb6bdbab0e86c135d",
+  "definitions": [
+    {
+      "id": "YAM-WEST-LEFT-BOARD",
+      "upstream_id": "YAM-WEST-LEFT-BOARD",
+      "revision": "D0",
+      "pose": null,
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "label": "左門扉の板材（D0）",
+      "nodes": [
+        "WestGateBoard"
+      ],
+      "ports": {},
+      "manifest": "cad/stage4b/west-gate-left/west-gate-board-web.manifest.json",
+      "glb": "cad/stage4b/west-gate-left/west-gate-board-web.glb",
+      "glb_sha256": "04adbd61be704eabd235d7e40d8e432d8a64175abc0dcdfc1bbad7daec86b26a"
+    },
+    {
+      "id": "YAM-WEST-LEFT-RAIL",
+      "upstream_id": "YAM-WEST-LEFT-RAIL",
+      "revision": "D0",
+      "pose": null,
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "label": "左門扉の横桟（D0）",
+      "nodes": [
+        "WestGateRail"
+      ],
+      "ports": {},
+      "manifest": "cad/stage4b/west-gate-left/west-gate-rail-draft.manifest.json",
+      "glb": "cad/stage4b/west-gate-left/west-gate-rail-draft.glb",
+      "glb_sha256": "8ebb5954e09e8a30957c785a6fc4a917eb7b0aea740a7ac8225ee679fc3e1777"
+    },
+    {
+      "id": "YAM-WEST-POST",
+      "upstream_id": "YAM-WEST-POST",
+      "revision": "D1",
+      "pose": null,
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "label": "門柱（D1・左右共通）",
+      "nodes": [
+        "WestGatePost"
+      ],
+      "ports": {
+        "mount-0": {
+          "point_m": [
+            0.15,
+            0,
+            0.4
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "type": "west-gate-mount-D1"
+        },
+        "mount-1": {
+          "point_m": [
+            0.15,
+            0,
+            2.1
+          ],
+          "outward": [
+            1,
+            0,
+            0
+          ],
+          "type": "west-gate-mount-D1"
+        }
+      },
+      "manifest": "cad/stage4b/west-gate-wave2/west-gate-post.manifest.json",
+      "glb": "cad/stage4b/west-gate-wave2/west-gate-post.glb",
+      "glb_sha256": "faab3dbdd503b553e4dedb183fcaee78e35dd742de45f9e71d487637013dcada"
+    },
+    {
+      "id": "YAM-WEST-BEARING",
+      "upstream_id": "YAM-WEST-BEARING",
+      "revision": "D1",
+      "pose": null,
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "label": "軸受ブラケット（D1・上下左右共通）",
+      "nodes": [
+        "WestGateBearing"
+      ],
+      "ports": {
+        "post": {
+          "point_m": [
+            -0.15,
+            0,
+            0
+          ],
+          "outward": [
+            -1,
+            0,
+            0
+          ],
+          "type": "west-gate-mount-D1"
+        },
+        "axis": {
+          "point_m": [
+            0,
+            0,
+            0
+          ],
+          "outward": [
+            0,
+            0,
+            1
+          ],
+          "type": "west-gate-axis-D1"
+        }
+      },
+      "manifest": "cad/stage4b/west-gate-wave2/west-gate-bearing.manifest.json",
+      "glb": "cad/stage4b/west-gate-wave2/west-gate-bearing.glb",
+      "glb_sha256": "49f953da7d115f1ffb8ce3d3c99105c0aa66cb4fd2eb7d631176a6145db42a0d"
+    },
+    {
+      "id": "YAM-WEST-PIVOT",
+      "upstream_id": "YAM-WEST-PIVOT",
+      "revision": "D1",
+      "pose": null,
+      "subset": null,
+      "basis": "D",
+      "eligibility": "reference_only",
+      "label": "支持ピンと腕（D1・上下左右共通）",
+      "nodes": [
+        "WestGatePivot"
+      ],
+      "ports": {
+        "axis": {
+          "point_m": [
+            0,
+            0,
+            0
+          ],
+          "outward": [
+            0,
+            0,
+            -1
+          ],
+          "type": "west-gate-axis-D1"
+        }
+      },
+      "manifest": "cad/stage4b/west-gate-wave2/west-gate-pivot.manifest.json",
+      "glb": "cad/stage4b/west-gate-wave2/west-gate-pivot.glb",
+      "glb_sha256": "b2a7baa6fdfbdfdfc1b8f2d15417d29049d87295e96ce00443bd5096c9ce3fe6"
+    }
+  ],
+  "limits": {
+    "model": "D1_REFERENCE_ONLY",
+    "historical": "UNKNOWN",
+    "continuous_mechanical_certification": "UNKNOWN",
+    "load": "NOT_TESTED"
+  }
+}

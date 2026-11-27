@@ -7,8 +7,9 @@ const $=id=>document.getElementById(id);
 const host=$('viewport'),status=$('status'),root=new URL('../../',import.meta.url);
 const msg=(state,text)=>{status.dataset.state=state;status.textContent=text};
 const gatePage=document.body.dataset.model==='west-gate-left';
-const viewing=gatePage&&document.body.dataset.view==='exhibit';
-const modelRoot=gatePage?'assembly/stage4b/':'assembly/stage4a/';
+const wave2=document.body.dataset.model==='west-gate-wave2';
+const viewing=(gatePage||wave2)&&document.body.dataset.view==='exhibit';
+const modelRoot=wave2?'assembly/stage4b-wave2/':gatePage?'assembly/stage4b/':'assembly/stage4a/';
 const label=d=>d.label??(d.id==='PAL-U01'?'木柵 U01（B0）':'簡易木戸（固定B0）');
 const opt=(text,value)=>new Option(text,value);
 const endLabel=e=>e.instance_id+' / '+e.port;
@@ -23,6 +24,21 @@ try{
   if(gatePage){
     const {validateFixedLeaf}=await import('../../assembly/stage4b/fixed-leaf.mjs');
     await validateFixedLeaf(catalog,exampleText);
+  }
+  let initialText=exampleText,wave2Preset=null,initialPreset='closed';
+  if(wave2){
+    const [{poseDocument,poses},designText,leftText]=await Promise.all([
+      import('../../assembly/stage4b-wave2/poses.mjs'),
+      fetchText(modelRoot+'design.json'),fetchText('assembly/stage4b/example.json')
+    ]);
+    const design=parseUniqueJson(designText),left=parseUniqueJson(leftText);
+    wave2Preset=key=>poseDocument(catalog,design,left,key);
+    if(await wave2Preset('closed')!==exampleText)throw Error('固定基準姿勢の不一致');
+    const linked=new URLSearchParams(location.search).get('pose');
+    if(Object.hasOwn(poses,linked)){
+      initialText=await wave2Preset(linked);
+      initialPreset=linked;
+    }
   }
   const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'low-power'});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
@@ -51,7 +67,7 @@ try{
     const halfX=Math.atan(Math.tan(halfY)*camera.aspect);
     const dist=1.2*radius/Math.sin(Math.min(halfX,halfY));
     orbit.maxDistance=Math.max(100,dist*2);camera.far=Math.max(200,dist*4);camera.updateProjectionMatrix();
-    orbit.target.copy(centre);camera.position.copy(centre).add(new THREE.Vector3(gatePage ? .08 : .30,gatePage ? .22 : .36,gatePage ? -1 : 1).normalize().multiplyScalar(dist));
+    orbit.target.copy(centre);camera.position.copy(centre).add(new THREE.Vector3(wave2 ? .34 : gatePage ? .08 : .30,wave2 ? .58 : gatePage ? .22 : .36,gatePage ? -1 : 1).normalize().multiplyScalar(dist));
     orbit.update();render();
   }
   function clearBox(){
@@ -148,7 +164,7 @@ try{
   for(const id of ['port-a','port-b','connection'])$(id).onchange=syncEnabled;
   $('add').onclick=()=>{
     let id='';
-    edit(()=>{const op=nextPlacement(controller.snapshot(),$('definition').value);id=op.id;return op},'部品を追加しました。',()=>id);
+    return edit(()=>{const op=nextPlacement(controller.snapshot(),$('definition').value);id=op.id;return op},'部品を追加しました。',()=>id);
   };
   $('move').onclick=()=>edit(()=>({kind:'move',id:selected,translation_m:translationFromFields(['x','y','z'].map(k=>$(k).value))}),'座標を更新しました。');
   for(const [id,step] of [['left',3],['right',1]])$(id).onclick=()=>edit(()=>({kind:'rotate',id:selected,yaw_quarters:(current().yaw_quarters+step)%4}),'回転しました。');
@@ -169,7 +185,7 @@ try{
     if(file.size>MAX_IMPORT_BYTES)throw Error('ファイルが大きすぎます。');
     await controller.load(await file.text());
   },'ファイルを読み込みました。');
-  $('example').onclick=()=>run(()=>controller.load(exampleText),gatePage?'左門扉の初期配置に戻しました。':'代表配置に戻しました。',gatePage?'B01':'F01');
+  $('example').onclick=()=>run(async()=>{await controller.load(exampleText);if(wave2)setWave2Preset('closed')},gatePage?'左門扉の初期配置に戻しました。':'代表配置に戻しました。',gatePage?'B01':'F01');
   $('fit').onclick=()=>fit();$('turn').onclick=()=>{camera.position.sub(orbit.target).applyAxisAngle(new THREE.Vector3(0,1,0),Math.PI/6).add(orbit.target);orbit.update()};
   function zoom(scale){
     const d=camera.position.clone().sub(orbit.target);
@@ -197,7 +213,7 @@ try{
   renderer.domElement.addEventListener('webglcontextlost',e=>{
     e.preventDefault();lost=true;controller.stop();syncEnabled();msg('error','WebGL接続喪失。ページを再読み込みしてください。');
   });
-  if(viewing){
+  if(viewing&&gatePage){
     const a=parseUniqueJson(exampleText);
     const choices={assembly:null,board:'YAM-WEST-LEFT-BOARD',rail:'YAM-WEST-LEFT-RAIL'};
     for(const button of document.querySelectorAll('button[data-preset]')){
@@ -212,7 +228,27 @@ try{
       },button.textContent+'を表示しました。');
     }
   }
-  await run(()=>controller.load(exampleText),gatePage?'左門扉を読み込みました。':'代表配置を読み込みました。',gatePage?'B01':'F01');
+  function setWave2Preset(key){
+    for(const b of document.querySelectorAll('button[data-preset]'))b.setAttribute('aria-pressed',String(b.dataset.preset===key));
+    const link=$('open-wave2-workshop');
+    if(link)link.href='../workshop/'+(['closed','left','right','both'].includes(key)?'?pose='+key:'');
+    $('wave2-state').textContent=key?document.querySelector('button[data-preset="'+key+'"]').textContent:'編集・読込済みの配置';
+  }
+  if(wave2){
+    for(const button of document.querySelectorAll('button[data-preset]')){
+      button.onclick=()=>run(async()=>{
+        await controller.load(await wave2Preset(button.dataset.preset));
+        setWave2Preset(button.dataset.preset);
+        if(!viewing)fit();
+      },button.textContent+'を表示しました。');
+    }
+    for(const id of ['add','move','left','right','remove','connect','align','disconnect','load','load-file']){
+      const original=$(id).onclick;
+      $(id).onclick=async()=>{await original();if(status.dataset.state==='ready')setWave2Preset(null)};
+    }
+    setWave2Preset(initialPreset);
+  }
+  await run(()=>controller.load(initialText),wave2?'西木戸口の組立を読み込みました。':gatePage?'左門扉を読み込みました。':'代表配置を読み込みました。',gatePage?'B01':'F01');
   // Initial loading may fail; a reload is a deliberate fresh page request.
   if(!controller.snapshot()&&!lost)msg('error',status.textContent+' ページを再読み込みしてください。');
 }catch(e){msg('error','3D工房を開始できません：'+e.message)}
