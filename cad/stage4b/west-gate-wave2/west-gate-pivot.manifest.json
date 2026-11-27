@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "assembly_id": "YAM-WEST-PIVOT",
+  "revision": "D1",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "material": "鉄色（展示上の仮定）",
+  "ports": {
+    "axis": {
+      "point_m": [
+        0,
+        0,
+        0
+      ],
+      "outward": [
+        0,
+        0,
+        -1
+      ],
+      "type": "west-gate-axis-D1"
+    }
+  },
+  "files": {
+    "glb": {
+      "path": "west-gate-pivot.glb",
+      "repository_path": "cad/stage4b/west-gate-wave2/west-gate-pivot.glb",
+      "sha256": "b2a7baa6fdfbdfdfc1b8f2d15417d29049d87295e96ce00443bd5096c9ce3fe6"
+    },
+    "cad": {
+      "path": "west-gate-pivot.FCStd",
+      "repository_path": "cad/stage4b/west-gate-wave2/west-gate-pivot.FCStd",
+      "sha256": "ae059688c4e283dee5bcd223aead6631ca781cc4d56d20f69de0342b2faf64eb"
+    },
+    "step": {
+      "path": "west-gate-pivot.step",
+      "repository_path": "cad/stage4b/west-gate-wave2/west-gate-pivot.step",
+      "sha256": "8c12ea9f53b130a331eef5de604610572c3286134da4246c26e381aa9c6c6f41"
+    },
+    "blender": {
+      "path": "west-gate-pivot.blend",
+      "repository_path": "blender/stage4b/wave2/west-gate-pivot.blend",
+      "sha256": "ad39c3ba22ee6da2ebf1252fb1f93265f32d6263b6bbe2f8a5b72ef243a66593"
+    }
+  },
+  "parts": [
+    {
+      "glb_node": "WestGatePivot",
+      "bounds_m": [
+        -0.025,
+        -0.025,
+        0,
+        0.13,
+        0.025,
+        0.11
+      ]
+    }
+  ]
+}

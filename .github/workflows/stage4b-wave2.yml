@@ -1,0 +1,131 @@
+name: Stage 4-B wave 2 gate structure
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/stage4b-wave2.yml'
+      - '.github/workflows/pages.yml'
+      - 'assembly/stage4a/**'
+      - 'assembly/stage4b/**'
+      - 'assembly/stage4b-wave2/**'
+      - 'scripts/build-stage4b-site.mjs'
+      - 'previews/stage4a/**'
+      - 'cad/stage4b/**'
+      - 'blender/stage4b/**'
+      - 'scripts/stage4b/**'
+      - 'scripts/build-stage2d-site.mjs'
+      - 'tests/stage4b-*.test.mjs'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: [chromium, webkit]
+    env:
+      STAGE4B_WAVE2_ENGINE: ${{ matrix.engine }}
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Isolated evidence and dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="$RUNNER_TEMP/stage4b-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$STAGE4B_WAVE2_ENGINE"
+          mkdir -p "$base/evidence" "$base/deps"
+          printf 'STAGE4B_WAVE2_OUT=%s\nDEPS=%s\nPLAYWRIGHT_BROWSERS_PATH=%s\n' "$base/evidence" "$base/deps" "$base/browsers" >> "$GITHUB_ENV"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git rev-parse HEAD HEAD^{tree} > "$base/evidence/git.txt"
+          node --version > "$base/evidence/node.txt"
+          cat /etc/os-release > "$base/evidence/os-release.txt"
+      - name: Build Pages and check model contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/stage4b/wave2/catalog.mjs --check
+          node --test tests/stage4b-wave2.test.mjs tests/stage4b-left-leaf.test.mjs 2>&1 | tee "$STAGE4B_WAVE2_OUT/model.log"
+          node scripts/build-stage2d-site.mjs 2>&1 | tee "$STAGE4B_WAVE2_OUT/build.log"
+          node --test scripts/stage4a-pages-check.mjs 2>&1 | tee "$STAGE4B_WAVE2_OUT/prior-pages.log"
+          (cd dist; find . -type f -print0 | sort -z | xargs -0 -r sha256sum) > "$STAGE4B_WAVE2_OUT/dist-SHA256SUMS"
+      - name: Install fixed Playwright and Three.js
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$DEPS" --save-exact --no-audit --no-fund playwright@1.56.1 three@0.180.0 2>&1 | tee "$STAGE4B_WAVE2_OUT/npm.log"
+          cp "$DEPS/package-lock.json" "$STAGE4B_WAVE2_OUT/package-lock.json"
+          "$DEPS/node_modules/.bin/playwright" install --with-deps "$STAGE4B_WAVE2_ENGINE" 2>&1 | tee "$STAGE4B_WAVE2_OUT/playwright.log"
+      - name: Check actual gallery and workshop routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PW_MODULE="$DEPS/node_modules/playwright/index.mjs"
+          export THREE_ROOT="$DEPS/node_modules/three"
+          node scripts/stage4b/wave2/browser.mjs 2>&1 | tee "$STAGE4B_WAVE2_OUT/browser.log"
+      - name: Hash artifacts
+        if: always() && env.STAGE4B_WAVE2_OUT != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$STAGE4B_WAVE2_OUT"
+          find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 -r sha256sum > SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        if: always() && env.STAGE4B_WAVE2_OUT != ''
+        with:
+          name: stage4b-wave2-${{ matrix.engine }}-${{ github.event.pull_request.head.sha }}-attempt-${{ github.run_attempt }}
+          path: ${{ env.STAGE4B_WAVE2_OUT }}/
+          if-no-files-found: error
+  native:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+    timeout-minutes: 20
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      QT_QPA_PLATFORM: offscreen
+      PYTHONPATH: /usr/lib/freecad-python3/lib
+      LD_LIBRARY_PATH: /usr/lib/freecad-python3/lib
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Install native tools in isolated runner
+        run: apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 freecad-python3 blender nodejs libgl1-mesa-dri
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Read back FreeCAD, STEP, Blender and GLB
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="$RUNNER_TEMP/stage4b-wave2-native-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          mkdir -p "$base/evidence" "$base/scratch"
+          out="$base/evidence"
+          printf 'STAGE4B_NATIVE_OUT=%s\n' "$out" >> "$GITHUB_ENV"
+          export TMPDIR="$base/scratch"
+          git -c safe.directory="$GITHUB_WORKSPACE" rev-parse HEAD HEAD^{tree} > "$out/git.txt"
+          test "$(head -n1 "$out/git.txt")" = "$EXPECTED_HEAD"
+          cat /etc/os-release > "$out/os-release.txt"
+          node --version > "$out/node.txt"
+          dpkg-query -W blender freecad-python3 > "$out/versions.txt"
+          sha256sum -c docs/stage4b/wave2-SHA256SUMS | tee "$out/asset-checks.log"
+          node scripts/stage4b/wave2/poses-json.mjs > "$out/poses.json"
+          python3 -B scripts/stage4b/wave2/native.py --poses "$out/poses.json" |& tee "$out/freecad.log"
+          blender --background --factory-startup --python-exit-code 1 --python scripts/stage4b/wave2/mesh.py -- check |& tee "$out/blender.log"
+      - name: Hash native evidence
+        if: always() && env.STAGE4B_NATIVE_OUT != ''
+        shell: bash
+        run: |
+          cd "$STAGE4B_NATIVE_OUT"
+          find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 -r sha256sum > SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        if: always() && env.STAGE4B_NATIVE_OUT != ''
+        with:
+          name: stage4b-wave2-native-${{ github.event.pull_request.head.sha }}-attempt-${{ github.run_attempt }}
+          path: ${{ env.STAGE4B_NATIVE_OUT }}/
+          if-no-files-found: error

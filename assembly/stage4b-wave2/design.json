@@ -1,0 +1,27 @@
+{
+  "revision": "D1",
+  "basis": "D",
+  "unit": "mm",
+  "frame": "right-handed-Z-up",
+  "baseline": "e4f0247b34fe3ab9ac0a96bbb6bdbab0e86c135d",
+  "yamanaka_c_reference": "c4888f96f4d46db7d571055896004852c02050df",
+  "pivot_x": 2000,
+  "pivot_y": 200,
+  "bearing_z": [400,2100],
+  "leaf_ground": 20,
+  "closed_seam": 40,
+  "parts": {
+    "YAM-WEST-POST": {"stem":"west-gate-post","node":"WestGatePost","label":"門柱（D1・左右共通）","material":"木色（展示上の仮定）","bounds_mm":[-150,-150,0,150,150,3000]},
+    "YAM-WEST-BEARING": {"stem":"west-gate-bearing","node":"WestGateBearing","label":"軸受ブラケット（D1・上下左右共通）","material":"鉄色（展示上の仮定）","bounds_mm":[-150,-50,0,50,50,50]},
+    "YAM-WEST-PIVOT": {"stem":"west-gate-pivot","node":"WestGatePivot","label":"支持ピンと腕（D1・上下左右共通）","material":"鉄色（展示上の仮定）","bounds_mm":[-25,-25,0,130,25,110]}
+  },
+  "bearing_outer_radius":50,
+  "bearing_bore_radius":27,
+  "pin_radius":25,
+  "bearing_height":50,
+  "arm_base_z":60,
+  "arm_top_z":110,
+  "model_status":"REFERENCE_ONLY",
+  "historical_structure":"UNKNOWN",
+  "retention_and_axial_load":"NOT_TESTED"
+}

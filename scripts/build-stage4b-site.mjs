@@ -55,3 +55,5 @@ version.stage4b_assets={};
 for(const path of assets)version.stage4b_assets[path]=createHash('sha256').update(await readFile('dist/'+path)).digest('hex');
 await writeFile(metadata,JSON.stringify(version,null,2)+'\n');
 console.log('Stage 4-B left leaf: fixed models and both workshop entry points included.');
+
+await import('./stage4b/wave2/site.mjs');

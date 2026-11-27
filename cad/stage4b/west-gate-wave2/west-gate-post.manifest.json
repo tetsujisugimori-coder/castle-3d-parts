@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "assembly_id": "YAM-WEST-POST",
+  "revision": "D1",
+  "basis": "D",
+  "cad_eligibility": "reference_only",
+  "unit": "m",
+  "frame": "right-handed-Z-up",
+  "material": "木色（展示上の仮定）",
+  "ports": {
+    "mount-0": {
+      "point_m": [
+        0.15,
+        0,
+        0.4
+      ],
+      "outward": [
+        1,
+        0,
+        0
+      ],
+      "type": "west-gate-mount-D1"
+    },
+    "mount-1": {
+      "point_m": [
+        0.15,
+        0,
+        2.1
+      ],
+      "outward": [
+        1,
+        0,
+        0
+      ],
+      "type": "west-gate-mount-D1"
+    }
+  },
+  "files": {
+    "glb": {
+      "path": "west-gate-post.glb",
+      "repository_path": "cad/stage4b/west-gate-wave2/west-gate-post.glb",
+      "sha256": "faab3dbdd503b553e4dedb183fcaee78e35dd742de45f9e71d487637013dcada"
+    },
+    "cad": {
+      "path": "west-gate-post.FCStd",
+      "repository_path": "cad/stage4b/west-gate-wave2/west-gate-post.FCStd",
+      "sha256": "d28b0e328cc6f5761842208008047793c362096be8daebd68861beec87d9aa2d"
+    },
+    "step": {
+      "path": "west-gate-post.step",
+      "repository_path": "cad/stage4b/west-gate-wave2/west-gate-post.step",
+      "sha256": "00de85b495c8982cc5179fdf520f338d1da796e8bc2c070b9f295dda883da905"
+    },
+    "blender": {
+      "path": "west-gate-post.blend",
+      "repository_path": "blender/stage4b/wave2/west-gate-post.blend",
+      "sha256": "42f9d99198930864f5be70b3243ed6311387bf919e722ec4a94fb8ee1e4d857b"
+    }
+  },
+  "parts": [
+    {
+      "glb_node": "WestGatePost",
+      "bounds_m": [
+        -0.15,
+        -0.15,
+        0,
+        0.15,
+        0.15,
+        3
+      ]
+    }
+  ]
+}
