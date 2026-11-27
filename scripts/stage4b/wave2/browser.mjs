@@ -112,6 +112,10 @@ try{
    assert.deepEqual(await save(page),edited);chk('misaligned anchor rejected preserving prior scene');
    await page.locator('#example').click();await status(page);
    assert.deepEqual(await save(page),await presetDoc('closed'));chk('reset closed');
+   await page.locator('#add').click();await counts(page,27,8);
+   assert.equal(await page.locator('#wave2-state').textContent(),'編集・読込済みの配置');
+   assert.equal(await page.locator('[data-preset][aria-pressed="true"]').count(),0);
+   assert.equal((await save(page)).instances.length,27);chk('add invalidates fixed pose indication');
    await go(page,'open-wave2-exhibit',newGallery,true);await counts(page,26,8);chk('workshop to gallery');
    await go(page,'exhibition-entry',home,true,false);
    await go(page,'west-gate-exhibit',home+'stage4b/exhibit/',true);await counts(page,8,0);chk('D0 exhibit regression');
@@ -126,5 +130,5 @@ try{
  await browser?.close();server.close();
  writeFileSync(resolve(out,'results.json'),JSON.stringify(meta,null,2)+'\n');
 }
-if(rows.length!==4||rows.some(r=>r.status!=='PASS'||r.checks.length!==20))process.exitCode=1;
+if(rows.length!==4||rows.some(r=>r.status!=='PASS'||r.checks.length!==21))process.exitCode=1;
 console.log(JSON.stringify(meta,null,2));

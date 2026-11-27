@@ -164,7 +164,7 @@ try{
   for(const id of ['port-a','port-b','connection'])$(id).onchange=syncEnabled;
   $('add').onclick=()=>{
     let id='';
-    edit(()=>{const op=nextPlacement(controller.snapshot(),$('definition').value);id=op.id;return op},'部品を追加しました。',()=>id);
+    return edit(()=>{const op=nextPlacement(controller.snapshot(),$('definition').value);id=op.id;return op},'部品を追加しました。',()=>id);
   };
   $('move').onclick=()=>edit(()=>({kind:'move',id:selected,translation_m:translationFromFields(['x','y','z'].map(k=>$(k).value))}),'座標を更新しました。');
   for(const [id,step] of [['left',3],['right',1]])$(id).onclick=()=>edit(()=>({kind:'rotate',id:selected,yaw_quarters:(current().yaw_quarters+step)%4}),'回転しました。');

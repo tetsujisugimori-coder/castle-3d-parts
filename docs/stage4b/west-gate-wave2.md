@@ -6,10 +6,12 @@
 
 | 根拠と確認箇所 | D1への反映と限界 |
 |---|---|
-| [三島市・山中城跡の発掘調査](https://www.city.mishima.shizuoka.jp/page/2145.html) §3 建物 | 北ノ丸の発掘遺構は門柱の存在を考える城内の別例。西木戸口の本模型の寸法、仕口や軸受を発掘確認したものではない。 |
-| [三島市・環境整備事業](https://www.city.mishima.shizuoka.jp/page/1301.html) 49・50年度 | 西木戸口の整備箇所を確認。工事記録を戦国期の門扉寸法や型式の証拠にしない。 |
+| [三島市・山中城跡環境整備事業](https://www.city.mishima.shizuoka.jp/page/1301.html) §3 発掘調査の成果「建物」 | 北ノ丸の発掘遺構は門柱の存在を考える城内の別例。西木戸口の本模型の寸法、仕口や軸受を発掘確認したものではない。 |
+| [三島市・山中城跡環境整備事業](https://www.city.mishima.shizuoka.jp/page/1301.html) 環境整備事業の49・50年度 | 西木戸口の整備箇所を確認。工事記録を戦国期の門扉寸法や型式の証拠にしない。 |
 | [山中城 #64](https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/pull/64) / [推定Cの固定制作式](https://github.com/tetsujisugimori-coder/yamanaka-historical-terrain/blob/c4888f96f4d46db7d571055896004852c02050df/scripts/phase3b-build-blender.py#L88-L106) | 左右の板材・桟・門柱の区別を参照。D0で整理済みの板材・桟正本をそのまま使う。D1における左右対称・扉の平面化・閉鎖隙間・柱芯・支持構造は、Cの地形座標や部品寸法をそのまま転写したものではない。 |
 | [大野城心のふるさと館・北石垣城門の軸受遺構](https://www.onojo-occm.jp/kiji0036723/index.html) | 別時代・別城の軸受着想に限る。木柱・リング・腕や金属色の根拠ではない。D1の径、高さ、クリアランス、開き方向、材質色はいずれも操作・組立検証の仮定。 |
+
+[三島市の山中城跡概要](https://www.city.mishima.shizuoka.jp/page/2145.html) は現地案内の入口に限る。
 
 ## 部品と提供仕様
 
@@ -46,3 +48,5 @@ blender --background --factory-startup --python-exit-code 1 --python scripts/sta
 再生成は既存固定資産を置換せず、別作業コピーの空のWave 2資産ディレクトリで `native.py --generate --mesh 新規mesh.json`、続いて `mesh.py -- generate mesh.json`、`catalog.mjs --generate`。再生成時間とツールビルドによりバイトが変わる。正式証拠の扱いは中央規約と案件個別承認に従い、再生成物は過去実行の原票と同一視しない。
 
 ネイティブ読戻しはFCStdとSTEPを解析形状と差集合で比較し、単純な外接寸法のみを根拠にしない。固定4姿勢では各26ソリッド・325組を境界で候補化して正体積交差を検査、各32面の指定接触を照合した。ピンと軸受のみ別途0–90°を5°刻みの19点で確認し、4 mm偏心を負対照で検出。葉と柱・対向葉は一次元投影の91サンプル。これは有限サンプルと設計矩形の参考値で、現物や任意編集後の安全保証ではない。Blender原本とGLBは個別に再読込し、閉じた面、向き、体積・境界を照合する。実機Safari、実部材試験は対象外。
+
+正式WebKitの初回（HEAD `c2a58b78`）は、Ubuntuランナーに既設のMicrosoft SDK用APTフィードが403を返し、ブラウザ起動前に失敗した。[原票](https://github.com/tetsujisugimori-coder/castle-3d-parts/actions/runs/45978872848/artifacts/15188502138) を履歴として保持する。修正は専用WebKitジョブの一時ランナー内で当該の単独フィードだけを除外。Ubuntu標準ソース・署名検証・Playwright固定版は維持。混在するソースや別名参照は除外しない。

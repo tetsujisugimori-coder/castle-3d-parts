@@ -38,7 +38,7 @@ for(const kind of ['exhibit','workshop']){
  html=insert(html,'<section class="panel persistence"',`<section class="note"><h2>見どころと根拠</h2>
  <p>左右の葉とも板材6枚・横桟2本。門柱2本、軸受4個、支持ピン4個。葉は閉鎖時に中央40 mmの設計隙間があり、左右とも同じ奥行き側へ90°開きます。</p>
  <p>第1便のD0と山中城の推定Cを参照。軸受とピンの構成・寸法・色は模型上の仮定で、西木戸口で発掘確認された形ではありません。緑点は工房接続の位置で、構造安全性を意味しません。</p>
- <p><a href="https://www.city.mishima.shizuoka.jp/page/2145.html">三島市・山中城跡の調査</a> · <a href="../../../${base}/west-gate-bearing.manifest.json">軸受の固定メタデータ</a></p></section><section class="panel persistence"`);
+ <p><a href="https://www.city.mishima.shizuoka.jp/page/1301.html">三島市・山中城跡の調査</a> · <a href="../../../${base}/west-gate-bearing.manifest.json">軸受の固定メタデータ</a></p></section><section class="panel persistence"`);
  if(exhibit) html=insert(html,'</head>','<style>.workspace{display:block}.workspace>.library,.workspace>.edit,.persistence{display:none}</style></head>');
  await writeFile(folder+'/index.html',html);
 }

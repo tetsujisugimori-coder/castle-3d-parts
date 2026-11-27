@@ -55,6 +55,21 @@ jobs:
           node scripts/build-stage2d-site.mjs 2>&1 | tee "$STAGE4B_WAVE2_OUT/build.log"
           node --test scripts/stage4a-pages-check.mjs 2>&1 | tee "$STAGE4B_WAVE2_OUT/prior-pages.log"
           (cd dist; find . -type f -print0 | sort -z | xargs -0 -r sha256sum) > "$STAGE4B_WAVE2_OUT/dist-SHA256SUMS"
+      - name: Exclude unrelated Microsoft SDK feed (ephemeral WebKit runner)
+        if: matrix.engine == 'webkit'
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Playwright's Linux libraries are supplied by Ubuntu Noble.
+          # The unrelated third-party SDK feed failed apt update with HTTP 403.
+          # Do not change Ubuntu sources, trusted keys, or repository settings.
+          list="$STAGE4B_WAVE2_OUT/excluded-apt-feed-filenames.txt"
+          python3 scripts/stage4b/wave2/ubuntu-apt-source-plan.py /etc/apt/sources.list.d > "$list"
+          backup="$RUNNER_TEMP/stage4b-wave2-unused-apt-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          mkdir "$backup"
+          while IFS= read -r source; do
+            sudo mv -- "/etc/apt/sources.list.d/$source" "$backup/$source"
+          done < "$list"
       - name: Install fixed Playwright and Three.js
         shell: bash
         run: |
