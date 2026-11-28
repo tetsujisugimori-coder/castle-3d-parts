@@ -90,7 +90,7 @@
       "placement": "NOT_AUTHORIZED",
       "note": "gate.post.1。接合点や蝶番の史実は未確定。",
       "stage4b_wave2_candidate": {
-        "status": "PREPARED_DRAFT_D1",
+        "status": "RELEASED_TRIAL_CANDIDATE_D1",
         "assembly_id": "YAM-WEST-GATE-BASIC",
         "definition_ids": [
           "YAM-WEST-POST",
@@ -98,7 +98,11 @@
           "YAM-WEST-PIVOT"
         ],
         "handoff": "docs/stage4b/west-gate-wave2.md",
-        "adoption": "NOT_AUTHORIZED"
+        "adoption": "NOT_AUTHORIZED",
+        "accepted_commit": "4b50b1517dc315cbc356cf02859a62f633d0548d",
+        "library_release_commit": "8f07c93ce0ed9a68dcae03d0debb5fd21ba43e6d",
+        "release_pull_request": 56,
+        "pages_run": 46078977673
       }
     },
     {
@@ -118,14 +122,18 @@
       "placement": "NOT_AUTHORIZED",
       "note": "推定C模型の生成コードが左右門扉・両門柱・横架材を定義する。模型の部材構成を調査する根拠に限り、左門扉からの鏡像で史実は確定しない。",
       "stage4b_wave2_candidate": {
-        "status": "PREPARED_DRAFT_D1",
+        "status": "RELEASED_TRIAL_CANDIDATE_D1",
         "assembly_id": "YAM-WEST-GATE-BASIC",
         "definition_ids": [
           "YAM-WEST-LEFT-BOARD",
           "YAM-WEST-LEFT-RAIL"
         ],
         "handoff": "docs/stage4b/west-gate-wave2.md",
-        "adoption": "NOT_AUTHORIZED"
+        "adoption": "NOT_AUTHORIZED",
+        "accepted_commit": "4b50b1517dc315cbc356cf02859a62f633d0548d",
+        "library_release_commit": "8f07c93ce0ed9a68dcae03d0debb5fd21ba43e6d",
+        "release_pull_request": 56,
+        "pages_run": 46078977673
       }
     },
     {
